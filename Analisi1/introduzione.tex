@@ -1,0 +1,100 @@
+\section{Introduzione}
+
+Il calcolo infinitesimale e' lo studio del cambiamento continuo. Ha due branche principali: il calcolo differenziale (Sezione \ref{sec:calc_diff}) ed il calcolo integrale (Sezione \ref{sec:teoria_integrazione}). Il primo riguarda i tassi di cambiamento istantanei e le pendenze delle curve, mentre il secondo riguarda l'accumulo di quantità e le aree sotto o tra le curve. Questi due rami sono legati tra loro dal Teorema Fondamentale del Calcolo Integrale (o Infinitesimale). Si avvalgono delle nozioni fondamentali di convergenza di successioni infinite e serie infinite verso un limite ben definito.
+
+\subsection{Numeri razionali}
+
+\begin{theorem}[Assioma di Complettezza]\label{th:assioma_completezza}
+    Siano $A,B\in\mathbb{R}$ non vuoti ed ordinati. Allora esiste in \gls{R} un elemento separatore di $A$ e $B$, cioè esiste $c\in\mathbb{R}$ tale che
+    \begin{equation*}
+        a\leq c\leq b, \quad\forall a\in A, \quad\forall b\in B.
+    \end{equation*}
+\end{theorem}
+
+L'Assioma di Complettezza è la proprietà che distingue \gls{q} da $\mathbb{R}$. L'Assioma non vale per $\mathbb{Q}$.
+
+\begin{property}[Proprietà di Archiemede]
+    $\forall x\in\mathbb{R},\,\exists n\in\mathbb{N}$ tale che $n>x$.
+\end{property}
+
+\begin{proposition}[Densità di $\mathbb{Q}$ in $\mathbb{R}$]
+    $\mathbb{Q}$ è denso in $\mathbb{R}$, cioè: dati $a,b\in\mathbb{R}$, tali che $a<b$, esistono $m\in\mathbb{Z}$ e $n\in\mathbb{N}$ tali che
+    \begin{equation*}
+        a<\frac{m}{n}<b.
+    \end{equation*}
+\end{proposition}
+
+\subsection{Topologia della retta}
+
+$\mathbb{R}$ è un insieme totalmente ordinato che forma un capo rispetto alle operazione e che corrisponde a tutti i punti della retta reale. Inoltre $\mathbb{R}$ contiene $\mathbb{N}$ (un \gls{insieme_discreto}) e $\mathbb{Q}$ (un sottoinsieme denso).
+
+Dati $a,b\in\mathbb{R}$, con $a<b$, sono fornite notazioni utili per indicare alcuni sottoinsiemi della retta reale:
+\begin{align*}
+    (a,b) &= \{x\in\mathbb{R}:a<x<b\}\text{ intervallo aperto}\\
+    (a,b] &= \{x\in\mathbb{R}:a<x\leq b\}\\
+    [a,b) &= \{x\in\mathbb{R}:a\leq x<b\}\\
+    [a, b] &= \{x\in\mathbb{R}:a\leq x\leq b\}\text{ intervallo chiuso}\\
+    (-\infty,a) &= \{x\in\mathbb{R}:x<a\}\text{ semiretta aperta}\\
+    (-\infty,a] &= \{x\in\mathbb{R}:x\leq a\}\text{ semiretta chiusa}\\
+    (a, \infty) &= \{x\in\mathbb{R}:x>a\}\text{ semiretta aperta}\\
+    [a, \infty) &= \{x\in\mathbb{R}:x\geq a\}\text{ semiretta chiusa}\\
+\end{align*}
+
+\begin{definition}[Intorno di un punto]\label{def:intorno}
+    Il sottoinsieme $I$ di $\mathbb{R}$ è detto intorno del punto $x_0$ se contiene un intervallo aperto contenente $x_0$, cioè se $\exists\, a,b\in\mathbb{R}$ tali che
+    \begin{equation*}
+        x_0\in(a,b)\subseteq I.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Intorno simmetrico]\label{def:intorno_simmetrico}
+    Un intervallo simmetrico del punto $x_0$ di raggio $r>0$ è l'intervallo aperto
+    \begin{equation}\label{eq:intorno_simmetrico}
+        I(x_0,r)=\{x\in\mathbb R\colon\,|x-x_0|<r\}=(x_0 - r, x_0 + r)\subset\mathbb R.
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Insieme aperto]
+    Un insieme aperto e' un insieme che e' intorno di ogni suo punto.
+\end{definition}
+
+\begin{definition}[Insieme chiuso]
+    Un insieme chiuso e' un insieme il cui complementare e' l'insieme aperto.
+\end{definition}
+
+\subsection{Massimo, minimo, estremo superiore ed estremo inferiore di un insieme}
+\begin{definition}[Massimo]
+    Sia $A\subset\mathbb R$. Il massimo di $A$, se esiste, è unico ed è definito come segue:
+    \begin{equation*}
+        M=\max(A)=
+        \begin{cases}
+            M\in A,\\
+            M\geq a,\, \forall a\in A.
+        \end{cases}
+    \end{equation*}
+\end{definition}
+
+Analogo minimo.
+
+\begin{definition}[$A$ limitato superiormente, maggiorante]
+    $A\subset\mathbb R$ è limitato superiormente se $\exists L\in\mathbb R$ tale che $L\geq a,\,\forall a\in A$.
+    $L$ è detto maggiorante.
+\end{definition}
+
+Analogo se limitato inferiormente e minorante.
+
+\begin{definition}[Estremo superiore]
+    Sia $A\subset\mathbb R\backslash\{\emptyset\}$. $M=\sup(A)=\max(M_A(\mathbb{R}))$ è detto estremo superiore.
+\end{definition}
+
+\begin{definition}[Estremo inferiore]
+    Sia $A\subset R\mathbb\backslash\{\emptyset\}$. $m=\inf(A)=\min(m_A(\mathbb{R}))$ è detto estremo superiore.
+\end{definition}
+
+\begin{theorem}
+    Ogni insieme non vuoto limitato superiormente ha l'estremo superiore. Analogo per limitato inferiormente.
+\end{theorem}
+
+\begin{theorem}
+    Se esiste il minimo (massimo) di un insieme allora questo coincide con l'estremo inferiore (superiore).
+\end{theorem}

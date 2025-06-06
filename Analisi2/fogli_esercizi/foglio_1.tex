@@ -1,0 +1,31 @@
+\subsection{EDOI-INFORMATICA}
+\begin{enumerate}
+    \item Determinare l'integrale generale dell'equazione
+    \begin{equation*}
+        ye^{2t}-(1+e^{2t})y'=0.
+    \end{equation*}
+    \item Determinare l'integrale generale delle equazioni
+    \begin{enumerate}
+        \item $(1+t^2)y'+ty=(1+t^2)^{-1}$,
+        \item $y'=\frac{2xy}{x^2-1}$.
+    \end{enumerate}
+\end{enumerate}
+
+\paragraph{1.}
+
+\paragraph{2.1} Dato $(1+t^2)y'+ty=(1+t^2)^{-1}$, allora dividendo per $(1+t^2)$
+\begin{equation*}
+    y'+\frac{t}{1+t^2}y=(1+t^2)^{-2}.
+\end{equation*}
+\begin{equation*}
+    \int a(x)\, dx=\int \frac{t}{1+t^2}\, dt = \frac{1}{2}\log(1+t^2),
+\end{equation*}
+quindi,
+\begin{equation*}
+    z(x)=c\cdot\frac{1}{\sqrt{1+t^2}}.
+\end{equation*}
+L'integrale generale ricercato è
+\begin{equation*}
+    \boldsymbol{y(x)=}c\frac{1}{\sqrt{1+t^2}}+\frac{1}{\sqrt{1+t^2}}\int\frac{\sqrt{1+t^2}}{(1+t^2)^2}\, dx\overset{\footnotemark}{=} c\frac{1}{\sqrt{1+t^2}}+\frac{1}{\sqrt{1+t^2}}\cdot\frac{x}{\sqrt{1+t^2}}= \boldsymbol{c\frac{1}{\sqrt{1+t^2}}+\frac{x}{\sqrt{1+t^2}}.}
+\end{equation*}
+\footnotetext{Integrale risolto per sostituzione: con $x=\tan u,\, dx=\frac{1}{\cos^2(u)}\, du$, $\int\frac{\sqrt{1+t^2}}{(1+t^2)^2}\, dx=$.}

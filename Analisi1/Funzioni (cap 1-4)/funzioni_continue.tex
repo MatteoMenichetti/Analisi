@@ -1,0 +1,189 @@
+\section{Funzioni Continue}
+
+\begin{definition}[Funzione continua]
+    Sia $A\subset\mathbb R$ e sia $x_0$ punto di accumulazione di $A$. La funzione $f\colon A\rightarrow\mathbb R$ è continua in $x_0$ se
+    \begin{equation*}
+        \lim_{x\rightarrow x_0}f(x)=f(x_0).
+    \end{equation*}
+\end{definition}
+
+Dati $A=[a,b]$ e $x\in(a,b)$, i casi principali per considerare $f$ continua sono:
+\begin{itemize}
+    \item esiste $f(x)$,
+    \item esiste finito $\lim_{x\rightarrow x_0}f(x)$,
+    \item $\lim_{x\rightarrow x_0}f(x)=f(x_0)$,
+    \item se $x_0=a$:
+    \begin{itemize}
+        \item esiste $f(a)$,
+        \item esiste $\lim_{x\rightarrow a^+}f(x)$,
+        \item $\lim_{x\rightarrow a^+}f(x)=f(a)$.
+    \end{itemize}
+\end{itemize}
+
+\begin{definition}
+    La funzione $f$ è continua in $(a,b)$ ($[a,b]$) se è continua in ogni punto di $(a,b)$.
+\end{definition}
+
+\subsection{Discontinuità}
+Una funzione $f\colon(a,b)\rightarrow\mathbb R$ può avere le seguenti discontinuità in $x_0\in(a,b)$.
+
+\subsubsection{Discontinuità eliminabili}
+\begin{definition}
+    È il caso in cui esiste $\lim_{x\rightarrow x_0}f(x)$ ma non coincide con $f(x_0)$.
+\end{definition}
+
+Si chiama discontinuità eliminabile perché è sufficiente modificare il valore di $f$ in $x_0$ per ottenere una funzione continua. La modifica crea una nuova funzione del tipo
+\begin{equation*}
+    \Tilde{f}=
+    \begin{cases}
+        f(x), &\text{se } x\neq x_0\\
+        \lim_{x\rightarrow x_0}f(x), &\text{se } x=x_0.
+    \end{cases}
+\end{equation*}
+
+\begin{example}
+    Sia $f$ definita come
+    \begin{equation*}
+        f(x)=
+        \begin{cases}
+            x+1, &\text{se } x\neq 2,\\
+            1, &\text{se } x=2.
+        \end{cases}
+    \end{equation*}
+    Il limite sinistro e destro sono uguali, ovvero:
+    \begin{equation*}
+        \begin{matrix}
+            \lim_{x\rightarrow 2^+}f(x)=3,\\
+            \\
+            \lim_{x\rightarrow 2^-}f(x)=3,
+        \end{matrix}
+    \end{equation*}
+    ma diversi da $f(2)=1$. Per eliminare la discontinuità è sufficiente definire $\Tilde{f}$ (prolungata in 2) come segue:
+    \begin{equation*}
+        \Tilde{f}(x)=
+        \begin{cases}
+            x+1, &\text{se } x\neq 2,\\
+            3, &\text{se } x=2.
+        \end{cases}
+    \end{equation*}
+\end{example}
+
+\subsubsection{Discontinuità di salto (o di prima specie)}
+\begin{definition}
+    È il caso in cui, dato un qualsiasi $x_0$, il $\lim_{x\rightarrow x_0}f(x)$ esiste ma
+    \begin{equation*}
+        \lim_{x\rightarrow x_0^+}f(x)\neq\lim_{x\rightarrow x_0^-}f(x).
+    \end{equation*}
+\end{definition}
+\begin{example}
+    La funzione valore assoluto $f(x)=|x|$ ha una discontinuità di salto in 0:
+    \begin{equation*}
+        \lim_{x\rightarrow x_0^+}|x|>\lim_{x\rightarrow x_0^-}|x|.
+    \end{equation*}
+\end{example}
+
+\subsubsection{Discontinuità di seconda specie}
+Tutte le altre discontinuità. È sufficiente che il limite destro o sinistro non esistano o siano infiniti.
+
+\subsection{Teoremi sulle funzioni continue}
+\begin{theorem}[Teorema di esistenza degli zeri]\label{th:esistenza_degli_zeri}
+    Sia $f$ continua in $[a,b]$. Se $f(a)\cdot f(b)<0$, allora esiste almeno un punto $x_0\in(a,b)$ tale che $f(x_0)=0$.
+\end{theorem}
+\begin{proof}
+    Metodo di bisezione. PG 56.
+\end{proof}
+
+\begin{theorem}[Teorema di Weistrass]
+    Se $f$ è continua in $[a,b]$ (insieme chiuso e limitato) allora ammette massimo e minimo, ovvero:
+    \begin{equation*}
+        \exists\, x_m,\, x_M\in[a,b]\text{ t.c. } f(x_m)\leq f(x)\leq f(x_M),\,\forall x\in[a,b].
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    PG 59.
+\end{proof}
+
+\subsubsection{Teoremi dei valori intermedi}
+
+\begin{theorem}[Primo teorema dei valori intermedi]
+    Una funzione $f$ continua in $[a,b]$ assume tutti i valori compresi tra $f(a)$ e $f(b)$.
+\end{theorem}
+
+Un'estensione del Primo teorema dei valori intermedi è la seguente:
+
+\begin{proposition}
+    Una funzione $f$ continua in un intervallo $I$ (chiuso, aperto, limitato o illimitato) assume tutti i valori compresi tra $\underset{I}{\inf f}=\inf\{f(x)\colon x\in I\}$ e $\underset{I}{\sup f}=\sup\{f(x)\colon x\in I\}$.
+\end{proposition}
+
+\begin{theorem}[Secondo teorema dei valori intermedi]
+    Se $f$ è continua in $[a,b]$, allora
+    \begin{equation*}
+        f([a,b])=\left[\underset{[a,b]}{\min}f,\, \underset{[a,b]}{\max}f\right].
+    \end{equation*}
+\end{theorem}
+
+\subsubsection{Continuità delle funzioni inverse}
+
+\begin{proposition}
+    Sia $I$ un intervallo (aperto, chiuso, limitato o non) e $f$ una funzione monotona su $I$. Allora
+    \begin{center}
+        $f$ è continua s.se $f(I)$ è un intervallo.
+    \end{center}
+\end{proposition}
+
+\begin{theorem}\label{th:funzione_inversa_continua}
+    Sia $f\colon (a,b)\rightarrow\mathbb R$ continua e strettamente monotona. Allora
+    \begin{center}
+        $f^{-1}:f((a,b))\rightarrow(a,b)$ è continua.
+    \end{center}
+\end{theorem}
+
+Il Teorema \ref{th:funzione_inversa_continua} implica che le funzioni trigonometriche sono continue sul loro dominio.
+
+\subsection{Asintoti}
+\begin{definition}[Asintoto verticale]
+    Sia $f(x)$ definita in $[a,b]$ ed $x_0\in[a,b]$ punto di accumulazione di $[a,b]$. $x_0$ e' un asintoto verticale di $f(x)$ se
+    \begin{equation*}
+        \underbrace{\lim_{x\rightarrow x_0^-}f(x)=\pm\infty}_{\text{asintoto verticale sinistro}}\text{ e$\backslash$o } \underbrace{\lim_{x\rightarrow x_0^+}f(x)=\pm\infty}_{\text{asintoto verticale destro}}.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Asintoto orizzontale]
+    Sia $f(x)$ definita in $[a,b]$. $L\in\mathbb R$ e' un asintoto orizzontale destro di $f(x)$ se
+    \begin{equation*}
+        \lim_{x\rightarrow+\infty}f(x)=L\in\mathbb R.
+    \end{equation*}
+    $x_0$ e' un asintoto orizzontale sinistro di $f(x)$ se
+    \begin{equation*}
+        \lim_{x\rightarrow-\infty}f(x)=L\in[a,b].
+    \end{equation*}
+\end{definition}
+
+\begin{property}
+    La funzione puo' presentare:
+    \begin{itemize}
+        \item due asintoti orizzontali, uno sinistro e uno destro, con equazioni diverse,
+        \item un asintoto orizzontali sinistro e destro con la stessa equazione,
+        \item un asintoto orizzontale solo a destra o solo a sinistra,
+        \item nessun asintoto orizzontale.
+    \end{itemize}
+\end{property}
+
+\begin{definition}[Asintoto obliquo]
+    Sia $f(x)$ definita in $[a,b]$. $y=mx+q$, con $m,q\in\mathbb R$ e $m\neq 0$, e' l'equazione dell'asintoto obliquo destro di $f(x)$ se
+    \begin{equation*}
+        \lim_{x\rightarrow+\infty}f(x)=\pm\infty,\quad \lim_{x\rightarrow+\infty}\frac{f(x)}{x}=m\neq 0\quad \text{e}\quad \lim_{x\rightarrow+\infty}[f(x)-mx]=q
+    \end{equation*}
+\end{definition}
+
+La definizione di asintoto obliquo sinistro e' per $x\rightarrow-\infty$.
+
+\begin{property}
+    La funzione puo' presentare:
+    \begin{itemize}
+        \item due asintoti obliqui, uno sinistro e uno destro, con equazioni diverse,
+        \item un asintoto obliquo sinistro e destro con la stessa equazione,
+        \item un asintoto obliquo solo a destra o solo a sinistra,
+        \item nessun asintoto obliquo.
+    \end{itemize}
+\end{property}

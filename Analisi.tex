@@ -1,0 +1,276 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm, amssymb, amsmath}
+\numberwithin{equation}{section}
+\usepackage{blindtext}
+\usepackage{systeme}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage[letterpaper, left=2cm, right=2cm, heightrounded]{geometry}
+\usepackage[overload]{empheq}
+\usepackage{array}
+\usepackage{cancel}
+\usepackage[bottom]{footmisc}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{mathtools}
+\usepackage{yhmath}
+\usepackage{ccaption}
+\usepackage[section]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{matlab-prettifier}
+\usepackage{float}
+\usepackage{calc}
+\usepackage{soul}
+\usepackage{mathtools}
+\usepackage{ulem}
+\usepackage{diagbox}
+\usepackage{hyperref}
+\usepackage{tabto}
+\usepackage{glossaries}
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage[mathscr]{euscript}
+
+\DeclareUnicodeCharacter{2212}{-}
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+%\def\toclevel@paragraph{6}
+\def\toclevel@subparagraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corollario}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{remark}{Osservazione}[section]
+\newtheorem{example}{Esempio}[section]
+\newtheorem{property}{Proprietà}[section]
+\newtheorem{proposition}{Proposizione}[section]
+\newtheorem{exercise}{Esercizio}[section]
+
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+
+\newcommand{\verteq}{\rotatebox{90}{$=$}}
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}
+\newcommand{\equaltoup}[2]{\overset{\scriptstyle\underset{\mkern4mu\verteq}{#2}}{#1}}
+
+\newcommand{\vertin}{\rotatebox{-90}{$\,\in$}}
+\newcommand{\into}[2]{\underset{\scriptstyle\overset{\mkern4mu\vertin}{#2}}{#1}}
+
+\newcommand{\vertneq}{\rotatebox{90}{$\,\neq$}}
+\newcommand{\neqto}[2]{\underset{\scriptstyle\overset{\mkern4mu\vertneq}{#2}}{#1}}
+
+\newcommand{\Vertrarrow}{\rotatebox{-90}{$\Rightarrow$}}
+\newcommand{\Vrightarrow}[2]{\underset{\scriptstyle\overset{\mkern4mu\Vertrarrow}{#2}}{#1}}
+
+\newcommand{\vertrarrow}{\rotatebox{-90}{$\,\rightarrow$}}
+\newcommand{\vrightarrow}[2]{\underset{\scriptstyle\overset{\mkern4mu\vertrarrow}{#2}}{#1}}
+
+\newcommand{\vertrarrowup}{\rotatebox{90}{$\,\rightarrow$}}
+\newcommand{\vrightarrowup}[2]{\underset{\scriptstyle\overset{\mkern4mu\vertrarrowup}{#2}}{#1}}
+
+\newcommand{\vertIff}{\rotatebox{-90}{$\iff$}}
+
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeglossaries
+
+\newglossaryentry{insieme_discreto}{
+    name = insieme discreto,
+    description = Un insieme discreto è un insieme nel quale è possibile stabilire chi è il successivo di un numero
+}
+
+\newglossaryentry{differenziale}{
+    name=differenziale,
+    description={Il differenziale di un funzione quantifica la variazione infinitesimale della funzione rispetto ad una variabile indipendente, ovvero: rappresenta la principale parte di cambiamento in funzione rispetto alla variabile indipendente. Per una funzione $y=f(x)$ di una sola variabile $x$, il differenziale $dy$ e' rappresentato come
+    \begin{equation*}
+        dy=f'(x)dx,
+    \end{equation*}
+    dove $f'(x)$ e' la derivata di $f$ rispetto ad $x$ e $dx$ e' una variabile reale addizionale}
+}
+
+\newglossaryentry{R0+}{
+    name=$\mathbb R_0^+$,
+    description = {$\mathbb R_0^+ = \mathbb R^+\cup\{0\}$}
+}
+
+\newglossaryentry{R}{
+    name=$\mathbb R$,
+    description ={$\mathbb R = \mathbb Q \cup\{x:x\notin \mathbb Q\}$}
+}
+
+\newglossaryentry{Rext}{
+    name = $\overline{\mathbb R}$,
+    description = {$\overline{\mathbb R}=\mathbb R\cup\{\pm\infty\}$ è detto $\mathbb R$ esteso}
+}
+
+\newglossaryentry{ascissa}{
+    name = ascissa,
+    description = {L'asse delle ascisse e' orizzontale e costituisce la retta di riferimento (solitamente caratterizzata dalla lettera $x$)}
+}
+
+\newglossaryentry{ordinata}{
+    name = ordinata,
+    description = {L'asse delle ordinate e' verticale e costituisce la retta ortogonale alla retta di riferimento, (solitamente caratterizzata dalla lettera $y$)}
+}
+
+\newglossaryentry{radianti}{
+    name = radianti,
+    description = {Unità di misura dell'ampiezza degli angoli del Sistema Internazionale di unità di misura. Tale misura rappresenta il rapporto tra la lunghezza dell'arco di circonferenza tracciato dall'angolo e la lunghezza del raggio di tale circonferenza}
+}
+
+\newglossaryentry{reciproco}{
+    name = reciproco,
+    description = {Data una funzione $f(x)$, la sua reciproca è la funzione $\frac{1}{f(x)}$. Le caratteristiche principali della funzione reciproca sono che esiste sempre (a differenza della funzione inversa) e $\frac{1}{f(x)}\cdot f(x)=1$}
+}
+
+\newglossaryentry{punto stazionario}{
+    name=punto stazionario,
+    description = {Sia $f$ definita su $[a,b]$. Un punto $x_0\in[a,b]$ e' stazionario se $f'(x_0)=0$}
+}
+
+\newglossaryentry{Ck(I)}{
+    name = $C^k(I)$,
+    description={Insieme delle funzioni derivabili $k$ volte su $I$. Se $k=1$ allora delle funzioni continue su $I$}
+}
+
+\newglossaryentry{polinomi}{
+    name=polinomi,
+    description={Un polinomio è una funzione composta da costanti e variabili combinate usando soltanto addizione, sottrazione e moltiplicazione, gli esponenti delle variabili sono valori interi non negativi. Un polinomio e' una somma di \gls{monomi}. Un esempio di polinomio è $p(x)=x^2-3x+5$}
+}
+
+\newglossaryentry{monomi}{
+    name = monomi,
+    description = {Un monomio è un'espressione algebrica costituita da un coefficiente e una parte letterale dove tra le lettere compaiono moltiplicazioni e elevamenti a potenza aventi esponente naturale (esempi: $x^2,\, 3x,\, x^3y$). In alcuni casi è ammessa la presenza nel monomio di esponenti negativi e si parla di "monomi frazionari" (o "fratti"): in questo caso, il monomio è in realtà una frazione algebrica (esempio: $2x^{2}y^{-3}z=2{\frac {x^{2}z}{y^{3}}}$)}
+}
+
+\newglossaryentry{q}
+{
+    name=$\mathbb Q$,
+    description={$\mathbb Q = \left\{\frac{p}{q}:p\in\mathbb Z,\, q\in\mathbb N \right\}$}
+}
+
+\newglossaryentry{complesso coniugato}{
+    name=complesso coniugato,
+    description={Un numero omplesso coniugato (o coniugio) di un numero complesso il numero ottenuto dal primo cambiando il segno della parte immaginaria. Ovvero, dato il numero complesso
+    \begin{equation*}
+        z = x +iy
+    \end{equation*}
+    il complesso coniugato di $z$ e' definito come
+    \begin{equation*}
+        z*=x-iy.
+    \end{equation*}
+    }
+}
+
+\newglossaryentry{quadrato perfetto}{
+    name=quadrato perfetto,
+    description={Un trinomio può essere un quadrato perfetto se soddisfa le seguenti condizioni:
+    \begin{itemize}
+        \item Il primo termine è un quadrato perfetto.
+        \item Il terzo termine è un quadrato perfetto.
+        \item Il termine centrale è 2 o −2 per il prodotto della radice quadrata del primo termine e della radice quadrata del terzo termine.
+    \end{itemize}
+    Quando riferito ad un numero, ovvero nel caso del primo e terzo termine, allora un quadrato perfetto è un numero intero che può essere espresso come il quadrato di un altro numero intero, ovvero un numero la cui radice quadrata principale è anch'essa un numero intero. Un numero è un quadrato perfetto quando, scomposto, presenta tutti esponenti pari: scrivendo il numero come prodotto di potenze di numeri primi ottenuti dalla scomposizione si ha che la radice quadrata di tale prodotto è intera se tutti i fattori si estraggono di radice, ciò può accadere solo se l'esponente di ogni fattore è pari}
+}
+
+\newglossaryentry{spazio normato}{
+    name = spazio normato,
+    description = {Uno spazio vettoriale $X$ è normato se ogni suo componente (vettore) ha definita una lunghezza (ovvero una norma). Lo spazio normato sarà denotato con $(X,d)$}
+}
+
+\newglossaryentry{sottosuccessione}{
+    name = sottosuccessione,
+    description = {Sottoinsieme della successione dalla quale e' estratta. La sottosuccessione ha come immagine gli indici della successione che seleziona. Vedere Definizione \ref{def:sottosuccessione}}
+}
+
+\newglossaryentry{sottospazio}{
+    name = sottospazio vettoriale,
+    description = {Un sottospazio vettoriale e' un sottoinsieme di uno spazio vettoriale ereditandone le proprieta'.}
+}
+
+\newglossaryentry{infinitesimo}{
+    name = infinitesimo,
+    description = {Gli infinitesimi sono numeri inifinitamente piccoli introdotti (da Leibniz) per il calcolo infinitesimale. Hanno le seguenti proprietà utili al calcolo infinitesimale:
+    \begin{itemize}
+        \item gli infinitesimi sono minori di qualsiasi numero reale positivo eppure ancora maggiori di zero,
+        \item per gli infinitesimi valgono le ordinarie regole dell'algebra.
+    \end{itemize}
+    Su queste due proprietà si basa il calcolo infinitesimale nella formulazione di Leibniz
+    }
+}
+
+\newglossaryentry{asse reale}{
+    name = asse reale,
+    description = {Data la completezza di $\mathbb R$ (Assioma \ref{th:assioma_completezza}), è possibile individuare una corrispondenza biunivoca tra i reali ed i punti di una retta. Ad un reale corrisponde uno ed un solo punto sulla retta e viceversa.
+    L'asse reale è la rappresentazione dei numeri complessi con parte immaginaria nulla sull’asse delle ascisse nel piano. Poiché in tale rappresentazione a ogni punto $(x, y)$ corrisponde biunivocamente il numero complesso $x + iy$, i numeri complessi con parte immaginaria nulla hanno la forma $x + i\cdot 0$ e quindi si identificano con i numeri reali. L'asse reale risulta essere, quindi, il sottospazio unidimensionale reale generato dall'unità reale 1}
+}
+
+\newglossaryentry{funzione infinitesima}{
+    name = funzione infinitesima,
+    description ={Una funzione $f(x)$ è infinitesima per $x\rightarrow x_0$, con $x_0$ punto di accumulazione, se $f(x)\underset{x\rightarrow x_0}{\longrightarrow}0$}
+}
+
+\newglossaryentry{base ortonormale}{
+    name = base ortonormale,
+    description = {Una base ortonormale di uno spazio vettoriale munito di prodotto scalare definito positivo è una base composta da vettori di norma unitaria e ortogonali tra loro, ossia una base ortogonale di vettori di norma uno. Più precisamente è possibile dare la seguente definizione:\\
+    Sia $V$ uno spazio vettoriale di dimensione finita sul campo $K$, nel quale sia definito un prodotto scalare. Una base ortogonale per $V$ è una base composta da vettori $\mathbf {v} _{1}\cdots \mathbf {v} _{n}$ a due a due ortogonali, cioè tali che:
+    \begin{equation*}
+        \langle \mathbf {v} _{i},\mathbf {v} _{j}\rangle =0,\quad i\neq j.
+    \end{equation*}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+\begin{document}
+
+\title{Appunti Analisi}
+\author{Matteo Menichetti}
+\maketitle
+
+\tableofcontents
+
+\printglossary
+
+\include{Analisi1/main}
+
+\include{Analisi2/main}
+
+\end{document}

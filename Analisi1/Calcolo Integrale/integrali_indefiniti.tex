@@ -1,0 +1,435 @@
+\subsection{Integrali indefiniti}
+\begin{definition}[Primitiva]
+    Sia $f\colon (a,b)\rightarrow\mathbb R$. La funzione $F$ è una primitiva di $f$ in $(a,b)$ se è derivabile in $(a,b)$ e se
+    \begin{equation*}
+        F'(x)=f(x)\quad\forall x\in(a,b).
+    \end{equation*}
+\end{definition}
+
+\begin{remark}
+    Una primitiva è il processo inverso della derivazione. $f$ è la primitiva di $f'$.
+\end{remark}
+
+\begin{definition}[Integrale indefinito]
+    Sia $f\colon (a,b)\rightarrow\mathbb R$ ed $F$ una primitiva qualsiasi di $f$. L'integrale indefinito è definito come
+    \begin{equation*}
+        \int f(x) \; dx=F(x)+c,\quad c\in\mathbb R.
+    \end{equation*}
+\end{definition}
+
+L'integrale indefinito rappresenta l'insieme delle possibili primitive di $f$ definite su $(a,b)$.
+
+La funzione $f(x)$ è detta funzione integranda ed $x$ variabile d'integrazione.
+
+\begin{property}[Linearità dell'integrale indefinito]
+    Definite opportune $f$ e $g$, dalla linearità della somma di derivate 
+    \begin{equation*}
+        (\alpha F(x)+\beta G(x))'=\alpha F'(x)+\beta G'(x),
+    \end{equation*}
+    è ottenuto che
+    \begin{equation*}
+        \int(\alpha f(x)+\beta g(x)) \; dx = \alpha \int f(x)dx +\beta \int g(x) \; dx.
+    \end{equation*}
+\end{property}
+
+\begin{remark}
+    Una conseguenza della linearità dell'integrale indefinito è
+    \begin{equation*}
+        \int\alpha f(x) \; dx = \alpha\int f(x) \; dx.
+    \end{equation*}
+    Ciò è dovuto alle regole di derivazione: $a$ è una costante e non dipende da $x$.
+\end{remark}
+
+\begin{property}
+    \begin{equation*}
+        \int f(x)g(x)dx\neq\int f(x) \; dx\int g(x)dx.
+    \end{equation*}
+\end{property}
+
+Non è sempre conveniente scomporre la funzione integranda come somma di più funzioni (vedere il seguente esempio).
+\begin{example}
+    \begin{equation*}
+        \int(1+\tan^2x)dx=\int 1dx+\int\tan^2xdx = x+\int\tan^2x \; dx= x + \int\tan^2 xdx=x+\tan x-x+c=\tan x+c,
+    \end{equation*}
+    tuttavia $\int\tan xdx$ non è un integrale diretto ed il precedente risultato può essere ottenuto come
+    \begin{equation*}
+        \int(1 + \tan^2x) \; dx = \int \frac{1}{\cos^2x} \; dx\tan x + c.
+    \end{equation*}
+\end{example}
+
+\subsubsection{Formula di integrazione per parti}
+\begin{definition}[Formula di integrazione per parti]
+    Definite $F$ e $G$ in modo opportuno,
+    \begin{equation}\label{eq:formula_integrazione_parti}
+        \int  F'(x)G(x) \; dx=F(x)G(x) - \int F(x)G'(x)dx.
+    \end{equation}
+\end{definition}
+
+È necessario osservare che applicando due volte la formula di integrazione per parti con $F'(x)=G'(x)$ e $G(x)=F(x)$ allora è ottenuto l'integrale di partenza.
+
+La scelta di $F'(x)$ e di $G(x)$ è determinata dalla facilità di integrazione di una e di derivazione dell'altra funzione.
+
+\begin{example}
+    \begin{equation*}
+        \int \underset{G}{x} \underset{F'}{e^x} \; dx = xe^x - \int e^x \; dx=xe^x -e^x + c.
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    A volte è necessario applicare più volte la regola di integrazione per parti.
+    \begin{equation*}
+        \int \underset{G}{x^2}\underset{F'}{\sin x}dx=-x^2\cos x+\underbrace{2\int\underset{F'}{x}\underset{G}{\cos x} \; dx}_{\footnotemark}=-x^2\cos x + 2 \left[\underset{G}{x}\underset{F}{\sin x} - \int \underset{G'}{1}\cdot\underset{F}{\sin x} \; dx \right]=-x^2\cos x+ 2x\sin x + 2\cos x + c.
+    \end{equation*}
+    \footnotetext{Se la formula viene applicata con $F'(x) = x$ e $G(x)=\cos x$ allora ci sarebbe un ritorno al passo precedente.}
+\end{example}
+
+\begin{example}
+    In casi particolari è utile utilizzare la regola di integrazione per parti in modo circolare, ad esempio con funzioni esponenziali, trigonometriche, prodotto tra funzioni goniometriche.
+    \begin{equation*}
+        \int e^x\sin x\, dx= e^x\sin x - \int e^x \cos x\, dx= e^x\sin x - e^x\cos x - \int e^x \sin x\, dx
+    \end{equation*}
+    quindi
+    \begin{equation*}
+        \int e^x\sin x\, dx= e^x\sin x - e^x\cos x - \int e^x \sin x\, dx.
+    \end{equation*}
+    Portando l'integrale al primo membro
+    \begin{equation*}
+        2\int e^x\sin x\, dx= e^x\sin x - e^x\cos x + c.
+    \end{equation*}
+    quindi
+    \begin{equation*}
+        \int e^x\sin x\, dx= \frac{e^x}{2}(\sin x - e^x\cos x) + c.
+    \end{equation*}
+\end{example}
+
+\subsubsection{Integrazione per sostituzione}
+Dalla regola di derivazione delle funzioni composte è possibile affermare che per costruire la primitiva di $f(g(t))g'(t)$ è sufficiente prendere una primitiva di $F$ di $f$ e calcolare $F(g(t))$, quindi è data la seguente definizione.
+\begin{definition}[Formula di integrazione per parti]
+    \begin{equation*}
+        \int f(g(t))g'(t)\, dt= \int f(x)\, dx \text{ con } x=g(t),\, g'(t)\, dt=dx.
+    \end{equation*}
+\end{definition}
+
+Quando è effettuata la sostituzione $g(t)=x$ occorre ricordare che il differenziale $dt$ cambia secondo $g'(t)\, dt = 1\cdot dx$. Quindi
+\begin{equation*}
+        \int f(g(t))g'(t)\, dt = \int f(x)\, dx = F(x) + c \overset{x=g(t)}{=}F(g(t)) + c.
+\end{equation*}
+
+\begin{example}
+    Con $f(x)=x^2$ e $g(t)=\ln t$,
+    \begin{equation*}
+        \int\frac{\ln^2t}{t}\,dt= \int\underset{f(g(x))}{\ln^2 t}\cdot\underset{g'(x)}{\frac{1}{t}}\, dt \underset{g'(t)dt=dx}{\overset{x=g(t)}{=}}\int x^2\, dx = \frac{x^3}{3}+c = \frac{\ln^3 t}{3}+c.
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    \begin{equation*}
+        \begin{matrix}
+            \int\sin(2x+1)&\Rightarrow
+            & y=2x+1,\, dy=2dx &\Rightarrow&\int\sin y\, \frac{dy}{2}=-\frac{\cos(y)}{2}=-\frac{\cos(2x+1)}{2}+c,\\\\
+            \int \cos(e^x)e^x\,dx &\Rightarrow & z=e^x,\, dz=e^x\, dx &\Rightarrow& \int\cos(e^x) e^x\, dx \overset{z=e^x}{=}\int\cos z\, dz= \sin e^x+c\\\\
+            \int\frac{e^{\sqrt{x-3}}}{\sqrt{x-3}}\, dx &\Rightarrow& t=\sqrt{x-3},\, 2dt=\frac{1}{2\sqrt{x-3}} &\Rightarrow& 2 \int e^t dt =  2 e^t+c = 2e^{\sqrt{x-3}} + c\\\\
+            \int x^2\sqrt{1-x^3} &\Rightarrow& t = 1-x^3,\, dt=-3x^2\rightarrow x^2\, dx= -\frac{dt}{3} &\Rightarrow& -\frac{1}{3}\int\sqrt{t} dt = -\frac{1}{3}\frac{2}{3}t^{\frac{3}{2}}+c =  -\frac{2}{9}\sqrt{(1-x^3)^3}+ c
+        \end{matrix}
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    \begin{equation*}
+        \int\frac{\tan^2x+1}{\tan x}dx = \int \frac{\frac{1}{\cos^2x}}{\tan x} dx = \left[y = \tan x,\; dy = \frac{1}{\cos^2x} \right] = \int \frac{1}{y}dy = \log(|y|) = \log(|\tan x|).
+    \end{equation*}
+\end{example}
+
+\subsubsection{Funzioni razionali - Metodo dei fratti semplici}
+Il metodo dei fratti semplici è applicato per calcolare primitive di funzioni razionali, ovvero della forma
+\begin{equation}\label{eq:funzione_razionale}
+    \frac{P(x)}{Q(x)}
+\end{equation}
+dove $P$ e $Q$ sono \gls{polinomi}. 
+
+\textbf{N.B.: Il metodo dei fratti semplici consiste nel trasformare la frazione in una somma di frazioni più semplici, per le quali sarà più semplice trovare la primitiva. Ciò sarà fatto arrivando ad integrali razionali elementari, i fratti semplici, utilizzando la riduzione delle frazioni.}
+
+Saranno considerati i casi in cui il coefficiente della potenza più alta di $Q$ è uguale ad 1.
+
+\subsubsubsection{Riduzione del grado del numeratore}
+\begin{proposition}
+    Data (\ref{eq:funzione_razionale}) con numeratore di grado inferiore al grado del denominatore esistono unici i polinomi $\alpha(x)$ e $r(x)$ tali che
+    \begin{equation*}
+        P(x) =  \alpha(x) Q(x) + r(x),
+    \end{equation*}
+    con
+    \begin{center}
+        grado($r(x)$) $<$ grado($Q(x)$).
+    \end{center}
+\end{proposition}
+
+\begin{remark}
+    Siano $P(x)$ e $Q(x)$ due \gls{polinomi}, allora
+    \begin{equation*}
+        \frac{P(x)}{Q(x)}=\alpha(x)+\frac{r(x)}{Q(x)},
+    \end{equation*}
+    quindi segue
+    \begin{equation*}
+        \int \frac{P(x)}{Q(x)} = \int\alpha(x)\, dx + \int\frac{r(x)}{Q(x)} dx,
+    \end{equation*}
+    dove di $\alpha(x)$ sappiamo calcolare la primitiva.
+\end{remark}
+
+I polinomi $\alpha(x)$ e $r(x)$ sono calcolabili tramite l'algoritmo di divisione fra polinomi.
+
+\begin{definition}[Algoritmo di divisione tra polinomi]\label{def:algoritmo_divisione_polinomi}
+    Siano $P(x)=p_nx^n+\hdots+ p_0$ e $Q(x)=q_mx^m+\hdots+q_0$ due polinomi, allora
+    \begin{enumerate}
+        \item I polinomi sono espressi esplicitando anche i monomi nulli.
+        \item Il termine di grado massimo di $P(x)$ è diviso per il  termine di grado più alto di $Q(x)$ ed è scritto sotto sotto $Q(x)$.\\
+        \begin{tabular}{c|c}
+             $ p_nx^n+\hdots+ p_0$ & $q_mx^m+\hdots+q_0$\\
+             \cline{2-2}\\
+            & $\frac{p_nx^n}{q_mx^m}=a_kx^k$
+        \end{tabular}
+        \item E' moltiplicato $Q(x)$ per $a_kx^k$, incolonnato sotto $P(x)$ e sottratto\\
+        \begin{tabular}{c|c}
+             $ p_nx^n+\hdots+ p_0$ & $q_mx^m+\hdots+q_0$\\
+             \cline{2-2}\\
+           $q_ma_kx^{m+k}+\hdots + b_0q_kx^k$ & $a_kx^k$\\
+            \cline{1-1}\\
+            $r_{n-1}+\hdots+r_0$&\\
+        \end{tabular}
+        \item Se il grado di questo polinomio differenza $R_1(x)$ è maggiore o uguale a quello di $Q(x)$ si ripetono le operazioni da 2 a 4 considerando adesso $R_1$ come dividendo e aggiungendo il termine 
+        \begin{equation*}
+            \frac {r_{n-1}x^{n-1}}{b_{m}x^{m}}=q_{k-1}x^{k-1}
+        \end{equation*}
+        a destra del termine $q_{k}x^{k}$, come addendo successivo.
+        \item Quando si sarà raggiunto un polinomio $R_{i}(x)$ di grado inferiore a $Q(x)$, allora tale polinomio $R_{i}(x)$ sarà il resto $R(x)$ della divisione; il polinomio
+        \begin{equation*}
+             Q(x)=q_{k}x^{k}+q_{k-1}x^{k-1}+\hdots+q_{0},
+        \end{equation*}
+        formatosi mano a mano sotto $Q(x)$, sarà invece il polinomio quoziente. 
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Sia $\frac{P(x)}{Q(x)}=\frac{3x^2-5}{x-2}$, allora\\
+    \begin{center}
+        \begin{tabular}{ccc|c}
+             $3x^2$ & &$-5$ & $x-2$\\
+             \cline{4-4}\\
+           $-3x^2$ & $+6x$ & & $3x+6$\\
+            \cline{1-3}\\
+            & $6x$ & $-5$&\\
+            & $-6x$ &$+12$&\\
+            \cline{2-3}\\
+            && $7$&
+        \end{tabular}
+    \end{center}
+    e quindi
+    \begin{equation*}
+        \frac{P(x)}{Q(x)}=\frac{3x^2-5}{x-2}= \underbrace{3x+6}_{a(x)}+\frac{\overbrace{7}^{r(x)}}{\underbrace{x-2}_{Q(x)}}.
+    \end{equation*}
+\end{example}
+
+\subsubsubsection{Frazioni elementari}
+Sono definiti tre integrali elementari che saranno i termini principali del metodo dei fratti semplici.
+\begin{definition}[Elementare 1]
+    \begin{equation*}
+        \int\frac{1}{ax+b}\, dx= \frac{1}{a}\ln|ax+b|+c.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Elementare 2]
+    \textbf{Sia} $\boldsymbol{x^2+bx+c}$ un polinomio di secondo grado \textbf{con} $\boldsymbol{\Delta<0}$, allora
+    \begin{equation*}
+        \int\frac{1}{x^2+bx+c}\,dx = \frac{2}{\sqrt{-\Delta}}\arctan\left(\frac{2x+b}{\sqrt{-\Delta}}\right)+ c.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Elementare 3]
+    \begin{equation*}
+        \int\frac{2x+b}{x^2+bx+c}\, dx=\ln|x^2+bx+c| + C,
+    \end{equation*}
+    vale qualsiasi sia il valore di $\Delta$.
+\end{definition}
+
+\begin{definition}[Elementare 4]
+    Con $n>1$ (se $n=1$ è il caso elementare 1)
+    \begin{equation*}
+        \int\frac{1}{(x-x_0)^n}\, dx=[t=x-x_0,\,  dt=dx]=\int\frac{1}{t^n}\, dt\overset{\footnotemark}{=}\frac{1}{(n-1)(x-x_0)^{n-1}}+c.
+    \end{equation*}
+\end{definition}
+\footnotetext{Utilizzate le formule d'integrazione per le potenze.}
+
+\subsubsubsection{Metodo fratti semplici per funzioni razionali con denominatore di secondo grado e numeratore di primo grado}
+I polinomi del tipo
+\begin{equation}\label{eq:polinomio_fratti_semplici}
+    \frac{px+q}{x^2+bx+c}
+\end{equation}
+si integrano nei seguenti modi.
+
+\paragraph{Caso $\Delta
+>0$:} Se il denominatore ha $\Delta>0$ allora esistono $A$ e $B$ tali che
+\begin{equation*}
+    \frac{px+q}{x^2+bx+c} = \frac{px+q}{(x-x_1)(x-x_2)} = \frac{A}{(x-x_1)} + \frac{B}{(x-x_2)}
+\end{equation*}
+e quindi
+\begin{equation*}
+    \boldsymbol{\int\frac{px+q}{(x-x_1)(x-x_2)}\,dx =} A\int\frac{1}{(x-x_1)}\,dx + B\int\frac{1}{(x-x_2)}\,dx =\boldsymbol{A\ln|x-x_1|+B\ln|x-x_2|+C.}
+\end{equation*}
+Da
+\begin{equation*}
+    \frac{A}{(x-x_1)} + \frac{B}{(x-x_2)}=\frac{A(x-x_2)+B(x-x_1)}{(x-x_1)(x-x_2)}\overset{(\ref{eq:polinomio_fratti_semplici})}{=}\boldsymbol{\frac{(A+B)x+(-Ax_2-Bx_1)}{(x-x_1)(x-x_2)}},
+\end{equation*}
+$A$ e $B$ sono trovati risolvendo il seguente sistema:
+\begin{equation*}
+    \begin{cases}
+        A+B &= p\\
+        -Ax_1-Bx_2 &= q
+    \end{cases}
+\end{equation*}
+
+\paragraph{Caso $\Delta<0$:} Se il denominatore non può essere scomposto allora esistono $A$ e $B$ tali che
+\begin{equation*}
+    \frac{px+q}{x^2+bx+c}= \frac{A(2x+b)}{x^2+bx+c} + \frac{B}{x^2+bx+c}.
+\end{equation*}
+Quindi
+\begin{equation*}
+    \boldsymbol{\int\frac{px+q}{x^2+bx+c}=}A\int\frac{2x+b}{x^2+bx+c}\,dx + B\int\frac{1}{x^2+bx+c}\, dx = \boldsymbol{A\ln(x^2+bx+c)+\frac{2B}{\sqrt{-\Delta}}\arctan\left(\frac{2x+b}{\sqrt{-\Delta}}\right)+C.}
+\end{equation*}
+Da
+\begin{equation*}
+    \frac{A(2x+b)}{x^2+bx+c} + \frac{B}{x^2+bx+c} = \frac{2Ax +(bA+B)}{x^2+bx+c},
+\end{equation*}
+$A$ e $B$ sono trovati risolvendo il seguente sistema:
+\begin{equation*}
+    \begin{cases}
+        2A &= p\\
+        bA + B &= q
+    \end{cases}
+\end{equation*}
+
+\paragraph{Caso $\Delta=0$:} In questo caso il denominatore ha radice doppia, allora esistono $A$ e $B$ tali che
+\begin{equation*}
+    \boldsymbol{\frac{px+q}{x^2+bx+c}} = \frac{px+q}{(x-x_1)^2} = \frac{A}{(x-x_1)} + \frac{B}{(x-x_1)^2} = \boldsymbol{\frac{A(x-x_1)+B}{(x-x_1)^2}},
+\end{equation*}
+quindi
+\begin{equation*}
+    \int\frac{px+q}{x^2+bx+c}\,dx = A\ln|x-x_1| - \frac{B}{(x-x_1)}+C.
+\end{equation*}
+Da
+\begin{equation*}
+    \frac{A(x-x_1)+B}{(x-x_1)^2} = \frac{Ax -Ax_1 + B}{(x-x_1)^2}
+\end{equation*}
+$A$ e $B$ sono trovati risolvendo il seguente sistema:
+\begin{equation*}
+    \begin{cases}
+        A &= p\\
+        -Ax_1 + B &=q
+    \end{cases}
+\end{equation*}
+
+\subsubsubsection{Funzioni razionali con denominatore di grado maggiore di 2}
+È comunque utilizzato il metodo dei fratti semplici. Quindi e' necessario fattorizzare il denominatore in polinomi di primo e secondo grado irriducibili, dove ad ogni ad ogni fattore del denominatore corrisponde un numero di fratti semplici pari al grado del denominatore stesso. Ovvero: se il grado del denominatore e' $N$, saranno presenti $N$ fratti semplici e $N$ costanti da determinare.\\
+Se gli esponenti di secondo grado irriducibili hanno esponente 1 e non piu' alto \footnote{Non sono compresi polinomi del tipo $(x^2+1)^2$.} e' possibile decomporre la frazione in somma di frazioni della seguente forma:
+\begin{itemize}
+    \item\footnote{Caso particolare del seguente ($k=1$).} per ogni fattore di primo grado $x-x_0$ e' necessario inserire un addendo del tipo
+    \begin{equation*}
+        \frac{A}{x-x_0},
+    \end{equation*}
+    \item per ogni fattore potenza di un fattore di primo grado $(x-x_1)^n$ e' necessario inserire $n$ addendi (ovvero fratti semplici) del tipo
+    \begin{equation*}
+        \frac{B_k}{(x-x_1)^k},\quad k=1,\hdots n,
+    \end{equation*}
+    \item per ogni fattore di secondo grado irriducibile $x^2+bx+c$ semplice e' necessario inserire due fratti semplici: una derivata logaritmica
+    \begin{equation*}
+        \frac{C(2x+b)}{x^2+bx+c}
+    \end{equation*}
+    ed un termine
+    \begin{equation*}
+        \frac{D}{x^2+bx+c}.
+    \end{equation*}
+\end{itemize}
+\begin{example}
+    \begin{equation*}
+        \int\frac{x^2+4x+1}{x(x+1)^3}\, dx.
+    \end{equation*}
+    \footnote{Sono necessari 4 fratti semplici perche' il denominatore a grado 4.}
+    \begin{equation*}
+        \frac{A}{x}+\underbrace{\frac{B}{x+1}+\frac{C}{(x+1)^2}+\frac{D}{(x+1)^3}}_{\text{ottenuti da }(x+1)^3}=\frac{(A+B)x^3+(3A+2B+C)x^2+(3A+B+C+D)x+A}{x(x+1)^3}=\frac{x^2+4x+1}{x(x+1)^3}.
+    \end{equation*}
+    Quindi
+    \begin{equation*}
+        \begin{cases}
+            A+B &=0\\
+            3A+2B+C &=2\\
+            3A+B+C+D&=4\\
+            A &=1
+        \end{cases}\quad\rightarrow\quad
+        \begin{cases}
+            A &=1\\
+            B &=-1\\
+            C &= 0\\
+            D &= 2
+        \end{cases}
+    \end{equation*}
+    Quindi
+    \begin{equation*}
+        \int\frac{x^2+4x+1}{x(x+1)^3}\, dx \overset{\footnotemark}{=} \int \frac{1}{x}\, dx - \int \frac{1}{x+1}\, dx + 2\int \frac{1}{(x+1)^3}\, dx=\log|x|-\log|x+1| - \frac{1}{(x+1)^2}+c.
+    \end{equation*}
+    \footnotetext{Non e' inserito $ \int\frac{C}{(x+1)^2}$ perche' $C=0$.}
+\end{example}
+
+\subsubsection{Funzioni irrazionali - sostituzioni suggerite}
+\subsubsubsection{Radici di polinomi di primo grado}
+Se nell'integrale compare una radice $n$-esima di un polinomio di primo grado del tipo $\sqrt[n]{ax+b}$ allora è utilizzata la sostituzione $t=\sqrt[n]{ax+b}$, quindi $x=\frac{t^n-b}{a}$, con derivata del cambiamento di variabile
+\begin{equation*}
+    dx=\frac{nt^{n-1}}{a}\, dt.
+\end{equation*}
+
+Se nell'integrale compaiono radici di indici diversi, aventi come argomento lo stesso polinomio di primo grado, $\sqrt[n_1]{ax+b},\, \sqrt[n_2]{ax+b},\hdots$ allora è utilizzata la sostituzione $t=\sqrt[m]{ax+b}$, con $m=mcm(n_1,n_2,\hdots)$.
+
+Se nell'integrale compaiono radici di indici diversi, aventi come argomento lo stesso rapporto tra polinomio di primo grado, $\sqrt[n_1]{\frac{ax+b}{cx+d}},\, \sqrt[n_2]{\frac{ax+b}{cx+d}},\hdots$ allora è utilizzata la sostituzione $t=\sqrt[m]{\frac{ax+b}{cx+d}}$, ovvero $x=\frac{b-dt^m}{ct^m-a}$, con $m=mcm(n_1,n_2,\hdots)$.
+
+\begin{example}
+    \begin{equation*}
+        \begin{matrix}
+            \int\frac{1}{2\sqrt{x+1}+x+2}dx &=& [y = \sqrt{x+1}\rightarrow x=u^2-1,\, dx=2y\,dy] &=& \int\frac{2y}{y^2+2y+1}\, dy &=&\\
+            2\int\frac{y}{(y+1)^2}\, dy &\overset{z=y+1}{=}& \int\frac{z-1}{z^2}\, dz &=&2\left(\int\frac{1}{z}\, dz-\int\frac{1}{z^2}\,dz\right) &=&\\
+            2(\ln|z|+\frac{1}{z}) + c &=& 2(\ln|y+1|+\frac{1}{y+1}) + c &=& 2(\ln|\sqrt{x+1}+1|+\frac{1}{\sqrt{x+1}+1}) + c.
+        \end{matrix}
+    \end{equation*}
+    L'integrale puo' essere calcolato come segue.
+    \begin{equation*}
+        \begin{matrix}
+            \int\frac{1}{2\sqrt{x+1}+x+2}dx &=& [y = \sqrt{x+1}\rightarrow x=u^2-1,\, dx=2y\,dy] &=& \int\frac{2y}{y^2+2y+1}\, dy &=&\\
+            2\int\frac{y}{(y+1)^2}\, dy
+        \end{matrix}
+    \end{equation*}
+\end{example}
+
+\subsubsubsection{Radici di un polinomio di secondo grado}
+Dato il polinomio $p_2(x)=ax^2+bx+c$ ci sono due casi.
+\paragraph{Primo caso: $a<0$.} Se $\Delta\geq 0$ il polinomio è riscritto utilizzando il metodo del complemento del quadrato
+\begin{equation*}
+    ax^2+bx+c=\left(c-\frac{b^2}{4a}\right)-\left(-ax^2-bx-\frac{b^2}{4a}\right)=\underbrace{\frac{4ac-b^2}{4a}}_{\frac{-\Delta}{4a}\geq 0}-\left(\sqrt{-a}x-\frac{b}{2\sqrt{-a}}\right)^2.
+\end{equation*}
+operando la sostituzione
+\begin{equation*}
+    \sqrt{-a}x-\sqrt{-a}x-\frac{b}{2\sqrt{-a}}=\sqrt{\frac{4ac-b^2}{4a}}\sin t
+\end{equation*}
+con
+\begin{equation*}
+    \sqrt{-a}\,dx = \sqrt{\frac{4ac-b^2}{4a}}\cos t\, dt.
+\end{equation*}
+
+\begin{example}
+    Il caso più semplice riguarda $\sqrt{1-x^2}$ dove la sostituzione suggerita è $x=t$.
+\end{example}
+
+\paragraph{Secondo caso: $a>0$.} E' utilizzata la sostituzione
+\begin{equation*}
+    \sqrt{ax^2+bx+c}=t-\sqrt{a}x,
+\end{equation*}
+cioè
+\begin{equation*}
+    x=\frac{t^2-c}{b+2\sqrt{a}t}.
+\end{equation*}
+Questa sostituzione porta ad un integrale di funzione razionale, il quale si calcola con i metodi descritti nella sezione precedente.

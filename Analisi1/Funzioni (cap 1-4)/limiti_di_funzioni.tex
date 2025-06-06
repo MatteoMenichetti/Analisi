@@ -1,0 +1,197 @@
+\section{Limiti di funzioni}
+
+\subsection{Introduzione}
+
+Data una funzione $f\colon A\subset\mathbb R\rightarrow\mathbb R$ per dare un senso alla notazione
+\begin{equation*}
+    \lim_{x\rightarrow x_0}f(x)=L,
+\end{equation*}
+è necessario rispondere alle seguenti domande:
+\begin{enumerate}
+    \item Per quali $x_0$?
+    \item Cosa significa $x\rightarrow x_0$?
+    \item Cosa significa $\lim_{x\rightarrow x_0}f(x)=L$?
+\end{enumerate}
+
+\paragraph{Per quali $x_0$?}
+Per gli $x_0$ che sono punti di accumulazione.
+
+\begin{definition}[Punto di accumulazione]
+    Dato un insieme $A,\, x_0\in\mathbb R$ è un punto di accumulazione per $A$ se
+    \begin{equation*}
+        \exists x_n\in A\backslash\{x_0\}\colon\lim_{n\rightarrow+\infty} x_n=x_0. 
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Punto di accumulazione alternativa]
+    Dato un insime $A,\, x_0\in\mathbb R$ è un punto di accumulazione per $A$ se
+    \begin{equation*}
+        \forall\varepsilon >0\,\exists y\in A\backslash\{x_0\}\colon y\in(x_0-\varepsilon,\, x_0+\varepsilon).
+    \end{equation*}
+\end{definition}
+
+Un punto di accumulazione $x_0$ è un punto non necessariamente appartenente ad $A$ tale che, per qualsiasi $\varepsilon>0$, l'intorno $(x_0-\varepsilon,x_0+\varepsilon)\cap A\neq\emptyset$. E' possibile che un elemento di $A$ non sia un suo punto di accumulazione.
+
+\begin{example}
+    Sia $A=\{0\}\cup(1,2)$, 0 non è un punto di accumulazione perché esiste, ad esempio $\varepsilon = 0,5$, un intorno che non contiene nessun elemento in $A$. Qualsiasi elemento in $[1,2]$ è un punto di accumulazione per $A$.
+\end{example}
+
+\paragraph{Che cosa significa $x\rightarrow x_0$?}\footnote{Sono considerate le $x$ in input ad $f(x)$ che non sono mai $x_0$.} Significa considerare le successioni in $A$ che tendono ad $x_0$ ma che non valgono mai $x_0$.
+
+\paragraph{Cosa significa $\lim_{x\rightarrow x_0}f(x)=L$?}
+
+\begin{definition}[Limite convergente per successioni]\label{def:limite_successione}
+    Sia $x_0$ un punto di accumulazione per $A$ ed $f$ definita in $A$. Allora
+    \begin{equation*}
+        \lim_{x\rightarrow x_0}f(x)=L,
+    \end{equation*}
+    se per ogni $\{x_n\}_{n\in\mathbb N}$ tale che $x_n\in A\backslash\{x_0\}\;\forall n\in\mathbb N$ e $\lim_{n\rightarrow+\infty}x_n=x_0$ con
+    \begin{equation*}
+        \lim_{n\rightarrow+\infty}f(x_n)=L.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Limite convergente per $\varepsilon-\delta$]\label{def:limite_epsilon_delta}
+    Sia $x_0$ un punto di accumulazione per $A$ ed $f$ definita in $A$. Allora
+    \begin{equation*}
+        \lim_{x\rightarrow x_0}f(x)=L,
+    \end{equation*}
+    se per ogni $\varepsilon >0$ esiste $\delta>0$ (dipendente da $\varepsilon$) tale che
+    \begin{equation*}
+        |f(x)-L|<\varepsilon,\,\forall x\in A\colon 0<|x-x_0|<\delta.
+    \end{equation*}
+\end{definition}
+
+\begin{proposition}
+    Le Definizioni \ref{def:limite_successione} e \ref{def:limite_epsilon_delta} sono equivalenti.
+\end{proposition}
+
+
+\begin{definition}
+    Data la prima parte comune nella definizione del limite di $f$ in $A$ le altre tipologie di limite sono definite in Tabella \ref{tab:definizione_limiti}.
+    \begin{table}[!hbt]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \multirow{3}{10em}{$\lim_{x\rightarrow x_0}f(x)=\pm\infty$} & $\forall\{x_0\}\subset A\backslash\{x_0\}\colon x_n\rightarrow x_0\Rightarrow \lim_{n\rightarrow +\infty}f(x_n)=\pm\infty$ \\
+             & oppure\\
+             & $\forall M>0,\, \exists \delta>0$ tale che $f(x)>M$ (o $f(x)<-M$) per ogni $x\in A$ con $0<|x-x_0|<\delta$ \\
+            \hline
+            \multirow{3}{10em}{$\lim_{x\rightarrow \pm\infty}f(x)=L$} & $\forall\{x_0\}\subset A\colon x_n\rightarrow\pm\infty\Rightarrow \lim_{n\rightarrow+\infty}f(x_n)=L$ \\
+             & oppure\\
+             & $\forall \varepsilon>0,\, \exists \nu>0$ tale che $|f(x)-L|<\varepsilon$ per ogni $x\in A$ con $x>\nu$ (o $x<-\nu$) \\
+             \hline
+            \multirow{3}{10em}{$\lim_{x\rightarrow \pm\infty}f(x)=\pm\infty$} & $\forall\{x_0\}\subset A\backslash\{x_0\}\colon x_n\rightarrow x_0\Rightarrow \lim_{x\rightarrow x_0}f(x_n)=\pm\infty$ \\
+             & oppure\\
+             & $\forall M>0,\, \exists \nu>0$ tale che $f(x)>M$ (o $f(x)<-M$) per ogni $x\in A$ con $x>\nu$ (o $x<-\nu$) \\
+             \hline
+        \end{tabular}
+        \caption{Definizione limiti}
+        \label{tab:definizione_limiti}
+    \end{table}
+\end{definition}
+
+\begin{definition}[Limite destro]
+    Data la prima parte della Definizioni di limite, il limite destro è definito come in Tabella \ref{tab:limite_destro}.
+    \begin{table}[!hbt]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multirow{3}{10em}{$\lim_{x\rightarrow x_0^+}f(x)=L$}& se $\forall\{x_n\}_{n\in\mathbb N}\subset A$ tale che $x_n>x_0$ e $\lim_{n\rightarrow+\infty}x_n=x_0$ allora $\lim_{n\rightarrow+\infty}f(x_n)=L$\\
+        & oppure\\
+        & se $\forall\varepsilon >0,\, \exists\delta>0$ (dipendente da $\varepsilon$) tale che $|f(x)-L|<\varepsilon,\,\forall x\in A\colon x_0<x<x_0+\delta$\\
+        \hline
+    \end{tabular}
+    \caption{Limite destro}
+    \label{tab:limite_destro}
+    \end{table}
+\end{definition}
+
+\begin{definition}[Limite sinistro]
+    Data la prima parte della Definizioni di limite, il limite sinistro è definito come in Tabella \ref{tab:limite_sinistro}.
+
+    \begin{table}[!hbt]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multirow{3}{10em}{$\lim_{x\rightarrow x_0^-}f(x)=L$}& se $\forall\{x_n\}_{n\in\mathbb N}\subset A$ tale che $x_n<x_0$ e $\lim_{n\rightarrow+\infty}x_n=x_0$ allora $\lim_{n\rightarrow+\infty}f(x_n)=L$\\
+        & oppure\\
+        & se $\forall\varepsilon >0,\, \exists\delta>0$ (dipendente da $\varepsilon$) tale che $|f(x)-L|<\varepsilon,\,\forall x\in A\colon x_0-\delta<x<x_0$\\
+        \hline
+    \end{tabular}
+    \caption{Limite sinistro}
+    \label{tab:limite_sinistro}
+    \end{table}
+\end{definition}
+
+\begin{proposition}\label{prop:esistenza_limite}
+    Se $\lim_{x\rightarrow x_0^-}f(x)$ e $\lim_{x\rightarrow x_0^+}f(x)$ esistono e sono uguali allora esiste $\lim_{x\rightarrow x_0}f(x)$.
+\end{proposition}
+
+\subsection{Operazioni}
+
+\begin{property}
+    \begin{equation*}
+        \begin{matrix}
+        \lim_{x\rightarrow x_0}f(x)+g(x) &=& \lim_{x\rightarrow x_0}f(x)+\lim_{x\rightarrow x_0}g(x),\\
+        \lim_{x\rightarrow x_0}f(x)\cdot g(x) &=& \lim_{x\rightarrow x_0}f(x)\cdot\lim_{x\rightarrow x_0}g(x),\\
+        \lim_{x\rightarrow x_0}\frac{f(x)}{g(x)} &=& \frac{\lim_{x\rightarrow x_0}f(x)}{\lim_{x\rightarrow x_0}g(x)}, \text{con } \lim_{x\rightarrow x_0}g(x)\neq 0.
+        \end{matrix}
+    \end{equation*}
+\end{property}
+
+Le precedenti proprietà
+\begin{itemize}
+    \item non valgono per le forme indeterminate,
+    \item valgono anche per $x\rightarrow\pm\infty$.
+\end{itemize}
+
+\subsection{Ordine}
+
+\begin{theorem}[Teorema dei Carabinieri]\label{th:dei_carabinieri}
+    Siano $x_0$ punto di accumulazione di $A$ e $f,\, g,\, h$ funzioni definite in $A$. Se $f(x)\leq g(x)\leq h(x),\, \forall x\in A\backslash\{x_0\}$ e $\lim_{x\rightarrow x_0}f(x)=L=\lim_{x\rightarrow x_0} h(x)$, allora
+    \begin{equation*}
+        \lim_{x\rightarrow x_0} g(x)=L.
+    \end{equation*}
+\end{theorem}
+
+\begin{theorem}[Teorema della permanenza del segno]
+    Siano $x_0$ punto di accumulazione di $A$ e $f,\, g,\, h$ funzioni definite in $A$. Se $\lim_{x\rightarrow x_0}=L>0,\, \exists\delta>0$ tale che $f(x)>0,\, \forall x\in A$ con $0<|x-x_0|<\delta$.
+\end{theorem}
+
+\begin{theorem}[Teorema della permanenza del segno ($2^a$ forma)]
+    Siano $x_0$ punto di accumulazione di $A$ e $f$ funzione definita in $A$.
+    Se $f(x)\geq 0\, \forall x\in A$ e se $\exists\lim_{x_\rightarrow x_0}f(x)=L$, allora $L\geq 0$.
+\end{theorem}
+
+\subsection{Monotonia}
+\begin{proposition}\label{prop:monotonia_limiti}
+    Sia $f\colon (a,b)\rightarrow\mathbb R$ una funzione crescente.
+    Se $x_0\in(a,b]$ allora esiste il limite sinistro di $f$ in $x_0$ e vale
+    \begin{equation*}
+        \lim_{x\rightarrow x_0^-}f(x)=\sup\{f(x)\colon a<x<x_0\}=\underset{a<x<x_0}{\sup} f(x).
+    \end{equation*}
+    Se $x_0\in[a,b)$ allora esiste il limite destro di $f$ in $x_0$ e vale
+    \begin{equation*}
+        \lim_{x\rightarrow x^+}f(x)=\inf\{f(x)\colon x_0<x<b\}=\underset{x_0<x<b}{\inf}f(x).
+    \end{equation*}
+\end{proposition}
+
+\begin{remark}
+    \textbf{La Proposizione \ref{prop:monotonia_limiti} non non implica l'esistenza del limite in $x_0$ (vedere Proposizione \ref{prop:esistenza_limite}).}
+\end{remark}
+
+\begin{example}
+Data la funzione
+ \begin{equation*}
+     f(x)=
+     \begin{cases}
+         x &\text{ se } x\leq 0,\\
+         x+1 &\text{ se } x>0.
+     \end{cases}
+ \end{equation*}
+ allora
+ \begin{equation*}
+     \lim_{x\rightarrow 0^+}f(x)\neq\lim_{x\rightarrow 0^-}f(x)\rightarrow\nexists\lim_{x\rightarrow 0}f(x).
+ \end{equation*}
+\end{example}
