@@ -32,7 +32,7 @@ L'obiettivo è trovare una soluzione all'equazione (\ref{eq:EDO}).
 \begin{definition}[Soluzione di una EDO]\label{def:curva_integrale_EDO}
     Una soluzione (o soluzione a curva integrale) di (\ref{eq:EDO}) sull'intervallo $I\subseteq\mathbb R$ è una funzione $\varphi=\varphi(x)$, con $x\in I$, definita e differenziabile $n$ volte su $I$ tale che
     \begin{equation*}
-        \varphi(x),\varphi'(x),\hdots,\varphi^{(n)}(x)\in U\subseteq\mathbb R^{(n+2)},\quad \forall x\in I
+        \varphi(x),\varphi'(x),\hdots,\varphi^{(n)}(x)\in U\subseteq\mathbb R^{(n+2)},\quad \forall x\in I=[a,b]
     \end{equation*}
     e
     \begin{equation*}
@@ -43,7 +43,7 @@ L'obiettivo è trovare una soluzione all'equazione (\ref{eq:EDO}).
 \paragraph{N.B.:} $\varphi$ è definita su un intervallo non disgiunto, ovvero è definita su un intervallo che non ha salti del tipo $[0,1)\cup[2, +\infty)$.
 
 \begin{definition}[Integrale generale]\label{def:integrale_generale_EDO}
-    L'integrale generale della EDO (\ref{eq:EDO}), definita su $I\subseteq \mathbb R$, è l'insieme di tutte le soluzioni dell'EDO in $I$.
+    L'integrale generale della EDO (\ref{eq:EDO}), definita su $I=[a,b]\subseteq \mathbb R$, è l'insieme di tutte le soluzioni dell'EDO in $I$.
 \end{definition}
 
 L'integrale generale è l'insieme di tutte le soluzioni $\varphi$.
@@ -135,7 +135,7 @@ $L$ è una somma di funzioni continue ed è lineare in quanto vale la seguente p
 
 Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) sono importanti per il Teorema \ref{th:rappresentazione_integrale_generale_EDO_lineare}. Tale teorema è importante per le EDO lineari di ordine $n$, vale per tutte le EDO di ordine $n\geq 1$ ed enuncia che l'integrale generale della EDO del tipo (\ref{eq:EDO_lineare_ordine_n}) è dato dalla somma dell'integrale generale (una soluzione nota della omogenea) dell'omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) e dall'integrale generale (una soluzione particolare) dell'equazione non omogenea (\ref{eq:EDO_lineare_ordine_n}).
 
-\begin{theorem}[Rappresentazione dell'integrale generale di una EDO lineare]\label{th:rappresentazione_integrale_generale_EDO_lineare}\footnote{PG 99.}
+\begin{theorem}[Rappresentazione dell'integrale generale di una EDO lineare]\label{th:rappresentazione_integrale_generale_EDO_lineare}\footnote{Slide 1 PDF 2.}
     L'integrale generale di una EDO lineare di ordine $n$ definita su $I$ del tipo (\ref{eq:EDO_lineare_ordine_n}) è dato dalla somma dell'integrale generale della sua omogenea associata del tipo (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) ed una curva integrale della non omogenea  del tipo(\ref{eq:EDO_lineare_ordine_n}), ovvero:
     \begin{equation}\label{eq:rappresentazione_integrale_generale_EDO_lineare}
         y(x)=z(x)+\overline{y}(x),\quad x\in(a,b),
@@ -149,14 +149,13 @@ Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata
         y'(x)+a(x)y(x)=f(x),
     \end{equation}
     \begin{equation}\label{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}
-        y'(x)+a(x)y(x)=0,
+        y'(x)+a(x)y(x)=0,\quad x\in I=[a,b]
     \end{equation}
-    con $x\in I=[a,b]$.\\
     Date $y(x)$ soluzione qualsiasi di (\ref{eq:EDO_lineare_ordine_1_forma_normale}) e $\overline{y}(x)$ una soluzione particolare e nota di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), è necessario mostrare che la differenza
     \begin{equation*}
         z(x)=y(x)-\overline{y}(x)
     \end{equation*}
-    è una soluzione particolare di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}). Dunque
+    è una soluzione particolare della EDO omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}). Dunque
     \begin{equation*}
         y'(x)+a(x)y(x)=f(x),\quad \overline{y}'(x) +a(x)\overline{y}(x)=f(x),\quad \forall x\in I.
     \end{equation*}
@@ -171,9 +170,9 @@ Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata
     quindi vale (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}).\\
     Denotando $z(x)=y(x)-\overline{y}(x)$, con $x\in(a,b)$, per verificare (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) è necessario verificare \footnote{Presa una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale} ed una soluzione nota di (\ref{eq:EDO_lineare_non_omogenea_primo_ordine_forma_normale}), è necessario verificare che la somma verifichi (\ref{eq:EDO_lineare_non_omogenea_primo_ordine_forma_normale}), ovvero (\ref{eq:da_verificare}).}
     \begin{equation}\label{eq:da_verificare}
-        y(x)=z(x)+\overline{y}(x),\quad x\in[a,b].
+        y(x)=z(x)+\overline{y}(x),\quad x\in I=[a,b].
     \end{equation}
-    [Ovvero:] Viceversa, se $z(x)$ è una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) su $[a,b]$ e $\overline{y}(x)$ soluzione particolare di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), allora è necessario mostrare che la loro somma
+    [Ovvero:] Viceversa, se $z(x)$ è una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) su $[a,b]$ e $\overline{y}(x)$ soluzione particolare (e nota) di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), allora è necessario mostrare che la loro somma
     \begin{equation*}
         y(x)=z(x)+\overline{y}(x)
     \end{equation*}
@@ -186,9 +185,9 @@ Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata
     \end{equation*}
     quindi
     \begin{equation*}
-        y'(x)+a(x)y(x)=f(x),\quad \forall x\in[a,b],
+        y'(x)+a(x)y(x)=f(x),\quad \forall x\in I=[a,b],
     \end{equation*}
-    ovvero $y(x)=\overline{y}(x)+z(x)$ è soluzione generale di (\ref{eq:EDO_lineare_ordine_1_forma_normale}).
+    ovvero è ottenuto che $y(x)=\overline{y}(x)+z(x)$ è soluzione generale di (\ref{eq:EDO_lineare_ordine_1_forma_normale}).
 \end{proof}
 
 \paragraph{Cosa afferma il Teorema \ref{th:rappresentazione_integrale_generale_EDO_lineare} di Rappresentazione dell'integrale di una EDO lineare?} Afferma che il vero problema è trovare l'integrale generale (l'insieme delle soluzioni) dell'omogenea. È possibile individuare la soluzione nota ad occhio oppure con il metodo di somiglianza oppure di variazione delle costanti (vedere Sezioni \ref{ssec:metodo_somiglianza} e \ref{ssec:variazione_costanti}).
@@ -234,31 +233,32 @@ Data la Definizione \ref{def:EDO_lineare_completa_ordine_n_forma_normale} di EDO
     \end{equation}
 \end{definition}
 
-\paragraph{L'integrale generale (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine}) è determinato tramite i seguenti passaggi}
-Sia $A(x)=\int a(x)\, dx$, primitiva di $a(x)$ fissata una volta per tutte\footnote{Fissata una volta per tutte significa che se $a(x)=2x$, allora $A(x)=x^2$.}. Moltiplicando ambo i membri di (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}) per $e^{A(x)}=e^{\int a(x)}$ è ottenuto
-\begin{equation*}
-    e^{A(x)}y'(x)+\underbrace{e^{A(x)}a(x)y(x)}_{\left[e^{A(x)}y(x)\right]'\underset{\footnotemark}{=}0}=0,
-\end{equation*}
-ovvero
-\begin{equation}\label{eq:conseguenza_th_lagrange_edo}
-    e^{A(x)}y(x)=c,
-\end{equation}
-allora
-\begin{equation*}
-    y(x)=ce^{-A(x)} = c e^{-\int a(x) dx},\quad c\in\mathbb R.
-\end{equation*}
-Infatti
-\begin{equation*}
-    \left(e^{-A(x)}\right)'= e^{-A(x)}[-a(x)],
-\end{equation*}
-dunque
-\begin{equation*}
-    \left(e^{-A(x)}\right)' + e^{-A(x)}a(x)=0.
-\end{equation*}
-e quindi $e^{-A(x)}$ verifica (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}).
+\begin{proof}
+	Sia $A(x)=\int a(x)\, dx$, primitiva di $a(x)$ fissata una volta per tutte\footnote{Fissata una volta per tutte significa che se $a(x)=2x$, allora $A(x)=x^2$.}. Moltiplicando ambo i membri di (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}) per $e^{A(x)}=e^{\int a(x)}$ è ottenuto
+	\begin{equation*}
+		e^{A(x)}y'(x)+\underbrace{e^{A(x)}a(x)y(x)}_{\left[e^{A(x)}y(x)\right]'\underset{\footnotemark}{=}0}=0,
+	\end{equation*}
+	ovvero
+	\begin{equation}\label{eq:conseguenza_th_lagrange_edo}
+		e^{A(x)}y(x)=c,
+	\end{equation}
+	allora (è ottenuta l'integrale generale dell'omogenea (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine}))
+	\begin{equation}\label{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine_dimostrazione}
+		y(x)=ce^{-A(x)} = c e^{-\int a(x) dx},\quad c\in\mathbb R.
+	\end{equation}
+	Infatti
+	\begin{equation*}
+		\left(e^{-A(x)}\right)'= e^{-A(x)}[-a(x)],
+	\end{equation*}
+	dunque
+	\begin{equation*}
+		\left(e^{-A(x)}\right)' + e^{-A(x)}a(x)=0.
+	\end{equation*}
+	Quindi (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine_dimostrazione}), ovvero (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine}), verifica (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}).
+\end{proof}
 \footnotetext{Conseguenza del Teorema di Lagrange: Una funzione derivabile con derivata nulla nell'intervallo di definizione è ivi costante, quindi vale (\ref{eq:conseguenza_th_lagrange_edo}).}
 
-\paragraph{Osservazione sulla formula (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine})} è possibile osservare che $y(x)$ è della forma $c\cdot z_0$, dove $z_0$ è soluzione di (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}). Quindi $y(x)$ è un multiplo della soluzione di (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}). Cio' significa che l'insieme delle soluzioni dell'omogenea è uno spazio vettoriale di dimensione 1 e per trovare gli elementi di tale spazio è sufficiente trovare una soluzione, ovvero un elemento dello spazio delle soluzioni, e moltiplicarlo per $c$. Per le EDO lineari di ordine 2 lo spazio delle soluzioni ha dimensione 2 e quindi, come sarà visto, per trovare un elemento dello spazio vettoriale delle soluzioni sarà necessario trovare 2 elementi linearmente indipendenti e combinarli.
+\paragraph{Osservazione sulla formula (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine}):} è possibile osservare che $y(x)$ è della forma $c\cdot z_0$, dove $z_0$ è soluzione di (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}). Quindi $y(x)$ è un multiplo della soluzione di (\ref{eq:EDO_lineare_omogenea_primo_ordine_forma_normale}). Cio' significa che l'insieme delle soluzioni dell'omogenea è uno spazio vettoriale di dimensione 1 e per trovare gli elementi di tale spazio è sufficiente trovare una soluzione, ovvero un elemento dello spazio delle soluzioni, e moltiplicarlo per $c$. Per le EDO lineari di ordine 2 lo spazio delle soluzioni ha dimensione 2 e quindi, come sarà visto, per trovare un elemento dello spazio vettoriale delle soluzioni sarà necessario trovare 2 elementi linearmente indipendenti e combinarli.
 
 \begin{remark}[Non ufficiale]
     \textbf{Lo spazio vettoriale delle soluzioni, determinato dall'integrale generale (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine}) di un'EDO del primo ordine ha dimensione 1} (al variare di $c$ sono determinate tutte le soluzioni).
@@ -449,27 +449,74 @@ ha la stessa struttura di (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_p
 
 \footnote{Slide 2 PDF 3.} Il problema di Cauchy per EDO lineari a coefficienti costanti è detto anche problema ai valori iniziali. Tale problema è il seguente: imponendo la condizione $y(x_0)=y_0$, con $x_0\in[a,b]$, allora è possibile determinare la costante $c$ (la quale è $y_0$, vedere dopo) che compare nell'integrale generale (\ref{eq:integrale_generale_EDO_lineare_omogonea_primo_ordine}) di una EDO lineare.
 
-È scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e dunque che
+Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e dunque che
 \begin{equation}\label{eq:primitiva_problema_cauchy}
     \int_{x_0}^{x} a(t)\, dt = A(x) - A(x_0) = A(x),
 \end{equation}
-allora è definito il problema di Cauchy.
+è definito il problema di Cauchy.
 \begin{definition}[Problema di Cauchy per EDO di $1^\circ$ ordine a coefficienti costanti]
     Sia il problema di Cauchy 
     \begin{equation}\label{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}
         \begin{cases}
-            y'(x) + a(x)f(x)&=f(x)\\
+            y'(x) + a(x)f(x)&=f(x)\text{ EDO lineare di ordine 1 con $a,f\in C^0(I)$}\\
             y(x_0)&=y_0
         \end{cases}
     \end{equation}
     dove $y(x_0)=y_0$ è l'unica condizione iniziale, questo ha soluzione unica definita come
     \begin{equation}\label{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}
-        \boldsymbol{y(x)} = y_0 \cdot e^{-A(x)} + e^{-A(x)} \, \int_{x_0}^x e^{A(\tau)}f(\tau) \, d\tau = \boldsymbol{y_0 \cdot e^{-\int_{x_0}^x a(\tau)\, d\tau} + e^{-\int_{x_0}^x a(\tau)\, d\tau} \int_{x_0}^x e^{\int_{x_0}^s a(s)\, ds} f(s)\, ds}.
+        \boldsymbol{y(x)} = y_0 \cdot e^{-A(x)} + e^{-A(x)} \, \int_{x_0}^x e^{A(\tau)}f(\tau) \, d\tau = \boldsymbol{y_0 \cdot e^{-\int_{x_0}^x a(\tau)\, d\tau} + e^{-\int_{x_0}^x a(\tau)\, d\tau} \int_{x_0}^x e^{\int_{x_0}^s a(\tau)\, ds} f(s)\, ds}.
     \end{equation}
 \end{definition}
 
+\begin{proof}
+	\footnote{Slide 3 PDF 3. Dato un problema lineare, la struttura della soluzione è nota ed è possibile determinare la costante $c$ tramite la condizione iniziale, osservando che in $x_0\, A(x_0)=0$.}
+	Dato (\ref{eq:primitiva_problema_cauchy}), ovvero 
+	\begin{equation}
+		\int_{x_0}^{x} a(t)\, dt = A(x) - A(x_0) = A(x),
+	\end{equation}
+	con $y(x_0)=y_0$ ed $A(x_0)=0$, allora è necessario risolvere il problema lineare
+	\begin{equation*}\footnotemark
+		\begin{cases}
+			y'(x) + a(x)f(x)&=f(x) \rightarrow \text{ EDO lineare di ordine 1 con $a,f\in C^0(I)$}\\
+			y(x_0)&=y_0
+		\end{cases}
+	\end{equation*}
+	\footnotetext{Sistema con soluzione unica, definita su un intervallo $I$ e di classe $C^{(1)}(I)$.}
+	Moltiplicando ambedue i membri della EDO per $e^{\int_{x_0}^x a(t)\, dt}=e^{A(x)}$, è ottenuto
+	\begin{equation}\label{eq:EDO_uguaglianza}
+		e^{\int_{x_0}^x a(t)\, dt} y'(x) + e^{\int_{x_0}^x a(t)\, dt} a(x)y(x)=e^{\int_{x_0}^x a(t)\, dt} f(x),
+	\end{equation}
+	dove $A(x)$ è la primitiva scelta come (\ref{eq:primitiva_problema_cauchy}) tale che $A(x_0)=0$. È possibile osservare che (il termine a sinistra della (\ref{eq:EDO_uguaglianza}) corrisponde alla derivata del prodotto di funzioni, ovvero)
+	\begin{equation*}
+		\left[e^{\int_{x_0}^x a(t) dt} y(x)\right]' = e^{\int_{x_0}^x a(t)\, dt} f(x),
+	\end{equation*}
+	ovvero (riscritta come derivata rispetto ad $x$),
+	\begin{equation*}
+		\frac{d}{dx}\left[e^{\int_{x_0}^x a(t) dt} y(x)\right] = e^{\int_{x_0}^x a(t)\, dt} f(x).
+	\end{equation*}
+	Integrando rispetto ad $x$ tra $x$ e $x_0$, è mostrato che $y(x_0)=x_0$, \footnote{È cambiato il nome di qualche $x$ perché troppe.}
+	\begin{equation*}
+		\int_{x_0}^x\frac{d}{ds}\left[y(s)\cdot e^{\int_{x_0}^x a(\tau) d\tau}\right]ds=\int_{x_0}^x e^{\int_{x_0}^s a(\tau)d\tau} f(s) ds.
+	\end{equation*}
+	Per il Teorema fondamentale del calcolo integrale,
+	\begin{equation*}
+		y(x)\cdot e^{\int_{x_0}^xa(t)dt}-\underbrace{y(x_0)}_{y_0} e^{\overbrace{\int_{x_0}^{x_0}a(t)dt}^{0}}=\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds,
+	\end{equation*}
+	ovvero,
+	\begin{equation*}
+		y(x)\cdot e^{\int_{x_0}^xa(t)dt}-\underbrace{y(x_0)}_{y_0}=\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds.
+	\end{equation*}
+	Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la formula della soluzione del problema di Cauchy per un'EDO del primo ordine,
+	\begin{equation}\label{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}
+		y(x)= e^{-\int_{x_0}^xa(t) dt}\left[y_0+\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds\right]=e^{-A(x)}\left(\underbrace{y_0}_c + \int_{x_0}^s f(s) e^{A(s)}ds\right).
+	\end{equation}
+\end{proof}
+
+\paragraph{Nota su (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}):} Tale formula è la formula dell'integrale generale (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}), con $c$ determinata dalla condizione iniziale. Quindi, quando è necessario risolvere un problema di Cauchy, è utilizzata la formula dell'integrale generale con $y_0=c$.
+
 \paragraph{Note non ufficiali su (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}):}
 \begin{enumerate}
+	\item Con il fatto che $a,f\in C^0(I)$ della EDO lineare di ordine 1 $y'(x) + a(x)f(x)=f(x)$ si intende che  $I=[a,b]$, ovvero è un intervallo, ed è definito dalla forma di $f$ e $a$, ovvero è l'intervallo che permette alle due funzioni di essere definite. Se $a(x)=\frac{1}{\sqrt{x}}$ e $f(x)=x$ allora l'intervallo di definizione delle due funzioni è $I=(0, +\infty)$.
     \item Sotto opportune ipotesi su $f$ è possibile mostrare che il sistema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione $y(x)$\footnote{$y$ definita localmente in $x_0$ significa che $y$ deve passare in $x_0$ e ciò si trasforma in una condizione del sistema.} derivabile localmente in $x_0$, la quale è opportunamente definita vicino ad $x_0$ (ovvero: $y$ è definita su un opportuno intervallo contenente $x_0$). Quindi è possibile trovare le soluzioni di una EDO se il problema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione e dopo aver stabilito l'intervallo di massima definizione, cioè l'intervallo in cui $y$ ha senso, contenente il punto iniziale $x_0$ (perché $y$ deve passarci). Pertanto, non è detto che le soluzioni espresse dall'integrale generale dell'equazione siano tutte definite sullo stesso insieme al variare dei parametri $c_1 , c_2 ,\hdots ,c_n$ (ovvero della condizione iniziale);
     \item Quando si parla di soluzione di un problema di Cauchy (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) si intende sempre $f$ tale che:
     \begin{itemize}
@@ -487,45 +534,6 @@ allora è definito il problema di Cauchy.
     \item ha un'unica condizione iniziale, i problemi di Cauchy per EDO del secondo ordine hanno due condizioni iniziali;
     \item Ha un diverso significato rispetto a (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}): in (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}) il simbolo di $\int f(x)\, e^{A(x)} dx$ denota una primitiva qualsiasi di $f(x)e^{A(x)}$, in ((\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti})) compare una primitiva precisa, la funzione integrale con estremo fisso $x_0$ ed estremo variabile $x$ (dove $s$ è una variabile muta).
 \end{enumerate}
-
-\paragraph{Perché vale la formula (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti})?} \footnote{Dato un problema lineare, la struttura della soluzione è nota ed è possibile determinare la costante $c$ tramite la condizione iniziale, osservando che in $x_0\, A(x_0)=0$.}
-Dato (\ref{eq:primitiva_problema_cauchy}) con $y(x_0)=y_0$ ed $A(x_0)=0$, allora è necessario risolvere il problema lineare
-\begin{equation*}\footnotemark
-    \begin{cases}
-        y'(x) + a(x)f(x)&=f(x)\\
-        y(x_0)&=y_0
-    \end{cases}
-\end{equation*}
-\footnotetext{Sistema con soluzione unica, definita su un intervallo $I$ e di classe $C^{(1)}(I)$.}
-Moltiplicando ambedue i membri della EDO per $e^{\int_{x_0}^x a(t)\, dt}=e^{A(x)}$,
-\begin{equation}\label{eq:EDO_uguaglianza}
-    e^{\int_{x_0}^x a(t)\, dt} y'(x) + e^{\int_{x_0}^x a(t)\, dt} a(x)f(x)=e^{\int_{x_0}^x a(t)\, dt} f(x),
-\end{equation}
-dove $A(x)$ è la primitiva scelta come (\ref{eq:primitiva_problema_cauchy}). È possibile osservare che ((\ref{eq:EDO_uguaglianza}) corrisponde alla derivata del prodotto di funzioni, ovvero)
-\begin{equation*}
-    \left(e^{\int_{x_0}^x a(t) dt} y(x)\right)' = e^{\int_{x_0}^x a(t)\, dt} f(x),
-\end{equation*}
-ovvero (riscritta come derivata rispetto ad $x$),
-\begin{equation*}
-    \frac{d}{dx}\left[e^{\int_{x_0}^x a(t) dt} y(x)\right] = e^{\int_{x_0}^x a(t)\, dt} f(x).
-\end{equation*}
-Integrando rispetto ad $x$ tra $x$ e $x_0$, è mostrato che $y(x_0)=x_0$, \footnote{È cambiato il nome di qualche $x$ perché troppe.}
-\begin{equation*}
-    \int_{x_0}^x\frac{d}{ds}\left[y(s)\cdot e^{\int_{x_0}^x a(\tau) d\tau}\right]ds=\int_{x_0}^x e^{\int_{x_0}^s a(\tau)d\tau} f(s) ds.
-\end{equation*}
-Per il Teorema fondamentale del calcolo integrale,
-\begin{equation*}
-    y(x)\cdot e^{\int_{x_0}^xa(t)dt}-\underbrace{y(x_0)}_{y_0} e^{\overbrace{\int_{x_0}^{x_0}a(t)dt}^{0}}=\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds,
-\end{equation*}
-ovvero,
-\begin{equation*}
-    y(x)\cdot e^{\int_{x_0}^xa(t)dt}-y_0=\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds.
-\end{equation*}
-Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la formula della soluzione del problema di Cauchy per un'EDO del primo ordine,
-\begin{equation}\label{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}
-    y(x)= e^{-\int_{x_0}^xa(t) dt}\left[y_0+\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds\right]=e^{-A(x)}\left(\underbrace{y_0}_c + \int_{x_0}^s f(s) e^{A(s)}ds\right).
-\end{equation}
-\paragraph{Nota:} Tale formula è la formula dell'integrale generale (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}), con $c$ determinata dalla condizione iniziale. Quindi, quando è necessario risolvere un problema di Cauchy, è utilizzata la formula dell'integrale generale con $y_0=c$.
 
 \paragraph{AVVERTENZA:} quando saranno fatte funzioni in più variabili, il concetto di derivata cambia e non sarà utilizzato il simbolo $\frac{d}{dx}$ ma $\partial$. La notazione conta.
 \begin{example}
@@ -577,7 +585,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
         \begin{matrix}
             y(x) &=& c e^{-\int \frac{1}{\sqrt{x}}dx} + e^{-\int \frac{1}{\sqrt{x}}dx} \int e^{\int \frac{1}{\sqrt{x}}dx}\cdot1 dx &=& e^{-\int \frac{1}{\sqrt{x}}dx}\left[c+\int e^{\int \frac{1}{\sqrt{x}}dx} 
             dx\right] &\overset{\footnotemark}{=}&\\
-            &=& e^{-2x}\left[c+ \int e^{2x}dx\right] &=& y(x,c) & \overset{\footnotemark}{=} & \\
+            &=& e^{-2\sqrt{x}}\left[c+ \int e^{2\sqrt{x}}dx\right] &=& y(x,c) & \overset{\footnotemark}{=} & \\
             &\overset{2\sqrt{x}=t}{=}& e^{-t}\left(c + \int e^t \frac{t}{2}dt\right) &\overset{\text{per parti}}{=}& e^{-t}\left[c+e^t\frac{t}{2}-\frac{1}{2}\int e^t dt\right] &=&\\
             &=& e^{-t} \left(c + \frac{e^t\cdot t}{2}-\frac{1}{2}e^t\right) &=& ce^{-t} + \frac{t}{2} - \frac{1}{2} &=&\\
             &\overset{\text{sost.}}{=}& \boldsymbol{ce^{-2\sqrt{x}} + \sqrt{x} -\frac{1}{2}} &=& \underset{\text{soluzione generale}}{y(x, c)}
@@ -589,7 +597,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
     \stepcounter{footnote}
     \footnotetext{Il parametro è $2\sqrt{x}$, quindi con $t>0$, $dt=\cancel{2}\frac{1}{\cancel{2}\sqrt{x}} \Rightarrow dt \underbrace{\sqrt{x}}_{\frac{t}{2}}=dx$.}
 
-    Qual è il comportamento asintotico nel bordo del dominio della funzione (ovvero per $x$ grandi)?] Comportamento per $x\rightarrow+\infty$:
+    \paragraph{Qual è il comportamento asintotico nel bordo del dominio della funzione (ovvero per $x$ grandi)?} Comportamento per $x\rightarrow+\infty$:
     \begin{equation*}
         \lim_{x\rightarrow+\infty} y(x) = \lim_{x\rightarrow+\infty} c\underbrace{e^{-2\sqrt{x}}}_0 + \sqrt{x} -\frac{1}{2} = +\infty\quad \forall c\in\mathbb R.
     \end{equation*}
@@ -834,7 +842,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
     \begin{equation*}
         y(x) = 3e^{\frac{x^2}{2}}-2,\quad x\in\mathbb R.
     \end{equation*}
-    \paragraph{Nota sulla soluzione:} In questo caso $y(x)$ e' una soluzione in grande perche' definita su tutta $\mathbb R$.
+    \paragraph{Nota sulla soluzione:} In questo caso $y(x)$ è una soluzione in grande perché definita su tutta $\mathbb R$.
 \end{example}
 
 \begin{example}[Problema di Cauchy a variabili separabili]\footnote{Slide 16 PDF 4.}
@@ -849,11 +857,11 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
     \begin{equation*}
         \frac{u'(t)}{1+u^2(t)} = \sin t.
     \end{equation*}
-    Integrando e' ottenuto
+    Integrando è ottenuto
     \begin{equation*}
         \int \frac{u'(t)}{1+u^2(t)}dt = \int\sin t \,dt,
     \end{equation*}
-    per sostituzione, con $u=u(t)$ e $dv=u'(t)\,dt$ e' ottenuto che
+    per sostituzione, con $u=u(t)$ e $dv=u'(t)\,dt$ è ottenuto che
     \begin{equation*}
         \int \frac{u'}{1+u^2}du = -\cos t + c,
     \end{equation*}
@@ -861,7 +869,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
     \begin{equation}\label{eq:arctan_esercizio_cauchy}
         \arctan u(t) = -\cos(t) + c.
     \end{equation}
-    \paragraph{Intermezzo:} E' possibile scrivere chi e' $u(t)$. (\ref{eq:arctan_esercizio_cauchy}) e' la versione implicita della soluzione, e' possibile invertire la $G$, la quale e' una primitiva di $\int \frac{u'}{1+u^2}du$ e quindi e' utilizzata la funzione inversa (ovvero la tangente). Quindi e' ottenuto quanto segue. $\qed$
+    \paragraph{Intermezzo:} E' possibile scrivere chi è $u(t)$. (\ref{eq:arctan_esercizio_cauchy}) è la versione implicita della soluzione, è possibile invertire la $G$, la quale è una primitiva di $\int \frac{u'}{1+u^2}du$ e quindi è utilizzata la funzione inversa (ovvero la tangente). Quindi è ottenuto quanto segue. $\qed$
     \begin{equation*}
         u(t) = \tan(-\cos t + c)= \underbrace{u(t, c)}_\text{int. gen.}\in\mathbb R.
     \end{equation*}
@@ -875,7 +883,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
             \frac{\pi}{4} &=& -1 + c
        \end{matrix}
     \end{equation*}
-    Dunque $c=1+\frac{\pi}{4}$ e la soluzione e' data da $u(t)=\tan(-\cos t + 1 + \frac{\pi}{4})\quad \forall(-\cos t + 1 + \frac{\pi}{4})\in(-\frac{\pi}{2}, \frac{\pi}{2})$
+    Dunque $c=1+\frac{\pi}{4}$ e la soluzione è data da $u(t)=\tan(-\cos t + 1 + \frac{\pi}{4})\quad \forall(-\cos t + 1 + \frac{\pi}{4})\in(-\frac{\pi}{2}, \frac{\pi}{2})$
 \end{example}
 
 \begin{example}\footnote{Slide 16 PDF 4.}
@@ -886,7 +894,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
             y(0) &= -1
         \end{cases}
     \end{equation*}
-    \paragraph{Nota:} $y' + 2t y^2 = 0$ e' una EDO del primo ordine non lineare a variabili separabili. Le soluzioni sono del tipo $y=y(t)$. $\qed$
+    \paragraph{Nota:} $y' + 2t y^2 = 0$ è una EDO del primo ordine non lineare a variabili separabili. Le soluzioni sono del tipo $y=y(t)$. $\qed$
     Quindi,
     \begin{equation*}
         y' = -2 t y^2,
@@ -896,7 +904,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
         \item $f(t) = -2t$,
         \item $g(t) = y^2$,
     \end{itemize}
-    entrambe funzioni su tutto $\mathbb R$. E' possibile osservare che $y(t)=0$ e' soluzione di
+    entrambe funzioni su tutto $\mathbb R$. E' possibile osservare che $y(t)=0$ è soluzione di
     \begin{equation*}
         y' + 2ty^2 = 0,
     \end{equation*}
@@ -910,8 +918,8 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
     \begin{equation*}
         y(t) = \frac{1}{t^2-c}\quad\text{oppure}\quad y(t) = \frac{1}{t^2+c}.
     \end{equation*}
-    (le quali sono funzioni diverse, ma l'utilizzo finale non cambia e quindi e' utilizzata la forma piu' comoda.)
-    \footnote{Per definire la soluzione e' necessario che il denominatore sia diverso da 0 e cio' e' legato al valore della costante. Con valori della costante positivi non ci sono problemi di definizione del dominatore, con valori negativi sono necessari esclusioni. Inoltre, e' necessario trovare l'intervallo dove la soluzione e ben definita (ovvero l'intervallo contente $t=0$), quindi $t^2+c\neq 0$.}
+    (le quali sono funzioni diverse, ma l'utilizzo finale non cambia e quindi è utilizzata la forma piu' comoda.)
+    \footnote{Per definire la soluzione è necessario che il denominatore sia diverso da 0 e cio' è legato al valore della costante. Con valori della costante positivi non ci sono problemi di definizione del dominatore, con valori negativi sono necessari esclusioni. Inoltre, è necessario trovare l'intervallo dove la soluzione e ben definita (ovvero l'intervallo contente $t=0$), quindi $t^2+c\neq 0$.}
     Imponiamo la condizione iniziale $y(0) = -1$,
     \begin{equation*}
         1=\frac{1}{0+c},
@@ -921,7 +929,7 @@ Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la fo
         y(t) = \frac{1}{t^2 -1},\quad \forall t\in(-1,1)\ni 0,
     \end{equation*}
     se $t^2 -1\neq 0$, ovvero $t^2\neq \pm 1$.
-    \paragraph{Nota sulla soluzione:} La soluzione e' considerata nell'intervallo massimale $(-1, 1)$ (il quale contiene $t=0$). Inoltre, l'espressione $\frac{1}{t^2 -1}$ ha senso in tutti gli intervalli in cui $t^2-1\neq 0$, ma e' necessario considerare l'intervallo contenente il punto iniziale.
+    \paragraph{Nota sulla soluzione:} La soluzione è considerata nell'intervallo massimale $(-1, 1)$ (il quale contiene $t=0$). Inoltre, l'espressione $\frac{1}{t^2 -1}$ ha senso in tutti gli intervalli in cui $t^2-1\neq 0$, ma è necessario considerare l'intervallo contenente il punto iniziale.
 \end{example}
 
 \begin{example}\footnote{Slide 19 PDF 4.}
@@ -1051,7 +1059,8 @@ formano un sistema fondamentale di soluzioni per (\ref{eq:edo_omogenea_associata
 \paragraph{Nota su (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Quanto scritto significa che l'integrale generale di una EDO del secondo ordine dipende dalle 2 costanti $c_1$ e $c_2$, oltre che dalla variabile $x$ (una EDO del primo ordine dipende da 1 costante).
 
 \paragraph{Spiegazione di (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Gli elementi di $\mathbb R^n$ sono rappresentabili tramite la base canonica (la quale è una \gls{base ortonormale}).\\
-Un vettore può essere rappresentato come combinazione lineare con la base canonica, ad esempio: $(1,2)\in\mathbb R^2$ può essere espresso come $1\uline e_1 + 2+\uline e_2=\uline u=(1,2)$. Lo stesso vale con (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}): $y_1(x)$ e $y_2(x)$ sono due soluzioni del problema omogeneo ed è possibile dimostrare, tramite la linearità del problema, che la loro combinazione lineare è anche la soluzione. Dato che l'obiettivo è trovare tutte le soluzioni (generare lo spazio delle soluzioni), è sufficiente avere due soluzioni indipendenti (due perché la EDO è di ordine due e lo spazio delle soluzioni è di dimensione due). La lineare indipendenza delle soluzioni sull'intervallo $I$ segue da AL: 
+Un vettore può essere rappresentato come combinazione lineare con la base canonica, ad esempio: $(1,2)\in\mathbb R^2$ può essere espresso come $1\uline e_1 + 2\uline e_2=\uline u=(1,2)$. Lo stesso vale con (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}): $y_1(x)$ e $y_2(x)$ sono due soluzioni del problema omogeneo ed è possibile dimostrare, tramite la linearità del problema, che la loro combinazione lineare è anche la soluzione. Dato che l'obiettivo è trovare tutte le soluzioni (generare lo spazio delle soluzioni), è sufficiente avere due soluzioni indipendenti (due perché la EDO è di ordine due e lo spazio delle soluzioni è di dimensione due). La lineare indipendenza delle soluzioni sull'intervallo $I$ segue da AL:  la combinazione di $y_1(x)$ e $y_2(x)$ è linearmente indipendente ($=0$) se e solo se i coefficienti della combinazione sono tutti 0.\\
+\textbf{Riassumendo: }Per trovare una soluzione qualsiasi del problema omogeneo (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) è sufficiente trovare due soluzioni linearmente indipendenti del problema, le quali formano un sistema fondamentale di soluzioni.$\qed$
 
 \subsubsection{Cose non fatte ma utili}
 \begin{theorem}[Teorema fondamentale dell'algebra]
