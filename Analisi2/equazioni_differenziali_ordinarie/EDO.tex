@@ -122,11 +122,11 @@ Una soluzione è l'insieme delle soluzioni all'equazione (\ref{eq:EDO_lineare_or
     \end{equation}
 \end{definition}
 
-\paragraph{Perché una EDO è detta lineare?} \footnote{Slide 11 PDF 1, PG 98.} Una EDO in forma normale del tipo (\ref{eq:EDO_forma_normale}) è detta lineare perché esiste un'applicazione fra spazi di funzioni $L\colon C^n(I)\rightarrow C^0(I)$, detta anche operatore, che ad ogni funzione $\varphi\in C^n(I)$ associa la funzione continua del tipo
+\paragraph{Perché una EDO è detta lineare?} \footnote{Slide 11 PDF 1, PG 98.} Una EDO in forma normale del tipo (\ref{eq:EDO_forma_normale}) è detta lineare perché esiste un'\gls{applicazione lineare} fra spazi di funzioni $L\colon C^n(I)\rightarrow C^0(I)$, detta anche operatore, che associa ad ogni funzione $\varphi\in C^n(I)$ una funzione continua del tipo
 \begin{equation*}
     L(\varphi(x)):=a_n(x)\varphi^{(n)}(x)+a_{n-1}(x)\varphi^{(n-1)}(x)+\hdots+a_0(x)\varphi(x).
 \end{equation*}
-$L$ è una somma di funzioni continue ed è lineare in quanto vale la seguente proprietà di additività:
+L'\gls{applicazione lineare} $L$ è una somma di funzioni continue ed è lineare in quanto soddisfa la seguente proprietà di additività:
 \begin{equation*}
     L(\alpha\varphi_1(x)+\beta\varphi_2(x))=\alpha L(\varphi_1(x)) + \beta L(\varphi_2(x)),\quad\forall \alpha,\beta\in\mathbb R,\, \varphi_1(x),\varphi_2(x)\in C^n(I). \qed
 \end{equation*}
@@ -592,7 +592,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
             \end{matrix}
     \end{equation*}
     \addtocounter{footnote}{-1}
-    \footnotetext{$\int \frac{1}{\sqrt{x}}dx=\frac{x^{\frac{1}{2}}}{\frac{1}{2}}=2\sqrt{x}$.}
+    \footnotetext{$\int \frac{1}{\sqrt{x}}dx=\frac{\sqrt{x}}{\frac{1}{2}}=2\sqrt{x}$.}
 
     \stepcounter{footnote}
     \footnotetext{Il parametro è $2\sqrt{x}$, quindi con $t>0$, $dt=\cancel{2}\frac{1}{\cancel{2}\sqrt{x}} \Rightarrow dt \underbrace{\sqrt{x}}_{\frac{t}{2}}=dx$.}
@@ -621,10 +621,10 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 
 \paragraph{Nota:} Quando è stato trattato il problema lineare, l'equazione omogenea associata è un'equazione a variabili separabili. Si chiamano EDO a variabili separabili perché le variabili sono divise.
 
-\paragraph{Cosa significa risolvere una EDO?} Significa trovare le $y=y(x)$ definite su un opportuno intervallo per cui $y$ è derivabile e la derivata prima $y'$ verifica l'equazione (in questo caso \ref{eq:EDO_primo_ordine_forma_normale_variabili_separabili}). 
+\paragraph{Cosa significa risolvere una EDO?} Significa trovare tutte le $y=y(x)$ definite su un opportuno intervallo per cui $y$ è derivabile e la derivata prima $y'$ verifica l'equazione (in questo caso \ref{eq:EDO_primo_ordine_forma_normale_variabili_separabili}). 
 
 \begin{remark}
-    Una EDO lineare del primo ordine omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}), ovvero del tipo
+    Una EDO lineare del primo ordine omogenea in forma normale (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}), ovvero del tipo
     \begin{equation*}
         y'(x) + a(x) y(x) = 0,
     \end{equation*}
@@ -646,7 +646,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         \int\frac{y'(x)}{g(y(x))}dx=\int f(x)dx,
     \end{equation*}
-    da cui, ponendo $y=y(x)$ (cambiamento di variabile) e $dy = y'(x)dx$, è ottenuto
+    dalle quali, ponendo $y=y(x)$ (cambiamento di variabile) e $dy = y'(x)dx$, è ottenuto
     \begin{equation*}
         \int \frac{1}{g(y)}dy = \int f(x)dx.
     \end{equation*}
@@ -685,7 +685,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
         \end{equation*}
         integranado rispetto ad $x$ con cambio di variabile $y=y(x)$, è ottenuto
         \begin{equation*}
-            \int \frac{y'(x)}{(1-y(x))(2-y(x))} dx = \int x dx.
+            \int \frac{y'(x)}{(1-y(x))(2-y(x))} dx = \int x\, dx.
         \end{equation*}
         Integrando con fratti semplici è ottenuto
         \begin{equation*}
@@ -695,7 +695,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
         \begin{equation*}
             1 = A(2-y)+B(1-y)=y(-A+B)+2A+B.
         \end{equation*}
-        Tramite il principio di identità dei polinomi
+        Tramite il principio di identità dei polinomi (Vedere Teorema \ref{th:principio_identità_polinomi})
         \begin{equation*}
             \begin{cases}
                 -A-B&=0\\
@@ -710,7 +710,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         \int\frac{y'}{(1-y)(2-y)}dx \overset{y(x)=y,\, y'(x)dx=dy}{=} \int\frac{1}{1-y}dy-\int \frac{1}{2-y}dy = -\log(|1-y|) + \log(|2-y|) = \log\left|\frac{2-y}{1-y}\right|,
     \end{equation*}
-    dove $y\neq 1$ perché siamo al secondo passo.\\
+    dove $y\neq 1$ (perché siamo al secondo passo).\\
     Dunque,
     \begin{equation*}
         \log\left|\frac{2-y}{1-y}\right| = \frac{x^2}{2}+c,
@@ -721,10 +721,9 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \end{equation*}
     Pertanto, è ottenuto che 
     \begin{equation}\label{eq:soluzioni_generali_esercizio_edo}
-        \frac{2-y}{1-y}=\pm c_1 e^{\frac{x^2}{2}}=c e^{\frac{x^2}{2}},\quad c\in\mathbb R. \quad\footnotemark
+        \frac{2-y}{1-y}=\pm c_1 e^{\frac{x^2}{2}}=c e^{\frac{x^2}{2}},\quad c\in\mathbb R.
     \end{equation}
-    \footnotetext{(\ref{eq:soluzioni_generali_esercizio_edo}) è la soluzione generale (anche detta "Famiglia generale"), ovvero l'integrale generale.}
-    
+    \textbf{(\ref{eq:soluzioni_generali_esercizio_edo}) è la soluzione generale (anche detta "Famiglia generale"), ovvero l'integrale generale.}
     \paragraph{Intermezzo:} È necessario esprimere la soluzione generale (\ref{eq:soluzioni_generali_esercizio_edo}) in forma esplicita.\\
     Le soluzioni singolari sono $y=1$ e $y=2$. Dalla relazione (\ref{eq:soluzioni_generali_esercizio_edo}) è possibile ottenere $y=2$, ponendo $c=0$. Pertanto, la soluzione costante $y=2$ appartiene alla famiglia delle soluzioni (\ref{eq:soluzioni_generali_esercizio_edo}), con $c=0$.\\
     (\ref{eq:soluzioni_generali_esercizio_edo}) è una uguaglianza che non da la $y$ in funzione di $x$ (ciò che è ricercato), ovvero $G(x) = F(x)+c$.\\
@@ -734,7 +733,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
         \begin{matrix}
             2-y &=& (1-y)\cdot c\cdot e^{\frac{x^2}{2}}\\
             2-y &=& ce^{\frac{x^2}{2}} - y\cdot c\cdot e^{\frac{x^2}{2}}\\
-            (ce^{\frac{x^2}{2}} -1)y &=& c\cdot e^{\frac{x^2}{2}}-2 && \text{non lineare.}
+            (ce^{\frac{x^2}{2}} -1)y &=& c\cdot e^{\frac{x^2}{2}}-2 &\rightarrow& \text{non lineare.}
         \end{matrix}
     \end{equation*}
     Quindi, l'insieme delle soluzioni è dato da
@@ -764,12 +763,12 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \end{equation}
     con $c\cdot e^{\frac{x^2}{2}}-1\neq 0$.\\
     Risolvere il seguente problema di Cauchy (trovandone la soluzione) e specificare qual è il più ampio intervallo (rispetto all'inclusione $\subseteq$, \footnotemark) su cui è definita la soluzione,
-    \begin{equation}
+    \begin{equation*}
         \begin{cases}
-            y'&=(1-y)(2-y)x\\
+            y'&=(1-y)(2-y)x\quad\text{EDO non lineare}\\
             y(0) &= 3
         \end{cases}
-    \end{equation}
+    \end{equation*}
     \footnotetext{L'intervallo deve contenere il punto della condizione iniziale. Una volta definita la soluzione è necessario specificare dove è definita (su quale intervallo). Il più ampio intervallo è l'intervallo massimale rispetto all'inclusione nel quale la soluzione ha senso. È possibile osservare come le soluzioni costanti $y(x)=1$ e $y(x)=2$ non verifichino la condizione iniziale, quindi sono scartate. Ciò significa che la soluzione deve essere trovata utilizzando la formula (\ref{eq:esercizio_1_intergrale_generale_problema_cauchy}).}
     
     \paragraph{Svolgimento:} Le soluzioni $y(x)=1$ e $y(x)=2$ non verifichino la condizione iniziale, dunque è ricercata la soluzione utilizzando la formula (\ref{eq:esercizio_1_intergrale_generale_problema_cauchy}) imponendo la condizione iniziale ($y(0)=3$), ovvero
@@ -791,7 +790,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \footnotemark L'intervallo più ampio contenente $x_0=0$, in cui la soluzione (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) è ben definita (e contenuta) è determinata da
     \begin{equation*}
         \begin{matrix}
-            e^{\frac{x^2}{2}}-2 \neq 0 &\rightarrow& e^{\frac{x^2}{2}}\neq 2 &\rightarrow& \frac{x^2}{2}\neq\ln 2 &\rightarrow& x^2\neq 2\ln2 &\rightarrow& x\neq \sqrt{2\ln2}
+            e^{\frac{x^2}{2}}-2 \neq 0 &\rightarrow& e^{\frac{x^2}{2}}\neq 2 &\rightarrow& \frac{x^2}{2}\neq\ln 2 &\rightarrow& x^2\neq 2\ln2 &\rightarrow& x\neq\pm \sqrt{2\ln2}
         \end{matrix}
     \end{equation*}
     quindi l'intervallo più ampio in cui è definita la soluzione (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) è
@@ -800,7 +799,9 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \end{equation*}
     \footnotetext{Affinché (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) sia ben definito allora il denominatore di tale espressione deve essere diverso da 0.}
     
-    \paragraph{Nota su $I$:} $I$ è una soluzione locale, ovvero le $x$ sono considerate vicine al punto iniziale. Quindi $y(x,c)$ è una soluzione in piccolo. Invece, se considerate le equazioni lineari ((\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) non è lineare), se i coefficienti della EDO sono continui (come nei nostri casi) la soluzione è definita in grande, ovvero su tutto l'intervallo nel quale i coefficienti della EDO sono continui.
+    \paragraph{Note su (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}):} è definita $\forall x\in\mathbb{R}\backslash\{\pm\sqrt{2\ln 2}\} $, ma per il problema di Cauchy richiesto di svolgere $\forall x\in I=(-\sqrt{2\ln2}, \sqrt{2\ln2})$.
+    
+    \paragraph{Nota su $\boldsymbol I$:} $I$ è una soluzione locale, ovvero le $x$ sono considerate vicine al punto iniziale. Quindi $y(x,c)$ è una soluzione in piccolo. Invece, se considerate le equazioni lineari ((\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) non è lineare), se i coefficienti della EDO sono continui (come nei nostri casi) la soluzione è definita in grande, ovvero su tutto l'intervallo nel quale i coefficienti della EDO sono continui.
     
     \paragraph{Nota:}
     È sbagliato affermare che la soluzione è definita $\forall x\in\mathbb R$ con $x\neq \pm\sqrt{2\log2}$ perché non è un intervallo, è ricercata la soluzione su un intervallo (ovvero un insieme limitato o illimitato contenente i punti in cui è contenuta la condizione iniziale). Affermando che $x\neq\pm\sqrt{2\log2}$ sono trovati 3 insiemi disgiunti
@@ -818,7 +819,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \paragraph{Testo:} Risolvere il problema di Cauchy
     \begin{equation*}
         \begin{cases}
-            y' &=xy+2x\quad\text{eq. lineare}\\
+            y' &=xy+2x\quad\text{(EDO lineare)}\\
             y(0)& = 2
         \end{cases}
     \end{equation*}
@@ -826,7 +827,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         y'-xy = 2x.
     \end{equation*}
-    Dato che $a(x)=x$, allora $A(x)=-\int xdx=-\frac{x^2}{2}$. Utilizzando la formula risolutiva (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}) è ottenuto
+    Dato che $a(x)=-x$, allora $A(x)=-\int xdx=-\frac{x^2}{2}$. Utilizzando la formula risolutiva (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}) è ottenuto
     \begin{equation*}
         y(x) = c\cdot e^{-A(x)} + e^{-A(x)}\int f(x) e^{A(x)} dx,
     \end{equation*}
@@ -838,7 +839,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         1=c\cdot e^{0} -2\quad \rightarrow\quad c = 3,
     \end{equation*}
-    quindi la soluzione e'
+    quindi la soluzione è
     \begin{equation*}
         y(x) = 3e^{\frac{x^2}{2}}-2,\quad x\in\mathbb R.
     \end{equation*}
@@ -853,11 +854,11 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
             u(0) &= 1
         \end{cases}
     \end{equation*}
-    E' possibile separare le variabili a condizione che $1+u^2\neq 0$ (ovvero $u^2\geq1$), dividendo per $g(x)$
+    È possibile separare le variabili a condizione che $1+u^2\neq 0$ (ovvero $u^2\geq1$). Dividendo per $g(x)$ è ottenuto
     \begin{equation*}
-        \frac{u'(t)}{1+u^2(t)} = \sin t.
+        \frac{u'(t)}{1+u^2(t)} = \sin t,
     \end{equation*}
-    Integrando è ottenuto
+    ed integrando
     \begin{equation*}
         \int \frac{u'(t)}{1+u^2(t)}dt = \int\sin t \,dt,
     \end{equation*}
@@ -869,21 +870,26 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation}\label{eq:arctan_esercizio_cauchy}
         \arctan u(t) = -\cos(t) + c.
     \end{equation}
-    \paragraph{Intermezzo:} E' possibile scrivere chi è $u(t)$. (\ref{eq:arctan_esercizio_cauchy}) è la versione implicita della soluzione, è possibile invertire la $G$, la quale è una primitiva di $\int \frac{u'}{1+u^2}du$ e quindi è utilizzata la funzione inversa (ovvero la tangente). Quindi è ottenuto quanto segue. $\qed$
+    \paragraph{Intermezzo:} È possibile scrivere chi è $u(t)$. (\ref{eq:arctan_esercizio_cauchy}) è la versione implicita della soluzione, è possibile invertire la $G$, la quale è una primitiva di $\int \frac{u'}{1+u^2}du$ e quindi è utilizzata la funzione inversa (ovvero la tangente). Quindi è ottenuto quanto segue. $\qed$
     \begin{equation*}
         u(t) = \tan(-\cos t + c)= \underbrace{u(t, c)}_\text{int. gen.}\in\mathbb R.
     \end{equation*}
-    Imponendo la condizione iniziale:
+    Imponendo la condizione iniziale è ottenuto che
     \begin{equation*}
        \begin{matrix}
             \arctan u(0) &=& -\cos 0 + c\\
             &\Vertrarrow&\\
             \arctan 1 &=& -1 + c\\
             &\Vertrarrow&\\
-            \frac{\pi}{4} &=& -1 + c
+            \frac{\pi}{4} &=& -1 + c\\
+            &\Vertrarrow&\\
+            c &=& 1+\frac{\pi}{4}
        \end{matrix}
     \end{equation*}
-    Dunque $c=1+\frac{\pi}{4}$ e la soluzione è data da $u(t)=\tan(-\cos t + 1 + \frac{\pi}{4})\quad \forall(-\cos t + 1 + \frac{\pi}{4})\in(-\frac{\pi}{2}, \frac{\pi}{2})$
+    Dunque la soluzione è data da
+    \begin{equation*}
+    	u(t)=\tan\left(-\cos t + 1 + \frac{\pi}{4}\right)\quad \forall\left(-\cos t + 1 + \frac{\pi}{4}\right)\in\left(-\frac{\pi}{2}, \frac{\pi}{2}\right).
+    \end{equation*}
 \end{example}
 
 \begin{example}\footnote{Slide 16 PDF 4.}
@@ -894,7 +900,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
             y(0) &= -1
         \end{cases}
     \end{equation*}
-    \paragraph{Nota:} $y' + 2t y^2 = 0$ è una EDO del primo ordine non lineare a variabili separabili. Le soluzioni sono del tipo $y=y(t)$. $\qed$
+    \paragraph{Nota:} $y' + 2t y^2 = 0$ è una EDO del primo ordine non lineare a variabili separabili. Inoltre, le soluzioni sono del tipo $y=y(t)$. $\qed$\\
     Quindi,
     \begin{equation*}
         y' = -2 t y^2,
@@ -904,12 +910,28 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
         \item $f(t) = -2t$,
         \item $g(t) = y^2$,
     \end{itemize}
-    entrambe funzioni su tutto $\mathbb R$. E' possibile osservare che $y(t)=0$ è soluzione di
+    entrambe funzioni definite su tutto $\mathbb R$. È possibile osservare che $y(t)=0$ è soluzione di
     \begin{equation*}
         y' + 2ty^2 = 0,
     \end{equation*}
     ma questa non verifica la condizione iniziale, quindi sono separate le variabili (dividendo per $y^2$).
-    \paragraph{Nota:} E' possibile dividere subito per $y^2$ in quanto la condizione $y=0$ non verifica la condizione iniziale, quindi non si puo' verificare una divisione per 0.$\qed$
+    \paragraph{Nota:} È possibile dividere subito per $y^2$ in quanto la condizione $y=0$ non verifica la condizione iniziale, quindi non si puo' verificare una divisione per 0.$\qed$\\
+    Data
+    \begin{equation*}
+    	\frac{y'(t)}{y^(t)}=2t,
+    \end{equation*}
+    integrando
+    \begin{equation*}
+    	\int\frac{y'(t)}{y^2(t)}dt=-2\int t\, dt
+    \end{equation*}
+    è ottenuto
+    \begin{equation*}
+    	-\frac{1}{y(t)} = -t^2+c,
+    \end{equation*}
+    ovvero
+    \begin{equation*}
+	\frac{1}{y(t)} = t^2-c,\quad c\in\mathbb{R}.
+    \end{equation*}
     Quindi,
     \begin{equation*}
         1 = y t^2 - yc = y(t^2-c),
@@ -918,17 +940,17 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         y(t) = \frac{1}{t^2-c}\quad\text{oppure}\quad y(t) = \frac{1}{t^2+c}.
     \end{equation*}
-    (le quali sono funzioni diverse, ma l'utilizzo finale non cambia e quindi è utilizzata la forma piu' comoda.)
-    \footnote{Per definire la soluzione è necessario che il denominatore sia diverso da 0 e cio' è legato al valore della costante. Con valori della costante positivi non ci sono problemi di definizione del dominatore, con valori negativi sono necessari esclusioni. Inoltre, è necessario trovare l'intervallo dove la soluzione e ben definita (ovvero l'intervallo contente $t=0$), quindi $t^2+c\neq 0$.}
+    (le quali sono funzioni diverse, ma l'utilizzo finale non cambia e quindi è utilizzata la forma più comoda.)
+    \footnote{Per definire la soluzione è necessario che il denominatore sia diverso da 0 e ciò è legato al valore della costante. Con valori della costante positivi non ci sono problemi di definizione del dominatore, con valori negativi sono necessari esclusioni. Inoltre, è necessario trovare l'intervallo dove la soluzione e ben definita (ovvero l'intervallo contente $t=0$), quindi $t^2+c\neq 0$.}
     Imponiamo la condizione iniziale $y(0) = -1$,
     \begin{equation*}
         1=\frac{1}{0+c},
     \end{equation*}
-    quindi $c=-1$. La soluzione del problema e'
+    quindi $c=-1$. La soluzione del problema è
     \begin{equation*}
         y(t) = \frac{1}{t^2 -1},\quad \forall t\in(-1,1)\ni 0,
     \end{equation*}
-    se $t^2 -1\neq 0$, ovvero $t^2\neq \pm 1$.
+    se $t^2 -1\neq 0$, ovvero $t\neq \pm 1$.
     \paragraph{Nota sulla soluzione:} La soluzione è considerata nell'intervallo massimale $(-1, 1)$ (il quale contiene $t=0$). Inoltre, l'espressione $\frac{1}{t^2 -1}$ ha senso in tutti gli intervalli in cui $t^2-1\neq 0$, ma è necessario considerare l'intervallo contenente il punto iniziale.
 \end{example}
 
@@ -943,7 +965,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     e precisare qual è il più ampio intervallo su cui la soluzione trovata è definita.
     \paragraph{Nota:} La EDO è lineare del primo ordine e della forma $y'+a(x)y=f(x)$, dove $a(x)=\frac{3x^2}{5+x^3}$ e $f(x) = \sqrt[3]{x}$.
     \paragraph{Svolgimento:} La EDO è definita $\forall x\in\mathbb R : x\neq-\sqrt[3]{5}$ (perché $5+x^3\neq 0$).\\
-    La condizione iniziale è assegnata in $x_0=0$ e poiché $x_0>-\sqrt[3]{x}$, dunque è considerata la soluzione sull'intervallo $I=(-\sqrt[3]{5}, +\infty)\ni 0$. \footnote{La soluzione al problema è in grande sull'intervallo.}\\
+    La condizione iniziale è assegnata in $x_0=0$ e poiché $x_0>-\sqrt[3]{x}$, è considerata la soluzione sull'intervallo $I=(-\sqrt[3]{5}, +\infty)\ni 0$. \footnote{La soluzione al problema è in grande sull'intervallo.}\\
     \begin{equation*}
         A(x) = \int \frac{3x^2}{5+x^3} dx = \log(5+x^3),\quad \forall x\in I=(-\sqrt[3]{5}, +\infty),
     \end{equation*}
@@ -951,7 +973,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         \begin{matrix}
             \boldsymbol{y(x)} &=& c\cdot e^{-\log(5+x^3)} + e^{-\log(5+x^3)}\int e^{\log(5+x^3)} \sqrt[3]{x}\, dx &=& y(x,c)\\
-            &=& \underbrace{\frac{1}{5+x^3}}_{\footnotemark}\left[c+\int (5+x^3)x^{\frac{1}{3}}dx\right] \overset{\footnotemark}{=} \frac{1}{5+x^3}\left(c+\int 5x^{\frac{1}{3}}dx+\int x^{\frac{10}{3}} dx\right) &=& \boldsymbol{\frac{1}{5+x^3}\left(c+5\cdot\frac{3}{4}x^{\frac{4}{3}} + \frac{3}{13}x^{\frac{13}{3}}\right)}
+            &=& \underbrace{\frac{1}{5+x^3}}_{\footnotemark}\left[c+\int (5+x^3)\sqrt[3]{x}dx\right] \overset{\footnotemark}{=} \frac{1}{5+x^3}\left(c+\int 5\sqrt[3]{x}dx+\int x^{\frac{10}{3}} dx\right) &=& \boldsymbol{\frac{1}{5+x^3}\left(c+5\cdot\frac{3}{4}x^{\frac{4}{3}} + \frac{3}{13}x^{\frac{13}{3}}\right)},
         \end{matrix}
     \end{equation*}
     \addtocounter{footnote}{-1}
@@ -959,13 +981,14 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 
     \stepcounter{footnote}
     \footnotetext{Linearità dell'integrale.}
-    \noindent quindi,
+    
+    \noindent ovvero,
     \begin{equation*}
-        y(x)= \left(c+\cdot\frac{15}{4}x^{\frac{4}{3}} + \frac{3}{13}x^{\frac{13}{3}}\right).
+        y(x)= \frac{1}{5+x^3}\left(c+\cdot\frac{15}{4}x^{\frac{4}{3}} + \frac{3}{13}x^{\frac{13}{3}}\right).
     \end{equation*}
     Imponendo la condizione iniziale $y(0) = 1$ è ottenuto
     \begin{equation*}
-        1=\frac{1}{5}\cdot c \quad\Rightarrow\quad c=5,
+        1=\frac{1}{5}\cdot c \quad\rightarrow\quad c=5,
     \end{equation*}
     quindi la soluzione al problema di Cauchy è
     \begin{equation*}
@@ -986,7 +1009,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 
 \subsection{Risultati importanti sulle EDO del secondo ordine a coefficienti costanti}\footnote{Slide 22 PDF 4.} 
 Per trovare la soluzione di questo tipo di EDO, l'integrale generale, esiste un metodo infallibile, ovvero: trovare la soluzione di un'equazione algebrica di grado 2 di campo complesso.\\
-In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma nel campo complesso coniugato. Quindi, affinché tale equazione abbia sempre soluzione è considerato il campo complesso. Per questo è utilizzato il Teorema fondamentale dell'Algebra (fatto a MDL o Algebra Lineare), il quale afferma che l'equazione considerata ha sempre almeno una soluzione nel campo complesso ed in particolare le soluzioni possono essere reali, distinte o coincidenti, ma se sono complesse sono complesse coniugate (intese come numeri complessi coniugati, vedere Definizione \ref{def:complesso_coniugato}).
+In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma nel campo complesso coniugato. Quindi, affinché tale equazione abbia sempre soluzione è considerato il campo complesso. Per questo è utilizzato il Teorema \ref{th:fondamentale_algebra} fondamentale dell'Algebra (fatto a MDL o Algebra Lineare), il quale afferma che l'equazione considerata ha sempre almeno una soluzione nel campo complesso ed in particolare le soluzioni possono essere reali, distinte o coincidenti, ma se sono complesse sono complesse coniugate (intese come numeri complessi coniugati, vedere Definizione \ref{def:complesso_coniugato}).
 
 \begin{definition}[EDO lineare del secondo ordine]
     Una EDO del secondo ordine si dice lineare se della forma
@@ -998,6 +1021,12 @@ In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma
 
 \paragraph{IMPORTANTE:} Se $f(x)\neq 0$, allora (\ref{eq:edo_lineare_secondo_ordine}) è detta \textbf{completa}.
 
+\begin{definition}[EDO lineare del secondo ordine a coefficienti costanti]
+	Data (\ref{eq:edo_lineare_secondo_ordine}), se i coefficienti $a_i(x),\, i=0,1,2$, allora la EDO è detta a coefficienti costanti.
+\end{definition}
+
+\paragraph{IMPORTANTE:} \textbf{Saranno considerate solo EDO del secondo ordine a coefficienti costanti.}
+
 \begin{definition}[EDO lineare del secondo ordine in forma normale]
     La EDO lineare del secondo ordine (\ref{eq:edo_lineare_secondo_ordine}) è in forma normale se $a_2(x)=1$, ovvero
     \begin{equation}\label{eq:edo_lineare_secondo_ordine_forma_normale}
@@ -1008,15 +1037,9 @@ In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma
 \begin{definition}[EDO lineare del secondo ordine omogenea associata]
     La EDO omogenea associata a (\ref{eq:edo_lineare_secondo_ordine}) è
     \begin{equation}\label{eq:edo_omogenea_associata_lineare_secondo_ordine}
-        a_2(x)y''(x)+a_1(x)y'(x)+a_0(x)y(x) = 0.
+        y''(x)+a_1(x)y'(x)+a_0(x)y(x) = 0.
     \end{equation}
 \end{definition}
-
-\begin{definition}
-    Data (\ref{eq:edo_lineare_secondo_ordine}), se i coefficienti $a_i(x),\, i=0,1,2$, allora la EDO è detta a coefficienti costanti.
-\end{definition}
-
-\paragraph{IMPORTANTE:} \textbf{Saranno considerate solo EDO del secondo ordine a coefficienti costanti.}
 
 \paragraph{Nota:} Per la EDO completa della forma (\ref{eq:edo_lineare_secondo_ordine}) esiste l'integrale generale della forma integrale generale dell'omogenea + integrale particolare della non omogenea, ovvero il Teorema (\ref{th:rappresentazione_integrale_generale_EDO_lineare}) vale $\forall n\geq1$.
 
@@ -1027,13 +1050,11 @@ In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma
 \int \text{ generale di (\ref{eq:edo_lineare_secondo_ordine_forma_normale})}=\int{\text{ generale di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})}} + \int\text{ particolare di (\ref{eq:edo_lineare_secondo_ordine_forma_normale})}.
 \end{equation*}
 
-\begin{remark}[Non ufficiale]
-    Lo spazio delle soluzioni di una EDO di ordine $n=2$ è uno spazio vettoriale di dimensione $n=2$, quindi per trovare una soluzione qualsiasi dell'omogenea servono $n$ linearmente indipendenti (e da queste, com'è noto per AL, sono trovate tutte le altre).
+\begin{remark}[Non ufficiale]\label{rem:dimensione_spazio_vettoriale_edo_secondo_ordine}
+    Lo spazio delle soluzioni di una EDO di ordine $n=2$ è uno spazio vettoriale di dimensione $n=2$, quindi per trovare una soluzione qualsiasi dell'omogenea servono $n=2$ soluzioni linearmente indipendenti (e da queste, com'è noto per AL, sono trovate tutte le altre).
 \end{remark}
 
-La precedente osservazione, per le EDO del secondo ordine, si traduce in quanto segue.
-
-Se le funzioni $y_1(x),y_2(x)$ sono soluzioni di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}), allora:
+\noindent \textbf{L'Osservazione \ref{rem:dimensione_spazio_vettoriale_edo_secondo_ordine} si traduce in quanto segue:} se le funzioni $y_1(x),y_2(x)$ sono soluzioni di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}), allora
 \begin{enumerate}
     \item $y_1(x)$ e $y_2(x)$ sono linearmente indipendenti,
     \item ogni altra soluzione è una combinazione lineare di $y_1(x)$ e $y_2(x)$\footnote{Ciò segue dalla linearità della EDO, dovuto all'operatore $L$ associato ad ogni EDO lineare. $L$ è un funzionale che associa una funzione di classe $C^n(I)$ ad una funzione continua ($C^0(I)$), ovvero associa una funzione $\varphi$ a $a_n\varphi^n+\hdots+a_0\varphi^0$. Dalla linearità dell'operatore $L$ segue che se $\varphi_1$ e $\varphi_2$ sono soluzioni della EDO, anche la loro combinazione lineare è soluzione della EDO (come visto nel caso generale).}, allora \textbf{l'integrale generale generale della omogenea associata (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) è}
@@ -1054,17 +1075,52 @@ Ciò significa che
 \begin{equation}\label{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}
     \{y_1(x), y_2(x)\}
 \end{equation}
-formano un sistema fondamentale di soluzioni per (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})), quindi ogni soluzione su $I$ di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) si scrive come loro combinazione lineare.
+formano un sistema fondamentale di soluzioni per (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) e quindi ogni soluzione su $I$ di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) si scrive come loro combinazione lineare.
 
 \paragraph{Nota su (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Quanto scritto significa che l'integrale generale di una EDO del secondo ordine dipende dalle 2 costanti $c_1$ e $c_2$, oltre che dalla variabile $x$ (una EDO del primo ordine dipende da 1 costante).
 
 \paragraph{Spiegazione di (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Gli elementi di $\mathbb R^n$ sono rappresentabili tramite la base canonica (la quale è una \gls{base ortonormale}).\\
-Un vettore può essere rappresentato come combinazione lineare con la base canonica, ad esempio: $(1,2)\in\mathbb R^2$ può essere espresso come $1\uline e_1 + 2\uline e_2=\uline u=(1,2)$. Lo stesso vale con (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}): $y_1(x)$ e $y_2(x)$ sono due soluzioni del problema omogeneo ed è possibile dimostrare, tramite la linearità del problema, che la loro combinazione lineare è anche la soluzione. Dato che l'obiettivo è trovare tutte le soluzioni (generare lo spazio delle soluzioni), è sufficiente avere due soluzioni indipendenti (due perché la EDO è di ordine due e lo spazio delle soluzioni è di dimensione due). La lineare indipendenza delle soluzioni sull'intervallo $I$ segue da AL:  la combinazione di $y_1(x)$ e $y_2(x)$ è linearmente indipendente ($=0$) se e solo se i coefficienti della combinazione sono tutti 0.\\
-\textbf{Riassumendo: }Per trovare una soluzione qualsiasi del problema omogeneo (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) è sufficiente trovare due soluzioni linearmente indipendenti del problema, le quali formano un sistema fondamentale di soluzioni.$\qed$
+Un vettore può essere rappresentato come combinazione lineare con la base canonica, ad esempio: $(1,2)\in\mathbb R^2$ può essere espresso come $1\uline e_1 + 2\uline e_2=\uline u=(1,2)$. Lo stesso vale con (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}): $y_1(x)$ e $y_2(x)$ sono due soluzioni del problema omogeneo ed è possibile dimostrare, tramite la linearità del problema, che la loro combinazione lineare è anche la soluzione. Dato che l'obiettivo è trovare tutte le soluzioni (generare lo spazio delle soluzioni), è sufficiente avere due soluzioni indipendenti (due perché la EDO è di ordine due e lo spazio delle soluzioni è di dimensione due). La lineare indipendenza delle soluzioni sull'intervallo $I$ segue da AL:  la combinazione di $y_1(x)$ e $y_2(x)$ è linearmente indipendente (tale combinazione deve essere $=0$) se e solo se i coefficienti della combinazione sono tutti 0.\\
+\textbf{Riassumendo:} Per trovare una soluzione qualsiasi del problema omogeneo (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) è sufficiente trovare due soluzioni linearmente indipendenti del problema, le quali formano un sistema fondamentale di soluzioni.$\qed$
 
-\subsubsection{Cose non fatte ma utili}
-\begin{theorem}[Teorema fondamentale dell'algebra]
-    Il teorema fondamentale dell'algebra asserisce che ogni polinomio in una variabile di grado $n\geq 1$ (cioè non costante) con coefficienti complessi, del tipo
+\subsection{Cose non fatte ma utili}
+\begin{theorem}[Principio di indenticità dei polinomi]\label{th:principio_identità_polinomi}
+		Due polinomi ridotti in forma normale sono identici, ovvero
+		\begin{equation*}
+			a_nx^n+a_{n-1}x^{n-1}+\hdots+a_0x^0 = b_nx^n+b_{n-1}x^{n-1}+\hdots+b_0x^0,
+		\end{equation*}
+		se hanno lo stesso grado $n$ e gli stessi coefficienti nei termini di grado uguale, ovvero se
+		\begin{equation*}
+			a_i=b_i\quad\forall i\in(0,1,\hdots, n).
+		\end{equation*}
+\end{theorem}
+\paragraph{Esempio pratico del Teorema \ref{th:principio_identità_polinomi}:} Siano $A,B,C$ parametri e i \gls{polinomi}
+\begin{equation*}
+	\begin{matrix}
+		P(x) &=& x^3 + 4x^2-x+1\\
+		Q(x) &=& Cx^4 + (A+B)x^3+2Ax^2-x+1
+	\end{matrix}
+\end{equation*}
+Per quali valori dei parametri i due polinomi sono identici?\\
+È necessario imporre che
+\begin{equation*}
+	\begin{cases}
+		C&=0\\
+		A+B &= 1\\
+		2A &= 4
+	\end{cases}
+\end{equation*}
+da cui, è ottenuto
+\begin{equation*}
+	\begin{cases}
+		A &= 2\\
+		B &= - 1\\
+		C&=0
+	\end{cases}
+\end{equation*}
+
+\begin{theorem}[Teorema fondamentale dell'algebra]\label{th:fondamentale_algebra}
+   Ogni polinomio in una variabile di grado $n\geq 1$ (cioè non costante) con coefficienti complessi, del tipo
     \begin{equation*}
         a_{n}z^{n}+\ldots +a_{1}z+a_{0},
     \end{equation*}
@@ -1086,6 +1142,14 @@ Un numero complesso coniugato di un numero complesso è il numero ottenuto dal p
     \begin{equation*}
         \bar {z}=x-iy.
     \end{equation*}
+\end{definition}
+
+\begin{definition}[Applicazione Lineare]\label{def:applicazione_lineare}
+	Siano $A$ e $B$ due spazi vettoriali definiti sullo stesso campo $C$. Una funzione $f:A\rightarrow B$ è un'\gls{applicazione lineare} se soddisfa le seguenti proprietà $\forall x,y\in A$ e $\forall a\in C$:
+	\begin{enumerate}
+		\item $f(x+y)=f(x)+f(y),$
+		\item $f(\alpha x)=\alpha f(x)$.
+	\end{enumerate}
 \end{definition}
 
 \subsection{Metodo di somiglianza}\label{ssec:metodo_somiglianza}
