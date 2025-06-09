@@ -1011,19 +1011,15 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 Per trovare la soluzione di questo tipo di EDO, l'integrale generale, esiste un metodo infallibile, ovvero: trovare la soluzione di un'equazione algebrica di grado 2 di campo complesso.\\
 In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma nel campo complesso coniugato. Quindi, affinché tale equazione abbia sempre soluzione è considerato il campo complesso. Per questo è utilizzato il Teorema \ref{th:fondamentale_algebra} fondamentale dell'Algebra (fatto a MDL o Algebra Lineare), il quale afferma che l'equazione considerata ha sempre almeno una soluzione nel campo complesso ed in particolare le soluzioni possono essere reali, distinte o coincidenti, ma se sono complesse sono complesse coniugate (intese come numeri complessi coniugati, vedere Definizione \ref{def:complesso_coniugato}).
 
-\begin{definition}[EDO lineare del secondo ordine]
+\begin{definition}[EDO lineare del secondo ordine]\label{def:edo_lineare_secondo_ordine}
     Una EDO del secondo ordine si dice lineare se della forma
     \begin{equation}\label{eq:edo_lineare_secondo_ordine}
         a_2(x)y''(x)+a_1(x)y'(x)+a_0(x)y(x) = f(x),
     \end{equation}
-    dove i coefficienti $a_i(x),\, i=0,1,2$ ed il termine noto $f(x)$ sono continue su un intervallo $I$.
+    dove i coefficienti $a_i(x),\, i=0,1,2$ ed il termine noto $f(x)$ sono $C^0(I)$.
 \end{definition}
 
 \paragraph{IMPORTANTE:} Se $f(x)\neq 0$, allora (\ref{eq:edo_lineare_secondo_ordine}) è detta \textbf{completa}.
-
-\begin{definition}[EDO lineare del secondo ordine a coefficienti costanti]
-	Data (\ref{eq:edo_lineare_secondo_ordine}), se i coefficienti $a_i(x),\, i=0,1,2$, allora la EDO è detta a coefficienti costanti.
-\end{definition}
 
 \paragraph{IMPORTANTE:} \textbf{Saranno considerate solo EDO del secondo ordine a coefficienti costanti.}
 
@@ -1083,8 +1079,162 @@ formano un sistema fondamentale di soluzioni per (\ref{eq:edo_omogenea_associata
 Un vettore può essere rappresentato come combinazione lineare con la base canonica, ad esempio: $(1,2)\in\mathbb R^2$ può essere espresso come $1\uline e_1 + 2\uline e_2=\uline u=(1,2)$. Lo stesso vale con (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}): $y_1(x)$ e $y_2(x)$ sono due soluzioni del problema omogeneo ed è possibile dimostrare, tramite la linearità del problema, che la loro combinazione lineare è anche la soluzione. Dato che l'obiettivo è trovare tutte le soluzioni (generare lo spazio delle soluzioni), è sufficiente avere due soluzioni indipendenti (due perché la EDO è di ordine due e lo spazio delle soluzioni è di dimensione due). La lineare indipendenza delle soluzioni sull'intervallo $I$ segue da AL:  la combinazione di $y_1(x)$ e $y_2(x)$ è linearmente indipendente (tale combinazione deve essere $=0$) se e solo se i coefficienti della combinazione sono tutti 0.\\
 \textbf{Riassumendo:} Per trovare una soluzione qualsiasi del problema omogeneo (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) è sufficiente trovare due soluzioni linearmente indipendenti del problema, le quali formano un sistema fondamentale di soluzioni.$\qed$
 
+Data la Definizione \ref{def:edo_lineare_secondo_ordine} di EDO lineare del secondo ordine, allora è possibile la seguente.
+\begin{definition}[EDO lineare del secondo ordine a coefficienti costanti]
+	Una EDO lineare del secondo ordine è a coefficienti costanti se della forma
+	\begin{equation}\label{eq:edo_lineare_secondo_ordine_coefficienti_costanti}
+		a y'' + by' + cy =  f(x),\quad a,b,c\in\mathbb{R},\quad a\neq 0,
+	\end{equation}
+	dove $a=a_0(x), b=a_1(x), c=a_2(x)\in C^0(I)$ funzioni costanti e $f(x)\in C^0(I)$, con $I\subseteq\mathbb{R}$ intervallo.
+\end{definition}
+
+\begin{definition}[EDO lineare del secondo ordine omogenea a coefficienti costanti]
+	Una EDO lineare del secondo ordine omogenea associata a (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}) è a coefficienti costanti se della forma
+	\begin{equation}\label{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}
+		a y'' + by' + cy =  0,\quad a,b,c\in\mathbb{R},\quad a\neq 0,
+	\end{equation}
+	dove $a=a_0(x), b=a_1(x), c=a_2(x)\in C^0(I)$ funzioni costanti, con $I\subseteq\mathbb{R}$ intervallo.
+\end{definition}
+
+\paragraph{Considerazioni su (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}) e (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}):}
+\begin{enumerate}
+	\item $a,b,c \in\mathbb{R}$ e $a\neq 0$,
+	\item $x\in I$.
+\end{enumerate}
+
+\subsubsection{Ricerca della soluzione generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})}
+Per cercare la soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è necessario distiguere due casi:
+\begin{enumerate}
+	\item Se $b=c=0$ (sono identicamente nulle), l'equazione (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) diventa
+	\begin{equation*}
+		a y''=0,
+	\end{equation*}
+	quindi $y'(x)=c_1$ (è una costante). Integrando è ottenuto l'integrale generale dell'omogenea
+	\begin{equation*}
+		y(x)=y(x,c_1,c_2) 
+		= c_1 x+c_2,\quad c_1,c_2\in\mathbb{R}.
+	\end{equation*}
+	\item Se $b$ e $c$ non sono identicamente nulle, per trovare l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) gli è associata una equazione algebrica di secondo grado in $\mathbb{C}$, detta equazione caratteristica di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), della forma
+	\begin{equation}\label{eq:equazione_caratteristica_associata_omogenea}
+		\underbrace{a\lambda^2 + b\lambda + c}_{p(\lambda)} = 0,\quad\lambda\in\mathbb{R}.
+	\end{equation}
+	\footnote{L'equazione (\ref{eq:equazione_caratteristica_associata_omogenea}) è considerata in campo complesso perché $\Delta = b^2-4ac<0$, quindi le soluzioni a tale equazioni sono complesse. Per il Teorema \ref{th:fondamentale_algebra} fondamentale dell'algebra, l'equazione ha sempre due soluzioni nel campo complesso se $\Delta<0$ o reali se $\Delta>0$.} Quando $p(\lambda)=0$? Formalmente le soluzioni di (\ref{eq:equazione_caratteristica_associata_omogenea}) sono date da
+	\begin{equation*}
+		\lambda_{1,2} = \frac{-b\pm\sqrt{\Delta}}{2a}.
+	\end{equation*}
+\end{enumerate}
+
+\begin{remark}[Non ufficiale]
+	Tramite l'operatore $L$ associato alla EDO lineare omogenea di secondo grado (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), definito come 
+	\begin{equation*}
+		L(\varphi(x)):=a\varphi''(x) + b\varphi(x)'(x) + c\varphi(x),\quad \varphi\in C^2(I).
+	\end{equation*}
+	è possibile scrivere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) come
+	\begin{equation*}
+		Ly(x)=0.
+	\end{equation*}
+	Quindi risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare le $y$ per le quali
+	\begin{equation}\label{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}
+		(\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})\equiv L(y(x)) = 0.
+	\end{equation}
+	Inoltre, per risolvere il problema non omogoneo è posto $f(x)$ al posto di 0 in (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}).
+\end{remark}
+
+\begin{proposition}\footnote{Slide 3 PDF 5.}\label{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
+	\begin{equation*}
+		y(x)=e^{\lambda x}\text{ è soluzione (reale o complessa\footnotemark) di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})} \iff \lambda \text{ è radice (zero) dell'equazione } p(\lambda)=0,
+	\end{equation*}
+	dove $p(\lambda)=0$ è (\ref{eq:equazione_caratteristica_associata_omogenea}).
+\end{proposition}
+\footnotetext{Dipende da $\lambda$ se è complessa o reale.}
+\begin{proof}
+	È necessario dimostrare che $L(e^{\lambda x})=0\iff p(\lambda)=0$.
+	\begin{equation*}
+		L(e^{\lambda x}) = a(e^{\lambda x})''+ b(e^{\lambda x})'+ c e^{\lambda x} = a(\lambda^2 e^{\lambda x}) + b\lambda e^{\lambda x} + c e^{\lambda x} = e^{\lambda x} (a\lambda ^2 + b\lambda + c),
+	\end{equation*}
+	quindi
+	\begin{equation*}
+		L(e^{\lambda x}) = 0 \iff a\lambda^2 + b\lambda + c=p(\lambda) = 0.
+	\end{equation*}
+\end{proof}
+
+\paragraph{Osservazione sulla dimostrazione:} Se $\lambda$ è una radice dell'equazione caratteristica associata a (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (ovvero $\lambda$ tale che $a\lambda^2 + b\lambda + c= 0$), allora la funzione $y(\lambda)=e^{\lambda x}$ è una soluzione reale o complessa della EDO lineare omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).\\
+Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o equazione algebrica di secondo grado con soluzioni in $\mathbb{C}$) (\ref{eq:equazione_caratteristica_associata_omogenea}). A seconda che $\Delta$ sia >, < o = 0, ci saranno due soluzioni reali distinte, due soluzioni reali coincidenti o due soluzioni complesse coniugate.
+
+Pertanto, siano le due radici $\lambda_{1,2}=\frac{-b\pm\sqrt{\Delta}}{2a}$ (soluzioni del polinomio caratteristico), sono distinti i tre seguenti casi:
+\begin{enumerate}
+	\item Caso $\Delta>0$:
+	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_negativa}
+		y_1(x) = e^{\lambda_1 x},\, y_2(x) = e^{\lambda_2 x},\quad \lambda_1,\lambda_2\in\mathbb{R}\text{ e } \lambda_1\neq\lambda_2,
+	\end{equation}
+	\item Caso $\Delta = 0$:
+	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_zero}
+		y_1(x) = e^{\lambda x},\, y_2(x)= e^{\lambda x},\quad \lambda_1=\lambda_2=\lambda=\frac{-b}{-2a},
+	\end{equation}
+	\item Caso $\Delta<0$:
+	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_positiva}
+		y_1(x) = e^{\alpha x}\cos\beta x,\, y_2(x) = e^{\alpha x} \sin\beta x,
+	\end{equation}
+	con $\lambda_1,\lambda_2\in\mathbb{C}$ e coniugate definite come $\lambda_1=\alpha + i \beta,\, \lambda_2=\alpha - i\beta$, dove $i=\sqrt{-1},\, \alpha = -\frac{b}{2a}$ e $ \beta\overset{\footnotemark}{=}\frac{\sqrt{4ac-b^2}}{2a}>0$ se $a>0$.
+\end{enumerate}
+\footnotetext{Dato che $i=\sqrt{-1}$, allora $b^2-4ac<0$ quindi è invertito il segno di $\Delta$, ovvero $\sqrt{-\Delta}$.}
+
+\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $y_1$ e $y_2$. Ovvero: ogni volta che si ha a che fare l'equazione caratteristica, sono scritte le soluzioni in base a $\Delta$ e di conseguenza, trovate le soluzioni, l'integrale generale è espresso come combinazione delle soluzioni trovate. 
+
+\begin{theorem}\footnote{Slide 5 PDF 5.}
+	L'integrale generale della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è data da
+	\begin{equation*}
+		y(x,c_1,c_2) = c_1y_1(x) + c_2y_2(x),\quad \text{ al variare dei coefficienti } c_1,c_2\in\mathbb{R},
+	\end{equation*}
+	dove $y_1(x)$ e $y_2(x)$ sono determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva})-(\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}).
+\end{theorem}
+\begin{proof}
+	\begin{enumerate}
+		\item Caso $\Delta>0$:
+		\begin{equation*}
+			\Delta = b^2-4ac>0,
+		\end{equation*}
+		quindi $\lambda_1\neq \lambda_2$, dove $\lambda_1,\lambda_2\in\mathbb{R}$ sono soluzioni dell'equazione caratteristica (\ref{eq:equazione_caratteristica_associata_omogenea}). Dunque, per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}, $e^{\lambda_1 x}$ e $e^{\lambda_2 x}$ sono soluzioni della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).\\
+		\footnotemark (Tramite Algebra Lineare) Siano $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$, queste sono linearmente indipendenti se
+		\begin{equation*}
+			\begin{matrix}
+				0 &\overset{\footnotemark}{\neq}& \underbrace{\begin{vmatrix}
+						y_1(x) & y_2(x)\\
+						y_1'(x) & y_2'(x)
+				\end{vmatrix}}_{\footnotemark} &=& y_1(x)y_2'(x) - y_2(x)y_1(x) &=&\\
+				&=&
+				\begin{vmatrix}
+					e^{\lambda_1x} & e^{\lambda_2 x}\\
+					\lambda_1 e^{\lambda_1x} & \lambda_2 e^{\lambda_2 x}
+				\end{vmatrix} &=& \lambda_1 e^{(\lambda_1+\lambda_2)x} - \lambda_2 e^{(\lambda_1+\lambda_2)x} &=& (\lambda_2 -\lambda_1) e^{(\lambda_1+\lambda_2)x} &\neq& 0. 
+			\end{matrix}
+		\end{equation*}
+		\addtocounter{footnote}{-2}
+		\footnotetext{Per essere sicuri che siano generate tutte le soluzioni, quindi che è stato trovato un sistema fondamentale di soluzioni, è necessario dimostrare che le due soluzioni $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ siano linearmente indipendenti. È necessario ricordare che servono due elementi linearmente indipendenti per generare tutte le soluzioni perché lo spazio delle soluzioni del problema omogeneo è di dimensione 2.\\
+		Quindi è necessario dimostrare che $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ sono linearmente indipendenti (entra in gioco Algebra Lineare). Con le mani sarà fatto vedere che la soluzione generale è una combinazione lineare di $y_1$ e $y_2$.}
+		\stepcounter{footnote}
+		\footnotetext{Necessario affinché $y_1$ e $y_2$ siano linearmente indipendenti.}
+		\stepcounter{footnote}
+		\footnotetext{Determinante della matrice Wronskiana. Una matrice Wronskiana è formata da due funzioni e dalle loro derivate prime.\\
+		Considerate le soluzioni di una equazione omogenea, il determinante della Wronskiana è una funzione che dipende da $x$, se le funzioni considerate nella Wronskiana sono soluzioni del problema, il determinante è diverso da 0 e l'essere diverso da 0 indica che le funzioni sono linearmente indipendenti.}
+		
+		\noindent Dimostriamo (con le mani) che
+		\begin{equation*}
+				\begin{vmatrix}
+						y_1(x) & y_2(x)\\
+						y_1'(x) & y_2'(x)
+				\end{vmatrix}\neq 0.
+		\end{equation*} 
+		Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
+		\begin{equation*}
+			y_1(x) = e^{\lambda_1 x},\quad y_2(x) = e^{\lambda_2 x},
+		\end{equation*}
+		sono soluzioni di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). 
+	\end{enumerate}
+\end{proof}
+
 \subsection{Cose non fatte ma utili}
-\begin{theorem}[Principio di indenticità dei polinomi]\label{th:principio_identità_polinomi}
+\begin{theorem}[Principio di identicità dei polinomi]\label{th:principio_identità_polinomi}
 		Due polinomi ridotti in forma normale sono identici, ovvero
 		\begin{equation*}
 			a_nx^n+a_{n-1}x^{n-1}+\hdots+a_0x^0 = b_nx^n+b_{n-1}x^{n-1}+\hdots+b_0x^0,
