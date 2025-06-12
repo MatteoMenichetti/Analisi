@@ -1202,7 +1202,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 	\begin{equation*}
 		y(x,c_1,c_2) = c_1y_1(x) + c_2y_2(x),\quad \text{ al variare dei coefficienti } c_1,c_2\in\mathbb{R},
 	\end{equation*}
-	dove $y_1(x)$ e $y_2(x)$ sono determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva})-(\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}).
+	dove $y_1(x)$ e $y_2(x)$ sono determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa})-(\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}).
 \end{theorem}
 \begin{proof}
 	\begin{enumerate}
@@ -1333,7 +1333,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\begin{equation*}
 			y_1(x)=e^{\lambda_1 x},\quad y_2(x) = e^{\lambda_2 x},
 		\end{equation*}
-		possono essere denotate come
+		possono essere denotate come (unica soluzione doppia)
 		\begin{equation*}
 			y(x) = e^{\lambda x}.
 		\end{equation*}
@@ -1341,7 +1341,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante il determinante della matrice Wronskiana. Inoltre, c'è una soluzione $\lambda$ se $p(\lambda)=0$.
 		\hrule\vspace{2px}
 		
-		\noindent Data $y(x) = e^{\lambda x}$, questa è linearmente indipendente se
+		\noindent Data $y(x) = e^{\lambda x}$, questa è linearmente indipendente perche'
 		\begin{equation*}
 			\begin{vmatrix}
 				e^{\lambda x} & e^{\lambda x}\\
@@ -1482,7 +1482,7 @@ dove $c_1,c_2\in C^2(I)$ sono da determinare.
 \end{equation*}
 imponendo che
 \begin{equation}\label{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}
-	c_1'(x)y_1(x) + c_2'(x) y_2(x) = 0,
+	\underbrace{c_1'(x)y_1(x) + c_2'(x) y_2(x) = 0}_{\footnotemark},
 \end{equation}
 e' ottenuto
 \begin{equation}\label{eq:conseguenza_condizione_sistema_variazione_costanti}
@@ -1493,9 +1493,32 @@ da cui (derivando (\ref{eq:conseguenza_condizione_sistema_variazione_costanti}) 
 	\bar{y}''(x) = c_1'(x) y_1'(x) + c_1(x)y''_1(x) + c_2'(x)y_2''(x).
 \end{equation}
 Sostituendo (\ref{eq:derivata_conseguenza_condizione_sistema_variazione_costanti}) e (\ref{eq:conseguenza_condizione_sistema_variazione_costanti}) in (\ref{eq:equazione_soddisfare_variazioni_costanti}), e' ottenuta
+\begin{equation}\label{eq:punto_inizio_trucco}
+	\begin{matrix}
+		a[c'_1(x)y'_1(x) + c_1(x) y''_1(x) + c_2'(x) y_2'(x) + c_2(x) y_2''(x)] &+&\\
+		+ b[c_1(x) y_2'(x) + c_2(x)y'_2(x)] + c[c_1(x)y_2(x) + c_2(x)y_2(x)] &=& f(x).
+	\end{matrix}
+\end{equation}
+Quindi, sono raccolti $c_1$ e $c_2$ (perche' e' necessario far venire fuori i termini che compongono la derivata seconda delle due soluzioni, tendendo di conto che $y_1$ e $y_2$ sono soluzioni rispetto all'omogenea)
+
 \begin{equation*}
-	a[]
+	c_1(x)\underbrace{[ay_1''(x) + b y_1'(x) + c y_1(x)]}_{ = 0\text{ (soddisfa EDO omogenea)}} + c_2(x) \underbrace{[ay_2''(x) + b y_1'(x) + c_1 y_1(x)]}_{ = 0\text{ (soddisfa EDO omogenea)}} + \underset{\underset{0}{\vertneq}}{a} [c_1'(x) y_1'(x) + c_2'(x)y_2'(x)] = f(x),
 \end{equation*}
+e dividendo per $a$ e' ottenuto
+\begin{equation}\label{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}
+	c_1'(x) y_1'(x) + c_2'(x) y_2'(x) = \frac{f(x)}{a}.
+\end{equation}
+
+\footnotetext{Tale condizione imposta sara' una delle condizioni del sistema. Perche' e' imposta? E' un trucco matematico per facilitare il calcolo di $c_1$ e $c_2$ come si vede da (\ref{eq:punto_inizio_trucco}) in poi.}
+
+\noindent \footnote{(\ref{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) e' un'ulteriore condizione. Inoltre, se la EDO e' in forma normale allora $a=1$.} (Ora e' necessaio mettere assieme le condizioni (\ref{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) e (\ref{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}), ovvero:) Dunque, e' ottenuto il sistema nelle incognite $c_1'(x)$ e $c_2'(x)$ ($2\times 2$ non omogeneo)
+\begin{equation}
+	\begin{cases}
+		c_1'(x) y_1(x) + c_2'(x) y_2(x) &= 0\\
+		c_1'(x) y_1'(x) + c_2'(x) y_2'(x) &= \frac{f(x)}{a}
+	\end{cases}
+\end{equation}
+
 
 \subsection{Argomenti utili}
 \begin{theorem}[Principio di identicità dei polinomi]\label{th:principio_identità_polinomi}
