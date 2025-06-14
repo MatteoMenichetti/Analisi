@@ -1224,10 +1224,10 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 				\begin{vmatrix}
 					e^{\lambda_1x} & e^{\lambda_2 x}\\
 					\lambda_1 e^{\lambda_1x} & \lambda_2 e^{\lambda_2 x}
-				\end{vmatrix} &=& \lambda_1 e^{(\lambda_1+\lambda_2)x} - \lambda_2 e^{(\lambda_1+\lambda_2)x} &=& (\lambda_2 -\lambda_1) e^{(\lambda_1+\lambda_2)x} &\neq& 0. 
+				\end{vmatrix} &=& \lambda_1 e^{(\lambda_1+\lambda_2)x} - \lambda_2 e^{(\lambda_1+\lambda_2)x} &=& \underbrace{(\lambda_2 -\lambda_1)}_{\footnotemark} e^{(\lambda_1+\lambda_2)x} &\neq& 0. 
 			\end{matrix}
 		\end{equation*}
-		\addtocounter{footnote}{-2}
+		\addtocounter{footnote}{-3}
 		\footnotetext{Per essere sicuri che siano generate tutte le soluzioni, quindi che è stato trovato un sistema fondamentale di soluzioni, è necessario dimostrare che le due soluzioni $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ siano linearmente indipendenti. È necessario ricordare che servono due elementi linearmente indipendenti per generare tutte le soluzioni perché lo spazio delle soluzioni del problema omogeneo è di dimensione 2.\\
 		Quindi è necessario dimostrare che $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ sono linearmente indipendenti (entra in gioco Algebra Lineare). Con le mani sarà fatto vedere che la soluzione generale è una combinazione lineare di $y_1$ e $y_2$.}
 		\stepcounter{footnote}
@@ -1235,6 +1235,8 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\stepcounter{footnote}
 		\footnotetext{Determinante della matrice Wronskiana. Una matrice Wronskiana è formata da due funzioni e dalle loro derivate prime.\\
 		Considerate le soluzioni di una equazione omogenea, il determinante della Wronskiana è una funzione che dipende da $x$, se le funzioni considerate nella Wronskiana sono soluzioni del problema, il determinante è diverso da 0 e l'essere diverso da 0 indica che le funzioni sono linearmente indipendenti.}
+		\stepcounter{footnote}
+		\footnotetext{Diverso da 0 perché $\Delta\neq 0$.}
 		 
 		Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
 		\begin{equation*}
@@ -1332,7 +1334,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante il determinante della matrice Wronskiana. Inoltre, c'è una soluzione $\lambda$ se $p(\lambda)=0$.
 		\hrule\vspace{2px}
 		
-		\noindent Siano $y_1(x)$ e $y_2(x)$, queste sono linearmente indipendenti perché
+		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti perché
 		\begin{equation*}
 			\begin{matrix}
 				\begin{vmatrix}
@@ -1352,9 +1354,9 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\end{equation*}
 		(Provato che $y_1$ e $y_2$ sono linearmente indipendenti)\\
 		Sia $y(x)$ soluzione qualsiasi di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) della forma 
-		\begin{equation*}
+		\begin{equation}\label{eq:integrale_generale_delta_=_0}
 			y(x) = e^{\lambda x} u(x),
-		\end{equation*}
+		\end{equation}
 		(dove $u(x)$ è da determinare affinché $y(x)$ sia della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}),) allora (procedendo come prima, poiché $y(x)$ è una soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare})
 		\begin{equation*}
 			a(e^{\lambda x}u(x))'' + b(e^{\lambda x} u(x))' + c e^{\lambda x} u(x) =0,
@@ -1362,43 +1364,45 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		dunque è ottenuto [come in per (\ref{eq:dimostrazione_th_soluzioni_edo_secondo_ordine})]
 		\begin{equation*}
 			\begin{matrix}
-				a(\lambda e^{\lambda x}u(x)+e^{\lambda x}u'(x))' + b(\lambda e^{\lambda x}u(x) + e^{\lambda x}u'(x)) + ce^{\lambda x}u(x) &=& a(\lambda^2e^{\lambda x} u(x) + \lambda e ^{\lambda x}u'(x))\\\\
-				\underbrace{e^{\lambda x}}_{>0} [\underbrace{(a\lambda^2+b\lambda +c) u(x)}_{0} + a u''(x)+(2a\lambda + b)u'(x)] &=& 0.
+				a(\lambda e^{\lambda x}u(x)+e^{\lambda x}u'(x))' + b(\lambda e^{\lambda x}u(x) + e^{\lambda x}u'(x)) + ce^{\lambda x}u(x) &=& a(\lambda^2e^{\lambda x} u(x) + \lambda e ^{\lambda x}u'(x)) &=&\\\\
+				\underbrace{e^{\lambda x}}_{>0} [\underbrace{(a\lambda^2+b\lambda +c) u(x)}_{0} + a u''(x)+(2a\lambda + b)u'(x)] &=& a u''(x)+(2a\lambda + b)u'(x) &=& 0.
 			\end{matrix}
-		\end{equation*}
-		Cerchiamo di scrivere
-		\begin{equation*}
-			a u''(x)+(2a\lambda + b)u'(x)=0.
 		\end{equation*}
 		Dividendo per $a$ è ottenuto (il caso (\ref{eq:lambda1_+_lambda2}), ovvero)
 		\begin{equation*}
-			u''(x)+\left(2\lambda + \frac{b}{a}\right)u'(x).
+			u''(x)+\left(2\lambda + \frac{b}{a}\right)u'(x)=0.
 		\end{equation*}
 		dove $2\lambda = -\frac{b}{a}$ e $u''(x)=0$.
-		Quindi, integrando
+		Pertanto, ponendo $u(x)'=v(x)$, è ottenuto $v'(x)=0,\,v(x)=u'(x)=c,\,\forall x\in\mathbb{I}$. Quindi, integrando
 		\begin{equation*}
-			u(x) = c_1+c_2 x,
+			u(x) = \int u'(x)\,dx = \int c\, dx =  c_1+c_2 x,
 		\end{equation*}
-		e dunque
+		e dunque, sostituendo ($u(x)$ in (\ref{eq:integrale_generale_delta_=_0}))
 		\begin{equation*}
 			y(x) = e^{\lambda x}u(x) = e^{\lambda x} (c_1+c_2x) = c_1\cdot \underbrace{e^{\lambda x}}_{y_1(x)} + c_2\cdot\underbrace{x\cdot e^{\lambda x}}_{y_2(x)}.
 		\end{equation*}
 		(Quindi, vale la tesi anche nel caso 2, dato che in corrispondenza di $\Delta=0$ sono considerate $y_1=e^{\lambda x}$ e $y_2=x\cdot e^{\lambda x}$ ed una soluzione qualsiasi $y(x)$ è una combinazione di $y_1$ e $y_2$)
 		\item \textbf{Caso} $\boldsymbol{\Delta<0}$\textbf{:} Siano
 		\begin{equation*}
-			\lambda_{1,2}=\alpha\pm i\beta,\quad \beta=-\frac{b}{2a},\beta = \frac{\sqrt{\Delta}}{2a}.
+			\lambda_{1,2}=\alpha\pm i\beta\in\mathbb{C},\quad \alpha=-\frac{b}{2a},\beta = \frac{\sqrt{-\Delta}}{2a}\in\mathbb{R}.
 		\end{equation*}
 		Dalla Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
 		\begin{equation*}
-			e^{\lambda_1 x} \text{ e } e^{\lambda_2 x}
+			y_1(x) = e^{\lambda_1 x} \text{ e } y_2(x)=e^{\lambda_2 x}
 		\end{equation*}
 		sono soluzioni di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). \footnote{Le due soluzioni sono complesse, quindi, se al posto di $\lambda_1$ è sostituito $\alpha + i\beta$ è necessario rappresentare tale numero tramite la funzione di Eulero.}\\
-		(Come prima, per dimostrare che $e^{\lambda_1 x} \text{ e } e^{\lambda_2 x}$ generano lo spazio delle soluzioni è necessario mostrare che sono linearmente indipendenti tramte il determinante della matrice Wronskiana.)
+		(Come prima, per dimostrare che $y_1(x) \text{ e } y_2(x)$ generano lo spazio delle soluzioni è necessario mostrare che sono linearmente indipendenti tramite il determinante della matrice Wronskiana.)
+		
+		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti perché
 		\begin{equation*}
+				\begin{vmatrix}
+				y_1(x) & y_2(x)\\
+				y_1'(x) & y_2'(x)
+			\end{vmatrix} = 
 			\begin{vmatrix}
 				e^{\lambda_1x} & e^{\lambda_2 x}\\
 				\lambda_1 e^{\lambda_1x} & \lambda_2 e^{\lambda_2 x}
-			\end{vmatrix} = (\lambda_2 -\lambda_1) e^{(\lambda_1+\lambda_2)x},
+			\end{vmatrix} = (\lambda_2 -\lambda_1) e^{(\lambda_1+\lambda_2)x}\neq 0,
 		\end{equation*}
 		dove \footnote{$\lambda_{1,2}$ sono soluzioni complesse e coniugate del polinomio caratteristico associato all'omogenea.}
 		\begin{equation*}
@@ -1414,20 +1418,45 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\end{equation*}
 		allora
 		\begin{equation*}
-			a(e^{\alpha x} u(x))'' + b (e^{\alpha x} u(x))' + c e^{\alpha x} u(x) = 0,
+				a[e^{\alpha x} u(x)]'' + b [e^{\alpha x} u(x)]' + c e^{\alpha x} u(x) = 0,
 		\end{equation*}
-		dunque
+		ovvero
 		\begin{equation*}
-			u''(x) + \beta^2 u(x) = 0,
+			\begin{matrix}
+				a [\alpha e^{\alpha x}u(x) + e^{\alpha x}]' + b [\alpha e^{\alpha x}u(x) + e^{\alpha x}u'(x)] + c e^{\alpha x}u(x)&=&\\\\
+				a[\alpha^2e^{\alpha x}u(x) + 2\alpha e^{\alpha x} u'(x) + e^{\alpha x}u''(x)] + b [\alpha e^{\alpha x}u(x) + e^{\alpha x}u'(x)] + c e^{\alpha x}u(x) &=&\\\\
+				\underbrace{e^{\alpha x}}_{>0}[au''(x) + (2a\alpha + b)u'(x)+(a\alpha^2 + b\alpha + c)u(x)] &=& 0
+			\end{matrix}
 		\end{equation*}
-		con $\cos\beta x$ e $\sin\beta x$ soluzioni di $u(x)$. Quindi,
+		Dividendo per $a$ è ottenuto
 		\begin{equation*}
-			\underbrace{u(x)}_{\text{int. gen.}} = c_1\cos\beta x + c_2 \sin\beta x.
+			e^{\alpha x}\left[u''(x) + \left(2\alpha + \frac{b}{a}\right)u'(x)+\left(\alpha^2 + \frac{b\alpha}{a} + \frac{c}{a}\right)u(x)\right]=0,
 		\end{equation*}
+		sostituendo $\alpha=-\frac{b}{2a}$ (nella quadra) è ottenuto
+		\begin{equation*}
+			\begin{matrix}
+				e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{b^2}{4a^2} + \frac{-\frac{b^2}{2a}}{a}+\frac{c}{a}\right)u(x)\right] &=& e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{b^2-2b^2+4ac}{4a^2}\right)u(x)\right] &=&\\\\
+				&=& e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{-b^2+4ac}{4a^2}\right)u(x)\right] &=&\\\\
+				&=& e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{(\sqrt{-\Delta})}{2a}\right)^2u(x)\right] &=& 0,
+			\end{matrix}
+		\end{equation*}
+		la quale è della forma (di un'equazione lineare del secondo ordine a coefficienti costanti)
+		\begin{equation*}
+			u''(x) + \beta^2 u(x) = 0, \quad\footnotemark
+		\end{equation*}
+		con soluzione
+		\begin{equation*}
+			u(x) = c_1\cos\beta x + c_2 \sin\beta x.
+		\end{equation*}
+		\footnotetext{$\cos\beta x$ e $\sin\beta x$ soluzioni dell'equazione}
+		\noindent (Sostituendo $u(x)$ in $y(x)$:) Pertanto, l'integrale generale è
+		\begin{equation*}
+			y(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x).
+		\end{equation*} 
 	\end{enumerate}
 \end{proof}
 
-\paragraph{Riassunto:} Il problema è trovare la solzione di
+\paragraph{Riassunto:} Il problema è trovare la soluzione di
 \begin{equation*}
 	ay'' + b y' + cy = 0,
 \end{equation*}
