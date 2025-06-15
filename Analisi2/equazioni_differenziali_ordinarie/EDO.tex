@@ -1103,7 +1103,7 @@ Data la Definizione \ref{def:edo_lineare_secondo_ordine} di EDO lineare del seco
 \end{enumerate}
 
 \subsubsection{Ricerca dell'integrale generale \texorpdfstring{$\boldsymbol{\bar z(x)}$}{z(x)} di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})}
-Per cercare la soluzione generale della EDO lineare di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è necessario distinguere due casi:
+Per trovare la soluzione generale della EDO lineare di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è necessario distinguere due casi:
 \begin{enumerate}
 	\item Se $b=c=0$ (sono identicamente nulle), l'equazione (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) diventa
 	\begin{equation*}
@@ -1205,18 +1205,23 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 	dove $y_1(x)$ e $y_2(x)$ sono determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}).
 \end{theorem}
 \begin{proof}
-	(Le dimostrazioni seguenti puntano a dimostrare che date due soluzioni $y_1(x),\, y_2(x)$ determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}), queste sono linearmente indipendenti e che sono della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}) a seconda che $\Delta$ sia $<,=$ o $>0$.\\
-	Inoltre, per determinare $u(x)$ è utile la dimostrazione della Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}, in quando $y(x)$ nelle varie forme è utilizzato per risolvere $L(y(x))=0$.)
+	(Le dimostrazioni seguenti puntano a dimostrare che date due soluzioni $y_1(x),\, y_2(x)$ determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}), queste sono linearmente indipendenti e che la loro combinazione lineare è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}) a seconda che $\Delta$ sia $<,=$ o $>0$.\\
+	Inoltre, per determinare $u(x)$ è utile ricordarsi che è necessario risolvere $L(y(x))=0$ (come descritto per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore})).)
 	\begin{enumerate}
 		\item \textbf{Caso} $\boldsymbol{\Delta>0}$\textbf{:} In questo caso
 		\begin{equation*}
 			\Delta = b^2-4ac>0,
 		\end{equation*}
 		quindi $\lambda_1\neq \lambda_2$, dove $\lambda_1,\lambda_2\in\mathbb{R}$ sono soluzioni dell'equazione caratteristica (\ref{eq:equazione_caratteristica_associata_omogenea}).\\
-		\footnotemark (Tramite Algebra Lineare) Siano $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$, queste sono linearmente indipendenti se
+			Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
+		\begin{equation*}
+			y_1(x) = e^{\lambda_1 x},\quad y_2(x) = e^{\lambda_2 x},
+		\end{equation*}
+		sono soluzioni della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).\\
+		\footnotemark (Tramite Algebra Lineare) Siano $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$, queste sono linearmente indipendenti in quanto
 		\begin{equation*}
 			\begin{matrix}
-				0 &\overset{\footnotemark}{\neq}& \underbrace{\begin{vmatrix}
+				W(y_1(x),y_2(x)) &=& \underbrace{\begin{vmatrix}
 						y_1(x) & y_2(x)\\
 						y_1'(x) & y_2'(x)
 				\end{vmatrix}}_{\footnotemark} &=& y_1(x)y_2'(x) - y_2(x)y_1(x) &=&\\
@@ -1224,50 +1229,49 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 				\begin{vmatrix}
 					e^{\lambda_1x} & e^{\lambda_2 x}\\
 					\lambda_1 e^{\lambda_1x} & \lambda_2 e^{\lambda_2 x}
-				\end{vmatrix} &=& \lambda_1 e^{(\lambda_1+\lambda_2)x} - \lambda_2 e^{(\lambda_1+\lambda_2)x} &=& \underbrace{(\lambda_2 -\lambda_1)}_{\footnotemark} e^{(\lambda_1+\lambda_2)x} &\neq& 0. 
+				\end{vmatrix} &=& \lambda_1 e^{(\lambda_1+\lambda_2)x} - \lambda_2 e^{(\lambda_1+\lambda_2)x} &=& \underbrace{(\lambda_2 -\lambda_1)}_{\footnotemark} e^{(\lambda_1+\lambda_2)x} &\overset{\footnotemark}{\neq}& 0. 
 			\end{matrix}
 		\end{equation*}
 		\addtocounter{footnote}{-3}
 		\footnotetext{Per essere sicuri che siano generate tutte le soluzioni, quindi che è stato trovato un sistema fondamentale di soluzioni, è necessario dimostrare che le due soluzioni $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ siano linearmente indipendenti. È necessario ricordare che servono due elementi linearmente indipendenti per generare tutte le soluzioni perché lo spazio delle soluzioni del problema omogeneo è di dimensione 2.\\
 		Quindi è necessario dimostrare che $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ sono linearmente indipendenti (entra in gioco Algebra Lineare). Con le mani sarà fatto vedere che la soluzione generale è una combinazione lineare di $y_1$ e $y_2$.}
-		\stepcounter{footnote}
-		\footnotetext{Necessario affinché $y_1$ e $y_2$ siano linearmente indipendenti.}
+		
 		\stepcounter{footnote}
 		\footnotetext{Determinante della matrice Wronskiana. Una matrice Wronskiana è formata da due funzioni e dalle loro derivate prime.\\
 		Considerate le soluzioni di una equazione omogenea, il determinante della Wronskiana è una funzione che dipende da $x$, se le funzioni considerate nella Wronskiana sono soluzioni del problema, il determinante è diverso da 0 e l'essere diverso da 0 indica che le funzioni sono linearmente indipendenti.}
+		
 		\stepcounter{footnote}
 		\footnotetext{Diverso da 0 perché $\Delta\neq 0$.}
-		 
-		Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
-		\begin{equation*}
-			y_1(x) = e^{\lambda_1 x},\quad y_2(x) = e^{\lambda_2 x},
-		\end{equation*}
-		sono soluzioni della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).
+		
+		\stepcounter{footnote}
+		\footnotetext{Necessario affinché $y_1$ e $y_2$ siano linearmente indipendenti.}
+		
 		\footnote{Vediamo che $y(x)$ è una soluzione qualsiasi della (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (quindi $y(x)$ appartiene all'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti})) e che si esprime come combinazione lineare di $y_1(x)$ e $y_2(x)$. Ovvero, lo scopo è far vedere che $y(x)=c_1 e^{\lambda_1x}+c_2e^{\lambda_2 x}=(\ref{eq:integrale_generale_secondo_ordine_dimostrazione})$.} Sia $y(x)$ soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), scriviamo tale funzione come
 		\begin{equation}\label{eq:integrale_generale_secondo_ordine_dimostrazione}
 			y(x) = e^{\lambda_1 x}\underset{\footnotemark}{u(x)},
 		\end{equation}
 		\footnotetext{Funzione opportuna e non costante, da determinare affinché $y(x)$ sia soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).}
 		dove $u(x)$ è da determinare affinché $y(x)$ sia in forma di combinazione lineare di $y_1(x)$ e $y_2(x)$ (ovvero è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0})).
-		Poiché $y(x)$ è soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (e ciò significa che verifica la EDO), si ha che (per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare})
+		Poiché $y(x)$ è soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (e ciò significa che verifica la EDO), si ha che (per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
 		\begin{equation*}
 			a(e^{\lambda_1x}u(x))''+ b(e^{\lambda_1x}u(x))'+ c (e^{\lambda_1x}u(x)) = 0.
 		\end{equation*}
-		È necessario verificare quanto appena scritto] Dunque
+		[È necessario verificare quanto appena scritto] Dunque
 		\begin{equation}\label{eq:dimostrazione_th_soluzioni_edo_secondo_ordine}
 			\begin{matrix}
 				a(\lambda_1e^{\lambda_1x}u(x)+e^{\lambda_1x}u'(x))' + b(\lambda_1 e^{\lambda_1 x}u(x) + e^{\lambda_1x}u'(x)) + c(e^{\lambda_1x}u(x)) &=&\\\\
 				a(\lambda_1^2e^{\lambda_1 x}u(x) + 2 e^{\lambda_1 x} u'(x) + e^{\lambda_1 x}u''(x))+ b (\lambda_1 e^{\lambda_1 x}u(x) + e^{\lambda_1 x}u'(x)) + 
 				c(e^{\lambda_1 x}u(x)) &=&\\\\
-				 \underbrace{e^{\lambda_1 x}}_{>0} [\underbrace{(a\lambda_1^2+b\lambda_1 +c) u(x)}_{0} + a u''(x)+(2a\lambda_1 + b)u'(x)] &\underset{\footnotemark}{=}& 0
+				 \underbrace{e^{\lambda_1 x}}_{>0} [\underbrace{(a\lambda_1^2+b\lambda_1 +c) u(x)}_{0} + a u''(x)+(2a\lambda_1 + b)u'(x)]\\\\
+				 a u''(x)+(2a\lambda_1 + b)u'(x) &\underset{\footnotemark}{=}& 0
 			\end{matrix}
 		\end{equation}
-		\footnotetext{L'equazione è 0 s.se a sinistra, ciò che è fra parentesi quadre è 0.}
+		\footnotetext{L'equazione è 0 s.se a sinistra 0.}
 		\hrule\vspace{-12px}
 		\paragraph{Osservazioni (intermezzo):}
 		\begin{enumerate}
 			\item È noto che $\lambda_1$ è soluzione dell'equazione caratteristica $p(\lambda_1)=0$, ovvero di $a\lambda_1^2+b\lambda_1 +c=0$. Quindi, rimane da dimostrare che $a u''(x)+(2a\lambda_1 + b)u'(x)$ sia uguale a 0;
-			\item l'equazione caratteristica è $a\lambda_1^2+b\lambda_1 +c$, quindi (dato che $a\neq0$, altrimenti la EDO non sarebbe di secondo grado)
+			\item L'equazione caratteristica è $a\lambda_1^2+b\lambda_1 +c$, quindi (dato che $a\neq0$, altrimenti la EDO non sarebbe di secondo grado)
 			\begin{equation*}
 				\lambda + \frac{b}{a} \lambda + \frac{c}{a}= (\lambda - \lambda_1)(\lambda - \lambda_2) = 0,
 			\end{equation*}
@@ -1280,11 +1284,8 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 			\end{equation*}
 		\end{enumerate}
 		\hrule\vspace{2px}
-		Cerchiamo di riscrivere
-		\begin{equation*}
-			a u''(x)+(2a\lambda_1 + b)u'(x)=0.
-		\end{equation*}
-		Dividendo per $a$ è ottenuto (il caso (\ref{eq:lambda1_+_lambda2}), ovvero)
+	
+		\noindent Dividendo per $a$ è ottenuto (il caso (\ref{eq:lambda1_+_lambda2}), ovvero)
 		\begin{equation*}
 			u''(x)+\left(2\lambda_1+\frac{b}{a}\right)u'(x)=0,
 		\end{equation*}
@@ -1314,42 +1315,46 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\end{equation*}
 		è ottenuto
 		\begin{equation*}
-			u(x)=\underset{\footnotemark}{c_1}\cdot e^{(\lambda_2-\lambda_1)x}+\underset{\boldsymbol{\footnotemark}}{c_2},\quad c_1,c_2\in\mathbb{R},
+			u(x)=\underset{\footnotemark}{c_1}\cdot e^{(\lambda_2-\lambda_1)x}+\underset{\footnotemark}{c_2},\quad c_1,c_2\in\mathbb{R},
 		\end{equation*}
 		essendo
 		\begin{equation*}
-			y(x)=e^{\lambda_1 x}u(x)\overset{\text{sost.}}{=}e^{\lambda_1x}\left[c_1\cdot e^{(\lambda_2-\lambda_1)x}+c_2\right] = c_1\cdot e^{\lambda_2 x} + c_2\cdot e^{\lambda_1 x}
+			y(x)=e^{\lambda_1 x}u(x)\overset{\text{sost.}}{=}e^{\lambda_1x}\left[c_1\cdot e^{(\lambda_2-\lambda_1)x}+c_2\right] = c_1\cdot e^{\lambda_2 x} + c_2\cdot e^{\lambda_1 x}.
 		\end{equation*}
+		
+		\addtocounter{footnote}{-1}
 		\footnotetext{È necessario modificare la costante $c$: $c_1$ è collegata al fattore connettivo da utilizzare quando è calcolata una primitiva di un esponenziale del tipo $e^{(\lambda_2-\lambda_1)x}$. In particolare $c$ deve essere diviso per $\lambda_1-\lambda_2$. $c_1$ è collegato a $k$ in (\ref{eq:edo_variabili_separabili_dimostrazione_integrale_generale_edo_seecondo_grado}).}
+		
+		\stepcounter{footnote}
 		\footnotetext{Necessaria per comprendere tutte le soluzioni.}
+		
 		\item \textbf{Caso $\boldsymbol{\Delta=0}$:} In questo caso
 		\begin{equation*}
 			\lambda_1=\lambda_2=\lambda=\frac{-b}{2a},
 		\end{equation*}
-		dunque le soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})
+		dunque le soluzioni di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}) sono
 		\begin{equation*}
 			y_1(x)=e^{\lambda_1 x},\quad y_2(x) = xe^{\lambda_2 x}.
 		\end{equation*}
 		\hrule\vspace{-2px}
-		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante il determinante della matrice Wronskiana. Inoltre, c'è una soluzione $\lambda$ se $p(\lambda)=0$.
+		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante la Wronskiana. Inoltre, c'è una soluzione $\lambda$ se $p(\lambda)=0$.
 		\hrule\vspace{2px}
 		
-		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti perché
+		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti in quanto
 		\begin{equation*}
 			\begin{matrix}
-				\begin{vmatrix}
+				W(y_1(x),y_2(x)) &=&\begin{vmatrix}
 					y_1(x) & y_2(x)\\
 					y_1'(x) & y_2'(x)
-				\end{vmatrix} &=& 
-				\begin{vmatrix}
+				\end{vmatrix} &=&\begin{vmatrix}
 					e^{\lambda x} & e^{\lambda x}\\
 					\lambda e^{\lambda x} & e^{\lambda  x} + \lambda x e^{\lambda x}
-				\end{vmatrix} &=& 
-				\begin{vmatrix}
+				\end{vmatrix} &=& \\\\
+				&=&\begin{vmatrix}
 					e^{\lambda x} & e^{\lambda  x}\\
 					\lambda  e^{\lambda x} &  e^{\lambda  x} (1 + \lambda x )
-				\end{vmatrix} &=&\\\\
-				&&&=& e^{2\lambda x}(1+\lambda x) - \lambda x e^{2\lambda x} &=& e^{2\lambda x} + \cancel{\lambda x e^{2\lambda x}} - \cancel{\lambda x e^{2\lambda x}} &\neq& 0.
+				\end{vmatrix} &=&
+				 e^{2\lambda x}(1+\lambda x) - \lambda x e^{2\lambda x} &=& e^{2\lambda x} + \cancel{\lambda x e^{2\lambda x}} - \cancel{\lambda x e^{2\lambda x}} &\neq& 0.
 			\end{matrix}
 		\end{equation*}
 		(Provato che $y_1$ e $y_2$ sono linearmente indipendenti)\\
@@ -1357,9 +1362,9 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\begin{equation}\label{eq:integrale_generale_delta_=_0}
 			y(x) = e^{\lambda x} u(x),
 		\end{equation}
-		(dove $u(x)$ è da determinare affinché $y(x)$ sia della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}),) allora (procedendo come prima, poiché $y(x)$ è una soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare})
+		(dove $u(x)$ è da determinare affinché $y(x)$ sia della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}),) allora (procedendo come prima, poiché $y(x)$ è una soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
 		\begin{equation*}
-			a(e^{\lambda x}u(x))'' + b(e^{\lambda x} u(x))' + c e^{\lambda x} u(x) =0,
+			a(e^{\lambda x}u(x))'' + b(e^{\lambda x} u(x))' + c e^{\lambda x} u(x) = 0,
 		\end{equation*}
 		dunque è ottenuto [come in per (\ref{eq:dimostrazione_th_soluzioni_edo_secondo_ordine})]
 		\begin{equation*}
@@ -1395,6 +1400,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		
 		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti perché
 		\begin{equation*}
+				W(y_1(x),y_2(x)) = 
 				\begin{vmatrix}
 				y_1(x) & y_2(x)\\
 				y_1'(x) & y_2'(x)
@@ -1465,7 +1471,7 @@ la quale ha associata l'equazione caratteristica
 	a\lambda^2 + b\lambda + c = 0,
 \end{equation*}
 con soluzioni $\lambda_{1,2}=\frac{-b\pm\sqrt{\Delta}}{2a}$.\\
-Se
+Quindi, se
 \begin{enumerate}
 	\item $\boldsymbol{\Delta>0}$ allora $y(x) = c_1 e^{\lambda_1x} + c_2e^{\lambda_2 x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 \neq \lambda_2$;
 	\item $\boldsymbol{\Delta = 0}$ allora $y(x) = c_1 e^{\lambda x} + c_2e^{\lambda x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 = \lambda_2=\lambda=\frac{-b}{2a}$;
@@ -1497,7 +1503,7 @@ dove $c_1,c_2\in C^2(I)$ sono da determinare.
 \paragraph{Intermezzo:}
 \begin{enumerate}
 	\item $c_1$ e $c_2$ devono essere funzioni di classe $C^2(I)$ perché considerata una EDO di ordine 2,
-	\item La soluzione particolare di (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) ha la stessa forma della soluzione particolare di una EDO di ordine 1, ma aumentata di una dimensione per l'aggiunta di $c_2(x) y_2(x)$, dove $c_1$ e $c_2$ sono da determinare. Inoltre, imponendo che la funzione della forma (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) sia soluzione particolare, sara' ottenuto un sistema nelle ipotesi $c_1'$ e $c_2'$ che sara' risolto tramite la teoria dei sistemi lineari, ovvero mediante la regola di Cramer.
+	\item La soluzione particolare di (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) ha la stessa forma della soluzione particolare di una EDO di ordine 1, ma aumentata di una dimensione per l'aggiunta di $c_2(x) y_2(x)$, dove $c_1$ e $c_2$ sono da determinare. Inoltre, imponendo che la funzione della forma (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) sia soluzione particolare, sara' ottenuto un sistema nelle ipotesi $c_1'$ e $c_2'$ che sara' risolto tramite la teoria dei sistemi lineari, ovvero mediante la regola di Cramer. $qed$
 \end{enumerate}
 
 \noindent Poiché $\bar y(x)$ (ovvero (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti})) è soluzione della EDO lineare di secondo ordine a coefficienti costanti non omogenea (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}), le costanti $c_1$ e $c_2$ devono essere tali che $\bar{y}$ soddisfi
@@ -1508,11 +1514,11 @@ dove $c_1,c_2\in C^2(I)$ sono da determinare.
 \begin{equation*}
 	\bar{y}'(x) = c'_1(x) y_1(x) + c_1(x)y_1'(x) + c_2'(x)y_2(x) + c_2(x)y_2'(x),
 \end{equation*}
-imponendo che
+ed imponendo che
 \begin{equation}\label{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}
 	\underbrace{c_1'(x)y_1(x) + c_2'(x) y_2(x) = 0}_{\footnotemark},
 \end{equation}
-e' ottenuto
+è ottenuto
 \begin{equation}\label{eq:conseguenza_condizione_sistema_variazione_costanti}
 	\bar{y}'(x) = c_1(x) y_2'(x) + c_2(x) y_2'(x),
 \end{equation}
@@ -1540,14 +1546,23 @@ e dividendo per $a$ è ottenuto
 \footnotetext{Tale condizione imposta sara' una delle condizioni del sistema. Perché è imposta? E' un trucco matematico per facilitare il calcolo di $c_1$ e $c_2$ come si vede da (\ref{eq:punto_inizio_trucco}) in poi.}
 
 \noindent \footnote{(\ref{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) è un'ulteriore condizione. Inoltre, se la EDO è in forma normale allora $a=1$.} (Ora è necessaio mettere assieme le condizioni (\ref{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) e (\ref{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}), ovvero:) Dunque, è ottenuto il sistema nelle incognite $c_1'(x)$ e $c_2'(x)$ ($2\times 2$ non omogeneo)
-\begin{equation}
+\begin{equation}\label{eq:sistema_incognite_variazione_costanti}
 	\begin{cases}
 		c_1'(x) y_1(x) + c_2'(x) y_2(x) &= 0\\
 		c_1'(x) y_1'(x) + c_2'(x) y_2'(x) &= \frac{f(x)}{a}
 	\end{cases}
 \end{equation}
-
-
+(Interessa stabilire se il sistema ha soluzione e se ce l'ha quante ne ha. Ciò è definito attraverso la matrice dei coefficienti del sistema (\ref{eq:sistema_incognite_variazione_costanti}) come segue:)
+\begin{equation*}
+	\det\left(\begin{bmatrix}
+		y_1(x) & y_2(x)\\
+		y_1'(x) & y_2(x)
+	\end{bmatrix}\right) = y_1(x)y_2'(x)- y_2(x) y'_1(x) \neq 0,
+\end{equation*}
+quindi
+\begin{equation*}
+	\exists! \, (c_1'(x),c_2'(x)) \quad\text{soluzione}
+\end{equation*}
 \subsection{Argomenti utili}
 \begin{theorem}[Principio di identicità dei polinomi]\label{th:principio_identità_polinomi}
 		Due polinomi ridotti in forma normale sono identici, ovvero
