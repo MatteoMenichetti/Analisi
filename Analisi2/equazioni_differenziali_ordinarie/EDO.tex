@@ -1,3 +1,4 @@
+% !TeX spellcheck = <none>
 \section{Equazioni Differenziali Ordinarie}
 \begin{definition}[EDO di ordine $n$]
     Un'equazione differenziale ordinaria di ordine $n$ è un'equazione della forma
@@ -1102,7 +1103,7 @@ Data la Definizione \ref{def:edo_lineare_secondo_ordine} di EDO lineare del seco
 	\item $x\in I$.
 \end{enumerate}
 
-\subsubsection{Ricerca dell'integrale generale \texorpdfstring{$\boldsymbol{\bar z(x)}$}{z(x)} di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})}
+\subsubsection{Ricerca dell'integrale generale \texorpdfstring{$\boldsymbol{\bar y(x)}$}{y(x)} di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})}
 Per trovare la soluzione generale della EDO lineare di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è necessario distinguere due casi:
 \begin{enumerate}
 	\item Se $b=c=0$ (sono identicamente nulle), l'equazione (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) diventa
@@ -1114,7 +1115,7 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 		y(x)=y(x,c_1,c_2) 
 		= c_1 x+c_2,\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
-	\item Se $b$ e $c$ non sono identicamente nulle, per trovare l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) gli è associata una equazione algebrica di secondo grado in $\mathbb{C}$, detta equazione caratteristica di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), della forma
+	\item Se $b$ e $c$ non sono contemporaneamente nulle, per trovare l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è associata alla EDO una equazione algebrica di secondo grado in $\mathbb{C}$, detta equazione caratteristica di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), della forma
 	\begin{equation}\label{eq:equazione_caratteristica_associata_omogenea}
 		\underbrace{a\lambda^2 + b\lambda + c}_{p(\lambda)} = 0,\quad\lambda\in\mathbb{R}.
 	\end{equation}
@@ -1133,7 +1134,7 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 	\begin{equation*}
 		Ly(x)=0.
 	\end{equation*}
-	Quindi risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare le $y$ per le quali
+	Quindi risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare la $y$ tale che
 	\begin{equation}\label{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}
 		(\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})\equiv L(y(x)) = 0.
 	\end{equation}
@@ -1144,13 +1145,13 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 	\begin{equation*}
 		y(x)=e^{\lambda x}\text{ è soluzione (reale o complessa\footnotemark) di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})} \iff \lambda \text{ è radice (zero) dell'equazione } p(\lambda)=0,
 	\end{equation*}
-	dove $p(\lambda)=0$ è (\ref{eq:equazione_caratteristica_associata_omogenea}).
+	(dove $p(\lambda)=0$ è (\ref{eq:equazione_caratteristica_associata_omogenea})).
 \end{proposition}
 \footnotetext{Dipende da $\lambda$ se è complessa o reale.}
 \begin{proof}
 	È necessario dimostrare che $L(e^{\lambda x})=0\iff p(\lambda)=0$.
 	\begin{equation*}
-		L(e^{\lambda x}) = a(e^{\lambda x})''+ b(e^{\lambda x})'+ c e^{\lambda x} = a(\lambda^2 e^{\lambda x}) + b\lambda e^{\lambda x} + c e^{\lambda x} = e^{\lambda x} (a\lambda ^2 + b\lambda + c),
+		L(e^{\lambda x}) = a(e^{\lambda x})''+ b(e^{\lambda x})'+ c e^{\lambda x} = a(\lambda^2 e^{\lambda x}) + b\lambda e^{\lambda x} + c e^{\lambda x} \overset{\text{racc.}}{=} e^{\lambda x} (a\lambda ^2 + b\lambda + c),
 	\end{equation*}
 	quindi
 	\begin{equation*}
@@ -1159,43 +1160,51 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 \end{proof}
 
 \paragraph{Osservazione sulla dimostrazione:} Se $\lambda$ è una radice dell'equazione caratteristica associata a (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (ovvero $\lambda$ tale che $a\lambda^2 + b\lambda + c= 0$), allora la funzione $y(\lambda)=e^{\lambda x}$ è una soluzione reale o complessa della EDO lineare omogenea di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).\\
-Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o equazione algebrica di secondo grado con soluzioni in $\mathbb{C}$) (\ref{eq:equazione_caratteristica_associata_omogenea}). A seconda che $\Delta$ sia $>, <$ o = 0, ci saranno due soluzioni reali distinte, due soluzioni reali coincidenti o due soluzioni complesse coniugate.
+Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o equazione algebrica di secondo grado con soluzioni in $\mathbb{C}$) (\ref{eq:equazione_caratteristica_associata_omogenea}). A seconda che $\Delta$ sia $>, <$ o = 0, ci saranno due soluzioni reali distinte, due soluzioni reali coincidenti o due soluzioni complesse coniugate.$\qed$
 
-\paragraph{Determinazioni delle soluzioni linearmente indipendenti della EDO lineare omogenea di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}):} Siano le due radici $\lambda_{1,2}=\frac{-b\pm\sqrt{\Delta}}{2a}$ (soluzioni del polinomio caratteristico), sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}):
+\paragraph{Determinazioni delle soluzioni linearmente indipendenti della EDO lineare omogenea di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}):} Sia l'equazione caratteristica (\ref{eq:equazione_caratteristica_associata_omogenea})
+\begin{equation*}
+	p(\lambda) = a\lambda^2 + b\lambda + c = 0,
+\end{equation*}
+e date le due radici
+\begin{equation*}
+	\lambda_{1,2}=\frac{-b\pm\sqrt{\Delta}}{2a}\quad \text{(zeri del polinomio caratteristico)},
+\end{equation*}
+sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}):
 \begin{enumerate}
-	\item Caso $\Delta>0$:
+	\item \textbf{Caso} $\boldsymbol{\Delta>0}$:
 	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_negativa}
 		y_1(x) = e^{\lambda_1 x},\, y_2(x) = e^{\lambda_2 x},\quad \lambda_1,\lambda_2\in\mathbb{R}\text{ e } \lambda_1\neq\lambda_2,
 	\end{equation}
 	quindi l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}
-		\boldsymbol{\bar z(x)} = c_1 y_1(x)+ c_2y_2(x) = \boldsymbol{c_1 e^{\lambda_1 x} + c_2(x) e^{\lambda_2 x}}.
+		\boldsymbol{\bar y(x)} = c_1 y_1(x)+ c_2y_2(x) = \boldsymbol{c_1 e^{\lambda_1 x} + c_2(x) e^{\lambda_2 x}}.
 	\end{equation}
-	\item Caso $\Delta = 0$:
+	\item \textbf{Caso} $\boldsymbol{\Delta = 0}$:
 	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_zero}
 		y_1(x) = e^{\lambda x},\, y_2(x)=x e^{\lambda x},\quad \lambda_1=\lambda_2=\lambda=\frac{-b}{2a}\in\mathbb{R},
 	\end{equation}
 	quindi l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}
-		\boldsymbol{\bar z(x) = e^{\lambda x}(c_1+c_2 x)}, 
+		\boldsymbol{\bar y(x) = e^{\lambda x}(c_1+c_2 x)}, 
 	\end{equation}
-	\item Caso $\Delta<0$:
+	\item \textbf{Caso} $\boldsymbol{\Delta<0}$:
 	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_positiva}
-		y_1(x) = e^{\alpha x}\cos\beta x,\, y_2(x) = e^{\alpha x} \sin\beta x\in\mathbb{R},\quad \lambda_{1,2}=\alpha \pm i \beta\in\mathbb{C}
+		y_1(x) = e^{\alpha x}\cos\beta x,\quad y_2(x) = e^{\alpha x} \sin\beta x\in\mathbb{R},\quad \lambda_{1,2}=\alpha \pm i \beta\in\mathbb{C}
 	\end{equation}
 	dove
 	\begin{itemize}
 		\item $\lambda_1,\lambda_2$ soluzioni complesse del polinomio caratteristico (\ref{eq:equazione_caratteristica_associata_omogenea}) e coniugate, con $i=\sqrt{-1}$,
-		\item $\alpha = -\frac{b}{2a}, \beta\overset{\footnotemark}{=}\frac{\sqrt{4ac-b^2}}{2a}\in\mathbb{R}$, parte reale dei coefficienti immaginari nei complessi con $\beta>0$ se $a>0$,
+		\item $\alpha = -\frac{b}{2a}, \beta\overset{\footnotemark}{=}\frac{\sqrt{4ac-b^2}}{2a}\in\mathbb{R}$, parte reale dei coefficienti immaginari nei complessi con $\beta>0$ se $a>0$.
 	\end{itemize}
-	quindi l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
+	In questo caso l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}
-		\boldsymbol{\bar z(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x)}.
+		\boldsymbol{\bar y(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x)}.
 	\end{equation}
 \end{enumerate}
 \footnotetext{Dato che $i=\sqrt{-1}$, allora $b^2-4ac<0$ quindi è invertito il segno di $\Delta$, ovvero $\sqrt{-\Delta}$.}
 
-\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $y_1$ e $y_2$ della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}). 
+\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $y_1$ e $y_2$ ed e' della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}). 
 
 \begin{theorem}\footnote{Slide 5 PDF 5.}
 	L'integrale generale della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è data da
@@ -1213,9 +1222,9 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 			\Delta = b^2-4ac>0,
 		\end{equation*}
 		quindi $\lambda_1\neq \lambda_2$, dove $\lambda_1,\lambda_2\in\mathbb{R}$ sono soluzioni dell'equazione caratteristica (\ref{eq:equazione_caratteristica_associata_omogenea}).\\
-			Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
+			Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare},
 		\begin{equation*}
-			y_1(x) = e^{\lambda_1 x},\quad y_2(x) = e^{\lambda_2 x},
+			y_1(x) = e^{\lambda_1 x}\quad\text{e}\quad y_2(x) = e^{\lambda_2 x}
 		\end{equation*}
 		sono soluzioni della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).\\
 		\footnotemark (Tramite Algebra Lineare) Siano $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$, queste sono linearmente indipendenti in quanto
@@ -1229,7 +1238,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 				\begin{vmatrix}
 					e^{\lambda_1x} & e^{\lambda_2 x}\\
 					\lambda_1 e^{\lambda_1x} & \lambda_2 e^{\lambda_2 x}
-				\end{vmatrix} &=& \lambda_1 e^{(\lambda_1+\lambda_2)x} - \lambda_2 e^{(\lambda_1+\lambda_2)x} &=& \underbrace{(\lambda_2 -\lambda_1)}_{\footnotemark} e^{(\lambda_1+\lambda_2)x} &\overset{\footnotemark}{\neq}& 0. 
+				\end{vmatrix} &=& \lambda_2 e^{(\lambda_1+\lambda_2)x} - \lambda_1 e^{(\lambda_1+\lambda_2)x} &=& \underbrace{(\lambda_2 -\lambda_1)}_{\footnotemark} e^{(\lambda_1+\lambda_2)x} &\overset{\footnotemark}{\neq}& 0. 
 			\end{matrix}
 		\end{equation*}
 		\addtocounter{footnote}{-3}
@@ -1237,11 +1246,11 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		Quindi è necessario dimostrare che $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ sono linearmente indipendenti (entra in gioco Algebra Lineare). Con le mani sarà fatto vedere che la soluzione generale è una combinazione lineare di $y_1$ e $y_2$.}
 		
 		\stepcounter{footnote}
-		\footnotetext{Determinante della matrice Wronskiana. Una matrice Wronskiana è formata da due funzioni e dalle loro derivate prime.\\
-		Considerate le soluzioni di una equazione omogenea, il determinante della Wronskiana è una funzione che dipende da $x$, se le funzioni considerate nella Wronskiana sono soluzioni del problema, il determinante è diverso da 0 e l'essere diverso da 0 indica che le funzioni sono linearmente indipendenti.}
+		\footnotetext{Wronskiana. Una Wronskiana è il determinante di una matrice formata da due funzioni e dalle loro derivate prime.\\
+		Considerate le soluzioni di una equazione omogenea, la Wronskiana è una funzione che dipende da $x$. Se le funzioni considerate nella Wronskiana sono soluzioni del problema, il determinante è diverso da 0 e l'essere diverso da 0 indica che le funzioni sono linearmente indipendenti.}
 		
 		\stepcounter{footnote}
-		\footnotetext{Diverso da 0 perché $\Delta\neq 0$.}
+		\footnotetext{Diverso da 0 perché $\Delta > 0$.}
 		
 		\stepcounter{footnote}
 		\footnotetext{Necessario affinché $y_1$ e $y_2$ siano linearmente indipendenti.}
@@ -1250,8 +1259,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\begin{equation}\label{eq:integrale_generale_secondo_ordine_dimostrazione}
 			y(x) = e^{\lambda_1 x}\underset{\footnotemark}{u(x)},
 		\end{equation}
-		\footnotetext{Funzione opportuna e non costante, da determinare affinché $y(x)$ sia soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).}
-		dove $u(x)$ è da determinare affinché $y(x)$ sia in forma di combinazione lineare di $y_1(x)$ e $y_2(x)$ (ovvero è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0})).
+		dove $u(x)$ è da determinare affinché $y(x)$ sia in forma di combinazione lineare di $y_1(x)$ e $y_2(x)$ (ovvero è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0})).\footnotetext{Funzione opportuna e non costante, da determinare affinché $y(x)$ sia soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).}
 		Poiché $y(x)$ è soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (e ciò significa che verifica la EDO), si ha che (per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
 		\begin{equation*}
 			a(e^{\lambda_1x}u(x))''+ b(e^{\lambda_1x}u(x))'+ c (e^{\lambda_1x}u(x)) = 0.
@@ -1262,7 +1270,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 				a(\lambda_1e^{\lambda_1x}u(x)+e^{\lambda_1x}u'(x))' + b(\lambda_1 e^{\lambda_1 x}u(x) + e^{\lambda_1x}u'(x)) + c(e^{\lambda_1x}u(x)) &=&\\\\
 				a(\lambda_1^2e^{\lambda_1 x}u(x) + 2 e^{\lambda_1 x} u'(x) + e^{\lambda_1 x}u''(x))+ b (\lambda_1 e^{\lambda_1 x}u(x) + e^{\lambda_1 x}u'(x)) + 
 				c(e^{\lambda_1 x}u(x)) &=&\\\\
-				 \underbrace{e^{\lambda_1 x}}_{>0} [\underbrace{(a\lambda_1^2+b\lambda_1 +c) u(x)}_{0} + a u''(x)+(2a\lambda_1 + b)u'(x)]\\\\
+				 \underbrace{e^{\lambda_1 x}}_{>0} [\underbrace{(a\lambda_1^2+b\lambda_1 +c) u(x)}_{0\text{ perche' } p(\lambda_1)=0} + a u''(x)+(2a\lambda_1 + b)u'(x)]&=&\\\\
 				 a u''(x)+(2a\lambda_1 + b)u'(x) &\underset{\footnotemark}{=}& 0
 			\end{matrix}
 		\end{equation}
@@ -1271,7 +1279,7 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\paragraph{Osservazioni (intermezzo):}
 		\begin{enumerate}
 			\item È noto che $\lambda_1$ è soluzione dell'equazione caratteristica $p(\lambda_1)=0$, ovvero di $a\lambda_1^2+b\lambda_1 +c=0$. Quindi, rimane da dimostrare che $a u''(x)+(2a\lambda_1 + b)u'(x)$ sia uguale a 0;
-			\item L'equazione caratteristica è $a\lambda_1^2+b\lambda_1 +c$, quindi (dato che $a\neq0$, altrimenti la EDO non sarebbe di secondo grado)
+			\item L'equazione caratteristica è $a\lambda_1^2+b\lambda_1 +c$, quindi (dato che $a\neq0$, altrimenti la EDO non sarebbe di secondo grado) dividendo per $a$ l'equazione e' ottenuto
 			\begin{equation*}
 				\lambda + \frac{b}{a} \lambda + \frac{c}{a}= (\lambda - \lambda_1)(\lambda - \lambda_2) = 0,
 			\end{equation*}
@@ -1309,7 +1317,11 @@ Quindi è necessario studiare le radici (zeri) della equazione caratteristica (o
 		\begin{equation*}
 			v(x) = c \cdot e^{kx}.
 		\end{equation*}
-		\footnote{(\ref{eq:edo_variabili_separabili_dimostrazione_integrale_generale_edo_seecondo_grado}) è a variabili separabili. Dato che $v(x)=u'(x)$, allora $u'(x)=ce^{(\lambda_2-\lambda_1)x}$ e $v(x)=ce^{(\lambda_2-\lambda_1)x}$. Quindi è possibile integrare, tenendo di conto che $e^{(\lambda_2-\lambda_1)x}$ è un esponenziale è necessaria una correzione del coefficiente $c$ affinché $\lambda_1-\lambda_2\neq 0$. Ciò non è scritto esplicitamente, è denotata una costante $c_1=\frac{c}{\lambda_2-\lambda_1}$ tale che $u(x) = c_1 e^{\lambda_1-\lambda_2}$. Quanto descritto è formalizzato in seguito alla nota.} Integrando
+		\hrule\vspace{-7px}
+		\paragraph{Intermezzo:}(\ref{eq:edo_variabili_separabili_dimostrazione_integrale_generale_edo_seecondo_grado}) è a variabili separabili. Dato che $v(x)=u'(x)$, allora $u'(x)=ce^{(\lambda_2-\lambda_1)x}$ e $v(x)=ce^{(\lambda_2-\lambda_1)x}$. Quindi è possibile integrare, tenendo di conto che $e^{(\lambda_2-\lambda_1)x}$ è un esponenziale è necessaria una correzione del coefficiente $c$ affinché $\lambda_1-\lambda_2\neq 0$. Ciò non è scritto esplicitamente, è denotata una costante $c_1=\frac{c}{\lambda_2-\lambda_1}$ tale che $u(x) = c_1 e^{\lambda_1-\lambda_2}$. Quanto descritto è formalizzato in seguito.$\qed$
+		\hrule\vspace{2px}
+		
+		\noindent Integrando
 		\begin{equation*}
 			u'(x)=c\cdot e^{(\lambda_2-\lambda_1)x},\quad u(x)=\int u'(x)\,dx,
 		\end{equation*}
@@ -1792,9 +1804,166 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 			\end{vmatrix}
 		}= \frac{e^{6x}}{e^{6x}} = 1.
 	\end{equation*}
-	Integrando
-	\dsfsw
+	Integrando e' ottenuto
+	\begin{equation*}
+		c_1(x) = -\frac{x^2}{2}, c_2(x) = x.
+	\end{equation*}
+	Quindi
+	\begin{equation*}
+		\bar y(x) = -\frac{x^2}{2} e^{3x} + x\cdot x\cdot e^{3x} = \frac{1}{2} x^2 e^{3x}.
+	\end{equation*}
+	Pertanto, l'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy_1}) e'
+	\begin{equation*}
+		y(x) = c_1 e^{3x} + c_2 x e^{3x} + \frac{1}{2} x^2 e ^{3x},\quad c_1,c_2\in\mathbb{R}.
+	\end{equation*}
+	(Ora e' necessario derivare $y(x)$ ed imporre le condizioni iniziali per trovare la soluzione al problema di Cauchy)\\
+	Derivando $y(x)$ e' ottenuto
+	\begin{equation*}
+		y'(x) = 3c_1 e^{3x} + c_2(e^{3x} + 3xe^{3x}) + xe^{3x} + \frac{3}{2}x^2 e^{3x},
+	\end{equation*}
+	ed imponendo le condizioni iniziali
+	\begin{equation*}
+		\begin{matrix}
+			y(0) = 1\\
+			y'(0) = 0
+		\end{matrix}
+		\begin{cases}
+			c_1 &= 1\\
+			3c_1 + c_2 &=0
+		\end{cases}\quad\Rightarrow\quad
+		\begin{cases}
+			c_1 &= 1\\
+			c_2 &= -3
+		\end{cases}
+	\end{equation*}
+	La soluzione al problema di Cauchy e' dunque
+	\begin{equation*}
+		y(x) = e^{3x} - 3xe^{3x} + \frac{1}{2} x^2 e^{3x}\quad \forall x\in\mathbb{R}.
+	\end{equation*}
 \end{example}
+
+\begin{example}[Caso $\Delta<0$]\footnote{Slide 23 PDF 6.}
+	\paragraph{Testo:} Trovare la soluzione del seguente problema di Cauchy
+	\begin{equation*}
+		\begin{cases}
+			y'' + 2y' + 2y &= 3x^2\\
+			y(0) &= 0\\
+			y'(0)&=1 
+		\end{cases}
+	\end{equation*}
+	\paragraph{Svolgimento:} Sia la EDO lineare di secondo ordine a coefficienti costanti
+	\begin{equation}\label{eq:edo_completa_esercizio_problema_cauchy_2}
+		y'' + 2y' + 2y = 3x^2,
+	\end{equation}
+	e l'omogenea associata
+	\begin{equation}\label{eq:edo_omogenea_esercizio_problema_cauchy_2}
+		y'' + 2y' + 2y = 0.
+	\end{equation}
+	(Risoluzione omogenea:) L'equazione caratteristica di (\ref{eq:edo_omogenea_esercizio_problema_cauchy_2}) è
+	\begin{equation*}
+		\lambda^2 - 2\lambda + 2 = 0,
+	\end{equation*}
+	la quale ha radici $\lambda[= \alpha \pm i\beta] = -1 \pm i$.\\
+	Le soluzioni di (\ref{eq:edo_omogenea_esercizio_problema_cauchy_2})
+	\begin{equation*}
+		y_1(x) = e^{-x}\cos x,\quad y_2(x) = e^{-x}\sin x,
+	\end{equation*}
+	sono linearmente indipendenti.\\
+	L'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy_2}) e'
+	\begin{equation*}
+		y_0(x)=e^{-x}(c_1\cos x + c_2\sin x),\quad c_1,c_2\in\mathbb{R}.
+	\end{equation*}
+	\paragraph{Intermezzo:} E' necessario scrivere la soluzione particolare della non omogenea. Tale soluzione dovra' avere la stessa forma polinomiale, ovvero e' richiesto che la soluzione particolare sia simile al termine noto, il quale contiene tutti i valori. Puo' capitare che non compaia la funzione e quindi e' necessario modificare la soluzione particolare perche' non possibile con il Principio di identita' dei polinomi. $\qed$
+	(E' ricercata la soluzione particolare)
+	\begin{equation*}
+		\begin{matrix}
+			\bar y(x) &=& A x^2 + Bx + C && (A,B,C \text{ da determinare}),\\
+			\bar y'(x) &=& 2Ax,\\
+			\bar y''(x) &=& 2A.
+		\end{matrix}
+	\end{equation*}
+	(Sostituendo in (\ref{eq:edo_completa_esercizio_problema_cauchy_2}))
+	\begin{equation*}
+		2A + 4Ax + 2B + 2Ax^2 + 2Bx + 2C = 3x^2,
+	\end{equation*}
+	quindi
+	\begin{equation*}
+		2A x^2 + 2(2A+B)x + 2(A+B+C) = 3x^2.
+	\end{equation*}
+	(Imponendo le condizioni per determinare le incognite $A,B,C$ sono ottenute, ovvero:)
+	\begin{equation*}
+		\begin{cases}
+			2A &= 3\\
+			2 A + B &= 0\\
+			A + B + C &=0 
+		\end{cases}\quad\Rightarrow\quad
+		\begin{cases}
+			A &= \frac{3}{2}\\
+			B &= -3\\
+			C &= -\frac{3}{2} + 3 = \frac{3}{2}
+		\end{cases}
+	\end{equation*}
+	(Quindi la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy_2}) e')
+	\begin{equation*}
+		\bar y(x) = \frac{3}{2} -3x + \frac{3}{2},
+	\end{equation*}
+	(e la soluzione generale di (\ref{eq:edo_completa_esercizio_problema_cauchy_2}) e')
+	\begin{equation*}
+		y(x) = e^{-x} (c_1\cos x + c_2\sin x) + \frac{3}{2} x^2 - 3x + \frac{3}{2}.
+	\end{equation*}
+	(Derivando $y(x)$)
+	\begin{equation*}
+		y'(x) = -e^{-x} (c_1\cos x + c_2\sin x) + e^{-x} (-c_1\sin x + c_2\cos x) + 3 x - 3,
+	\end{equation*}
+	(e' possibile imporre le condizioni iniziali)
+	\begin{equation*}
+		\begin{matrix}
+			y(0) = 0\\
+			y'(0) = 1
+		\end{matrix}
+		\begin{cases}
+			c_1 + \frac{3}{2} &= 0\\
+			-c_1 + c_2 - 3 &=1
+		\end{cases}\quad\Rightarrow\quad
+		\begin{cases}
+			c_1 &= - \frac{3}{2}\\
+			c_2 &= \frac{5}{2}
+		\end{cases}
+	\end{equation*}
+	Quindi la soluzione del problema di Cauchy e'
+	\begin{equation*}
+		y(x) = e^{-x}\left(-\frac{3}{2}\cos x + \frac{5}{2} \sin x\right) + \frac{3}{2} x^2 - 3x + \frac{3}{2}. 
+	\end{equation*}
+\end{example}
+
+\begin{exercise}\footnote{Slide 25 PDF 6.}
+	\paragraph{Testo:} Risolvere il seguente problema di Cauchy
+	\begin{equation*}
+		\begin{cases}
+			y'' - 2 y' + y &= 5\sin x\\
+			y(0) &= 0\\
+			y'(0) &= 1
+		\end{cases}
+	\end{equation*}
+	\paragraph{Suggerimenti:}
+	\begin{enumerate}
+		\item Ha soluzione doppia,
+		\item Scrivere
+		\begin{equation*}
+			\bar y(x) = A\cos x + B\sin x.
+		\end{equation*}
+	\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}\footnote{Slide 25 PDF 6.}
+	Determinare l'integrale generale di
+	\begin{enumerate}
+		\item $y'' - 4y' + 4y = 5 e^{2x}$
+		\item $y'' + y' + 3y = 3x + 3$ (il termine noto $3x + 3$ e' un polinomio)
+	\end{enumerate}
+\end{exercise}
+
 
 \subsection{Argomenti utili}
 \begin{theorem}[Principio di identicità dei polinomi]\label{th:principio_identità_polinomi}
