@@ -1553,7 +1553,7 @@ Supponendo gli aperti siano in un numero finito, ovvero: $A_1,\, A_2,\, \hdots, 
 \paragraph{Osservazioni sullo studio di $\boldsymbol{A_1}$ dell'esempio precedente:} In $A_1$ $f(x,y)\neq 0$, dunque $f(x,y)>0$ oppure $f(x,y)<0$. Dal momento che $f$ è continua ed il suo segno non può cambiare (per ipotesi) e $A_1$ è aperto e connesso, il segno di $f$ non cambia in $A_1$. Se così non fosse, esisterebbero in $A_1$ due punti distinti in cui $f(x,y)$ ha segno opposto e quindi, per il Teorema \ref{th:esistenza_degli_zeri} degli zeri, esisterebbe un punto $(x,y)\in A_1$ tale che $f(x,y)=0$. Quindi, $f(x,y)$ ha segno costante in $A_1$. Pertanto, per valutare il segno di $f$ in $A_1$ è sufficiente valutare il segno di $f$ in un punto qualsiasi di $A_1$ (come fatto nell'elenco dell'esempio).\\
 Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni regione $A_i$ la funzione ha lo stesso segno).
 
-\begin{example}\footnote{Slide 10-11 PDF 12.}
+\begin{example}\footnote{Slide 10-12 PDF 12.}
     Trovare il campo di esistenza $E$ delle seguenti funzioni
     \begin{equation*}
         \begin{aligned}
@@ -1600,12 +1600,14 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
     \end{figure}
 \end{example}
 
-\subsection{Calcolo differenziale}
+INSERIRE SLIDE 12-15 PDF 12 E TUTTO IL PDF 13.
+
+\subsection{Calcolo differenziale}\footnote{PDF 14.}
 Per una funzione di una variabile $f:I\subseteq\mathbb R\rightarrow\mathbb R$ la derivata in un punto $x_0\in I$ è rappresentata da $f'(x_0)$ e definisce il tasso di variazione di $f$ nell'istante (punto) $x_0$, ovvero dal limite del rapporto incrementale (\ref{eq:limite_rapporto_incrementale}). Da $x_0$ ad $x_0+h$ c'è un solo cammino. Per le funzioni in più variabili è possibile seguire infiniti cammini, quindi è necessario chiarire cos'è una derivata in più variabili.
 \subsubsection{Derivate parziali}
 Il concetto di derivata di una funzione di una variabile si estende per una funzione di due variabili con la definizione di derivata parziale. Una derivata parziale rispetto ad una variabile di una funzione di $n$ variabili è, come in Analisi 1, il limite del rapporto incrementale sulla variabile interessata (mentre le altre rimangono congelate). Una funzione di $n$ variabili ha una derivata parziale per ogni variabile (quindi $f(x_1,\hdots,x_n)$ ha $n$ derivate parziali).
 
-\begin{definition}[Derivate parziali (caso $n=2$)]\footnote{Slide 1 PDF 14.}
+\begin{definition}[Derivate parziali (caso $n=2$)]\footnote{Slide 2 PDF 14.}
     Sia $f:A\subseteq\mathbb R^2\rightarrow\mathbb R$, dove $A$ aperto e $P_0=(x_0,y_0)\in A$. Le derivate parziali di $f$ rispetto alle variabili $x$ e $y$ nel punto $P_0$ sono date dai seguenti limiti purché esistano e siano finiti
     \begin{equation}\label{eq:derivata_parziale_x}
         \lim_{h\rightarrow 0}\frac{\overbrace{f(x_0+h, y_0)}^{\footnotemark}-f(x_0, y_0)}{h}:=\frac{\partial f}{\partial x}(x_0,y_0),
@@ -1670,7 +1672,7 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
     \frac{\partial f}{\partial x_i}(P_0)=f_{x_i}(P_0)=\frac{\partial f}{\partial x_i}(x_1,\hdots,x_n)=f_{x_i}(x_1,\hdots,x_n)=  D_{x_i}(P_0)=D_{x_i}(x_1,\hdots,x_n).
 \end{equation*}
 
-\begin{definition}[Derivabilità in $A$]\footnote{Slide 9 PDF 14.}
+\begin{definition}[Derivabilità in $A$]\footnote{Slide 10 PDF 14.}
    Considerata $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$. Se $f$ è derivabile in ogni punto $\uline x=(x_1,\hdots,x_n)\in A$, $f$ si dice derivabile in $A$ (ovvero esistono finite tutte le $n$ derivate parziali per ogni punto di $A$).
 \end{definition}
 
@@ -1791,14 +1793,14 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 
 \paragraph{N.B.:} Questo esempio aiuta a capire che se vogliamo estendere al caso in più variabili l'implicazione funzione derivabile $\rightarrow$ funzione continua, è necessario definire la differenziabilità.
 
-\begin{definition}[Gradiente]\footnote{Slide 9 PDF 14.}
+\begin{definition}[Gradiente]\footnote{Slide 10 PDF 14.}
    Sia $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$. Se $f$ è derivabile in $\uline x\in A$ esiste il vettore gradiente nel punto $\uline x$, il quale è definito come
    \begin{equation}
        \boldsymbol{\triangledown f(\uline x)=}\triangledown f(x_1,\hdots, x_n)=\boldsymbol{\left(\frac{\partial f}{\partial x_1}(\uline x),\hdots, \frac{\partial f}{\partial x_n}(\uline x)\right)^T}\in\mathbb R^n.
    \end{equation}
 \end{definition}
 
-\begin{example}[Gradiente in $\mathbb R^2$]\footnote{Slide 9 PDF 14.}
+\begin{example}[Gradiente in $\mathbb R^2$]\footnote{Slide 10 PDF 14.}
     Sia $f:A\subseteq\mathbb R^2\rightarrow\mathbb R$ e $P_0=(x_0,y_0)\in A$. Se $f$ è derivabile in $P_0$ allora esistono finite
     \begin{equation*}
         \frac{\partial f}{\partial x}(P_0),\; \frac{\partial f}{\partial y}(P_0),
@@ -1810,7 +1812,7 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 \end{example}
 
 \subsubsection{Significato geometrico delle derivate parziali}
-\footnote{Slide 10 PDF 14.}Per dare un senso geometrico alle derivate parziali sono considerate le funzioni di 2 variabili perché è possibile disegnarne il grafico (per funzioni di $n>2$ variabili non è possibile).
+\footnote{Slide 11 PDF 14.}Per dare un senso geometrico alle derivate parziali sono considerate le funzioni di 2 variabili perché è possibile disegnarne il grafico (per funzioni di $n>2$ variabili non è possibile).
 
 \paragraph{Per le funzioni in una variabile} $f'(x_0)\in\mathbb R$ è il coefficiente angolare (la pendenza) della retta tangente al grafico di $f$ $y-t_0=f'(x_0)(x-x_0)$ per $P_0=(x_0,f(x_0))\in graf\, f\subset \mathbb R^2$.
 
@@ -1836,7 +1838,7 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 \paragraph{N.B.:} Una curva è da intendersi come traiettoria (vedere la Sezione \ref{ssec:curve_Rn} nella quale sono trattate le curve).
 
 \subsubsection{Piano tangente}
-\paragraph{Osservazioni su Figura \ref{fig:grafico_f_R3_osservazione}:}\footnote{Slide 11-12 PDF 14.}
+\paragraph{Osservazioni su Figura \ref{fig:grafico_f_R3_osservazione}:}\footnote{Slide 12-13 PDF 14.}
 Sia $f\colon A\subseteq\mathbb R^2\rightarrow\mathbb R$, con $A$ aperto. Il grafico di $f$ $graf\,f=\{(x,y,z)\in\mathbb R^3\,|\, z=f(x,y),\, \forall (x,y)\in A\}\subset\mathbb R^3$ è un sottoinsieme dello spazio vettoriale $\mathbb R^3$ ed è una superficie in tale spazio. È una superficie perché stiamo lavorando sugli aperti e sulla regolarità della funzione.\\
 Considerando $P_0=(x_0,y_0,z_0)\in graf\, f$, dove $z_0=f(x_0,y_0)$ vedere Figura \ref{fig:grafico_f_R3_osservazione}.\\
 Quando sono calcolate le derivate parziali sono considerate le tracce $y=y_0$ e $x=x_0$ per avere rispettivamente le derivate parziali rispetto $x$ e $y$. Quindi, quando è considerata una traccia è intersecato il grafico di $f$ con $y=y_0$ o $x=x_0$, ovvero: taglio il grafico con $y=y_0$ per ottenere la sezione del grafico nel piano $(x,y)$, analogo per $x=x_0$.\\
@@ -1850,7 +1852,7 @@ Considerando la traccia lungo $y=y_0$ allora
 Il grafico di $g_1(x)$ è nel piano $(x,z)$ ed è rappresentato dalla curva $c_1$ in Figura \ref{fig:grafico_f_R3_osservazione}. Quanto in (\ref{eq:traccia_g_1}) può essere descritto come segue: $c_1$ è il grafico della curva $g_1(x)=f(x,y_0)=z$ piano $(x,z)$ passante per $P_0$ ottenuta tagliando il grafico di $f$ con $y=y_0$ ed è immaginabile come traiettoria nel piano corrispondente ottenuta dalla sezione. Ovvero, $c_1$ è l'intersezione del grafico di $f$ ($graf\, f\subset\mathbb R^3$) con il piano $(x,z)$. Inoltre, per la curva $c_1$, $g_1'(x)=\frac{\partial f}{\partial x}(x_0,y_0)$ è il coefficiente angolare di $c_1$ in $x_0$ e il coefficiente angolare della retta $T_1$ (ovvero la retta tangente al grafico della funzione $c_1$).\\
 Un ragionamento analogo lungo il piano $x=x_0$.\\
  $T_1$ e $T_2$ sono rispettivamente le tangenti alle curve $c_1$ e $c_2$ con rispettivi coefficienti angolari $g'_1(x_0)$ e $g_2'(x_0)$. $T_1$ e $T_2$ hanno un unico punto in comune e per esse passa un unico piano passante per il punto $P_0$. È necessario ricordare che ci sono tante rette tangenti.\\
-In Figura \ref{fig:grafico_f_R3_osservazione} $(x_0,y_0,0)$ è il punto sul piano $(x,y)$ di quota $z=z_0=0$ e fa parte dell'insieme di livello con $z=z_0=0$, quindi è un sottoinsieme del dominio $A$. $P_0=(x_0,y_0,z_0)$, con $z_0=f(x_0,y_0)$ è "tirato su" da $(x_0,y_0,0)$ ed è il punto $(x_0,y_0)$ di quota $z_0$. $\qed$
+In Figura \ref{fig:grafico_f_R3_osservazione} $(x_0,y_0,0)$ è il punto sul piano $(x,y)$ di quota $z=z_0=0$ e fa parte dell'insieme di livello con $z=z_0=0$, quindi è un sottoinsieme del dominio $A$. $P_0=(x_0,y_0,z_0)$, con $z_0=f(x_0,y_0)$ è "tirato su" da $(x_0,y_0,0)$ ed è il punto $(x_0,y_0)$ di quota $z_0$. [Fine Osservazioni su Figura \ref{fig:grafico_f_R3_osservazione}]$\qed$
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.65\textwidth]{Analisi2/figures/grafico_f_R3_osservazione.png}
