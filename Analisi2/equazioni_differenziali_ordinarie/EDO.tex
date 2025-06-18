@@ -1204,7 +1204,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 \end{enumerate}
 \footnotetext{Dato che $i=\sqrt{-1}$, allora $b^2-4ac<0$ quindi è invertito il segno di $\Delta$, ovvero $\sqrt{-\Delta}$.}
 
-\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $y_1$ e $y_2$ ed e' della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}). 
+\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $y_1$ e $y_2$ ed è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}). 
 
 \begin{theorem}\footnote{Slide 5 PDF 5.}
 	L'integrale generale della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è data da
@@ -1270,7 +1270,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 				a(\lambda_1e^{\lambda_1x}u(x)+e^{\lambda_1x}u'(x))' + b(\lambda_1 e^{\lambda_1 x}u(x) + e^{\lambda_1x}u'(x)) + c(e^{\lambda_1x}u(x)) &=&\\\\
 				a(\lambda_1^2e^{\lambda_1 x}u(x) + 2 e^{\lambda_1 x} u'(x) + e^{\lambda_1 x}u''(x))+ b (\lambda_1 e^{\lambda_1 x}u(x) + e^{\lambda_1 x}u'(x)) + 
 				c(e^{\lambda_1 x}u(x)) &=&\\\\
-				 \underbrace{e^{\lambda_1 x}}_{>0} [\underbrace{(a\lambda_1^2+b\lambda_1 +c) u(x)}_{0\text{ perche' } p(\lambda_1)=0} + a u''(x)+(2a\lambda_1 + b)u'(x)]&=&\\\\
+				 \underbrace{e^{\lambda_1 x}}_{>0} [\underbrace{(a\lambda_1^2+b\lambda_1 +c) u(x)}_{0\text{ perché } p(\lambda_1)=0} + a u''(x)+(2a\lambda_1 + b)u'(x)]&=&\\\\
 				 a u''(x)+(2a\lambda_1 + b)u'(x) &\underset{\footnotemark}{=}& 0
 			\end{matrix}
 		\end{equation}
@@ -1279,7 +1279,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\paragraph{Osservazioni (intermezzo):}
 		\begin{enumerate}
 			\item È noto che $\lambda_1$ è soluzione dell'equazione caratteristica $p(\lambda_1)=0$, ovvero di $a\lambda_1^2+b\lambda_1 +c=0$. Quindi, rimane da dimostrare che $a u''(x)+(2a\lambda_1 + b)u'(x)$ sia uguale a 0;
-			\item L'equazione caratteristica è $a\lambda_1^2+b\lambda_1 +c$, quindi (dato che $a\neq0$, altrimenti la EDO non sarebbe di secondo grado) dividendo per $a$ l'equazione e' ottenuto
+			\item L'equazione caratteristica è $a\lambda_1^2+b\lambda_1 +c$, quindi (dato che $a\neq0$, altrimenti la EDO non sarebbe di secondo grado) dividendo per $a$ l'equazione è ottenuto
 			\begin{equation*}
 				\lambda + \frac{b}{a} \lambda + \frac{c}{a}= (\lambda - \lambda_1)(\lambda - \lambda_2) = 0,
 			\end{equation*}
@@ -1340,7 +1340,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\stepcounter{footnote}
 		\footnotetext{Necessaria per comprendere tutte le soluzioni.}
 		
-		\item \textbf{Caso $\boldsymbol{\Delta=0}$:} In questo caso
+		\item \textbf{Caso $\boldsymbol{\Delta=0}$:}\footnote{Slide 9 PDF 5.} In questo caso
 		\begin{equation*}
 			\lambda_1=\lambda_2=\lambda=\frac{-b}{2a},
 		\end{equation*}
@@ -1349,7 +1349,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 			y_1(x)=e^{\lambda_1 x},\quad y_2(x) = xe^{\lambda_2 x}.
 		\end{equation*}
 		\hrule\vspace{-2px}
-		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante la Wronskiana. Inoltre, c'è una soluzione $\lambda$ se $p(\lambda)=0$.
+		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante la Wronskiana. Una soluzione $\lambda$ è soluzione se $p(\lambda)=0$.
 		\hrule\vspace{2px}
 		
 		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti in quanto
@@ -1359,11 +1359,11 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 					y_1(x) & y_2(x)\\
 					y_1'(x) & y_2'(x)
 				\end{vmatrix} &=&\begin{vmatrix}
-					e^{\lambda x} & e^{\lambda x}\\
+					e^{\lambda x} & xe^{\lambda x}\\
 					\lambda e^{\lambda x} & e^{\lambda  x} + \lambda x e^{\lambda x}
 				\end{vmatrix} &=& \\\\
 				&=&\begin{vmatrix}
-					e^{\lambda x} & e^{\lambda  x}\\
+					e^{\lambda x} & xe^{\lambda  x}\\
 					\lambda  e^{\lambda x} &  e^{\lambda  x} (1 + \lambda x )
 				\end{vmatrix} &=&
 				 e^{2\lambda x}(1+\lambda x) - \lambda x e^{2\lambda x} &=& e^{2\lambda x} + \cancel{\lambda x e^{2\lambda x}} - \cancel{\lambda x e^{2\lambda x}} &\neq& 0.
@@ -1381,7 +1381,8 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		dunque è ottenuto [come in per (\ref{eq:dimostrazione_th_soluzioni_edo_secondo_ordine})]
 		\begin{equation*}
 			\begin{matrix}
-				a(\lambda e^{\lambda x}u(x)+e^{\lambda x}u'(x))' + b(\lambda e^{\lambda x}u(x) + e^{\lambda x}u'(x)) + ce^{\lambda x}u(x) &=& a(\lambda^2e^{\lambda x} u(x) + \lambda e ^{\lambda x}u'(x)) &=&\\\\
+				a(\lambda e^{\lambda x}u(x)+e^{\lambda x}u'(x))' + b(\lambda e^{\lambda x}u(x) + e^{\lambda x}u'(x)) + ce^{\lambda x}u(x) &=& \\\\
+				a(\lambda^2e^{\lambda x} u(x) + \lambda e ^{\lambda x}u'(x)) + b(\lambda e^{\lambda x}u(x) + e^{\lambda x}u'(x)) + ce^{\lambda x}u(x) &=&\\\\
 				\underbrace{e^{\lambda x}}_{>0} [\underbrace{(a\lambda^2+b\lambda +c) u(x)}_{0} + a u''(x)+(2a\lambda + b)u'(x)] &=& a u''(x)+(2a\lambda + b)u'(x) &=& 0.
 			\end{matrix}
 		\end{equation*}
@@ -1399,9 +1400,9 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 			y(x) = e^{\lambda x}u(x) = e^{\lambda x} (c_1+c_2x) = c_1\cdot \underbrace{e^{\lambda x}}_{y_1(x)} + c_2\cdot\underbrace{x\cdot e^{\lambda x}}_{y_2(x)}.
 		\end{equation*}
 		(Quindi, vale la tesi anche nel caso 2, dato che in corrispondenza di $\Delta=0$ sono considerate $y_1=e^{\lambda x}$ e $y_2=x\cdot e^{\lambda x}$ ed una soluzione qualsiasi $y(x)$ è una combinazione di $y_1$ e $y_2$)
-		\item \textbf{Caso} $\boldsymbol{\Delta<0}$\textbf{:} Siano
+		\item \textbf{Caso} $\boldsymbol{\Delta<0}$\textbf{:}\footnote{Slide 10 PDF 5.} Siano
 		\begin{equation*}
-			\lambda_{1,2}=\alpha\pm i\beta\in\mathbb{C},\quad \alpha=-\frac{b}{2a},\beta = \frac{\sqrt{-\Delta}}{2a}\in\mathbb{R}.
+			\lambda_{1,2}=\alpha\pm i\beta\in\mathbb{C},\quad \alpha=-\frac{b}{2a},\;\beta = \frac{\sqrt{-\Delta}}{2a}\in\mathbb{R}.
 		\end{equation*}
 		Dalla Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
 		\begin{equation*}
@@ -1441,7 +1442,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		ovvero
 		\begin{equation*}
 			\begin{matrix}
-				a [\alpha e^{\alpha x}u(x) + e^{\alpha x}]' + b [\alpha e^{\alpha x}u(x) + e^{\alpha x}u'(x)] + c e^{\alpha x}u(x)&=&\\\\
+				a [\alpha e^{\alpha x}u(x) + e^{\alpha x}u'(x)]' + b [\alpha e^{\alpha x}u(x) + e^{\alpha x}u'(x)] + c e^{\alpha x}u(x)&=&\\\\
 				a[\alpha^2e^{\alpha x}u(x) + 2\alpha e^{\alpha x} u'(x) + e^{\alpha x}u''(x)] + b [\alpha e^{\alpha x}u(x) + e^{\alpha x}u'(x)] + c e^{\alpha x}u(x) &=&\\\\
 				\underbrace{e^{\alpha x}}_{>0}[au''(x) + (2a\alpha + b)u'(x)+(a\alpha^2 + b\alpha + c)u(x)] &=& 0
 			\end{matrix}
@@ -1453,9 +1454,9 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		sostituendo $\alpha=-\frac{b}{2a}$ (nella quadra) è ottenuto
 		\begin{equation*}
 			\begin{matrix}
-				e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{b^2}{4a^2} + \frac{-\frac{b^2}{2a}}{a}+\frac{c}{a}\right)u(x)\right] &=& e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{b^2-2b^2+4ac}{4a^2}\right)u(x)\right] &=&\\\\
-				&=& e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{-b^2+4ac}{4a^2}\right)u(x)\right] &=&\\\\
-				&=& e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{(\sqrt{-\Delta})}{2a}\right)^2u(x)\right] &=& 0,
+				e^{\alpha x}\left[u''(x) + 0\, u'(x)+\left(\frac{b^2}{4a^2} + \frac{-\frac{b^2}{2a}}{a}+\frac{c}{a}\right)u(x)\right] &=& e^{\alpha x}\left[u''(x) + \left(\frac{b^2-2b^2+4ac}{4a^2}\right)u(x)\right] &=&\\\\
+				&=& e^{\alpha x}\left[u''(x) +\left(\frac{-b^2+4ac}{4a^2}\right)u(x)\right] &=&\\\\
+				&=& e^{\alpha x}\left[u''(x) + \left(\frac{(\sqrt{-\Delta})}{2a}\right)^2u(x)\right] &=& 0,
 			\end{matrix}
 		\end{equation*}
 		la quale è della forma (di un'equazione lineare del secondo ordine a coefficienti costanti)
@@ -1485,27 +1486,37 @@ la quale ha associata l'equazione caratteristica
 con soluzioni $\lambda_{1,2}=\frac{-b\pm\sqrt{\Delta}}{2a}$.\\
 Quindi, se
 \begin{enumerate}
-	\item $\boldsymbol{\Delta>0}$ allora $y(x) = c_1 e^{\lambda_1x} + c_2e^{\lambda_2 x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 \neq \lambda_2$;
-	\item $\boldsymbol{\Delta = 0}$ allora $y(x) = c_1 e^{\lambda x} + c_2e^{\lambda x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 = \lambda_2=\lambda=\frac{-b}{2a}$;
-	\item $\boldsymbol{\Delta<0}$ allora $y(x) = e^{\alpha x}(c_1\cos\beta x + c_2 \sin\beta x)\quad c_1,c_2\in\mathbb{R},\, \lambda_{1,2} = \alpha\pm i\beta$.
+	\item $\boldsymbol{\Delta>0}$ allora
+	\begin{equation*}
+		y(x) = c_1 e^{\lambda_1x} + c_2e^{\lambda_2 x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 \neq \lambda_2;
+	\end{equation*}
+	\item $\boldsymbol{\Delta = 0}$ allora
+	\begin{equation*}
+		y(x) = c_1 e^{\lambda x} + c_2e^{\lambda x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 = \lambda_2=\lambda=\frac{-b}{2a};
+	\end{equation*}
+	\item $\boldsymbol{\Delta<0}$ allora
+	\begin{equation*}
+		y(x) = e^{\alpha x}(c_1\cos\beta x + c_2 \sin\beta x)\quad c_1,c_2\in\mathbb{R},\, \lambda_{1,2} = \alpha\pm i\beta.
+	\end{equation*}
 \end{enumerate}
 
 \paragraph{Nota:} Il problema è risolto per le EDO omogenee del secondo ordine a coefficienti costanti, in quanto per queste l'integrale generale puo' essere sempre determinato. Inoltre, lo studio dell'integrale generale delle EDO omogenee del secondo ordine a coefficienti costanti è legato allo studio dell'equazione caratteristica, trasformando cosi' il problema in problema algebrico (risolvibile).
 
 \subsubsection{Ricerca della soluzione particolare \texorpdfstring{$\boldsymbol{\bar y(x)}$}{y(x)} della EDO non omogenea a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti})}
 \footnote{PDF 6.}
-E' ricercata una soluzione particolare della EDO lineare completa di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}). Cio' è svolto (moltiplicando le soluzioni dell'omogenea alle costanti, quindi) utilizzando il metodo di Cramer sul sistema (risolvibile)
+E' ricercata una soluzione particolare della EDO lineare completa di secondo ordine a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}). La soluzione particolare è trovata con il metodo di variazione delle costanti, moltiplicando le soluzioni dell'omogenea alle costani, ovvero
 \begin{equation*}
-	c_1(x)y_1(x) + c_2(x)y_2(x).
+	c_1(x)y_1(x) + c_2(x)y_2(x),
 \end{equation*}
+ed utilizzando il metodo di Cramer sul sistema (risolvibile).
 
 Ci sono due metodi per trovare la soluzione nota alla EDO di partenza in modo da verificare completamente le condizioni iniziali, ovvero "A occhio" o con il "Metodo per variazione delle costanti".
 
 \subsubsubsection{Metodo di somiglianza (o per similitudine)}\label{ssec:metodo_somiglianza}
 \footnote{Slide 12 PDF 6.}
-Guardando le fattezze del termine noto, è possibile intuire com'è fatta la soluzione pratica del problema. A questo proposito è pubblicata la Tabella con un riepilogo di tutti i caso, dove è possibile trovare la soluzione per similitudine.
+Guardando le fattezze del termine noto, è possibile intuire com'è fatta la soluzione particolare del problema. A questo proposito è pubblicata la Tabella con un riepilogo di tutti i caso, dove è possibile trovare la soluzione per similitudine.
 
-\noindent Un esempio: se il termine noto è un esponenziale allora la soluzione particolare potrebbe essere un'esponenziale (dato che la derivata di un esponenziale è sempre un esponenziale), la quale dovrà essere aggiustata con una costane da determinare affinché la soluzione (della forma costante $\times$ esponenziale) sia effettivamente la soluzione particolare della EDO non omogenea. Nel caso in cui l'esponenziale abbia come esponente un $\lambda$ zero della polinomio caratteristico, la costante $c$ è la stessa della soluzione particolare applicata nel precedente caso. Se il termine noto è un polinomio di grado $n$ allora la soluzione particolare di tale polinomio sarà di grado $n+1$ o $n+2$ (a seconda del valore delle costanti).
+\noindent Un esempio: se il termine noto è un esponenziale allora la soluzione particolare potrebbe essere un'esponenziale (dato che la derivata di un esponenziale è sempre un esponenziale), la quale dovrà essere aggiustata con una costante da determinare affinché la soluzione (della forma costante $\times$ esponenziale) sia effettivamente la soluzione particolare della EDO non omogenea. Nel caso in cui l'esponenziale abbia come esponente un $\lambda$ zero della polinomio caratteristico, la costante $c$ è la stessa della soluzione particolare applicata nel precedente caso. Se il termine noto è un polinomio di grado $n$ allora la soluzione particolare di tale polinomio sarà di grado $n+1$ o $n+2$ (a seconda del valore delle costanti).
 
 \subsubsubsection{Variazione delle costanti}\label{ssec:variazione_costanti}
 \footnote{Slide 12 PDF 6.}
@@ -1515,10 +1526,12 @@ Il metodo per variazioni delle costanti ha la soluzione particolare della forma
 \end{equation}
 dove $c_1,c_2\in C^2(I)$ sono da determinare.
 
+\paragraph{Nota:} La soluzione particolare è trovata con il metodo di variazione delle costanti, moltiplicando le soluzioni dell'omogenea alle costani, ovvero (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) ed utilizzando il metodo di Cramer sul sistema (risolvibile).
+
 \paragraph{Intermezzo:}
 \begin{enumerate}
 	\item $c_1$ e $c_2$ devono essere funzioni di classe $C^2(I)$ perché considerata una EDO di ordine 2,
-	\item La soluzione particolare di (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) ha la stessa forma della soluzione particolare di una EDO di ordine 1, ma aumentata di una dimensione per l'aggiunta di $c_2(x) y_2(x)$, dove $c_1$ e $c_2$ sono da determinare. Inoltre, imponendo che la funzione della forma (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) sia soluzione particolare, sarà ottenuto un sistema nelle ipotesi $c_1'$ e $c_2'$ che sarà risolto tramite la teoria dei sistemi lineari, ovvero mediante la regola di Cramer. $\qed$
+	\item La soluzione particolare (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) ha la stessa forma della soluzione particolare di una EDO di ordine 1, ma aumentata di una dimensione per l'aggiunta di $c_2(x) y_2(x)$, dove $c_1$ e $c_2$ sono da determinare. Inoltre, imponendo che la funzione della forma (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) sia soluzione particolare, sarà ottenuto un sistema nelle ipotesi $c_1'$ e $c_2'$ che sarà risolto tramite la teoria dei sistemi lineari, ovvero mediante la regola di Cramer. $\qed$
 \end{enumerate}
 
 \noindent Poiché $\bar y(x)$ (ovvero (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti})) è soluzione della EDO lineare di secondo ordine a coefficienti costanti non omogenea (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}), le costanti $c_1$ e $c_2$ devono essere tali che $\bar{y}$ soddisfi
@@ -1535,13 +1548,13 @@ ed imponendo che
 \end{equation}
 è ottenuto
 \begin{equation}\label{eq:conseguenza_condizione_sistema_variazione_costanti}
-	\bar{y}'(x) = c_1(x) y_2'(x) + c_2(x) y_2'(x),
+	\bar{y}'(x) = c_1(x) y_1'(x) + c_2(x) y_2'(x),
 \end{equation}
 da cui (derivando (\ref{eq:conseguenza_condizione_sistema_variazione_costanti}) per avere la derivata seconda di $\bar{y}$ e faciliare i passaggi),
 \begin{equation}\label{eq:derivata_conseguenza_condizione_sistema_variazione_costanti}
-	\bar{y}''(x) = c_1'(x) y_1'(x) + c_1(x)y''_1(x) + c_2'(x)y_2''(x).
+	\bar{y}''(x) = c_1'(x) y_1'(x) + c_1(x)y''_1(x) + c_2'(x) y_2'(x) + c_2(x)y_2''(x).
 \end{equation}
-Sostituendo (\ref{eq:derivata_conseguenza_condizione_sistema_variazione_costanti}) e (\ref{eq:conseguenza_condizione_sistema_variazione_costanti}) in (\ref{eq:equazione_soddisfare_variazioni_costanti}), è ottenuta
+Sostituendo (\ref{eq:conseguenza_condizione_sistema_variazione_costanti}) e (\ref{eq:derivata_conseguenza_condizione_sistema_variazione_costanti}) in (\ref{eq:equazione_soddisfare_variazioni_costanti}), è ottenuta
 \begin{equation}\label{eq:punto_inizio_trucco}
 	\begin{matrix}
 		a[c'_1(x)y'_1(x) + c_1(x) y''_1(x) + c_2'(x) y_2'(x) + c_2(x) y_2''(x)] &+&\\
@@ -1560,7 +1573,7 @@ e dividendo per $a$ è ottenuto
 
 \footnotetext{Tale condizione imposta sarà una delle condizioni del sistema. Perché è imposta? E' un trucco matematico per facilitare il calcolo di $c_1$ e $c_2$ come si vede da (\ref{eq:punto_inizio_trucco}) in poi.}
 
-\noindent \footnote{(\ref{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) è un'ulteriore condizione. Inoltre, se la EDO è in forma normale allora $a=1$.} (Ora è necessaio mettere assieme le condizioni (\ref{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) e (\ref{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}), ovvero:) Dunque, è ottenuto il sistema nelle incognite $c_1'(x)$ e $c_2'(x)$ ($2\times 2$ non omogeneo)
+\noindent \footnote{(\ref{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) è un'ulteriore condizione. Inoltre, se la EDO è in forma normale allora $a=1$.} (Ora è necessario mettere assieme le condizioni (\ref{eq:condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}) e (\ref{eq:seconda_condizione_sistema_risoluzione_edo_lineare_secondo_ordine_non_omogonea_variazione}), ovvero:) Dunque, è ottenuto il sistema nelle incognite $c_1'(x)$ e $c_2'(x)$ ($2\times 2$ non omogeneo)
 \begin{equation}\label{eq:sistema_incognite_variazione_costanti}
 	\begin{cases}
 		c_1'(x) y_1(x) + c_2'(x) y_2(x) &= 0\\
@@ -1579,12 +1592,13 @@ quindi
 	\exists! \text{ soluzione } \, (c_1'(x),c_2'(x)).
 \end{equation}
 
-\paragraph{Intermezzo:} La (\ref{eq:simil_wronskiana_metodo_variazione_costanti}) assomiglia alla Wronskiana, inoltre ha determinante diverso da 0 perché $y_1(x)$ e $y_2(x)$ sono linearmente indipendenti. Inoltre il sistema (\ref{eq:sistema_incognite_variazione_costanti}) ha un unica soluzione (\ref{eq:soluzione_sistema_condizioni}) perché il determinante è diverso da 0.\\
+\paragraph{Intermezzo:} La (\ref{eq:simil_wronskiana_metodo_variazione_costanti}) assomiglia alla Wronskiana ed ha determinante diverso da 0 perché $y_1(x)$ e $y_2(x)$ sono linearmente indipendenti. Pertanto, il sistema (\ref{eq:sistema_incognite_variazione_costanti}) ha un unica soluzione (\ref{eq:soluzione_sistema_condizioni}) perché il determinante (\ref{eq:simil_wronskiana_metodo_variazione_costanti}) è diverso da 0.\\
 Ora è necessario integrare $c_1'(x)$ e $c_2'(x)$ per trovare $c_1$ e $c_2(x)$. $c_1'(x)$ e $c_2'(x)$ sono determinati tramite il metodo di Cramer.\\
 È necessario ricordare che il problema (trovare le soluzioni della EDO completa) è non omogeneo. La differenza con l'omogenea è il numero delle soluzioni sul determinante. $\qed$
 
 \paragraph{Com'è definita la regola di Cramer?} Le ipotesi sono $c_1'(x)$ e $c_2'(x)$, la regola è il rapporto fra il determinante della matrice con prima colonna dei termini noti ed il determinante della matrice dei coefficienti. $\qed$
 
+\noindent (Sono trovare $c_1'(x)$ e $c_2'(x)$ tramite il metodo di Cramer)
 \begin{equation*}
 	c_1'(x)=\frac{
 	\begin{vmatrix}
@@ -1617,6 +1631,7 @@ Integrando $c_1'(x)$ e $c_2'(x)$ sono ottenute le soluzioni $c_1(x)$ e $c_2(x)$,
 \begin{equation*}
 	c_1(x) = \int c_1'(x)\, dx,\quad c_2(x) = \int c_2'(x)\, dx,
 \end{equation*}
+
 ed è trovata la soluzione particolare $\bar y(x)$ (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) della EDO non omogenea a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti})
 \begin{equation*}
 	\bar{y}(x) = c_1(x) y_1(x) + c_2(x) y_2(x).
@@ -1624,12 +1639,12 @@ ed è trovata la soluzione particolare $\bar y(x)$ (\ref{eq:soluzione_particolar
 
 Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}) è
 \begin{equation*}
-	y(x) = c_1(x) y_1(x) + c_2(x) y_2(x) + \bar y,\quad c_1,c_2\in\mathbb{R}.
+	y(x) = c_1(x) y_1(x) + c_2(x) y_2(x) + \bar y(x),\quad c_1,c_2\in\mathbb{R}.
 \end{equation*}
 
 \paragraph{Osservazioni finali:} 
 \begin{itemize}
-	\item Per risolvere problemi di Cauchy con EDO del secondo ordine è necessario fornire due condizioni iniziali: $y(x_0)=y_y0$ e $y'(x_0)=y_1$;
+	\item Per risolvere problemi di Cauchy con EDO del secondo ordine è necessario fornire due condizioni iniziali: $y(x_0)=y_0$ e $y'(x_0)=y_1$;
 	\item Per trovare le soluzioni al problema di Cauchy del secondo ordine è necessario trovare l'integrale generale, derivare ed imporre le 2 condizioni iniziali. Imponendo le due condizioni iniziali sono determinate univocamente $c_1$ e $c_2$ a partire dalla famiglia delle soluzioni (l'integrale generale);
 	\item Imporre le condizioni iniziali sull'integrale generale significa trovare l'unica soluzione passante per il punto $y(x_0) = y_0$.
 \end{itemize}
@@ -1666,7 +1681,7 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\end{equation*}
 	Quindi, l'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy}) (per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}, è la combinazione lineare di $e^{\lambda_1 x}$ e $e^{\lambda_2 x}$, ovvero) è
 	\begin{equation*}
-		y_0(x)=c_1(x)\cdot e^{-\frac{2}{3}} + c_2 \cdot e^{-x},\quad c_1,c_2\in\mathbb{R}.
+		y_0(x)=c_1(x)\cdot e^{-\frac{2}{3}x} + c_2 \cdot e^{-x},\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
 	La soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy}) \footnote{C'è un esponenziale, quindi la soluzione particolare nota sarà un esponenziale con l'aggiunta di una costante da determinare (la derivata dell'esponenziale è l'esponente per l'esponenziale). Nell'esponenziale 2 non è radice dell'equazione caratteristica, se fosse stato radice dell'equazione caratteristica sarebbe stato necessario aggiustare la formula della soluzione nota in base alla molteplicità della radice.} è
 	\begin{equation}\label{eq:soluzione_particolare_non_omogenea_icognita}
@@ -1687,13 +1702,13 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\begin{equation*}
 		24 A e^{2x} = 3 e^{2x}\quad\Rightarrow\quad 24 A  = 3 \quad\Rightarrow\quad A=\frac{24}{3} = \frac{1}{8}.
 	\end{equation*}
-	Sostituendo $A$ in (\ref{eq:soluzione_particolare_non_omogenea_icognita}), la soluzione particolare è
+	Sostituendo $A$ in (\ref{eq:soluzione_particolare_non_omogenea_icognita}), la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy}) è
 	\begin{equation*}
 		\bar y(x) = \frac{1}{8} e^{2x}.
 	\end{equation*}
-	Sommando le soluzioni (per trovare l'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy}) in forma $y(x) = y_0(x) + \bar y(x)$,) è ottenuto l'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy})
+	Sommando le soluzioni (per trovare l'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy}) in forma $y(x) = y_0(x) + \bar y(x)$,) è ottenuto l'integrale generale di (\ref{eq:edo_completa_esercizio_problema_cauchy})
 	\begin{equation*}
-		y'(x)  = -\frac{2}{3} c_1 e^{-\frac{2}{3}x}-c_2 e^{-x}+\frac{1}{8}e^{2x},\quad c_1,c_2\in\mathbb{R}.
+		y(x)  = -\frac{2}{3} c_1 e^{-\frac{2}{3}x}-c_2 e^{-x}+\frac{1}{8}e^{2x},\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
 	(È necessario trovare l'unica soluzione che verifica le condizioni iniziali. Le condizioni iniziali coinvolgono $y$ e $y'$, quindi è necessario calcolare $y'$ dalla soluzione (per poi imporre le condizioni iniziali))
 	\begin{equation*}
@@ -1714,7 +1729,7 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 			c_2 &= -2
 		\end{cases}
 	\end{equation*}
-	Quindi, \textbf{la} soluzione del problema di Cauchy è
+	Quindi, \ul{\textbf{la}} soluzione del problema di Cauchy è
 	\begin{equation*}
 		y(x) = \frac{15}{8} e^{-\frac{2}{3}x} - 2 e^{-x} + \frac{1}{8} e^{2x}\quad\forall x\in\mathbb{R}.
 	\end{equation*}
@@ -1733,13 +1748,13 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\end{equation*}
 	\paragraph{Svolgimento:} Sia la EDO lineare di secondo ordine a coefficienti costanti
 	\begin{equation}\label{eq:edo_completa_esercizio_problema_cauchy_1}
-		y'' + 6 y' + 9 y = \cdot e^{3x},
+		y'' - 6 y' + 9 y = e^{3x},
 	\end{equation}
 	e l'omogenea associata
 	\begin{equation}\label{eq:edo_omogenea_esercizio_problema_cauchy_1}
-		y'' + 6 y' + 9 y= 0.
+		y'' - 6 y' + 9 y= 0.
 	\end{equation}
-	(Risoluzione omogenea:) L'equazione caratteristica di (\ref{eq:edo_omogenea_esercizio_problema_cauchy_1}) è
+	(Risoluzione omogenea:) L'equazione caratteristica associata a (\ref{eq:edo_omogenea_esercizio_problema_cauchy_1}) è
 	\begin{equation*}
 		\lambda^2 - 6\lambda + 9 = (\lambda -3)^2 = 0,
 	\end{equation*}
@@ -1749,20 +1764,32 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\end{equation*}
 	Pertanto, l'integrale generale di (\ref{eq:edo_omogenea_esercizio_problema_cauchy_1}) è
 	\begin{equation*}
-		y_0(x) = c_1 e^{3x} + xe^{3x},\quad c_1,c_2\in\mathbb{R}.
+		y_0(x) = c_1 \cdot e^{3x} + x \cdot c_2 \cdot e^{3x},\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
 	(Trovare la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy_1}))
-	\paragraph{Intermezzo:} Il problema è che l'esponente è 3, ma 3 è anche la radice dell'equazione caratteristica e quindi la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy_1}) va corretta moltiplicando l'esponenziale per $x$ elevato alla molteplicità della radice (quindi $x^2$). Solo $x$ sarebbe il caso precedente, $x e^3x$. $\qed$
+	\paragraph{Intermezzo:} Il problema è che l'esponente è 3, ma 3 è anche la radice dell'equazione caratteristica e quindi la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy_1}) va corretta moltiplicando l'esponenziale per $x$ elevato alla molteplicità della radice (quindi $x^2$). Solo $x$ sarebbe il caso precedente, $x e^3x$. $\qed$\\
+	La soluzione particolare è 
 	\begin{equation*}
 		\bar y(x)=Ax^2e^{3x},
 	\end{equation*}
-	facendo i calcoli è ottenuta
+	dove $A$ è da determinare. Derivando $\bar{y}$ è ottenuto
+	\begin{equation*}
+		\begin{matrix}
+			\bar y'(x) &=& 2Axe^{3x} + 3A x^2 e^{3x},\\
+			\bar y''(x) &=& 2Ae^{3x} + 3A(2xe^{3x} + 3x^2e^{3x}),
+		\end{matrix}
+	\end{equation*}
+	e sostituendo in (\ref{eq:edo_completa_esercizio_problema_cauchy_1}) è ottenuto
+	\begin{equation*}
+		2Axe^{3x} + 3A x^2 e^{3x} - 6 [2Ae^{3x} + 3A(2xe^{3x} + 3x^2e^{3x})] + 9 Ax^2e^{3x} =  e^{3x}.
+	\end{equation*}
+	Facendo i calcoli è ottenuta che la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy_1})
 	\begin{equation*}
 		\bar y(x) =\frac{1}{2} x^2 e^{3x},
 	\end{equation*}
 	oppure, applicando il metodo di variazione delle costanti
 	\begin{equation*}
-		\bar y(x) = c_1(x) \underbrace{e^{3x}}_{y_1(x)} + c_2(x) \underbrace{x e^{3x}}_{y_2}.
+		\bar y(x) = c_1(x) \underbrace{e^{3x}}_{y_1(x)} + c_2(x) \underbrace{x e^{3x}}_{y_2(x)}.
 	\end{equation*}
 	Imponendo le condizioni iniziali è ottenuto
 	\begin{equation*}
@@ -1804,9 +1831,9 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 			\end{vmatrix}
 		}= \frac{e^{6x}}{e^{6x}} = 1.
 	\end{equation*}
-	Integrando e' ottenuto
+	Integrando è ottenuto
 	\begin{equation*}
-		c_1(x) = -\frac{x^2}{2}, c_2(x) = x.
+		c_1(x) = -\frac{x^2}{2}\quad\text{e}\quad c_2(x) = x.
 	\end{equation*}
 	Quindi
 	\begin{equation*}
@@ -1816,8 +1843,8 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\begin{equation*}
 		y(x) = c_1 e^{3x} + c_2 x e^{3x} + \frac{1}{2} x^2 e ^{3x},\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
-	(Ora e' necessario derivare $y(x)$ ed imporre le condizioni iniziali per trovare la soluzione al problema di Cauchy)\\
-	Derivando $y(x)$ e' ottenuto
+	(Ora è necessario derivare $y(x)$ ed imporre le condizioni iniziali per trovare la soluzione al problema di Cauchy)\\
+	Derivando $y(x)$ è ottenuto
 	\begin{equation*}
 		y'(x) = 3c_1 e^{3x} + c_2(e^{3x} + 3xe^{3x}) + xe^{3x} + \frac{3}{2}x^2 e^{3x},
 	\end{equation*}
@@ -1836,7 +1863,7 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 			c_2 &= -3
 		\end{cases}
 	\end{equation*}
-	La soluzione al problema di Cauchy e' dunque
+	La soluzione al problema di Cauchy è dunque
 	\begin{equation*}
 		y(x) = e^{3x} - 3xe^{3x} + \frac{1}{2} x^2 e^{3x}\quad \forall x\in\mathbb{R}.
 	\end{equation*}
@@ -1851,6 +1878,7 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 			y'(0)&=1 
 		\end{cases}
 	\end{equation*}
+	\paragraph{Nota:} Se $y(0)$ e $y'(0)$ fossero uguali allora la sluzione sarebbe nulla.
 	\paragraph{Svolgimento:} Sia la EDO lineare di secondo ordine a coefficienti costanti
 	\begin{equation}\label{eq:edo_completa_esercizio_problema_cauchy_2}
 		y'' + 2y' + 2y = 3x^2,
@@ -1873,8 +1901,8 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\begin{equation*}
 		y_0(x)=e^{-x}(c_1\cos x + c_2\sin x),\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
-	\paragraph{Intermezzo:} E' necessario scrivere la soluzione particolare della non omogenea. Tale soluzione dovra' avere la stessa forma polinomiale, ovvero e' richiesto che la soluzione particolare sia simile al termine noto, il quale contiene tutti i valori. Puo' capitare che non compaia la funzione e quindi e' necessario modificare la soluzione particolare perche' non possibile con il Principio di identita' dei polinomi. $\qed$
-	(E' ricercata la soluzione particolare)
+	\paragraph{Intermezzo:} E' necessario scrivere la soluzione particolare della non omogenea. Tale soluzione dovra' avere la stessa forma polinomiale, ovvero è richiesto che la soluzione particolare sia simile al termine noto, il quale contiene tutti i valori. Puo' capitare che non compaia la funzione e quindi è necessario modificare la soluzione particolare perché non possibile con il Principio di identita' dei polinomi. $\qed$\\
+	(E' ricercata la soluzione particolare della EDO non omogenea (\ref{eq:edo_completa_esercizio_problema_cauchy_2}))
 	\begin{equation*}
 		\begin{matrix}
 			\bar y(x) &=& A x^2 + Bx + C && (A,B,C \text{ da determinare}),\\
@@ -1896,7 +1924,7 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 			2A &= 3\\
 			2 A + B &= 0\\
 			A + B + C &=0 
-		\end{cases}\quad\Rightarrow\quad
+		\end{cases}\quad\Longrightarrow\quad
 		\begin{cases}
 			A &= \frac{3}{2}\\
 			B &= -3\\
@@ -1905,17 +1933,17 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	\end{equation*}
 	(Quindi la soluzione particolare di (\ref{eq:edo_completa_esercizio_problema_cauchy_2}) e')
 	\begin{equation*}
-		\bar y(x) = \frac{3}{2} -3x + \frac{3}{2},
+		\bar y(x) = \frac{3}{2}x^2 -3x + \frac{3}{2},
 	\end{equation*}
 	(e la soluzione generale di (\ref{eq:edo_completa_esercizio_problema_cauchy_2}) e')
 	\begin{equation*}
 		y(x) = e^{-x} (c_1\cos x + c_2\sin x) + \frac{3}{2} x^2 - 3x + \frac{3}{2}.
 	\end{equation*}
-	(Derivando $y(x)$)
+	(Derivando $y(x)$ è ottenuto)
 	\begin{equation*}
 		y'(x) = -e^{-x} (c_1\cos x + c_2\sin x) + e^{-x} (-c_1\sin x + c_2\cos x) + 3 x - 3,
 	\end{equation*}
-	(e' possibile imporre le condizioni iniziali)
+	(Imponendo le condizioni iniziali è ottenuto quanto segue)
 	\begin{equation*}
 		\begin{matrix}
 			y(0) = 0\\
@@ -1960,7 +1988,7 @@ Quindi, l'integrale generale della EDO (\ref{eq:edo_lineare_secondo_ordine_coeff
 	Determinare l'integrale generale di
 	\begin{enumerate}
 		\item $y'' - 4y' + 4y = 5 e^{2x}$
-		\item $y'' + y' + 3y = 3x + 3$ (il termine noto $3x + 3$ e' un polinomio)
+		\item $y'' + y' + 3y = 3x + 3$ (il termine noto $3x + 3$ è un polinomio)
 	\end{enumerate}
 \end{exercise}
 
