@@ -1078,13 +1078,13 @@ se $(x,y)\rightarrow(x_0,y_0)$ allora $\rho\cos\theta\rightarrow 0$ e $\rho\sin\
     \end{equation}
 \end{remark}
 
-\paragraph{N.B.:} Data l'Osservazione precedente, per mostrare che vale il limite della funzione $f$ per $(x,y)\rightarrow (x_0,y_0)$ è utilizzata un condizione semplice, ovvero è applicato il Teorema \ref{th:dei_carabinieri} dei Carabinieri: si cerca di maggiorare la quantità $|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|<\varepsilon$ in (\ref{eq:limite_coordinate_polari}) con una funzione che dipende solo dal raggio radiale, dove la funzione radiale è una maggiore uguale a 0 ed infinitesima (ovvero tende a 0 quando $\rho\rightarrow 0$).\\
+\paragraph{N.B.:} Data l'Osservazione precedente, per mostrare che vale il limite della funzione $f$ per $(x,y)\rightarrow (x_0,y_0)$ è utilizzata un condizione semplice, ovvero è applicato il Teorema \ref{th:dei_carabinieri_2} dei Carabinieri: si cerca di maggiorare la quantità $|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|<\varepsilon$ in (\ref{eq:limite_coordinate_polari}) con una funzione che dipende solo dal raggio radiale, dove la funzione radiale è una maggiore uguale a 0 ed infinitesima (ovvero tende a 0 quando $\rho\rightarrow 0$).\\
 Quindi, per mostrare che vale (\ref{eq:limite_tende_l_uniformemente_theta}) è sufficiente mostrare che (esiste) una funzione (radiale) $g=g(\rho)$ che dipende soltanto da $\rho$ con $g(\rho)\geq 0$ \footnote{Tale che $g$ sia maggiore di $|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|$ ed infinitesima quando $\rho\rightarrow 0^+$. Quindi è sufficiente far vedere che $g$ esiste, che sia maggiore uguale a 0 ed infinitesima quando $\rho\rightarrow 0^+$.} tale che
 \begin{equation}\label{eq:maggiorazione_f_coordinate_polari}
     d(f,l)=|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|\leq g(\rho)\quad\text{e}\quad\lim_{\rho\rightarrow 0^+}g(\rho)=0.
 \end{equation}
 Quindi, (\ref{eq:maggiorazione_f_coordinate_polari}) significa che $d(f,\ell)$ è infinitesima non appena $0<\rho<\delta$, comunque scelta $\delta$.\\
-Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema \ref{th:dei_carabinieri} dei Carabinieri (anche detto del confronto).
+Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema \ref{th:dei_carabinieri_2} dei Carabinieri (anche detto del confronto).
 
 \paragraph{N.B.:} Potrebbe capitare che passando in coordinate polari il limite dipenda esplicitamente da $\theta$, ciò significa che il limite non esiste perché non vale uniformemente rispetto a $\theta$. Inoltre, se non riusciamo a dimostrare che esiste una $g\geq 0$ infinitesima per la quale vale la maggiorazione (\ref{eq:maggiorazione_f_coordinate_polari}), è necessario cercare un'altra strada.
 
@@ -1167,7 +1167,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
     \begin{equation*}
         |\cos^2\theta\sin\theta|\leq 1\quad\text{se}\quad 3-2\alpha>0\equiv3>2\alpha\quad\text{ovvero}\quad 0\underset{\text{HP}\, \alpha>0}{<}\alpha<\frac{3}{2}\quad\text{allora}\quad 0<|\rho\cos^2\theta\sin\theta|<\rho^{3-2\alpha},
     \end{equation*}
-    il limite vale 0 (per il Teorema \ref{th:dei_carabinieri} dei Carabinieri).\\
+    il limite vale 0 (per il Teorema \ref{th:dei_carabinieri_2} dei Carabinieri).\\
     Se $\alpha=\frac{3}{2}$ il limite dipende da $\theta$ (perché è il limite di $\cos^3\theta\sin\theta$), quindi non esiste.\\
     Se $3-2\alpha<0$, allora
     \begin{equation*}
@@ -1178,7 +1178,11 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \footnotetext{Prima relazione fondamentale della trigonometria: $\rho^2\cos^2\theta+\rho^2\sin^2\theta=\rho^2(\cos^2\theta+\sin^2\theta)=\rho^2\cdot 1$.}
 
 \subsection{Grafico di una funzione di più variabili}\label{ssec:grafico_funzione_n_variabili}
-Per comodità (legata al grafico delle funzioni) sono considerate funzioni di due variabili, quindi del tipo $f\colon D\subseteq\mathbb R^2\rightarrow\mathbb R$. È possibile generalizzare su $\mathbb R^n$.
+Per comodità (legata al grafico delle funzioni) sono considerate funzioni di due variabili, quindi del tipo
+\begin{equation*}
+	f : D\subseteq\mathbb R^2\rightarrow\mathbb R.
+\end{equation*}
+È possibile generalizzare su $\mathbb R^n$.
 
 \begin{definition}[(Non ufficiale) Campo di esistenza in $\mathbb R^2$]\footnote{Slide 6 PDF 11.}
     Il campo di esistenza per le funzioni in 2 variabili è un sottoinsieme del piano ($\mathbb R^2$), per il quale l'espressione della funzione ha senso (ovvero assume valore reali).
@@ -1420,7 +1424,7 @@ Considerato il grafico di $f$ definita in $\mathbb R^2$, questo è l'insieme di 
     \end{figure}
 \end{example}
 
-\begin{example}\footnote{Slide 12-14 PDF 12.}
+\begin{example}\footnote{Slide 13-15 PDF 12.}
     Disegnare l'insieme di livello $E_k$ delle seguenti funzioni $f\colon E\subseteq\mathbb R^2\rightarrow\mathbb R$:
     \begin{enumerate}
         \item (per casa) $z=x+2y$.
@@ -1562,12 +1566,12 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
         \end{aligned}
     \end{equation*}
     \begin{enumerate}
-        \item $z=\sqrt{1-x^2-y^2}$,
+        \item Sia $z=\sqrt{1-x^2-y^2}$, allora
         \begin{equation*}
             E=\{(x,y)\in\mathbb R^2\,|\, 1-x^2-y^2\geq 0\}=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2\leq 1\}.
         \end{equation*}
         $E$ è chiuso e (quindi) limitato. Vedere Figura \ref{fig:dominio_rad_1-x^2-y^2}.
-        \item $z=\sqrt{1-x^2}+\sqrt{1-y^2}$
+        \item Sia $z=\sqrt{1-x^2}+\sqrt{1-y^2}$, allora
         \begin{equation*}
             \begin{matrix}
                 E&=&\{(x,y)\in\mathbb R^2\,|\, 1-x^2\geq 0,\, 1-y^2\geq 0\}&=&\\
@@ -1575,7 +1579,7 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
             \end{matrix}
         \end{equation*}
         $E$ è chiuso. Vedere Figura \ref{fig:dominio_rad_1-x^2+rad_1-y^2}.
-        \item $z=\frac{1}{\sqrt{y-\sqrt{x}}}$ funzione razionale.
+        \item Sia $z=\frac{1}{\sqrt{y-\sqrt{x}}}$ funzione razionale, allora
         \begin{equation*}
             E=\{(x,y)\in\mathbb R^2\,|\, y-\sqrt{x}>0,\, x\geq 0\}=\{(x,y)\in\mathbb R^2\,|\, y>\sqrt{x},\, x\geq 0\}.
         \end{equation*}
@@ -1600,7 +1604,108 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
     \end{figure}
 \end{example}
 
-INSERIRE SLIDE 12-15 PDF 12 E TUTTO IL PDF 13
+INSERIRE TUTTO IL PDF 13
+
+\subsubsection{Esempi sulla continuità}
+
+\begin{example}\footnote{Slide 2 PDF 13.}
+	\paragraph{Testo:} Stabilire se la
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\frac{x}{\log(x^2+y^2)}&\text{ per } (x,y)\neq(0,0)\\
+			0 &\text{ altrimenti}
+		\end{cases}
+	\end{equation*}
+	funzione è continua sul suo campo di esistenza.
+	\paragraph{Svolgimento:} $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e affinché risulti continua deve esistere il limite della funzione, per $(x,y)\rightarrow(0,0)$ e deve valere 0, ovvero
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}f(x,y)=0.
+	\end{equation*}
+	Valutiamo dunque
+	\begin{equation*}
+		\left|\frac{x}{\log(x^2+y^2)}\right|\overset{\footnotemark}{=} \left|\frac{\rho \cos\theta}{\log(\rho^2)}\right| = \frac{\rho|\cos\theta|}{\underbrace{2|\log\rho|}_{\footnotemark}}\overset{\footnotemark}{\leq} \frac{\rho}{2|\log\rho|}\underset{\rho\rightarrow0^+}{\longrightarrow}0 .
+	\end{equation*}
+	\addtocounter{footnote}{-2}
+	\footnotetext{Passaggio in cordinate polari. Inoltre, per la relazione fondamentale dell'aritmetica $\rho^2(\cos^2\theta+\sin^2\theta) = \rho^2\cdot 1$.}
+	
+	\stepcounter{footnote}
+	\footnotetext{Proprietà dei logaritmi.}
+	
+	\stepcounter{footnote}
+	\footnotetext{Le funzioni trigonometriche sono comprese fra $-1$ e $1$, quindi è possibile maggiorare.}
+	
+	\paragraph{Nota:} È stato utilizzato il Teorema del confronto \ref{th:dei_carabinieri_2} (detto dei carabinieri) sul valore assoluto di $f(x,y)$ trasformato in coordinate polari e maggiorato da una funzione rafiale maggiore uguale a 0. Pertanto, vale quanto segue. (Non è stato considerato il caso $\rho=0$, solo quello in cui $\rho\rightarrow 0^+$.) $\qed$
+	
+	\noindent Dunque,
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} f(x,y) = 0 = f(0,0),
+	\end{equation*}
+	quindi $f$ è continua in tutto $\mathbb{R}^2$.
+	
+\end{example}
+
+\paragraph{Nota:} Come in Analisi 1, prolungare la continuità signidica che nel punto incriminato $f$ è posto uguale al valore al quale tende la funzione quando $(x, y)$ tendono al punto incriminato.
+
+\begin{example}\footnote{Slide 3 PDF 13}
+	\paragraph{Testo:} Stabilire se la funzione
+	\begin{equation*}
+		f(x,y) \overset{\footnotemark}{=} \frac{\sin(\sqrt{x^2+y^2})}{\sqrt{x^2+y^2}}\quad \forall(x,y)\in\mathbb{R}^2\backslash\{(0,0)\}
+	\end{equation*}
+	\footnotetext{Il quoziente sono funzioni continue in $\mathbb{R}^2$, quindi è continuo in $\mathbb{R}^2\backslash\{(0,0)\}$.}
+	
+	\noindent è prolungabile con continuità in $(0,0)$ e stabilire quale valore deve assumere il prolungamento di $f$ in $(0,0)$.
+	\paragraph{Cosa è necessario far vedere?} È necessario definire cosa accade in $(0,0)$ e per dimostrare che il prolungamento sia continui che il limite di $f(x,y)$, per $(x,y)\rightarrow(0,0)$ sia il valore della funzione in tale punto. È necessario ricordare che prolungare la continuità significa che l'immagine di $f$ in $(x_0,y_0)$ deve essere uguale al limite di $f$ per $(x,y)\rightarrow(x_0,y_0)$.
+	\paragraph{Svolgimento:} È possibile osservare che $\forall (x,y)\in\mathbb R^2\backslash\{(0,0)\}$, $f$ è una funzione radiale (ovvero dipende solo da $\rho$), cioè
+	\begin{equation*}
+		f(x,y)=f(\rho)=\frac{\sin\rho}{\rho},
+	\end{equation*}
+	dove $\rho = d(\rho , \underline{0})$, con $\rho=(x,y)$.\\
+	Quindi,
+	\begin{equation*}
+		\lim_{\rho\rightarrow0^+} f(\rho)=\lim_{\rho\rightarrow 0^+} \frac{\sin\rho}{\rho}=1.
+	\end{equation*}
+	\paragraph{Nota:} Quindi, se la funzione prolungata in $(0,0)$ vale 1, come il limite, allora la funzione è continua nel suo dominio e nel prolungamento (che non fa parte del dominio e vale 1).$\qed$\\
+	Dunque 
+	\begin{equation*}
+		\tilde f(x,y)=
+		\begin{cases}
+			\frac{\sin(\sqrt{x^2+y^2})}{\sqrt{x^2+y^2}} &\text{ se } (x,y)\neq(0,0)\\
+			1 & \text{ se } (x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	ovvero $\tilde f$ è continua su tutto il piano.
+\end{example}
+
+\begin{example}\footnote{Slide 5 PDF 13.}
+	\paragraph{Testo:} Valutare il limite
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}.
+	\end{equation*}
+	\paragraph{Svolgimento:} È calcolato lungo la retta $y=mx$ (dove se $y=0$ è necessario escludere $(0,0)$):
+	\begin{equation*}
+		\lim_{\underset{y=mx}{(x,y)\rightarrow (0,0)}} f(x,y)=\lim_{x\rightarrow 0}f(x,mx)=\lim_{x\rightarrow 0} \frac{x\,m\,x\,(2m^2x^2+x^3)}{x^4+m^2x^2}=\lim_{x\rightarrow 0}\frac{\cancel{x^2}\,m\, [x^2(2m^2-x)]}{\cancel{x^2}(x^2+m^2)} = \lim_{x\rightarrow 0}\frac{mx^2(2m^2-x)}{x^2+m^2}=0.
+	\end{equation*}
+	Quindi, il limite, se esiste, è 0. È necessario mostrare che è 0. Passando in coordinate polari
+	\begin{equation*}
+		\begin{cases}
+			x=\rho\cos\theta\\
+			y=\rho\sin\theta
+		\end{cases}
+	\end{equation*}
+	è ottenuto
+	\begin{equation*}
+		\begin{matrix}
+			\left|\frac{\rho^2\cos\theta \sin\theta (2\rho^2\sin^2(\theta)+\rho^3\cos^3(\theta))}{\rho^4\cos^4\theta + \rho^2 \sin^2\theta}\right| &=& \left|\frac{\cancel{\rho^2}cos\theta \sin\theta (2\rho^2\sin^2(\theta)+\rho^3\cos^3(\theta))}{\cancel{\rho^2}(\rho^2\cos^4\theta + \sin\theta^2\theta)}\right|&=& \left|\frac{2\rho^2\cos\theta\sin^3\theta + \rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right|\\\\
+			&=& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right| &\overset{|x+y|\leq|x|+|y|}{\underset{\text{disug. triang.}}{\leq}}& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right| + \left| \frac{\rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right|\\\\
+			&&(\text{portate fuori cose $\geq0$})&=& \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}
+		\end{matrix}
+	\end{equation*}
+	Dunque
+	\begin{equation*}
+		|f(\rho, \theta)|\leq \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}
+	\end{equation*}
+\end{example}
 
 \subsection{Calcolo differenziale}\footnote{PDF 14.}
 Per una funzione di una variabile $f:I\subseteq\mathbb R\rightarrow\mathbb R$ la derivata in un punto $x_0\in I$ è rappresentata da $f'(x_0)$ e definisce il tasso di variazione di $f$ nell'istante (punto) $x_0$, ovvero dal limite del rapporto incrementale (\ref{eq:limite_rapporto_incrementale}). Da $x_0$ ad $x_0+h$ c'è un solo cammino. Per le funzioni in più variabili è possibile seguire infiniti cammini, quindi è necessario chiarire cos'è una derivata in più variabili.
@@ -1693,7 +1798,9 @@ Tornando alle funzioni in due variabili, le due derivate parziali sono (\ref{eq:
 \end{equation}
 dove $x_0$ o $y_0$ sono fissati e quindi $f$ diventa una funzione di una variabile.
 
-\footnote{Con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.} Se infatti è considerata la traccia di $f(x,y)$ lungo il piano $y=y_0$ (è ottenuto)
+Quindi con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.
+
+Infatti, se è considerata la traccia di $f(x,y)$ lungo il piano $y=y_0$ (è ottenuto)
 \begin{equation*}
     f(x,y_0):=g_1(x). \footnotemark
 \end{equation*}
@@ -1721,7 +1828,7 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 
 \paragraph{Quindi come sono calcolate le derivate?} Fissate tutte le variabili tranne l'$i$-esima è calcolato il limite del rapporto incrementale, oppure sono considerate le tracce (i due procedimenti sono simili).
 
-\begin{example}[Calcolo di derivate parziali]\footnote{Slide 5 PDF 14.}
+\begin{example}[Calcolo di derivate parziali]\footnote{Slide 6 PDF 14.}
     Sia $f(x,y)=x\cos(x^2y^3)+x^6y^2+e^x$.
     \begin{equation}\label{eq:derivate_parziali_metodo_normale}
         \begin{matrix}
