@@ -1742,7 +1742,53 @@ INSERIRE TUTTO IL PDF 13
 	ed è possibile applicare il teorema del confronto.
 \end{example}
 
-MANCANO ESEMPI SLIDE 8-13 PDF 13
+\begin{example}\footnote{Slide 8 PDF 13}
+	\paragraph{Testo:}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} \frac{x\sin^2y+3xy^4}{x^2+2y^4}=\left[\frac{0}{0}\right]
+	\end{equation*}
+	\paragraph{Svolgimento:} È possibile considerare la funzione come somma di funzioni:
+	\begin{equation*}
+		f(x,y)=f_1(x,y)+f_2(x,y) = \frac{x\sin^2y}{x^2+2y^4} + \frac{3xy^4}{x^2+2y^4} = 
+		\begin{matrix}
+			xsin^2y\rightarrow 0 \text{ come } \rho^3\\
+			3xy^4\rightarrow 0 \text{ come } 3\rho^5
+		\end{matrix}
+	\end{equation*}
+	
+	\paragraph{Intermezzo:} $f_1$ ed $f_2$ hanno limite? Una delle due non ha limite. Se avessero entrambe limite allora il risultato è la somma dei due. È possibile osservare che $f_2$ sembra andare a 0 perché sopra ha una potenza superiore rispetto a sotto. $\qed$
+	
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} f_2(x,y) = 0,
+	\end{equation*}
+	infatti
+	\begin{equation*}
+		|f_2(x,y)|=\left|\frac{3xy^4}{x^2+2y^4}\right| = \frac{3|x|y^4}{x^2+2y^4} \leq \frac{3|x|y^4}{2y^4}=\frac{3}{2}|x|\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
+	\end{equation*}
+	
+	\paragraph{Osservazioni su $f_1$:} L'idea è che $	\lim_{(x,y)\rightarrow(0,0)} f_1(x,y)$ non esiste perché il grado di $y^4$ è maggiore del grado di $\sin^2y$. Quindi conviene calcolare il limite lungo percorsi in cui le $x$ e $y$ pesano in modo diverso.\\
+	Il numeratore e denominatore tendono a 0 rispettivamente come $\rho^3$ e come $\rho^4$. Quindi, conviene calcolare il limite lungo dei percorsi in cui $x$ e $y$ pesano in modo diverso così da mostrare comportamenti distinti, come segue. $\qed$
+
+	\noindent \textbf{Lungo} $\boldsymbol{y=x}$ ($x$ ed $y$ pesano uguale)
+	\begin{equation}\label{eq:esempio_limite_notevole}
+			\underset{y=x}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{x\rightarrow 0} f_1(x,x) = \lim_{x\rightarrow 0}\frac{x\sin^2x}{x^2+2x^4} = \lim_{x\rightarrow 0}\boxed{\frac{\sin^2x}{x^2}}_{=1}\cdot\frac{x}{1+2x^2}=0
+	\end{equation}
+	
+	\noindent \textbf{Lungo} $\boldsymbol{y=x^2}$ (così $x^2$ è paragonabile a $y^4$)
+	\begin{equation*}
+		\underset{y=x}{\lim_{(x,y)\rightarrow(0,0)}}_{y=x^2} f_1(x,y) = \lim_{y\rightarrow 0}\frac{y^2\sin^2y}{y^4+2y^4} = \lim_{y\rightarrow 0} \frac{\sin^2y}{3y^2} =\frac{1}{3} \neq 0,
+	\end{equation*}
+	quindi il limite di $f_1$ non esiste.\\
+	Dunque
+	\begin{equation*}
+		\nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y) = f_1 + f_2.
+	\end{equation*}
+	(Il limite non esiste dal momento che $f$ è la somma di $f_1$ e $f_2$ ed il limite di $f_1$ non esiste.)
+\end{example}
+
+\paragraph{Nota sui limiti:} I limiti non si fanno a pezzi, è necessario utilizzare l'algebra dei limiti: il limite di prodotti è il pordotto dei limiti quando esistono i limiti dei fattori (come in (\ref{eq:esempio_limite_notevole})). Inoltre, se è presente l'infinito, è possibile trattarlo come se fosse un numero, tranne nelle forme di indecisione ($0\cdot\infty,\, \hdots$).
+
+MANCANO ESEMPI SLIDE 11-13 PDF 13
 
 \subsection{Calcolo differenziale}\footnote{PDF 14.}
 Per una funzione di una variabile $f:I\subseteq\mathbb R\rightarrow\mathbb R$ la derivata in un punto $x_0\in I$ è rappresentata da $f'(x_0)$ e definisce il tasso di variazione di $f$ nell'istante (punto) $x_0$, ovvero dal limite del rapporto incrementale (\ref{eq:limite_rapporto_incrementale}). Da $x_0$ ad $x_0+h$ c'è un solo cammino. Per le funzioni in più variabili è possibile seguire infiniti cammini, quindi è necessario chiarire cos'è una derivata in più variabili.
