@@ -1788,7 +1788,61 @@ INSERIRE TUTTO IL PDF 13
 
 \paragraph{Nota sui limiti:} I limiti non si fanno a pezzi, è necessario utilizzare l'algebra dei limiti: il limite di prodotti è il pordotto dei limiti quando esistono i limiti dei fattori (come in (\ref{eq:esempio_limite_notevole})). Inoltre, se è presente l'infinito, è possibile trattarlo come se fosse un numero, tranne nelle forme di indecisione ($0\cdot\infty,\, \hdots$).
 
-MANCANO ESEMPI SLIDE 11-13 PDF 13
+\begin{example}\footnote{Slide 11 PDF 13.}
+	\paragraph{Testo:}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\left(\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right)e^{\left(\frac{x^2-y^2}{x^2+y^2}\right)}.
+	\end{equation*}
+	(Partiamo dalla prima funzione,)
+	\begin{equation*}
+		f_1(x,y) = \frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2},\quad \footnotemark
+	\end{equation*}
+	per la quale l'idea è tenda a 0. \footnotetext{Pensando in coordinate polari, il denominatore va a 0 come $\rho^3$, ma il grado del nominatore è maggiore del grado del denominatore.}
+	
+	\noindent Passando in coordinate polari
+	\begin{equation*}
+		\begin{cases}
+			x = \rho \cos\theta\\
+			y = \rho \sin\theta
+		\end{cases}
+	\end{equation*}
+	è verificato se è possibile maggiorare $f_1$ ed utilizzare il Teorema del confronto come segue:
+	\begin{equation*}
+		\begin{matrix}
+				\left|\frac{\rho\cos\theta\rho^2\sin^2\theta + 2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2(\cos^2\theta+\sin^2\theta)}\right| &=& \left|\frac{\rho^{\cancel 3}\cos\theta\sin^2\theta}{\cancel{\rho^2}} + \frac{ 2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2}\right|\\\\
+				&\overset{\text{disug. triang.}}{\leq}& |\rho \cos\theta\sin^2\theta| + 2 \left| \frac{ \rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2}\right|\\\\
+				[\rho\cos\theta\leq|\rho\cos\theta|\leq\rho\rightarrow 0] &\leq& \rho |\cos\theta\sin^2\theta| + 2  \frac{ \rho^{\frac{1}{3}} |\sin\theta|^{\frac{1}{3}}|\rho\cos\theta|^2}{\rho^2}\\\\
+				&=&  \rho |\cos\theta\sin^2\theta| + 2 \rho^{\frac{1}{3}} |\sin\theta|^{\frac{1}{3}}|\rho\cos\theta|^2\\\\
+				&\overset{\footnotemark}{\leq}& \rho + 2\rho^{\frac{1}{3}} &=& g(\rho) \underset{\rho\rightarrow 0^+}{\longrightarrow} 0.
+		\end{matrix}
+	\end{equation*}
+	\footnotetext{Le funzioni trigonometriche sono maggiorabili perché limitate e tramite la maggiorazione è ottenuta la funzione radiale $g$.}
+	
+	\noindent Data
+	\begin{equation*}
+		e^{\frac{x^2-y^2}{x^2+y^2}},
+	\end{equation*}
+	l'esponente $\frac{x^2-y^2}{x^2+y^2}$ non ha limite per $(x,y)\rightarrow(0,0)$. Passando in coordinate polar è ottenuto
+	\begin{equation*}
+		\lim_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \rho\sin^2\theta}{\rho^2} = \lim_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
+	\end{equation*}
+	È possibile dimostrare che $e^{\left(\frac{x^2-y^2}{x^2+y^2}\right)}$ è limitato uniformemente da una costante.
+	\begin{equation*}
+		\begin{matrix}
+			\frac{x^2-y^2}{x^2+y^2} &\leq& \left|\frac{x^2-y^2}{x^2+y^2}\right| &=&  \frac{|x^2-y^2|}{x^2+y^2} &\leq& [|a-b| = |a+(-b)| \leq |a| + |-b|]\\
+			&&&\leq& \frac{|x^2|+|-y^2|}{x^2+y^2} &=& \frac{x^2+y^2}{x^2+y^2} &=& 1
+		\end{matrix}
+	\end{equation*}
+	Utilizzando le proprietà dell'esponenziale (in particolare che è una funzione crescente), è ottenuto che
+	\begin{equation*}
+		0 < e^{\frac{x^2-y^2}{x^2+y^2}} \leq e^1,
+	\end{equation*}
+	e dunque
+	\begin{equation*}
+		\left|\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}e^{\frac{x^2-y^2}{x^2+y^2}}\right| \leq e \left|\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right|\underset{(x,y)\rightarrow (0,0)}{\longrightarrow} 0.
+	\end{equation*}
+	Quindi, per il teorema del confornto il limite di $f$ esiste ed è uguale a 0.
+\end{example}
 
 \subsection{Calcolo differenziale}\footnote{PDF 14.}
 Per una funzione di una variabile $f:I\subseteq\mathbb R\rightarrow\mathbb R$ la derivata in un punto $x_0\in I$ è rappresentata da $f'(x_0)$ e definisce il tasso di variazione di $f$ nell'istante (punto) $x_0$, ovvero dal limite del rapporto incrementale (\ref{eq:limite_rapporto_incrementale}). Da $x_0$ ad $x_0+h$ c'è un solo cammino. Per le funzioni in più variabili è possibile seguire infiniti cammini, quindi è necessario chiarire cos'è una derivata in più variabili.
