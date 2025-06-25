@@ -1703,9 +1703,46 @@ INSERIRE TUTTO IL PDF 13
 	\end{equation*}
 	Dunque
 	\begin{equation*}
-		|f(\rho, \theta)|\leq \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}
+		\begin{matrix}
+			|f(\rho, \theta)| &\leq& \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} &\overset{\footnotemark}{\leq}& \frac{2\rho^2 |\cos\theta + \sin^2\theta|}{\sin^2\theta} + \frac{\rho^3\cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta}\\\\
+			&\leq& 2\rho^2 |\cos\theta\sin\theta|+\rho|\sin\theta| &=& g(\rho, \theta),
+		\end{matrix}
 	\end{equation*}
+	
+	\footnotetext{$\rho^2 \cos^4\theta + \sin^2\theta>0$ (può essere uguale a 0 ma è al denominatore). È necessario cercare di semplificare tale espressione, quindi è possibile maggiorarla con una funzione radiale (funzione dipendente solo dal raggio $\rho$) $g(\rho)$ infinitesima quando $\rho\rightarrow 0$ (cosicché anche $f$ tenda a 0).\\
+	Quindi sono ricercate maggiorazioni convenienti per ogni addendo (ovvero $\frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e $\frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$). Nel precedente esempio è stata utilizzata la disuguaglianza triangolare ($|x+y|<|x|+|y|$), in questo è possibile maggiorare il denominatore considerando quanto segue:
+	\begin{equation*}
+		\text{Se } a,b,c \geq 0 \quad\Rightarrow\quad \frac{a}{b+c}\leq \frac{a}{b} \text{ o } \frac{a}{c}.
+	\end{equation*}
+	Ricercare maggiorazioni convenienti significa eliminare ciò che da fastidio per maggiorare $|f(\rho, \theta)$ con una funzione che dopende da $\rho$. Per questo è necessario trovare una funzione radiale da moltiplicare ai due addendi $\frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e $\frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e che possa essere maggiorata da una costante (perché le funzioni trigonometriche sono limitate).}
+	
+	\noindent quindi
+	\begin{equation*}
+		|f(\rho, \theta)|\leq \underbrace{2\rho^2\underbrace{|\cos\theta\sin\theta|}_{<\frac{1}{2}} + \rho \underbrace{|\sin\theta|}_{\leq 1}}_{\footnotemark} \overset{\footnotemark}{\leq} \rho^2+\rho = \rho(\rho+1) = g(\rho)\underset{\rho\rightarrow0^+}{\longrightarrow}0
+	\end{equation*}
+	\addtocounter{footnote}{-1}
+	\footnotetext{È necessario far vedere che esiste una funzione radiale. Per ipotesi $|\cos\theta\sin\theta|=|\frac{1}{2}\sin\theta|\leq\frac{1}{2}$ e $|\sin\theta|\leq 1$, quindi è trovata la funzione radiale infinitesima $g(\rho)=\rho^2+\rho$ che permette di applicare il teorema del confronto e che il limite sia uniforme rispetto a $\theta$.}
+	\paragraph{Osservazioni:} Arrivati a $2\rho^2|\cos\theta\sin\theta|$, il processo di maggiorazione non è ancora terminato perché tale funzione è del tipo $g(\rho,\theta)$, quindi dipende anche da $\theta$. Quindi è necessario un ulteriore passo per eliminare (tramite una maggiorazione) la dipendenza da $\theta$. Inoltre, è possibile non utilizzare le coordinate polari per applicare il teorema del confronto maggiorando con una funzionen $f(x,y)$ che tende a 0 in modo uniforme rispetto alle variabili, ovvero quanto segue. $\qed$
+	
+	\paragraph{Svolgimento 2:} È possibile rifare l'esercizio con un metodo alternativo.
+	\begin{equation*}
+		\begin{matrix}
+			|f(x,y)| &=& \left| \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}\right| &=& \left| \frac{2xy^3 + x^4y}{x^4+y^2}\right| &=& \left|\frac{2xy^3}{x^4+y^2} + \frac{x^4y}{x^4+y^2}\right|\\\\ &\overset{|a+b|\leq|a|+|b|}{\leq}& \left|\frac{2xy^3}{x^4+y^2}\right| + \left| \frac{x^4y}{x^4+y^2}\right| &=& \frac{2|xy^3|}{x^4+y^2} + \frac{x^4|y|}{x^4+y^2} &\leq& \frac{2\cancel{y^2}|xy|}{\cancel{y^2}} +  \frac{\cancel{x^4}|y|}{\cancel{x^4}} &=&\\\\
+			&&&&&=& 2|xy|+|y| &=& g(x,y) \geq 0
+		\end{matrix}
+	\end{equation*}
+	Quindi
+	\begin{equation*}
+		|f(x,y)| \leq  2|xy|+|y| = g(x,y)\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
+	\end{equation*}
+	$g$ non è una funzione radiale, è positiva e continua $\forall(x,y)\in\mathbb{R}^2$. Essere continua significa che
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} g(x,y)=g(0,0)=0
+	\end{equation*}
+	ed è possibile applicare il teorema del confronto.
 \end{example}
+
+MANCANO ESEMPI SLIDE 8-13 PDF 13
 
 \subsection{Calcolo differenziale}\footnote{PDF 14.}
 Per una funzione di una variabile $f:I\subseteq\mathbb R\rightarrow\mathbb R$ la derivata in un punto $x_0\in I$ è rappresentata da $f'(x_0)$ e definisce il tasso di variazione di $f$ nell'istante (punto) $x_0$, ovvero dal limite del rapporto incrementale (\ref{eq:limite_rapporto_incrementale}). Da $x_0$ ad $x_0+h$ c'è un solo cammino. Per le funzioni in più variabili è possibile seguire infiniti cammini, quindi è necessario chiarire cos'è una derivata in più variabili.
@@ -1968,6 +2005,9 @@ In Figura \ref{fig:grafico_f_R3_osservazione} $(x_0,y_0,0)$ è il punto sul pian
 
 \subsubsection{Curve in \texorpdfstring{$\boldsymbol{\mathbb R^n}$}{Rn}}\label{ssec:curve_Rn}\footnote{Slide 5 PDF 15.}
 In matematica le curve sono delle applicazioni continue definite da un intervallo ad $\mathbb R^n$. In particolare, le curve piane sono delle applicazioni da un intervallo ad $\mathbb R^2$. Inoltre, il sostegno di una curva è l'immagine di una curva.
+\begin{definition}[Curva in $\mathbb{R}^n$]
+	\footnote{Slide 5 PDF 15.}
+\end{definition}
 
 \subsubsection{Differenziabilità}
 La derivabilità di una funzione di più variabili non implica la sua continuità. Il concetto necessario da introdurre per un tipo di implicazione del genere è quello di differenziabilità (vedere Definizione (\ref{def:differenziabilita_funzione_piu_variabili})). Per le funzioni di più variabili la differenziabilità è una proprietà più forte della derivabilità perché richiede che la funzione sia derivabile e che abbia alcune proprietà legate all'approssimazione lineare ottenuta per una funzione di una variabile con l'utilizzo della derivata prima (retta tangente).
