@@ -1919,7 +1919,7 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 
 In modo analogo al caso in due variabili, quando è calcolata la derivata parziale rispetto alla variabile $i$-esima, dove $i=1,\hdots,n$, sono tenute fisse tutte le variabili tranne la $i$-esima, la quale subisce un incremento. Considerando la $f$ in (\ref{eq:derivata_parziale_Rn}), sono tenute fisse tutte le variabili escluse la $i$-esima, sulla quale è applicato l'incremento. Quindi, il calcolo delle derivate parziali diventa un problema di Analisi 1 perché $f$ è come se fosse a una variabile, per il congelamento delle variabili.
 
-Tornando alle funzioni in due variabili, le due derivate parziali sono (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}), dove la funzione che subisce l'incremento in entrambi i limiti è ad una sola variabile (rispettivamente la $y$ e la $x$ sono fisse). Inoltre, quando sono state introdotte le sezioni (tracce) delle funzioni (vedere (\ref{eq:piani}) in Sezione \ref{ssec:grafico_funzione_n_variabili}) è stato spiegato che tenendo fissa una variabile è come se fatta l'intersezione della funzione con il piano e quindi è ottenuto il grafico di una funzione di una variabile. Quindi, quando sono date le derivate parziali (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}) sono considerate le tracce della funzione lungo i piani $x=x_0$ o $y=y_0$ (come descritto in (\ref{eq:sezione_derivate_parziali})). Ad esempio: in (\ref{eq:derivata_parziale_x}) (ovvero $f_x(\uline x)$) è fissato $y=y_0$, quindi è come fare la traccia considerando l'intersezione della sezione con il piano $y=y_0$. Analogo fissato $x=x_0$ (ovvero con $f_y(\uline x)$).
+Tornando alle funzioni in due variabili, le due derivate parziali sono (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}), dove la funzione che subisce l'incremento in entrambi i limiti è ad una sola variabile (rispettivamente la $y$ e la $x$ sono fisse). Inoltre, quando sono state introdotte le sezioni (tracce) delle funzioni (vedere (\ref{eq:piani}) in Sezione \ref{ssec:grafico_funzione_n_variabili}) è stato spiegato che tenendo fissa una variabile è come se fosse fatta l'intersezione della funzione con il piano e quindi ottenendo il grafico di una funzione di una variabile. Quindi, quando sono date le derivate parziali (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}) sono considerate le tracce della funzione lungo i piani $x=x_0$ o $y=y_0$, ovvero
 
 \begin{equation}\label{eq:sezione_derivate_parziali}
     \begin{cases}
@@ -1933,6 +1933,8 @@ Tornando alle funzioni in due variabili, le due derivate parziali sono (\ref{eq:
     \end{cases}\rightarrow z=f(x,y_0)
 \end{equation}
 dove $x_0$ o $y_0$ sono fissati e quindi $f$ diventa una funzione di una variabile.
+
+Ad esempio: in (\ref{eq:derivata_parziale_x}) (ovvero $f_x(\uline x)$) è fissato $y=y_0$, quindi è come fare la traccia considerando l'intersezione della sezione con il piano $y=y_0$. Analogo fissato $x=x_0$ (ovvero con $f_y(\uline x)$).
 
 Quindi con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.
 
@@ -2001,7 +2003,7 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 \end{example}
 \paragraph{N.B.:} Dall'esempio è possibile notare che il metodo delle tracce è più lungo del metodo utilizzando in (\ref{eq:derivate_parziali_metodo_normale}). La differenza tra i due metodi è che il (\ref{eq:derivate_parziali_metodo_normale}) presuppone che la derivata esista e se esiste è possibile calcolarla (é presupposto quindi che esista il limite del rapporto incrementale); il metodo delle tracce considera le funzioni secondo le due tracce e poi verifica che le funzioni di una variabile siano derivabili. Tuttavia, essendo $\sin,\, \cos$ e la seconda parte delle derivate funzioni regolari e appartenenti a $C^\infty$,  è naturale utilizzare il metodo (\ref{eq:derivate_parziali_metodo_normale}).
 
-\begin{example}[Funzione derivabile ma non continua in un punto]\footnote{Slide 7 PDF 14.}
+\begin{example}[Funzione derivabile ma non continua in un punto]\footnote{Slide 8 PDF 14.}
     Calcolare e esistono le derivate parziali nell'origine (ovvero in $P_0=(0,0)$) della seguente funzione:
     \begin{equation*}
         f(x,y)=
@@ -2080,27 +2082,64 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 
 \paragraph{N.B.:} Una curva è da intendersi come traiettoria (vedere la Sezione \ref{ssec:curve_Rn} nella quale sono trattate le curve).
 
-\subsubsection{Piano tangente}
-\paragraph{Osservazioni su Figura \ref{fig:grafico_f_R3_osservazione}:}\footnote{Slide 12-13 PDF 14.}
-Sia $f\colon A\subseteq\mathbb R^2\rightarrow\mathbb R$, con $A$ aperto. Il grafico di $f$ $graf\,f=\{(x,y,z)\in\mathbb R^3\,|\, z=f(x,y),\, \forall (x,y)\in A\}\subset\mathbb R^3$ è un sottoinsieme dello spazio vettoriale $\mathbb R^3$ ed è una superficie in tale spazio. È una superficie perché stiamo lavorando sugli aperti e sulla regolarità della funzione.\\
-Considerando $P_0=(x_0,y_0,z_0)\in graf\, f$, dove $z_0=f(x_0,y_0)$ vedere Figura \ref{fig:grafico_f_R3_osservazione}.\\
-Quando sono calcolate le derivate parziali sono considerate le tracce $y=y_0$ e $x=x_0$ per avere rispettivamente le derivate parziali rispetto $x$ e $y$. Quindi, quando è considerata una traccia è intersecato il grafico di $f$ con $y=y_0$ o $x=x_0$, ovvero: taglio il grafico con $y=y_0$ per ottenere la sezione del grafico nel piano $(x,y)$, analogo per $x=x_0$.\\
-Considerando la traccia lungo $y=y_0$ allora
+\subsubsection{Piano tangente}\footnote{Slide 12-13 PDF 14.}
+Sia $f\colon A\subseteq\mathbb R^2\rightarrow\mathbb R$, con $A$ aperto. Il grafico di $f$ $graf\,f=\{(x,y,z)\in\mathbb R^3\,|\, z=f(x,y),\, \forall (x,y)\in A\}\subset\mathbb R^3$ è un sottoinsieme dello spazio vettoriale $\mathbb R^3$ ed è una superficie in tale spazio. È una superficie perché stiamo lavorando sugli aperti e sulla regolarità della funzione.
+
+Considerando $P_0=(x_0,y_0,z_0)\in graf\, f$, dove $z_0=f(x_0,y_0)$ vedere Figura \ref{fig:grafico_f_R3_osservazione}.
+
+Quando sono calcolate le derivate parziali sono considerate le tracce $y=y_0$ e $x=x_0$ per avere rispettivamente le derivate parziali rispetto $x$ e $y$. Quindi, quando è considerata una traccia è intersecato il grafico di $f$ con $y=y_0$ o $x=x_0$, ovvero: taglio il grafico con $y=y_0$ per ottenere la sezione del grafico nel piano $(x,z)$, analogo per $x=x_0$.
+
+Considerando la traccia lungo $y=y_0$ allora $T_1$ è individuata da
 \begin{equation}\label{eq:traccia_g_1}
     \begin{cases}
-        z=f(x,y)=f(x,y_0)=g_1(x)\\
+        z=f(x,y)=f(x,y_0)=g_1(x) = f(x_0,y_0) + \frac{\partial f}{\partial x} (x_0,y_0) (x-x_0),\\
         y=y_0\quad \text{piano }(x,z)
     \end{cases}
 \end{equation}
-Il grafico di $g_1(x)$ è nel piano $(x,z)$ ed è rappresentato dalla curva $c_1$ in Figura \ref{fig:grafico_f_R3_osservazione}. Quanto in (\ref{eq:traccia_g_1}) può essere descritto come segue: $c_1$ è il grafico della curva $g_1(x)=f(x,y_0)=z$ piano $(x,z)$ passante per $P_0$ ottenuta tagliando il grafico di $f$ con $y=y_0$ ed è immaginabile come traiettoria nel piano corrispondente ottenuta dalla sezione. Ovvero, $c_1$ è l'intersezione del grafico di $f$ ($graf\, f\subset\mathbb R^3$) con il piano $(x,z)$. Inoltre, per la curva $c_1$, $g_1'(x)=\frac{\partial f}{\partial x}(x_0,y_0)$ è il coefficiente angolare di $c_1$ in $x_0$ e il coefficiente angolare della retta $T_1$ (ovvero la retta tangente al grafico della funzione $c_1$).\\
-Un ragionamento analogo lungo il piano $x=x_0$.\\
- $T_1$ e $T_2$ sono rispettivamente le tangenti alle curve $c_1$ e $c_2$ con rispettivi coefficienti angolari $g'_1(x_0)$ e $g_2'(x_0)$. $T_1$ e $T_2$ hanno un unico punto in comune e per esse passa un unico piano passante per il punto $P_0$. È necessario ricordare che ci sono tante rette tangenti.\\
-In Figura \ref{fig:grafico_f_R3_osservazione} $(x_0,y_0,0)$ è il punto sul piano $(x,y)$ di quota $z=z_0=0$ e fa parte dell'insieme di livello con $z=z_0=0$, quindi è un sottoinsieme del dominio $A$. $P_0=(x_0,y_0,z_0)$, con $z_0=f(x_0,y_0)$ è "tirato su" da $(x_0,y_0,0)$ ed è il punto $(x_0,y_0)$ di quota $z_0$. [Fine Osservazioni su Figura \ref{fig:grafico_f_R3_osservazione}]$\qed$
+
+Il grafico di $g_1(x)$ è nel piano $(x,z)$ ed è rappresentato dalla curva $g_1$ in Figura \ref{fig:grafico_f_R3_osservazione}. Quanto in (\ref{eq:traccia_g_1}) può essere descritto come segue: $g_1$ è il grafico della curva $g_1(x)=f(x,y_0)=z$ nel piano $(x,z)$ passante per $P_0$ ottenuta tagliando il grafico di $f$ con $y=y_0$ ed è immaginabile come traiettoria nel piano corrispondente ottenuta dalla sezione. Ovvero: $g_1$ è l'intersezione del grafico di $f$ ($graf\, f\subset\mathbb R^3$) con il piano $(x,z)$. Inoltre, se la curva $g_1$ è derivabile, allora $g_1'(x)=\frac{\partial f}{\partial x}(x_0,y_0)$, dove $y_0=g_1=f(x,y_0)$ è il coefficiente angolare di $g_1$ in $x_0$ e il coefficiente angolare della retta $T_1$ (ovvero la retta tangente al grafico della funzione $g_1$).
+
+Un ragionamento analogo lungo il piano $x=x_0$, traslando nel piano $(y,z)$, con
+\begin{equation}\label{eq:traccia_g_2}
+	\begin{cases}
+		z=f(x,y)=f(x_0,y)=g_2(y) = f(x_0,y_0) + \frac{\partial f}{\partial x} (x_0,y_0) (y-y_0),\\
+		x=x_0,\quad \text{piano } (y,z),
+	\end{cases}
+\end{equation}
+
+dove, se $g_2(y)=f(x_0,y)$ è derivabile in $y_0$ allora $\exists g_2'(y_0)=\frac{\partial f}{\partial y}(x_0,y_0)$, con $y_0=g_2(y)=f(x_0,y)$ e questo è il coefficiente angolare di $g_2$ in $y_0$ e della retta $T_2$.
+
+$T_1$ e $T_2$ sono rispettivamente le tangenti alle curve $g_1$ e $g_2$ (ripettivamente contenute nel piano $(x,z)$ e $(y,z)$) con rispettivi coefficienti angolari $g'_1(x_0)$ e $g_2'(x_0)$. $T_1$ e $T_2$ hanno un unico punto in comune e per esse passa un unico piano passante per il punto $P_0$. Tale piano (contente $T_1$ e $T_2$) ha equazione
+ \begin{equation}\label{eq:piano_tangente_due_variabili}
+ 	z=f(x_0,y_0) + \frac{\partial f}{\partial x} (x_0,y_0) (x-x_0) + \frac{\partial f}{\partial x} (x_0,y_0) (y-y_0).
+ \end{equation}
+
+Il piano $z$ è passante per $P_0$, infatti in $P_0$ vale $z_0=f(x_0,y_0)$. Inoltre ogni punto $(x,y,z)$ che soddisfa (\ref{eq:traccia_g_1}) e (\ref{eq:traccia_g_2}) soddisfa anche (\ref{eq:piano_tangente_due_variabili}).
+ 
+\paragraph{Nota:} È necessario ricordare che ci sono tante rette tangenti.
+
+In Figura \ref{fig:grafico_f_R3_osservazione} $(x_0,y_0,0)$ è il punto sul piano $(x,y)$ di quota $z=z_0=0$ e fa parte dell'insieme di livello con $z=z_0=0$, quindi è un sottoinsieme del dominio $A$. $P_0=(x_0,y_0,z_0)$, con $z_0=f(x_0,y_0)$ è "tirato su" da $(x_0,y_0,0)$ ed è il punto $(x_0,y_0)$ di quota $z_0$.
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.65\textwidth]{Analisi2/figures/grafico_f_R3_osservazione.png}
     \caption{Grafico con rette tangenti.}\label{fig:grafico_f_R3_osservazione}
 \end{figure}
+
+\paragraph{Perché è introdotto tutto questo?} Per le funzioni di una variabile è noto che se una funzione è derivabile allora esiste ed è unica la retta tangente al grafico di $f$ passante per il punto. Inoltre, se una funzione in una variabile è derivabile allora è continua.\\
+Per le funzioni in più variabili, la derivabilità non implica continuità. Quindi, per porter parlare di piano tangente, il quale fornisce una approssimazione lineare del grafico della funzione, è necessario il concetto di differenziabilità. Tutto questo perché il grafico di $f$ è in $\mathbb{R}^3$ ed è richiesta la differenziabilità per poter tracciare i piani tangente passanti per $P_0$ contenti le rette $T_1$ e $T_2$ determinate dalle sezioni.
+
+\paragraph{Osservazioni su (\ref{eq:piano_tangente_due_variabili}):} 
+\begin{enumerate}
+	\item L'equazione (\ref{eq:piano_tangente_due_variabili}) si può scrivere ogni volta che $f$ è derivabile ed il piano che $f$ individua contiene le rette tangenti alle sezioni che il grafico di $f$ forma con i piani $x=x_0$ e $y=y_0$.
+	\item Potrebbe venire la tentazione che l'equazione (\ref{eq:piano_tangente_due_variabili}) è l'equazione del piano tangente nella sola ipotesi che la funzione sia derivabile. In realtà è necessario che la funzione sia differenziabile affinché (\ref{eq:piano_tangente_due_variabili}) sia l'equazione del piano tangente.
+	(\ref{eq:piano_tangente_due_variabili}) è la retta passante per il punto $P_0$ contenente le rette $T_1$ e $T_2$ (che altro non sono che il grafico delle sezioni della funzione).
+	\item \textbf{La necessità di avere la condizione di differenziabilità è dovuta al fatto che $f$ può essere derivabile ma non continua in un punto.}
+\end{enumerate}
+
+\begin{example}\footnote{Slide 3 PDF 15}
+	
+\end{example}
 
 \subsubsection{Curve in \texorpdfstring{$\boldsymbol{\mathbb R^n}$}{Rn}}\label{ssec:curve_Rn}\footnote{Slide 5 PDF 15.}
 In matematica le curve sono delle applicazioni continue definite da un intervallo ad $\mathbb R^n$. In particolare, le curve piane sono delle applicazioni da un intervallo ad $\mathbb R^2$. Inoltre, il sostegno di una curva è l'immagine di una curva.
