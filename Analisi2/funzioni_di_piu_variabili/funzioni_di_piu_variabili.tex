@@ -1859,18 +1859,20 @@ Il concetto di derivata di una funzione di una variabile si estende per una funz
     \footnotetext{Funzione di una variabile, $y$ è congelata.}
 \end{definition}
 
-\paragraph{Notazione derivate parziali per $\boldsymbol{n=2}$:}
-\begin{equation*}
-    \begin{matrix}
-        \frac{\partial f}{\partial x}(P_0)&=&f_x(x_0,y_0)&=& D_x(x_0,y_0),\\\\
-        \frac{\partial f}{\partial y}(P_0) &=& f_y(x_0,y_0) &=& Dy(x_0,y_0)\\\\
-        &&\text{NO } f'_x(x,y).&&
-    \end{matrix}
-\end{equation*}
-
 Nel caso in cui $n>2$ è seguito lo stesso ragionamento: è fatto l'incremento sulla variabile per la quale è fatta la derivata e sono congelate le variabili non interessate (vedere Definizione \ref{def:derivata_parziale_Rn}).
 
 Una derivata parziale è una derivata direzionale perché calcolata rispetto ad una direzione. Ad esempio: in $\mathbb R^2$ la derivata parziale rispetto ad $x$ è una derivata direzionale secondo la direzione $x$ (determinata dal versore $e_1$).
+
+\paragraph{Perché per la derivabilità, per il gradiente e per i Teoremi è utilizzato un aperto $\boldsymbol{A}$?} Un insieme aperto ha la caratteristica topologicache ogni suo punto è interno. Nel corso sono considerati i domini, i quali sono della forma $D= A\cup\partial A$. Queste proprietà sono utili perché se una data proprietà è dimostrata per un punto dell'aperto, allora è valida nell'intorno centrato nel punto.
+
+\paragraph{Notazione derivate parziali per $\boldsymbol{n=2}$:}
+\begin{equation*}
+	\begin{matrix}
+		\frac{\partial f}{\partial x}(P_0)&=&f_x(x_0,y_0)&=& D_x(x_0,y_0),\\\\
+		\frac{\partial f}{\partial y}(P_0) &=& f_y(x_0,y_0) &=& Dy(x_0,y_0)\\\\
+		&&\text{NO } f'_x(x,y).&&
+	\end{matrix}
+\end{equation*}
 
 \begin{definition}[Direzione]\footnote{Slide 2 PDF 14.}
     In $\mathbb R^n$ una direzione è un qualsiasi vettore di modulo 1.
@@ -1906,9 +1908,7 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 
 \paragraph{Quante sono le derivate parziali di una funzione di $n$ variabili?} Una funzione di $n$ variabili derivabile in un punto ha $n$ derivate parziali.
 
-\paragraph{Perché è utilizzato sempre un aperto per le definizioni di derivate / gradiente e Teoremi affini?} Un insieme aperto ha la caratteristica topologica che ogni suo punto è interno. Per i tipi di insiemi considerati i domini sono della forma $D=A\cup\partial A$, quindi la parte interna di $D$ è un aperto. Queste proprietà sono utili perché è importante che dato un punto di un aperto allora le proprietà che saranno dimostrate nel punto valgano nell'intorno centrato nel punto.
-
-\paragraph{Notazione per le derivate parziali:}
+\paragraph{Notazione per le derivate parziali per $\boldsymbol{n>2}$:}
 \begin{equation*}
     \frac{\partial f}{\partial x_i}(P_0)=f_{x_i}(P_0)=\frac{\partial f}{\partial x_i}(x_1,\hdots,x_n)=f_{x_i}(x_1,\hdots,x_n)=  D_{x_i}(P_0)=D_{x_i}(x_1,\hdots,x_n).
 \end{equation*}
