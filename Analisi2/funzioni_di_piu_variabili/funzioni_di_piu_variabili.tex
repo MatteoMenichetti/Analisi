@@ -2134,7 +2134,7 @@ Per le funzioni in più variabili, la derivabilità non implica continuità. Qui
 	\item L'equazione (\ref{eq:piano_tangente_due_variabili}) si può scrivere ogni volta che $f$ è derivabile ed il piano che $f$ individua contiene le rette tangenti alle sezioni che il grafico di $f$ forma con i piani $x=x_0$ e $y=y_0$.
 	\item Potrebbe venire la tentazione che l'equazione (\ref{eq:piano_tangente_due_variabili}) è l'equazione del piano tangente nella sola ipotesi che la funzione sia derivabile. In realtà è necessario che la funzione sia differenziabile affinché (\ref{eq:piano_tangente_due_variabili}) sia l'equazione del piano tangente.
 	(\ref{eq:piano_tangente_due_variabili}) è la retta passante per il punto $P_0$ contenente le rette $T_1$ e $T_2$ (che altro non sono che il grafico delle sezioni della funzione).
-	\item \textbf{La necessità di avere la condizione di differenziabilità è dovuta al fatto che $f$ può essere derivabile ma non continua in un punto.}
+	\item \textbf{La necessità di avere la condizione di differenziabilità è dovuta al fatto che $f$ può essere derivabile ma non continua in un punto} (vedere l'Esempio \ref{ex:piano_non_tangente}).
 \end{enumerate}
 
 \begin{example}[Piano tangente]\footnote{Slide 3 PDF 15.}
@@ -2172,7 +2172,18 @@ Per le funzioni in più variabili, la derivabilità non implica continuità. Qui
 	\begin{equation*}
 		z=5 + \frac{\partial f}{\partial x} (1,2) (x-1) + \frac{\partial f}{\partial x} (1,2) (y-2) = 2x + 4y - 5.
 	\end{equation*}
-	
+\end{example}
+
+\begin{example}[Piano non tangente]\label{ex:piano_non_tangente}
+	Sia
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\frac{xy}{x^2+y^2} & \text{se } (x,y)\neq(0,0)\\
+			0 &\text{se }(x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	Dato che la funzione non è continua nell'origine, le derivate parziali lo sono, allora il piano $z$ in $(0,0)$ calcolato tramite (\ref{eq:piano_tangente_due_variabili}) non può chiamarsi piano tangente. Per questo è richiesta la differenziabilità della funzione.
 \end{example}
 
 \subsubsection{Curve in \texorpdfstring{$\boldsymbol{\mathbb R^n}$}{Rn}}\label{ssec:curve_Rn}\footnote{Slide 5 PDF 15.}
