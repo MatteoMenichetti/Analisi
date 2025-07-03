@@ -77,7 +77,7 @@ La scelta di $F'(x)$ e di $G(x)$ è determinata dalla facilità di integrazione 
 \begin{example}
     A volte è necessario applicare più volte la regola di integrazione per parti.
     \begin{equation*}
-        \int \underset{G}{x^2}\underset{F'}{\sin x}dx=-x^2\cos x+\underbrace{2\int\underset{F'}{x}\underset{G}{\cos x} \; dx}_{\footnotemark}=-x^2\cos x + 2 \left[\underset{G}{x}\underset{F}{\sin x} - \int \underset{G'}{1}\cdot\underset{F}{\sin x} \; dx \right]=-x^2\cos x+ 2x\sin x + 2\cos x + c.
+        \int \underset{G}{x^2}\underset{F'}{\sin x}dx=-x^2\cos x+\underbrace{2\int\underset{G'}{x}\underset{F}{\cos x} \; dx}_{\footnotemark}=-x^2\cos x + 2 \left[\underset{G}{x}\underset{F}{\sin x} - \int \underset{G'}{1}\cdot\underset{F}{\sin x} \; dx \right]=-x^2\cos x+ 2x\sin x + 2\cos x + c.
     \end{equation*}
     \footnotetext{Se la formula viene applicata con $F'(x) = x$ e $G(x)=\cos x$ allora ci sarebbe un ritorno al passo precedente.}
 \end{example}
@@ -146,9 +146,9 @@ Il metodo dei fratti semplici è applicato per calcolare primitive di funzioni r
 \end{equation}
 dove $P$ e $Q$ sono \gls{polinomi}. 
 
-\textbf{N.B.: Il metodo dei fratti semplici consiste nel trasformare la frazione in una somma di frazioni più semplici, per le quali sarà più semplice trovare la primitiva. Ciò sarà fatto arrivando ad integrali razionali elementari, i fratti semplici, utilizzando la riduzione delle frazioni.}
+\paragraph{N.B.:} \textbf{Il metodo dei fratti semplici consiste nel trasformare la frazione in una somma di frazioni più semplici, per le quali sarà più semplice trovare la primitiva. Ciò sarà fatto arrivando ad integrali razionali elementari, i fratti semplici, utilizzando la riduzione delle frazioni.}
 
-Saranno considerati i casi in cui il coefficiente della potenza più alta di $Q$ è uguale ad 1.
+\noindent Saranno considerati i casi in cui il coefficiente della potenza più alta di $Q$ è uguale ad 1.
 
 \subsubsubsection{Riduzione del grado del numeratore}
 \begin{proposition}
@@ -177,23 +177,27 @@ Saranno considerati i casi in cui il coefficiente della potenza più alta di $Q$
 I polinomi $\alpha(x)$ e $r(x)$ sono calcolabili tramite l'algoritmo di divisione fra polinomi.
 
 \begin{definition}[Algoritmo di divisione tra polinomi]\label{def:algoritmo_divisione_polinomi}
-    Siano $P(x)=p_nx^n+\hdots+ p_0$ e $Q(x)=q_mx^m+\hdots+q_0$ due polinomi, allora
+    Siano $P(x)=p_nx^n+\hdots+ p_0$ e $Q(x)=q_mx^m+\hdots+q_0$ due \gls{polinomi}, allora
     \begin{enumerate}
         \item I polinomi sono espressi esplicitando anche i monomi nulli.
         \item Il termine di grado massimo di $P(x)$ è diviso per il  termine di grado più alto di $Q(x)$ ed è scritto sotto sotto $Q(x)$.\\
-        \begin{tabular}{c|c}
-             $ p_nx^n+\hdots+ p_0$ & $q_mx^m+\hdots+q_0$\\
-             \cline{2-2}\\
-            & $\frac{p_nx^n}{q_mx^m}=a_kx^k$
-        \end{tabular}
+        \begin{equation*}
+        	\begin{tabular}{c|c}
+        		$ p_nx^n+\hdots+ p_0$ & $q_mx^m+\hdots+q_0$\\
+        		\cline{2-2}\\
+        		& $\frac{p_nx^n}{q_mx^m}=a_kx^k$
+        	\end{tabular}
+        \end{equation*}
         \item E' moltiplicato $Q(x)$ per $a_kx^k$, incolonnato sotto $P(x)$ e sottratto\\
-        \begin{tabular}{c|c}
-             $ p_nx^n+\hdots+ p_0$ & $q_mx^m+\hdots+q_0$\\
-             \cline{2-2}\\
-           $q_ma_kx^{m+k}+\hdots + b_0q_kx^k$ & $a_kx^k$\\
-            \cline{1-1}\\
-            $r_{n-1}+\hdots+r_0$&\\
-        \end{tabular}
+        \begin{equation*}
+        	\begin{tabular}{c|c}
+        		$ p_nx^n+\hdots+ p_0$ & $q_mx^m+\hdots+q_0$\\
+        		\cline{2-2}\\
+        		$q_ma_kx^{m+k}+\hdots + b_0q_kx^k$ & $a_kx^k$\\
+        		\cline{1-1}\\
+        		$r_{n-1}+\hdots+r_0$&\\
+        	\end{tabular}
+        \end{equation*}
         \item Se il grado di questo polinomio differenza $R_1(x)$ è maggiore o uguale a quello di $Q(x)$ si ripetono le operazioni da 2 a 4 considerando adesso $R_1$ come dividendo e aggiungendo il termine 
         \begin{equation*}
             \frac {r_{n-1}x^{n-1}}{b_{m}x^{m}}=q_{k-1}x^{k-1}
