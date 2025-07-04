@@ -459,7 +459,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     Sia il problema di Cauchy 
     \begin{equation}\label{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}
         \begin{cases}
-            y'(x) + a(x)f(x)&=f(x)\text{ EDO lineare di ordine 1 con $a,f\in C^0(I)$}\\
+            y'(x) + a(x)f(x)&=f(x)\quad\text{ EDO lineare di ordine 1 con $a,f\in C^0(I)$}\\
             y(x_0)&=y_0
         \end{cases}
     \end{equation}
@@ -518,7 +518,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 \paragraph{Note non ufficiali su (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}):}
 \begin{enumerate}
 	\item Con il fatto che $a,f\in C^0(I)$ della EDO lineare di ordine 1 $y'(x) + a(x)f(x)=f(x)$ si intende che  $I=[a,b]$, ovvero è un intervallo, ed è definito dalla forma di $f$ e $a$, ovvero è l'intervallo che permette alle due funzioni di essere definite. Se $a(x)=\frac{1}{\sqrt{x}}$ e $f(x)=x$ allora l'intervallo di definizione delle due funzioni è $I=(0, +\infty)$.
-    \item Sotto opportune ipotesi su $f$ è possibile mostrare che il sistema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione $y(x)$\footnote{$y$ definita localmente in $x_0$ significa che $y$ deve passare in $x_0$ e ciò si trasforma in una condizione del sistema.} derivabile localmente in $x_0$, la quale è opportunamente definita vicino ad $x_0$ (ovvero: $y$ è definita su un opportuno intervallo contenente $x_0$). Quindi è possibile trovare le soluzioni di una EDO se il problema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione e dopo aver stabilito l'intervallo di massima definizione, cioè l'intervallo in cui $y$ ha senso, contenente il punto iniziale $x_0$ (perché $y$ deve passarci). Pertanto, non è detto che le soluzioni espresse dall'integrale generale dell'equazione siano tutte definite sullo stesso insieme al variare dei parametri $c_1 , c_2 ,\hdots ,c_n$ (ovvero della condizione iniziale);
+    \item Sotto opportune ipotesi su $f$ è possibile mostrare che il sistema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione $y(x)$\footnote{$y$ definita localmente in $x_0$ significa che $y$ deve passare in $x_0$ e ciò si trasforma in una condizione del sistema.} derivabile localmente in $x_0$, la quale è opportunamente definita vicino ad $x_0$ (ovvero: $y$ è definita su un opportuno intervallo contenente $x_0$). Quindi è possibile trovare le soluzioni di una EDO, se il problema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione e dopo aver stabilito l'intervallo di massima definizione, cioè l'intervallo in cui $y$ ha senso, contenente il punto iniziale $x_0$ (perché $y$ deve passarci). Pertanto, non è detto che le soluzioni espresse dall'integrale generale dell'equazione siano tutte definite sullo stesso insieme al variare dei parametri $c_1 , c_2 ,\hdots ,c_n$ (ovvero della condizione iniziale);
     \item Quando si parla di soluzione di un problema di Cauchy (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) si intende sempre $f$ tale che:
     \begin{itemize}
         \item è definita e continua rispetto ad $x$ ed $y$ in un intervallo contenente il punto $x_0$ in cui sono assegnate le condizioni iniziali;
@@ -632,13 +632,13 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     è a variabili separabili.
 \end{remark}
 
-\paragraph{Come si "separano" le variabili dalla equazione della forma (\ref{eq:EDO_primo_ordine_forma_normale_variabili_separabili})?} Per "separazione" delle variabili si intende la $x$ dalla $y(x)$ ed è svolta con i seguenti passaggi:
+\paragraph{Come si "separano" le variabili dalla equazione della forma (\ref{eq:EDO_primo_ordine_forma_normale_variabili_separabili})?} Per "separazione" delle variabili si intende che la $x$ deve essere separata dalla $y(x)$. La separazione è svolta con i seguenti passaggi:
 \begin{enumerate}
-    \item determinare eventuali $\bar y\in\mathbb R$ [\footnotemark] per cui $g(\bar y)=0$, da cui è ottenuto
+    \item determinare eventuali $\bar y\in\mathbb R$ [\footnotemark] per cui $g(\bar y)=0$, dove
     \begin{equation}\label{eq:soluzione_EDO_variabili_separabili}
         y(x)\equiv \bar y,
     \end{equation}
-    soluzione del problema. \footnote{$y(x)\equiv\bar y$ soluzione perché $g(y)=0$ e $y'=0$, dato che $\bar y$ è una funzione costante.} Inoltre, (\ref{eq:soluzione_EDO_variabili_separabili}) sono dette soluzioni singolari$_{\footnotemark}$ (o anche particolari$_{\footnotemark}$) della EDO.
+    è la soluzione del problema \footnotemark. Inoltre, (\ref{eq:soluzione_EDO_variabili_separabili}) sono dette soluzioni singolari$_{\footnotemark}$ (o anche particolari$_{\footnotemark}$) della EDO.
     \item Considerando $y\neq\bar y$, è possibile separare le variabili dividendo per $g(y)$ (dove $g(y)\neq 0$ dato che $y\neq \bar y$, radice di $g$) la EDO, ovvero
     \begin{equation*}
         \frac{y'(x)}{g(y(x))} = \frac{f(x) \cancel{g(y(x))}}{\cancel{g(y(x))}} = f(x),
@@ -661,14 +661,17 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \end{equation*}
 \end{enumerate}
 
-\addtocounter{footnote}{-2}
+\addtocounter{footnote}{-3}
+\footnotetext{Sono ricercati gli zeri di $g$, quindi la soluzione di $g(y)=0$. Pertanto, data $\bar y$ soluzione (radice) del problema, con $y(x)\equiv \bar y$ soluzioni del problema, allora $g(y)=0$ ($0=0$).}
+
+\stepcounter{footnote}
+\footnotetext{$y(x)\equiv\bar y$ soluzione perché $g(y)=0$ e $y'=0$, dato che $\bar y$ è una funzione costante.}
+
+\stepcounter{footnote}
 \footnotetext{Tutte le soluzioni tali che $g(y)=0$ sono dette soluzioni singolari.}
 
 \stepcounter{footnote}
 \footnotetext{Particolari perché quando sono separate le variabili potrebbe accadere che una soluzione faccia parte dell'integrale generale per una scelta particolare della costante e quindi appartenga alla famiglia delle soluzioni.}
-
-\stepcounter{footnote}
-\footnotetext{Sono ricercati gli zeri di $g$, quindi la soluzionie di $g(y)=0$. Pertanto, data $\bar y$ soluzione (radice) del problema, con $y(x)\equiv \bar y$ soluzioni del problema, allora $g(y)=0$ (quindi $0=0$.}
 
 \begin{example}[Esempio di applicazione del metodo precedente]\footnote{Slide 8-9 PDF 3.}
     \paragraph{Testo:} Determinare tutte le soluzioni della EDO del primo ordine (non lineare a variabili separabili)
@@ -684,7 +687,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
         \begin{equation*}
             \frac{y'}{(1-y)(2-y)}=x,
         \end{equation*}
-        integranado rispetto ad $x$ con cambio di variabile $y=y(x)$, è ottenuto
+        integrando rispetto ad $x$ con cambio di variabile $y=y(x)$, è ottenuto
         \begin{equation*}
             \int \frac{y'(x)}{(1-y(x))(2-y(x))} dx = \int x\, dx.
         \end{equation*}
@@ -703,7 +706,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
                 2A+B&=0
             \end{cases}\quad\Longrightarrow\quad
             \begin{cases}
-                A=1\\
+                A=-1\\
                 B=1
             \end{cases}
         \end{equation*}
