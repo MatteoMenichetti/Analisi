@@ -1,4 +1,4 @@
-% !TeX spellcheck = <none>
+% !TeX spellcheck = it_IT
 \section{Equazioni Differenziali Ordinarie}
 \begin{definition}[EDO di ordine $n$]
     Un'equazione differenziale ordinaria di ordine $n$ è un'equazione della forma
@@ -517,7 +517,11 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 
 \paragraph{Note non ufficiali su (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}):}
 \begin{enumerate}
-	\item Con il fatto che $a,f\in C^0(I)$ della EDO lineare di ordine 1 $y'(x) + a(x)f(x)=f(x)$ si intende che  $I=[a,b]$, ovvero è un intervallo, ed è definito dalla forma di $f$ e $a$, ovvero è l'intervallo che permette alle due funzioni di essere definite. Se $a(x)=\frac{1}{\sqrt{x}}$ e $f(x)=x$ allora l'intervallo di definizione delle due funzioni è $I=(0, +\infty)$.
+	\item Con il fatto che $a,f\in C^0(I)$ della EDO lineare di ordine 1
+	\begin{equation*}
+		y'(x) + a(x)f(x)=f(x)
+	\end{equation*} 
+	si intende che  $I=[a,b]$, ovvero è un intervallo, ed è definito dalla forma di $f$ e $a$, ovvero è l'intervallo che permette alle due funzioni di essere definite. Se $a(x)=\frac{1}{\sqrt{x}}$ e $f(x)=x$ allora l'intervallo di definizione delle due funzioni è $I=(0, +\infty)$.
     \item Sotto opportune ipotesi su $f$ è possibile mostrare che il sistema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione $y(x)$\footnote{$y$ definita localmente in $x_0$ significa che $y$ deve passare in $x_0$ e ciò si trasforma in una condizione del sistema.} derivabile localmente in $x_0$, la quale è opportunamente definita vicino ad $x_0$ (ovvero: $y$ è definita su un opportuno intervallo contenente $x_0$). Quindi è possibile trovare le soluzioni di una EDO, se il problema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione e dopo aver stabilito l'intervallo di massima definizione, cioè l'intervallo in cui $y$ ha senso, contenente il punto iniziale $x_0$ (perché $y$ deve passarci). Pertanto, non è detto che le soluzioni espresse dall'integrale generale dell'equazione siano tutte definite sullo stesso insieme al variare dei parametri $c_1 , c_2 ,\hdots ,c_n$ (ovvero della condizione iniziale);
     \item Quando si parla di soluzione di un problema di Cauchy (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) si intende sempre $f$ tale che:
     \begin{itemize}
@@ -532,11 +536,29 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
 \begin{enumerate}
     \item $\boldsymbol{y(x)\in C^1(I),\, I=[a,b]}$;
     \item Data la forma dell'integrale generale (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}), è considerata come posizione iniziale $x_0$, la $c$ come il valore della funzione $y$ nel punto $x_0$ (ovvero $y(x_0)$) ed $A(x)$ scelta come (\ref{eq:primitiva_problema_cauchy}). Pertanto, (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}) è una forma "particolare" di (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}) con $c=y_0=y(x_0)$;
-    \item ha un'unica condizione iniziale, i problemi di Cauchy per EDO del secondo ordine hanno due condizioni iniziali;
-    \item Ha un diverso significato rispetto a (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}): in (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}) il simbolo di $\int f(x)\, e^{A(x)} dx$ denota una primitiva qualsiasi di $f(x)e^{A(x)}$, in ((\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti})) compare una primitiva precisa, la funzione integrale con estremo fisso $x_0$ ed estremo variabile $x$ (dove $s$ è una variabile muta).
+    \item Ha un'unica condizione iniziale, i problemi di Cauchy per EDO del secondo ordine hanno due condizioni iniziali;
+    \item Ha un diverso significato rispetto a (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}): in (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}) il simbolo di $\int f(x)\, e^{A(x)} dx$ denota una primitiva qualsiasi di $f(x)e^{A(x)}$, in (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}) compare una primitiva precisa, la funzione integrale con estremo fisso $x_0$ ed estremo variabile $x$ (dove $s$ è una variabile muta).
 \end{enumerate}
 
 \paragraph{AVVERTENZA:} quando saranno fatte funzioni in più variabili, il concetto di derivata cambia e non sarà utilizzato il simbolo $\frac{d}{dx}$ ma $\partial$. La notazione conta.
+
+\paragraph{Come si risolve un problema di Cauchy per EDO lineari del primo ordine a coefficienti costanti?}
+\begin{enumerate}
+	\item Determinare se la EDO in (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) è variabili separabili o meno,
+	
+	\begin{itemize}
+		\item Se la EDO è a variabili separabili:
+		\begin{enumerate}
+			\item Separare le variabili,
+			\item Determinare la forma esplicita della $y$,
+		\end{enumerate}
+		\item Se la EDO non è a variabili separabili applicare la formula (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}),
+	\end{itemize}
+	
+	\item Determinare $c$ imponendo la condizione iniziale $y(x)=y_0$,
+	
+	\item Se richiesto l'intervallo più ampio contente $x_0$ determinarlo in base alle caratteristiche della soluzione $y(x)$.
+\end{enumerate}
 \begin{example}
     \footnote{Slide 15 PDF 1.} Sia
     \begin{equation*}
@@ -803,7 +825,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \end{equation*}
     \footnotetext{Affinché (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) sia ben definito allora il denominatore di tale espressione deve essere diverso da 0.}
     
-    \paragraph{Note su (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}):} è definita $\forall x\in\mathbb{R}\backslash\{\pm\sqrt{2\ln 2}\} $, ma per il problema di Cauchy richiesto di svolgere $\forall x\in I=(-\sqrt{2\ln2}, \sqrt{2\ln2})$.
+    \paragraph{Note su (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}):} (\ref{eq:soluzione_finale_esercizio_1_problema_cauchy} è definita $\forall x\in\mathbb{R}\backslash\{\pm\sqrt{2\ln 2}\} $, ma il problema di Cauchy è richiesto $\forall x\in I=(-\sqrt{2\ln2}, \sqrt{2\ln2})$.
     
     \paragraph{Nota su $\boldsymbol I$:} $I$ è una soluzione locale, ovvero le $x$ sono considerate vicine al punto iniziale. Quindi $y(x,c)$ è una soluzione in piccolo. Invece, se considerate le equazioni lineari ((\ref{eq:soluzione_finale_esercizio_1_problema_cauchy}) non è lineare), se i coefficienti della EDO sono continui (come nei nostri casi) la soluzione è definita in grande, ovvero su tutto l'intervallo nel quale i coefficienti della EDO sono continui.
     
@@ -824,7 +846,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         \begin{cases}
             y' &=xy+2x\quad\text{(EDO lineare)}\\
-            y(0)& = 2
+            y(0)& = 1
         \end{cases}
     \end{equation*}
     \paragraph{Svolgimento:} Trasformazione in forma normale (ovvero $y'-a(x)y=f(x)$):
@@ -948,7 +970,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \footnote{Per definire la soluzione è necessario che il denominatore sia diverso da 0 e ciò è legato al valore della costante. Con valori della costante positivi non ci sono problemi di definizione del dominatore, con valori negativi sono necessari esclusioni. Inoltre, è necessario trovare l'intervallo dove la soluzione e ben definita (ovvero l'intervallo contente $t=0$), quindi $t^2+c\neq 0$.}
     Imponiamo la condizione iniziale $y(0) = -1$,
     \begin{equation*}
-        1=\frac{1}{0+c},
+        -1=\frac{1}{0+c},
     \end{equation*}
     quindi $c=-1$. La soluzione del problema è
     \begin{equation*}
@@ -996,7 +1018,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \end{equation*}
     quindi la soluzione al problema di Cauchy è
     \begin{equation*}
-        y(x) = \frac{1}{5+x^3} \left(\frac{15}{4}x^{\frac{4}{3}} + \frac{3}{13}x^{\frac{13}{3}}+5\right),\quad \forall x\in(-\sqrt[3]{x}, +\infty)
+        y(x) = \frac{1}{5+x^3} \left(\frac{15}{4}x^{\frac{4}{3}} + \frac{3}{13}x^{\frac{13}{3}}+5\right),\quad \forall x\in(-\sqrt[3]{5}, +\infty)
     \end{equation*}
 \end{example}
 
