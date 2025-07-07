@@ -375,7 +375,7 @@ Dare un senso ad un intorno sferico nello spazio significa definire quali siano 
 
 Utilizzando la Definizione \ref{def:intorno_sferico} di intorno sferico è possibile fornire una definizione alternativa alla Definizione \ref{def:successione_convergente_AN2} di successione convergente. Ovvero: (\ref{eq:limite_successione_convergente_spazio_metrico1}) è equivalente a (\ref{eq:limite_successione_convergente_intorno_sferico}).
 
-\begin{definition}[Successione convergente (alternativa)]\footnote{Slide 1 PDF 9.}
+\begin{definition}[Successione convergente (alternativa)]\footnote{Slide 2 PDF 9.}
     La successione (in $\mathbb R^n$) $\{\uline x_n\}\subset\mathbb R^n$ con $\uline x=(\uline x_n^1,\hdots,\uline x_n^n)$ converge a $\uline x=(x_1,\hdots,x_n)\in\mathbb R^n$ se
     \begin{equation}\label{eq:limite_successione_convergente_intorno_sferico}
         \forall\varepsilon >0\, \exists n_\varepsilon\in\mathbb N\, ;\, \uline x_n\in \underset{\footnotemark}{B(\uline x_0,\varepsilon)}.
@@ -465,14 +465,14 @@ Questa definizione riconduce alla limitatezza delle successioni.
     $\uline x_0\in X$ si dice punto esterno $A$ se
     \begin{enumerate}
         \item $\uline x_0\notin A$, e
-        \item $\exists r>0\; B(\uline x_0, r)\cap A\neq 0$ \footnote{Ovvero: esiste intorno sferico di centro $x_0$ del tutto disgiunto ad $A$.}.
+        \item $\exists r>0: B(\uline x_0, r)\cap A\neq 0$ \footnote{Ovvero: esiste intorno sferico di centro $x_0$ del tutto disgiunto ad $A$.}.
     \end{enumerate}
 \end{definition}
 
 \begin{definition}[Punto di frontiera]
     $\uline x_0\in A$ si dice punto di frontiera di $A$ se
     \begin{equation*}
-        \exists r>0 \colon B(x_0,r)\cap A \cap A^C \neq 0,
+        \exists r>0 \colon B(x_0,r)\cap A \cap A^C \neq \emptyset,
     \end{equation*}
     ovvero se è non è né esterno né interno.
 \end{definition}
@@ -489,7 +489,7 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
     $C$ si dice chiuso se contiene tutti i suoi punti di frontiera, ovvero $\partial C\subset C$.
 \end{definition}
 
-\paragraph{N.B.:}\footnote{Slide 2 PDF 9.} Gli insiemi vuoi e $\mathbb R^n$ sono contemporaneamente aperti e chiusi perché entrambi sottoinsiemi di se stessi (inteso come $\emptyset\subseteq\emptyset,\, \mathbb R^n\subseteq\mathbb R^n$). Inoltre, un insieme aperto ha come complementare un insieme chiuso.
+\paragraph{N.B.:}\footnote{Slide 2 PDF 9.} Gli insiemi vuoti e $\mathbb R^n$ sono contemporaneamente aperti e chiusi perché entrambi sottoinsiemi di se stessi (inteso come $\emptyset\subseteq\emptyset,\, \mathbb R^n\subseteq\mathbb R^n$). Inoltre, un insieme aperto ha come complementare un insieme chiuso.
 
 \paragraph{N.B.:} Esistono insiemi in $\mathbb R^n$ che non sono né aperti né chiusi.
 
@@ -529,10 +529,10 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
 
 \footnotetext{Vale il Teorema \ref{th:esistenza_degli_zeri} degli zeri perché gli zeri per la funzione di due variabili. Tale funzione divide in due sottoinsiemi connessi, cioe': il segno delle sottoregioni è costante perché sotto la retta gli elementi hanno segno negativo e sopra positivo. Cosa di dubbia utilità detta dalla prof: Per trovare quale sono i punti in $A_3$ è preso un punto comodo, ad esempio $(-3,0)$ e si sostituisce nella disequazione, determinando così la regione di interesse.}
 
-\begin{definition}[Punto di accumulazione]\footnote{Slide 1 PDF 9.}
+\begin{definition}[Punto di accumulazione]\footnote{Slide 2 PDF 9.}
     Sia $A\subseteq\mathbb R^n$. $\uline x_0\in\mathbb R^n$ si dice punto di accumulazione per $A$ se \footnote{Comunque mi muovo vicino ad $\uline x_0$ trovo un punto in $A$.}
     \begin{equation*}
-        B(\uline x_0, r)\cap (A\backslash\{x_0\})\neq\emptyset.
+        \forall r>0,\quad B(\uline x_0, r)\cap (A\backslash\{x_0\})\neq\emptyset.
     \end{equation*}
 \end{definition}
 
@@ -542,13 +542,13 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
 
 \paragraph{N.B.:} I punti di frontiera $\partial A$ possono essere o meno punti di accumulazione di $A$. I punti esterni non sono di accumulazione di $A$.
 
-\begin{definition}[Punto isolato]\footnote{Slide 1 PDF 9.}
+\begin{definition}[Punto isolato]\footnote{Slide 2 PDF 9.}
     Ogni punto di frontiera in $\partial A$ che non è di accumulazione è detto isolato.
 \end{definition}
 
 \paragraph{N.B.:} Non è difficile dimostrare che $\uline x_0$ sia un punto di accumulazione di $A\subseteq\mathbb R^n$ (tramite la definizione stessa di punto di accumulazione). $\uline x_0$ è un punto di accumulazione di $A$ s.se \footnote{Dato l'intorno sferico di centro $\uline x_0$ e raggio qualsiasi si trovano punti in $A$ vicino a $\uline x_0$ nell'intorno sferico. Ovvero: $\uline x_0$ è punto di accumulazione per $A$ s.se diventa quanto scritto dopo la nota.} $\uline x_0$ è il limite di una successione di elementi di $A$ tutti diversi da $x_0$.
 
-\begin{example}\label{ex:norma_in_(1,2)}\footnote{Slide 2 PDF 9.}
+\begin{example}\label{ex:norma_in_(1,2)}\footnote{Slide 3 PDF 9.}
     Determinare i punti di accumulazione e quelli di frontiera nel seguente insieme e stabilire se tale insieme è aperto o chiuso.
     \begin{equation*}
         A=\{\uline x\in\mathbb R\;|\; 1<||\uline x||<2\}.
@@ -563,7 +563,7 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
     \end{figure}
 \end{example}
 
-\begin{definition}[Chiusura di un insieme]\footnote{Slide 3 PDF 9.}
+\begin{definition}[Chiusura di un insieme]\footnote{Slide 4 PDF 9.}
     La chiusura di $A\subseteq\mathbb R^2$ è denotata da $\bar A\, (\subset\mathbb R^n)$ ed è l'unione di $A$ con i suoi punti di accumulazione.
 \end{definition}
 
@@ -579,7 +579,7 @@ In Analisi 1 una funzione è definita su un dominio (sottoinsieme di $\mathbb R$
     f\colon X\subseteq\mathbb R^n\rightarrow\mathbb R.
 \end{equation*}
 
-\begin{definition}[Dominio]\footnote{Slide 3 PDF 9.}
+\begin{definition}[Dominio]\footnote{Slide 4 PDF 9.}
     Un dominio $D$ in $\mathbb R^n$ è la chiusura di un aperto $A\subset\mathbb R^n$, ovvero:
     \begin{equation}\label{eq:dominio_R_n}
         D=A\cup\partial A.
@@ -588,7 +588,7 @@ In Analisi 1 una funzione è definita su un dominio (sottoinsieme di $\mathbb R$
 
 \paragraph{N.B.:} Nell'Esempio \ref{ex:norma_in_(1,2)} il dominio è $D=\{\uline x\in\mathbb R^n\,;\, 1\leq||\uline x||\leq 2$\}, il quale è un insieme chiuso.
 
-\begin{remark}\footnote{Slide 6 PDF 11.}
+\begin{remark}\footnote{Slide 7 PDF 11.}
     Un dominio è un insieme massimale (rispetto all'inclusione su $\mathbb R^n$), ovvero un sottoinsieme di $\mathbb R^n$ massimo nel quale la funzione è ben definita.
 \end{remark}
 
@@ -599,7 +599,7 @@ In Analisi 1 una funzione è definita su un dominio (sottoinsieme di $\mathbb R$
 \subsection{Limite e continuità}
 È stato trattato quanto precede sui punti di accumulazione per introdurre il concetto di limite in $\mathbb R^n$, quindi per funzioni di più variabili, con valori in $\mathbb R$. Inoltre, tramite il concetto di limite è possibile introdurre il concetto di continuità di una funzione.
 
-\begin{definition}[Limite di funzione]\label{def:limite_funzione_piu_variabili}\footnote{Slide 4 PDF 9.}
+\begin{definition}[Limite di funzione]\label{def:limite_funzione_piu_variabili}\footnote{Slide 5 PDF 9.}
     Data
     \begin{equation*}
         \begin{aligned}
@@ -607,13 +607,13 @@ In Analisi 1 una funzione è definita su un dominio (sottoinsieme di $\mathbb R$
             \uline x &\mapsto f(\uline x)
         \end{aligned}
     \end{equation*}
-    e sia $\uline x_0=(x_0^1,\hdots,x_0^n)\in\mathbb R^n$ un punto di accumulazione per $A$. Si dice che $f$ tende a $\ell\in$\gls{Rext}$=\mathbb R\cup\{\pm\infty\}$ per $\uline x$ che tende a $\uline x_0$ e si scrive
+    e sia $\uline x_0=(x_0^1,\hdots,x_0^n)\in\mathbb R^n$ un punto di accumulazione per $A$. Si dice che $f$ tende a $\ell\in$\gls{Rext}$=\mathbb R\cup\{\pm\infty\}$ per $\uline x$ che tende a $\uline x_0$, ovvero
     \begin{equation}\label{eq:limite_funzione_piu_variabili}
-        \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell \quad\text{ovvero}\quad f(\uline x)\overset{\footnotemark}{\underset{\uline x\rightarrow\uline x_0}{\longrightarrow}}\ell
+        \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell \quad\text{ovvero}\quad f(\uline x)\overset{\footnotemark}{\underset{\uline x\rightarrow\uline x_0}{\longrightarrow}}\ell,
     \end{equation}
     \footnotemark se per ogni intorno $U\subset\overline{\mathbb R}$ di $\ell$ esiste un intorno sferico di $\uline x_0$, ovvero:
     \begin{equation*}
-        \exists r>0,\, I(\uline x_0, r)=B(\uline x_0,r)\subset\mathbb R^2 \text{ tc } f(\uline x)\in U\quad \forall\uline x\in I(\uline x_0,r)\cap(A\backslash\{\uline x_0\}).
+        \exists r>0,\, I(\uline x_0, r)=B(\uline x_0,r)\subset\mathbb R^n \text{ tc } f(\uline x)\in U\quad \forall\uline x\in I(\uline x_0,r)\cap(A\backslash\{\uline x_0\}).
     \end{equation*}
 \end{definition}
 
@@ -628,7 +628,7 @@ La Definizione \ref{def:limite_funzione_piu_variabili} di limite di funzione è 
 
 La Definizione \ref{def:limite_funzione_piu_variabili} di limite di funzione è equivalente alle Definizioni \ref{def:limite_epsilon_delta_convergente_piu_variabili} e \ref{def:limite_epsilon_delta_divergente_piu_variabili} di limite convergente e divergente $\varepsilon$-$\delta$ seguenti.
 
-\begin{definition}[Limite finito $\varepsilon$-$\delta$]\label{def:limite_epsilon_delta_convergente_piu_variabili}\footnote{Slide 4 PDF 9.}
+\begin{definition}[Limite finito $\varepsilon$-$\delta$]\label{def:limite_epsilon_delta_convergente_piu_variabili}\footnote{Slide 5 PDF 9.}
     \begin{equation*}
         \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell\in\mathbb R
     \end{equation*}
@@ -656,7 +656,7 @@ In modo analogo sono definiti i limiti divergenti.
 \end{definition}
 
 Il limite di una funzione segue la stessa algebra e le stesse regole che in Analisi 1.
-\begin{property}[Proprietà limite di funzione]\footnote{Slide 5 PDF 9.}
+\begin{property}[Proprietà limite di funzione]\footnote{Slide 6 PDF 9.}
     Il limite di funzione definito come (\ref{eq:limite_funzione_piu_variabili}) ha le seguenti proprietà:
     \begin{enumerate}
         \item se esiste è unico,
@@ -666,11 +666,11 @@ Il limite di una funzione segue la stessa algebra e le stesse regole che in Anal
     \end{enumerate}
 \end{property}
 
-\paragraph{N.B.:} Somma (la sottrazione è come somma cambiata di segno: $x-y=x+(-1) y$) e prodotto di funzione sono intese come algebriche.
+\paragraph{N.B.:} Somma \footnote{La sottrazione è come somma cambiata di segno: $x-y=x+(-1) y$.} e prodotto di funzione sono intese come algebriche.
 
 \paragraph{Suggerimento:} prima di calcolare un limite verificare se esiste.
 
-\begin{example}\footnote{Slide 5 PDF 9.}
+\begin{example}\footnote{Slide 6 PDF 9.}
     Sia
     \begin{equation*}
         f(x,y)=\frac{x^2}{\sqrt{x^2+y^2}}\colon A=\mathbb R^2\backslash\{(0,0)\}\rightarrow\mathbb R.
@@ -708,19 +708,18 @@ Il limite di una funzione segue la stessa algebra e le stesse regole che in Anal
 
 Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più variabili tendono a non avere limite. Ci sono teoremi per dimostrare che il limite di una funzione in più variabili non esiste. Inoltre, per le funzioni in più variabili, può essere utile trasformare le coordinate cartesiane in coordinate polari per semplificare il calcolo dei limiti.
 
-\begin{example}\footnote{Slide 7 PDF 9.}
-    Mostrare che 
+\begin{example}\footnote{Slide 8 PDF 9.}
+    \paragraph{Testo:} Data $f=\frac{x}{\sqrt{x^2+y^2}}\colon A=\mathbb R^2\backslash\{\uline 0\}\rightarrow\mathbb R$ , mostrare che 
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{x}{\sqrt{x^2+y^2}}
+       \nexists \lim_{(x,y)\rightarrow(0,0)}\frac{x}{\sqrt{x^2+y^2}}.
     \end{equation*}
-    non esiste. $f=\frac{x}{\sqrt{x^2+y^2}}\colon A=\mathbb R^2\backslash\{\uline 0\}\rightarrow\mathbb R$.\\
-    \footnotemark È necessario mostrare cosa accade in un intorno di centro $(0,0)$ e raggio $r=\delta$. È possibile muoversi vicino a $(0,0)$ sull'asse $y$ (quindi con $x=0$). Dunque è considerata $f(0,y)=0$ al variare di $y$ (quindi il candidato dovrebbe essere 0).\\
+    \paragraph{Svolgimento:} \footnotemark È necessario mostrare cosa accade in un intorno di centro $(0,0)$ e raggio $r=\delta$. È possibile muoversi vicino a $(0,0)$ sull'asse $y$ (quindi con $x=0$). Dunque è considerata $f(0,y)=0$ al variare di $y$ (quindi il candidato dovrebbe essere 0).\\
     Muovendosi sull'asse $x$, con $y=0$, la funzione assume i seguenti valori:
     \begin{equation}\label{eq:esempio_limiti_1}
         f(x,0)=\frac{x}{\sqrt{x^2}}=\frac{x}{|x|}=
         \begin{cases}
             1, & x>0,\\
-            -1,& x>0.
+            -1,& x<0.
         \end{cases}
     \end{equation}
     Quindi il limite non è unico: il valore del limite dipende dalla direzione con la quale $\uline x$ si avvicina a $(0,0)$. Ovvero $\nexists\lim_{(x,y)\rightarrow(0,0)}f(x,y)$.
@@ -734,7 +733,7 @@ Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più
 
 \footnotetext{$f$ è definita su tutto $\mathbb R^2$ tranne nell'origine. Vogliamo vedere cosa accade ad $f$ nell'origine tramite la definizione di limite. Muoversi in $\mathbb R$ (ovvero sul piano) nell'\gls{asse reale} vicino ad $x_0$ significa stare a sinistra o a destra di $x_0$ ma entro $\delta$. In $\mathbb R^2$ le direzioni sono infinite, quindi è possibile muoversi vicino ad $x_0$ in tutte le direzioni. Per semplicità è scelto un cammino semplice. Con cammino semplice si intende percorrere le assi $x,y$, le bisettrici, parabole, come in Figura \ref{fig:cammini_0,0}, o un qualsiasi altro degli infiniti cammini che portano all'origine. Quindi in $\mathbb R^2$ è più complesso che in Analisi 1 calcolare il limite di una funzione.}
 
-\paragraph{Deduzioni dall'esempio:} L'esistenza del limite non può dipendere da come ci si avvicina al punto "problematico", ovvero il limite deve essere lo stesso indipendentemente dalla direzione di avvicinamento di $(x,y)$ al punto $(x_0, y_0)$ e non dipendere dal modo (ovvero dalla direzione di avvicinamento). Una direzione nel piano è un vettore modulo, ovvero $\uline x\in\mathbb R$ tale che $||\uline v||=1$ (in genere ad ogni vettore è associata una direzione sul piano).  In generale si parla di direzione quando un vettore è normalizzato, ovvero quando $||\uline x||=1$. Quindi, quando il limite esiste ed è unico significa che il limite non deve dipendere dalla direzione e/o dal cammino scelto con il quale il punto $P=(x,y)$ si avvicina al punto $P_0=(x_0,y_0)$.  Il cammino può essere inteso come una bisettrice, parabola, o qualsiasi alta curva come in Figura \ref{fig:cammini_0,0}. In altre parole ancora: trovati due cammini percorrendo il quali $P$ si avvicina a $P_0$, è possibile provare che se tendono a $P_0$ e danno limiti diversi allora il limite non esiste.
+\paragraph{Deduzioni dall'esempio:} L'esistenza del limite non può dipendere da come ci si avvicina al punto "problematico", ovvero il limite deve essere lo stesso indipendentemente dalla direzione di avvicinamento di $(x,y)$ al punto $(x_0, y_0)$ e non dipendere dal modo (ovvero dalla direzione di avvicinamento). Una direzione nel piano è un vettore modulo, ovvero $\uline x\in\mathbb R$ tale che $||\uline x||=1$ (in genere ad ogni vettore è associata una direzione sul piano).  In generale si parla di direzione quando un vettore è normalizzato, ovvero quando $||\uline x||=1$. Quindi, quando il limite esiste ed è unico significa che il limite non deve dipendere dalla direzione e/o dal cammino scelto con il quale il punto $P=(x,y)$ si avvicina al punto $P_0=(x_0,y_0)$.  Il cammino può essere inteso come una bisettrice, parabola, o qualsiasi alta curva come in Figura \ref{fig:cammini_0,0}. In altre parole: trovati due cammini percorrendo il quali $P$ si avvicina a $P_0$, è possibile provare che se tendono a $P_0$ e danno limiti diversi allora il limite non esiste.
 
 \paragraph{N.B.:} Potrebbe capitare che due cammini portino a due valori reali distinti (già questo permette di determinare che il limite non esiste).
 
@@ -745,7 +744,7 @@ Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più
 
 La seguente proposizione permette di affermare quando un limite esiste (formalizzando quanto scritto sopra).
 
-\begin{proposition}[Condizione necessaria per l'esistenza del limite]\footnote{Slide 8 PDF 9.}
+\begin{proposition}[Condizione necessaria per l'esistenza del limite]\footnote{Slide 9 PDF 9.}
     Sia $f\colon A\subset\mathbb R^2\rightarrow\mathbb R$ e $(x_0, y_0)$ punto di accumulazione per $A$. Se
     \begin{equation*}
         \lim_{(x,y)\rightarrow(x_0,y_0)} f(x,y)=\ell
@@ -756,22 +755,22 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
     \end{equation*}
 \end{proposition}
 
-\paragraph{N.B.:} trovare $n$ cammini che confermano che il limite è valido non significa che il limite esista. La Proposizione è una condizione necessaria ma non sufficiente.
+\paragraph{N.B.:} Trovare $n$ cammini che confermano che il limite è valido non significa che il limite esista. La Proposizione è una condizione necessaria ma non sufficiente.
 
-\begin{remark}
-    è possibile osservare che come condizione necessaria per l'esistenza del limite è spesso utilizzato il fatto che esistano, e che siano uguali fra loro, i limiti lungo le rette parallele agli assi coordinati di equazione $y=y_0\in\mathbb R$ e $x=x_0\in\mathbb R$ (costanti), ottenendo come condizione necessaria per l'esistenza
+\begin{remark}[Non ufficiale]
+    È  possibile osservare che come condizione necessaria per l'esistenza del limite è spesso utilizzato il fatto che esistono, e che siano uguali fra loro, i limiti lungo le rette parallele agli assi coordinati di equazione $y=y_0\in\mathbb R$ e $x=x_0\in\mathbb R$ (costanti), ottenendo come condizione necessaria per l'esistenza
     \begin{equation*}
         \lim_{x\rightarrow x_0}f(x,y_0)=\ell=\lim_{y\rightarrow y_0}f(x_0, y).
     \end{equation*}
 \end{remark}
 
-\begin{exercise}[Per casa]\label{exercise:limite_non_esiste_casa}
-    Mostrare che il seguente limite non esiste
+\begin{exercise}\label{exercise:limite_non_esiste_casa}\footnote{Slide 10 PDF 9.}
+    \paragraph{Testo:} Mostrare che il seguente limite non esiste
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
     \end{equation*}
-    Consigli su come farlo: Prima provare cosa accade sugli assi coordinati. Seconda cosa provare qualche curva.\\
-    \textbf{Svolgimento:}
+    \paragraph{Consigli su come farlo:} Prima provare cosa accade sugli assi coordinati. Seconda cosa provare qualche curva.
+    \paragraph{Svolgimento:}
     \begin{equation*}
         \lim_{\underset{x=y}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{y\rightarrow 0}f(y,y)=\lim_{y\rightarrow 0}\frac{y\cdot y}{y^2+y^2}=\lim_{y\rightarrow 0}\frac{\cancel{y^2}}{2\cancel{y^2}}=\frac{1}{2}=\lim_{x\rightarrow 0}\frac{x\cdot x}{x^2+x^2}=\lim_{x\rightarrow 0}f(x,x)=\lim_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y).
     \end{equation*}
@@ -781,7 +780,7 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
     Dato che $0\neq \frac{1}{2}$, il limite non esiste.
 \end{exercise}
 
-\begin{definition}[Continuità di funzione]\footnote{Slide 1 PDF 10.}\label{def:continuita_funzione_n_variabili}
+\begin{definition}[Continuità di funzione]\footnote{Slide 2 PDF 10.}\label{def:continuita_funzione_n_variabili}
     Sia $f\colon A\subseteq\mathbb R^n\rightarrow\mathbb R$ e (supposto $n=2$) sia $P_0=(x_0,y_0)\in A$. Se $P_0$ è punto di accumulazione per $A$, $f$ si dice continua in $P_0$ se
     \begin{equation}\label{eq:limite_continuita}
         \lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=f(x_0,y_0)\quad \left(\text{per } n>2\; \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=f(\uline x_0)\right).
@@ -789,13 +788,13 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
     Se $P_0$ è un punto isolato per $A$ per convenzione si pone $f$ continua in tale punto.
 \end{definition}
 
-\begin{definition}[Funzione continua]\footnote{Slide 1 PDF 10.}
+\begin{definition}[Funzione continua]\footnote{Slide 2 PDF 10.}
     Sia $f\colon A\subset\mathbb R^n\rightarrow\mathbb R$. $f$ si dice continua in $A$ se è continua in ogni punto di $A$.
 \end{definition}
 
 Per mostrare la continuità di una funzione in un punto è necessario quini mostrare quanto appena scritto.
 
-\begin{example}\footnote{Slide 1 PDF 10.}
+\begin{example}\footnote{Slide 2 PDF 10.}
     Siano $f(x,y)=x$ e $g(x,y)=y$, quindi $f,g\colon A=\mathbb R^2\rightarrow\mathbb R$ (ovvero $f$ e $g$ sono funzioni continue in $A=\mathbb R^2$).\\
     Mostriamo che $f(x,y)$ è continua in $\forall P_0=(x_0,y_0)\in\mathbb R^2$. È necessario mostrare che
     \begin{equation*}
@@ -818,7 +817,7 @@ Per mostrare la continuità di una funzione in un punto è necessario quini most
 \end{itemize}
 
 Il prossimo Teorema riguarda l'algebra delle funzioni in più variabili.
-\begin{theorem}\label{th:algebra_funzioni_piu_variabili}\footnote{Slide 2 PDF 10.}
+\begin{theorem}\label{th:algebra_funzioni_piu_variabili}\footnote{Slide 3 PDF 10.}
     Siano $f$ e $g$ funzioni di più variabili a valori reali continue (negli opportuni domini o in un punto), allora
     \begin{enumerate}
         \item $f\pm g$ (somma algebrica) e $f\cdot g$ sono continue (negli opportuni domini),
@@ -828,7 +827,7 @@ Il prossimo Teorema riguarda l'algebra delle funzioni in più variabili.
     \end{enumerate}
 \end{theorem}
 
-\begin{remark}\footnote{Slide 3 PDF 10.}
+\begin{remark}\footnote{Slide 4 PDF 10.}
     Sia $f\colon A\subseteq\mathbb R^n\rightarrow\mathbb R$ e $g:J\subseteq\mathbb R\rightarrow\mathbb R$, allora $g\circ f\colon \mathbb\rightarrow\mathbb R$ segue il seguente processo
     \begin{equation*}
         \uline x\mapsto \underset{\underset{\mathbb R,\, D(g)}{\vertin}}{f(\uline x)}\mapsto g(f(\uline x)).
@@ -845,12 +844,13 @@ Il prossimo Teorema riguarda l'algebra delle funzioni in più variabili.
 \end{itemize}
 Inoltre è possibile affermare che tutte le funzioni elementari combinate con somme algebriche, prodotti ed esponenziazioni sono continue.
 
-\begin{example}
-    Data la funzione (razionale in due variabili)
+\begin{example}\footnote{Slide 5 PDF 10.}
+    \paragraph{Testo:} Data la funzione (razionale in due variabili)
     \begin{equation*}
         f(x,y)=\frac{e^{\frac{x^2-y^3}{x^2+y^2}}}{\cos(y-x)},
     \end{equation*}
     determinare il suo insieme di definizione $A\subseteq\mathbb R^2$, disegnarlo e stabilire la metrica topologica.
+    \paragraph{Svolgimento:}
     \begin{itemize}
         \item (Dominio)
         \begin{equation*}
@@ -870,8 +870,8 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     \end{figure}
 \end{example}
 
-\begin{example}\footnote{Slide 5 PDF 10.}
-    Data la funzione
+\begin{example}\footnote{Slide 6 PDF 10.}
+    \paragraph{Testo:} Data la funzione
     \begin{equation*}
         f(x,y)=
         \begin{cases}
@@ -879,8 +879,8 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
             0 &\text{se } (x,y)=(1,1),
         \end{cases}
     \end{equation*}
-    studiarne la continuità sul suo dominio di definizione.\\
-    $f$ è definito su $\mathbb R^2$, ovvero: $f\colon\mathbb R^2\rightarrow\mathbb R$.\\
+    studiarne la continuità sul suo dominio di definizione.
+    \paragraph{Svolgimento:} $f$ è definito su $\mathbb R^2$, ovvero: $f\colon\mathbb R^2\rightarrow\mathbb R$.\\
     \footnote{Studiare il problema significa studiare la continuità. Per le conseguenze del Teorema \ref{th:algebra_funzioni_piu_variabili}, $f$ è continua in ogni punto di $\mathbb R^2$ diverso da $(1,1)$ perché funzione quoziente. Per verificare la continuità è necessario che il limite di $f(x,y)$ per $(x,y)\rightarrow (1,1)$ converga a 0, ovvero quanto segue alla nota.} Affinché $f$ risulti continua in tutto $\mathbb R^2$ allora (deve esistere il limite e valere 0, ovvero)
     \begin{equation*}
         \lim_{(x,y)\rightarrow(1,1)} f(x,y)=\lim_{(x,y)\rightarrow(1,1)}\frac{e^{(x-1)+(y-1)}-1}{\sqrt{(x-1)^2+(y-1)^2}}=f(1,1)=0.
@@ -923,9 +923,10 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     \begin{equation*}
         \lim_{y\rightarrow 0}\frac{-\sin y^2}{y^2}=-1
     \end{equation*}
-    $-1\neq 1$, quindi non esiste limite unico.\\
-    Nell'esempio sono stati trovati due cammini che danno luogo a limiti diversi. La condizione necessaria è che se la funzione ha limite $\ell$ allora per ogni cammino percorso per avvicinarsi al punto (qualsiasi sia la direzione) allora il limite deve valere $\ell$.
+    $-1\neq 1$, quindi non esiste limite unico.
 \end{example}
+
+\paragraph{Nota:} Nell'esempio sono stati trovati due cammini che danno luogo a limiti diversi. La condizione necessaria è che se la funzione ha limite $\ell$ allora per ogni cammino percorso per avvicinarsi al punto (qualsiasi sia la direzione) il limite deve valere $\ell$.
 
 \begin{example}\footnote{Slide 8 PDF 10.}
     Verificare l'esistenza del seguente limite.
@@ -969,20 +970,21 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     quindi il limite non esiste.
 \end{example}
 
-\begin{example}\footnote{Slide 11 PDF 10.}
+\begin{example}\footnote{Slide 12 PDF 10.}
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{e^{\sqrt{x^2+y^2}}-2}{x^2+y^2}=\left[\frac{-1}{0^+}\right]=-\infty.
     \end{equation*}
 \end{example}
 
-Se la funzione è continua nel punto allora è sufficiente calcolare la funzione in tale punto.
-\begin{example}\footnote{Slide 11 PDF 10.}
+\paragraph{Importante: } \textbf{Se la funzione è continua nel punto allora è sufficiente calcolare la funzione in tale punto.}
+
+\begin{example}\footnote{Slide 12 PDF 10.}
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{x^2-y^2}{x^2+y^2+77}=0.
     \end{equation*}
 \end{example}
 
-\begin{example}\footnote{Slide 11 PDF 10.}
+\begin{example}\footnote{Slide 12 PDF 10.}
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{(x+y)^2}{x^2+y^2}.
     \end{equation*}
@@ -1005,7 +1007,7 @@ Se la funzione è continua nel punto allora è sufficiente calcolare la funzione
 \end{figure}
 
 \subsubsection{Coordinate polari}
-\begin{definition}[Coordinate polari in $\mathbb R^2$ (non ufficiale)]\footnote{Slide 12, PDF 10.}\label{def:coordinate_polari}
+\begin{definition}[Coordinate polari in $\mathbb R^2$ (non ufficiale)]\footnote{Slide 13, PDF 10.}\label{def:coordinate_polari}
     Siano $P=(x_P,y_P)\in\mathbb R^2$, $\rho=d(P,\uline 0)\in\mathbb R$ e $\theta$ l'angolo che $\overrightarrow{\rm OP}$ (orientato positivamente) forma con l'asse delle ascisse $x$. Data la circonferenza centrata nell'origine di raggio $\rho$, le coordinate polari di un punto $P$ nel piano $\mathbb R^2$ sono $(\rho, \theta)$, dove le coordinate polari sono determinate come
     \begin{equation}\label{eq:coordinate_polari_piano}
         \begin{cases}
@@ -1015,11 +1017,11 @@ Se la funzione è continua nel punto allora è sufficiente calcolare la funzione
     \end{equation}
 \end{definition}
 
-\begin{remark}\footnote{Slide 12 PDF 10.}
+\begin{remark}\footnote{Slide 13 PDF 10.}
     Se $\rho\geq 0\Rightarrow \rho=\sqrt{x_P^2+y_P^2}$.
 \end{remark}
 
-\begin{remark}\footnote{Slide 12 PDF 10.}
+\begin{remark}\footnote{Slide 13 PDF 10.}
     È possibile considerare la circonferenza trigonometrica centrata nell'origine di raggio $\rho$ come $\cos^2\theta+\sin^2\theta=\rho^2$. Quindi, l'ascissa è il coseno e l'ordinata il seno.
 \end{remark}
 
@@ -1029,7 +1031,7 @@ Se la funzione è continua nel punto allora è sufficiente calcolare la funzione
 \end{equation*}
 Quindi la retta $\overline{\rm OP}$ può essere rappresentata come $y=mx$, con $m=\tan\theta$, dato che $\overline{\rm OP}$ passa per l'origine.
 
-\begin{remark}[Non ufficiale]\footnote{Slide 13 PDF 10.}
+\begin{remark}[Non ufficiale]\footnote{Slide 14 PDF 10.}
     Le coordinate polari definite come nella Definizione \ref{def:coordinate_polari} sono centrate centrate in $(0,0)$. Le coordinate polari potrebbero essere traslate e centrate nel punto $(x_0,y_0)\neq(0,0)$ come in Figura \ref{fig:piano_coordinate_polari_centrate_x0_y0}, quindi è possibile generalizzare il caso (\ref{eq:coordinate_polari_piano}), ovvero: Nel caso in cui le coordinate siano centrate in $(x_0,y_0)$ allora $x$ e $y$ in coordinate cartesiano sono ottenute dalle coordinate polari seguendo le formule
     \begin{equation*}
         \begin{cases}
@@ -1045,7 +1047,7 @@ Quindi la retta $\overline{\rm OP}$ può essere rappresentata come $y=mx$, con $
 \end{figure}
 
 Il calcolo del limite di $f(P)$ quando $P\rightarrow P_0$ è possibile utilizzando le coordinate polari. Vale il seguente teorema.
-\begin{theorem}\label{th:limite_funzione_due_variabili_coordinate_polari}\footnote{Slide 14 PDF 10.}
+\begin{theorem}\label{th:limite_funzione_due_variabili_coordinate_polari}\footnote{Slide 15 PDF 10.}
     Sia $f\colon D\subset\mathbb R^2\rightarrow\mathbb R$ e $P_0=(x_0,y_0)\in D$, allora
     \begin{equation}\label{eq:limite_tende_l_uniformemente_theta}
         \lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=\ell\quad\iff\quad\lim_{\rho\rightarrow 0^+}\underbrace{f(x_0+\rho\cos\theta,y_0+\rho\sin\theta)}_{\footnotemark}=\ell\quad\text{$\underset{\footnotemark}{\text{uniformemente}}$ rispetto a $\theta$}.
@@ -1055,7 +1057,7 @@ Il calcolo del limite di $f(P)$ quando $P\rightarrow P_0$ è possibile utilizzan
 \footnotetext{Dipende da $\rho$ e non da $\theta$ perché il limite deve valere uniformemente rispetto a $\theta$. È controllato quando $\rho\rightarrow0^+$ perché $\rho$ è una distanza, quindi $\rho\geq 0$.}
 
 \stepcounter{footnote}
-\footnotetext{Uniformemente rispetto a $\theta$ significa che il valore del limite cale comunque scelto $\theta$. È necessario ricordarsi che $\theta$ è un angolo, quindi di periodo $[0,2\pi]$ ed è sufficiente verificare cosa accade in tale intervallo e non su tutto $\mathbb R$.}
+\footnotetext{Uniformemente rispetto a $\theta$ significa che il valore del limite vale comunque scelto $\theta$. È necessario ricordarsi che $\theta$ è un angolo, quindi di periodo $[0,2\pi]$ ed è sufficiente verificare cosa accade in tale intervallo e non su tutto $\mathbb R$.}
 
 \paragraph{N.B.:} Nel caso del cambiamento di coordinate di una funzione, questa deve essere invertibile, quindi biettiva e per questo è necessario che il dominio della funzione sia un aperto (così ogni punto del dominio è associato ad un punto del codominio).
 
@@ -1088,12 +1090,13 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 
 \paragraph{N.B.:} Potrebbe capitare che passando in coordinate polari il limite dipenda esplicitamente da $\theta$, ciò significa che il limite non esiste perché non vale uniformemente rispetto a $\theta$. Inoltre, se non riusciamo a dimostrare che esiste una $g\geq 0$ infinitesima per la quale vale la maggiorazione (\ref{eq:maggiorazione_f_coordinate_polari}), è necessario cercare un'altra strada.
 
-\begin{example}\footnote{Slide 2 PDF 11.}
-    È già stato visto per l'Esercizio \ref{exercise:limite_non_esiste_casa} che il seguente limite non esiste:
+\begin{example}\footnote{Slide 3 PDF 11.}
+    \paragraph{Testo:} già stato visto per l'Esercizio \ref{exercise:limite_non_esiste_casa} che il seguente limite non esiste:
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
     \end{equation*}
-    Passando in coordinate polari (quando $(x,y)\rightarrow(0,0)$ e $\rho\rightarrow 0^+$)
+    
+    \paragraph{Svolgimento}: Passando in coordinate polari (quando $(x,y)\rightarrow(0,0)$ e $\rho\rightarrow 0^+$)
     \begin{equation*}
         \begin{cases}
             x=\rho\cos\theta\\
@@ -1108,12 +1111,12 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \end{example}
 \footnotetext{Prima regola fondamentale della trigonometria.}
 
-\begin{example}\footnote{Slide 2 PDF 11.}
-    Risolvere
+\begin{example}\footnote{Slide 3 PDF 11.}
+    \paragraph{Testo:} Risolvere
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{\sqrt{x^2+y^2}}.
     \end{equation*}
-    Passando in coordinate polari, allora
+    \paragraph{Procedimento:}Passando in coordinate polari, allora
     \begin{equation*}
         \lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\;\rho\sin\theta}{\sqrt{\rho^2\cos^2\theta+\rho^2\sin^2\theta}}\overset{\footnotemark}{=}\lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\sin\theta}{\sqrt{\rho^2}}=\lim_{\rho\rightarrow 0^+}\frac{\rho^{\cancel{2}}\cos\theta\sin\theta}{\cancel{\rho}}=\lim_{\rho\rightarrow 0^+}\rho\cos\theta\sin\theta=0(=l).
     \end{equation*}
@@ -1127,12 +1130,12 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 
 \paragraph{Quando è utile passare in coordinate polari?} Quando la funzione è radiale, quando sono presenti $x^2$ e $y^2$, prodotti tra incognite ed è possibile sfruttare al meglio le proprietà di tali coordinate (ad esempio le regole fondamentali della trigonometria).
 
-\begin{example}\footnote{Slide 4 PDF 11.}
-    Calcolare, se esiste
+\begin{example}\footnote{Slide 5 PDF 11.}
+    \paragraph{Testo:} Calcolare, se esiste
     \begin{equation*}
         \lim_{(x,y)\rightarrow(0,0)}\frac{(x+y)^2}{x^2+y^2}.
     \end{equation*}
-    Passando in coordinate polari,
+    \paragraph{Svolgimento:} Passando in coordinate polari,
     \begin{equation*}
         \begin{matrix}
             \lim_{\rho\rightarrow 0^+}\frac{(\rho\cos\theta+\rho\sin\theta)^2}{\rho^2}&=&\lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos^2\rho+\rho^2\sin^2\theta+2\rho^2\cos\theta\sin\theta}{\rho^2}&=& 1^a\text{ relazione fond. aritmetica}\\
@@ -1142,12 +1145,12 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
     dipende da $\theta$, quindi il limite non esiste.
 \end{example}
 
-\begin{example}\footnote{Slide 4 PDF 11.}
-    Studiare al variare del parametro $\alpha>0$ l'esistenza del seguente limite (il quale è una forma indeterminata)
+\begin{example}\footnote{Slide 5 PDF 11.}
+    \paragraph{Testo:} Studiare al variare del parametro $\alpha>0$ l'esistenza del seguente limite (il quale è una forma indeterminata)
     \begin{equation*}
         \lim_{(x,y)\rightarrow(1,0)}\frac{(x^2-2x+1)y}{(x^2-2x+1+y^2)^\alpha}=\lim_{(x,y)\rightarrow(1,0)}\frac{(x-1)^2y}{[(x-1)^2+y^2]^\alpha}.
     \end{equation*}
-    Passando in coordinate polari
+    \paragraph{Svolgimento:} Passando in coordinate polari
     \begin{equation*}
         \begin{cases}
             x=1+\rho\cos\theta\\
