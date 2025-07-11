@@ -2191,10 +2191,173 @@ Per le funzioni in più variabili, la derivabilità non implica continuità. Qui
 
 \subsubsection{Curve in \texorpdfstring{$\boldsymbol{\mathbb R^n}$}{Rn}}\label{ssec:curve_Rn}\footnote{Slide 5 PDF 15.}
 In matematica le curve sono delle applicazioni continue definite da un intervallo ad $\mathbb R^n$. In particolare, le curve piane sono delle applicazioni da un intervallo ad $\mathbb R^2$. Inoltre, il sostegno di una curva è l'immagine di una curva.
-\begin{definition}[Curva in $\mathbb{R}^n$]
-	\footnote{Slide 5 PDF 15.}
+\begin{definition}[Curva in $\mathbb{R}^n$]\footnote{Slide 5 PDF 15.}
+	Una curva è un'applucazione continua ($\varphi\in C^0(I)$) definita come
+	\begin{equation}\label{eq:curva}
+		\begin{aligned}
+			f\colon I=[a,b]\subset\mathbb R & \rightarrow \mathbb R^n\\
+			t &\mapsto \varphi(t) = (\varphi_1(t), \varphi_2(t),\hdots, \varphi_n(t))\in\mathbb{R}^n
+		\end{aligned}
+	\end{equation}
+	dove le $\varphi_i:I\rightarrow\mathbb{R}$ sono continue (per HP) $\forall i=1,\hdots,n$.
 \end{definition}
 
+\paragraph{Cosa sono le equazioni parametriche di una curva?} Data $\varphi$, al variare di $t\in I$ è descritto un oggetto in $\mathbb{R}^n$, il quale è il sostegno della curva $\varphi$ e non la curva $\varphi$.
+
+\begin{definition}[Equazioni parametriche]\footnote{Slide 5 PDF 15.}
+	Le equazioni ($n$)
+	\begin{equation*}
+		\varphi:\begin{cases}
+			x_1 &= \varphi_1(t)\\
+			x_2 &= \varphi_2(t)\\
+			&\vdots\\
+			x_n &= \varphi_n(t)
+		\end{cases}
+	\end{equation*}
+	si dicono equazioni parametriche della curva $\varphi$, dove il parametro $t\in I$.
+\end{definition}
+
+\paragraph{Utilità equazioni parametriche:} Le equazioni parametriche descrivono in che modo con il quale è determinata l'immmagine di $t$ attraverso $\varphi$ in $\mathbb{R}^n$, ovvero descrivono come cambia la funzione al variare del parametro $t$. Vedere le equazioni parametriche fisica.
+
+\begin{definition}[Sostegno di una curva]\footnote{Slide 6 PDF 15.}
+	L'immagine di $\varphi$ (funzione continua) è
+	\begin{equation*}
+		\varepsilon(I)\subseteq\mathbb{R}^n,
+	\end{equation*} 
+	ed è detta sostegno (immagine) della curva (ovvero "traiettoria" della curva in $\mathbb{R}^n$).
+\end{definition}
+
+\begin{example}
+	Se $n=2$ allora si ha una curva piana (perché l'immagine è in $\mathbb{R}^2$, nel piano) $\varphi:[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}^2$.\\
+	Inoltre, se $n=2$ è possibile definire le curve cartesiane (ovvero quando nel grafico $graf\, f$ $y=f(x)$), ovvero curve piane (quindi in $\mathbb{R}^2$), ottenute tramite funzioni di una variabile (dove il grafico è sottoinsieme del piano $\mathbb{R}^2$ e del seguente grafico). Considerando $f:[a,b]=I\mathbb{R^2}$ continua, il grafico $graf\, f=\{(x,f(x)\in\mathbb{R}^2|x\in[a,b])\}$ è il sostegno do una curva piana.\\
+	Le equazioni parametriche devono fornire due componenti nel caso $n=2$, definendo una curva piana del tipo
+	\begin{equation}\label{eq:esempio_curva_R2}
+		\begin{aligned}
+			\varphi:[a,b]&\rightarrow\mathbb{R}^2\\
+			t&\mapsto (\varphi_1(t),\varphi_2(t))
+		\end{aligned}
+	\end{equation}
+	dove $\varphi_1(t)=t,\varphi_2(t)=f(t)$. Quindi le equazioni cartesiane che rappresentano la curva $\varphi$ sono le seguenti
+	\begin{equation*}
+		\varphi:
+		\begin{cases}
+			x_1 = t\; (=\varphi_1(t))\\
+			x_2 = f(t)\; (=\varphi_2(t))
+		\end{cases}\quad\equiv\quad f:
+		\begin{cases}
+			x=t\\
+			y=f(t)
+		\end{cases}\quad t\in[a,b].
+	\end{equation*}
+	Quindi $\varphi$ è la curva piano.
+\end{example}
+
+\paragraph{Nota sull'Esempio:} Perché il grafico è un'esempio di sostegno di una curva? Il $graf\, f$, dove $f$ è una funzione di una variabile, è definito come
+\begin{equation}\label{eq:grafico_f_curva_cartesiana}
+	graf\, f = \{(x,y)\in\mathbb{R}^2;y=f(x),\forall x\in[a,b]\}=\{(x,f(x))\in\mathbb{R}^2, \forall x\in I\}\subseteq\mathbb{R}^2
+\end{equation}
+ed è il sostegno della curva $\varphi$.
+
+\paragraph{Nota:} Potrebbe capitare che $f\in C^1(I)$, quindi che sia più che regolare. Pertanto, data la curva del piano (/ cartesiano) generato dal grafico della funzione $f$, è possivile introdurre il vettore tangente al grafico della curva, quindi quanto segue.
+
+\begin{definition}[Curva regolare]\footnote{Slide 7 PDF 15.}
+	Una curva 
+	\begin{equation}\label{eq:curva_regolare}
+		\varphi:[a,b]=I\rightarrow\mathbb{R}^n
+	\end{equation}
+	si dice regolare se $\varphi\in C^1([a,b])$ e se $\varphi'(t)\neq\uline 0$, dove
+	\begin{equation}\label{eq:derivate_curva_regolare}
+		\varphi'(t)=(\varphi_1'(t), \hdots, \varphi_n'(t))\in\mathbb{R}^n.
+	\end{equation}
+	Segue che $||\varphi'(t)||>0$ dato che $\varphi'(t)\neq\uline 0$.
+\end{definition}
+
+\begin{definition}[Curva chiusa]\footnote{Slide 10 PDF 15.}
+	La curva $\varphi:[a,b]\rightarrow\mathbb{R}^2$ è chiusa se $\varphi(a) = \varphi(b)$.
+\end{definition}
+
+\paragraph{Nota su (\ref{eq:derivate_curva_regolare}):} (\ref{eq:derivate_curva_regolare}) è il vettore contente le derivate delle equazioni parametriche.
+
+\paragraph{Note su (\ref{eq:grafico_f_curva_cartesiana}):} Supposto che $f\in C([a,b])$, è possibile considerare la retta tangente alla curva $\varphi$ nel punto $\varphi(P_0)$ come la retta tangente al grafico nel punto $\varphi(t_0)$.\\
+La retta tangente alla curva nel punto $\varphi(t_0)$ è la retta tangente a $graf\, f$ per il punto (corrispondente a $t_0$) $(x_0, f(x_0))$.
+
+\paragraph{Chi è $\boldsymbol{\varphi(t_0)}$?} $\boldsymbol{\varphi(t_0)=}(\varphi_1(t_0), \varphi_2(t_0)) = (t_0, f(t_0)) = (x_0, f(x_0))=\boldsymbol{(x_0,\varphi(t_0))}$.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.65\textwidth]{Analisi2/figures/curva-con-retta-tangente.png}
+	\caption{Curva con retta tangente.}\label{fig:curva_con_retta_tangente}
+\end{figure}
+
+\paragraph{Nota su Figura \ref{fig:curva_con_retta_tangente}:} La retta tangente della funzione passante per il punto $(x_0,y_0)$, con $y_0=\phi(t_0)$, è individuata attraverso l'utilizzo della derivata prima. L'equazione della retta tangente al grafico di $f$ passante per $(x_0,f(x_0))$, considerando il grafico come sostegno della curva è:
+\begin{equation*}
+	y = f(x_0) + f'(x_0)(x-x_0),
+\end{equation*}
+dove $f'(x_0)$ rappresenta il coefficiente angolare.
+
+\paragraph{Note sulla Definizione di Curva regolare:} Data una curva definita come (\ref{eq:curva_regolare}), è possibile scrivere il vettore tangente come (\ref{eq:derivate_curva_regolare}), ovvero quando segue.
+
+\begin{definition}[Vettore tangente]\footnote{Slide 8 PDF 15.}
+	Data $	\varphi:[a,b]=I\rightarrow\mathbb{R}^n$ curva regolare, il vettore tangente alla curva $\varphi$ nel punto $\varphi(t_0)$ è dato da
+	\begin{equation*}
+			\varphi'(t)=(\varphi_1'(t), \hdots, \varphi_n'(t))\in\mathbb{R}^n.
+	\end{equation*}
+\end{definition}
+ 
+\begin{example}[Vettore tangente]\footnote{Slide 8 PDF 15.}
+ 	Data
+ 	\begin{equation}
+ 	\begin{aligned}
+ 		\varphi:[a,b]&\rightarrow\mathbb{R}^2,\\
+ 		t&\mapsto (\varphi_1(t),\varphi_2(t))
+ 	\end{aligned}
+ 	\end{equation}
+ 	il vettore tangente è $y'(t_0) = (1,f'(t_0))$ (dove la direzione di questo vettore è la direzione della retta tangente).
+\end{example}
+ 
+\paragraph{Osservazione (non ufficiale):} Il sostegno della curva in $\mathbb{R}^2$ è l'immagine dell'applicazione.
+ 
+\begin{example}\footnote{Slide 9 PDF 15.}
+	Siano
+	\begin{equation*}
+			\begin{aligned}
+				\varphi : [0,2\pi] &\rightarrow\mathbb{R}^2,\\
+				t & \mapsto (\cos t, \sin t)
+			\end{aligned}
+			\quad
+			\begin{aligned}
+				\psi : [0,4\pi] &\rightarrow \mathbb{R}^2,\\
+				t &\mapsto (\cos t, \sin t)
+			\end{aligned}
+	\end{equation*}
+	ovvero definite come
+	\begin{equation*}
+		\varphi(t) = (\varphi_1(t),\varphi_2(t)),\quad \psi(t) = (\psi_1(t), \psi(t)),
+	\end{equation*}
+	\begin{equation*}
+		\varphi :
+		\begin{cases}
+			\varphi_1(t) = \cos(t)\\
+			\varphi_2(t) = \sin(t)
+		\end{cases}\, t\in[0,2\pi],\quad
+		\psi:
+		\begin{cases}
+			\psi_1(t) = \cos(t)\\
+			\psi_2(t) = \sin(t)
+		\end{cases}\, t\in[0,4\pi],
+	\end{equation*}
+	le quali sono due curve (piane).\\
+	\footnote{Il sostegno delle due funzioni / curve piane è ottenuto variando $t$ negli intervalli $[0,2\pi]$ e $[0,4\pi]$. Quindi, dato che il sostegno delle due curve è dato dall'immagine in $\mathbb{R}^2$, per la relazione $\cos^2t+\sin^2t=1$ è noto che il sostegno delle due curve è la stessa circonferenza.} Il sostegno delle due curve è lo stesso, ovvero la circonferenza di centro l'origine e raggio $r=1$ (per la relazione fondamentale $\cos^2t+\sin^2t=1$), anche se le due curve non sono le stesse.
+	\paragraph{Caratteristiche delle due curve:}
+	\begin{itemize}
+		\item Le due curve sono chiuse perché
+		\begin{equation*}
+			\varphi(0) = (1,0) = \varepsilon(2\pi) \quad \psi(0) = (1,0) = \psi(4\pi),
+		\end{equation*}
+		\item le due curve sono regolari ed esiste la retta tangente per ogni punto del loro dominio.
+	\end{itemize}
+\end{example}
+ 
 \subsubsection{Differenziabilità}
 La derivabilità di una funzione di più variabili non implica la sua continuità. Il concetto necessario da introdurre per un tipo di implicazione del genere è quello di differenziabilità (vedere Definizione (\ref{def:differenziabilita_funzione_piu_variabili})). Per le funzioni di più variabili la differenziabilità è una proprietà più forte della derivabilità perché richiede che la funzione sia derivabile e che abbia alcune proprietà legate all'approssimazione lineare ottenuta per una funzione di una variabile con l'utilizzo della derivata prima (retta tangente).
 
