@@ -1866,6 +1866,51 @@ Nel caso in cui $n>2$ è seguito lo stesso ragionamento: è fatto l'incremento s
 
 Una derivata parziale è una derivata direzionale perché calcolata rispetto ad una direzione. Ad esempio: in $\mathbb R^2$ la derivata parziale rispetto ad $x$ è una derivata direzionale secondo la direzione $x$ (determinata dal versore $e_1$).
 
+Nelle due derivate parziali (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}), la funzione che subisce l'incremento in entrambi i limiti è ad una sola variabile (rispettivamente la $y$ e la $x$ sono fisse). Inoltre, quando sono state introdotte le sezioni (tracce) delle funzioni (vedere (\ref{eq:piani}), in Sezione \ref{ssec:grafico_funzione_n_variabili}) è stato spiegato che tenendo fissa una variabile è come se fosse fatta l'intersezione della funzione con il piano, ottenendo il grafico di una funzione di una variabile. Quindi, quando sono date le derivate parziali (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}) sono considerate le tracce della funzione lungo i piani $x=x_0$ o $y=y_0$, ovvero
+
+\begin{equation}\label{eq:sezione_derivate_parziali}
+	\begin{cases}
+		z=graf\, f=f(x,y)\\
+		x=x_0
+	\end{cases}\rightarrow z=f(x_0,y)
+	\quad\text{oppure}\quad
+	\begin{cases}
+		z=f(x,y)\\
+		y=y_0
+	\end{cases}\rightarrow z=f(x,y_0)
+\end{equation}
+dove $x_0$ o $y_0$ sono fissati e quindi $f$ diventa una funzione di una variabile.
+
+\paragraph{Esempio:} in (\ref{eq:derivata_parziale_x}) (ovvero $f_x(\uline x)$) è fissato $y=y_0$, quindi è come fare la traccia considerando l'intersezione della sezione con il piano $y=y_0$. Analogo fissato $x=x_0$ (ovvero con $f_y(\uline x)$).
+
+Quindi con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.
+
+Infatti, se è considerata la traccia di $f(x,y)$ lungo il piano $y=y_0$ (è ottenuto)
+\begin{equation*}
+	f(x,y_0):=g_1(x). \footnotemark
+\end{equation*}
+\footnotetext{$y$ è fissa perché $y=y_0$. Quindi, come in Analisi 1, se $g_1$ è derivabile nel punto allora $g'(x)$ è la derivata parziale di $f$ rispetto ad $x$.}
+
+Se $g_1$ è derivabile in $x_0$ significa che esiste ed è finito (il limite del rapporto incrementale di $g_1$ nel punto $x_0$, ovvero)
+\begin{equation*}
+	\lim_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}:=g'_1(x_0)=\frac{\partial f}{\partial x}(x_0,y_0).
+\end{equation*}
+
+Infatti
+\begin{equation*}
+	\lim_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}=\lim_{h\rightarrow 0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}.
+\end{equation*}
+
+Analogo risultato considerata la traccia di $f$ lungo il piano $x=x_0$, con
+\begin{equation*}
+	f(x_0,y):=g_2(y).
+\end{equation*}
+
+Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del rapporto incrementale di $g_2$ nel punto $y_0$, ovvero)
+\begin{equation*}
+	\lim_{h\rightarrow 0}\frac{g_2(y_0+h)+g_2(y_0)}{h}:=g'_2(y_0)=\frac{\partial f}{\partial y}(x_0,y_0).
+\end{equation*}
+
 \paragraph{Perché per la derivabilità, per il gradiente e per i Teoremi è utilizzato un aperto $\boldsymbol{A}$?} Un insieme aperto ha la caratteristica topologicache ogni suo punto è interno. Nel corso sono considerati i domini, i quali sono della forma $D= A\cup\partial A$. Queste proprietà sono utili perché se una data proprietà è dimostrata per un punto dell'aperto, allora è valida nell'intorno centrato nel punto.
 
 \paragraph{Notazione derivate parziali per $\boldsymbol{n=2}$:}
@@ -1920,54 +1965,21 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
    Considerata $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$. Se $f$ è derivabile in ogni punto $\uline x=(x_1,\hdots,x_n)\in A$, $f$ si dice derivabile in $A$ (ovvero esistono finite tutte le $n$ derivate parziali per ogni punto di $A$).
 \end{definition}
 
-In modo analogo al caso in due variabili, quando è calcolata la derivata parziale rispetto alla variabile $i$-esima, dove $i=1,\hdots,n$, sono tenute fisse tutte le variabili tranne la $i$-esima, la quale subisce un incremento. Considerando la $f$ in (\ref{eq:derivata_parziale_Rn}), sono tenute fisse tutte le variabili escluse la $i$-esima, sulla quale è applicato l'incremento. Quindi, il calcolo delle derivate parziali diventa un problema di Analisi 1 perché $f$ è come se fosse a una variabile, per il congelamento delle variabili.
+\begin{definition}[Funzione derivabile]\footnote{Slide 10 PDF 15.}
+	Sia
+	\begin{equation*}
+		\begin{aligned}
+			f:A\subseteq\mathbb{R}^n & \rightarrow\mathbb{R}\\
+			\uline x & \mapsto f(\uline x).
+		\end{aligned}
+	\end{equation*}
+	Se $f$ è derivabile in $A$ allora $\exists\frac{\partial f}{\partial x_i}(\uline x)\, \forall\uline x\in A,\, i=1,\hdots, n$, dove $\frac{\partial f}{\partial x_i}(\uline x)$ è (se esiste finito) $\lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h}$.
+	
+\end{definition}
 
-Tornando alle funzioni in due variabili, le due derivate parziali sono (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}), dove la funzione che subisce l'incremento in entrambi i limiti è ad una sola variabile (rispettivamente la $y$ e la $x$ sono fisse). Inoltre, quando sono state introdotte le sezioni (tracce) delle funzioni (vedere (\ref{eq:piani}) in Sezione \ref{ssec:grafico_funzione_n_variabili}) è stato spiegato che tenendo fissa una variabile è come se fosse fatta l'intersezione della funzione con il piano e quindi ottenendo il grafico di una funzione di una variabile. Quindi, quando sono date le derivate parziali (\ref{eq:derivata_parziale_x}) e (\ref{eq:derivata_parziale_y}) sono considerate le tracce della funzione lungo i piani $x=x_0$ o $y=y_0$, ovvero
+\paragraph{Nota sul calcolo delle derivate quando $A\subseteq\mathbb{R}^n$:} In modo analogo al caso in due variabili, quando è calcolata la derivata parziale rispetto alla variabile $i$-esima, dove $i=1,\hdots,n$, sono tenute fisse tutte le variabili tranne la $i$-esima, la quale subisce un incremento. Considerando la $f$ in (\ref{eq:derivata_parziale_Rn}), sono tenute fisse tutte le variabili escluse la $i$-esima, sulla quale è applicato l'incremento. Quindi, il calcolo delle derivate parziali diventa un problema di Analisi 1 perché $f$ è come se fosse a una variabile, per il congelamento delle variabili.
 
-\begin{equation}\label{eq:sezione_derivate_parziali}
-    \begin{cases}
-        z=graf\, f=f(x,y)\\
-        x=x_0
-    \end{cases}\rightarrow z=f(x_0,y)
-    \quad\text{oppure}\quad
-    \begin{cases}
-        z=f(x,y)\\
-        y=y_0
-    \end{cases}\rightarrow z=f(x,y_0)
-\end{equation}
-dove $x_0$ o $y_0$ sono fissati e quindi $f$ diventa una funzione di una variabile.
-
-Ad esempio: in (\ref{eq:derivata_parziale_x}) (ovvero $f_x(\uline x)$) è fissato $y=y_0$, quindi è come fare la traccia considerando l'intersezione della sezione con il piano $y=y_0$. Analogo fissato $x=x_0$ (ovvero con $f_y(\uline x)$).
-
-Quindi con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.
-
-Infatti, se è considerata la traccia di $f(x,y)$ lungo il piano $y=y_0$ (è ottenuto)
-\begin{equation*}
-    f(x,y_0):=g_1(x). \footnotemark
-\end{equation*}
-\footnotetext{$y$ è fissa perché $y=y_0$. Quindi, come in Analisi 1, se $g_1$ è derivabile nel punto allora $g'(x)$ è la derivata parziale di $f$ rispetto ad $x$.}
-
-Se $g_1$ è derivabile in $x_0$ significa che esiste ed è finito (il limite del rapporto incrementale di $g_1$ nel punto $x_0$, ovvero)
-\begin{equation*}
-    \lim_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}:=g'_1(x_0)=\frac{\partial f}{\partial x}(x_0,y_0).
-\end{equation*}
-
-Infatti
-\begin{equation*}
-    \lim_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}=\lim_{h\rightarrow 0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}.
-\end{equation*}
-
-Analogo risultato considerata la traccia di $f$ lungo il piano $x=x_0$, con
-\begin{equation*}
-    f(x_0,y):=g_2(y).
-\end{equation*}
-
-Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del rapporto incrementale di $g_2$ nel punto $y_0$, ovvero)
-\begin{equation*}
-    \lim_{h\rightarrow 0}\frac{g_2(y_0+h)+g_2(y_0)}{h}:=g'_2(y_0)=\frac{\partial f}{\partial y}(x_0,y_0).
-\end{equation*}
-
-\paragraph{Quindi come sono calcolate le derivate?} Fissate tutte le variabili tranne l'$i$-esima è calcolato il limite del rapporto incrementale, oppure sono considerate le tracce (i due procedimenti sono simili).
+\paragraph{Come sono calcolate le derivate?} Fissate tutte le variabili tranne l'$i$-esima è calcolato il limite del rapporto incrementale, oppure sono considerate le tracce (i due procedimenti sono simili).
 
 \begin{example}[Calcolo di derivate parziali]\footnote{Slide 6 PDF 14.}
     Sia $f(x,y)=x\cos(x^2y^3)+x^6y^2+e^x$.
@@ -2007,7 +2019,7 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
 \paragraph{N.B.:} Dall'esempio è possibile notare che il metodo delle tracce è più lungo del metodo utilizzando in (\ref{eq:derivate_parziali_metodo_normale}). La differenza tra i due metodi è che il (\ref{eq:derivate_parziali_metodo_normale}) presuppone che la derivata esista e se esiste è possibile calcolarla (é presupposto quindi che esista il limite del rapporto incrementale); il metodo delle tracce considera le funzioni secondo le due tracce e poi verifica che le funzioni di una variabile siano derivabili. Tuttavia, essendo $\sin,\, \cos$ e la seconda parte delle derivate funzioni regolari e appartenenti a $C^\infty$,  è naturale utilizzare il metodo (\ref{eq:derivate_parziali_metodo_normale}).
 
 \begin{example}[Funzione derivabile ma non continua in un punto]\footnote{Slide 8 PDF 14.}
-    Calcolare e esistono le derivate parziali nell'origine (ovvero in $P_0=(0,0)$) della seguente funzione:
+    \paragraph{Testo:} Calcolare e esistono le derivate parziali nell'origine (ovvero in $P_0=(0,0)$) della seguente funzione:
     \begin{equation*}
         f(x,y)=
         \begin{cases}
@@ -2015,8 +2027,8 @@ Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del
             0 & \text{se } (x,y)=(0,0).
         \end{cases}
     \end{equation*}
-    $f:\mathbb R^2\rightarrow\mathbb R$.\\
-    (Consideriamo le) tracce della funzione:
+    $f:\mathbb R^2\rightarrow\mathbb R$.
+    \paragraph{Svolgimento:} Consideriamo le tracce della funzione:
     \begin{equation*}
         \begin{matrix}
             f(x,0)=0=g_1(x),\\
@@ -2358,6 +2370,60 @@ dove $f'(x_0)$ rappresenta il coefficiente angolare.
 	\end{itemize}
 \end{example}
  
+\subsubsection{Derivate Direzionali} 
+Dato che sono considerate funzioni di $n$ variabili, è conveniente utilizzare la notazione vettoriale per avere una notazione compatta per consentire di non scrivere tutte le componenti di una formula. Per questo è utile ricordare che in $\mathbb{R}^n$ la base canonica forma un sistema fondamentale, cioè ogni elemento di $\mathbb{R}^n$ può essere scritto come combinazione lineare dei vettori della base canonica, dove i vettori della base canonica sono della forma
+\begin{equation*}
+	\uline e_i=(0,\hdots, 1,\hdots, 0)\in\mathbb{R}^n,\quad i=0,\hdots,n.
+\end{equation*}
+
+\noindent Inoltre, $\uline e_i\in\{\uline e_1,\hdots, \uline e_2\}$, elemento della base canonica di $\mathbb{R}^n$, rappresenta un versore della base canonica ed una direzione in $\mathbb{R}^n$.
+
+\paragraph{Esempio di direzione:} $e_1=(1,0)\uline i$ r $e_2=(0,1)\, \uline j$ sono perpendicolari modulo 1 e forniscono le direzione degli assi coordinati (rispettivamente $x$ e $y$).
+
+È possibile scrivere le derivate parziali come derivate direzionali, dove le direzioni sono determinate dai vettori della base canonica, come segue.
+
+\begin{definition}[Derivata direzionale]\label{def:derivate_direzionali_Rn}\footnote{Slide 11 PDF 15.}
+	Sia $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline e_i$ ed alla variabile $x_i$ (dove $i=1,\hdots, n$) nel punto $\uline x$ è data da
+	\begin{equation}\label{eq:derivata_direzionale_Rn}
+		\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(\uline x + h \uline e_i)-f(\uline x)}{h}.
+	\end{equation}
+	se il limite esiste ed è finito.
+\end{definition}
+
+\paragraph{Note su (\ref{eq:derivata_direzionale_Rn}):}
+\begin{enumerate}
+	\item $h\uline e_i = h(0,\hdots,1,\hdots, 0) = (0,\hdots, h, \hdots, 0)$,
+	\item $\uline x + h\uline e_i = (x_1,\hdots,x_i + h, \hdots, x_n)$,
+	\item $f$ dipende da $h$,
+	\item è una definizione più generale della derivata parziale (\ref{eq:derivata_parziale_Rn}), in quanto queste utile possono essere rappresentabili come derivate direzionali secondo le direzioni dei vettori della base canonica (ovvero la derivata parziale rispetto la prima componente $x_1$ è la derivata direzionale secondo il vettore della base canonica $\uline e_1$ e così via),
+	\item rappresenta lo spostamento opportuno nella direzione del vettore $h\uline e_i$, dove $h\uline e_i$ è la perturbazione del vettore iniziale attraverso la direzione $\uline e_i$.
+\end{enumerate}
+
+\begin{proposition}
+	Fissati $\uline x, \uline e_i\in\mathbb{R}^n$,
+	\begin{equation*}
+		g(h)=f(\uline x+h\uline e_i),
+	\end{equation*}
+	dove se $g$ è derivabile in $h=0$ allora esiste finito il limite
+	\begin{equation*}
+		\frac{\partial f}{\partial x_i}(\uline x) = \lim_{h\rightarrow 0}\frac{g(h) - g(0)}{h-0} \overset{\footnotemark}{=} \lim_{h\rightarrow 0}\frac{f(\uline x + h\uline e_i)-f(\uline x)}{h},
+	\end{equation*}
+	quindi $\frac{\partial f}{\partial x_i}(\uline x)$ è la derivata direzionale di $f$ nella direzione $\uline e_i$.
+\end{proposition}
+\footnotetext{$f$ ammette la derivata parziale secondo la variabile $i-$esima, ovvero la derivata direzionale secondo la direzione $\uline e_i$, ovvero $\frac{\partial f}{\partial x_i}(\uline x)$.}
+
+La proposizione è un caso particolare della seguente definizione, in quanto il concetto più generale è quello di derivata direzionale per ogni direzione $\uline v$.
+
+\begin{definition}[Derivata Direzionale]\footnote{Slide 12 PDF 15.}
+	Data $\uline v\in\mathbb{R}^n$, direzione (versore) in $\mathbb{R}^n$, $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline v$ ed alla variabile $x_i$ (dove $i=1,\hdots, n$) nel punto $\uline x$ è data da
+	\begin{equation*}
+		D_{\vec{v}} =\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim_{h\rightarrow 0}\frac{f(\uline x + h \uline v) - f(\uline x)}{h},
+	\end{equation*}
+	\textbf{se il limite esiste ed è finito}.
+\end{definition}
+
+\paragraph{Nota sulla Definizione:} $\uline v$ ha modulo unitario, è un versore. In realtà ogni vettore rappresenta una direzione, perché è possibile stabilire modulo unitario e quindi la direzione ed il verso dividendo il vettore per il modulo del vettore stesso.
+
 \subsubsection{Differenziabilità}
 La derivabilità di una funzione di più variabili non implica la sua continuità. Il concetto necessario da introdurre per un tipo di implicazione del genere è quello di differenziabilità (vedere Definizione (\ref{def:differenziabilita_funzione_piu_variabili})). Per le funzioni di più variabili la differenziabilità è una proprietà più forte della derivabilità perché richiede che la funzione sia derivabile e che abbia alcune proprietà legate all'approssimazione lineare ottenuta per una funzione di una variabile con l'utilizzo della derivata prima (retta tangente).
 
