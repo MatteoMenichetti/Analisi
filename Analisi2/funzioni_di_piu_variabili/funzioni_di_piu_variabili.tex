@@ -2424,9 +2424,90 @@ La proposizione è un caso particolare della seguente definizione, in quanto il 
 
 \paragraph{Nota sulla Definizione:} $\uline v$ ha modulo unitario, è un versore. In realtà ogni vettore rappresenta una direzione, perché è possibile stabilire modulo unitario e quindi la direzione ed il verso dividendo il vettore per il modulo del vettore stesso.
 
+\begin{example}\footnote{Slide 13 PDF 15.}
+	\paragraph{Testo:} Sia $\uline v=(a,b,c)\in\mathbb{R}^3$, dove $a^2+b^2+c^2=1$ (ovvero $||\uline v||=\sqrt{a^2+b^2+c^2}=1$). Data $f(x,y,z)$, calcola-re la sua derivata direzionale in $P_0=(x0,y_0,z_0)$.
+	\paragraph{Svolgimento:} La derivata direzionale e' il seguente limite (se esiste finito)
+	\begin{equation*}
+		\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim_{h\rightarrow 0}\frac{f(x_0+ha, y_0 + hb, z_0 + hc) - f(x_0,y_0,z_0)}{h} = \lim_{h\rightarrow 0}\frac{f(P_0 + h \uline v) - f(\uline x)}{h}
+	\end{equation*}
+\end{example}
+
+\begin{theorem}[Formula del gradiente]
+	Sia $f:A\rightarrow\mathbb{R}$, dove $A$ e' un aperto ed $f$ e' differenziabile in $\uline x_0\in A$, allora per ogni versore $\vec{v}$ vale
+	\begin{equation*}
+		D_{\vec{v}}(\uline x_0)=\triangledown f(\uline x_0)\cdot \vec{v} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(\uline x_0)v_i
+	\end{equation*} 
+\end{theorem}
+
+\begin{example}\footnote{Slide 14 PDF 15.}
+	Nel caso $n=2$, con direzione $\uline v=(\cos\theta,\sin\theta)$, allora
+	\begin{equation*}
+		D_{\vec{v}}(x_0,y_0) = \frac{\partial f}{\partial x}(x_0,y_0) \cos\theta + \frac{\partial f}{\partial x}(x_0,y_0) \sin\theta.
+	\end{equation*}
+\end{example}
+
+\begin{example}\footnote{Slide 15 PDF 15.}
+	\paragraph{Testo:} Sia
+	\begin{equation*}
+		f(x,y) =
+		\begin{cases}
+			\frac{e^{x^3}-1}{x^2+y^2} & (x,y)\neq(0,0)\\
+			0 & (x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	continua in tutto $\mathbb{R}$. Calcolare la derivata direzionale di $f$ nell'origine.
+	\paragraph{Svolgimento:} Sia $\vec{v}=(v_1,v_2)\in\mathbb{R}^2$ una direzione, ovvero $||\vec{v}||=\sqrt{v_1^2+v_2^2}=1$. Per definizione la derivata direzionale e' il limite, se esiste ed e' finito,
+	\begin{equation*}
+		\begin{matrix}
+			\frac{\partial f}{\partial \vec{v}}(0,0) &=& \lim_{t\rightarrow 0}\frac{f(0+tv_1, 0+tv_2) - f(0,0)}{t} &=&\lim_{t\rightarrow 0}\frac{e^{t^3v_1^3}-1}{t^2v_1^2 + t^2v^2_2}\cdot\frac{1}{t} &=&\\
+			&=& \lim_{t\rightarrow0}\frac{e^{t^3v^3_1}}{t^2(\underbrace{v_1^2+v_2^2}_{1})}\cdot \frac{1}{t} &=& \lim_{t\rightarrow 0} \frac{e^{t^3v^3_1}}{t^3} = v_1^3\in\mathbb{R}.
+		\end{matrix}
+	\end{equation*}
+	Dunque $\frac{\partial f}{\partial\vec{v}}(0,0)=v_1^3$ nella direzione $\vec{v}=(v_1,v_2)$.
+\end{example}
+
 \subsubsection{Differenziabilità}
 La derivabilità di una funzione di più variabili non implica la sua continuità. Il concetto necessario da introdurre per un tipo di implicazione del genere è quello di differenziabilità (vedere Definizione (\ref{def:differenziabilita_funzione_piu_variabili})). Per le funzioni di più variabili la differenziabilità è una proprietà più forte della derivabilità perché richiede che la funzione sia derivabile e che abbia alcune proprietà legate all'approssimazione lineare ottenuta per una funzione di una variabile con l'utilizzo della derivata prima (retta tangente).
 
 Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che la differenziabilità è una proprietà più forte della derivabilità.
 
+\begin{definition}[Differenziabilita']\label{def:differenziabilita_funzione_piu_variabili}\footnote{Slide 2 PDF 16.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, dove $A$ e' un aperto e sia $\uline{x} = (x_1,\hdots, x_n)\in A$. $f$ si dice differenziabile in $\uline x$ se
+	\begin{itemize}
+		\item $f$ e' derivabile in $\uline x\in A$ (ovvero $\exists \triangledown f(\uline x)=\left(\frac{\partial f}{\partial x_1}(\uline x), \hdots, \frac{\partial f}{\partial x_n}(\uline x) \right)$)
+		\item
+		\begin{equation*}
+			\lim_{\uline h\rightarrow \uline 0}\frac{f(\uline x + \uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h>}{||\uline h||} = 0,\quad \uline h\in\mathbb{R}^n.
+		\end{equation*}
+	\end{itemize}
+\end{definition}
+
+\paragraph{Osservazione sulla condizione 2) della precedente definizione:}
+\begin{equation*}
+	<\triangledown f(\uline x), \uline h> = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(\uline x)h_i = \frac{\partial f}{\partial x_1}(\uline x)h_1 + \hdots + \frac{\partial f}{\partial x_n}(\uline x)h_n,
+\end{equation*}
+con
+\begin{equation*}
+	||\uline h||=\sqrt{\sum_{i=1}^{n}h^2_i} = \sqrt{h^2_1 + \hdots + h^2_n},
+\end{equation*}
+dove, se $\uline h\rightarrow 0$ allora $||\uline h||=0$.
+
+\begin{definition}[Differeziale]\footnote{Slide 2 PDF 16.}
+	Fissato $x\in A$, punto nel quale $f:A\rightarrow\mathbb{R}$ e' differenziabile, l'applicazione (funzionale) lineare$_{\footnotemark}$
+	\begin{equation*}
+		\begin{aligned}
+			L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
+			\uline h&\mapsto L(\uline h) = <\triangledown f(\uline x), \uline h>
+		\end{aligned}
+	\end{equation*}
+	si chiama differenziale di $f$ calcolato nel punto $\uline x$ e si indica con $d\, f(\uline x)$, dunque
+	\begin{equation*}
+		\underbrace{\underbrace{d\, f(\uline x)}_{L} (\uline h)}_{L(\uline h)} = <\triangledown f(\uline x), \uline h>.
+	\end{equation*}  
+\end{definition}
+
+E' riportata un'ulteriore forma di definizione di funzione differenziabile perche' in alcuni libri e' scritta cosi':
+\begin{definition}[Funzione differenziabile (alternativa)]
+	Sia $f:A\rightarrow\mathbb{R}$, dove $A$ e' aperto, $f$ si dice differeziabile in $\uline x\in A$ se   
+\end{definition}
 \subsubsection{Derivate Successive}
