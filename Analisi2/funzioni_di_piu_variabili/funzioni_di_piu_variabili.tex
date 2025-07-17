@@ -64,6 +64,49 @@ La definizione generica di norma non data è la seguente:
 
 \paragraph{Domanda: Data l'equivalenza delle definizioni di norma, è possibile affermare che ogni definizione data con la notazione $||\cdot||$ (esempio formula di Carnot e disuguaglianza di Cauchy-Schwarz) è valida per qualsiasi norma?}
 
+Segue la definizione formale di norma come applicazione.
+
+\begin{definition}[Norma]\label{def:norma}
+	Dato $\uline x\in\mathbb R^n$, la norma di $\uline x$ (ovvero la lunghezza del vettore $\uline x$) è definita come
+	\begin{equation}
+		\begin{aligned}[t]
+			||\cdot||:\mathbb R^n &\rightarrow\mathbb R^+_0.\\
+			\uline x &\mapsto ||\uline x||
+		\end{aligned}
+	\end{equation}
+	e verifica le seguenti proprietà:
+	\begin{enumerate}
+		\item \textbf{Positività:} $||\uline x||\in\mathbb R^+_0\quad \forall\uline x\in\mathbb R^n$,
+		\item \textbf{Positività:} $||\uline x||=0\iff\uline x=\uline 0$,
+		\item \textbf{Omogeneità:} $||\lambda \uline x||=|\lambda|\cdot||\uline x||\quad\forall\uline x\in\mathbb R^n,\,\forall\lambda\in\mathbb R$,
+		\item \textbf{Disuguaglianza triangolare:} $||\uline x+\uline y||\leq ||\uline x||+||\uline y||\quad \forall\uline x,\uline y\in\mathbb R^n$,
+		\item Dal precedente punto: Se $||\uline x+\uline y||=||\uline x||+||\uline y||\Rightarrow\uline y=\uline 0$ oppure $\uline x=\lambda\uline y$ con $\lambda\geq 0$.
+	\end{enumerate}
+\end{definition}
+\begin{proof}[Dimostrazione Proprietà 1., 2. e 3.]
+	Le Proprietà 1., 2. e 3. sono dovute alle proprietà della norma.
+\end{proof}
+
+\begin{proof}[Dimostrazione Proprietà 4. Disuguaglianza triangolare]
+	Siano $\uline x,\uline y\in\mathbb R^n$
+	\begin{equation*}
+		||\uline x+\uline y||^2=<\uline x+\uline y, \uline x+\uline y>\overset{\footnotemark}{\leq}||\uline x||^2+||\uline y||^2+2<\uline x,\uline y>\overset{\footnotemark}{\leq}||\uline x||^2+||\uline y||^2+2||\uline x||\cdot||\uline y||.
+	\end{equation*}
+	\addtocounter{footnote}{-1}
+	\footnotetext{Dimostrato nella dimostrazione della Proposizione \ref{propo:disuguaglianza_cauchy_schwarz} (Disugaglianza di Cauchy-Schwarz).}
+	
+	\stepcounter{footnote}
+	\footnotetext{Tramite la Proposizione \ref{propo:disuguaglianza_cauchy_schwarz} (Disugaglianza di Cauchy-Schwarz) ed il Lemma \ref{lemma:conseguenza_disuguaglianza_cauchy_schwarz} allora $<\uline x, \uline y>\leq ||\uline x||+||\uline y||$.}
+	\noindent $||\uline x||^2+||\uline y||^2+2||\uline x||\cdot||\uline y||$ è un \gls{quadrato perfetto}, quindi
+	\begin{equation*}
+		||\uline x+\uline y||^2\leq (||\uline x||+||\uline y||)^2=||\uline x||^2+||\uline y||^2+2||\uline x||\cdot||\uline y||.
+	\end{equation*}
+	Estraendo la radici si ha la tesi
+	\begin{equation*}
+		||\uline x+\uline y||\leq ||\uline x+\uline y||.
+	\end{equation*}
+\end{proof}
+
 \begin{definition}[Norma euclidea]
     \begin{equation}
         \boldsymbol{||\uline x||}=|\uline x|:=\sqrt{<\uline x,\uline x>}=\boldsymbol{\sqrt{\sum_{i=1}^n x_i^2}}\in\mathbb R_0^+,\quad \forall x\in\mathbb R^n.
@@ -177,48 +220,6 @@ In seguito saranno studiati i limiti e cosa accade con il in alcuni intorni. Per
 
 $|<\uline x,\uline y>|$ verifica le proprietà viste per la lunghezza definita sui reali (quindi come valore assoluto), ovvero: positività, disuguaglianza triangolare e omogeneità.
 
-Segue la definizione formale di norma, ovvero come applicazione.
-\begin{definition}[Norma]\label{def:norma}
-    Dato $\uline x\in\mathbb R^n$, la norma di $\uline x$ (ovvero la lunghezza del vettore $\uline x$) è definita come
-    \begin{equation}
-        \begin{aligned}[t]
-            ||\cdot||:\mathbb R^n &\rightarrow\mathbb R^+_0.\\
-            \uline x &\mapsto ||\uline x||
-        \end{aligned}
-    \end{equation}
-    e verifica le seguenti proprietà:
-    \begin{enumerate}
-        \item \textbf{Positività:} $||\uline x||\in\mathbb R^+_0\quad \forall\uline x\in\mathbb R^n$,
-        \item \textbf{Positività:} $||\uline x||=0\iff\uline x=\uline 0$,
-        \item \textbf{Omogeneità:} $||\lambda \uline x||=|\lambda|\cdot||\uline x||\quad\forall\uline x\in\mathbb R^n,\,\forall\lambda\in\mathbb R$,
-        \item \textbf{Disuguaglianza triangolare:} $||\uline x+\uline y||\leq ||\uline x||+||\uline y||\quad \forall\uline x,\uline y\in\mathbb R^n$,
-        \item Dal precedente punto: Se $||\uline x+\uline y||=||\uline x||+||\uline y||\Rightarrow\uline y=\uline 0$ oppure $\uline x=\lambda\uline y$ con $\lambda\geq 0$.
-    \end{enumerate}
-\end{definition}
-\begin{proof}[Dimostrazione Proprietà 1., 2. e 3.]
-    Le Proprietà 1., 2. e 3. sono dovute alle proprietà della norma.
-\end{proof}
-
-\begin{proof}[Dimostrazione Proprietà 4. Disuguaglianza triangolare]
-    Siano $\uline x,\uline y\in\mathbb R^n$
-    \begin{equation*}
-        ||\uline x+\uline y||^2=<\uline x+\uline y, \uline x+\uline y>\overset{\footnotemark}{\leq}||\uline x||^2+||\uline y||^2+2<\uline x,\uline y>\overset{\footnotemark}{\leq}||\uline x||^2+||\uline y||^2+2||\uline x||\cdot||\uline y||.
-    \end{equation*}
-    \addtocounter{footnote}{-1}
-    \footnotetext{Dimostrato nella dimostrazione della Proposizione \ref{propo:disuguaglianza_cauchy_schwarz} (Disugaglianza di Cauchy-Schwarz).}
-
-    \stepcounter{footnote}
-    \footnotetext{Tramite la Proposizione \ref{propo:disuguaglianza_cauchy_schwarz} (Disugaglianza di Cauchy-Schwarz) ed il Lemma \ref{lemma:conseguenza_disuguaglianza_cauchy_schwarz} allora $<\uline x, \uline y>\leq ||\uline x||+||\uline y||$.}
-    \noindent $||\uline x||^2+||\uline y||^2+2||\uline x||\cdot||\uline y||$ è un \gls{quadrato perfetto}, quindi
-    \begin{equation*}
-        ||\uline x+\uline y||^2\leq (||\uline x||+||\uline y||)^2=||\uline x||^2+||\uline y||^2+2||\uline x||\cdot||\uline y||.
-    \end{equation*}
-    Estraendo la radici si ha la tesi
-    \begin{equation*}
-        ||\uline x+\uline y||\leq ||\uline x+\uline y||.
-    \end{equation*}
-\end{proof}
-
 \subsection{Elementi di topologia di \texorpdfstring{${\boldsymbol{\mathbb R^n}}$}{Rn}}
 \subsubsection{Introduzione}
 Tramite il concetto di lunghezza (ovvero di norma) di un vettore è possibile definire la distanza euclidea fra due vettori in $\mathbb R^n$. Definendo la distanza euclidea, lo spazio vettoriale $\mathbb R^n$ diventerà uno \gls{spazio normato} (Definizione \ref{def:spazio_normato}).
@@ -251,7 +252,7 @@ Inoltre, la distanza euclidea sarà quella sottintesa quando si parla di distanz
     Data la distanza euclidea definita (\ref{eq:distanza_euclidea}), se $n=1\Rightarrow \forall x,y\in\mathbb R,\; d(x,y)=|x-y|$.
 \end{remark}
 
-La distanza $d$ (come la (\ref{eq:distanza_euclidea})) è un'applicazione definita come segue, ovvero una distanza indotta dalla norma. Definita la norma (che può essere di qualsiasi tipo, non solo euclidea), questa induce una distanza.
+\paragraph{Nota:} Una distanza $d$ (come la (\ref{eq:distanza_euclidea})) è un'applicazione definita come segue, ovvero una distanza indotta dalla norma. Definita la norma (che può essere di qualsiasi tipo, non solo euclidea), questa induce una distanza.
 
 \paragraph{Domanda:} norma e distanza sono sinonimi se considerato come dominio la differenza tra vettori in $\mathbb R^n$? Domanda senza senso.
 
@@ -266,7 +267,7 @@ La distanza $d$ (come la (\ref{eq:distanza_euclidea})) è un'applicazione defini
 \end{example}
 
 \begin{definition}[Spazio normato]\label{def:spazio_normato}\footnote{Definizione non fatta.}
-    Uno spazio lineare $X\subseteq \mathbb R^n$ si dice normato se è definita una norma (un'applicazione) $||\cdot||\colon X\rightarrow\mathbb R$.
+    Uno \gls{spazio lineare} $X\subseteq \mathbb R^n$ si dice normato se è definita una norma (un'applicazione) $||\cdot||\colon X\rightarrow\mathbb R$.
 \end{definition}
 
 \begin{definition}[Spazio Metrico]
@@ -1883,7 +1884,7 @@ dove $x_0$ o $y_0$ sono fissati e quindi $f$ diventa una funzione di una variabi
 
 \paragraph{Esempio:} in (\ref{eq:derivata_parziale_x}) (ovvero $f_x(\uline x)$) è fissato $y=y_0$, quindi è come fare la traccia considerando l'intersezione della sezione con il piano $y=y_0$. Analogo fissato $x=x_0$ (ovvero con $f_y(\uline x)$).
 
-Quindi con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.
+Con le sezioni del grafico ottenute tramite (\ref{eq:sezione_derivate_parziali}) sono ottenuti i grafici di curve di funzioni di una variabile nei rispettivi piani $(y,z)$ e $(x,z)$. Ciò significa che le derivate parziali delle funzioni di due variabili non sono altro che le derivate parziali, rispetto $x$ ed $y$, delle funzioni di una variabile, dove queste ultime sono le tracce della funzione in due variabili.
 
 Infatti, se è considerata la traccia di $f(x,y)$ lungo il piano $y=y_0$ (è ottenuto)
 \begin{equation*}
@@ -2124,7 +2125,7 @@ Un ragionamento analogo lungo il piano $x=x_0$, traslando nel piano $(y,z)$, con
 
 dove, se $g_2(y)=f(x_0,y)$ è derivabile in $y_0$ allora $\exists g_2'(y_0)=\frac{\partial f}{\partial y}(x_0,y_0)$, con $y_0=g_2(y)=f(x_0,y)$ e questo è il coefficiente angolare di $g_2$ in $y_0$ e della retta $T_2$.
 
-$T_1$ e $T_2$ sono rispettivamente le tangenti alle curve $g_1$ e $g_2$ (ripettivamente contenute nel piano $(x,z)$ e $(y,z)$) con rispettivi coefficienti angolari $g'_1(x_0)$ e $g_2'(x_0)$. $T_1$ e $T_2$ hanno un unico punto in comune e per esse passa un unico piano passante per il punto $P_0$. Tale piano (contente $T_1$ e $T_2$) ha equazione
+$T_1$ e $T_2$ sono rispettivamente le tangenti alle curve $g_1$ e $g_2$ (ripettivamente contenute nel piano $(x,z)$ e $(y,z)$) con rispettivi coefficienti angolari $g'_1(x_0)$ e $g_2'(x_0)$. $T_1$ e $T_2$ hanno un unico punto in comune e per esse passa un unico piano passante per il punto $P_0$. Tale piano tangente (contente $T_1$ e $T_2$) $f$ nel punto $(x_0,y_0)$ ha equazione
  \begin{equation}\label{eq:piano_tangente_due_variabili}
  	z=f(x_0,y_0) + \frac{\partial f}{\partial x} (x_0,y_0) (x-x_0) + \frac{\partial f}{\partial x} (x_0,y_0) (y-y_0).
  \end{equation}
@@ -2234,7 +2235,7 @@ In matematica le curve sono delle applicazioni continue definite da un intervall
 \begin{definition}[Sostegno di una curva]\footnote{Slide 6 PDF 15.}
 	L'immagine di $\varphi$ (funzione continua) è
 	\begin{equation*}
-		\varepsilon(I)\subseteq\mathbb{R}^n,
+		\varphi(I)\subseteq\mathbb{R}^n,
 	\end{equation*} 
 	ed è detta sostegno (immagine) della curva (ovvero "traiettoria" della curva in $\mathbb{R}^n$).
 \end{definition}
@@ -2530,18 +2531,52 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 
 \paragraph{Nota sulla Definizione \ref{def:funzione_differenziabile_alternativa}:} È possibile fornire la definizione in questa forma perché quando è considerato lo spazio vettoriale $\mathbb{R}^n$, ogni funzionale lineare si scrive come un opportuno prodotto scalare. Cioè esiste ed è possibile trovare un vettore in $\mathbb{R}^n$ che data $L:\mathbb{R}^n\rightarrow\mathbb{R}$ allora $L(\uline h)=<L, \uline h>$, dove $L=d\, f(\uline x) = \triangledown f(\uline x)$. $\qed$
 
-\noindent Tornando alla Definizione di differenziabilità, se consideriamo $\uline h\rightarrow \uline0$, dunque $||\uline h||\rightarrow 0$ e
+\subsubsubsection{Differenziabilità e piano tangente}
+Tornando alla Definizione di differenziabilità, se consideriamo $\uline h\rightarrow \uline0$, dunque $||\uline h||\rightarrow 0$ e quindi
 \begin{equation*}
 	f(\uline x+\uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h>\underset{\uline h\rightarrow\uline 0}{\longrightarrow} 0,
 \end{equation*}
 ovvero
+\begin{equation}\label{eq:o_piccolo_differenziabilita}
+	f(\uline x+\uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h> = o(||\uline h||),\quad \text{per}\quad \uline h\rightarrow\uline 0
+\end{equation}
+e dunque (a partire (\ref{eq:limite_differenziabilita}) è ottenuto)
+\begin{equation}\label{eq:approssimazione_differenziabilita}
+	f(\uline x+\uline h) \overset{\footnotemark}{=} f(\uline x) + <\triangledown f(\uline x), \uline h> + o(||\uline h||)\quad\text{per}\quad\uline h\rightarrow\uline 0.
+\end{equation}
+\footnotetext{Data (\ref{eq:o_piccolo_differenziabilita}), è spostato a destra dell'uguale $- f(\uline x) - <\triangledown f(\uline x), \uline h>$.}
+
+\paragraph{Significato geometrico differenziabilità:} Se $\uline x+\uline h$ è pensato come incremento di $\uline x$, è possibile affermare che la differenziabilità di una funzione in un punto ha un significato geometrico, ovvero: la differenziabilità in un punto è legata all'esistenza del piano tangente al grafico della funzione in tale punto. Questo è dovuto al fatto che il piano tangente è un'approssimazione lineare della funzione. Inoltre, $<\triangledown f(\uline x), \uline h>$ in (\ref{eq:limite_differenziabilita}) è una funzione \textbf{\uline{lineare}} del tipo $df(\uline x)(\uline h) = L(\uline h) = <\triangledown f(\uline x), \uline h>$. Pertanto, (\ref{eq:approssimazione_differenziabilita}) risulta essere un'approssimazione lineare opportuna dell'incremento della funzione $f$ ed è per questo che per trattare il piano tangente di $f$ in un punto è necessario richiedere che nel punto valga la differenziabilita di $f$ in tale punto.\\
+Quindi, dato quanto scritto per le rette $T1$ e $T2$ nel piano  ottenute considerando le sezioni trasversali. $\qed$
+
+\paragraph{Derivabilità $\neq$ continuità:} Come sarà visto in Sezione \ref{sssec:differenziabilita_continuita}, la derivabilità non implica (come per le funzioni di una variabile) la continuità e l'esistenza del piano tangente. Per una funzione di una varibile, la derivabilità implica l'esistenza della retta tangente.$\qed$
+\vspace{2px}
+
+Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ differenziabile in $\uline x_0\in A$, posto $\uline x=\uline x_0$ e $\uline h=\uline x -\uline x_0$ allora
 \begin{equation*}
-	
+	(\ref{eq:approssimazione_differenziabilita}) \equiv f(\uline x_0) +   <\triangledown f(\uline x_0), \uline h> + o(||\uline h||) \quad \text{per}\quad \uline h\rightarrow \uline 0
 \end{equation*}
+dunque (con $\uline x=\uline x_0 + \uline h$ incremento di $\uline x$ in direzione $\uline h$)
+\begin{equation*}
+	f(\uline x) = f(\uline x_0) + <\triangledown f(\uline x_0), \overbrace{\uline x-\uline x_0}^{\uline h}> + o(\underbrace{||\uline x - \uline x_0||}_{d(\uline x, \uline x_0)}) \quad\text{per}\quad \uline x\rightarrow \uline x_0 \quad (\uline h\rightarrow\uline 0),
+\end{equation*}
+\footnote{È possibile affermare che 
+\begin{enumerate}
+	\item $f(\uline x)$ è approssimata da $f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$,
+	\item $f(\uline x)=f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$ è l'iperpiano tangente al grafico di $f$ in $\uline x_0$,
+	\item $o(||\uline x - \uline x_0||)$ è una sorta di errore di approssimazione commesso con l'iperpiano.
+\end{enumerate}} e dunque la funzione lineare (la quale dipende solo da $\uline x$)
+\begin{equation}\label{eq:funzione_lineare_piano_tangente}
+	\begin{aligned}
+		L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
+		\uline x&\rightarrow L(\uline x) = f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>
+	\end{aligned}
+\end{equation}
+fornisce un'approssimazione di $f(\uline x)$ nel punto $\uline x_0$ a meno di un infinitesimo di ordine superiore a $d(\uline x, \uline x_0)=||\uline x - \uline x_0||$. Inoltre, il grafico di tale funzione rappresenta il piano tangente al grafico di $f(\uline x)$ nel punto $\uline x = \uline x_0$, dove $f$ è differenziabile in tale punto.
 
 \paragraph{Differenziabilità non è piano tangente: } Non bisogna pensare che differenziabilità e piano tangente siano sinonimi perché il concetto alla base è che io debba essere in grado di sostituire la funzione con il piano tangente in un intorno di un punto. In alcune situazioni come nella punta di un cono può comunque passare il piano tangente ma la funzione non può essere approssimata esso, non importa quanto restringo il mio intorno la punta del cono rimarrà una punta di un cono e non somiglierà mai a una funzione lineare del tipo
 \begin{equation*}
 	f(x,y)\approx f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0, y_0)(y-y_0),
 \end{equation*}
-per cui in quel punto non sarà differenziabile. 
+per cui in quel punto non sarà differenziabile. $\qed$
 \subsubsection{Derivate Successive}

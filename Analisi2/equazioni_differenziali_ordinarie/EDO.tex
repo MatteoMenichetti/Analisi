@@ -673,14 +673,15 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation*}
         \int \frac{1}{g(y)}dy = \int f(x)dx.
     \end{equation*}
-    Siano $G$ e $F$ primitive di $\frac{1}{g}$ e $f$, è ottenuto
+	Siano $G$ e $F$ primitive di $\frac{1}{g}$ e $f$, è ottenuto
     \begin{equation*}
         G(y(x)) = F(x) + c.
     \end{equation*}
-    [L'obiettivo è esplicitare $x$, quindi:] Se $G$ è invertibile si ha (la soluzione in forma implicita)
+    \item [L'obiettivo è esplicitare $x$, quindi:] Se $G$ è invertibile si ha (la soluzione in forma implicita)
     \begin{equation*}
-        y(x) = G^{-1} [F(x) + c].
+        y(x) = G^{-1}(x) [F(x) + c].
     \end{equation*}
+    \item Esplicitando $y(x)$ è trovata la soluzione del problema.
 \end{enumerate}
 
 \addtocounter{footnote}{-3}
@@ -749,7 +750,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     \begin{equation}\label{eq:soluzioni_generali_esercizio_edo}
         \frac{2-y}{1-y}=\pm c_1 e^{\frac{x^2}{2}}=c e^{\frac{x^2}{2}},\quad c\in\mathbb R.
     \end{equation}
-    \textbf{(\ref{eq:soluzioni_generali_esercizio_edo}) è la soluzione generale (anche detta "Famiglia generale"), ovvero l'integrale generale.}
+    \textbf{(\ref{eq:soluzioni_generali_esercizio_edo}) è la soluzione generale (anche detta "Famiglia generale"), ovvero l'integrale generale (in forma implicita).}
     \paragraph{Intermezzo:} È necessario esprimere la soluzione generale (\ref{eq:soluzioni_generali_esercizio_edo}) in forma esplicita.\\
     Le soluzioni singolari sono $y=1$ e $y=2$. Dalla relazione (\ref{eq:soluzioni_generali_esercizio_edo}) è possibile ottenere $y=2$, ponendo $c=0$. Pertanto, la soluzione costante $y=2$ appartiene alla famiglia delle soluzioni (\ref{eq:soluzioni_generali_esercizio_edo}), con $c=0$.\\
     (\ref{eq:soluzioni_generali_esercizio_edo}) è una uguaglianza che non da la $y$ in funzione di $x$ (ciò che è ricercato), ovvero $G(x) = F(x)+c$.\\
@@ -775,6 +776,13 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$ e 
     Pertanto, \textbf{le soluzioni di (\ref{eq:esercizio_1_edo_variabili_separabili}) sono (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) e} $\boldsymbol{y=1}$. \footnote{$y=2$ appartiene già alla famiglia di soluzioni (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}, quindi è esplicitato in quanto già incluso.}
     \end{enumerate}
 \end{example}
+
+\subsubsubsection{Esercizi}
+
+\paragraph{Procedura su come risolvere problemi di Cauchy del primo ordine:}
+\begin{enumerate}
+	\item Se è a variabili separabili 
+\end{enumerate}
 
 \paragraph{Nota sul prossimo Esempio:} È aggiunta a (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) la condizione iniziale, ovvero: assunta una condizione iniziale, è posto il problema di Cauchy e definito qual è il più ampio intervallo sul quale è definita la soluzione. Determinare il più ampio è utile in quanto l'equazione (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) è non lineare. Pertanto, l'intervallo in questione conterrà il punto iniziale del problema ed è ricercato in modo tale che l'espressione (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) abbia senso e sia la soluzione della EDO (\ref{eq:esercizio_1_edo_variabili_separabili}).
 
