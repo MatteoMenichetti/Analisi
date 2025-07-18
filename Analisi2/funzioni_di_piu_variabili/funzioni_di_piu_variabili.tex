@@ -230,7 +230,7 @@ Inoltre, la distanza euclidea sarà quella sottintesa quando si parla di distanz
     Sia $||\cdot||\colon\mathbb R^n\rightarrow\mathbb R$. La distanza indotta dalla norma $||\cdot||$ è definita come
     \begin{equation*}
         \begin{aligned}
-            d\colon\mathbb R^n\times\mathbb R^n&\rightarrow\mathbb R^+_0\\
+            d\colon\mathbb R^n\times\mathbb R^n&\rightarrow\text{\gls{R0+}}\\
             (\uline x,\uline y)&\mapsto d(\uline x,\uline y)=||\uline x - \uline y||
         \end{aligned}
     \end{equation*}
@@ -2483,7 +2483,7 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\end{enumerate}
 \end{definition}
 
-\paragraph{Osservazione sulla condizione 2. della precedente definizione:}
+\paragraph{Osservazione sulla condizione \ref{eq:limite_differenziabilita} della precedente definizione:}
 \begin{enumerate}
 	\item (Ufficiale)
 	\begin{equation*}
@@ -2494,10 +2494,11 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 		||\uline h||=\sqrt{\sum_{i=1}^{n}h^2_i} = \sqrt{h^2_1 + \hdots + h^2_n},
 	\end{equation*}
 	dove, se $\uline h\rightarrow 0$ allora $||\uline h||=0$
-	\item (Non ufficiale) $- f(\uline x) - <\triangledown f(\uline x), \uline h>$ è il polinomio di Taylor di $f$ calcolato in $\uline x$ e permette di costruire l'equazione di un piano $z= f(x_0) + <\triangledown f(\uline x), \uline h>$.  Inoltre $\uline h=(x-x_1,\hdots, x-x_n)$, ovvero le variabili sono in funzione degli incrementi, perché la forma del limite (\ref{eq:limite_differenziabilita}) è utilizzata per non cambiare la forma del limite in base al punto in cui vogliamo verificare la differenziabilità, al posto di
+	\item (Non ufficiale) $- f(\uline x) - <\triangledown f(\uline x), \uline h>$ è il polinomio di Taylor di $f$ calcolato in $\uline x$ e permette di costruire l'equazione di un piano tangente al grafico di $f$ nel punto $x_0$ $z= f(x_0) + <\triangledown f(\uline x_0), \uline h>$.  Inoltre $\uline h=(x-x_1,\hdots, x-x_n)$, ovvero le variabili sono in funzione degli incrementi, perché la forma del limite (\ref{eq:limite_differenziabilita}) è utilizzata per non cambiare la forma del limite in base al punto in cui vogliamo verificare la differenziabilità, al posto di
 	\begin{equation*}
 		\lim_{(x,y)\rightarrow(x_0,y_0)} \frac{f(x,y)-f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}=0.
 	\end{equation*}
+	\item (Non ufficiale) È l'approssimazione del piano tangente
 \end{enumerate}
 
 \begin{definition}[Differenziale/funzionale]\footnote{Slide 2 PDF 16.}
@@ -2557,22 +2558,50 @@ Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ differenziabile in $\uline x
 	(\ref{eq:approssimazione_differenziabilita}) \equiv f(\uline x_0) +   <\triangledown f(\uline x_0), \uline h> + o(||\uline h||) \quad \text{per}\quad \uline h\rightarrow \uline 0
 \end{equation*}
 dunque (con $\uline x=\uline x_0 + \uline h$ incremento di $\uline x$ in direzione $\uline h$)
-\begin{equation*}
+\begin{equation}\label{eq:approssimazione_f_iperpiano}
 	f(\uline x) = f(\uline x_0) + <\triangledown f(\uline x_0), \overbrace{\uline x-\uline x_0}^{\uline h}> + o(\underbrace{||\uline x - \uline x_0||}_{d(\uline x, \uline x_0)}) \quad\text{per}\quad \uline x\rightarrow \uline x_0 \quad (\uline h\rightarrow\uline 0),
-\end{equation*}
+\end{equation}
 \footnote{È possibile affermare che 
 \begin{enumerate}
 	\item $f(\uline x)$ è approssimata da $f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$,
-	\item $f(\uline x)=f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$ è l'iperpiano tangente al grafico di $f$ in $\uline x_0$,
+	\item $f(\uline x)=f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$ in (\ref{eq:approssimazione_f_iperpiano}) è l'iperpiano tangente al grafico di $f$ in $\uline x_0$,
 	\item $o(||\uline x - \uline x_0||)$ è una sorta di errore di approssimazione commesso con l'iperpiano.
-\end{enumerate}} e dunque la funzione lineare (la quale dipende solo da $\uline x$)
+\end{enumerate}} e dunque la funzione lineare (la quale dipende solo da $\uline x$ perché $\uline x_0$ è fissato)
 \begin{equation}\label{eq:funzione_lineare_piano_tangente}
 	\begin{aligned}
 		L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
-		\uline x&\rightarrow L(\uline x) = f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>
+		\uline x&\mapsto L(\uline x) = f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>
 	\end{aligned}
 \end{equation}
-fornisce un'approssimazione di $f(\uline x)$ nel punto $\uline x_0$ a meno di un infinitesimo di ordine superiore a $d(\uline x, \uline x_0)=||\uline x - \uline x_0||$. Inoltre, il grafico di tale funzione rappresenta il piano tangente al grafico di $f(\uline x)$ nel punto $\uline x = \uline x_0$, dove $f$ è differenziabile in tale punto.
+fornisce un'approssimazione di $f(\uline x)$ nel punto $\uline x_0$ a meno di un infinitesimo di ordine superiore a $d(\uline x, \uline x_0)=||\uline x - \uline x_0||$. Inoltre, il grafico di tale funzione rappresenta il piano tangente al grafico di $f(\uline x)$ nel punto $\uline x = \uline x_0$, dove $f$ è differenziabile in tale punto. \footnote{In altre parole: $L(\uline x)$ approssima $f(\uline x)$ a meno di un errore $o$ di ordine opportuno. Quindi $f(x)$ può essere scritta come $L(\uline x) + o(||\uline x-\uline x_0||)$. Pertanto, l'approssimazione lineare scritta come (\ref{eq:funzione_lineare_piano_tangente}) è un'approssimazione della funzione $f$ attraverso l'oggetto $f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$ in  (\ref{eq:funzione_lineare_piano_tangente}), a meno di un infinitesimo di ordine superiore alla distanza tra $\uline x_0$ e $\uline x$ (ovvero l'errore).}
+
+\paragraph{Osservazione su (\ref{eq:funzione_lineare_piano_tangente}):} (\ref{eq:funzione_lineare_piano_tangente}) è un'approssimazione lineare di $f$ attraverso il piano tangente.
+
+\paragraph{Osservazione su (\ref{eq:approssimazione_f_iperpiano}):} (\ref{eq:approssimazione_f_iperpiano}) significa che $f$ è approssimata con l'iperipiano tangnete al grafico di $f$ in $x_0$ $f(\uline x)=f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$ con un errore $o(||\uline x- \uline x_0||)$ commesso nell'approssimazione del grafico della funzione $L(\uline)$ (\ref{eq:funzione_lineare_piano_tangente}).
+
+\paragraph{Nota:} Il grafico di una funzione $f$ in $n=2$ variabili è in$\mathbb{R}^{2+1}$ e se $f$ è supposta differenziabile in punto allora è possibile scrivere l'equazione del piano tangente al grafico della funzione come segue.
+
+\begin{definition}[Piano tangente al grafico di una funzione (con $n=2$)]\footnote{Slide 5 PDF 16.}
+	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $P=(x_0,y_0)\in A$. È supposto che $f$ sia differenziabile in $P_0$. L'equazione del piano tangente al grafico nel punto $P_0$ è data da
+	\begin{equation}\label{eq:piano_tangente_grafico_due_variabili}
+			z=f(x_0, y_0) + \frac{\partial f}{\partial x} (x_0, y_0) \overbrace{\underbrace{(x-x_0)}_{x = x_0 + h} }^{h=x-x_0}+ \frac{\partial f}{\partial x} (x_0,y_0) \overbrace{\underbrace{(y-y_0)}_{y=y_0+k}}^{k=y-y_0}
+	\end{equation}
+\end{definition}
+
+\paragraph{Nota su (\ref{eq:piano_tangente_grafico_due_variabili}):} (\ref{eq:piano_tangente_grafico_due_variabili}) è un'espressione lineare in $x,y$ in forma implicita del tipo $a(x) + b(y) + c(z) = d$.
+
+Dati
+\begin{equation*}
+	\begin{matrix}
+		x_0 + h = x &&\\
+		&\rightarrow& \uline h=\uline x-\uline x_0\\
+		y_0 + k = y
+	\end{matrix}
+\end{equation*}
+è possibile scrivere il limite che definisce la differenziabilità (\ref{eq:limite_differenziabilita}), ovvero
+\begin{equation*}
+	\lim_{(h,k)\rightarrow (0,0)}\frac{f(x_0 + h, y_0 + k) - f(x_0, y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)h - \frac{\partial f}{\partial y}(x_0, y_0)k}{\sqrt{h^2+k^2}} = 0
+\end{equation*}
 
 \paragraph{Differenziabilità non è piano tangente: } Non bisogna pensare che differenziabilità e piano tangente siano sinonimi perché il concetto alla base è che io debba essere in grado di sostituire la funzione con il piano tangente in un intorno di un punto. In alcune situazioni come nella punta di un cono può comunque passare il piano tangente ma la funzione non può essere approssimata esso, non importa quanto restringo il mio intorno la punta del cono rimarrà una punta di un cono e non somiglierà mai a una funzione lineare del tipo
 \begin{equation*}
