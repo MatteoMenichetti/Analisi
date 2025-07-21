@@ -2483,17 +2483,17 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\end{enumerate}
 \end{definition}
 
-\paragraph{Osservazione sulla condizione \ref{eq:limite_differenziabilita} della precedente definizione:}
+\paragraph{Osservazione sulla condizione (\ref{eq:limite_differenziabilita}):}
 \begin{enumerate}
 	\item (Ufficiale)
 	\begin{equation*}
-		<\triangledown f(\uline x), \uline h> = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(\uline x)h_i = \frac{\partial f}{\partial x_1}(\uline x)h_1 + \hdots + \frac{\partial f}{\partial x_n}(\uline x)h_n,
+		<\triangledown f(\uline x), \uline h> \overset{\footnotemark}{=} \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(\uline x)h_i = \frac{\partial f}{\partial x_1}(\uline x)h_1 + \hdots + \frac{\partial f}{\partial x_n}(\uline x)h_n,
 	\end{equation*}
-	con
+	con \footnotetext{Prodotto scalare fra due vettori in $\mathbb{R}^n$.}
 	\begin{equation*}
 		||\uline h||=\sqrt{\sum_{i=1}^{n}h^2_i} = \sqrt{h^2_1 + \hdots + h^2_n},
 	\end{equation*}
-	dove, se $\uline h\rightarrow 0$ allora $||\uline h||=0$
+	dove, se $\uline h\rightarrow 0$ allora $||\uline h||=0$.
 	\item (Non ufficiale) $- f(\uline x) - <\triangledown f(\uline x), \uline h>$ è il polinomio di Taylor di $f$ calcolato in $\uline x$ e permette di costruire l'equazione di un piano tangente al grafico di $f$ nel punto $x_0$ $z= f(x_0) + <\triangledown f(\uline x_0), \uline h>$.  Inoltre $\uline h=(x-x_1,\hdots, x-x_n)$, ovvero le variabili sono in funzione degli incrementi, perché la forma del limite (\ref{eq:limite_differenziabilita}) è utilizzata per non cambiare la forma del limite in base al punto in cui vogliamo verificare la differenziabilità, al posto di
 	\begin{equation*}
 		\lim_{(x,y)\rightarrow(x_0,y_0)} \frac{f(x,y)-f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}=0.
@@ -2501,8 +2501,8 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\item (Non ufficiale) È l'approssimazione del piano tangente
 \end{enumerate}
 
-\begin{definition}[Differenziale/funzionale]\footnote{Slide 2 PDF 16.}
-	Fissato $x\in A$, punto nel quale $f:A\rightarrow\mathbb{R}$ è differenziabile, l'applicazione (funzionale) lineare$_{\footnotemark}$
+\begin{definition}[Differenziale/funzionale, non ufficiale]\footnote{Slide 2 PDF 16.}
+	Fissato $x\in A$, punto nel quale $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ è differenziabile, l'applicazione (funzionale) lineare$_{\footnotemark}$
 	\begin{equation*}
 		\begin{aligned}
 			L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
@@ -2514,10 +2514,11 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 		\underbrace{\underbrace{d\, f(\uline x)}_{L} (\uline h)}_{L(\uline h)} = <\triangledown f(\uline x), \uline h>.
 	\end{equation*}  
 \end{definition}
+\footnotetext{$L$ è un'applicazione lineare perché va da uno spazio vettoriale $\mathbb{R}^n$ ad $\mathbb{R}$.}
 
 È riportata un'ulteriore forma di definizione di funzione differenziabile perché in alcuni libri è scritta così:
 \begin{definition}[Funzione differenziabile (alternativa)]\label{def:funzione_differenziabile_alternativa} \footnote{Slide 2 PDF 16.}
-	Sia $f:A\rightarrow\mathbb{R}$, dove $A$ è aperto, $f$ si dice differeziabile in $\uline x\in A$ se esiste un funzionale lineare
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, dove $A$ è aperto, $f$ si dice differeziabile in $\uline x\in A$ se esiste un funzionale lineare
 	\begin{equation*}
 		\begin{aligned}
 			L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
@@ -2530,7 +2531,13 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\end{equation*}
 \end{definition}
 
-\paragraph{Nota sulla Definizione \ref{def:funzione_differenziabile_alternativa}:} È possibile fornire la definizione in questa forma perché quando è considerato lo spazio vettoriale $\mathbb{R}^n$, ogni funzionale lineare si scrive come un opportuno prodotto scalare. Cioè esiste ed è possibile trovare un vettore in $\mathbb{R}^n$ che data $L:\mathbb{R}^n\rightarrow\mathbb{R}$ allora $L(\uline h)=<L, \uline h>$, dove $L=d\, f(\uline x) = \triangledown f(\uline x)$. $\qed$
+\paragraph{Nota sulla Definizione \ref{def:funzione_differenziabile_alternativa}:} È possibile fornire la definizione in questa forma perché quando è considerato lo spazio vettoriale $\mathbb{R}^n$, ogni funzionale lineare si scrive come un opportuno prodotto scalare. Cioè esiste ed è possibile trovare un vettore $\uline l\in\mathbb{R}^n$ che data $L:\mathbb{R}^n\rightarrow\mathbb{R}$ allora $L(\uline h)=<\uline l, \uline h>$, dove $\uline l=d\, f(\uline x) = \triangledown f(\uline x)$. $\qed$
+
+\begin{definition}[Differenziale/funzionale, non ufficiale]\footnote{Slide 3 PDF 16.}\label{def:differenziale_funzionale}
+	Ogni funzione lineare $L:\rightarrow\mathbb{R}^n\rightarrow\mathbb{R}$ si rappresenta mediante prodotto scalare: se $L$ è lineare allora $\exists\uline l\in\mathbb{R}^n: L(\uline h)=<\uline l, \uline h>,\, \forall \uline h\in\mathbb{R}^n$.
+\end{definition}
+
+\paragraph{Nota sulla Definizione \ref{def:differenziale_funzionale}:} Nel nostro caso $\uline l=\triangledown f(\uline x)$.
 
 \subsubsubsection{Differenziabilità e piano tangente}
 Tornando alla Definizione di differenziabilità, se consideriamo $\uline h\rightarrow \uline0$, dunque $||\uline h||\rightarrow 0$ e quindi
@@ -2555,7 +2562,7 @@ Quindi, dato quanto scritto per le rette $T1$ e $T2$ nel piano  ottenute conside
 
 Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ differenziabile in $\uline x_0\in A$, posto $\uline x=\uline x_0$ e $\uline h=\uline x -\uline x_0$ allora
 \begin{equation*}
-	(\ref{eq:approssimazione_differenziabilita}) \equiv f(\uline x_0) +   <\triangledown f(\uline x_0), \uline h> + o(||\uline h||) \quad \text{per}\quad \uline h\rightarrow \uline 0
+	(\ref{eq:approssimazione_differenziabilita}) \equiv f(\uline x_0) +   <\triangledown f(\uline x_0), \uline h> + o(||\uline h||) \quad \text{per}\quad \uline h\rightarrow \uline 0,
 \end{equation*}
 dunque (con $\uline x=\uline x_0 + \uline h$ incremento di $\uline x$ in direzione $\uline h$)
 \begin{equation}\label{eq:approssimazione_f_iperpiano}
@@ -2579,16 +2586,16 @@ fornisce un'approssimazione di $f(\uline x)$ nel punto $\uline x_0$ a meno di un
 
 \paragraph{Osservazione su (\ref{eq:approssimazione_f_iperpiano}):} (\ref{eq:approssimazione_f_iperpiano}) significa che $f$ è approssimata con l'iperipiano tangnete al grafico di $f$ in $x_0$ $f(\uline x)=f(\uline x_0) + <\triangledown f(\uline x_0), \uline x-\uline x_0>$ con un errore $o(||\uline x- \uline x_0||)$ commesso nell'approssimazione del grafico della funzione $L(\uline)$ (\ref{eq:funzione_lineare_piano_tangente}).
 
-\paragraph{Nota:} Il grafico di una funzione $f$ in $n=2$ variabili è in$\mathbb{R}^{2+1}$ e se $f$ è supposta differenziabile in punto allora è possibile scrivere l'equazione del piano tangente al grafico della funzione come segue.
+\paragraph{Nota:} Il grafico di una funzione $f$ in $n=2$ variabili è in $\mathbb{R}^{2+1}$ e se $f$ è supposta differenziabile in punto allora è possibile scrivere l'equazione del piano tangente al grafico della funzione come segue.
 
 \begin{definition}[Piano tangente al grafico di una funzione (con $n=2$)]\footnote{Slide 5 PDF 16.}
-	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $P=(x_0,y_0)\in A$. È supposto che $f$ sia differenziabile in $P_0$. L'equazione del piano tangente al grafico nel punto $P_0$ è data da
+	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $P_0=(x_0,y_0)\in A$. È supposto che $f$ sia differenziabile in $P_0$. L'equazione del piano tangente al grafico nel punto $P_0$ è data da
 	\begin{equation}\label{eq:piano_tangente_grafico_due_variabili}
 			z=f(x_0, y_0) + \frac{\partial f}{\partial x} (x_0, y_0) \overbrace{\underbrace{(x-x_0)}_{x = x_0 + h} }^{h=x-x_0}+ \frac{\partial f}{\partial x} (x_0,y_0) \overbrace{\underbrace{(y-y_0)}_{y=y_0+k}}^{k=y-y_0}
 	\end{equation}
 \end{definition}
 
-\paragraph{Nota su (\ref{eq:piano_tangente_grafico_due_variabili}):} (\ref{eq:piano_tangente_grafico_due_variabili}) è un'espressione lineare in $x,y$ in forma implicita del tipo $a(x) + b(y) + c(z) = d$.
+\paragraph{Nota su (\ref{eq:piano_tangente_grafico_due_variabili}):} (\ref{eq:piano_tangente_grafico_due_variabili}) è un'espressione lineare in $x,y$ in forma implicita del tipo $a(x) + b(y) + c(z) = d$. $\qed$
 
 Dati
 \begin{equation*}
@@ -2600,12 +2607,122 @@ Dati
 \end{equation*}
 è possibile scrivere il limite che definisce la differenziabilità (\ref{eq:limite_differenziabilita}), ovvero
 \begin{equation*}
-	\lim_{(h,k)\rightarrow (0,0)}\frac{f(x_0 + h, y_0 + k) - f(x_0, y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)h - \frac{\partial f}{\partial y}(x_0, y_0)k}{\sqrt{h^2+k^2}} = 0
+	\lim_{(h,k)\rightarrow (0,0)}\frac{f(x_0 + h, y_0 + k) - f(x_0, y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)h - \frac{\partial f}{\partial y}(x_0, y_0)k}{\sqrt{h^2+k^2}} = 0,
+\end{equation*}
+come segue per introdurre l'$o$-piccolo:
+\begin{equation}\label{eq:intro_o_piccolo}
+	f(x,y) = f(x_0, y_0) + \overbrace{\frac{\partial f}{\partial x} (x_0, y_0)(x-x_0)+ \frac{\partial f}{\partial y} (x_0,y_0) (y-y_0)}^{<\triangledown f(x_0,y_0), \uline x>}+ o\left(\sqrt{(x-x_0)^2 + (y-y_0)^2}\right)\quad\text{quando}\quad P\rightarrow P_0,
+\end{equation}
+dove $\sqrt{(x-x_0)^2 + (y-y_0)^2} = d(P,P_0) = ||P-P_0||$, $P=(x,y),P_0=(x_0,y_0)\in\mathbb{R}^2$.
+
+\paragraph{Nota / intermezzo:} (\ref{eq:intro_o_piccolo}) è un'approssimazione della $f$ attraverso la funzione lineare $f(x_0,y_0) + <\triangledown f(x_0,y_0, \uline x)>$ + l'errore $o(\sqrt{(x-x_0)^2 + (y-y_0)^2})$ commesso nell'approssimazione di $f$. Quindi, (\ref{eq:intro_o_piccolo}) è un'approssimazione lineare del grafico della funzione ed esiste un'analogia con Analisi 1 quando il grafico di $f$ è approssimato con il grafico della retta tangente passante per il punto $P_0$, dove l'approssimazione è un $o$-piccolo opportuno dell'incremento. Pertanto è affermato quanto segue. $\qed$
+
+E dunque, per le funzioni differenziabili \footnote{La differenziabilità è importante altrimenti tutto questo non funziona perché la definizione di differenziabilità permette l'esistenza dell'applicazione lineare per cui vale l'approssimazione (\ref{eq:piano_tangente_grafico_due_variabili}) scritta in funzione del limite (\ref{eq:intro_o_piccolo}.), la quale segue dall'uguaglianza }, l'equazione del piano tangente al piano (\ref{eq:piano_tangente_grafico_due_variabili}) dista dal grafico di $f$ (ovvero da $f(x_0,y_0) + <\triangledown f(x_0,y_0, \uline x)>$ in \ref{eq:intro_o_piccolo}) per una quantità che tende a $0$ più rapidamente di quanto il punto $P$ si avvicina a $P_0$ ($P\rightarrow P_0$). \footnote{"l'equazione del piano tangente al piano (\ref{eq:piano_tangente_grafico_due_variabili}) dista dal grafico di $f$" significa che (la parte a destra dell'uguale in (\ref{eq:intro_o_piccolo}) è portata a sinistra ed uguagliata a $o$, ovvero) $z= f(x,y) -  (f(x_0, y_0) + \frac{\partial f}{\partial x} (x_0, y_0)(x-x_0)+ \frac{\partial f}{\partial x} (x_0,y_0) (y-y_0))=o\left(\sqrt{(x-x_0)^2 + (y-y_0)^2}\right)$ quando $P\rightarrow P_0$.}
+
+\footnote{(\ref{eq:intro_o_piccolo}) può essere riscritta spostando tutti i membri tranne $o$-piccolo a sinistra, cosicché sia possibile affermare che la differenza (b) in (\ref{eq:uguaglianza_piano}) sia uguale a $o(||P-P_0||) = o\left(\sqrt{(x-x_0)^2 + (y-y_0)^2}\right)=$(a) in (\ref{eq:uguaglianza_piano}).} Infatti,
+\begin{equation}\label{eq:uguaglianza_piano}
+	\underbrace{f(x,y)  -  f(x_0, y_0) - \frac{\partial f}{\partial x} (x_0, y_0)(x-x_0) - \frac{\partial f}{\partial y} (x_0,y_0) (y-y_0))}_{\text{(b)}}=\underbrace{o\left(\underbrace{\sqrt{(x-x_0)^2 + (y-y_0)^2}}_{\text{(c)}}\right)}_{\text{(a)}}\quad\text{con}\; (x,y)\rightarrow(x_0,y_0),
+\end{equation}
+ovvero (sempre sotto l'ipotesi che $f$ sia differenziabile in $(x_0, y_0)$, l'uguaglianza (\ref{eq:uguaglianza_piano}) rappresenta il seguente limite)
+\begin{equation*}
+	\lim_{(x,y)\rightarrow(x_0,y_0)}\frac{f(x,y) - f(x_0,y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0, y_0)(y-y_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}} \overset{\footnotemark}{=} 0
+\end{equation*}
+e dunque la funzione $L:\mathbb{R}^2\rightarrow\mathbb{R}$ definita da
+\begin{equation*}
+	L(x,y) := f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0) + \frac{\partial f}{\partial y}(x_0, y_0)(y-y_0),
+\end{equation*}
+il cui grafico ($\subset\mathbb{R}^3$ è il piano tangente al grafico di $f(x,y)$ nel punto $(x_0,y_0)$) si chiama linearizzazione di $f(x,y)$ nel punto $(x_0, y_0)$ (cioè $f$ è approssimata con una funzione lineare $L$ appena definita) e l'approssimazione di $f(x,y)$ mediante il piano è detta approssimazione lineare di $f$ in  $(x_0, y_0)$.
+
+\footnotemark{Il nominatore è un $o$-piccolo del denominatore.}
+
+\paragraph{Osservazione su $\boldsymbol{o}$-piccolo in (\ref{eq:uguaglianza_piano}):} L'errore commesso nell'approssimazione di $f$ con il piano $L$ è (a) in (\ref{eq:uguaglianza_piano}), ovvero l'$o$-piccolo della distanza $||P-P_0||$. Quindi l'errore (a) in (\ref{eq:uguaglianza_piano}) è in notazione simile a quella utilizzata con Taylor e (\ref{eq:intro_o_piccolo}) può essere scritta come
+\begin{equation*}
+	f(x,y) = L(x,y) + o(||P-P_0||).
 \end{equation*}
 
-\paragraph{Differenziabilità non è piano tangente: } Non bisogna pensare che differenziabilità e piano tangente siano sinonimi perché il concetto alla base è che io debba essere in grado di sostituire la funzione con il piano tangente in un intorno di un punto. In alcune situazioni come nella punta di un cono può comunque passare il piano tangente ma la funzione non può essere approssimata esso, non importa quanto restringo il mio intorno la punta del cono rimarrà una punta di un cono e non somiglierà mai a una funzione lineare del tipo
+\paragraph{Differenziabilità non è piano tangente: } Non bisogna pensare che differenziabilità e piano tangente siano sinonimi perché il concetto alla base è che io debba essere in grado di sostituire la funzione con il piano tangente in un intorno di un punto. In alcune situazioni come nella punta di un cono può comunque passare il piano tangente ma la funzione non può essere approssimata esso, non importa quanto restringo il mio intorno la punta del cono rimarrà una punta di un cono e non somiglierà mai ad una funzione lineare del tipo
 \begin{equation*}
 	f(x,y)\approx f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0, y_0)(y-y_0),
 \end{equation*}
 per cui in quel punto non sarà differenziabile. $\qed$
+
+\subsubsubsection{Differenziabilità e funzioni di una variabile}\footnote{Slide 7 PDF 20.}
+Per le funzioni in una variabile, la differenziabilità e derivabilità sono la stessa cosa ed il fatto che la funzione sia derivabile in un punto, quindi anche differenziabile, ci dice che è possibile approssimare la funzione con qualcosa di lineare, permettendo così l'approssimazione del grafico di una funzione di un variabile vicino al punto con il grafico della retta tangente. Ovvero quando è scritto di seguito.
+\begin{property}\footnote{Slide 7 PDF 16.}
+	Sia $f: I\subset \mathbb{R}\rightarrow\mathbb{R}$ e sia $x_0\in I$. Se $f$ è derivabile in $x_0$ (ovvero esiste il limite del rapporto incrementale ed $f$ è differenziabile in $x_0$) allora ($f$ può essere approssimato in modo lineare come segue)
+	\begin{equation*}
+		f(x) = \underbrace{f(x_0) + f'(x_0)(x-x_0)}_{\footnotemark} + R(x), \quad\text{dove } \underbrace{R\underset{x\rightarrow x_0}{\longrightarrow} 0}_{\footnotemark},
+	\end{equation*}
+	con
+	\begin{equation*}
+		\lim_{x\rightarrow x_0} \frac{R(x)}{x-x_0} = 0,
+	\end{equation*}
+	e quindi
+	\begin{equation*}
+		f(x) = \underbrace{f(x_0)+f'(x_0)(x-x_0)}_{\text{lineare}} + o(|x-x_0|)\quad\text{per }x\rightarrow x_0.
+	\end{equation*}
+	\addtocounter{footnote}{-1}
+	\footnotetext{Polinomio di grado 1 che rappresenta geometricamente la retta passante per il punto $(x_0,f(x_0))$ con coefficiente angolare $f'(x_0)$.}
+	
+	\stepcounter{footnote}
+	\footnotetext{Conseguenza del fatto che la funzione è derivabile nel punto $x_0$. Inoltre, $f$ si scrive come il polinomi di Taylor centrato in $x_0$ $P(x,x_0)=f(x_0) + f'(x_0)(x-x_0)$ + un errore $R(x)$, il quale tende a 0 come un $o$-piccolo di $x-x_0$.}
+\end{property}
+
+\paragraph{Nota:} Quando appena descritto vale anche nel caso in più dimensioni.
+
+\subsubsubsection{Differenziabilità e continuità}\label{sssec:differenziabilita_continuita}
+È considerato come differenziabilità, derivabilità e continuità si integrano assieme.
+
+\begin{property}[Non ufficiale]\footnote{Slide 8, PDF 16.}
+	Se $\underbrace{f\text{ è differenziabile}}_{\text{Definizione \ref{def:differenziabilita_funzione_piu_variabili}}}\rightarrow\quad\underbrace{f \text{ derivabile}}_{\text{in } \uline x_0 \text{ se } \exists\triangledown f(\uline x_0)}\rightarrow\quad \underbrace{f \text{ continua}}_{\text{se } \lim_{\uline x_0\rightarrow\uline x_0}f(\uline x)=f(\uline x_0)}$. 
+\end{property}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.65\textwidth]{Analisi2/figures/insieme-di-funzioni.png}
+	\caption{Insiemi di funzioni.}
+\end{figure}
+
+\begin{example}
+	FUNZIONI DIFFERENZIABILI E DERIVABILI VEDERE SLIDE 8-10 PDF 16, SLIDE  2-6 PDF 17
+\end{example}
+
+\begin{property}[Differenziabilità $\rightarrow$ continuità]\footnote{Slide 7 PDF 17.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R},\; A$ aperto. (HP) Se $f$ è differenziabile in $\uline x_0\in\ A$ \textbf{\ul{allora}} (TESI) $f$ è continua in $\uline x_0$.
+\end{property}
+\begin{proof}
+	Affinché $f$ risulti continua in $\uline x_0\in A$ è necessario che
+	\begin{equation*}
+		\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = f(\uline x_0).
+	\end{equation*} 
+	\begin{equation*}
+		\left[\text{(Oppure, con } \uline h = \uline x - \uline x_0)\quad\lim_{\uline x\rightarrow \uline x_0} f(\uline x) = f(\uline x_0)\right]
+	\end{equation*}
+	Valutiamo dunque (il limite per un incremento nella direzione $\uline h$)
+	\begin{equation*}
+		\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = \lim_{\uline h\rightarrow \uline 0} = [\text{nella dimostrazione scrivere }\footnotemark] = \lim_{\uline h\rightarrow\uline 0} \left[f(x_0) + <\triangledown f(\uline x_0),\, \uline  h> + o(||\uline h||)\right].
+	\end{equation*}
+	Sia
+	\begin{equation*}
+		<\triangledown f(\uline x_0),\, \uline h>\leq |<\triangledown f(\uline x_0),\, \uline h>|\leq ||\triangledown f(x_0)||\,||\uline h||,
+	\end{equation*}
+	per il Teorema del Confronto \footnote{È noto che $\lim_{\uline h\rightarrow 0}o(||\uline h||)=0$, allora tramite l'algebra dei limiti è possibile dimostrare (\ref{eq:limite_f(x0)_uguale_f(x0)}).}
+	\begin{equation*}
+		\lim_{\uline h\rightarrow\uline 0} <\triangledown f(\uline x_0),\, \uline h>=0,
+	\end{equation*}
+	quindi
+	\begin{equation}\label{eq:limite_f(x0)_uguale_f(x0)}
+			\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = 	\lim_{\uline x\rightarrow \uline x_0} f(\uline x_0) = f(\uline x_0).
+	\end{equation}
+	\footnotetext{Dato che $f$ è differenziabile in $\uline x_0$ allora è possibile scrivere
+	\begin{equation*}
+		f(\uline x_0+\uline h)=f(\uline x_0) + <\triangledown f(\uline x_0),\, \uline h> + o(||\uline h||),\quad\text{per }\uline h\rightarrow\uline 0,
+		\end{equation*}
+	e sostituendo è ottenuto quanto segue alla nota.}
+\end{proof}
+
+\begin{theorem}[del differenziale]\label{th:del_differenziale}
+	
+\end{theorem}
+
 \subsubsection{Derivate Successive}
