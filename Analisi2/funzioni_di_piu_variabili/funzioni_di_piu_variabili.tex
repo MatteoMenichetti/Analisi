@@ -2434,11 +2434,15 @@ La proposizione è un caso particolare della seguente definizione, in quanto il 
 \end{example}
 
 \begin{theorem}[Formula del gradiente]
-	Sia $f:A\rightarrow\mathbb{R}$, dove $A$ è un aperto ed $f$ è differenziabile in $\uline x_0\in A$, allora per ogni versore $\vec{v}$ vale
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, dove $A$ è un aperto ed $f$ è differenziabile in $\uline x_0\in A$, allora per ogni versore $\vec{v}$ vale
 	\begin{equation*}
 		D_{\vec{v}}(\uline x_0)=\triangledown f(\uline x_0)\cdot \vec{v} = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i}(\uline x_0)v_i
 	\end{equation*} 
 \end{theorem}
+
+\begin{corollary} (Direzioni di massima e minima crescita, non ufficiale)
+	Sia $f:A\rightarrow\subseteq\mathbb{R}^n\mathbb{R}$, dove $A$ è un aperto ed $f$ è differenziabile in $\uline x_0\in A$, allora il vettore $\triangledown f(\uline x_0)$ indica la direzione (ed il verso) di massimo accrescimento di $f$; $-\triangledown f(\uline x_0)$ indica la direzione corrispondente alla minima derivata direzionale (che in genere è negativa); nel caso $\triangledown f(\uline x_0)=0$ le derivate direzionali sono nulle.
+\end{corollary}
 
 \begin{example}\footnote{Slide 14 PDF 15.}
 	Nel caso $n=2$, con direzione $\uline v=(\cos\theta,\sin\theta)$, allora
@@ -2518,14 +2522,14 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 
 È riportata un'ulteriore forma di definizione di funzione differenziabile perché in alcuni libri è scritta così:
 \begin{definition}[Funzione differenziabile (alternativa)]\label{def:funzione_differenziabile_alternativa} \footnote{Slide 2 PDF 16.}
-	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, dove $A$ è aperto, $f$ si dice differeziabile in $\uline x\in A$ se esiste un funzionale lineare
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, dove $A$ è aperto, $f$ si dice differeziabile in $\uline x\in A$ se esiste un funzionale lineare tangente (o funzionale)
 	\begin{equation*}
 		\begin{aligned}
 			L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
 			\uline h&\mapsto L(\uline h) = <\triangledown f(\uline x), \uline h>
 		\end{aligned}
 	\end{equation*}
-	tale che
+	detta differenziale (o applicazione lineare tangente) di $f$ in $x_0$ tale che
 	\begin{equation*}
 		\lim_{\uline h\rightarrow\uline 0}\frac{f(\uline x+\uline h) - f(\uline x) - L(\uline h)}{||\uline h||} = 0, \quad \forall \uline h\in\mathbb{R}^n.
 	\end{equation*}
@@ -2702,7 +2706,11 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	\begin{equation*}
 		\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = \lim_{\uline h\rightarrow \uline 0} = [\text{nella dimostrazione scrivere }\footnotemark] = \lim_{\uline h\rightarrow\uline 0} \left[f(x_0) + <\triangledown f(\uline x_0),\, \uline  h> + o(||\uline h||)\right].
 	\end{equation*}
-	Sia
+	Sia \footnotetext{Dato che $f$ è differenziabile in $\uline x_0$ allora è possibile scrivere
+		\begin{equation*}
+			f(\uline x_0+\uline h)=f(\uline x_0) + <\triangledown f(\uline x_0),\, \uline h> + o(||\uline h||),\quad\text{per }\uline h\rightarrow\uline 0,
+		\end{equation*}
+		e sostituendo è ottenuto quanto segue alla nota.}
 	\begin{equation*}
 		<\triangledown f(\uline x_0),\, \uline h>\leq |<\triangledown f(\uline x_0),\, \uline h>|\leq ||\triangledown f(x_0)||\,||\uline h||,
 	\end{equation*}
@@ -2714,15 +2722,153 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	\begin{equation}\label{eq:limite_f(x0)_uguale_f(x0)}
 			\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = 	\lim_{\uline x\rightarrow \uline x_0} f(\uline x_0) = f(\uline x_0).
 	\end{equation}
-	\footnotetext{Dato che $f$ è differenziabile in $\uline x_0$ allora è possibile scrivere
-	\begin{equation*}
-		f(\uline x_0+\uline h)=f(\uline x_0) + <\triangledown f(\uline x_0),\, \uline h> + o(||\uline h||),\quad\text{per }\uline h\rightarrow\uline 0,
-		\end{equation*}
-	e sostituendo è ottenuto quanto segue alla nota.}
 \end{proof}
 
-\begin{theorem}[del differenziale]\label{th:del_differenziale}
-	
+\paragraph{Nota:} Se $f$ è differenziabile in $x_0$ allora $f$ è derivabile e continua in $x_0$.
+
+\begin{theorem}[del differenziale]\label{th:del_differenziale}\footnote{Slide 9 PDF 17}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto. (HP) Sia $f$ differenziabile in $A$ (ovvero $\exists\triangledown f(\uline x),\, \forall\uline x\in A$). Se le derivate parziali $f_{x_1}(\uline x),\hdots, f_{x_n}(\uline x)$, sono continue in $\uline x$ allora $f$ è differenziabile in $\uline x\in A$.
+\end{theorem}
+\begin{proof}[Dimostrazione (caso $n=2$)]
+	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto. Dati $\uline h = (h,k)\in\mathbb{R}^2,\, \uline x=(x,y)\in A$, \footnote{È necessario verificare che il limite per $\uline h\rightarrow\uline 0$ del rapporto incrementale di $f$ esiste ed è 0 e per farlo è scritto in modo opportuno parte del rapporto.}
+	\begin{equation}\label{eq:differenza_dim_th_differenziale}
+		\begin{matrix}
+			f(h+h,y+k) - f(x,y) &\underset{+f(x,y+k)-f(x,y+k)}{\overset{\text{aggiungo}}{=}}& f(\uline x + \uline h) + f(x,y+k) - f(x,y+k) - f(x,y) &=&\\
+			&=& \underbrace{\underbrace{[f(\uline x + \uline h) - f(x,y+k)]}_{\footnotemark} + \underbrace{[f(x,y+k) - f(x,y)]}_{\footnotemark}}_{\text{differenza di $f$ calcolata negli estremi degli intervalli}} &=&
+		\end{matrix}
+	\end{equation}
+	applicando il Teorema \ref{th:lagrange_analisi1} di Lagrange ad $f(x,y)$ (supponendo $h,k>0$) negli intervalli $(x,x+h)$\footnotemark e $(y,y+k)$\footnotemark, allora $\exists x_1\in(x,x+h)$ e $\exists y_1\in(y,y+k)$ tale che
+	\begin{equation}\label{eq:applicazione_lagrange_dim_differenziale}
+		\begin{matrix}
+			(\ref{eq:differenza_dim_th_differenziale}) &=& \left[\frac{\partial f}{\partial x}(x_1, y + k) (\cancel{x} + h - \cancel{x})\right] + \left[\frac{\partial f}{\partial y}(x,y_1)(\cancel{y} + k -\cancel{y})\right]&=& \uline{f_x(x_1,y+k) h + f_y(x,y_1) k}_{(a)} &=&\\\\
+			&& &=& f(x+h,y+k)-f(x,y)\\\\
+			&& && \text{con }x_1\underset{h\rightarrow 0}{\longrightarrow}x,\; y_1\underset{k\rightarrow 0}{\longrightarrow}y.
+		\end{matrix}
+	\end{equation}
+	È necessario valutare il rapporto tra due funzioni quando $(h,k)\rightarrow(0,0)$ per concludere la differenziabilità. Dunque, al posto dei due addendi della funzione al numeratore del limite della differenziabilità è sostituito (a) appena trovato. Pertanto, il rapporto da valutare per $(h,k)\rightarrow(0,0)$ è
+	\begin{equation}\label{eq:rapporto_differenziabilita_dim_differenziale}
+		\frac{f(x+h,y+k)-f(x,y)\overbrace{-f_x(x,y)h-f(x,y)k}^{-<\triangledown f(\uline x),\uline h>}}{\sqrt{h^2+y^2}}.
+	\end{equation}
+	Consideriamo dunque quanto segue per applicare il Teorema del Confronto
+	\begin{equation*}%\label{eq:maggiorazioni_th_confronto_dim_differenziale}
+		\begin{matrix}
+			\left|\frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y)k}{\sqrt{h^2+k^2}}\right| &=& [\text{sostituzione di (a) in } (\ref{eq:applicazione_lagrange_dim_differenziale})] &=&\\\\
+			&=& \frac{|f_x(x_1,y+k) h + f_y(x,y_1) k - f_x(x,y)h - f_y(x,y)k|}{\sqrt{h^2+k^2}} &=& \\\\
+			&=& \frac{|[f_x(x_1,y+k)-f_x(x,y)]h + [f_y(x,y_1) - f_y(x,y)]k|}{\sqrt{h^2+k^2}} &\leq&\\\\
+			\text{disuguaglianza triangolare }&\leq& |f_x(x_1,y+k)-f_x(x,y)| \cdot \underbrace{\frac{|h|}{\sqrt{h^2+k^2}}}_{\leq 1} + |f_y(x,y_1) - f_y(x,y)| \cdot \underbrace{\frac{|k|}{\sqrt{h^2 + k^2}}}_{\leq 1} &\leq&\\\\
+			&\leq& \uline{|f_x(x_1,y+k)-f_x(x,y)|  + |f_y(x,y_1) - f_y(x,y)|}_{(a)}.
+		\end{matrix}
+	\end{equation*}
+	(Per ipotesi $f_x(x,y)$ e $f_y(x,y)$ sono continue in $\uline x=(x,y)\in A$. È necessario far vedere che (a)$\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}0$.)\\
+	Se $(h,k)\rightarrow(0,0)$ allora $x_1\rightarrow x,\, y_1\rightarrow y$, con $x_1\in(x,x+h)$ e $y_1\rightarrow y$, pertanto
+	\begin{equation*}
+		\begin{matrix}
+			\lim_{(h,k)\rightarrow(0,0)}f_x(x_1, y+k) &=& f_x(x,y)\\\\
+			\lim_{(h,k)\rightarrow(0,0)}f_y(x, y_1) &=& f_y(x,y)
+		\end{matrix}
+	\end{equation*}
+	quindi
+	\begin{equation*}
+		\begin{matrix}
+			|f_x(x_1,y+k)-f_x(x,y)| &\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}& 0,\\
+			|f_y(x,y_1) - f_y(x,y)| &\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}& 0.
+		\end{matrix}
+	\end{equation*}
+	Pertanto, utilizzando il teorema del confronto, è stato dimostrato che (\ref{eq:rapporto_differenziabilita_dim_differenziale})$\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}0$, quindi la differenziabilità di $f$.
+\end{proof}
+
+\addtocounter{footnote}{-3}
+\footnotetext{Funzioni di una variabile $x$, $y+k$ è fissa, dove la prima subisce incremento pari ad $h$.}
+
+\stepcounter{footnote}
+\footnotetext{Funzione di una variabile $y$, $x$ è fissa.}
+
+\stepcounter{footnote}
+\footnotetext{Intervallo per la funzione nella $1^a$ parentesi quadra in (\ref{eq:differenza_dim_th_differenziale}) perché dipende da $x$.}
+
+\stepcounter{footnote}
+\footnotetext{Intervallo per la funzione nella $2^a$ parentesi quadra in (\ref{eq:differenza_dim_th_differenziale}) perché dipende da $y$.}
+
+\begin{property}\footnote{Slide 12 PDF 17.}
+	Considerando $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R}$:
+	\begin{itemize}
+		\item se $f$ è continua su $A$ allora $f\in C^0(A)$,
+		\item se $f$ è derivabile e le sue derivate parziali sono continue su $A$ allora $f\in C^1(A)$,
+		\item se $f$ è derivabile fino all'ordine $k$ e tutte le derivate parziali sono continue allora $f\in C^k(A)$.
+	\end{itemize}
+\end{property}
+
+\paragraph{Conseguenza del Teorema del differenziale:}
+\begin{equation*}
+	\text{Se } \underbrace{f\in C^1(A)}_{f_{x_i}\text{ continue in }A}\Longrightarrow f \text{ differenziabile in } A\Longrightarrow f\in C^0(A).
+\end{equation*}
+Inoltre, è possibile applicare più e più volte il teorema del differenziale perché le derivate sono ulteriormente derivabili e se dimostrato che
+\begin{equation*}
+	f\in C^k(A)\rightarrow f'\in C^{k-1}(A).
+\end{equation*}
+
+\begin{example}
+	SLIDE 13-14 PDF 17 ESEMPIO CALCOLO GRADIENTE IN UN PUNTO\\
+	SLIDE 14-19 PDF 17 ESEMPIO IMPORTANTE derivabilità, differenziabilità ed equazione piano tantegente di una funzione.
+\end{example}
+
+Altre conseguenze della differenziabilità sono le seguenti proprietà, presa in considerazione la Definizione \ref{def:funzione_differenziabile_alternativa}.
+
+\begin{proposition}\footnote{Slide 20 PDF 17.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $\uline x_0\in A$. Se $f$ è differenziabile in $\uline x_0$ con differenziale $L$, \textbf{allora}
+	\begin{enumerate}
+		\item $f$ è continua in $\uline x_0$,
+		\item $f$ ha tutte le derivate direzionali in $\uline x_0$ (secondo tutte le direzione $\vec{v}$) e queste sono calcolabili come
+		\begin{equation}\label{eq:derivata_direzionale_f_differenziabile}
+			\frac{\partial f}{\partial \vec{v}}(\uline x_0) = D_{\vec{v}}f(\uline x_0) = L(\vec{v}) = <\triangledown f(\uline x_0),\, \vec{v}>\quad \forall\vec{v}\in\mathbb{R}^n.
+		\end{equation}
+	\end{enumerate}
+\end{proposition}
+\paragraph{Osservazioni su (\ref{eq:derivata_direzionale_f_differenziabile}):}
+\begin{enumerate}
+	\item Se $\vec{v}$ non è normalizzato, ovvero non è un versore ($||\vec{v}||\neq 1$), allora è necessario normalizzarlo come $\vec{v}=\frac{\vec{v}}{||\vec{v}||}$,
+	\item $\begin{aligned}
+		L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
+		\vec{v}&\mapsto \frac{\partial f}{\partial \vec{v}}(\uline x_0)
+	\end{aligned}$ è un'applicazione lineare e derivata di $f$ in $x_0$,
+	\item  Il differenziale $L$ se esiste è unico ed è il limite
+	\begin{equation}\label{eq:derivata_direzionale_differenziale}
+		L(\uline h) = \frac{\partial f}{\partial \uline h}(\uline x_0) = <\triangledown f(\uline x_0),\,\uline h>.
+	\end{equation}
+	Quest'ultima osservazione permette di affermare che la derivata direzionale (\ref{eq:derivata_direzionale_differenziale}) ha valore massimo se $||\uline h||=\frac{\triangledown f(\uline x_0)}{||\triangledown f(\uline x_0)||} = 1$ (è un versore), il quale rappresenta la direzione del vettore gradiente di $f$ nel punto $\uline x_0$, ovvero vale la seguente relazione (per la disuguaglianza di Cauchy-Schwarz)
+	\begin{equation*}
+		\left|\frac{\partial f}{\partial \uline h}(\uline x_0)\right| \leq ||\triangledown f(\uline x_0)||\cdot \underbrace{||\uline h||}_{\text{max}=1}.
+	\end{equation*}
+\end{enumerate}
+
+\begin{example}
+	ESEMPIO SLIDE 21 PDF 17 su continuità, derivabilità e differenziabilità in un punto.
+\end{example}
+
+\begin{theorem}[Regola della catena]\footnote{Slide 3 PDF 18.}
+	Sia
+	\begin{equation*}
+		\begin{aligned}
+			g:[-1,1] &\rightarrow A\subseteq\mathbb{R}^n\\
+			t&\mapsto g(t)=(g_1(t)),\hdots,g_n(t)) 
+		\end{aligned}
+	\end{equation*}
+	una curva continua in $[-1,1]$ e derivabile.\\
+	Supposto che la curva (passi per $\uline x_0$, ovvero)
+	\begin{equation*}
+		g(0) = \uline x_0\in A
+	\end{equation*}
+	e supposto che $f:A\rightarrow\mathbb{R}$ sia derivabile e differenziabile in $\uline x_0$, allora è possibile definire la funzione composta
+	\begin{equation*}
+		\begin{aligned}
+			F=(f \circ g): [-1,1]&\rightarrow\mathbb{R}\\
+			t&\mapsto f(g(t))
+		\end{aligned}
+	\end{equation*}
+	la quale è differenziabile per $t=0$. Inoltre
+	\begin{equation*}
+		\boldsymbol{F'(0)=}\frac{d(f\circ g)}{dt}(0) = <\triangledown f(\uline x_0, g'(0))>.
+	\end{equation*}
 \end{theorem}
 
 \subsubsection{Derivate Successive}
