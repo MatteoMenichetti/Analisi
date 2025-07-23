@@ -2497,7 +2497,7 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\begin{equation*}
 		||\uline h||=\sqrt{\sum_{i=1}^{n}h^2_i} = \sqrt{h^2_1 + \hdots + h^2_n},
 	\end{equation*}
-	dove, se $\uline h\rightarrow 0$ allora $||\uline h||=0$.
+	dove, se $\uline h\rightarrow \uline 0$ allora $||\uline h||=0$.
 	\item (Non ufficiale) $- f(\uline x) - <\triangledown f(\uline x), \uline h>$ è il polinomio di Taylor di $f$ calcolato in $\uline x$ e permette di costruire l'equazione di un piano tangente al grafico di $f$ nel punto $x_0$ $z= f(x_0) + <\triangledown f(\uline x_0), \uline h>$.  Inoltre $\uline h=(x-x_1,\hdots, x-x_n)$, ovvero le variabili sono in funzione degli incrementi, perché la forma del limite (\ref{eq:limite_differenziabilita}) è utilizzata per non cambiare la forma del limite in base al punto in cui vogliamo verificare la differenziabilità, al posto di
 	\begin{equation*}
 		\lim_{(x,y)\rightarrow(x_0,y_0)} \frac{f(x,y)-f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}=0.
@@ -2740,12 +2740,12 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	applicando il Teorema \ref{th:lagrange_analisi1} di Lagrange ad $f(x,y)$ (supponendo $h,k>0$) negli intervalli $(x,x+h)$\footnotemark e $(y,y+k)$\footnotemark, allora $\exists x_1\in(x,x+h)$ e $\exists y_1\in(y,y+k)$ tale che
 	\begin{equation}\label{eq:applicazione_lagrange_dim_differenziale}
 		\begin{matrix}
-			(\ref{eq:differenza_dim_th_differenziale}) &=& \left[\frac{\partial f}{\partial x}(x_1, y + k) (\cancel{x} + h - \cancel{x})\right] + \left[\frac{\partial f}{\partial y}(x,y_1)(\cancel{y} + k -\cancel{y})\right]&=& \uline{f_x(x_1,y+k) h + f_y(x,y_1) k}_{(a)} &=&\\\\
-			&& &=& f(x+h,y+k)-f(x,y)\\\\
-			&& && \text{con }x_1\underset{h\rightarrow 0}{\longrightarrow}x,\; y_1\underset{k\rightarrow 0}{\longrightarrow}y.
+			(\ref{eq:differenza_dim_th_differenziale}) &=& \left[\frac{\partial f}{\partial x}(x_1, y + k) (\cancel{x} + h - \cancel{x})\right] + \left[\frac{\partial f}{\partial y}(x,y_1)(\cancel{y} + k -\cancel{y})\right]&=&\\\\
+			&=& \uline{f_x(x_1,y+k) h + f_y(x,y_1) k}_{(a)} &=&\\\\
+			&=& f(x+h,y+k)-f(x,y) && \text{con }x_1\underset{h\rightarrow 0}{\longrightarrow}x,\; y_1\underset{k\rightarrow 0}{\longrightarrow}y.
 		\end{matrix}
 	\end{equation}
-	È necessario valutare il rapporto tra due funzioni quando $(h,k)\rightarrow(0,0)$ per concludere la differenziabilità. Dunque, al posto dei due addendi della funzione al numeratore del limite della differenziabilità è sostituito (a) appena trovato. Pertanto, il rapporto da valutare per $(h,k)\rightarrow(0,0)$ è
+	È necessario valutare il rapporto tra due funzioni quando $(h,k)\rightarrow(0,0)$ per concludere la differenziabilità. Dunque, al posto dei due addendi della funzione al numeratore del limite della differenziabilità è sostituito (a) in (\ref{eq:applicazione_lagrange_dim_differenziale}). Pertanto, per stabilire la differenziabilità è necessario valutare il limite del seguente rapporto per $(h,k)\rightarrow(0,0)$ sia 0
 	\begin{equation}\label{eq:rapporto_differenziabilita_dim_differenziale}
 		\frac{f(x+h,y+k)-f(x,y)\overbrace{-f_x(x,y)h-f(x,y)k}^{-<\triangledown f(\uline x),\uline h>}}{\sqrt{h^2+y^2}}.
 	\end{equation}
@@ -2760,7 +2760,7 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 		\end{matrix}
 	\end{equation*}
 	(Per ipotesi $f_x(x,y)$ e $f_y(x,y)$ sono continue in $\uline x=(x,y)\in A$. È necessario far vedere che (a)$\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}0$.)\\
-	Se $(h,k)\rightarrow(0,0)$ allora $x_1\rightarrow x,\, y_1\rightarrow y$, con $x_1\in(x,x+h)$ e $y_1\rightarrow y$, pertanto
+	Se $(h,k)\rightarrow(0,0)$ allora $x_1\rightarrow x,\, y_1\rightarrow y$, con $x_1\in(x,x+h)$ e $y_1\in(y, y+k)$, pertanto
 	\begin{equation*}
 		\begin{matrix}
 			\lim_{(h,k)\rightarrow(0,0)}f_x(x_1, y+k) &=& f_x(x,y)\\\\
@@ -2827,10 +2827,14 @@ Altre conseguenze della differenziabilità sono le seguenti proprietà, presa in
 \paragraph{Osservazioni su (\ref{eq:derivata_direzionale_f_differenziabile}):}
 \begin{enumerate}
 	\item Se $\vec{v}$ non è normalizzato, ovvero non è un versore ($||\vec{v}||\neq 1$), allora è necessario normalizzarlo come $\vec{v}=\frac{\vec{v}}{||\vec{v}||}$,
-	\item $\begin{aligned}
-		L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
-		\vec{v}&\mapsto \frac{\partial f}{\partial \vec{v}}(\uline x_0)
-	\end{aligned}$ è un'applicazione lineare e derivata di $f$ in $x_0$,
+	\item 
+	\begin{equation*}
+		\begin{aligned}
+			L:\mathbb{R}^n&\rightarrow\mathbb{R}\\
+			\vec{v}&\mapsto \frac{\partial f}{\partial \vec{v}}(\uline x_0)
+		\end{aligned}
+	\end{equation*}
+	è un'applicazione lineare e derivata di $f$ in $x_0$,
 	\item  Il differenziale $L$ se esiste è unico ed è il limite
 	\begin{equation}\label{eq:derivata_direzionale_differenziale}
 		L(\uline h) = \frac{\partial f}{\partial \uline h}(\uline x_0) = <\triangledown f(\uline x_0),\,\uline h>.
@@ -2849,26 +2853,228 @@ Altre conseguenze della differenziabilità sono le seguenti proprietà, presa in
 	Sia
 	\begin{equation*}
 		\begin{aligned}
-			g:[-1,1] &\rightarrow A\subseteq\mathbb{R}^n\\
-			t&\mapsto g(t)=(g_1(t)),\hdots,g_n(t)) 
+			\gamma:[-1,1]\subset\mathbb{R} &\rightarrow A\subseteq\mathbb{R}^n\\
+			t&\mapsto \gamma(t)=(\gamma_1(t),\hdots,\gamma_n(t)) 
 		\end{aligned}
 	\end{equation*}
-	una curva continua in $[-1,1]$ e derivabile.\\
+	una curva continua e derivabile in $[-1,1]$.\\
 	Supposto che la curva (passi per $\uline x_0$, ovvero)
 	\begin{equation*}
-		g(0) = \uline x_0\in A
+		\gamma(0) = \uline x_0\in A
 	\end{equation*}
 	e supposto che $f:A\rightarrow\mathbb{R}$ sia derivabile e differenziabile in $\uline x_0$, allora è possibile definire la funzione composta
 	\begin{equation*}
 		\begin{aligned}
-			F=(f \circ g): [-1,1]&\rightarrow\mathbb{R}\\
-			t&\mapsto f(g(t))
+			F=(f \circ \gamma): [-1,1]&\rightarrow\mathbb{R}\\
+			t&\mapsto f(\gamma(t))
 		\end{aligned}
 	\end{equation*}
 	la quale è differenziabile per $t=0$. Inoltre
 	\begin{equation*}
-		\boldsymbol{F'(0)=}\frac{d(f\circ g)}{dt}(0) = <\triangledown f(\uline x_0, g'(0))>.
+		\boldsymbol{F'(0)=}\frac{d(f\circ \gamma)}{dt}(0) = \boldsymbol{<\triangledown f(\uline x_0), \gamma'(0)>}.
 	\end{equation*}
 \end{theorem}
 
+\paragraph{Interpretazione geometrica della derivata parziale:} La regola della catena da la formula per il calcolo della derivata direzionale in $\uline x_0$, ovvero
+\begin{equation*}
+	\frac{\partial f}{\partial \vec{v}} (\uline x_0)=<\triangledown f(\uline x_0), \vec{v}>\quad \forall\vec{v}\in\mathbb{R}^2,\, ||\vec{v}||=1.
+\end{equation*}
+Inoltre, la crescita di $f$ in $\uline x_0$ lungo una qualsiasi curva regolare $\gamma$ uscente da $\uline x_0$ (ovvero $\gamma(0)$) con velocità $\gamma'(0)=\vec{v}$ dipende dalla curva attraverso il solo vettore (tangente) velocità $\vec{v}$. Pertanto, la derivata direzionale ha come interpretazione geometrica quella di pendenza di $f$ in $\uline x_0$ nella direzione $\vec{v}$.
+
+\begin{proposition}
+	Se il vettore gradiente $\triangledown f(\uline x_0)\in\mathbb{R}^n$ è non nullo, allora il vettore gradiente di una funzione differenziabile in un punto indica la direzione e verso di massima pendenza del grafico della funzione in tale punto.
+\end{proposition}
+
+\paragraph{Osservazione:} Il valore di massima pendendenza è dato dalla derivata direzionale di $f$ in $\uline x_0$ nel verso del vettore gradiente
+\begin{equation*}
+	D_{\vec{v}} f(\uline x_0) = <\triangledown f(\uline x_0), \vec{v}_{max}>= ||\triangledown f(\uline x_0)||,
+\end{equation*}
+dove il versore che indica la massima pendenza è
+\begin{equation*}
+	\vec{v}_{max} = \frac{\triangledown f(\uline x_0)}{||\triangledown f(\uline x_0)||}
+\end{equation*}
+
+\begin{example}\footnote{Slide 4 PDF 18.}
+	\paragraph{Testo:} Trovare la direzione di massima crescita di $f(x,y)=xe^y$ nel punto $P_0=(2,0)$.
+	\paragraph{Svolgimento:} La direzione richiesta è parallela a $Df(P_0)$.
+	\begin{equation*}
+		Df(x,y) = (e^y, xe^y),
+	\end{equation*}
+	quindi $Df(P_0)=(1,2)$ e $||\triangledown f(2,0)||=\sqrt{1^2+2^2} = \sqrt{5}$. Pertanto, il versore nella direzione di parallalela a $\triangledown f(2,0)$ è
+	\begin{equation*}
+		\vec{v} = \frac{(1,2)}{\sqrt{5}} = \left(\frac{1}{\sqrt{5}},\frac{2}{\sqrt{5}}\right).
+	\end{equation*}
+	Il valore richiesto è
+	\begin{equation*}
+		D_{\vec{v}}f(2,0) = \frac{\partial f}{\partial \vec{v}}(2,0)=<\triangledown f(2,0), \vec{v}> = (1,2)
+		\begin{pmatrix}
+			\frac{1}{\sqrt{5}}\\\\
+			\frac{2}{\sqrt{5}}
+		\end{pmatrix} = \sqrt{5} = ||\triangledown f(2,0)||.
+	\end{equation*}
+\end{example}
+
+\subsubsection{Funzioni composte}
+\begin{definition}[Funzione composta, non ufficiale]\footnote{Slide 4 PDF 18.}
+	Sia
+	\begin{equation*}
+		\begin{aligned}
+			\gamma:I\subseteq\mathbb{R}&\rightarrow\mathbb{R}^n\\
+			t&\rightarrow \gamma(t)=(\gamma_1(t),\hdots,\gamma_n(t))
+		\end{aligned}
+	\end{equation*}
+	un curva continua in $I$ e supposto che $\gamma(I)\subseteq A$, con $A\subset\mathbb{R}^n$ aperto ($\gamma(t)\in A,\, \forall t\in I$).\\
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow \mathbb{R}$, allora è ben definita la funzione composta
+	\begin{equation*}
+		\begin{aligned}
+			F=(f\circ \gamma):I &\rightarrow\mathbb{R}\\
+			t & \mapsto F(t) = (f\circ \gamma)(t) = f(\gamma(t))
+		\end{aligned}
+	\end{equation*}
+\end{definition}
+
+Il prossimo teorema è chiesto.
+\begin{theorem}\footnote{Slide 5 PDF 18.}
+	Sia
+	\begin{equation*}
+		\begin{aligned}
+			\gamma:I\subseteq\mathbb{R}&\rightarrow\mathbb{R}^n\\
+			t&\rightarrow \gamma(t)=(\gamma_1(t),\hdots,\gamma_n(t))
+		\end{aligned}
+	\end{equation*}
+	un curva continua in $I$, supposto che $\gamma(I)\subseteq A$, con $A\subset\mathbb{R}^n$ aperto ($\gamma(t)\in A,\, \forall t\in I$) e sia $f:A\subseteq\mathbb{R}^n\rightarrow \mathbb{R}$.\\
+	Supposto che $\gamma\in C^1(I)$ e che $f$ sia differenziabile in $\gamma(t)\in A\subseteq\mathbb{R}^n$, allora la funzione composta
+	\begin{equation*}
+		\begin{aligned}
+			F=(f\circ \gamma):I &\rightarrow\mathbb{R}\\
+			t & \mapsto F(t)= (f\circ \gamma)(t) = f(\gamma(t))
+		\end{aligned}
+	\end{equation*}
+	è derivabile (e differenziabile) in $t\in I$ e
+	\begin{equation*}
+		F'(t) = <\triangledown f(\gamma(t)),\gamma'(t)> = \sum_{i=1}^{n}\frac{\partial f_i}{\partial x_i}(\gamma(t))\cdot\gamma_i'(t).
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	(È necessario dimostare che $F$ è derivabile, ovvero che esiste finito il limite del rapporto incrementale $F(t+h)-F(t)/||h||$ per $h\rightarrow 0$)\\
+	Sia
+	\begin{equation*}
+		\begin{matrix}
+			\frac{F(t+h)-F(t)}{h} &=& \frac{f(\gamma(t+h))-f(\gamma(t))}{h} = (\star)
+		\end{matrix}
+	\end{equation*}
+	per l'ipotesi che $f$ è differenziabile in $\gamma(t)\in A$,
+	\begin{equation*}
+		f(\gamma(t+h)) = f(\gamma(t)) + <\triangledown f(\gamma(t)), \gamma(t+h) - \gamma(t)> + o(||\gamma(t+h)- \gamma(t))
+	\end{equation*}
+	e quindi
+	\begin{equation*}
+		(\star) = <\triangledown f(\gamma(t)), \frac{\gamma(t+h) - \gamma(t)}{h}> + \frac{o(||\gamma(t+h)- \gamma(t)||)}{h}.
+	\end{equation*}
+	Pertanto
+	\begin{equation*}
+			\lim_{h\rightarrow 0} \left|\frac{o(||\gamma(t+h)- \gamma(t)||)}{h}\right| = \lim_{h\rightarrow 0}\frac{|o(||\gamma(t+h)- \gamma(t)||)|}{|h|} = \lim_{h\rightarrow 0}\frac{|o(||\gamma(t+h)- \gamma(t)||)|}{||\gamma(t+h)- \gamma(t)||}\frac{||\gamma(t+h)- \gamma(t)||}{|h|} = 0.
+	\end{equation*}
+	Considerando
+	\begin{equation*}
+		\frac{||\gamma(t+h)-\gamma(t)||}{|h|} = \lim_{h\rightarrow 0}\sqrt{\sum_{i=1}^{n}\left(\frac{y_i(t+h)-y_i(t)}{h}\right)^2} =||y'(t)||
+	\end{equation*}
+	è una quantità finita, quindi
+	\begin{equation*}
+		\lim_{h\rightarrow 0}\frac{F(t+h)-F(t)}{h} = <\triangledown f(\gamma(t)), \gamma'(t)>.
+	\end{equation*}
+\end{proof}
+
 \subsubsection{Derivate Successive}
+Sia $f:A\subseteq\mathbb{R}\rightarrow \mathbb{R}$, $A$ aperto. Supposto che $f$ sia derivabile in $A$, allora esistono le $n$ derivate parziali $f_{x_1},\hdots,f_{x_n}$, ovvero $\exists\triangledown f(\uline x)\,\forall \uline x\in A$.\\
+Se $f$ è ulteriormente derivabile in $A$, ovvero
+\begin{equation*}
+	\exists \frac{\partial}{\partial x_j}\left(\frac{\partial f}{\partial x_i}(\uline x)\right),\quad i,j=1,\hdots, n,\, \forall\uline x\in A,
+\end{equation*}
+ciò si indica con
+\begin{equation*}
+		\frac{\partial ^2 f}{\partial x_i\partial x_j};\quad \frac{\partial ^2 f}{\partial x_i\partial x_j}(\uline x) ;\quad f_{x_ix_j};\quad f_{x_ix_j}(\uline x);\quad D_{x_ix_j}(\uline x).
+\end{equation*}
+
+\begin{example}
+	ESEMPIO CALCOLO DERIVATA COMPOSTA slide 2 pdf 19.
+\end{example}
+
+\begin{definition}[Matrice Hessiana]\footnote{Slide 3 PDF 18}
+	Sia $f:A\subseteq\mathbb{R}\rightarrow \mathbb{R}$, $A$ aperto. Se $f$ è derivabile due volte in $A$ (ovvero esistono tutte le derivate successive di $f$ in $A$) allora la matrice hessiana è
+	\begin{equation*}
+		Hf(\uline x) = (f_{x_ix_j}(\uline x))_{i,j=1,\hdots, n} =
+		\begin{bmatrix}
+			f_{x_1x_1}(\uline x) & f_{x_1x_2}(\uline x) & \hdots & f_{x_1x_n}(\uline x)\\
+			f_{x_2x_1}(\uline x) & f_{x_2x_2}(\uline x) & \hdots & f_{x_2x_n}(\uline x)\\
+			\vdots & \vdots & & \vdots\\
+				f_{x_nx_1}(\uline x) & f_{x_nx_2}(\uline x) & \hdots & f_{x_nx_n}(\uline x)\\
+		\end{bmatrix}
+	\end{equation*}
+\end{definition}
+
+\paragraph{Esempio di matrice hessiana $2\times 2$:}
+\begin{equation*}
+		Hf(x,y) =
+		\begin{bmatrix}
+			f_{xx}(\uline x) & f_{xy}(\uline x)\\
+			f_{yx}(\uline x) &  f_{yy}(\uline x)
+		\end{bmatrix} =
+		\begin{bmatrix}
+				\frac{\partial^2 f}{\partial x^2} & 	\frac{\partial ^2 f}{\partial x\partial y}\\
+				\frac{\partial ^2 f}{\partial y\partial x} & \frac{\partial^2 f}{\partial y^2}
+		\end{bmatrix}
+\end{equation*}
+\paragraph{Nomenclatura:} Nel caso $f$ sia derivabile due volte in $A$ allora
+\begin{itemize}
+	\item $f_{x_ix_j}$ con $i=j$ si dice derivata seconda prima,
+	\item $f_{x_ix_j}$ con $i\neq j$ si dice derivata seconda mista.
+\end{itemize}
+
+\paragraph{Derivate miste uguali:} Sia $f(x,y)=x^2\sin y$, allora è possibile notare come le derivate miste siano uguali
+\begin{equation*}
+	\frac{\partial f}{\partial x} = 2x\sin y, \quad	\frac{\partial f}{\partial y} = x^2\cos y
+\end{equation*}
+\begin{equation*}
+	Hf(x,y)=
+	\begin{bmatrix}
+		\frac{\partial^2 f}{\partial x^2} = 2\sin y & 	\frac{\partial ^2 f}{\partial x\partial y} = 2x\cos y\\
+		\frac{\partial ^2 f}{\partial y\partial x} = 2x\cos y & \frac{\partial^2 f}{\partial y^2} = -x^2\sin y
+	\end{bmatrix}
+\end{equation*}
+ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
+
+\paragraph{Cosa afferma il Teorema di Schwarz:} Il Teorema afferma che se $f\in C^2(A)$ allora le derivate miste sono uguali $\forall \uline x\in A$. Inoltre, il Teorema si può generalizzare anche con $f\in C^k(A)$ facendo si che valga per tutte le derivate fino all'ordine $k$.
+
+\begin{theorem}[di Schwarz]\label{th:di_schwarz}\footnote{Slide 2 PDF 20.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ e $A$ aperto. Supposto che $f$ sia derivabile due volte in $A$, allora
+	\begin{equation*}
+		\exists f_{x_ix_j}(\uline x)\quad i,j=1,\hdots, n,\, \forall \uline x\in A\quad (\exists Hf(\uline x),\,\forall \uline x \in A).
+	\end{equation*}
+	Se le derivate miste $f_{x_ix_j}(\uline x)$ e $f_{x_jx_i}(\uline x)$ sono continue in $\uline x_0\in A$ con $i\neq j$, allora $f_{x_ix_j}(\uline x_0)=f_{x_jx_i}(\uline x_0)$
+\end{theorem}
+\begin{proof}[Dimostrazione (caso $n=2$)]
+	Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R},\, P_0=(x_0,y_0)\in A$. Supposto $f$ sia derivabile due volte in $A$, allora
+	\begin{equation*}
+			\exists Hf(x,y) =
+			\begin{bmatrix}
+				f_{xx}(\uline x) & f_{xy}(\uline x)\\
+				f_{yx}(\uline x) &  f_{yy}(\uline x)
+			\end{bmatrix}
+	\end{equation*}
+	È necessario dimostrare che $f_{xx}(\uline x)=f_{yy}(\uline x)$.\\
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.45\textwidth]{Analisi2/figures/dimostrazione_schwarz.png}
+		\caption{Rappresentazione nel piano dei punti di interesse.}
+	\end{figure}
+	
+	Sia $P=(x,y)\in A$, con $P\neq P_0$ ($P$ punto qualsiasi, in questo caso scelto maggiore di $P_0$).
+\end{proof}
+
+
+
+
+
+
+
