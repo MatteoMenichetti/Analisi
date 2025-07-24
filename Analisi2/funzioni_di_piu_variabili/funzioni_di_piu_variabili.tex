@@ -3044,8 +3044,6 @@ ciò si indica con
 \end{equation*}
 ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 
-\paragraph{Cosa afferma il Teorema di Schwarz:} Il Teorema afferma che se $f\in C^2(A)$ allora le derivate miste sono uguali $\forall \uline x\in A$. Inoltre, il Teorema si può generalizzare anche con $f\in C^k(A)$ facendo si che valga per tutte le derivate fino all'ordine $k$.
-
 \begin{theorem}[di Schwarz]\label{th:di_schwarz}\footnote{Slide 2 PDF 20.}
 	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ e $A$ aperto. Supposto che $f$ sia derivabile due volte in $A$, allora
 	\begin{equation*}
@@ -3063,18 +3061,202 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 			\end{bmatrix}
 	\end{equation*}
 	È necessario dimostrare che $f_{xx}(\uline x)=f_{yy}(\uline x)$.
+	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.45\textwidth]{Analisi2/figures/dimostrazione_schwarz.png}
+		\includegraphics[width=0.45\textwidth]{Analisi2/figures/dimostrazione_schwarz.png}\label{fig:dimostrazione_schwarz}
 		\caption{Rappresentazione nel piano dei punti di interesse.}
 	\end{figure}
 	
-	Sia $P=(x,y)\in A$, con $P\neq P_0$ ($P$ punto qualsiasi, in questo caso scelto maggiore di $P_0$).
+	Sia $P=(x,y)\in A$, con $P\neq P_0$ ($P$ punto qualsiasi, in questo caso scelto maggiore di $P_0$ e libero di muoversi fissata una variabile).\\
+	Definiamo (due funzioni per verificare le HP)
+	\begin{equation*}
+		\begin{matrix}
+			F(x) &=& f(x,y)-f(x, y_0) && \forall y\text{ fissato}\\
+			G(y) &=& f(x,y) - f(x_0,y) && \forall x \text{ fissato}
+		\end{matrix}
+	\end{equation*}
+	\footnote{$F$ e $G$ sono funzioni di una variabile. Applicando il Teorema di Lagrange saranno considerate le derivate parziali di $f$.} Considerato $F(x)$ è applicato il Teorema di Lagrange nell'intervallo di estremi $x_0$ e $x$ \footnote{In Figura \ref{fig:dimostrazione_schwarz}, è considerato $[x_0,x]$ per $f$ e $(x_0, x)$ per $f'$.} allora $\exists x_1\in(x_0,x)$ tale che
+	\begin{equation*}
+		F(x) - F(x_0) = F'(x_1) (x - x_1) \overset{\footnotemark}{=} \underbrace{\left[\frac{\partial f}{\partial x}(x_1, y)- \frac{\partial f}{\partial x}(x_1, y_0)\right]}_{\footnotemark}(x-x_0) \overset{\footnotemark}{=} (\star)
+	\end{equation*}
+	\addtocounter{footnote}{-2}
+	\footnotetext{È scritta $F'(x)$ in modo esplicito. Dato che $F$ è una funzione della sola variabile $x$ allora $F'$ è la derivata parziale di $f$ rispetto ad $x$ perché $y$ e $y_0$ sono fissati.}
+	
+	\stepcounter{footnote}
+	\footnotetext{Differenza derivate parziali rispetto a $x$ calcolate negli estremi $y$ e $y_0$ ($x_1$ è fissa).}
+
+	\stepcounter{footnote}
+	\footnotetext{Dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial x}$ è derivabile ulteriormente rispetto $y$ e quindi è applicabile nuovamente il Teorema di Lagrange.}
+	
+	applicando il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ nell'intervallo $(y_0,y)$, quindi $\exists y_1\in(y_0,y)$ tale che
+	\begin{equation*}
+		(\star) = \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)\underbrace{(y-y_0)(x-x_0)}_{\neq 0}.
+	\end{equation*}
+	
+	Ripetiamo analogo ragionamento per $G(y)$, cioè è applicato il Teorema di Lagrange nell'intervallo di estremi $y$ e $y_0$, quindi $\exists y_2\in\uline{(y_0,y)}_{\footnotemark}$ : \footnotetext{$(y_0,y)$ perché riportato il caso di Figura \ref{fig:dimostrazione_schwarz}, altrimenti $(y,y_0)$.}
+	\begin{equation*}
+		G(y) - G(y_0) = G'(y_2) (y-y_0) = \underbrace{\left[\frac{\partial f}{\partial y}(x, y_2)- \frac{\partial f}{\partial y}(x_0, y_2)\right]}_{\footnotemark}(y-y_0) \overset{\footnotemark}{=} (\star)
+	\end{equation*}
+	\addtocounter{footnote}{-1}
+	\footnotetext{Differenza delle derivate parziali rispetto ad $y$ calcolate negli estremi $x$ e $x_0$ ($y_2$ è fisso).}
+	
+	\stepcounter{footnote}
+	\footnotetext{Dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial y}$ è derivabile ulteriormente rispetto $x$ e quindi è applicabile nuovamente il Teorema di Lagrange.}
+	
+	\begin{equation*}
+		(\star) =  \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)\underbrace{(x-x_0)(y-y_0)}_{\neq 0}.
+	\end{equation*}
+	
+	Quindi
+	\begin{equation}\label{eq:derivate_dim_schwartz}
+		\begin{matrix}
+			F(x) - F(x_0) &=& \overline{\frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0)}^{(a)}\\\\
+			G(y) - G(y_0) &=&\underline{ \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)}_{(b)}
+		\end{matrix}
+	\end{equation}
+	Verifichiamo che (le due derivate siano uguali)
+	\begin{equation*}
+		F(x) - F(x_0) \overset{\footnotemark}{=} G(y) - G(y_0).
+	\end{equation*}
+	\footnotetext{Uguaglianza di (a) e (b) in (\ref{eq:derivate_dim_schwartz}), dalla quale, semplificando $(x-x_0)(y-y_0)$ darà l'uguaglianza delle derivate miste. A questo punto sarà necessario applicare l'ipotesi di continuità delle derivate seconde miste.}
+	Si ha infatti che
+	\begin{equation*}
+		F(x) - F(x_0) = \underbrace{f(x,y) - f(x, y_0)}_{F(x)} + \underbrace{f(x_0,y) - f(x_0,y_0)}_{F(x_0)} = f(x,y) - f(x, y_0) - f(x_0, y) + f(x_0,y_0)
+	\end{equation*}
+	e
+	\begin{equation*}
+		G(y) - G(y_0) = f(x,y) - f(x_0, y) - f(x, y_0) + f(x_0,y_0).
+	\end{equation*}
+	(Quindi $F(x) - F(x_0) = G(y) - G(y_0)$)
+	Si ha dunque
+	\begin{equation*}
+		 \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0) = \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)
+	\end{equation*}
+	e poiché $\uline{P=(x,y)\neq(x_0,y_0)=P_0}_{\footnotemark}$ si ha dunque
+	\begin{equation}\label{eq:derivate_miste_dim_schwarz}
+		\frac{\partial^2 f}{\partial x\partial y}(x_1,y_1) =  \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2).
+	\end{equation}
+	\footnotetext{Per questo $(x-x_0)(y-y_0)\neq 0$}
+	
+	Per le ipotesi iniziali $\frac{\partial^2 f}{\partial x\partial y}(x,y)$ e $\frac{\partial^2 f}{\partial y\partial x}(x,y)$ sono continue nel punto $P_0$ e ciò significa che
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}  \frac{\partial^2 f}{\partial x\partial y}(x,y) = \ \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) = \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =\lim_{(x,y)\rightarrow(0,0)}  \frac{\partial^2 f}{\partial y\partial x}(x,y).
+	\end{equation*}
+	($f_{xy}$ è una funzione in $x_1,y_1$, $f_{yx}$ è una funzione in $x_2,y_2$ e voglio passare al limite per $(x,y)\rightarrow(x_0,y_0)$)\\
+	Dati $y_0<y_1,\, y_2 < y$ e $x_0<x_1,\, x_2 < x$,
+	\begin{equation*}
+		\begin{matrix}
+			&\Rightarrow& (x_1,y_1) \rightarrow (x_0,y_0)\\
+			\text{Se }P=(x,y) \rightarrow (x_0,y_0) = P_0  &&\\
+			&\Rightarrow& (x_2,y_2)\rightarrow (x_0,y_0)
+		\end{matrix}
+	\end{equation*}
+	Pertanto, facendo il limite delle derivate miste (\ref{eq:derivate_miste_dim_schwarz}) per $(x_1,y_1) \rightarrow (x_0,y_0)$ e $(x_2,y_2)\rightarrow (x_0,y_0)$ è ottenuto che queste sono uguali
+	\begin{equation*}
+		\lim_{(x_1,y_1) \rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1) = \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) =  \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =  \lim_{(x_2,y_2)\rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2).
+	\end{equation*}
+	(con questa uguaglianza ho ciò che serve, le derivate seconde miste sono uguali, cioè (\ref{eq:derivate_miste_dim_schwarz}))
 \end{proof}
 
+\paragraph{Nota sulla dimostrazione:} È sfruttata la continuità delle derivate parziali nel punto $(x_0,y_0)$, ovvero l'uguaglianza $\frac{\partial^2 f}{\partial x\partial y}(x,y) = \frac{\partial^2 f}{\partial x\partial y}(x,y)$ quando $(x,y)\rightarrow(x_0,y_0)$. 
 
+\paragraph{Conseguenze del Teorema di Schwarz:}
+\begin{itemize}
+	\item Il Teorema afferma che se $f\in C^2(A)$ allora le derivate seconde miste sono uguali $\forall \uline x\in A$. Inoltre, il Teorema si può generalizzare anche con $f\in C^k(A)$ facendo si che valga per tutte le derivate fino all'ordine $k$,
+	\item Il fatto che le derivate miste siano uguali permette di scambiare l'ordine di derivazione (e derivare prima rispetto a $x$ o$y$ a seconda della comodità),
+	\item Il Teorema è applicabile alle derivate miste di ogni funzione di $n$ variabili,
+	\item \textbf{Se $\boldsymbol{f\in C^2(A)}$ allora $\boldsymbol{Hf(\uline x)}$ è simmetrica ($\boldsymbol{Hf(\uline x)=(Hf(\uline x)^T)}$) $\boldsymbol{\forall\uline x\in A}$}; per esempio, se $f\in C^2(A),\, A\subset \mathbb{R}^2$, allora
+	\begin{equation*}
+		Hf(x,y) =
+		\begin{bmatrix}
+			\frac{\partial^2 f}{\partial x^2} & &	\boxed{\frac{\partial ^2 f}{\partial x\partial y}}\\
+			&\horeq&\\
+			\boxed{\frac{\partial ^2 f}{\partial y\partial x}} && \frac{\partial^2 f}{\partial y^2}
+		\end{bmatrix}\quad \forall(x,y)\in A,
+	\end{equation*}
+	\item (Non ufficiale) Il fatto che $Hf$ sia una matrice reale simmetrica aiuta nell'algebra delle matrici, ad esempio nella ricerca degli autovalori.
+\end{itemize}
 
+\begin{example}
+	CALCOLO DERIVATE PARZIALI DI $f$ SLIDE 7-10 PDF 20.\\
+	STABILIRE CONTINUITà, DIFFERENZIABILITA, DERIVABILITA SLIDE 9-13 PDF 20.\\
+	INSIEME MASSIMALE FUNZIONE SLIDE 13-14 PDF 20.
+\end{example}
 
+\paragraph{Cosa serve per al Teorema di Schwarz per valere?} Le ipotesi del Teorema richiedono l'esistenza e la continuità delle funzioni in $A$ (ovvero che $f\in C^2(A)$). La sola esistenza delle derivate seconde non assicura che si possa invertire l'ordine dei derivazione. Ciò è fatto vedere nel seguente esempio.
 
+\begin{example}
+	Esistenza delle derivate non implica continuità e quindi no TH di Schwarz, SLIDE 16-19 PDF 21.
+\end{example}
 
+\subsubsection{Formula di Taylor}
+\footnote{Slide 20-27 PDF 21.} La formula di Taylor che sarà trattata è riconducibile alla forma vista ad Analisi 1. In più variabili è considerata una funzione definita su una curva opportuna, che è possibile da considerare come una funzione composta, la quale diventa una funzione di una sola variabile reale con lo stesso grado di regolarità delle funzioni con cui è costruita la funzione composta. Con una funzione con queste caratteristiche è possibile trattare la formula di Taylor.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.65\textwidth]{Analisi2/figures/segmento.jpeg}\label{fig:segmento}
+	\caption{Rappresentazione nel piano cartesiano di un segmento (ovvero in $\mathbb{R}^2$).}
+\end{figure}
+
+In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ per qualche $k \in \mathbb{N}$ (noi vederemo per $k=1,2$).
+
+\begin{definition}[Segmento]\footnote{Slide 20 PDF 21.}
+	Sia $A\subseteq\mathbb{R}^n$ aperto. Consideriamo $\uline x, \uline x+\uline h\in A$, con $\uline h\neq 0$, due punti di $A$ diversi tra loro. Il segmento che ha per estremi i due punti è definito come
+	\begin{equation*}
+		[\uline x, \uline x+\uline h] = \{x(t)\in\mathbb{R}^n; \uline x(t) = \uline x + t\uline h,\, t\in[0,1]\}\subset A.
+	\end{equation*}
+\end{definition}
+
+\paragraph{Cos'è un segmento?} È l'insieme di punti che congiunge $\uline x$ a $\uline x + \uline h$ lungo la direzione $\uline h$ al variare di $t$.
+
+\paragraph{Nota:} Presi due punti in $A$, la congiunzione di questi due è il movimento dal primo al secondo punto lungo la direzione indicata $\uline h$. Ciò fornirà una curva in $A$ perché calcolato cosa accade lungo la curva su $[\uline x, \uline x+\uline h]$ tramite $\uline x(t)$. $\qed$
+
+\paragraph{Considerazioni su $\boldsymbol{[\uline x, \uline x+\uline h]}$:} Se $[\uline x, \uline x+\uline h]\subset A$ allora è possibile applicargli $f$, quindi $f$ è ristretta al segmento $[\uline x, \uline x+\uline h]\subset A$ in $\mathbb{R}^n$. Pertanto, assegnati $\uline x$ e $\uline x+\uline h$, è possibile considerare la seguente definizione di funzione composta. 
+
+\begin{definition}[Funzione composta ad una curva, non ufficiale]\label{eq:funzione_composta_curva}\footnote{Slide 221 PDF 21.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R},\, f\in C^k(A)$ e $\uline x, \uline x+\uline h\in A$ con $\uline h\neq\uline 0$, tale che
+	\begin{equation*}
+		[\uline x, \uline x+\uline h] = \{x(t)\in\mathbb{R}^n; \uline x(t) = \uline x + t\uline h,\, t\in[0,1]\}\subset A,
+	\end{equation*}
+	allora è possibile considerare la funzione composta (definita su una curva)
+	\begin{equation*}
+		\begin{aligned}
+			F:[0,1]&\rightarrow\mathbb{R}
+			t&\mapsto F(t)=f(\uline x(t))=f(\uline x+t\uline h)
+		\end{aligned}
+	\end{equation*}
+\end{definition}
+
+\paragraph{Considerazione sulla Definizione:}
+\begin{itemize}
+	\item $F$ è una funzione di una variabile reale e valgono per $F$ tutte le proprietà di regolarità di $f$ dove: la curva $\uline x(t)$ è super-regolare, la derivata di $\uline x(t)$ è $\frac{\partial \uline x}{\partial t}=\uline h$ (ovvero la direzione della curva $\uline x(t)$);
+	\item $F(t)=f(\uline x+t\uline h)$ è in notazione vettoriale compatta per $f$ calcolata lungo la direzione del segmento che congiunge $\uline x$ a $\uline x +\uline h$, con $\uline x$ e $\uline h$ assegnate.
+\end{itemize}
+
+\begin{property}[Proprietà indotte da $f$ a $F$, non ufficiali]\label{eq:proprieta_indotte_f_F}
+	 Se $f\in C^1(A)$ allora $F\in C^1([0,1])$ (quindi, se $f$ è differenziabile allora lo è anche $F$) ed è possibile calcolare, tramite la regola della catena
+	\begin{equation}\label{eq:regola_catena_funzione_composta_curva}
+		F'(t) = <\underbrace{\triangledown f(\uline x+t\uline h)}_{\underset{\uline x(t)=\uline x+t\uline h}{\text{calc. lungo curva}}},\underbrace{\uline h}_{\gamma'(t)}>=\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i
+	\end{equation}
+	
+	Supposto $f\in C^2(A)$ allora $F\in C^2([0,1])$, $F'(t)$ è ulteriormente derivabile come
+	\begin{equation}\label{eq:regola_catena_funzione_composta_curva_2}
+		F''(t) = (F'(t))' \overset{\footnotemark}{=} \sum_{j=1}^{n}\frac{\partial f}{\partial x_i}  (\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i)h_j = \uline{\sum_{i,j=1}^{n} \frac{\partial^2 f}{\partial x_i} (\uline x + t \uline h)\, h_ih_j}_{(a)} [= <Hf(\uline x + t\uline h)\uline h, \uline h>],
+	\end{equation}
+	il quale è un polinomio omogeneo di grado 2 in $h_1,\hdots, h_n$, i cui coefficienti sono le derivate seconde di $f(\uline x + t \uline h)$.
+\end{property}
+
+\paragraph{Intermezzo:} Ora è possibile scrivere la formula di Taylor di una funzione con resto opportuno. Come in Analisi 1, sarà trattata la formula di Taylor con resto secondo Lagrange, la quale ha resto in funzione di ordine $k$ in un punto intermedio tra $x_0$ e $x$ e con resto secondo Peano, la quale ha resto in forma di $o-$piccolo. Inoltre, sarà trattata la formula di Taylor con $k=1,2$, quindi la formula è sviluppata fino alla espressione con la derivata seconda. Ciò perché (a) in (\ref{eq:regola_catena_funzione_composta_curva_2}) può essere scritta come $<Hf(\uline x + t\uline h)\uline h, \uline h>$. $\qed$
+
+\subsubsubsection{Formula di Taylor con resto in forma di Lagrange}
+\footnote{Slide 22-25 PDF 21.}
+Sia la Definizione \ref{eq:funzione_composta_curva}, ovvero
+$f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R},\, f\in C^k(A)$ e $\uline x, \uline x+\uline h\in A$ con $\uline h\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] = \{x(t)\in\mathbb{R}^n; \uline x(t) = \uline x + t\uline h,\, t\in[0,1]\}\subset A$, $F(t)=f(\uline x(t))=f(\uline x+t\uline h)$ e le Proprietà \ref{eq:proprieta_indotte_f_F}, è possibile dare la definizione di formula di Taylor (opportunamente centrato) con resto secondo Lagrange tramite la definizione per le funzioni di una variabile reale.
+
+\begin{definition}[Polinomio di Taylor di grado $n$ centrato in 0 con resto secondo Lagrange]\footnote{Slide 23 PDF 21.}
+	Sia $f\in C^k(A)$ allora $F\in C^k([0,1])$ con $F[0,1]\rightarrow\mathbb{R}$, si ha allora che $\exists\theta\in(0,1)$ tale che
+	\begin{equation*}
+		F(\underbrace{1}_t) = F(0) + \frac{F'(0)}{1}\cdot \underbrace{1}_t
+	\end{equation*}
+\end{definition}
