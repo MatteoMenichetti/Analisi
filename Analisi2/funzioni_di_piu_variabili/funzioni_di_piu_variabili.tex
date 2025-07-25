@@ -3021,8 +3021,8 @@ ciò si indica con
 			f_{yx}(\uline x) &  f_{yy}(\uline x)
 		\end{bmatrix} =
 		\begin{bmatrix}
-				\frac{\partial^2 f}{\partial x^2} & 	\frac{\partial ^2 f}{\partial x\partial y}\\
-				\frac{\partial ^2 f}{\partial y\partial x} & \frac{\partial^2 f}{\partial y^2}
+				\frac{\partial^2 f}{\partial x^2} (\uline x)& 	\frac{\partial ^2 f}{\partial x\partial y}(\uline x)\\
+				\frac{\partial ^2 f}{\partial y\partial x}(\uline x) & \frac{\partial^2 f}{\partial y^2}(\uline x)
 		\end{bmatrix}
 \end{equation*}
 \paragraph{Nomenclatura:} Nel caso $f$ sia derivabile due volte in $A$ allora
@@ -3044,7 +3044,7 @@ ciò si indica con
 \end{equation*}
 ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 
-\begin{theorem}[di Schwarz]\label{th:di_schwarz}\footnote{Slide 2 PDF 20.}
+\begin{theorem}[di Schwarz]\label{th:schwarz}\footnote{Slide 2 PDF 20.}
 	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ e $A$ aperto. Supposto che $f$ sia derivabile due volte in $A$, allora
 	\begin{equation*}
 		\exists f_{x_ix_j}(\uline x)\quad i,j=1,\hdots, n,\, \forall \uline x\in A\quad (\exists Hf(\uline x),\,\forall \uline x \in A).
@@ -3060,6 +3060,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 				f_{yx}(\uline x) &  f_{yy}(\uline x)
 			\end{bmatrix}
 	\end{equation*}
+	
 	È necessario dimostrare che $f_{xx}(\uline x)=f_{yy}(\uline x)$.
 	
 	\begin{figure}[ht]
@@ -3068,15 +3069,15 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 		\caption{Rappresentazione nel piano dei punti di interesse.}
 	\end{figure}
 	
-	Sia $P=(x,y)\in A$, con $P\neq P_0$ ($P$ punto qualsiasi, in questo caso scelto maggiore di $P_0$ e libero di muoversi fissata una variabile).\\
-	Definiamo (due funzioni per verificare le HP)
+	Sia $P=(x,y)\in A$, con $P\neq P_0$ ($P$ punto qualsiasi, in questo caso scelto maggiore di $P_0$ e libero di muoversi fissata una variabile), definiamo (due funzioni per verificare le HP)
 	\begin{equation*}
 		\begin{matrix}
 			F(x) &=& f(x,y)-f(x, y_0) && \forall y\text{ fissato}\\
 			G(y) &=& f(x,y) - f(x_0,y) && \forall x \text{ fissato}
 		\end{matrix}
 	\end{equation*}
-	\footnote{$F$ e $G$ sono funzioni di una variabile. Applicando il Teorema di Lagrange saranno considerate le derivate parziali di $f$.} Considerato $F(x)$ è applicato il Teorema di Lagrange nell'intervallo di estremi $x_0$ e $x$ \footnote{In Figura \ref{fig:dimostrazione_schwarz}, è considerato $[x_0,x]$ per $f$ e $(x_0, x)$ per $f'$.} allora $\exists x_1\in(x_0,x)$ tale che
+	
+	\footnote{$F$ e $G$ sono funzioni di una variabile. Applicando il Teorema di Lagrange saranno considerate le derivate parziali di $f$.} Considerato $F(x)$ è applicato il Teorema \ref{th:lagrange_analisi1} di Lagrange nell'intervallo di estremi $x_0$ e $x$ \footnote{In Figura \ref{fig:dimostrazione_schwarz}, è considerato $[x_0,x]$ per $f$ e $(x_0, x)$ per $f'$.} allora $\exists x_1\in(x_0,x)$ tale che
 	\begin{equation*}
 		F(x) - F(x_0) = F'(x_1) (x - x_1) \overset{\footnotemark}{=} \underbrace{\left[\frac{\partial f}{\partial x}(x_1, y)- \frac{\partial f}{\partial x}(x_1, y_0)\right]}_{\footnotemark}(x-x_0) \overset{\footnotemark}{=} (\star)
 	\end{equation*}
@@ -3098,11 +3099,9 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\begin{equation*}
 		G(y) - G(y_0) = G'(y_2) (y-y_0) = \underbrace{\left[\frac{\partial f}{\partial y}(x, y_2)- \frac{\partial f}{\partial y}(x_0, y_2)\right]}_{\footnotemark}(y-y_0) \overset{\footnotemark}{=} (\star)
 	\end{equation*}
-	\addtocounter{footnote}{-1}
 	\footnotetext{Differenza delle derivate parziali rispetto ad $y$ calcolate negli estremi $x$ e $x_0$ ($y_2$ è fisso).}
 	
-	\stepcounter{footnote}
-	\footnotetext{Dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial y}$ è derivabile ulteriormente rispetto $x$ e quindi è applicabile nuovamente il Teorema di Lagrange.}
+	dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial y}$ è derivabile ulteriormente rispetto $x$ e quindi è applicabile nuovamente il Teorema di Lagrange, ovvero $\exists x_2\in(x_0, x)$ tale che
 	
 	\begin{equation*}
 		(\star) =  \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)\underbrace{(x-x_0)(y-y_0)}_{\neq 0}.
@@ -3111,7 +3110,8 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	Quindi
 	\begin{equation}\label{eq:derivate_dim_schwartz}
 		\begin{matrix}
-			F(x) - F(x_0) &=& \overline{\frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0)}^{(a)}\\\\
+			F(x) - F(x_0) &=& \overline{\frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0)}^{(a)}\\
+			&&&&y_0<y_1,\, y_2 < y \text{ e } x_0<x_1,\, x_2 < x\\
 			G(y) - G(y_0) &=&\underline{ \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)}_{(b)}
 		\end{matrix}
 	\end{equation}
@@ -3126,7 +3126,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\end{equation*}
 	e
 	\begin{equation*}
-		G(y) - G(y_0) = f(x,y) - f(x_0, y) - f(x, y_0) + f(x_0,y_0).
+		G(y) - G(y_0) = \overbrace{f(x,y) - f(x, y_0)}^{G(x)} + \overbrace{f(x_0,y) - f(x_0,y_0)}^{G(x_0)} = f(x,y) - f(x_0, y) - f(x, y_0) + f(x_0,y_0).
 	\end{equation*}
 	(Quindi $F(x) - F(x_0) = G(y) - G(y_0)$)
 	Si ha dunque
@@ -3148,7 +3148,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\begin{equation*}
 		\begin{matrix}
 			&\Rightarrow& (x_1,y_1) \rightarrow (x_0,y_0)\\
-			\text{Se }P=(x,y) \rightarrow (x_0,y_0) = P_0  &&\\
+			\text{se }P=(x,y) \rightarrow (x_0,y_0) = P_0  &&\\
 			&\Rightarrow& (x_2,y_2)\rightarrow (x_0,y_0)
 		\end{matrix}
 	\end{equation*}
@@ -3170,9 +3170,9 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\begin{equation*}
 		Hf(x,y) =
 		\begin{bmatrix}
-			\frac{\partial^2 f}{\partial x^2} & &	\boxed{\frac{\partial ^2 f}{\partial x\partial y}}\\
+			\frac{\partial^2 f}{\partial x^2}(x,y) & &	\boxed{\frac{\partial ^2 f}{\partial x\partial y}}(x,y)\\
 			&\horeq&\\
-			\boxed{\frac{\partial ^2 f}{\partial y\partial x}} && \frac{\partial^2 f}{\partial y^2}
+			\boxed{\frac{\partial ^2 f}{\partial y\partial x}(x,y)}&& \frac{\partial^2 f}{\partial y^2}(x,y)
 		\end{bmatrix}\quad \forall(x,y)\in A,
 	\end{equation*}
 	\item (Non ufficiale) Il fatto che $Hf$ sia una matrice reale simmetrica aiuta nell'algebra delle matrici, ad esempio nella ricerca degli autovalori.
@@ -3208,9 +3208,9 @@ In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ 
 	\end{equation*}
 \end{definition}
 
-\paragraph{Cos'è un segmento?} È l'insieme di punti che congiunge $\uline x$ a $\uline x + \uline h$ lungo la direzione $\uline h$ al variare di $t$.
+\paragraph{Cos'è un segmento?} È l'insieme di punti che congiunge $\uline x$ a $\uline x + \uline h$ lungo la direzione $\uline h$ al variare di $t$ lungo la curva $\uline x(t)$.
 
-\paragraph{Nota:} Presi due punti in $A$, la congiunzione di questi due è il movimento dal primo al secondo punto lungo la direzione indicata $\uline h$. Ciò fornirà una curva in $A$ perché calcolato cosa accade lungo la curva su $[\uline x, \uline x+\uline h]$ tramite $\uline x(t)$. $\qed$
+\paragraph{Nota:} Presi due punti in $A$, la congiunzione di questi due è il movimento dal primo al secondo punto lungo la direzione indicata $\uline h$. Ciò fornirà una curva in $A$ perché calcolato cosa accade lungo la curva $\uline x(t)$ su $[\uline x, \uline x+\uline h]$. $\qed$
 
 \paragraph{Considerazioni su $\boldsymbol{[\uline x, \uline x+\uline h]}$:} Se $[\uline x, \uline x+\uline h]\subset A$ allora è possibile applicargli $f$, quindi $f$ è ristretta al segmento $[\uline x, \uline x+\uline h]\subset A$ in $\mathbb{R}^n$. Pertanto, assegnati $\uline x$ e $\uline x+\uline h$, è possibile considerare la seguente definizione di funzione composta. 
 
@@ -3222,7 +3222,7 @@ In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ 
 	allora è possibile considerare la funzione composta (definita su una curva)
 	\begin{equation*}
 		\begin{aligned}
-			F:[0,1]&\rightarrow\mathbb{R}
+			F:[0,1]&\rightarrow\mathbb{R}\\
 			t&\mapsto F(t)=f(\uline x(t))=f(\uline x+t\uline h)
 		\end{aligned}
 	\end{equation*}
@@ -3240,9 +3240,9 @@ In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ 
 		F'(t) = <\underbrace{\triangledown f(\uline x+t\uline h)}_{\underset{\uline x(t)=\uline x+t\uline h}{\text{calc. lungo curva}}},\underbrace{\uline h}_{\gamma'(t)}>=\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i
 	\end{equation}
 	
-	Supposto $f\in C^2(A)$ allora $F\in C^2([0,1])$, $F'(t)$ è ulteriormente derivabile come
+	Supposto $f\in C^2(A)$ allora $F\in C^2([0,1])$, $F'(t)$ è ulteriormente derivabile (utilizzando nuovamente la regola della catena) come
 	\begin{equation}\label{eq:regola_catena_funzione_composta_curva_2}
-		F''(t) = (F'(t))' \overset{\footnotemark}{=} \sum_{j=1}^{n}\frac{\partial f}{\partial x_i}  (\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i)h_j = \uline{\sum_{i,j=1}^{n} \frac{\partial^2 f}{\partial x_i} (\uline x + t \uline h)\, h_ih_j}_{(a)} [= <Hf(\uline x + t\uline h)\uline h, \uline h>],
+		F''(t) = (F'(t))' \overset{\footnotemark}{=} \sum_{j=1}^{n}\frac{\partial f}{\partial x_i}  \left(\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i \right)h_j = \uline{\sum_{i,j=1}^{n} \frac{\partial^2 f}{\partial x_i \partial x_j} (\uline x + t \uline h)\, h_ih_j}_{(a)} [= <Hf(\uline x + t\uline h)\uline h, \uline h>],
 	\end{equation}
 	il quale è un polinomio omogeneo di grado 2 in $h_1,\hdots, h_n$, i cui coefficienti sono le derivate seconde di $f(\uline x + t \uline h)$.
 \end{property}
@@ -3251,12 +3251,164 @@ In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ 
 
 \subsubsubsection{Formula di Taylor con resto in forma di Lagrange}
 \footnote{Slide 22-25 PDF 21.}
-Sia la Definizione \ref{eq:funzione_composta_curva}, ovvero
-$f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R},\, f\in C^k(A)$ e $\uline x, \uline x+\uline h\in A$ con $\uline h\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] = \{x(t)\in\mathbb{R}^n; \uline x(t) = \uline x + t\uline h,\, t\in[0,1]\}\subset A$, $F(t)=f(\uline x(t))=f(\uline x+t\uline h)$ e le Proprietà \ref{eq:proprieta_indotte_f_F}, è possibile dare la definizione di formula di Taylor (opportunamente centrato) con resto secondo Lagrange tramite la definizione per le funzioni di una variabile reale.
+Sia la Definizione \ref{eq:funzione_composta_curva} di funzione composta ad una curva e le Proprietà \ref{eq:proprieta_indotte_f_F}, è possibile dare la definizione di formula di Taylor (opportunamente centrato) con resto secondo Lagrange tramite la definizione per le funzioni di una variabile reale.
 
-\begin{definition}[Polinomio di Taylor di grado $n$ centrato in 0 con resto secondo Lagrange]\footnote{Slide 23 PDF 21.}
-	Sia $f\in C^k(A)$ allora $F\in C^k([0,1])$ con $F[0,1]\rightarrow\mathbb{R}$, si ha allora che $\exists\theta\in(0,1)$ tale che
-	\begin{equation*}
-		F(\underbrace{1}_t) = F(0) + \frac{F'(0)}{1}\cdot \underbrace{1}_t
-	\end{equation*}
+\begin{definition}[Formula di Taylor di ordine $k$ centrato in 0 con resto secondo Lagrange]\footnote{Slide 23 PDF 21.}
+	Sia $f\in C^k(A)$ e $\uline x, \uline x+\uline h\in A$, con $\uline h\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] \subset A$ allora $F(t)=f(\uline x(t))=f(\uline x+t\uline h)$ con $F:[0,1]\rightarrow\mathbb{R}$ è $C^k([0,1])$. Allora $\exists\theta\in(0,1)$, dipendente da $\uline x_0$ e $\uline h$, tale che
+	\begin{equation}\label{eq:polinomio_taylor_grado_n_centrato_0_resto_lagrange}
+		F(\underbrace{1}_t) = F(0) + \frac{F'(0)}{1}\cdot \underbrace{1}_t + \frac{F''(0)}{2}\cdot \underbrace{1^2}_{t^2}  + \hdots + \frac{F^{(k-1)}(0)}{(k-1)!}\cdot \underbrace{1^{k-1}}_{t^{k-1}} + \underbrace{\frac{F^k(0)}{k!}\cdot \underbrace{1^k}_{t^{k}}}_{R_k(t,0)}.
+	\end{equation}
 \end{definition}
+\paragraph{Chi sono $\boldsymbol{F(0)}$ e $\boldsymbol{F(1)}$?} Dato $F(t)=f(\uline x(t))=f(\uline x+t\uline h)$ con $F:[0,1]\rightarrow\mathbb{R}$:
+\begin{itemize}
+	\item $F(0)=f(\uline x)$,
+	\item $F(1)=f(\uline x+\uline h)$ ($\uline x+\uline h$ incremento di $\uline x$ secondo la direzione $\uline h$).
+\end{itemize}
+
+\paragraph{Osservazioni su (\ref{eq:polinomio_taylor_grado_n_centrato_0_resto_lagrange}):} (\ref{eq:polinomio_taylor_grado_n_centrato_0_resto_lagrange}) è un polinomio di ordine $k$ che approssima $f$ e quando l'ordine è $k=1$, la formula di Taylor con resto secondo Lagrange equivale al Teorema di Lagrange (in modo opportuno in quanto il Teorema è valido per $n$ variabili).
+
+\begin{theorem}[Lagrange]\label{th:di_lagrange}\footnote{Slide 24 PDF 21.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto, con $f\in C^1(A)$ e siano $\uline x, \uline x+\uline h\in A$, con $\uline h\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] \subset A$ allora $\exists\theta\in(0,1)$ tc
+	\begin{equation}\label{eq:th_lagrange}
+		f(\uline x+\uline h) = f(\uline x) + \overline{\sum_{i = 1}^{n} \underline{\frac{\partial f}{\partial x_i} (\uline x + \theta \uline h)}_{(b)} h_i }^{(a)} = \uline{f(\uline x) + <\triangledown f(\uline x + \theta \uline h), \uline h>}_{(c)}.
+	\end{equation}
+\end{theorem}
+
+\paragraph{Note su (\ref{eq:th_lagrange}):} (a) rappresenta il prodotto scalare $<\triangledown f(\uline x + \theta \uline h), \uline h>$, dove (b) è il vettore gradiente $\triangledown f(\uline x + \theta \uline h)$ e $\uline x + \theta \uline h$ è un punto intermedio del segmento $[\uline x, \uline x+\uline h]$. Inoltre, (c) segue dall'espressione della derivata, quindi applicando la formula di Taylor con il resto secondo Lagrange e $k=1$ può essere scritta come (\ref{eq:th_lagrange_riscritta}). $\qed$
+
+\begin{proof}
+	Segue, con $k=1$ che (per il Teorema di Lagrange di Analisi 1 (?)) $\exists\theta\in[0,1]$ tc
+	\begin{equation}\label{eq:th_lagrange_riscritta}
+		F(1) = F(0) + \frac{F'(\theta)}{1!} = f(\uline x +\uline h) = f(\uline x) + <\triangledown f(\uline x + \theta \uline h), \uline h>,
+	\end{equation}
+	dove
+	\begin{itemize}
+		\item $F(0)= f(\uline x + 0\uline h) = f(\uline x)$,
+		\item $F(1)=f(\uline x+1 \uline h)=f(\uline x+\uline h)$,
+		\item $F'(\theta) = <\triangledown f(\uline x + \theta \uline h), \uline h>$.
+	\end{itemize}
+	Quindi, (applicando il Teorema di Lagrange di Analisi 1, $\exists\theta\in[0,1]$)
+	\begin{equation}\label{eq:incremento_variabili_dim_lagrange}
+		F(1) = F(0) + F'(\theta) \cdot \underbrace{1}_{(b-a)},
+	\end{equation}
+	sostiuendo $F(0),\, F(1)$ e $F'(0)$ in (\ref{eq:th_lagrange_riscritta}) è ottenuta (\ref{eq:th_lagrange}).
+\end{proof}
+
+\paragraph{Note sulla dimostrazione:} Se $k=2$ allora $f\in C^2(A)$. La formula di Taylor con resto di Lagrange al secondo ordine approssima la funzione $f$ con un polinomio di ordine uno ed il resto, ovvero l'errore, in termini di derivata seconda, ovvero come $F''(\theta) = <Hf(\uline x + t\uline h)\uline h, \uline h>$ per (\ref{eq:regola_catena_funzione_composta_curva_2}).
+
+\paragraph{Note sul Teorema \ref{th:di_lagrange} di Lagrange:}
+\begin{itemize}
+	\item Il Teorema del valor medio approssima l'incremento della funzione con l'opportuna derivata prima per l'ampiezza dell'intervallo (ad esempio come in (\ref{eq:incremento_variabili_dim_lagrange})). In più variabili è ottenuto il Teorema \ref{th:di_lagrange} ;
+	\item Il Teorema afferma che è possibile trovare $\theta\in[0,1]$ per cui è ottenuta la formula di Taylor con resto secondo Lagrange di ordine 1. $\qed$
+\end{itemize}
+
+\subsubsubsection{Formula di Taylor di secondo ordine con resto secondo Peano}
+\footnote{Slide 25-27 PDF 21.} In questo caso è supposto che $k=2$ e la formula di Taylor è definita come segue.
+
+\begin{definition}[Formula di Taylor di secondo ordine con resto secondo Peano]\footnote{Slide 25 PDF 21.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, con $f\in C^2(A)$ e siano $\uline x, \uline x+\uline h\in\mathbb{R}$ con $\uline h\neq\uline 0$, $\uline h\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] \subset A$ allora $\exists\theta\in(0,1)$, dipendente da $\uline x_0$ e $\uline h$ (incremento), tc
+	\begin{equation}\label{eq:formula_taylor_secondo_ordine_resto_peano}
+		\begin{matrix}
+			\overbrace{f(\uline x+\uline h)}^{F'(1)} &=& f(\uline x) + \overbrace{\sum_{i = 1}^{n} \frac{\partial f}{\partial x_i} (\uline x + \theta \uline h) h_i}^{F'(0)} + \frac{1}{2} \overbrace{\sum_{i,j = 1}^{n} \frac{\partial f}{\partial x_i\partial x_j} (\uline x + \theta \uline h) h_i h_j}^{F''(\theta)} \\\\
+			&=& f(\uline x) + \underbrace{<\triangledown f(\uline x + \theta \uline h), \uline h>}_{F'(0)} + \frac{1}{2} \underbrace{<Hf(\uline x + \theta \uline h)\uline h, \uline h>}_{F''(\theta)}.
+		\end{matrix}
+	\end{equation}
+\end{definition}
+
+(\ref{eq:formula_taylor_secondo_ordine_resto_peano}) è della forma
+\begin{equation*}
+	F(1) = F(0) + F'(0) + \frac{F''(\theta)}{2}.
+\end{equation*}
+
+\paragraph{Note su (\ref{eq:formula_taylor_secondo_ordine_resto_peano}):}
+\begin{itemize}
+	\item È scritto in forma compatta prima tramite la notazione vettoriale e poi utilizzando la forma quadratica,
+	\item $<Hf(\uline x + \theta \uline h)\uline h, \uline h>$ è l'errore,
+	\item
+	\begin{equation*}
+		Hf(\uline x) \uline h = 
+		\underbrace{\begin{bmatrix}
+			f_{x_1^2}(\uline x) & f_{x_1x_2}(\uline x) & \hdots & f_{x_1x_n}(\uline x)\\
+			f_{x_2x_1}(\uline x) & f_{x_2^2}(\uline x) & \hdots & f_{x_2x_n}(\uline x)\\
+			\vdots & \vdots & & \vdots\\
+			f_{x_nx_1}(\uline x) & f_{x_nx_2}(\uline x) & \hdots & f_{x_n^2}(\uline x)\
+		\end{bmatrix}}_{n\times n}
+		\underbrace{\begin{pmatrix}
+				h_1\\
+				\vdots\\
+				h_n
+		\end{pmatrix}}_{n\times 1}.
+	\end{equation*}
+\end{itemize}
+
+È introdotta una formula utile per il calcolo dei limiti perché la funzione è approssimata con un polinomio ed un errore della forma $o-$piccolo, quindi una quantità infinitesima.
+
+\begin{definition}[Formula di Taylor al secondo ordine ($k=2$) con resto di Peano (come $o-$piccolo)]
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, con $f\in C^2(A)$ e siano $\uline x, \uline x+\uline h\in\mathbb{R}$ con $\uline h\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] \subset A$ allora
+	\begin{equation}\label{eq:formula_taylor_secondo_ordine_resto_peano_o_piccolo}
+		f(\uline x+\uline h) = f(\uline x) + <\triangledown f(\uline x + \theta \uline h), \uline h> + \uline{\frac{1}{2} <Hf(\uline x + \theta \uline h)\uline h, \uline h>}_{(a)} + o(||h||^2)\quad \text{per }\uline h\rightarrow\uline 0.
+	\end{equation}
+\end{definition}
+
+È possibile scrivere la formula (\ref{eq:formula_taylor_secondo_ordine_resto_peano_o_piccolo}) per funzioni in due variabili (così è più facile da scrivere). È interessante capire com'è fatta la forma di (a) in (\ref{eq:formula_taylor_secondo_ordine_resto_peano_o_piccolo}): questa è un polinomio omogeneo di grado 2 in $\uline h$ in cui i coefficienti sono le derivate secondo di $f$ calcolate in $\uline x$. Tutto ciò è descritto in quanto segue.
+
+Sia $f: A\subseteq\mathbb{R}^2\rightarrow\mathbb{R}$, con $f\in C^2(A)$, e $\uline x=(x_0,y_0)\in A$, $\uline h = (h_1, h_2) = (h, k)\in A\backslash\{(0,0)\}$. È possibile trasformare $f(\uline x+ \uline h)$ dalla sua forma vettoriale in forma esplicita come
+\begin{equation}\label{eq:esempio_forma_taylor_secondo_ordine_resto_peano}
+	\begin{matrix}
+		f(x_0 + h, y_0 + k) &=& f(x_0, y_0) + \overbrace{\frac{\partial f}{\partial x} (x_0,y_0) h + \frac{\partial f}{\partial y} (x_0,y_0) k}^{<\triangledown f(x_0,y_0),\uline h>} + \\\\
+		&+& \frac{1}{2} \underbrace{\left[\frac{\partial f^2}{\partial x^2} (x_0,y_0) h^2 + 2\frac{\partial f}{\partial x\partial y} (x_0,y_0)hk + \frac{\partial^2 f}{\partial y^2} (x_0,y_0)k^2\right]}_{<Hf(x_0,y_0)\uline h, \uline h>} + o(h^2+k^2).
+	\end{matrix}
+\end{equation}
+
+Il fatto che $f\in C^2(A)$ fa si che, per il Teorema \ref{th:schwarz} di Schwarz le derivate miste $\frac{\partial f^2}{\partial x^2} (x_0,y_0)$ e $\frac{\partial f^2}{\partial y^2} (x_0,y_0)$ siano uguali e quindi sono contate due volte. Quindi,
+\begin{equation*}
+	Hf(x_0,y_0) =
+	\begin{bmatrix}
+		\frac{\partial^2 f}{\partial x^2}(x_0,y_0) && \frac{\partial ^2 f}{\partial x\partial y}(x_0,y_0)\\
+		&\horeq&\\
+		\frac{\partial ^2 f}{\partial y\partial x}(x_0,y_0) && \frac{\partial^2 f}{\partial y^2}(x_0,y_0)
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	Hf(x_0,y_0)\uline h =
+	\begin{bmatrix}
+		\frac{\partial^2 f}{\partial x^2}(x_0,y_0) & \frac{\partial ^2 f}{\partial x\partial y}(x_0,y_0)\\
+		\frac{\partial ^2 f}{\partial y\partial x}(x_0,y_0) & \frac{\partial^2 f}{\partial y^2}(x_0,y_0)
+	\end{bmatrix}
+	\begin{bmatrix}
+		h\\
+		k
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		f_{xx}(x_0,y_0)h + f_{xy}(x_0,y_0)k\\
+		f_{yx}(x_0,y_0)h +  f_{yy}(x_0,y_0)k
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{matrix}
+		<Hf(x_0,y_0)\uline h, \uline h> &=&
+		\begin{bmatrix}
+			f_{xx}(x_0,y_0)h + f_{xy}(x_0,y_0)k\\
+			f_{yx}(x_0,y_0)h +  f_{yy}(x_0,y_0)k
+		\end{bmatrix} (h,k) &=&\\\\
+		&=& f_{xx}(x_0,y_0)h^2 + f_{xy}(x_0,y_0)hk + f_{yx}(x_0,y_0)hk +  f_{yy}(x_0,y_0)k ^2 &=&\\\\
+		&=& f_{xx}(x_0,y_0)h^2 + 2 f_{xy}(x_0,y_0)hk +  f_{yy}(x_0,y_0)k ^2.
+	\end{matrix}
+\end{equation*}
+
+\paragraph{Note su (\ref{eq:esempio_forma_taylor_secondo_ordine_resto_peano}):} La formula (\ref{eq:esempio_forma_taylor_secondo_ordine_resto_peano}) afferma che $f$ è approssimata, quando $(x,y)\rightarrow(0,0)$, con un polinomio di grado 2 (ovvero tutto ciò che è a destra dell'uguale) in $(x,y)$ con $x=x_0+y$ e $y=y_0+k$. Tale approssimazione commette un errore $o(||\uline h||^2) = o(h^2 + y^2)$ che tende a 0 più velocemente della distanza tra $\uline x$ e $x_0$, in quanto $h = x-x_0$ e $k=y - y_0$ e $h^2+ k^2$ è la distanza al quadrato tra $P=(x,y)$ e $P_0=(x_0, y_0)$, dove $P$ è il punto di arrivo attraverso la perturbazione nella direzione $\uline h$.
+
+\paragraph{Riassunto sulla Formula di Taylor con resto di Peano:} Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R}$, con $f\in C^2(A)$ e siano $\uline x, \uline x+\uline h\in\mathbb{R}$ con $\uline h=(h,k)\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] \subset A$, $x_0+k=x$ e $y_0+k=y$ allora la formula di Taylor con resto di Peano centrato in $P_0=(x_0,y_0)$ è
+\begin{equation*}
+	f(x,y) = f(x_0,y_0) <\triangledown f(x_0,y_0), \uline h> + \frac{1}{2}<Hf(x_0,y_0)\uline h, \uline h> + o((x-x_0)^2-(y-y_0)^2)\quad\text{per } \uline h\rightarrow(0,0),
+\end{equation*}
+dove $P_2(x_0,y_0)$ è l'unico polinomio centrato in $(x_0,y_0)$ di grado due in $x_0+k=x$ e $y_0+k=y$ che approssima la funzione con un errore $o((x-x_0)^2-(y-y_0)^2)$ che tende a 0 (oppure per il quale la differenza $f(x,y)-P_2(x_0,y_0)$ tende a 0) più velocemente della distanza al quadrato tra i due punti $P=(x,y)$ e $P_0=(x_0,y_0)$ per $\uline h=(h,k)\rightarrow(0,0)$. Pertanto è possibile scrivere tale approssimazione come
+\begin{equation*}
+	f(x,y) = P_2(x_0,y_0) + o(\underbrace{(x-x_0)^2-(y-y_0)^2}_{d^2(P,P_0)=||P-P_0||^2}).
+\end{equation*}
+
+\begin{example}
+	PROVA DI AUTOVALUTAZIONE CON ESERCIZI SU PROBLEMA DI CAUCHY, CALCOLO LIMITE, DETERMINAZIONE INSIEME DI DEFINIZIONE E SEGNO DI $f$ SLIDE 28-39 PDF 21.
+\end{example}
+
+\subsection{Ottimizzazione libera e vincolata}
