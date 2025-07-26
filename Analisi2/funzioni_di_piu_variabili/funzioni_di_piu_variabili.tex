@@ -3400,15 +3400,252 @@ Il fatto che $f\in C^2(A)$ fa si che, per il Teorema \ref{th:schwarz} di Schwarz
 
 \paragraph{Riassunto sulla Formula di Taylor con resto di Peano:} Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R}$, con $f\in C^2(A)$ e siano $\uline x, \uline x+\uline h\in\mathbb{R}$ con $\uline h=(h,k)\neq\uline 0$, tale che $[\uline x, \uline x+\uline h] \subset A$, $x_0+k=x$ e $y_0+k=y$ allora la formula di Taylor con resto di Peano centrato in $P_0=(x_0,y_0)$ è
 \begin{equation*}
-	f(x,y) = f(x_0,y_0) <\triangledown f(x_0,y_0), \uline h> + \frac{1}{2}<Hf(x_0,y_0)\uline h, \uline h> + o((x-x_0)^2-(y-y_0)^2)\quad\text{per } \uline h\rightarrow(0,0),
+	f(x,y) = \underbrace{\overset{\text{termine noto}}{f(x_0,y_0)} +  <\triangledown f(x_0,y_0), \uline h> + \frac{1}{2}\overset{\text{termine quadratico}}{<Hf(x_0,y_0)\uline h, \uline h>}}_{P_2(x_0,y_0)} + o(\underbrace{(x-x_0)^2-(y-y_0)^2}_{d^2(P,P_0)=||P-P_0||^2}) \quad\text{per } \uline h\rightarrow(0,0),
 \end{equation*}
 dove $P_2(x_0,y_0)$ è l'unico polinomio centrato in $(x_0,y_0)$ di grado due in $x_0+k=x$ e $y_0+k=y$ che approssima la funzione con un errore $o((x-x_0)^2-(y-y_0)^2)$ che tende a 0 (oppure per il quale la differenza $f(x,y)-P_2(x_0,y_0)$ tende a 0) più velocemente della distanza al quadrato tra i due punti $P=(x,y)$ e $P_0=(x_0,y_0)$ per $\uline h=(h,k)\rightarrow(0,0)$. Pertanto è possibile scrivere tale approssimazione come
 \begin{equation*}
-	f(x,y) = P_2(x_0,y_0) + o(\underbrace{(x-x_0)^2-(y-y_0)^2}_{d^2(P,P_0)=||P-P_0||^2}).
+	f(x,y) = P_2(x_0,y_0) + o(||P-P_0||^2).
 \end{equation*}
+Tale relazione permette di scrivere
+\begin{equation*}
+	f(x,y) - f(x_0, y_0) = o((x-x_0)^2-(y-y_0)^2). 
+\end{equation*}
+
+\paragraph{Perché è utilizzata l'approssimazione $\boldsymbol{P_2(x_0,y_0)}$?} $P_2$ permette di scrivere la differenza $f(x,y)-f(x_0,y_0)$ come $o-$piccolo della distanza tra $P$ e $P_0$ quando è considerato in punto critico. È utile applicare l'approssimazione appena tratta ad un punto critico in quanto permette dedurre il segno della differenza $f(x,y)-f(x_0,y_0)$ vicino al punto $P_0 = (x_0,y_0)$.
 
 \begin{example}
 	PROVA DI AUTOVALUTAZIONE CON ESERCIZI SU PROBLEMA DI CAUCHY, CALCOLO LIMITE, DETERMINAZIONE INSIEME DI DEFINIZIONE E SEGNO DI $f$ SLIDE 28-39 PDF 21.
 \end{example}
 
-\subsection{Ottimizzazione libera e vincolata}
+\subsection{Ottimizzazione}
+\footnote{PDF 22-24.}
+La definizione di massimo e minimo relatico per una funzione sono uguali alle definizioni di Analisi 1, quindi sono definizioni di tipo analitico: è osservato se valgono le definizioni di massimo e minimo nell'intorno del punto in questione.
+
+\begin{definition}[Minimo e massimo locale]\label{def:minimo_massimo_locale_an2}\footnote{Slide 3 PDF 22.}
+	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$ \footnote{Nel caso generale, al posto di $A$ c'è $D=A\cup\partial A$, dove $A=\mathring D$.}. Si dice che $\uline x_0\in A$ ($\backslash\in D$) è un minimo relativo (locale) per $f$ se, per $r>0$
+	\begin{equation*}
+		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,
+	\end{equation*}
+	oppure massimo (locale) per $f$ se
+	\begin{equation*}
+		f(\uline x) \leq f(\uline x_0)\quad \uline x\in B(\uline x_0, r)\cap A.
+	\end{equation*}
+\end{definition}
+
+\paragraph{Perché locale?} Perché le definizioni di minimo e massimo locale valgono vicino al punto $\uline x_0$, localmente (perché $\uline x\in B(\uline x_0,r)\cap A$, ovvero è molto vicino a $\uline x_0$).
+
+\paragraph{Nomenclatura:} Un punto si dice di minimo o massimo forte se le disuguaglianze valgono in modo stretto, se al posto di $\leq$ c'è <.
+
+\begin{definition}
+	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$. Si dice che $\uline x_0\in A$ ($\backslash\in D$) è un minimo assoluto (globale)
+	\begin{equation*}
+		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in A,
+	\end{equation*}
+	oppure massimo globale per $f$
+	\begin{equation*}
+		f(\uline x)\leq f(\uline x_0) \quad \forall\uline x\in B(\uline x_0,r)\cap A.
+	\end{equation*}
+\end{definition}
+
+\begin{theorem}[Weiestrass]\footnote{Slide 21 PDF 22.}
+	\textbf{(IPOTESI NECESSARIA)} Ogni funzione $f:K\subset\mathbb{R}^2\rightarrow\mathbb{R}$ continua su $K\subset\mathbb{R}^2$ (compatto perché) limitato e chiuso di $\mathbb{R}^2$ \textbf{(Tesi)} è limitata ed assume su tale insieme i valori di massimo e di mino assoluti, ovvero $\underline{\exists(x_m,y_m),(x_M, y_M)\in K}_{(a)}$ tc 
+	\begin{equation*}
+		\underline{f(x_m,y_m)\leq f(x,y)\leq f(x_M, y_M)}_{(b)},\qquad\forall (x,y)\in K.
+	\end{equation*}
+\end{theorem}
+
+\paragraph{Note sul Teorema di Weiestrass:}
+\begin{itemize}
+	\item Per $(a)$ utilizzare il quantificatore $\exists$ significa che esiste almeno uno, non implica l'unicità,
+	\item Per $(b)$ $f$ è limitata nei punti di minimo e di massimo assoluti $(x_m,y_m)$ e $(x_M, y_M)$,
+	\item $f(x_m,y_m)$ e $f(x_M, y_M)$ sono valori di minimo e massimo in $K$ e non punti,
+	\item Il teorema afferma che se considerata una funzione su un compatto allora sicuramente ha massimo e minimo assoluti in questo; Inoltre, dato che la funzione è continua su un compatto (richiesto nelle ipotesi), nello studio del minimo e del massimo è necessario è necessario distinguere fra punti interni al compatto e sulla frontiera.
+\end{itemize}
+
+\subsubsection{Ottimizzazione libera}
+In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione necessaria ma non sufficiente affinché un punto sia considerato di minimo o di massimo ($f'(x_0)=0$). In Analisi 2 c'è una sua estensione, ovvero che $\triangledown f(\uline x_0)=0$. Inoltre, in Analisi 1, per determinare se un punto è di massimo o di minimo è utilizzato il segno della derivata seconda; in Analisi 2 il test dell'Hessiana.
+
+\begin{example}
+	$f(x)=x^3$ ha $x=0$ come punto stazionario anche se questo non è un estremo locale. Il Teorema di Fermat è "solo" la condizione necessaria affinché un punto sia un estremo. Vedere Figura \ref{fig:x-pow-3}.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Analisi2/figures/x-pow-3.jpg}\label{fig:x-pow-3}
+		\caption{Grafico di $f(x)=x^3$.}
+	\end{figure}
+\end{example}
+
+\begin{theorem}[di Fermat]\label{th:fermat_an2}\footnote{Slide 5 PDF 22.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ ($D$ nel caso generale), $A$ aperto e sia $\uline x_0\in A$ ($\backslash \uline x_0\in \mathring D$) punto di minimo (massimo) relativo (locale).\\
+	\textbf{(Ipotesi)} Se $f$ è differenziabile in $x_0$ \textbf{\ul{allora}} \textbf{(tesi)} $\triangledown f(\uline x_0)=0$.
+\end{theorem}
+
+\begin{proof}
+	Sia $\uline x_0\in A$ un punto di minimo o di massimo per $f$. Considerato $\uline x_0$ punto di massimo relativo per $f$ allora (voglio applicare il Teorema di Fermat di Analisi 1) $\uline x_0$ è un punto di massimo per $f$ ristretta$_{\footnotemark}$ ad una "retta" (nel senso multidimensionale) passante per $\uline x_0$ \footnotemark . Sia $\uline v$ una direzione in $\mathbb{R}^n$ (quindi $||\uline v||=1$), è definita
+	\begin{equation*}
+		\begin{aligned}
+			F:(-r,r)\subset\mathbb{R}&\rightarrow\mathbb{R}\\
+			t&\rightarrow F(t)=f(\uline x_0 + t\uline v)
+		\end{aligned}
+	\end{equation*}
+	\footnotemark funzione di una variabile, dove in $t=0$ ho un punto di massimo relativo (perché è ottenuto $\uline x_0$ e questo è il massimo imposto all'inizio) e
+	\begin{equation*}
+		F(0) = f(\uline x_0).
+	\end{equation*}
+	\footnotemark Applichiamo il Teorema di Fermat a $F(t)$, dove $t\in(-r,r)$, (dato che $F$ è derivabile in $t=0$)
+	\begin{equation*}
+		F'(0) = 0.
+	\end{equation*}
+	(in quanto in $t=0$ ha il massimo) Per la regola della catena
+	\begin{equation*}
+		F'(t) = <\triangledown f(\uline x_0 + t\uline v), \uline v>,
+	\end{equation*}
+	dunque
+	\begin{equation}\label{eq:derivata_direzionale_0_fermat}
+		F'(0) = \underbrace{<\triangledown f(\uline x_0),\uline v> = 0}_{\footnotemark},\quad\forall\uline v\in\mathbb{R}^n
+	\end{equation}
+	se
+	\begin{equation}\label{eq:gradiente_0_fermat}
+		\triangledown f(\uline x_0) = 0.
+	\end{equation}
+\end{proof}
+
+\addtocounter{footnote}{-4}
+\footnotetext{Essendo $x_0$ massimo relativo in $A$, questa caratteristica deve valere anche per una restrizione qualsiasi della funzione ad una curva passante per il punto.}
+
+\stepcounter{footnote}
+\footnotetext{È considerato $\uline x_0 + t\uline v$ perché al variare di $t$, cosicché i punti possano variare sulla "retta" secondo la direzione $\uline v$ e passare da $\uline x_0$.}
+
+\stepcounter{footnote}
+\footnotetext{$F$ è definita su $(-r,r)=I(0,r)\subset\mathbb{R}$, con $r>0$ perché $\uline x_0$ è un estremo locale e quindi vale per un intorno di $t=0$. È scelto $t=0$ ed un intorno di 0 per $t$ perché così $\uline x_0 + t\uline v=\uline x_0$ punto di massimo.}
+
+\stepcounter{footnote}
+\footnotetext{Dato che $f$ è supposta differenziabile in $x_0$ allora lo è anche $F$ in $t=0$ ($\uline x_0 + t\uline v=\uline x_0)$.}
+
+\stepcounter{footnote}
+\footnotetext{$<\triangledown f(\uline x_0),\uline v>$ è la derivata direzionale di $f$ secondo la direzione $\uline v$ calcolata nel punto $\uline x_0$, per ogni direzione $\uline v$. Dato che $F'(0)=0$, per il Teorema \ref{th:fermat_an1} di Fermat, allora la derivata direzionale $<\triangledown f(\uline x_0),\uline v>$ deve essere 0 per ogni direzione $\uline v$ e dato che $\uline v\neq 0$ allora, affinché sia verificato $<\triangledown f(\uline x_0),\uline v>=0$ (ovvero (\ref{eq:derivata_direzionale_0_fermat})), è necessario che $\triangledown f(\uline x_0) = 0$ (ovvero (\ref{eq:gradiente_0_fermat})).}
+
+\paragraph{Note sulla dimostrazione:} La dimostrazione è quella di Analisi 1, ovvero è considerata la funzione su un opportuna curva passante per il punto incriminato lungo una direzione con l'obiettivo di ridurre il problema alla ricerca del massimo (o minimo) di una funzione di una variabile. \\
+È possibile determinare la retta (curva) passante per il punto seguendo una direzione (in $\mathbb{R}^n$) per poter restringere la funzione alla retta passante per il punto. Inoltre, se $f$ è ristretta alla curva ed $x$ è preso localmente vicino al punto incriminato (nella dimostrazione $\uline x_0$) allora è possibile la costruzione di $F$ lungo la curva cosicché $\uline x_0$ diventi il punto di minimo o massimo. $\qed$
+
+\begin{remark}[Non ufficiale]\footnote{Slide 6 PDF 22.}
+	Il Teorema \ref{th:fermat_an2} di Fermat è la \textbf{condizione necessaria} affinché un punto interno al dominio $\uline x_0\in\mathring D$ ($\uline x_0\in A$) sia un estremo relativo della funzione $f\in C^2(\mathring D)$ (ovvero $f\in C^1(A)$). Quindi
+	\begin{equation*}
+		\begin{matrix}
+			\uline x_0 \text{ estremo locale } &\Rightarrow& \triangledown f(\uline x_0)=0\\
+			&\cancel{\Leftarrow}&		
+		\end{matrix}
+	\end{equation*}
+\end{remark}
+
+\paragraph{A cosa serve la differenziabilità nel Teorema di Fermat?}  Per la regola della catena e le proprietà che ne derivano. Se per una funzione di una variabile è richiesto che $f$ sia derivabile affinché sia continua, in più variabili è richiesta la differenziabilità.
+
+\begin{definition}[Punto stazionario (o critico)]\footnote{Slide 8 PDF 22.}
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $f$ differenziabile in $A$ ($f\in C^1(A)$). I punti $\uline x\in A$ per cui $\triangledown f(\uline x)=0$ si dicono punti critici (o stazionari) di $f$ in $A$.
+\end{definition}
+
+\paragraph{Cosa significa?} Se $\uline x_0$ è un punto di minimo o massimo in un dominio di una funzione differenziabile allora $\uline x_0$ è un punto critico. Non è vero il viceversa. Pertanto, essere punto stazionario è una condizione necessaria ma non sufficiente affinché il punto sia di minimo o di massimo relativo per $f$. $\qed$
+
+I punti che annullano il gradiente ma che non sono di minimo o di massimo si chiamano di sella (o di colle). Ciò significa che nell'intorno del punto il comportamento (il segno) della funzione $f(\uline x) - f(\uline x_0)$ cambia a seconda di come varia $\uline x$. 
+
+\begin{definition}[Punto di sella (o di colle)]\footnote{Slide 8 PDF 22.}
+	Un punto critico $x_0$ di $f$ su $A$ che non è di minimo o di massimo si dice di colle o di sella.
+\end{definition}
+
+\paragraph{Nota:} Il segno di $f(\uline x) - f(\uline x_0)$ determina se $\uline x_0$ è di minimo o di massimo relativo, ovvero data Definizione \ref{def:minimo_massimo_locale_an2} di minimo e massimo relativo vale la seguente Osservazione.
+
+\begin{remark}[Non ufficiale]
+	Supposto $\uline x_0$ punto di minimo relativo per $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, allora
+	\begin{equation*}
+		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,\; r>0,
+	\end{equation*}
+	ovvero (il segno è sempre non negativo e l'immagine di $f$ è sempre maggiore uguale di $f(\uline x_0)$)
+	\begin{equation*}
+		f(\uline x) - f(\uline x_0) \geq 0\quad x\in B(\uline x_0,r)\cap A.
+	\end{equation*}
+	Se $x_0$ è un punto di massimo relativo allora
+	\begin{equation*}
+		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,\; r>0,
+	\end{equation*}
+	ovvero (il segno è sempre non positivo e l'immagine di $f$ è sempre minore uguale di $f(\uline x_0)$)
+	\begin{equation*}
+		f(\uline x) - f(\uline x_0) \leq 0\quad x\in B(\uline x_0,r)\cap A.
+	\end{equation*}
+	Se $x_0$ è un punto di colle allora il segno di $f(\uline x) - f(\uline x_0)$ cambia al variare di $\uline x$.
+\end{remark}
+
+\begin{example}\label{ex:riferimento_test_hessiana}
+	Esempi ricerca punti critici SLIDE 9-11 PDF 22.
+\end{example}
+
+\subsubsubsection{Test dell'Hessiana (in due variabili)}
+Per studiare i punti critici di una funzione sono studiati gli autovalori dell'Hessiana.
+
+\begin{definition}[Test dell'Hessiana]\label{def:test_hessiana}\footnote{Slide 12 PDF 22.}
+	\textbf{(Ipotesi)} Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ (quindi $Hf(x,y)$ è simmetrica) e sia $(x_0,y_0)\in A$ punto critico (stazionario) per $f$ e tc $\det(Hf(x_0,y_0))\neq 0$, dove
+	\begin{equation*}
+		\begin{matrix}
+			\det(Hf(x_0,y_0)) &=&
+			\det\overbrace{\begin{bmatrix}
+				f_{xx}(x_0,y_0) & f_{xy}(x_0,y_0) \\
+				f_{yx}(x_0,y_0) &  f_{yy}(x_0,y_0) 
+			\end{bmatrix}}^{\text{simm. per } f\in C^2(A)\rightarrow fxy(x_0,y_0)=fyx(x_0,y_0)} \\\\&=& f_{xx}(x_0,y_0)f_{yy}(x_0,y_0) - f_{xy}(x_0,y_0) f_{yx} (x_0,y_0) &=& f_{xx}(x_0,y_0)f_{yy}(x_0,y_0) - f_{xy}^2(x_0,y_0),
+		\end{matrix}
+	\end{equation*}
+	\textbf{\ul{allora} (tesi)}
+	\begin{enumerate}
+		\item se $\det(Hf(x_0,y_0))>0$ e $f_{xx}(x_0,y_0)>0$ allora $(x_0,y_0)$ punto di minimo locale,
+		\item se $\det(Hf(x_0,y_0))>0$ e $f_{xx}(x_0,y_0)<0$ allora $(x_0,y_0)$ punto di massimo locale,
+		\item se $\det(Hf(x_0,y_0))>0$ allora $(x_0,y_0)$ punto di sella.
+	\end{enumerate}
+\end{definition}
+
+\paragraph{Note su 1. e 2.:} Quando è stata introdotta la formula di Taylor è stato mostrato che il polinomio è omogeneo in $h$ e $k$ i cui coefficienti sono la derivata seconda. Pertanto, quando si ha una matrice simmetrica (come $Hf(\uline x)$ quando $f\in C^1(A)$) è possibile associare a questa una forma quadratica. Tale forma quadratica ha un segno e quindi fornisce informazioni riguardo massimo e minimo relativo.
+
+\paragraph{Se $\det(Hf(x_0,y_0))=0$?} Non è possibile applicare il Test dell'Hessiana ma è necessario valutare il segno di $f(\uline x) - f(\uline x_0)$ in un intorno qualsiasi di $(x_0,y_0)$ (come negli Esercizi \ref{ex:riferimento_test_hessiana}).
+
+\paragraph{Note su $Hf(x_0,y_0)$:} Dato che $Hf(x_0,y_0)$ è simmetrica allora i suoi autovalori sono soluzione dell'equazione (di secondo grado) agli autovalori \footnote{L'equazione agli autovalori è $\lambda^2 + \lambda s + p = 0$.}
+\begin{equation*}
+	\underline{\lambda^2 - \lambda(\underline{f_{xx}(x_0,y_0) + f_{yy}(x_0,y_0)}_{(a)}) + \det Hf(x_0, y_0)}_{(b)} = 0,
+\end{equation*}
+dove $\lambda_1,\lambda_2$ sono soluzioni per cui la loro somma è (a) (ovvero la traccia, cioè la somma degli elementi della diagonale) ed il loro prodotto è $f_{xx}(x_0,y_0)f_{yy}(x_0,y_0)$ . Se $(x_0, y_0)$ è un punto critico, il termine (a) sparisce (perché?). Segue da Algebra Lineare.
+
+Alla dimostrazione del test dell'Hessiana (\ul{non sarà fatta}) è associata la seguente approssimazione tramite la formula di Taylor con resto di Peano
+\begin{equation}\label{eq:approssimazione_taylor_resto_peano_dim_test_hessiana}
+	\begin{matrix}
+		f(x,y) - f(x_0,y_0) &=& \cancel{f_x(x_0,y_0)(x-x_0)} + \cancel{f_y(x_0, y_0)(y-y_0)}\\
+	&+& \frac{1}{2} \underline{[f_{xx}(x_0,y_0)(x-x_0)^2 + 2f_{xy}(x_0,y_0)(x-x_0)(y-y_0) + f_{yy}(x_0,y_0)(y-y_0)^2]}_{(a)}\\
+	 &+& o((x-x_0)^2-(y-y_0)^2) \qquad (x,y)\rightarrow(x_0,y_0)
+	\end{matrix}
+\end{equation}
+dove
+\begin{itemize}
+	\item le derivate parziali $f_x(x_0, y_0)$ e $f_y(x_0, y_0)$ sono eliminate perché $(x_0,y_0)$ è un punto critico e quindi $\triangledown f(x_0,y_0) =(0,0)$,
+	\item $(a)=<Hf(x_0,y_0)\uline h,\uline h>$, con $\uline h=(h,k)$, $h=x-x_0$ e $k=y-y_0$, è un forma quadratica in $\uline h$, un polinomio omogeneo di grado 2 in $(h,k)$, in cui i coefficienti sono dati dalle derivate seconde,
+	\item ad una forma quadratica può essere sempre associata una matrice simmetrica (in questo caso è $Hf(x_0,y_0)$),
+	\item la differenza $f(x,y) - f(x_0,y_0)$ è valutata tramite il segno di (a), ovvero il segno della forma quadratica associata $<Hf(x_0,y_0)\uline h,\uline h>$,
+	\item $o((x-x_0)^2-(y-y_0)^2)$ è un errore infinitesimo.
+\end{itemize}
+
+(\ref{eq:approssimazione_taylor_resto_peano_dim_test_hessiana}) può essere riscritta in forma vettoriale come segue
+\begin{equation*}
+	f(\uline x_0 +\uline h) = f(\uline x_0) + <\triangledown f(\uline x_0), \uline h> + \frac{1}{2} <Hf(\uline x)\uline h, \uline h> + o(||h||^2)\quad \text{per }\uline h\rightarrow\uline 0,
+\end{equation*}
+dove con $h=(h_1, h_2)\in\mathbb{R}^2$ e dato che $\uline x_0 = (x_0,y_0)\in\mathbb{R}^2$ è un punto critico allora $\triangledown f(\uline x_0)=\uline 0$, allora è possibile stimare l'incremento $\uline x_0 + \uline h$ con $\frac{1}{2}<Hf(\uline x)\uline h, \uline h>$, ovvero
+\begin{equation*}
+	f(\uline x_0 + \uline h) - f(\uline x_0) = \frac{1}{2}\underbrace{<Hf(\uline x_0)\uline h, \uline h>}_{q(\uline h)} + o(||h||^2)\quad \text{per }\uline h\rightarrow\uline 0.
+\end{equation*}
+
+Quindi, scegliendo in modo opportuno la direzione $\uline h$ allora il segno di $f(\uline x_0 + \uline h) - f(\uline x_0)$ è deciso da $<Hf(\uline x_0)\uline h, \uline h>$.
+
+Inoltre, è necessario chiarire che $<Hf(\uline x_0)\uline h, \uline h> = \uline h^T Hf(x_0,y_0)\uline h = q(\uline h)$ è la forma quadratica associata a $Hf(x_0,y_0)$ ed è un polinomio omogeneo di grado due nelle variabili $h_1,\hdots, h_n$ (in questo caso $n=2$).
+
+\subsubsection{Forma quadratica}
+Il segno della forma quadratica è importante per stabilire la natura di un punto critico. In mancanza di un metodo alternativo, per determinare la natura di un punto critico è quello di utilizzare la formula di Taylor per analizzare il segno dell'incremento $\Delta f(\uline x_0) = f(\uline x_0 + \uline h) - f(\uline x_0)$. Per questo è enunciato il Teorema \ref{th:segno_forma_quadratica} del segno della forma quadratica.
+
+La forma quadratica è una funzione che associa ad un vettore in $\mathbb{R}^n$ un polinomio omogeneo di grado 2 nelle $n$ variabili.
+
+\begin{definition}
+	
+\end{definition}
+
+\subsubsection{Ottimizzazione vincolata}
