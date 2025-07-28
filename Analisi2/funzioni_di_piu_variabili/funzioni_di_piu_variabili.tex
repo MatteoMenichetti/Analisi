@@ -3447,14 +3447,14 @@ La definizione di massimo e minimo relatico per una funzione sono uguali alle de
 	\end{equation*}
 \end{definition}
 
-\begin{theorem}[Weiestrass]\footnote{Slide 21 PDF 23.}
+\begin{theorem}[Weierstrass]\label{th:weierstrass_2}\footnote{Slide 21 PDF 23.}
 	\textbf{(IPOTESI NECESSARIA)} Ogni funzione $f:K\subset\mathbb{R}^2\rightarrow\mathbb{R}$ continua su $K\subset\mathbb{R}^2$ (compatto perché) limitato e chiuso di $\mathbb{R}^2$ \textbf{(Tesi)} è limitata ed assume su tale insieme i valori di massimo e di mino assoluti, ovvero $\underline{\exists(x_m,y_m),(x_M, y_M)\in K}_{(a)}$ tc 
 	\begin{equation*}
 		\underline{f(x_m,y_m)\leq f(x,y)\leq f(x_M, y_M)}_{(b)},\qquad\forall (x,y)\in K.
 	\end{equation*}
 \end{theorem}
 
-\paragraph{Note sul Teorema di Weiestrass:}
+\paragraph{Note sul Teorema di Weierstrass:}
 \begin{itemize}
 	\item Per $(a)$ utilizzare il quantificatore $\exists$ significa che esiste almeno uno, non implica l'unicità,
 	\item Per $(b)$ $f$ è limitata nei punti di minimo e di massimo assoluti $(x_m,y_m)$ e $(x_M, y_M)$,
@@ -3595,9 +3595,11 @@ Per studiare i punti critici di una funzione sono studiati gli autovalori dell'H
 	\begin{enumerate}
 		\item se $\det(Hf(x_0,y_0))>0$ e $f_{xx}(x_0,y_0)>0$ allora $(x_0,y_0)$ punto di minimo locale,
 		\item se $\det(Hf(x_0,y_0))>0$ e $f_{xx}(x_0,y_0)<0$ allora $(x_0,y_0)$ punto di massimo locale,
-		\item se $\det(Hf(x_0,y_0))>0$ allora $(x_0,y_0)$ punto di sella.
+		\item se $\det(Hf(x_0,y_0))<0$ allora $(x_0,y_0)$ punto di sella.
 	\end{enumerate}
 \end{definition}
+
+\paragraph{IMPORTANTE:} \textbf{Il Test dell'Hessiana può essere utilizzato SE E SOLO SE} $\det(Hf(x_0,y_0))\neq 0$. Se $\det (Hf(x_0,y_0)) = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
 
 \paragraph{Note su 1. e 2.:} Quando è stata introdotta la formula di Taylor è stato mostrato che il polinomio è omogeneo in $h$ e $k$ i cui coefficienti sono la derivata seconda. Pertanto, quando si ha una matrice simmetrica (come $Hf(\uline x)$ quando $f\in C^1(A)$) è possibile associare a questa una forma quadratica. Tale forma quadratica ha un segno e quindi fornisce informazioni riguardo massimo e minimo relativo.
 
@@ -3612,8 +3614,8 @@ dove $\lambda_1,\lambda_2$ sono soluzioni per cui la loro somma è (a) (ovvero l
 Alla dimostrazione del test dell'Hessiana (\ul{non sarà fatta}) è associata la seguente approssimazione tramite la formula di Taylor con resto di Peano
 \begin{equation}\label{eq:approssimazione_taylor_resto_peano_dim_test_hessiana}
 	\begin{matrix}
-		f(x,y) - f(x_0,y_0) &=& \cancel{f_x(x_0,y_0)(x-x_0)} + \cancel{f_y(x_0, y_0)(y-y_0)}\\
-	&+& \frac{1}{2} \underline{[f_{xx}(x_0,y_0)(x-x_0)^2 + 2f_{xy}(x_0,y_0)(x-x_0)(y-y_0) + f_{yy}(x_0,y_0)(y-y_0)^2]}_{(a)}\\
+		f(x,y) - f(x_0,y_0) &=& \cancel{f_x(x_0,y_0)(x-x_0)} + \cancel{f_y(x_0, y_0)(y-y_0)}\\\\
+	&+& \frac{1}{2} \underline{[f_{xx}(x_0,y_0)(x-x_0)^2 + 2f_{xy}(x_0,y_0)(x-x_0)(y-y_0) + f_{yy}(x_0,y_0)(y-y_0)^2]}_{(a)}\\\\
 	 &+& o((x-x_0)^2-(y-y_0)^2) \qquad (x,y)\rightarrow(x_0,y_0)
 	\end{matrix}
 \end{equation}
@@ -3631,26 +3633,173 @@ dove
 	f(\uline x_0 +\uline h) = f(\uline x_0) + <\triangledown f(\uline x_0), \uline h> + \frac{1}{2} <Hf(\uline x)\uline h, \uline h> + o(||h||^2)\quad \text{per }\uline h\rightarrow\uline 0,
 \end{equation*}
 dove con $h=(h_1, h_2)\in\mathbb{R}^2$ e dato che $\uline x_0 = (x_0,y_0)\in\mathbb{R}^2$ è un punto critico allora $\triangledown f(\uline x_0)=\uline 0$, allora è possibile stimare l'incremento $\uline x_0 + \uline h$ con $\frac{1}{2}<Hf(\uline x)\uline h, \uline h>$, ovvero
-\begin{equation*}
-	f(\uline x_0 + \uline h) - f(\uline x_0) = \frac{1}{2}\underbrace{<Hf(\uline x_0)\uline h, \uline h>}_{q(\uline h)} + o(||h||^2)\quad \text{per }\uline h\rightarrow\uline 0.
-\end{equation*}
+\begin{equation}\label{eq:approssimazione_taylor_forma_quadratica_estremo}
+	(\ref{eq:approssimazione_taylor_resto_peano_dim_test_hessiana})\equiv f(\uline x_0 + \uline h) - f(\uline x_0) = \frac{1}{2}\underbrace{<Hf(\uline x_0)\uline h, \uline h>}_{q(\uline h)} + o(||h||^2)\quad \text{per }\uline h\rightarrow\uline 0.
+\end{equation}
 
-Quindi, scegliendo in modo opportuno la direzione $\uline h$ allora il segno di $f(\uline x_0 + \uline h) - f(\uline x_0)$ è deciso da $<Hf(\uline x_0)\uline h, \uline h>$.
-
-Inoltre, è necessario chiarire che $<Hf(\uline x_0)\uline h, \uline h> = \uline h^T Hf(x_0,y_0)\uline h = q(\uline h)$ è la forma quadratica associata a $Hf(x_0,y_0)$ ed è un polinomio omogeneo di grado due nelle variabili $h_1,\hdots, h_n$ (in questo caso $n=2$).
+\paragraph{Perché (\ref{eq:approssimazione_taylor_forma_quadratica_estremo}) è importante?} Scegliendo in modo opportuno la direzione $\uline h$ allora il segno di $f(\uline x_0 + \uline h) - f(\uline x_0)$ è deciso da $<Hf(\uline x_0)\uline h, \uline h>$. Inoltre, è necessario chiarire che $<Hf(\uline x_0)\uline h, \uline h> = \uline h^T Hf(x_0,y_0)\uline h = q(\uline h)$ è la forma quadratica associata a $Hf(x_0,y_0)$ ed è un polinomio omogeneo di grado due nelle variabili $h_1,\hdots, h_n$ (in questo caso $n=2$).\\
+Inoltre, l'approssimazione tramite Taylor di $f(\uline x_0 + \uline h) - f(\uline x_0)$ permette di studiare il segno di tale differenza tramite il segno della forma quadratica, utilizzando il Teorema \ref{th:studio_segno_forma_quadratica} dello studio del segno della forma quadratica, così com'è stato fatto per il Test dell'Hessiana. Le ipostesi del test dell'Hessiana richiedono che $\det Hf(x_0, y_0)\neq 0$ affinché il punto critico sia di minimo o di massimo e se è uguale a 0 allora il punto è di sella; in modo equivalente è fatto con gli autovalori della matrice associata alla forma quadratica Teorema \ref{th:studio_segno_forma_quadratica} dello studio del segno della forma quadratica.
 
 \subsubsection{Forma quadratica}
-Il segno della forma quadratica è importante per stabilire la natura di un punto critico. In mancanza di un metodo alternativo, per determinare la natura di un punto critico è quello di utilizzare la formula di Taylor per analizzare il segno dell'incremento $\Delta f(\uline x_0) = f(\uline x_0 + \uline h) - f(\uline x_0)$. Per questo è enunciato il Teorema \ref{th:segno_forma_quadratica} del segno della forma quadratica.
+Il segno della forma quadratica è importante per stabilire la natura di un punto critico. In mancanza di un metodo alternativo, per determinare la natura di un punto critico è quello di utilizzare la formula di Taylor per analizzare il segno dell'incremento $\Delta f(\uline x_0) = f(\uline x_0 + \uline h) - f(\uline x_0)$. Per questo è enunciato il Teorema \ref{th:studio_segno_forma_quadratica} del segno della forma quadratica.
 
 La forma quadratica è una funzione che associa ad un vettore in $\mathbb{R}^n$ un polinomio omogeneo di grado 2 nelle $n$ variabili.
 
 \begin{definition}[Forma quadratica]\footnote{Slide 15 PDF 23.}
-	
+	Una forma quadratica sullo spazio vettoriale $\mathbb{R}^n$ è un polinomio a coefficienti omogeneo di secondo grado in $n$ variabili ($\uline h_1,\hdots, \uline h_2$) definito come
+	\begin{equation}\label{eq:forma_quadratica}
+		\begin{aligned}
+			q:\mathbb{R}^n&\rightarrow\mathbb{R}\\
+			q(\uline h) &\rightarrow a_{11}\uline h_1^2 + \rightarrow a_{22}\uline h_2^2 + \hdots + \rightarrow a_{nn}\uline h_n^2 + \sum_{i,j=1, i=j}^{n} 2a_{ij} h_ih_j = \sum_{i,j=1}^{n} a_{ij}h_i h_j
+		\end{aligned}
+	\end{equation}
+	dove i coefficienti reali $a_{ij}$ individuano la matrice simmetrica $A=(a_{ij})$ associata a $q$.
 \end{definition}
 
-\begin{theorem}\label{th:segno_forma_quadratica}
-	
+\paragraph{Perché $\boldsymbol{2a_{ij}}$ in (\ref{eq:forma_quadratica})?} Sono considerati i termini omogenei di secondo grado del tipo $h_1h_2$ e $h_2h_1$ e dato che $A$ è simmetrica allora $a_{ij} = a_{ji}$ e $h_i = h_j$, quindi è possibile contarli due volte ed escludere dalla sommatoria gli indici $i=j$. $\qed$
+
+\paragraph{DA RICORDARE:} Ad ogni forma quadratica è associata in modo univoco una matrice simmetrica.
+
+\begin{example}[Forma quadratica, caso $n=2$]\footnote{Slide 16 PDF 23.}
+	\begin{equation*}
+		q(h_1, h_2) = a_{11} h_1^2 + a_{22} h_2^2 + 2 a_{12} h_1 h_2 \iff
+		A =
+		\begin{pmatrix}
+			a_{11} & a_{12}\\
+			a_{21} & a_{21}
+		\end{pmatrix}\; \text{simmetrica } (a_{12}=a_{21}).
+	\end{equation*}
+	Considerando la seguente forma quadratica (polinomio omogeneo di secondo grado nelle variabili $h_1,h_2$)
+	\begin{equation*}
+		q(h_1,h_2) = h_1^2 + h_2^2 + 5 h_1,
+	\end{equation*}
+	allora la matrice dei coefficienti associata a $q$ è
+	\begin{equation*}
+		A =
+		\begin{pmatrix}
+			1 & \frac{5}{2}\\
+			\frac{5}{2} & 1
+		\end{pmatrix}
+	\end{equation*}
+	la quale è una matrice reale simmetrica e quindi ha due autovalori reali $\lambda_1,\lambda_2\in\mathbb{R}$. Per determinare il segno della forma quadratica è sufficiente calcolare il vettore della matrice associata alla forma quadratica, ovvero
+	\begin{equation*}
+		\det A = a_{11}a_{22} - 2a_{12} = \lambda_1\lambda_2,
+	\end{equation*}
+	ovvero
+	\begin{equation*}
+		1-2\cdot\frac{5}{2}\cdot\frac{5}{2}=\lambda_1\lambda_2.
+	\end{equation*}
+	\paragraph{Perché $\lambda_1$ e $\lambda_2$?} $\lambda_1$ e $\lambda_2$ sono gli autovalori di $A$ e quindi le soluzioni dell'equazione caratteristica
+	\begin{equation*}
+		|A-\lambda I| =0 \rightarrow
+		\begin{vmatrix}
+			a_{11} - \lambda & a_{12}\\
+			a_{12} & a_{22} - \lambda
+		\end{vmatrix} = 0 \rightarrow \lambda^2 - \underbrace{\lambda (a_{11} + a_{22})}_{\text{\gls{traccia} di } A} + \underbrace{a_{11} a_{22} - a_{12}^2}_{\det A} = 0.
+	\end{equation*}
+	\paragraph{Cosa ha di speciale una matrice reale simmetrica (tipo $\boldsymbol{A}$)?} Il Teorema Spettrale ($A$ ha $n$ autovalori reali e quindi il polinomio caratteristico ha soluzioni reali, mentre in generale le soluzioni sono complesse).
+ \end{example}
+ 
+ \begin{remark}\footnote{Slide 17 PDF 23.}
+ 	\begin{equation*}
+ 		q(\uline h) = <Hf(\uline x_0)\uline h, \uline h> = \uline h^T Hf(x_0,y_0)\uline h.
+ 	\end{equation*}
+ \end{remark}
+
+\begin{theorem}[Studio del segno della forma quadratica in due variabili, non ufficiale]\label{th:studio_segno_forma_quadratica}\footnote{Slide 16 PDF 23.}
+	Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ e sia $\uline x_0 = (x_0,y_0)\in A$ punto critico (stazionario) per $f$. Considerata l'approssimazione di Taylor di $f$ (\ref{eq:approssimazione_taylor_forma_quadratica_estremo}) centrata in $\uline x_0$, dove a $q(\uline h)=<Hf(\uline x_0)\uline h, \uline h>$ è associata $A$, matrice dei coefficienti, è possibile affermare che
+	\begin{enumerate}
+		\item se $\boldsymbol{\det A>0}$ e $ \boldsymbol{\lambda_1\lambda_2>0}$ allora $\boldsymbol q$ è definita positiva (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{minimo locale}),
+		\item se $\boldsymbol{\det A>0}$ e $ \boldsymbol{\lambda_1\lambda_2<0}$ allora $\boldsymbol q$ è definita negativa (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{massimo locale}),
+		\item se $\boldsymbol{\det A<0}$ allora $ \boldsymbol{\lambda_1=0}$  o $\boldsymbol{\lambda_2=0}$ allora $\boldsymbol q$ è \textbf{indefinita} (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{punto di sella}),
+		\item $\det A=0$ allora $\boldsymbol{q}$ è \textbf{semidefinita}.
+	\end{enumerate}
 \end{theorem}
 
+\paragraph{IMPORTANTE:} \textbf{Come per il Test dell'Hessiana, è richiesto che} $\det A\neq 0$ affinché sia presente un punto di minimo/massimo/sella. Se $\det A = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
+
+Il precedente Teorema può essere espresso come segue.
+
+\begin{definition}[Definizione del forma quadratica, non ufficiale]\footnote{Slide 17 PDF 23.}
+	$q:\mathbb{R}^n\rightarrow\mathbb{R}$ (o la sua matrice associata) si dice
+	\begin{itemize}
+		\item definita positiva se $q(\uline h)>0 \;\forall \uline h\neq \uline 0$ (ovvero sse gli autovalori di $A=(a_{ij})$ sono positivi).
+		\item definita negativa se $q(\uline h)<0 \;\forall \uline h\neq \uline 0$ (ovvero sse gli autovalori di $A=(a_{ij})$ sono negativi),
+		indefinita (se cambia di segno, quindi non è possibile assegnargliene uno, ovvero) se $\exists \uline h_1,\uline h_2\neq \uline 0$ tc $q(\uline h_1)<0<q(\uline h_2)$ (sse gli autovalori di $A=(a_{ij})$ sono positivi e negativi)
+	\end{itemize}
+\end{definition}
+
+\paragraph{Come si verifica la definitezza della forma quadratica?} Stabilendo il segno di $q(\uline h)=<Hf(\uline x_0)\uline h, \uline h>$ attraverso gli autovalori della matrice simmetrica associata come sopra.
+
+\paragraph{Osservazione:} Il problema della ricerca dei massimi e dei minimi relativi di una funzione definita su un aperto (se considerata una funzione definita su un dominio è considerato $\mathring{D}=A$) è riconducibile al calcolo del segno degli autovalori della matrice Hessiana, dove $Hf(\uline x)$ è simmetrica perché è considerata $f\in C^1(A)$.
+
+\begin{example}
+	SLIDE 18-20 PDF 23 ESEMPI RICERCA DEI PUNTI CRITICI.\\
+	SLIDE 21-22 PDF 23 ESEMPI MINIMO/MASSIMO GLOBALE.
+\end{example}
 
 \subsubsection{Ottimizzazione vincolata}
+
+\begin{example}
+	SLIDE 22-23 PDF 23 ESEMPIO MASSIMO MINIMO VINCOLATO.
+\end{example}
+
+Piace appplicare il Metodo dei moltiplicatori di Lagrange (Teorema \ref{th:moltiplicatori_lagrange}) perché permette di studiare il comportamento della funzione fornendo i candidati che verificano un certa equazione. Potrebbe capitare che i punti della funzione da studiare debbano verificare un vincolo e che tale vincolo sia esprimibile attraverso coordinate parametriche, potendo così rincondurre il problema della ricerca del massimo/minimo a quello di una funzione di una variabile: se è possibile parametrizzare il vincolo, calcolando la funzione sul vincolo, la funzione diventa ad una variabile e risulta possibile utilizzare i metodi appresi ad Analisi 1 per stabilire la natura dei punti critici, invece di applicare il metodo dei moltiplicatori di Lagrange.
+
+Fino ad adesso sono stati considerati punti di massimo e di minimo liberi, ovvero sono stati ricercati punti all'interno di un dominio. I punti di massimo e minimo vincolati sono dei punti che verificano ulteriori condizioni, oltre a quelle di appartenere ad un dominio, espresse tramite equazioni e disequazioni. Dato che i vincoli devono essere minori del numero di variabili, se sono considerate funzioni di due variabili allora sarà espresso un solo vincolo.
+
+\begin{definition}
+	Sia $g:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $g\in C^1(A)$, un vincolo è definito come
+	\begin{equation}\label{eq:vincolo_funzione}
+		V = \{(x,y)\in A; g(x,y)=k\}\subset A.
+	\end{equation}
+\end{definition}
+
+Determinare gli estremi (massimo/minimo) vincolati di $f$ significa ricercare i punto $(x,y)\in A$ tali che questi verifichino la condizione aggiuntiva (espressa dal vincolo) della forma $g(x,y)=k$ (assimilabile all'insieme di livello), dove $g\in C^1(A)$.
+
+In Analisi 2 possono essere considerate funzioni in $n$ variabili con $m$ a condizione che $m<n$. Quindi, nel nostro caso, con $n=2$, i punti del piano per i quali $f$ è ben definita, verificano un solo vincolo.
+
+$g(x,y)=k$ in (\ref{eq:vincolo_funzione}) è un insime di livello $k$ della funzione $g$. Tale insieme è un sottoinsime di $\mathbb{R}^2$ (nel nostro caso di $A$ perché $f$ è considerata in un dominio). Peranto, (\ref{eq:vincolo_funzione}) è un insieme di livello.
+
+\paragraph{Cosa voglio fare?} Voglio stabilire cosa accade alla funzione ristretta a $V$.
+
+\paragraph{Notazione:} Quando è imposto un vincolo $V$ sulla funzione $f$ allora la funzione è denotata come $f_{|_V}$.
+
+\begin{example}
+	SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$.\\
+	SLIDE 25-27 PDF 23 DETERMINARE ESTREMI VINCOLATI $f$.
+\end{example}
+
+È possibile cercare di ridurre i problemi vincolati se il vincolo è espresso come sostegno di una curva
+\begin{equation*}
+	V = \gamma (I)\subset A,
+\end{equation*}
+ovvero se il vincolo genera una traiettoria che risulta essere il sostegno di una curva regolare. In questo caso è possibile descrivere il comportamento della funzione sul vincolo e dato che una curva è espressa attraverso due equazioni parametriche
+\begin{equation*}
+	\gamma:
+	\begin{cases}
+		x(t)\\
+		y(t)
+	\end{cases}\quad t\in\mathbb{R},
+\end{equation*}
+è possibile calcolare $f$ lungo la curva, come
+\begin{equation*}
+	f_{|_{V}} (x,y)= f(\gamma(t)),
+\end{equation*}
+riducendo così il problema ad una variabile. (Un esempio di parametrizzazione è l'esempio a SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$)
+
+Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio: $y=y(x),\, f_{|_V}(x,y) = f(x, y(x))$, la quale è una funzione di una variabile.
+
+Quando i precedenti metodi non funzionano è applicato il Teorema dei Moltiplicatori di Lagrange per determinare minimo e massimo assoluto su $A$.
+
+Se è possibile semplificare il problema della ricerca del massimo e minimo allora si semplifica, altrimenti è necessario utilizzare gli altri teoremi, come Il Teorema \ref{th:weierstrass_2} di Weierstrass in quanto il vincolo può rappresentare nel piano un insieme limitato e chiuso (un compatto).
+
+\paragraph{Cosa fa il Teorema dei moltiplicatori di Lagrange?} Fornisce un'equazione vettoriale che permette di ricercare punti di minimo e di massimo per una funzione detta Lagrangiana, la quale è una funzione di tre variabili: le due variabili di $f$ e $\lambda$, il moltiplicatore del problema.
+
+\begin{theorem}[dei moltiplicatori di Lagrange]\label{th:moltiplicatori_lagrange}\footnote{Slide 2 PDF 24.}
+	Siano $f,g\in C^1(A)$, dove $A\subseteq\mathbb{R}^2$ aperto. \textbf{(Ipotesi)} Se $(x_0,y_0)\in V$ è un punto di estremo (minimo/massimo) per $f$ nell'insieme (di livello $k$ per $g$) $V=\{(x,y)\in A; g(x,y)= k\}$ e se $\triangledown g(x_0,y_0)\neq 0$ \textbf{\ul{allora} (tesi)} $\exists \lambda_0\in\mathbb{R}$ tale che
+	\begin{equation*}
+		\triangledown f(x_0,y_0)=\lambda_0\, \triangledown g(x_0, y_0).
+	\end{equation*}
+\end{theorem}
+
