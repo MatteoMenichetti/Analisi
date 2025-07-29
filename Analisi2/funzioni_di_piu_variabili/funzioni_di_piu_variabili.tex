@@ -3422,7 +3422,7 @@ Tale relazione permette di scrivere
 La definizione di massimo e minimo relatico per una funzione sono uguali alle definizioni di Analisi 1, quindi sono definizioni di tipo analitico: è osservato se valgono le definizioni di massimo e minimo nell'intorno del punto in questione.
 
 \begin{definition}[Minimo e massimo locale]\label{def:minimo_massimo_locale_an2}\footnote{Slide 3 PDF 22.}
-	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$ \footnote{Nel caso generale, al posto di $A$ c'è $D=A\cup\partial A$, dove $A=\mathring D$.}. Si dice che $\uline x_0\in A$ ($\backslash\in D$) è un minimo relativo (locale) per $f$ se, per $r>0$
+	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$ (nel caso generale, al posto di $A$ c'è $D=A\cup\partial A$, dove $A=\mathring D$). Si dice che $\uline x_0\in A$ ($\slash\in D$) è un minimo relativo (locale) per $f$ se, per $r>0$
 	\begin{equation*}
 		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,
 	\end{equation*}
@@ -3443,12 +3443,12 @@ La definizione di massimo e minimo relatico per una funzione sono uguali alle de
 	\end{equation*}
 	oppure massimo globale per $f$
 	\begin{equation*}
-		f(\uline x)\leq f(\uline x_0) \quad \forall\uline x\in B(\uline x_0,r)\cap A.
+		f(\uline x)\leq f(\uline x_0) \quad \forall\uline x\in  A.
 	\end{equation*}
 \end{definition}
 
 \begin{theorem}[Weierstrass]\label{th:weierstrass_2}\footnote{Slide 21 PDF 23.}
-	\textbf{(IPOTESI NECESSARIA)} Ogni funzione $f:K\subset\mathbb{R}^2\rightarrow\mathbb{R}$ continua su $K\subset\mathbb{R}^2$ (compatto perché) limitato e chiuso di $\mathbb{R}^2$ \textbf{(Tesi)} è limitata ed assume su tale insieme i valori di massimo e di mino assoluti, ovvero $\underline{\exists(x_m,y_m),(x_M, y_M)\in K}_{(a)}$ tc 
+	\textbf{(IPOTESI NECESSARIA)} Ogni funzione $f:K\subset\mathbb{R}^2\rightarrow\mathbb{R}$ continua su $K\subset\mathbb{R}^2$ (compatto perché) limitato e chiuso di $\mathbb{R}^2$ \textbf{(Tesi)} è limitata ed assume su tale insieme i valori di massimo e di minimo assoluti, ovvero $\underline{\exists(x_m,y_m),(x_M, y_M)\in K}_{(a)}$ tc 
 	\begin{equation*}
 		\underline{f(x_m,y_m)\leq f(x,y)\leq f(x_M, y_M)}_{(b)},\qquad\forall (x,y)\in K.
 	\end{equation*}
@@ -3459,7 +3459,7 @@ La definizione di massimo e minimo relatico per una funzione sono uguali alle de
 	\item Per $(a)$ utilizzare il quantificatore $\exists$ significa che esiste almeno uno, non implica l'unicità,
 	\item Per $(b)$ $f$ è limitata nei punti di minimo e di massimo assoluti $(x_m,y_m)$ e $(x_M, y_M)$,
 	\item $f(x_m,y_m)$ e $f(x_M, y_M)$ sono valori di minimo e massimo in $K$ e non punti,
-	\item Il teorema afferma che se considerata una funzione su un compatto allora sicuramente ha massimo e minimo assoluti in questo; Inoltre, dato che la funzione è continua su un compatto (richiesto nelle ipotesi), nello studio del minimo e del massimo è necessario è necessario distinguere fra punti interni al compatto e sulla frontiera.
+	\item Il teorema afferma che se considerata una funzione su un compatto allora sicuramente ha massimo e minimo assoluti in questo; inoltre, dato che la funzione è continua su un compatto (richiesto nelle ipotesi), nello studio del minimo e del massimo è necessario è necessario distinguere fra punti interni al compatto e sulla frontiera.
 \end{itemize}
 
 \subsubsection{Ottimizzazione libera}
@@ -3475,7 +3475,7 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 \end{example}
 
 \begin{theorem}[di Fermat]\label{th:fermat_an2}\footnote{Slide 5 PDF 22.}
-	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ ($D$ nel caso generale), $A$ aperto e sia $\uline x_0\in A$ ($\backslash \uline x_0\in \mathring D$) punto di minimo (massimo) relativo (locale).\\
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ ($D$ nel caso generale), $A$ aperto e sia $\uline x_0\in A$ ($\slash \uline x_0\in \mathring D$) punto di minimo (massimo) relativo (locale).\\
 	\textbf{(Ipotesi)} Se $f$ è differenziabile in $x_0$ \textbf{\ul{allora}} \textbf{(tesi)} $\triangledown f(\uline x_0)=0$.
 \end{theorem}
 
@@ -3487,23 +3487,24 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 			t&\rightarrow F(t)=f(\uline x_0 + t\uline v)
 		\end{aligned}
 	\end{equation*}
-	\footnotemark funzione di una variabile, dove in $t=0$ ho un punto di massimo relativo (perché è ottenuto $\uline x_0$ e questo è il massimo imposto all'inizio) e
+	\footnotemark  funzione di una variabile ($t$) definita in un intorno di $t=0$ (ovvero $I=(-r,r)$ con $r>0$), dove in $t=0$ ho un punto di massimo relativo (perché è ottenuto $\uline x_0$ e questo è il massimo imposto all'inizio) e
 	\begin{equation*}
 		F(0) = f(\uline x_0).
 	\end{equation*}
-	\footnotemark Applichiamo il Teorema di Fermat a $F(t)$, dove $t\in(-r,r)$, (dato che $F$ è derivabile in $t=0$)
+	\footnotemark Applichiamo il Teorema di Fermat a $F(t)$, allora
 	\begin{equation*}
-		F'(0) = 0.
+		F'(0) = 0,
 	\end{equation*}
-	(in quanto in $t=0$ ha il massimo) Per la regola della catena
+	dato che in $t=0$ $F$ è derivabile ha massimo relativo.\\
+	Per la regola della catena
 	\begin{equation*}
 		F'(t) = <\triangledown f(\uline x_0 + t\uline v), \uline v>,
 	\end{equation*}
-	dunque
+	dunque, per $t=0$,
 	\begin{equation}\label{eq:derivata_direzionale_0_fermat}
-		F'(0) = \underbrace{<\triangledown f(\uline x_0),\uline v> = 0}_{\footnotemark},\quad\forall\uline v\in\mathbb{R}^n
+		F'(0) = \underbrace{<\triangledown f(\uline x_0),\uline v> = 0}_{\footnotemark},\quad\forall\uline v\in\mathbb{R}^n,
 	\end{equation}
-	se
+	dato che
 	\begin{equation}\label{eq:gradiente_0_fermat}
 		\triangledown f(\uline x_0) = 0.
 	\end{equation}
@@ -3516,7 +3517,7 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 \footnotetext{È considerato $\uline x_0 + t\uline v$ perché al variare di $t$, cosicché i punti possano variare sulla "retta" secondo la direzione $\uline v$ e passare da $\uline x_0$.}
 
 \stepcounter{footnote}
-\footnotetext{$F$ è definita su $(-r,r)=I(0,r)\subset\mathbb{R}$, con $r>0$ perché $\uline x_0$ è un estremo locale e quindi vale per un intorno di $t=0$. È scelto $t=0$ ed un intorno di 0 per $t$ perché così $\uline x_0 + t\uline v=\uline x_0$ punto di massimo.}
+\footnotetext{$F$ è definita su $(-r,r)=I(0,r)\subset\mathbb{R}$, con $r>0$ perché $\uline x_0$ è un estremo locale e quindi vale per un intorno di $t=0$. È scelto $t=0$ ed un intorno di 0 per $t$ perché così $\uline x_0 + t\uline v=\uline x_0$ punto di massimo relativo.}
 
 \stepcounter{footnote}
 \footnotetext{Dato che $f$ è supposta differenziabile in $x_0$ allora lo è anche $F$ in $t=0$ ($\uline x_0 + t\uline v=\uline x_0)$.}
@@ -3528,7 +3529,7 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 È possibile determinare la retta (curva) passante per il punto seguendo una direzione (in $\mathbb{R}^n$) per poter restringere la funzione alla retta passante per il punto. Inoltre, se $f$ è ristretta alla curva ed $x$ è preso localmente vicino al punto incriminato (nella dimostrazione $\uline x_0$) allora è possibile la costruzione di $F$ lungo la curva cosicché $\uline x_0$ diventi il punto di minimo o massimo. $\qed$
 
 \begin{remark}[Non ufficiale]\footnote{Slide 6 PDF 22.}
-	Il Teorema \ref{th:fermat_an2} di Fermat è la \textbf{condizione necessaria} affinché un punto interno al dominio $\uline x_0\in\mathring D$ ($\uline x_0\in A$) sia un estremo relativo della funzione $f\in C^2(\mathring D)$ (ovvero $f\in C^1(A)$). Quindi
+	\textbf{Il Teorema \ref{th:fermat_an2} di Fermat è la condizione necessaria affinché un punto interno al dominio} $\boldsymbol{\uline x_0\in\mathring D}$ ($\uline x_0\in A$) \textbf{sia un estremo relativo della funzione} $\boldsymbol{f\in C^1(\mathring D)}$ ($f\in C^1(A)$). Quindi
 	\begin{equation*}
 		\begin{matrix}
 			\uline x_0 \text{ estremo locale } &\Rightarrow& \triangledown f(\uline x_0)=0\\
@@ -3581,7 +3582,7 @@ I punti che annullano il gradiente ma che non sono di minimo o di massimo si chi
 Per studiare i punti critici di una funzione sono studiati gli autovalori dell'Hessiana.
 
 \begin{definition}[Test dell'Hessiana]\label{def:test_hessiana}\footnote{Slide 12 PDF 22.}
-	\textbf{(Ipotesi)} Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ (quindi $Hf(x,y)$ è simmetrica) e sia $(x_0,y_0)\in A$ punto critico (stazionario) per $f$ e tc $\det(Hf(x_0,y_0))\neq 0$, dove
+	\textbf{(Ipotesi)} Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ (quindi $Hf(x,y)$ è simmetrica) e sia $(x_0,y_0)\in A$ punto critico (stazionario) per $f$ e tc $\boldsymbol{\uline{\det(Hf(x_0,y_0))\neq 0}}$, dove
 	\begin{equation*}
 		\begin{matrix}
 			\det(Hf(x_0,y_0)) &=&
@@ -3599,13 +3600,13 @@ Per studiare i punti critici di una funzione sono studiati gli autovalori dell'H
 	\end{enumerate}
 \end{definition}
 
-\paragraph{IMPORTANTE:} \textbf{Il Test dell'Hessiana può essere utilizzato SE E SOLO SE} $\det(Hf(x_0,y_0))\neq 0$. Se $\det (Hf(x_0,y_0)) = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
+\paragraph{IMPORTANTE:} \textbf{Il Test dell'Hessiana può essere utilizzato SE E SOLO SE} $\boldsymbol{\det(Hf(x_0,y_0))\neq 0}$. Se $\det (Hf(x_0,y_0)) = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
 
 \paragraph{Note su 1. e 2.:} Quando è stata introdotta la formula di Taylor è stato mostrato che il polinomio è omogeneo in $h$ e $k$ i cui coefficienti sono la derivata seconda. Pertanto, quando si ha una matrice simmetrica (come $Hf(\uline x)$ quando $f\in C^1(A)$) è possibile associare a questa una forma quadratica. Tale forma quadratica ha un segno e quindi fornisce informazioni riguardo massimo e minimo relativo.
 
-\paragraph{Se $\det(Hf(x_0,y_0))=0$?} Non è possibile applicare il Test dell'Hessiana ma è necessario valutare il segno di $f(\uline x) - f(\uline x_0)$ in un intorno qualsiasi di $(x_0,y_0)$ (come negli Esercizi \ref{ex:riferimento_test_hessiana}).
+\paragraph{Se $\boldsymbol{\det(Hf(x_0,y_0))=0}$?} Non è possibile applicare il Test dell'Hessiana ma è necessario valutare il segno di $f(\uline x) - f(\uline x_0)$ in un intorno qualsiasi di $(x_0,y_0)$ (come negli Esercizi \ref{ex:riferimento_test_hessiana}).
 
-\paragraph{Note su $Hf(x_0,y_0)$:} Dato che $Hf(x_0,y_0)$ è simmetrica allora i suoi autovalori sono soluzione dell'equazione (di secondo grado) agli autovalori \footnote{L'equazione agli autovalori è $\lambda^2 + \lambda s + p = 0$.}
+\paragraph{Note su $\boldsymbol{Hf(x_0,y_0)}$:} Dato che $Hf(x_0,y_0)$ è simmetrica allora i suoi autovalori sono soluzione dell'equazione (di secondo grado) agli autovalori \footnote{L'equazione agli autovalori è $\lambda^2 + \lambda s + p = 0$.}
 \begin{equation*}
 	\underline{\lambda^2 - \lambda(\underline{f_{xx}(x_0,y_0) + f_{yy}(x_0,y_0)}_{(a)}) + \det Hf(x_0, y_0)}_{(b)} = 0,
 \end{equation*}
@@ -3622,7 +3623,7 @@ Alla dimostrazione del test dell'Hessiana (\ul{non sarà fatta}) è associata la
 dove
 \begin{itemize}
 	\item le derivate parziali $f_x(x_0, y_0)$ e $f_y(x_0, y_0)$ sono eliminate perché $(x_0,y_0)$ è un punto critico e quindi $\triangledown f(x_0,y_0) =(0,0)$,
-	\item $(a)=<Hf(x_0,y_0)\uline h,\uline h>$, con $\uline h=(h,k)$, $h=x-x_0$ e $k=y-y_0$, è un forma quadratica in $\uline h$, un polinomio omogeneo di grado 2 in $(h,k)$, in cui i coefficienti sono dati dalle derivate seconde,
+	\item $(a)=<Hf(x_0,y_0)\uline h,\uline h>$, con $\uline h=(h,k)$, dove $h=x-x_0$ e $k=y-y_0$, è un forma quadratica in $\uline h$, un polinomio omogeneo di grado 2 in $(h,k)$, in cui i coefficienti sono dati dalle derivate seconde,
 	\item ad una forma quadratica può essere sempre associata una matrice simmetrica (in questo caso è $Hf(x_0,y_0)$),
 	\item la differenza $f(x,y) - f(x_0,y_0)$ è valutata tramite il segno di (a), ovvero il segno della forma quadratica associata $<Hf(x_0,y_0)\uline h,\uline h>$,
 	\item $o((x-x_0)^2-(y-y_0)^2)$ è un errore infinitesimo.
@@ -3650,15 +3651,19 @@ La forma quadratica è una funzione che associa ad un vettore in $\mathbb{R}^n$ 
 	\begin{equation}\label{eq:forma_quadratica}
 		\begin{aligned}
 			q:\mathbb{R}^n&\rightarrow\mathbb{R}\\
-			q(\uline h) &\rightarrow a_{11}\uline h_1^2 + \rightarrow a_{22}\uline h_2^2 + \hdots + \rightarrow a_{nn}\uline h_n^2 + \sum_{i,j=1, i=j}^{n} 2a_{ij} h_ih_j = \sum_{i,j=1}^{n} a_{ij}h_i h_j
+			\uline h &\rightarrow q(\uline h)
 		\end{aligned}
 	\end{equation}
-	dove i coefficienti reali $a_{ij}$ individuano la matrice simmetrica $A=(a_{ij})$ associata a $q$.
+	dove
+	\begin{equation*}
+		q (\uline h) = a_{11}\uline h_1^2 + \rightarrow a_{22}\uline h_2^2 + \hdots + a_{nn}\uline h_n^2 + \sum_{i,j=1, i\neq j}^{n} 2a_{ij} h_ih_j = \sum_{i,j=1}^{n} a_{ij}h_i h_j
+	\end{equation*}
+	ed i coefficienti reali $a_{ij}$ individuano la matrice simmetrica $A=(a_{ij})$ associata a $q$.
 \end{definition}
 
 \paragraph{Perché $\boldsymbol{2a_{ij}}$ in (\ref{eq:forma_quadratica})?} Sono considerati i termini omogenei di secondo grado del tipo $h_1h_2$ e $h_2h_1$ e dato che $A$ è simmetrica allora $a_{ij} = a_{ji}$ e $h_i = h_j$, quindi è possibile contarli due volte ed escludere dalla sommatoria gli indici $i=j$. $\qed$
 
-\paragraph{DA RICORDARE:} Ad ogni forma quadratica è associata in modo univoco una matrice simmetrica.
+\paragraph{DA RICORDARE:} \textbf{Ad ogni forma quadratica è associata in modo univoco una matrice simmetrica contenente i coefficienti della stessa.}
 
 \begin{example}[Forma quadratica, caso $n=2$]\footnote{Slide 16 PDF 23.}
 	\begin{equation*}
@@ -3685,11 +3690,11 @@ La forma quadratica è una funzione che associa ad un vettore in $\mathbb{R}^n$ 
 	\begin{equation*}
 		\det A = a_{11}a_{22} - 2a_{12} = \lambda_1\lambda_2,
 	\end{equation*}
-	ovvero
+	quindi
 	\begin{equation*}
 		1-2\cdot\frac{5}{2}\cdot\frac{5}{2}=\lambda_1\lambda_2.
 	\end{equation*}
-	\paragraph{Perché $\lambda_1$ e $\lambda_2$?} $\lambda_1$ e $\lambda_2$ sono gli autovalori di $A$ e quindi le soluzioni dell'equazione caratteristica
+	\paragraph{Perché $\boldsymbol{\lambda_1}$ e $\boldsymbol{\lambda_2}$?} $\lambda_1$ e $\lambda_2$ sono gli autovalori di $A$ e le soluzioni dell'equazione caratteristica, quindi
 	\begin{equation*}
 		|A-\lambda I| =0 \rightarrow
 		\begin{vmatrix}
@@ -3707,25 +3712,25 @@ La forma quadratica è una funzione che associa ad un vettore in $\mathbb{R}^n$ 
  \end{remark}
 
 \begin{theorem}[Studio del segno della forma quadratica in due variabili, non ufficiale]\label{th:studio_segno_forma_quadratica}\footnote{Slide 16 PDF 23.}
-	Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ e sia $\uline x_0 = (x_0,y_0)\in A$ punto critico (stazionario) per $f$. Considerata l'approssimazione di Taylor di $f$ (\ref{eq:approssimazione_taylor_forma_quadratica_estremo}) centrata in $\uline x_0$, dove a $q(\uline h)=<Hf(\uline x_0)\uline h, \uline h>$ è associata $A$, matrice dei coefficienti, è possibile affermare che
+	Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ e sia $\uline x_0 = (x_0,y_0)\in A$ punto critico (stazionario) per $f$. Considerata l'approssimazione di Taylor di $f$ (\ref{eq:approssimazione_taylor_forma_quadratica_estremo}) centrata in $\uline x_0$, dove a $q(\uline h)=<Hf(\uline x_0)\uline h, \uline h>$ è associata $A$ (matrice dei coefficienti) è possibile affermare che
 	\begin{enumerate}
-		\item se $\boldsymbol{\det A>0}$ e $ \boldsymbol{\lambda_1\lambda_2>0}$ allora $\boldsymbol q$ è definita positiva (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{minimo locale}),
-		\item se $\boldsymbol{\det A>0}$ e $ \boldsymbol{\lambda_1\lambda_2<0}$ allora $\boldsymbol q$ è definita negativa (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{massimo locale}),
+		\item se $\boldsymbol{\det A>0}$ e $ \boldsymbol{\lambda_1\lambda_2>0}$ allora $\boldsymbol q$ è \textbf{definita positiva} (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{minimo locale}),
+		\item se $\boldsymbol{\det A>0}$ e $ \boldsymbol{\lambda_1\lambda_2<0}$ allora $\boldsymbol q$ è \textbf{definita negativa} (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{massimo locale}),
 		\item se $\boldsymbol{\det A<0}$ allora $ \boldsymbol{\lambda_1=0}$  o $\boldsymbol{\lambda_2=0}$ allora $\boldsymbol q$ è \textbf{indefinita} (e quindi $\boldsymbol{\uline x_0}$ è un \textbf{punto di sella}),
-		\item $\det A=0$ allora $\boldsymbol{q}$ è \textbf{semidefinita}.
+		\item $\boldsymbol{\det A=0}$ allora $\boldsymbol{q}$ è \textbf{semidefinita}.
 	\end{enumerate}
 \end{theorem}
 
-\paragraph{IMPORTANTE:} \textbf{Come per il Test dell'Hessiana, è richiesto che} $\det A\neq 0$ affinché sia presente un punto di minimo/massimo/sella. Se $\det A = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
+\paragraph{IMPORTANTE:} \textbf{Come per il Test dell'Hessiana, è richiesto che} $\boldsymbol{\det A\neq 0}$ affinché sia presente un punto di minimo/massimo/sella. Se $\det A = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
 
 Il precedente Teorema può essere espresso come segue.
 
 \begin{definition}[Definizione del forma quadratica, non ufficiale]\footnote{Slide 17 PDF 23.}
 	$q:\mathbb{R}^n\rightarrow\mathbb{R}$ (o la sua matrice associata) si dice
 	\begin{itemize}
-		\item definita positiva se $q(\uline h)>0 \;\forall \uline h\neq \uline 0$ (ovvero sse gli autovalori di $A=(a_{ij})$ sono positivi).
+		\item definita positiva se $q(\uline h)>0 \;\forall \uline h\neq \uline 0$ (ovvero sse gli autovalori di $A=(a_{ij})$ sono positivi),
 		\item definita negativa se $q(\uline h)<0 \;\forall \uline h\neq \uline 0$ (ovvero sse gli autovalori di $A=(a_{ij})$ sono negativi),
-		indefinita (se cambia di segno, quindi non è possibile assegnargliene uno, ovvero) se $\exists \uline h_1,\uline h_2\neq \uline 0$ tc $q(\uline h_1)<0<q(\uline h_2)$ (sse gli autovalori di $A=(a_{ij})$ sono positivi e negativi)
+		\item indefinita (se cambia di segno, quindi non è possibile assegnargliene uno, ovvero) se $\exists \uline h_1,\uline h_2\neq \uline 0$ tc $q(\uline h_1)<0<q(\uline h_2)$ (sse gli autovalori di $A=(a_{ij})$ sono positivi e negativi).
 	\end{itemize}
 \end{definition}
 
@@ -3748,16 +3753,16 @@ Piace appplicare il Metodo dei moltiplicatori di Lagrange (Teorema \ref{th:molti
 
 Fino ad adesso sono stati considerati punti di massimo e di minimo liberi, ovvero sono stati ricercati punti all'interno di un dominio. I punti di massimo e minimo vincolati sono dei punti che verificano ulteriori condizioni, oltre a quelle di appartenere ad un dominio, espresse tramite equazioni e disequazioni. Dato che i vincoli devono essere minori del numero di variabili, se sono considerate funzioni di due variabili allora sarà espresso un solo vincolo.
 
-\begin{definition}
+\begin{definition}[Vincolo]\footnote{Slide 24 PDF 23.}
 	Sia $g:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $g\in C^1(A)$, un vincolo è definito come
 	\begin{equation}\label{eq:vincolo_funzione}
 		V = \{(x,y)\in A; g(x,y)=k\}\subset A.
 	\end{equation}
 \end{definition}
 
-Determinare gli estremi (massimo/minimo) vincolati di $f$ significa ricercare i punto $(x,y)\in A$ tali che questi verifichino la condizione aggiuntiva (espressa dal vincolo) della forma $g(x,y)=k$ (assimilabile all'insieme di livello), dove $g\in C^1(A)$.
+\paragraph{Cosa significa deteminare gli estremi vincolati?} Determinare gli estremi (massimo/minimo) vincolati di $f$ significa ricercare i punto $(x,y)\in A$ tali che questi verifichino la condizione aggiuntiva (espressa dal vincolo) della forma $g(x,y)=k$ (assimilabile all'insieme di livello), dove $g\in C^1(A)$.
 
-In Analisi 2 possono essere considerate funzioni in $n$ variabili con $m$ a condizione che $m<n$. Quindi, nel nostro caso, con $n=2$, i punti del piano per i quali $f$ è ben definita, verificano un solo vincolo.
+\paragraph{Quanti vincoli può avere una funzione?} In Analisi 2 possono essere considerate funzioni in $n$ variabili con $m$ a condizione che $m<n$. Quindi, nel nostro caso, con $n=2$, i punti del piano per i quali $f$ è ben definita, verificano un solo vincolo.
 
 $g(x,y)=k$ in (\ref{eq:vincolo_funzione}) è un insime di livello $k$ della funzione $g$. Tale insieme è un sottoinsime di $\mathbb{R}^2$ (nel nostro caso di $A$ perché $f$ è considerata in un dominio). Peranto, (\ref{eq:vincolo_funzione}) è un insieme di livello.
 
@@ -3790,16 +3795,98 @@ riducendo così il problema ad una variabile. (Un esempio di parametrizzazione �
 
 Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio: $y=y(x),\, f_{|_V}(x,y) = f(x, y(x))$, la quale è una funzione di una variabile.
 
-Quando i precedenti metodi non funzionano è applicato il Teorema dei Moltiplicatori di Lagrange per determinare minimo e massimo assoluto su $A$.
+Quando i precedenti metodi non funzionano è applicato il Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange per determinare minimo e massimo assoluto su $A$.
 
 Se è possibile semplificare il problema della ricerca del massimo e minimo allora si semplifica, altrimenti è necessario utilizzare gli altri teoremi, come Il Teorema \ref{th:weierstrass_2} di Weierstrass in quanto il vincolo può rappresentare nel piano un insieme limitato e chiuso (un compatto).
 
-\paragraph{Cosa fa il Teorema dei moltiplicatori di Lagrange?} Fornisce un'equazione vettoriale che permette di ricercare punti di minimo e di massimo per una funzione detta Lagrangiana, la quale è una funzione di tre variabili: le due variabili di $f$ e $\lambda$, il moltiplicatore del problema.
+\paragraph{Cosa fa il Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange?} Fornisce un'equazione vettoriale che permette di ricercare punti di minimo e di massimo per una funzione detta Lagrangiana, la quale è una funzione di tre variabili: le due variabili di $f$ e $\lambda$, il moltiplicatore del problema.
 
 \begin{theorem}[dei moltiplicatori di Lagrange]\label{th:moltiplicatori_lagrange}\footnote{Slide 2 PDF 24.}
-	Siano $f,g\in C^1(A)$, dove $A\subseteq\mathbb{R}^2$ aperto. \textbf{(Ipotesi)} Se $(x_0,y_0)\in V$ è un punto di estremo (minimo/massimo) per $f$ nell'insieme (di livello $k$ per $g$) $V=\{(x,y)\in A; g(x,y)= k\}$ e se $\triangledown g(x_0,y_0)\neq 0$ \textbf{\ul{allora} (tesi)} $\exists \lambda_0\in\mathbb{R}$ tale che
-	\begin{equation*}
+	Siano $f,g\in C^1(A)$, dove $A\subseteq\mathbb{R}^2$ aperto. \textbf{(Ipotesi)} Se $(x_0,y_0)\in V$ è un punto di estremo (minimo/massimo) vincolato per $f$ nell'insieme (di livello $k$ per $g$) $V=\{(x,y)\in A; g(x,y)= k\}$ e se $\triangledown g(x_0,y_0)\neq 0$ \textbf{\ul{allora} (tesi)} $\exists \lambda_0\in\mathbb{R}$ tale che
+	\begin{equation}\label{eq:identita_vettoriale_moltiplicatore_lagrange}
 		\triangledown f(x_0,y_0)=\lambda_0\, \triangledown g(x_0, y_0).
-	\end{equation*}
+	\end{equation}
 \end{theorem}
 
+\paragraph{Note su (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}):} (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}) è un'identità vettoriale che esprime $\triangledown f(x_0,y_0)$ come multiplo di $\triangledown g(x_0, y_0)$ (quindi i due vettori sono paralleli). Inoltre, è un'equazione vettoriale composta da due equazioni della forma
+\begin{equation}\label{eq:sistema_moltiplicatore_lagrange}
+	(\ref{eq:identita_vettoriale_moltiplicatore_lagrange})+\text{ vincolo }\equiv
+	\begin{cases}
+		\frac{\partial f}{\partial x} (x_0,y_0) = \lambda_0 \frac{\partial g}{\partial x}(x_0, y_0)\\\\
+		\frac{\partial f}{\partial y} (x_0,y_0) = \lambda_0 \frac{\partial g}{\partial y}(x_0, y_0)\\\\
+		g(x_0, y_0) = k
+	\end{cases}
+\end{equation}
+e quindi trovare i punti critici di $f$ significa risolvere il sistema
+\begin{equation}\label{eq:identita_vettoriale_moltiplicatore_lagrange_0}
+	\triangledown f(x,y) = \uline 0 \iff
+	\begin{cases}
+		\frac{\partial f}{\partial x} (x_0,y_0) = \lambda_0 \frac{\partial g}{\partial x}(x_0, y_0) = 0\\\\
+		\frac{\partial f}{\partial y} (x_0,y_0) = \lambda_0 \frac{\partial g}{\partial y}(x_0, y_0) = 0\\\\
+		g(x_0, y_0) = k = 0
+	\end{cases}
+\end{equation}
+ 
+\paragraph{Interpretazione geometrica del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange:} Nei punti di minimo/massimo vincolati, i vettori gradienti $\triangledown f(x,y)$ e $\triangledown g(x,y)$ sono fra loro paralleli, cioè hanno la stessa retta tangente.
+
+\paragraph{Generalizzazione del Teorema \ref{th:fermat_an2} di Fermat al caso degli estremi vincolati:} (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}) esprime il fatto che se $(x_0, y_0)$ soddisfa le ipotesi del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange allora la derivata di $f$ lungo la retta tangente al vincolo si deve annullare ed in tal caso $(x_0, y_0)$ è punto critico vincolato.
+
+\begin{definition}[Lagrangiana]\footnote{Slide 3 PDF 24.}
+	Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R},\, g:A\rightarrow\mathbb{R}$, $A$ aperto, $f,g\in C^1(A)$. Supposto che $f$ abbia vincolo $V$, la Lagrangiana è definita come
+	\begin{equation}\label{eq:lagrangiana}
+		L(x,y,\lambda) = f(x,y) - \lambda[g(x,y) - b].
+	\end{equation}
+	($L:\mathbb{R}^3\rightarrow\mathbb{R}$)
+\end{definition}
+
+\paragraph{Osservazioni su $L$:}
+\begin{itemize}
+	\item Esprime esplicatamente l'equazione vettoriale (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}) insieme all'equazione che esprime il vincolo,
+	\item Le soluzioni $(x_0,y_0,\lambda_0)$ di \ref{eq:identita_vettoriale_moltiplicatore_lagrange_0} sono punti critici liberi di $L$, ovvero $\triangledown L(x_0,y_0,\lambda_0) = 0$.
+\end{itemize} 
+
+\paragraph{Osservazioni sulla relazione tra (\ref{eq:lagrangiana}) e sul Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange:} Il Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange afferma che se $(x_0,y_0)$ è un punto di estremo vincolato per $f$ allora $\exists\lambda_0\in\mathbb{R}$ tale che $(x_0,y_0,\lambda_0)$ è un punto critico libero per la Lagrangiana $L$. Infatti, i punti critici (o stazionari) di $L$ sono le soluzioni di
+\begin{equation*}
+	\triangledown L(x,y,\lambda) = \left(\frac{\partial L}{\partial x} (x,y,\lambda), \frac{\partial L}{\partial y} (x,y,\lambda), \frac{\partial L}{\partial \lambda} (x,y,\lambda)\right) = (0,0,0),
+\end{equation*}
+dove
+\begin{equation*}
+	\begin{matrix}
+		\frac{\partial L}{\partial x} (x,y,\lambda) = \frac{\partial f}{\partial x} (x,y) - \lambda \frac{\partial g}{\partial x}(x,y)\\\\
+		\frac{\partial L}{\partial y} (x,y,\lambda) = \frac{\partial f}{\partial y} (x,y) - \lambda \frac{\partial g}{\partial y}(x,y)\\\\
+		\frac{\partial L}{\partial \lambda} (x,y,\lambda) = -[g(x,y) - k]
+	\end{matrix}
+\end{equation*}
+$L$ ha le stesse proprietà di regolarità delle funzioni attraverso le quali è costruita, ovvero: dato che $f,g\in C^1(A)$ allora $L\in C^1(A)$. Quindi  la ricerca dei punti critici $(x_0,y_0,\lambda_0)$ della Lagrangiana, ovvero soluzioni di $\triangledown L(x,y,\lambda) = (0,0,0)$, equivale alla ricerca della soluzione del sistema 
+\begin{equation}\label{eq:sistema_lagrangiana_0}
+	\triangledown L(x,y,\lambda) = \uline 0 \iff 
+	\begin{cases}
+		\frac{\partial L}{\partial x} (x,y,\lambda) = \frac{\partial f}{\partial x} (x,y) - \lambda \frac{\partial g}{\partial x}(x,y) = 0\\\\
+		\frac{\partial L}{\partial y} (x,y,\lambda) = \frac{\partial f}{\partial y} (x,y) - \lambda \frac{\partial g}{\partial y}(x,y) = 0 \\\\
+		\frac{\partial L}{\partial \lambda} (x,y,\lambda) = -[g(x,y) - k] = 0
+	\end{cases}
+\end{equation}
+ovvero,
+\begin{equation*}
+	\triangledown L(x,y,\lambda) = \uline 0 \iff 
+	\begin{cases}
+		f_x(x,y) - \lambda g_x(x,y) = 0\\
+		f_y(x,y) - \lambda g_y(x,y) = 0\\
+		f_\lambda (x,y) - k = 0
+	\end{cases}
+\end{equation*}
+
+\noindent Pertanto, la relazione tra la Lagrangiana (\ref{eq:lagrangiana}) e Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange è dovuta all'equivalenza delle soluzioni di \ref{eq:sistema_lagrangiana_0} e (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}), ovvero: se $(x_0,y_0,\lambda_0)$ è punto stazionario di $L$ allora è soluzione di \ref{eq:sistema_lagrangiana_0} ($L(x_0,y_0,\lambda_0) =\uline 0$) e di (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}).
+
+\paragraph{Come trovare gli estremi vincolati?} Per trovare i punti di minimo/massimo per $f$ vincolati su $V=\{(x,y)\in A,\, g(x,y)=k\}$ si procede selezionando tra i punti regolari di $g$, ovvero i punti $(x_0, y_0)$ tali che $\triangledown g(x_0, y_0)\neq(0,0)$ e che sono punti critici liberi della funzione Lagrangiana (i punti tali che $\triangledown L(x,y,\lambda) = \uline 0$) e poi si studia la natura di tali punti \footnote{In questo caso, se $(x_0, y_0)$ è un estremo vincolato di $f$ su $V$ allora $\lambda_0$ è il moltiplicatore di Lagrange fornito dalla tesi del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange.} . Ciò è chiamato metodo dei moltiplicatori di Lagrange:
+\begin{enumerate}
+	\item si isolano gli eventuali punti non regolari dell'insieme $g(x,y) = k$ \footnote{Se un vincolo presenta spigoli allora è necessario studiare la natura di questi punti singolarmente.},
+	\item si cercano i punti critici liberi della Lagrangiana, cioè la soluzione di \ref{eq:sistema_lagrangiana_0},
+	\item si determina la natura dei punti critici e per questo risulta utile il Teorema \ref{th:weierstrass_2} di Weierstrass.
+\end{enumerate}
+
+\paragraph{Perché si chiama Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange?} Perché per funzioni ad $n$ variabili ci possono essere fino ad $m <n$ vincoli, quindi $m$ moltiplicatori (i quali formeranno un vettore di $m$ compomenti reali), quindi il sistema $\triangledown L(\uline x, \uline \lambda)=\uline{0}$ avrà $n+m$ equazioni in quanto $L$ è una funzione di $n+m$ variabili. 
+
+\begin{example}
+	Esempi applicazione metodo Lagrange SLIDE 5-11 PDF 23.
+\end{example}
