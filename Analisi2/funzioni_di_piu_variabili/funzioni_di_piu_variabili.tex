@@ -1033,7 +1033,7 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
 Quindi la retta $\overline{\rm OP}$ può essere rappresentata come $y=mx$, con $m=\tan\theta$, dato che $\overline{\rm OP}$ passa per l'origine.
 
 \begin{remark}[Non ufficiale]\footnote{Slide 14 PDF 10.}
-    Le coordinate polari definite come nella Definizione \ref{def:coordinate_polari} sono centrate centrate in $(0,0)$. Le coordinate polari potrebbero essere traslate e centrate nel punto $(x_0,y_0)\neq(0,0)$ come in Figura \ref{fig:piano_coordinate_polari_centrate_x0_y0}, quindi è possibile generalizzare il caso (\ref{eq:coordinate_polari_piano}), ovvero: Nel caso in cui le coordinate siano centrate in $(x_0,y_0)$ allora $x$ e $y$ in coordinate cartesiano sono ottenute dalle coordinate polari seguendo le formule
+    Le coordinate polari definite come (\ref{eq:coordinate_polari_piano}) sono centrate in $(0,0)$. Le coordinate polari potrebbero essere traslate e centrate nel punto $(x_0,y_0)\neq(0,0)$, come in Figura \ref{fig:piano_coordinate_polari_centrate_x0_y0}. E' possibile generalizzare il caso (\ref{eq:coordinate_polari_piano}) come segue: Nel caso in cui il sistema di riferimento sia centrato in $(x_0,y_0)$ allora il punto $(x,y)$ puo' essere trasformato in coordinate polari attraverso le seguenti
     \begin{equation*}
         \begin{cases}
             x=x_0+\rho\cos\theta,\\
@@ -1608,7 +1608,7 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
     \end{figure}
 \end{example}
 
-\subsubsection{Esempi sulla continuità e limiti}
+\subsection{Esempi sulla continuità e limiti}
 
 \begin{example}\footnote{Slide 2 PDF 13.}
 	\paragraph{Testo:} Stabilire se la
@@ -1974,8 +1974,14 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 			\uline x & \mapsto f(\uline x).
 		\end{aligned}
 	\end{equation*}
-	Se $f$ è derivabile in $A$ allora $\exists\frac{\partial f}{\partial x_i}(\uline x)\, \forall\uline x\in A,\, i=1,\hdots, n$, dove $\frac{\partial f}{\partial x_i}(\uline x)$ è (se esiste finito) $\lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h}$.
-	
+	Se $f$ è derivabile in $A$ allora
+	\begin{equation*}
+		\exists\frac{\partial f}{\partial x_i}(\uline x)\qquad \forall\uline x\in A,\, i=1,\hdots, n,
+	\end{equation*}
+	dove $\frac{\partial f}{\partial x_i}(\uline x)$ è (se esiste finito)
+	\begin{equation*}
+		\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h}.
+	\end{equation*}
 \end{definition}
 
 \paragraph{Nota sul calcolo delle derivate quando $A\subseteq\mathbb{R}^n$:} In modo analogo al caso in due variabili, quando è calcolata la derivata parziale rispetto alla variabile $i$-esima, dove $i=1,\hdots,n$, sono tenute fisse tutte le variabili tranne la $i$-esima, la quale subisce un incremento. Considerando la $f$ in (\ref{eq:derivata_parziale_Rn}), sono tenute fisse tutte le variabili escluse la $i$-esima, sulla quale è applicato l'incremento. Quindi, il calcolo delle derivate parziali diventa un problema di Analisi 1 perché $f$ è come se fosse a una variabile, per il congelamento delle variabili.
@@ -2205,10 +2211,10 @@ Per le funzioni in più variabili, la derivabilità non implica continuità. Qui
 \subsubsection{Curve in \texorpdfstring{$\boldsymbol{\mathbb R^n}$}{Rn}}\label{ssec:curve_Rn}\footnote{Slide 5 PDF 15.}
 In matematica le curve sono delle applicazioni continue definite da un intervallo ad $\mathbb R^n$. In particolare, le curve piane sono delle applicazioni da un intervallo ad $\mathbb R^2$. Inoltre, il sostegno di una curva è l'immagine di una curva.
 \begin{definition}[Curva in $\mathbb{R}^n$]\footnote{Slide 5 PDF 15.}
-	Una curva è un'applucazione continua ($\varphi\in C^0(I)$) definita come
+	Una curva è un'appliazione continua ($\varphi\in C^0(I)$) definita come
 	\begin{equation}\label{eq:curva}
 		\begin{aligned}
-			f\colon I=[a,b]\subset\mathbb R & \rightarrow \mathbb R^n\\
+			\varphi\colon I=[a,b]\subset\mathbb R & \rightarrow \mathbb R^n\\
 			t &\mapsto \varphi(t) = (\varphi_1(t), \varphi_2(t),\hdots, \varphi_n(t))\in\mathbb{R}^n
 		\end{aligned}
 	\end{equation}
@@ -2232,7 +2238,7 @@ In matematica le curve sono delle applicazioni continue definite da un intervall
 
 \paragraph{Utilità equazioni parametriche:} Le equazioni parametriche descrivono in che modo con il quale è determinata l'immmagine di $t$ attraverso $\varphi$ in $\mathbb{R}^n$, ovvero descrivono come cambia la funzione al variare del parametro $t$. Vedere le equazioni parametriche fisica.
 
-\begin{definition}[Sostegno di una curva]\footnote{Slide 6 PDF 15.}
+\begin{definition}[Sostegno (traiettoria) di una curva]\footnote{Slide 6 PDF 15.}
 	L'immagine di $\varphi$ (funzione continua) è
 	\begin{equation*}
 		\varphi(I)\subseteq\mathbb{R}^n,
@@ -2242,7 +2248,7 @@ In matematica le curve sono delle applicazioni continue definite da un intervall
 
 \begin{example}
 	Se $n=2$ allora si ha una curva piana (perché l'immagine è in $\mathbb{R}^2$, nel piano) $\varphi:[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}^2$.\\
-	Inoltre, se $n=2$ è possibile definire le curve cartesiane (ovvero quando nel grafico $graf\, f$ $y=f(x)$), ovvero curve piane (quindi in $\mathbb{R}^2$), ottenute tramite funzioni di una variabile (dove il grafico è sottoinsieme del piano $\mathbb{R}^2$ e del seguente grafico). Considerando $f:[a,b]=I\mathbb{R^2}$ continua, il grafico $graf\, f=\{(x,f(x)\in\mathbb{R}^2|x\in[a,b])\}$ è il sostegno do una curva piana.\\
+	Inoltre, se $n=2$ è possibile definire le curve cartesiane (ovvero quando nel grafico $graf\, f$ $y=f(x)$), ovvero curve piane (quindi in $\mathbb{R}^2$), ottenute tramite funzioni di una variabile (dove il grafico è sottoinsieme del piano $\mathbb{R}^2$ e del seguente grafico): considerando $f:[a,b]=I\subset\mathbb{R}\rightarrow\mathbb{R}^2$ continua, il grafico $graf\, f=\{(x,f(x))\in\mathbb{R}^2|x\in[a,b])\}\subseteq\mathbb{R}^2$ è il sostegno di una curva piana.\\
 	Le equazioni parametriche devono fornire due componenti nel caso $n=2$, definendo una curva piana del tipo
 	\begin{equation}\label{eq:esempio_curva_R2}
 		\begin{aligned}
@@ -2383,7 +2389,7 @@ Dato che sono considerate funzioni di $n$ variabili, è conveniente utilizzare l
 
 È possibile scrivere le derivate parziali come derivate direzionali, dove le direzioni sono determinate dai vettori della base canonica, come segue.
 
-\begin{definition}[Derivata direzionale]\label{def:derivate_direzionali_Rn}\footnote{Slide 11 PDF 15.}
+\begin{definition}[Derivata direzionale]\label{def:derivata_direzionale_Rn}\footnote{Slide 11 PDF 15.}
 	Sia $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline e_i$ ed alla variabile $x_i$ (dove $i=1,\hdots, n$) nel punto $\uline x$ è data da
 	\begin{equation}\label{eq:derivata_direzionale_Rn}
 		\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(\uline x + h \uline e_i)-f(\uline x)}{h}.
@@ -2415,7 +2421,7 @@ Dato che sono considerate funzioni di $n$ variabili, è conveniente utilizzare l
 
 La proposizione è un caso particolare della seguente definizione, in quanto il concetto più generale è quello di derivata direzionale per ogni direzione $\uline v$.
 
-\begin{definition}[Derivata Direzionale]\footnote{Slide 12 PDF 15.}
+\begin{definition}[Derivata direzionale, versione da ricordare]\footnote{Slide 12 PDF 15.}
 	Data $\uline v\in\mathbb{R}^n$, direzione (versore) in $\mathbb{R}^n$, $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline v$ ed alla variabile $x_i$ (dove $i=1,\hdots, n$) nel punto $\uline x$ è data da
 	\begin{equation*}
 		D_{\vec{v}} =\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim_{h\rightarrow 0}\frac{f(\uline x + h \uline v) - f(\uline x)}{h},
@@ -2441,7 +2447,7 @@ La proposizione è un caso particolare della seguente definizione, in quanto il 
 \end{theorem}
 
 \begin{corollary} (Direzioni di massima e minima crescita, non ufficiale)
-	Sia $f:A\rightarrow\subseteq\mathbb{R}^n\mathbb{R}$, dove $A$ è un aperto ed $f$ è differenziabile in $\uline x_0\in A$, allora il vettore $\triangledown f(\uline x_0)$ indica la direzione (ed il verso) di massimo accrescimento di $f$; $-\triangledown f(\uline x_0)$ indica la direzione corrispondente alla minima derivata direzionale (che in genere è negativa); nel caso $\triangledown f(\uline x_0)=0$ le derivate direzionali sono nulle.
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, dove $A$ è un aperto ed $f$ differenziabile in $\uline x_0\in A$, allora il vettore $\triangledown f(\uline x_0)$ indica la direzione (ed il verso) di massimo accrescimento di $f$; $-\triangledown f(\uline x_0)$ indica la direzione corrispondente alla minima derivata direzionale (che in genere è negativa); nel caso $\triangledown f(\uline x_0)=0$ le derivate direzionali sono nulle.
 \end{corollary}
 
 \begin{example}\footnote{Slide 14 PDF 15.}
@@ -2727,7 +2733,7 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 \paragraph{Nota:} Se $f$ è differenziabile in $x_0$ allora $f$ è derivabile e continua in $x_0$.
 
 \begin{theorem}[del differenziale]\label{th:del_differenziale}\footnote{Slide 9 PDF 17}
-	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto. (HP) Sia $f$ differenziabile in $A$ (ovvero $\exists\triangledown f(\uline x),\, \forall\uline x\in A$). Se le derivate parziali $f_{x_1}(\uline x),\hdots, f_{x_n}(\uline x)$, sono continue in $\uline x$ allora $f$ è differenziabile in $\uline x\in A$.
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto. \textbf{(Ipotesi)} Sia $f$ derivabile in $A$ (ovvero $\exists\triangledown f(\uline x),\, \forall\uline x\in A$). Se le derivate parziali $f_{x_1}(\uline x),\hdots, f_{x_n}(\uline x)$, sono continue in $\uline x$ allora \textbf{(tesi)} $f$ è differenziabile in $\uline x\in A$.
 \end{theorem}
 \begin{proof}[Dimostrazione (caso $n=2$)]
 	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto. Dati $\uline h = (h,k)\in\mathbb{R}^2,\, \uline x=(x,y)\in A$, \footnote{È necessario verificare che il limite per $\uline h\rightarrow\uline 0$ del rapporto incrementale di $f$ esiste ed è 0 e per farlo è scritto in modo opportuno parte del rapporto.}
@@ -2934,7 +2940,7 @@ dove il versore che indica la massima pendenza è
 \end{definition}
 
 Il prossimo teorema è chiesto.
-\begin{theorem}\footnote{Slide 5 PDF 18.}
+\begin{theorem}[Derivata di una funzione composta]\footnote{Slide 5 PDF 18.}
 	Sia
 	\begin{equation*}
 		\begin{aligned}
@@ -3274,8 +3280,6 @@ Sia la Definizione \ref{eq:funzione_composta_curva} di funzione composta ad una 
 	\end{equation}
 \end{theorem}
 
-\paragraph{Note su (\ref{eq:th_lagrange}):} (a) rappresenta il prodotto scalare $<\triangledown f(\uline x + \theta \uline h), \uline h>$, dove (b) è il vettore gradiente $\triangledown f(\uline x + \theta \uline h)$ e $\uline x + \theta \uline h$ è un punto intermedio del segmento $[\uline x, \uline x+\uline h]$. Inoltre, (c) segue dall'espressione della derivata, quindi applicando la formula di Taylor con il resto secondo Lagrange e $k=1$ può essere scritta come (\ref{eq:th_lagrange_riscritta}). $\qed$
-
 \begin{proof}
 	Segue, con $k=1$ che (per il Teorema di Lagrange di Analisi 1 (?)) $\exists\theta\in[0,1]$ tc
 	\begin{equation}\label{eq:th_lagrange_riscritta}
@@ -3295,6 +3299,8 @@ Sia la Definizione \ref{eq:funzione_composta_curva} di funzione composta ad una 
 \end{proof}
 
 \paragraph{Note sulla dimostrazione:} Se $k=2$ allora $f\in C^2(A)$. La formula di Taylor con resto di Lagrange al secondo ordine approssima la funzione $f$ con un polinomio di ordine uno ed il resto, ovvero l'errore, in termini di derivata seconda, ovvero come $F''(\theta) = <Hf(\uline x + t\uline h)\uline h, \uline h>$ per (\ref{eq:regola_catena_funzione_composta_curva_2}).
+
+\paragraph{Note su (\ref{eq:th_lagrange}):} (a) rappresenta il prodotto scalare $<\triangledown f(\uline x + \theta \uline h), \uline h>$, dove (b) è il vettore gradiente $\triangledown f(\uline x + \theta \uline h)$ e $\uline x + \theta \uline h$ è un punto intermedio del segmento $[\uline x, \uline x+\uline h]$. Inoltre, (c) segue dall'espressione della derivata, quindi applicando la formula di Taylor con il resto secondo Lagrange e $k=1$ può essere scritta come (\ref{eq:th_lagrange_riscritta}). $\qed$
 
 \paragraph{Note sul Teorema \ref{th:di_lagrange} di Lagrange:}
 \begin{itemize}
@@ -3434,7 +3440,7 @@ La definizione di massimo e minimo relatico per una funzione sono uguali alle de
 
 \paragraph{Perché locale?} Perché le definizioni di minimo e massimo locale valgono vicino al punto $\uline x_0$, localmente (perché $\uline x\in B(\uline x_0,r)\cap A$, ovvero è molto vicino a $\uline x_0$).
 
-\paragraph{Nomenclatura:} Un punto si dice di minimo o massimo forte se le disuguaglianze valgono in modo stretto, se al posto di $\leq$ c'è <.
+\paragraph{Nomenclatura:} Un punto si dice di minimo o massimo forte se le disuguaglianze valgono in modo stretto, se al posto di $\leq$ c'è $<$.
 
 \begin{definition}[Minimo e massimo assoluto (globale)]\footnote{Slide 3 PDF 22.}
 	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$. Si dice che $\uline x_0\in A$ ($\backslash\in D$) è un minimo assoluto (globale)
@@ -3890,3 +3896,5 @@ ovvero,
 \begin{example}
 	Esempi applicazione metodo Lagrange SLIDE 5-11 PDF 23.
 \end{example}
+
+\pagebreak
