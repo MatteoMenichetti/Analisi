@@ -109,12 +109,11 @@ Segue la definizione formale di norma come applicazione.
 
 \begin{definition}[Norma euclidea]
     \begin{equation}
-        \boldsymbol{||\uline x||}=|\uline x|:=\sqrt{<\uline x,\uline x>}=\boldsymbol{\sqrt{\sum_{i=1}^n x_i^2}}\in\mathbb R_0^+,\quad \forall x\in\mathbb R^n.
+        \boldsymbol{||\uline x||_2}=|\uline x|:=\sqrt{<\uline x,\uline x>}=\boldsymbol{\sqrt{\sum_{i=1}^n x_i^2}}\in\mathbb R_0^+,\quad \forall x\in\mathbb R^n.
     \end{equation}
 \end{definition}
-\begin{remark}
-    $\boldsymbol{||\uline x||=0\iff\uline x=\uline 0}$.
-\end{remark}
+
+\paragraph{Importante:} È necessario ricordarsi la Positività della norma: $\boldsymbol{||\uline x||=0\iff\uline x=\uline 0}$.
 
 \begin{proposition}[Formula di Carnot]
     \footnote{Slide 3 PDF 7.}
@@ -789,7 +788,7 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
     Se $P_0$ è un punto isolato per $A$ per convenzione si pone $f$ continua in tale punto.
 \end{definition}
 
-\begin{definition}[Funzione continua]\footnote{Slide 2 PDF 10.}
+\begin{definition}[Funzione continua in $A$]\footnote{Slide 2 PDF 10.}
     Sia $f\colon A\subset\mathbb R^n\rightarrow\mathbb R$. $f$ si dice continua in $A$ se è continua in ogni punto di $A$.
 \end{definition}
 
@@ -1033,7 +1032,7 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
 Quindi la retta $\overline{\rm OP}$ può essere rappresentata come $y=mx$, con $m=\tan\theta$, dato che $\overline{\rm OP}$ passa per l'origine.
 
 \begin{remark}[Non ufficiale]\footnote{Slide 14 PDF 10.}
-    Le coordinate polari definite come (\ref{eq:coordinate_polari_piano}) sono centrate in $(0,0)$. Le coordinate polari potrebbero essere traslate e centrate nel punto $(x_0,y_0)\neq(0,0)$, come in Figura \ref{fig:piano_coordinate_polari_centrate_x0_y0}. E' possibile generalizzare il caso (\ref{eq:coordinate_polari_piano}) come segue: Nel caso in cui il sistema di riferimento sia centrato in $(x_0,y_0)$ allora il punto $(x,y)$ puo' essere trasformato in coordinate polari attraverso le seguenti
+    Le coordinate polari definite come (\ref{eq:coordinate_polari_piano}) sono centrate in $(0,0)$. Le coordinate polari potrebbero essere traslate e centrate nel punto $(x_0,y_0)\neq(0,0)$, come in Figura \ref{fig:piano_coordinate_polari_centrate_x0_y0}. È possibile generalizzare il caso (\ref{eq:coordinate_polari_piano}) come segue: Nel caso in cui il sistema di riferimento sia centrato in $(x_0,y_0)$ allora il punto $(x,y)$ puo' essere trasformato in coordinate polari attraverso le seguenti
     \begin{equation*}
         \begin{cases}
             x=x_0+\rho\cos\theta,\\
@@ -1827,7 +1826,7 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
 	\end{equation*}
 	l'esponente $\frac{x^2-y^2}{x^2+y^2}$ non ha limite per $(x,y)\rightarrow(0,0)$. Passando in coordinate polar è ottenuto
 	\begin{equation*}
-		\lim_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \rho\sin^2\theta}{\rho^2} = \lim_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
+		\lim_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \cancel{\rho^2}\sin^2\theta}{\cancel{\rho^2}} = \lim_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
 	\end{equation*}
 	È possibile dimostrare che $e^{\frac{x^2-y^2}{x^2+y^2}}$ è limitato uniformemente da una costante.
 	\begin{equation*}
@@ -3064,7 +3063,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 			\begin{bmatrix}
 				f_{xx}(\uline x) & f_{xy}(\uline x)\\
 				f_{yx}(\uline x) &  f_{yy}(\uline x)
-			\end{bmatrix}
+			\end{bmatrix}\quad \forall \uline x \in A.
 	\end{equation*}
 	
 	È necessario dimostrare che $f_{xx}(\uline x)=f_{yy}(\uline x)$.
@@ -3891,7 +3890,7 @@ ovvero,
 	\item si determina la natura dei punti critici e per questo risulta utile il Teorema \ref{th:weierstrass_2} di Weierstrass.
 \end{enumerate}
 
-\paragraph{Perché si chiama Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange?} Perché per funzioni ad $n$ variabili ci possono essere fino ad $m <n$ vincoli, quindi $m$ moltiplicatori (i quali formeranno un vettore di $m$ compomenti reali), quindi il sistema $\triangledown L(\uline x, \uline \lambda)=\uline{0}$ avrà $n+m$ equazioni in quanto $L$ è una funzione di $n+m$ variabili. 
+\paragraph{Perché si chiama Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange? Perché definisce il metodo dei moltiplicatori di Lagrange:} per funzioni ad $n$ variabili ci possono essere fino ad $m <n$ vincoli, quindi $m$ moltiplicatori (i quali formeranno un vettore di $m$ compomenti reali), quindi il sistema $\triangledown L(\uline x, \uline \lambda)=\uline{0}$ avrà $n+m$ equazioni in quanto $L$ è una funzione di $n+m$ variabili. 
 
 \begin{example}
 	Esempi applicazione metodo Lagrange SLIDE 5-11 PDF 23.
