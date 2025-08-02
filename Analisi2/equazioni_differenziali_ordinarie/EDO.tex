@@ -28,12 +28,12 @@ La definizione di ordine di una EDO può essere trasformata in "$y$ può essere 
     $xy'''+5y=\sin x$. $y'''$ è la derivata terza di $y$.
 \end{example}
 
-L'obiettivo è trovare una soluzione all'equazione (\ref{eq:EDO}).
+\paragraph{Qual è l'obiettivo della Sezione?} L'obiettivo è trovare una soluzione all'equazione (\ref{eq:EDO}).
 
 \begin{definition}[Soluzione di una EDO]\label{def:curva_integrale_EDO}
     Una soluzione (o soluzione a curva integrale) di (\ref{eq:EDO}) sull'intervallo $I=[a,b]\subseteq\mathbb R$ è una funzione $\varphi=\varphi(x)$, con $x\in I$, definita e differenziabile $n$ volte su $I$ tale che
     \begin{equation*}
-        \varphi(x),\varphi'(x),\hdots,\varphi^{(n)}(x)\in U\subseteq\mathbb R^{(n+2)},\quad \forall x\in I=[a,b]
+        (\varphi(x),\varphi'(x),\hdots,\varphi^{(n)}(x))\in U\subseteq\mathbb R^{(n+2)},\quad \forall x\in I=[a,b]
     \end{equation*}
     e
     \begin{equation*}
@@ -63,9 +63,9 @@ Sarà utile il concetto di primitiva di una funzione $f(x)$. La sua definizione 
 Una conseguenza del Teorema Fondamentale del Calcolo è la seguente osservazione:
 \begin{remark}
     Data $f\colon\mathbb R \rightarrow \mathbb R$, l'integrale generale di una EDO del tipo (\ref{eq:EDO}) è
-    \begin{equation}\label{eq:primitiva}
+    \begin{equation*}%\label{eq:primitiva}
         y(x)=y(x,c)=\int f(x) dx+c\quad c\in\mathbb R.
-    \end{equation}
+    \end{equation*}
 \end{remark} 
 
 L'integrale generale di una EDO denotato come $y(x,c)$, il quale rappresenta le infinite soluzioni (per il valore $c$) per (\ref{eq:EDO}) ed una famiglia di soluzioni dipendenti da una costante ed una variabile indipendente ($c$ e $x$).
@@ -117,9 +117,9 @@ Una soluzione è l'insieme delle soluzioni all'equazione (\ref{eq:EDO_lineare_or
 \end{example}
 
 \begin{definition}[EDO lineare omogenea associata di ordine $n$]\label{def:EDO_lineare_omogenea_ordine_n}
-    L'EDO lineare omogenea associata a (\ref{eq:EDO_lineare_ordine_n}) di ordine $n$ è definita come
+    L'EDO lineare omogenea associata ad un EDO completa (\ref{eq:EDO_lineare_ordine_n}) di ordine $n$ è definita come
     \begin{equation}\label{eq:EDO_lineare_omogenea_associata_ordine_n}
-        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}(x)+\hdots+a_1(x)y'(x)+a_0(x)y(x)=0.
+        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}(x)+\hdots+a_1(x)y'(x)+a_0(x)y(x)= 0.
     \end{equation}
 \end{definition}
 
@@ -137,7 +137,7 @@ L'\gls{applicazione lineare} $L$ è una somma di funzioni continue ed è lineare
 Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) sono importanti per il Teorema \ref{th:rappresentazione_integrale_generale_EDO_lineare}. Tale teorema è importante per le EDO lineari di ordine $n$, vale per tutte le EDO di ordine $n\geq 1$ ed enuncia che l'integrale generale della EDO del tipo (\ref{eq:EDO_lineare_ordine_n}) è dato dalla somma dell'integrale generale (una soluzione nota della omogenea) dell'omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) e dall'integrale generale (una soluzione particolare) dell'equazione non omogenea (\ref{eq:EDO_lineare_ordine_n}).
 
 \begin{theorem}[Rappresentazione dell'integrale generale di una EDO lineare]\label{th:rappresentazione_integrale_generale_EDO_lineare}\footnote{Slide 1 PDF 2.}
-    L'integrale generale di una EDO lineare di ordine $n$ definita su $I$ del tipo (\ref{eq:EDO_lineare_ordine_n}) è dato dalla somma dell'integrale generale della sua omogenea associata del tipo (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) ed una curva integrale della non omogenea  del tipo(\ref{eq:EDO_lineare_ordine_n}), ovvero:
+    L'integrale generale di una EDO lineare di ordine $n$ definita su $I$ del tipo (\ref{eq:EDO_lineare_ordine_n}) è dato dalla somma dell'integrale generale della sua omogenea associata del tipo (\ref{eq:EDO_lineare_omogenea_associata_ordine_n}) ed una curva integrale della non omogenea  del tipo (\ref{eq:EDO_lineare_ordine_n}), ovvero:
     \begin{equation}\label{eq:rappresentazione_integrale_generale_EDO_lineare}
         y(x)=z(x)+\overline{y}(x),\quad x\in(a,b),
     \end{equation}
@@ -145,50 +145,48 @@ Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata
 \end{theorem} 
 
 \begin{proof}\footnote{PDF 2, Slide 1.}
-    \textbf{Per} $\boldsymbol{n=1}$ \textbf{(valido anche per} $\boldsymbol{n>1)}$. Sia la EDO lineare (\ref{eq:EDO_lineare_ordine_n_forma_normale}) di ordine $n=1$ in forma normale e l'omogenea associata:
+    \textbf{Per} $\boldsymbol{n=1}$ \textbf{(valido anche per} $\boldsymbol{n>1)}$. Sia la EDO lineare completa di ordine $n=1$ in forma normale ((\ref{eq:EDO_lineare_ordine_n_forma_normale}) equivale a)
     \begin{equation}\label{eq:EDO_lineare_ordine_1_forma_normale}
-        y'(x)+a(x)y(x)=f(x),
+       y'(x)+a(x)y(x)=f(x),
     \end{equation}
+    e l'omogenea associata
     \begin{equation}\label{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}
-        y'(x)+a(x)y(x)=0,\quad x\in I=[a,b]
+        y'(x)+a(x)y(x)=0,\quad x\in I=[a,b].
     \end{equation}
-    Date $y(x)$ soluzione qualsiasi di (\ref{eq:EDO_lineare_ordine_1_forma_normale}) e $\overline{y}(x)$ una soluzione particolare e nota di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), è necessario mostrare che la differenza
+    Siano $y(x)$ e $\overline{y}(x)$ rispettivamente soluzione qualsiasi e soluzione particolare e nota di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), è necessario mostrare che la differenza
     \begin{equation*}
         z(x)=y(x)-\overline{y}(x)
     \end{equation*}
-    è una soluzione particolare della EDO omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}). Dunque
+    è una soluzione particolare della EDO omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}). Siano
     \begin{equation*}
-        y'(x)+a(x)y(x)=f(x),\quad \overline{y}'(x) +a(x)\overline{y}(x)=f(x),\quad \forall x\in I.
+        y'(x)+a(x)y(x)=f(x),\quad \overline{y}'(x) +a(x)\overline{y}(x)=f(x),\quad \forall x\in I,
     \end{equation*}
-    Sottraendo membro a membro
+    sottraendo membro a membro è ottenuto
     \begin{equation*}
         \begin{matrix}
             y'(x)+a(x)y(x) - [\overline{y}'(x) +a(x)\overline{y}(x)] =f(x)-f(x),\\\\
             y'(x) - \overline{y}'(x)+a(x)[y(x)-\overline{y}(x)]=0,\\\\
-            [y(x)-\overline{y}(x)]'+a(x)[y(x)-\overline{y}(x)]=0,
+            [y(x)-\overline{y}(x)]'+a(x)[y(x)-\overline{y}(x)]=0,\\\\
+            z'(x) + a(x) z(x) = 0,
         \end{matrix}
     \end{equation*}
     quindi vale (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}).\\
-    Denotando $z(x)=y(x)-\overline{y}(x)$, con $x\in(a,b)$, per verificare (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) è necessario verificare \footnote{Presa una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale} ed una soluzione nota di (\ref{eq:EDO_lineare_non_omogenea_primo_ordine_forma_normale}), è necessario verificare che la somma verifichi (\ref{eq:EDO_lineare_non_omogenea_primo_ordine_forma_normale}), ovvero (\ref{eq:da_verificare}).}
+    Viceversa, se $z(x)$ è una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) su $[a,b]$ e $\overline{y}(x)$ soluzione particolare (e nota) di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), allora è necessario mostrare che la loro somma \footnote{Presa una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) ed una soluzione nota di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), è necessario verificare che la somma verifichi (\ref{eq:EDO_lineare_ordine_1_forma_normale}), ovvero (\ref{eq:da_verificare}).}
     \begin{equation}\label{eq:da_verificare}
-        y(x)=z(x)+\overline{y}(x),\quad x\in I=[a,b].
+        y(x)=z(x)+\overline{y}(x),\quad x\in I=[a,b],
     \end{equation}
-    [Ovvero:] Viceversa, se $z(x)$ è una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) su $[a,b]$ e $\overline{y}(x)$ soluzione particolare (e nota) di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), allora è necessario mostrare che la loro somma
-    \begin{equation*}
-        y(x)=z(x)+\overline{y}(x)
-    \end{equation*}
-    è soluzione di (\ref{eq:EDO_lineare_ordine_1_forma_normale}). Infatti
+    è soluzione di (\ref{eq:EDO_lineare_ordine_1_forma_normale}). Infatti, sommando membro a membro
     \begin{equation*}
         \begin{matrix}
-            y'(x)&=&[z(x)+\overline{y}(x)]'&=&z'(x)+\overline{y}'(x)-a(x)z(x)-a(x)\overline{y}(x)+f(x) &=& \\\\
-            &&&=&[z(x)+\overline{y}(x)]'+a(x)[z(x)+\overline{y}(x)]&=&f(x),
+            z'(x)+\overline{y}'(x)+a(x)z(x)+a(x)\overline{y}(x) = 0 + f(x),\\\\
+            [z(x)+\overline{y}(x)]'+a(x)[z(x)+\overline{y}(x)] = f(x),
         \end{matrix}
     \end{equation*}
     quindi
     \begin{equation*}
         y'(x)+a(x)y(x)=f(x),\quad \forall x\in I=[a,b],
     \end{equation*}
-    ovvero è ottenuto che $y(x)=\overline{y}(x)+z(x)$ è soluzione generale di (\ref{eq:EDO_lineare_ordine_1_forma_normale}).
+    ottenendo che $y(x)=\overline{y}(x)+z(x)$ è soluzione generale di (\ref{eq:EDO_lineare_ordine_1_forma_normale}).
 \end{proof}
 
 \paragraph{Cosa afferma il Teorema \ref{th:rappresentazione_integrale_generale_EDO_lineare} di Rappresentazione dell'integrale di una EDO lineare?} Afferma che il vero problema è trovare l'integrale generale (l'insieme delle soluzioni) dell'omogenea. È possibile individuare la soluzione nota ad occhio oppure con il metodo di somiglianza oppure di variazione delle costanti (vedere Sezioni \ref{ssec:metodo_somiglianza} e \ref{ssec:variazione_costanti}).
