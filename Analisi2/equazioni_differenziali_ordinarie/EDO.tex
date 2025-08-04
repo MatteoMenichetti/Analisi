@@ -157,7 +157,7 @@ Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata
     \begin{equation*}
         z(x)=y(x)-\overline{y}(x)
     \end{equation*}
-    è una soluzione particolare della EDO omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}). Siano
+    è una soluzione qualsiasi della EDO omogenea (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}). Siano
     \begin{equation*}
         y'(x)+a(x)y(x)=f(x),\quad \overline{y}'(x) +a(x)\overline{y}(x)=f(x),\quad \forall x\in I,
     \end{equation*}
@@ -171,7 +171,7 @@ Le EDO (\ref{eq:EDO_lineare_ordine_n}) e (\ref{eq:EDO_lineare_omogenea_associata
         \end{matrix}
     \end{equation*}
     quindi vale (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}).\\
-    Viceversa, se $z(x)$ è una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) su $[a,b]$ e $\overline{y}(x)$ soluzione particolare (e nota) di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), allora è necessario mostrare che la loro somma \footnote{Presa una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) ed una soluzione nota di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), è necessario verificare che la somma verifichi (\ref{eq:EDO_lineare_ordine_1_forma_normale}), ovvero (\ref{eq:da_verificare}).}
+    Viceversa, se $z(x)$ è una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) su $I$ e $\overline{y}(x)$ soluzione particolare (e nota) di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), allora è necessario mostrare che la loro somma \footnote{Presa una soluzione qualsiasi di (\ref{eq:EDO_lineare_omogenea_associata_ordine_1_forma_normale}) ed una soluzione nota di (\ref{eq:EDO_lineare_ordine_1_forma_normale}), è necessario verificare che la somma verifichi (\ref{eq:EDO_lineare_ordine_1_forma_normale}), ovvero (\ref{eq:da_verificare}).}
     \begin{equation}\label{eq:da_verificare}
         y(x)=z(x)+\overline{y}(x),\quad x\in I=[a,b],
     \end{equation}
@@ -505,19 +505,19 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$, d
 	\begin{equation*}
 		y(x)\cdot e^{\int_{x_0}^xa(t)dt}-\underbrace{y(x_0)}_{y_0}=\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds.
 	\end{equation*}
-	Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta in forma esplicita la formula della soluzione del problema di Cauchy per un'EDO del primo ordine,
+	Moltiplicando per $e^{-\int_{x_0}^xa(t)dt}$ è ottenuta la formula della soluzione del problema di Cauchy per un'EDO del primo ordine in forma esplicita,
 	\begin{equation}\label{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}
 		y(x)= e^{-\int_{x_0}^xa(t) dt}\left[y_0+\int_{x_0}^x f(s)\cdot e^{\int_{x_0}^sa(t)dt}ds\right]=e^{-A(x)}\left(\underbrace{y_0}_c + \int_{x_0}^s f(s) e^{A(s)}ds\right).
 	\end{equation}
 \end{proof}
 
-\paragraph{Nota su (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}):} (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}) è la formula dell'integrale generale (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}), con $c$ determinata dalla condizione iniziale. Quindi, quando è necessario risolvere un problema di Cauchy, è utilizzata la formula dell'integrale generale con $y_0=c$.
+\paragraph{Nota su (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}):} (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti_forma_esplicita}) è la formula dell'integrale generale (\ref{eq:soluzione_problema_cauchy_primo_ordine_coeff_costanti}), con $c$ determinata dalla condizione iniziale $y(x_0)=y_0$.
 
 \paragraph{Note non ufficiali su (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}):}
 \begin{enumerate}
 	\item Con il fatto che $a,f\in C^0(I)$ della EDO lineare di ordine 1
 	\begin{equation*}
-		y'(x) + a(x)f(x)=f(x),
+		y'(x) + a(x)y(x)=f(x),
 	\end{equation*} 
 	si intende che  $I=[a,b]$, ovvero è un intervallo, ed è definito dalla forma di $f$ e $a$ (ovvero è l'intervallo che permette alle due funzioni di essere definite). Se $a(x)=\frac{1}{\sqrt{x}}$ e $f(x)=x$ allora l'intervallo di definizione delle due funzioni è $I=(0, +\infty)$.
     \item Sotto opportune ipotesi su $f$ è possibile mostrare che il sistema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione $y(x)$\footnote{$y$ definita localmente in $x_0$ significa che $y$ deve passare in $x_0$ e ciò si trasforma in una condizione del sistema.} derivabile localmente in $x_0$, la quale è opportunamente definita vicino ad $x_0$ (ovvero: $y$ è definita su un opportuno intervallo contenente $x_0$). Quindi è possibile trovare le soluzioni di una EDO, se il problema (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) ha un'unica soluzione e dopo aver stabilito l'intervallo di massima definizione, cioè l'intervallo in cui $y$ ha senso, contenente il punto iniziale $x_0$ (perché $y$ deve passarci). Pertanto, non è detto che le soluzioni espresse dall'integrale generale dell'equazione siano tutte definite sullo stesso insieme al variare dei parametri $c_1 , c_2 ,\hdots ,c_n$ (ovvero della condizione iniziale);
@@ -545,10 +545,10 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$, d
 	\item Determinare se la EDO in (\ref{eq:problema_cauchy_edo_primo_ordine_coeff_costanti}) è variabili separabili o meno,
 	
 	\begin{itemize}
-		\item Se la EDO è a variabili separabili:
+		\item Se la EDO è a variabili separabili (vedere Algoritmo \ref{alg:separazione_variabili}):
 		\begin{enumerate}
 			\item Separare le variabili,
-			\item Determinare la forma esplicita della $y$,
+			\item Determinare la forma esplicita della $y(x)$,
 		\end{enumerate}
 		\item Se la EDO non è a variabili separabili applicare la formula (\ref{eq:integrale_generale_EDO_lineare_non_omogonea_primo_ordine}),
 	\end{itemize}
@@ -652,35 +652,38 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$, d
     è a variabili separabili.
 \end{remark}
 
-\paragraph{Come si separano le variabili di una EDO lineare a variabili separabili della forma (\ref{eq:EDO_primo_ordine_forma_normale_variabili_separabili})?} Per "separazione" delle variabili si intende che la $x$ deve essere separata dalla $y(x)$. La separazione è svolta con i seguenti passaggi:
-\begin{enumerate}
-    \item Determinare eventuali $\bar y\in\mathbb R$ [\footnotemark] per cui $g(\bar y)=0$, dove
-    \begin{equation}\label{eq:soluzione_EDO_variabili_separabili}
-        y(x)\equiv \bar y,
-    \end{equation}
-    è la soluzione del problema \footnotemark. Inoltre, (\ref{eq:soluzione_EDO_variabili_separabili}) sono dette soluzioni singolari$_{\footnotemark}$ (o anche particolari$_{\footnotemark}$) della EDO.
-    \item Considerando $y\neq\bar y$, è possibile separare le variabili dividendo per $g(y)$ la EDO (dove $g(y)\neq 0$ dato che $y\neq \bar y$, radice di $g$), ovvero
-    \begin{equation*}
-        \frac{y'(x)}{g(y(x))} = \frac{f(x) \cancel{g(y(x))}}{\cancel{g(y(x))}} = f(x),
-    \end{equation*}
-    Da questa sono ottenute le soluzioni integrando rispetto ad $x$ ambo i membri, ovvero
-    \begin{equation*}
-        \int\frac{y'(x)}{g(y(x))}dx=\int f(x)dx,
-    \end{equation*}
-    dalle quali, ponendo $y=y(x)$ (cambiamento di variabile) e $dy = y'(x)dx$, è ottenuto
-    \begin{equation*}
-        \int \frac{1}{g(y)}dy = \int f(x)dx.
-    \end{equation*}
-	Siano $G$ e $F$ primitive di $\frac{1}{g}$ e $f$, è ottenuto
-    \begin{equation*}
-        G(y(x)) = F(x) + c.
-    \end{equation*}
-    \item (L'obiettivo è esplicitare $x$, quindi:) Se $G$ è invertibile si ha (la soluzione in forma implicita)
-    \begin{equation*}
-        y(x) = G^{-1}(x) [F(x) + c].
-    \end{equation*}
-    \item Esplicitando $y(x)$ è trovata la soluzione del problema.
-\end{enumerate}
+\paragraph{Come si separano le variabili di una EDO lineare a variabili separabili della forma (\ref{eq:EDO_primo_ordine_forma_normale_variabili_separabili})?} Per "separazione" delle variabili si intende che la $x$ deve essere separata dalla $y(x)$. La separazione è svolta mediante il seguente algoritmo.
+
+\begin{alg}[Separazione delle variabili]\label{alg:separazione_variabili}
+	\footnote{Slide 6 PDF 3.}\\
+	\begin{enumerate}
+		\item Determinare eventuali $\bar y\in\mathbb R$ [\footnotemark] per cui $g(\bar y)=0$, dove
+		\begin{equation}\label{eq:soluzione_EDO_variabili_separabili}
+			y(x)\equiv \bar y,
+		\end{equation}
+		è la soluzione del problema \footnotemark. Inoltre, (\ref{eq:soluzione_EDO_variabili_separabili}) sono dette soluzioni singolari$_{\footnotemark}$ (o anche particolari$_{\footnotemark}$) della EDO.
+		\item Considerando $y\neq\bar y$, è possibile separare le variabili dividendo per $g(y)$ la EDO (dove $g(y)\neq 0$ dato che $y\neq \bar y$, radice di $g$), ovvero
+		\begin{equation*}
+			\frac{y'(x)}{g(y(x))} = \frac{f(x) \cancel{g(y(x))}}{\cancel{g(y(x))}} = f(x),
+		\end{equation*}
+		Da questa sono ottenute le soluzioni integrando rispetto ad $x$ ambo i membri, ovvero
+		\begin{equation*}
+			\int\frac{y'(x)}{g(y(x))}dx=\int f(x)dx,
+		\end{equation*}
+		dalle quali, ponendo $y=y(x)$ (cambiamento di variabile) e $dy = y'(x)dx$, è ottenuto
+		\begin{equation*}
+			\int \frac{1}{g(y)}dy = \int f(x)dx.
+		\end{equation*}
+		Siano $G$ e $F$ primitive di $\frac{1}{g}$ e $f$, è ottenuto
+		\begin{equation*}
+			G(y(x)) = F(x) + c.
+		\end{equation*}
+		\item Esplicitando $y(x)$ è trovata la soluzione del problema. Se $G$ è invertibile si ha (la soluzione in forma implicita)
+		\begin{equation*}
+			y(x) = G^{-1}(x) [F(x) + c].
+		\end{equation*}
+	\end{enumerate}
+\end{alg}
 
 \addtocounter{footnote}{-3}
 \footnotetext{Sono ricercati gli zeri di $g$, quindi la soluzione di $g(y)=0$. Pertanto, data $\bar y$ soluzione (radice) del problema, con $y(x)\equiv \bar y$ soluzioni del problema, allora $g(y)=0$ ($0=0$).}
@@ -694,7 +697,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$, d
 \stepcounter{footnote}
 \footnotetext{Particolari perché quando sono separate le variabili potrebbe accadere che una soluzione faccia parte dell'integrale generale per una scelta particolare della costante e quindi appartenga alla famiglia delle soluzioni.}
 
-\begin{example}[Esempio di applicazione del metodo precedente]\footnote{Slide 8-9 PDF 3.}
+\begin{example}[Esempio di applicazione del metodo di separazione delle variabili]\footnote{Slide 8-9 PDF 3.}
     \paragraph{Testo:} Determinare tutte le soluzioni della EDO del primo ordine (non lineare a variabili separabili)
     \begin{equation}\label{eq:esercizio_1_edo_variabili_separabili}
         y' = \underbrace{(1-y)(2-y)}_{g(y)}\underbrace{x}_{f(x)}.
@@ -776,11 +779,6 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$, d
 \end{example}
 
 \subsubsubsection{Esercizi}
-
-\paragraph{Procedura su come risolvere problemi di Cauchy del primo ordine:}
-\begin{enumerate}
-	\item Se è a variabili separabili 
-\end{enumerate}
 
 \paragraph{Nota sul prossimo Esempio:} È aggiunta a (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) la condizione iniziale, ovvero: assunta una condizione iniziale, è posto il problema di Cauchy e definito qual è il più ampio intervallo sul quale è definita la soluzione. Determinare il più ampio è utile in quanto l'equazione (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) è non lineare. Pertanto, l'intervallo in questione conterrà il punto iniziale del problema ed è ricercato in modo tale che l'espressione (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) abbia senso e sia la soluzione della EDO (\ref{eq:esercizio_1_edo_variabili_separabili}).
 
@@ -1086,7 +1084,7 @@ In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma
     \item $y_1(x)$ e $y_2(x)$ sono linearmente indipendenti,
     \item ogni altra soluzione è una combinazione lineare di $y_1(x)$ e $y_2(x)$\footnote{Ciò segue dalla linearità della EDO, dovuto all'operatore $L$ associato ad ogni EDO lineare. $L$ è un funzionale che associa una funzione di classe $C^n(I)$ ad una funzione continua ($C^0(I)$), ovvero associa una funzione $\varphi$ a $a_n\varphi^n+\hdots+a_0\varphi^0$. Dalla linearità dell'operatore $L$ segue che se $\varphi_1$ e $\varphi_2$ sono soluzioni della EDO, anche la loro combinazione lineare è soluzione della EDO (come visto nel caso generale).}, allora \textbf{l'integrale generale generale della omogenea associata (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) è}
     \begin{equation*}
-        c_1 y_1(x) + c_2 y_2(x),
+        z(x, c_1, c_2) = c_1 y_1(x) + c_2 y_2(x),
     \end{equation*}
     al variare di $c_1,c_2\in\mathbb R$.
 \end{enumerate}
@@ -1094,7 +1092,7 @@ In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma
 \paragraph{Soluzioni della omogenea associata (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}): }\footnote{Per ottenere tutte le soluzioni sono necessarie 2 soluzioni linearmente indipendenti, dato che lo spazio vettoriale di una EDO lineare omogenea ha dimensione 2. Dalle due soluzioni è costruita un sistema fondamentale di soluzioni.\\
 Analogamente, per $\mathbb R^n$ la base canonica, la quale è una \gls{base ortonormale}, permette di scrivere vettori in $\mathbb R^n$ come combinazione lineare di $e_1,e_2,\hdots, e_n$. Quindi $e_1,e_2,\hdots, e_n$ formano un sistema fondamentale per lo spazio $\mathbb R^n$ perché gli elementi dello spazio sono espressi come combinazione lineare della base canonica.} Quindi, se $y_1(x)$ e $y_2(x)$ sono soluzioni linearmente indipendenti su $I$ della EDO omogenea associata (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) (ovvero, sono la base utilizzata per scrivere una soluzione qualsiasi) allora ogni soluzione di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) (elemento dell'integrale generale di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) è una loro combinazione lineare (cioè $y_1(x)$ e $y_2(x)$ formano un sistema fondamentale di funzioni).
 
-\footnote{Se presa una loro combinazione lineare di $y_1(x)$ e $y_2(x)$ e è posta uguale a 0, l'unica soluzione al problema è che $g_1$ e $c_2$ siano 0 $\forall x\in I$. Segue quanto scritto.} Se $y_1(x)$ e $y_2(x)$ sono soluzioni della EDO omogenea (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) e sono linearmente indipendenti su $I$ ($\forall x\in I$), significa che
+\noindent \footnote{Se presa una loro combinazione lineare di $y_1(x)$ e $y_2(x)$ e è posta uguale a 0, l'unica soluzione al problema è che $g_1$ e $c_2$ siano 0 $\forall x\in I$. Segue quanto scritto.} Inoltre, se $y_1(x)$ e $y_2(x)$ sono soluzioni della EDO omogenea (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) e sono linearmente indipendenti su $I$ ($\forall x\in I$), significa che
 \begin{equation*}
     c_1 y_1(x) + c_2 y_2(x) = 0 \iff c_1=c_2=0.
 \end{equation*}
