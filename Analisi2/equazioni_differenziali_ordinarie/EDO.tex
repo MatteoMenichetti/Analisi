@@ -1131,8 +1131,8 @@ Data la Definizione \ref{def:edo_lineare_secondo_ordine} di EDO lineare del seco
 	\item $x\in I$.
 \end{enumerate}
 
-\subsubsection{Ricerca dell'integrale generale \texorpdfstring{$\boldsymbol{\bar y(x)}$}{y(x)} di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})}
-Per trovare la soluzione generale della EDO lineare di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è necessario distinguere due casi:
+\subsubsection{Ricerca dell'integrale qualsiasi \texorpdfstring{$\boldsymbol{z(x)}$}{z(x)} della EDO omogenea associata (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})}
+Per trovare la soluzione generale della EDO lineare di secondo grado omogenea a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è necessario distinguere due casi:
 \begin{enumerate}
 	\item Se $b=c=0$ (sono identicamente nulle), l'equazione (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) diventa
 	\begin{equation*}
@@ -1140,10 +1140,10 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 	\end{equation*}
 	quindi $y'(x)=c_1$ (è una costante). Integrando è ottenuto l'integrale generale dell'omogenea
 	\begin{equation*}
-		y(x)=y(x,c_1,c_2) 
+		z(x)=z(x,c_1,c_2) 
 		= c_1 x+c_2,\quad c_1,c_2\in\mathbb{R}.
 	\end{equation*}
-	\item Se $b$ e $c$ non sono contemporaneamente nulle, per trovare l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è associata alla EDO una equazione algebrica di secondo grado in $\mathbb{C}$, detta equazione caratteristica di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), della forma
+	\item Se $b$ e $c$ non sono contemporaneamente nulle, per trovare l'integrale generale della omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è associata alla EDO una equazione algebrica di secondo grado in $\mathbb{C}$, detta equazione caratteristica dell'omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), della forma
 	\begin{equation}\label{eq:equazione_caratteristica_associata_omogenea}
 		\underbrace{a\lambda^2 + b\lambda + c}_{p(\lambda)} = 0,\quad\lambda\in\mathbb{R}.
 	\end{equation}
@@ -1154,15 +1154,15 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 \end{enumerate}
 
 \begin{remark}[Non ufficiale]
-	Tramite l'operatore $L$ associato alla EDO lineare omogenea di secondo grado (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), definito come 
+	La EDO lineare omogenea di secondo grado (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) può essere scritta in forma compatta tramite l'operatore
 	\begin{equation*}
-		L(\varphi(x)):=a\varphi''(x) + b\varphi(x)'(x) + c\varphi(x),\quad \varphi\in C^2(I).
+		L(\varphi(x)):=a\varphi''(x) + b\varphi(x)'(x) + c\varphi(x),\quad \varphi\in C^2(I),
 	\end{equation*}
-	è possibile scrivere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) come
+	come
 	\begin{equation*}
 		Ly(x)=0.
 	\end{equation*}
-	Quindi risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare la $y$ tale che
+	Quindi, risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare la $y$ tale che
 	\begin{equation}\label{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}
 		(\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})\equiv L(y(x)) = 0.
 	\end{equation}
@@ -1171,10 +1171,10 @@ Per trovare la soluzione generale della EDO lineare di secondo grado a coefficie
 
 \begin{proposition}\footnote{Slide 3 PDF 5.}\label{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
 	\begin{equation*}
-		y(x)=e^{\lambda x}\text{ è soluzione (reale o complessa\footnotemark) di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})} \iff \lambda \text{ è radice (zero) dell'equazione } p(\lambda)=0,
+		z(x)=e^{\lambda x}\text{ è soluzione (reale o complessa\footnotemark) di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})} \iff \lambda \text{ è radice (zero) dell'equazione } p(\lambda)=0.
 	\end{equation*}
-	(dove $p(\lambda)=0$ è (\ref{eq:equazione_caratteristica_associata_omogenea})).
-\end{proposition}
+	($p(\lambda)=0$ è (\ref{eq:equazione_caratteristica_associata_omogenea}))
+\end{proposition}.
 \footnotetext{Dipende da $\lambda$ se è complessa o reale.}
 \begin{proof}
 	È necessario dimostrare che $L(e^{\lambda x})=0\iff p(\lambda)=0$.
@@ -1202,47 +1202,48 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 \begin{enumerate}
 	\item \textbf{Caso} $\boldsymbol{\Delta>0}$:
 	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_negativa}
-		y_1(x) = e^{\lambda_1 x},\, y_2(x) = e^{\lambda_2 x},\quad \lambda_1,\lambda_2\in\mathbb{R}\text{ e } \lambda_1\neq\lambda_2,
+		z_1(x) = e^{\lambda_1 x},\, z_2(x) = e^{\lambda_2 x},\quad \lambda_1,\lambda_2\in\mathbb{R}\text{ e } \lambda_1\neq\lambda_2,
 	\end{equation}
 	quindi l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}
-		\boldsymbol{\bar y(x)} = c_1 y_1(x)+ c_2y_2(x) = \boldsymbol{c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}}.
+		\boldsymbol{z(x)} = c_1 (x)+ c_2z_2(x) = \boldsymbol{c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}}.
 	\end{equation}
 	\item \textbf{Caso} $\boldsymbol{\Delta = 0}$:
 	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_zero}
-		y_1(x) = e^{\lambda x},\, y_2(x)=x e^{\lambda x},\quad \lambda_1=\lambda_2=\lambda=\frac{-b}{2a}\in\mathbb{R},
+		z_1(x) = e^{\lambda x},\, z_2(x)=x e^{\lambda x},\quad \lambda_1=\lambda_2=\lambda=\frac{-b}{2a}\in\mathbb{R},
 	\end{equation}
 	quindi l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}
-		\boldsymbol{\bar y(x) = e^{\lambda x}(c_1+c_2 x)}, 
+		\boldsymbol{z(x) = e^{\lambda x}(c_1+c_2 x)}, 
 	\end{equation}
 	\item \textbf{Caso} $\boldsymbol{\Delta<0}$:
 	\begin{equation}\label{eq:soluzioni_omogenea_secondo_grado_delta_positiva}
-		y_1(x) = e^{\alpha x}\cos\beta x,\quad y_2(x) = e^{\alpha x} \sin\beta x\in\mathbb{R},\quad \lambda_{1,2}=\alpha \pm i \beta\in\mathbb{C}
+		z_1(x) = e^{\alpha x}\cos\beta x\in\mathbb{R},\quad z_2(x) = e^{\alpha x} \sin\beta x\in\mathbb{R},\quad \lambda_{1,2}=\alpha \pm i \beta\in\mathbb{C},
 	\end{equation}
 	dove
 	\begin{itemize}
-		\item $\lambda_1,\lambda_2$ soluzioni complesse del polinomio caratteristico (\ref{eq:equazione_caratteristica_associata_omogenea}) e coniugate, con $i=\sqrt{-1}$,
-		\item $\alpha = -\frac{b}{2a}, \beta\overset{\footnotemark}{=}\frac{\sqrt{4ac-b^2}}{2a}\in\mathbb{R}$, parte reale dei coefficienti immaginari nei complessi con $\beta>0$ se $a>0$.
+		\item $\lambda_1,\lambda_2$ \gls{soluzioni complesse coniugate} del polinomio caratteristico (\ref{eq:equazione_caratteristica_associata_omogenea}), con $i=\sqrt{-1}$,
+		\item $\alpha = -\frac{b}{2a}, \beta\overset{\footnotemark}{=}\frac{\sqrt{4ac-b^2}}{2a}\in\mathbb{R}$, parte reale dei coefficienti immaginari nei complessi con $\beta>0$ se $a>0$,
+		\item (Non ufficiale) $z_1$ e $z_2$ sono soluzioni reali dell'omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). (Mi immagino quanto segue:) Sono state considerate le soluzioni reali per comodità, in quanto equivalenti alle soluzioni immaginarie.
 	\end{itemize}
 	In questo caso l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}
-		\boldsymbol{\bar y(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x)}.
+		\boldsymbol{z(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x)}.
 	\end{equation}
 \end{enumerate}
 \footnotetext{Dato che $i=\sqrt{-1}$, allora $b^2-4ac<0$ quindi è invertito il segno di $\Delta$, ovvero $\sqrt{-\Delta}$.}
 
-\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $y_1$ e $y_2$ ed è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}). 
+\paragraph{Cosa afferma il Teorema successivo?} Lo scopo è trovare l'integrale generale dell'EDO omogenea (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). Il Teorema successivo afferma che l'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è una combinazione lineare di $z_1(x)$ e $z_2(x)$ ed è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}). 
 
 \begin{theorem}[Integrale generale EDO lineare omogenea di secondo grado a coeficienti costanti]\footnote{Slide 5 PDF 5.}
 	L'integrale generale della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) è data da
 	\begin{equation}\label{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}
-		y(x,c_1,c_2) = c_1y_1(x) + c_2y_2(x),\quad \text{ al variare dei coefficienti } c_1,c_2\in\mathbb{R},
+		z(x,c_1,c_2) = c_1z_1(x) + c_2z_2(x),\quad \text{ al variare dei coefficienti } c_1,c_2\in\mathbb{R},
 	\end{equation}
-	dove $y_1(x)$ e $y_2(x)$ sono determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}).
+	dove $z_1(x)$ e $z_2(x)$ sono determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}).
 \end{theorem}
 \begin{proof}
-	(Le dimostrazioni seguenti puntano a dimostrare che date due soluzioni $y_1(x),\, y_2(x)$ determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}), queste sono linearmente indipendenti e che la loro combinazione lineare è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}) a seconda che $\Delta$ sia $<,=$ o $>0$.\\
+	(Le dimostrazioni seguenti puntano a dimostrare che date due soluzioni $z_1(x),\, z_2(x)$ determinate come (\ref{eq:soluzioni_omogenea_secondo_grado_delta_negativa}), (\ref{eq:soluzioni_omogenea_secondo_grado_delta_zero}) o  (\ref{eq:soluzioni_omogenea_secondo_grado_delta_positiva}), queste sono linearmente indipendenti e che la loro combinazione lineare è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0}), (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}) o (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_<_0}) a seconda che $\Delta$ sia $<,=$ o $>0$.\\
 	Inoltre, per determinare $u(x)$ è utile ricordarsi che è necessario risolvere $L(y(x))=0$ (come descritto per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore})).)
 	\begin{enumerate}
 		\item \textbf{Caso} $\boldsymbol{\Delta>0}$\textbf{:} In questo caso
@@ -1252,16 +1253,16 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		quindi $\lambda_1\neq \lambda_2$, dove $\lambda_1,\lambda_2\in\mathbb{R}$ sono soluzioni dell'equazione caratteristica (\ref{eq:equazione_caratteristica_associata_omogenea}).\\
 			Per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare},
 		\begin{equation*}
-			y_1(x) = e^{\lambda_1 x}\quad\text{e}\quad y_2(x) = e^{\lambda_2 x}
+			z_1(x) = e^{\lambda_1 x}\quad\text{e}\quad z_2(x) = e^{\lambda_2 x}
 		\end{equation*}
 		sono soluzioni della EDO lineare omogenea di secondo grado a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).\\
-		\footnotemark (Tramite Algebra Lineare) Siano $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$, queste sono linearmente indipendenti in quanto
+		\footnotemark (Tramite Algebra Lineare) Siano $z_1(x) = e^{\lambda_1 x}$ e $z_2(x) = e^{\lambda_2 x}$, queste sono linearmente indipendenti in quanto
 		\begin{equation*}
 			\begin{matrix}
-				W(y_1(x),y_2(x)) &=& \underbrace{\begin{vmatrix}
-						y_1(x) & y_2(x)\\
-						y_1'(x) & y_2'(x)
-				\end{vmatrix}}_{\footnotemark} &=& y_1(x)y_2'(x) - y_2(x)y_1(x) &=&\\
+				W(z_1(x),z_2(x)) &=& \underbrace{\begin{vmatrix}
+						z_1(x) & z_2(x)\\
+						z_1'(x) & z_2'(x)
+				\end{vmatrix}}_{\footnotemark} &=& z_1(x)z_2'(x) - z_2(x)z_1(x) &=&\\
 				&=&
 				\begin{vmatrix}
 					e^{\lambda_1x} & e^{\lambda_2 x}\\
@@ -1270,8 +1271,8 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 			\end{matrix}
 		\end{equation*}
 		\addtocounter{footnote}{-3}
-		\footnotetext{Per essere sicuri che siano generate tutte le soluzioni, quindi che è stato trovato un sistema fondamentale di soluzioni, è necessario dimostrare che le due soluzioni $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ siano linearmente indipendenti. È necessario ricordare che servono due elementi linearmente indipendenti per generare tutte le soluzioni perché lo spazio delle soluzioni del problema omogeneo è di dimensione 2.\\
-		Quindi è necessario dimostrare che $y_1(x) = e^{\lambda_1 x}$ e $y_2(x) = e^{\lambda_2 x}$ sono linearmente indipendenti (entra in gioco Algebra Lineare). Con le mani sarà fatto vedere che la soluzione generale è una combinazione lineare di $y_1$ e $y_2$.}
+		\footnotetext{Per essere sicuri che siano generate tutte le soluzioni, quindi che è stato trovato un sistema fondamentale di soluzioni, è necessario dimostrare che le due soluzioni $z_1(x) = e^{\lambda_1 x}$ e $z_2(x) = e^{\lambda_2 x}$ siano linearmente indipendenti. È necessario ricordare che servono due elementi linearmente indipendenti per generare tutte le soluzioni perché lo spazio delle soluzioni del problema omogeneo è di dimensione 2.\\
+		Quindi è necessario dimostrare che $z_1(x) = e^{\lambda_1 x}$ e $z_2(x) = e^{\lambda_2 x}$ sono linearmente indipendenti (entra in gioco Algebra Lineare). Con le mani sarà fatto vedere che la soluzione generale è una combinazione lineare di $z_1$ e $z_2$.}
 		
 		\stepcounter{footnote}
 		\footnotetext{Wronskiana. Una Wronskiana è il determinante di una matrice formata da due funzioni e dalle loro derivate prime.\\
@@ -1281,14 +1282,14 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\footnotetext{Diverso da 0 perché $\Delta > 0$.}
 		
 		\stepcounter{footnote}
-		\footnotetext{Necessario affinché $y_1$ e $y_2$ siano linearmente indipendenti.}
+		\footnotetext{Necessario affinché $z_1$ e $z_2$ siano linearmente indipendenti.}
 		
-		\footnote{Vediamo che $y(x)$ è una soluzione qualsiasi della (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (quindi $y(x)$ appartiene all'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti})) e che si esprime come combinazione lineare di $y_1(x)$ e $y_2(x)$. Ovvero, lo scopo è far vedere che $y(x)=c_1 e^{\lambda_1x}+c_2e^{\lambda_2 x}=(\ref{eq:integrale_generale_secondo_ordine_dimostrazione})$.} Sia $y(x)$ soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), scriviamo tale funzione come
+		\footnote{Vediamo che $z(x)$ è una soluzione qualsiasi della (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (quindi $z(x)$ appartiene all'integrale generale di (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti})) e che si esprime come combinazione lineare di $z_1(x)$ e $z_2(x)$. Ovvero, lo scopo è far vedere che $z(x)=c_1 e^{\lambda_1x}+c_2e^{\lambda_2 x}=(\ref{eq:integrale_generale_secondo_ordine_dimostrazione})$.} Sia $z(x)$ soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), scriviamo tale funzione come
 		\begin{equation}\label{eq:integrale_generale_secondo_ordine_dimostrazione}
-			y(x) = e^{\lambda_1 x}\underset{\footnotemark}{u(x)},
+			z(x) = e^{\lambda_1 x}\underset{\footnotemark}{u(x)},
 		\end{equation}
-		dove $u(x)$ è da determinare affinché $y(x)$ sia in forma di combinazione lineare di $y_1(x)$ e $y_2(x)$ (ovvero è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0})).\footnotetext{Funzione opportuna e non costante, da determinare affinché $y(x)$ sia soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).}
-		Poiché $y(x)$ è soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (e ciò significa che verifica la EDO), si ha che (per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
+		dove $u(x)$ è da determinare affinché $z(x)$ sia in forma di combinazione lineare di $z_1(x)$ e $z_2(x)$ (ovvero è della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_>_0})).\footnotetext{Funzione opportuna e non costante, da determinare affinché $z(x)$ sia soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}).}
+		Poiché $z(x)$ è soluzione di  (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (e ciò significa che verifica la EDO), si ha che (per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
 		\begin{equation*}
 			a(e^{\lambda_1x}u(x))''+ b(e^{\lambda_1x}u(x))'+ c (e^{\lambda_1x}u(x)) = 0.
 		\end{equation*}
@@ -1359,7 +1360,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\end{equation*}
 		essendo
 		\begin{equation*}
-			y(x)=e^{\lambda_1 x}u(x)\overset{\text{sost.}}{=}e^{\lambda_1x}\left[c_1\cdot e^{(\lambda_2-\lambda_1)x}+c_2\right] = c_1\cdot e^{\lambda_2 x} + c_2\cdot e^{\lambda_1 x}.
+			z(x)=e^{\lambda_1 x}u(x)\overset{\text{sost.}}{=}e^{\lambda_1x}\left[c_1\cdot e^{(\lambda_2-\lambda_1)x}+c_2\right] = c_1\cdot e^{\lambda_2 x} + c_2\cdot e^{\lambda_1 x}.
 		\end{equation*}
 		
 		\addtocounter{footnote}{-1}
@@ -1374,18 +1375,18 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\end{equation*}
 		dunque le soluzioni di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) (per la Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}) sono
 		\begin{equation*}
-			y_1(x)=e^{\lambda_1 x},\quad y_2(x) = xe^{\lambda_2 x}.
+			z_1(x)=e^{\lambda_1 x},\quad z_2(x) = xe^{\lambda_2 x}.
 		\end{equation*}
 		\hrule\vspace{-2px}
-		È necessario mostrare che ogni soluzione è combinazione lineare di $y_1$ e $y_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante la Wronskiana. Una soluzione $\lambda$ è soluzione se $p(\lambda)=0$.
+		È necessario mostrare che ogni soluzione è combinazione lineare di $z_1$ e $z_2$ e per farlo è seguita la procedura del precedente caso: è stabilito se sono linearmente indipendenti mediante la Wronskiana. Una soluzione $\lambda$ è soluzione se $p(\lambda)=0$.
 		\hrule\vspace{2px}
 		
-		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti in quanto
+		\noindent Siano $z_1(x)$ e $z_2(x)$ definite come sopra, queste sono linearmente indipendenti in quanto
 		\begin{equation*}
 			\begin{matrix}
-				W(y_1(x),y_2(x)) &=&\begin{vmatrix}
-					y_1(x) & y_2(x)\\
-					y_1'(x) & y_2'(x)
+				W(z_1(x),z_2(x)) &=&\begin{vmatrix}
+					z_1(x) & z_2(x)\\
+					z_1'(x) & z_2'(x)
 				\end{vmatrix} &=&\begin{vmatrix}
 					e^{\lambda x} & xe^{\lambda x}\\
 					\lambda e^{\lambda x} & e^{\lambda  x} + \lambda x e^{\lambda x}
@@ -1397,12 +1398,12 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 				 e^{2\lambda x}(1+\lambda x) - \lambda x e^{2\lambda x} &=& e^{2\lambda x} + \cancel{\lambda x e^{2\lambda x}} - \cancel{\lambda x e^{2\lambda x}} &\neq& 0.
 			\end{matrix}
 		\end{equation*}
-		(Provato che $y_1$ e $y_2$ sono linearmente indipendenti)\\
-		Sia $y(x)$ soluzione qualsiasi di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) della forma 
+		(Provato che $z_1$ e $z_2$ sono linearmente indipendenti)\\
+		Sia $z(x)$ soluzione qualsiasi di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) della forma 
 		\begin{equation}\label{eq:integrale_generale_delta_=_0}
-			y(x) = e^{\lambda x} u(x),
+			z(x) = e^{\lambda x} u(x),
 		\end{equation}
-		(dove $u(x)$ è da determinare affinché $y(x)$ sia della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}),) allora (procedendo come prima, poiché $y(x)$ è una soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
+		(dove $u(x)$ è da determinare affinché $z(x)$ sia della forma (\ref{eq:integrale_generale_edo_lineare_secondo_ordine_omogenea_coefficienti_costanti_Delta_=_0}),) allora (procedendo come prima, poiché $z(x)$ è una soluzione di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}), per (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}))
 		\begin{equation*}
 			a(e^{\lambda x}u(x))'' + b(e^{\lambda x} u(x))' + c e^{\lambda x} u(x) = 0,
 		\end{equation*}
@@ -1425,26 +1426,26 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\end{equation*}
 		e dunque, sostituendo ($u(x)$ in (\ref{eq:integrale_generale_delta_=_0}))
 		\begin{equation*}
-			y(x) = e^{\lambda x}u(x) = e^{\lambda x} (c_1+c_2x) = c_1\cdot \underbrace{e^{\lambda x}}_{y_1(x)} + c_2\cdot\underbrace{x\cdot e^{\lambda x}}_{y_2(x)}.
+			z(x) = e^{\lambda x}u(x) = e^{\lambda x} (c_1+c_2x) = c_1\cdot \underbrace{e^{\lambda x}}_{(x)} + c_2\cdot\underbrace{x\cdot e^{\lambda x}}_{z_2(x)}.
 		\end{equation*}
-		(Quindi, vale la tesi anche nel caso 2, dato che in corrispondenza di $\Delta=0$ sono considerate $y_1=e^{\lambda x}$ e $y_2=x\cdot e^{\lambda x}$ ed una soluzione qualsiasi $y(x)$ è una combinazione di $y_1$ e $y_2$)
+		(Quindi, vale la tesi anche nel caso 2, dato che in corrispondenza di $\Delta=0$ sono considerate $z_1=e^{\lambda x}$ e $z_2=x\cdot e^{\lambda x}$ ed una soluzione qualsiasi $z(x)$ è una combinazione di $z_1$ e $z_2$)
 		\item \textbf{Caso} $\boldsymbol{\Delta<0}$\textbf{:}\footnote{Slide 10 PDF 5.} Siano
 		\begin{equation*}
 			\lambda_{1,2}=\alpha\pm i\beta\in\mathbb{C},\quad \alpha=-\frac{b}{2a},\;\beta = \frac{\sqrt{-\Delta}}{2a}\in\mathbb{R}.
 		\end{equation*}
 		Dalla Proposizione \ref{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
 		\begin{equation*}
-			y_1(x) = e^{\lambda_1 x} \text{ e } y_2(x)=e^{\lambda_2 x}
+			z_1(x) = e^{\lambda_1 x} \text{ e } z_2(x)=e^{\lambda_2 x}
 		\end{equation*}
 		sono soluzioni di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}). \footnote{Le due soluzioni sono complesse, quindi, se al posto di $\lambda_1$ è sostituito $\alpha + i\beta$ è necessario rappresentare tale numero tramite la funzione di Eulero.}\\
-		(Come prima, per dimostrare che $y_1(x) \text{ e } y_2(x)$ generano lo spazio delle soluzioni è necessario mostrare che sono linearmente indipendenti tramite il determinante della matrice Wronskiana.)
+		(Come prima, per dimostrare che $z_1(x) \text{ e } z_2(x)$ generano lo spazio delle soluzioni è necessario mostrare che sono linearmente indipendenti tramite il determinante della matrice Wronskiana.)
 		
-		\noindent Siano $y_1(x)$ e $y_2(x)$ definite come sopra, queste sono linearmente indipendenti perché
+		\noindent Siano $z_1(x)$ e $z_2(x)$ definite come sopra, queste sono linearmente indipendenti perché
 		\begin{equation*}
-				W(y_1(x),y_2(x)) = 
+				W(z_1(x),z_2(x)) = 
 				\begin{vmatrix}
-				y_1(x) & y_2(x)\\
-				y_1'(x) & y_2'(x)
+				z_1(x) & z_2(x)\\
+				z_1'(x) & z_2'(x)
 			\end{vmatrix} = 
 			\begin{vmatrix}
 				e^{\lambda_1x} & e^{\lambda_2 x}\\
@@ -1459,9 +1460,9 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 				\lambda_1 - \lambda_2 &=& \lambda - i\beta - \alpha - i\beta &=& - 2i\beta,
 			\end{matrix}
 		\end{equation*}
-		\footnote{Come prima è richiesto che la soluzione qualsiasi abbia la forma del tipo $u(x)$, la quale è la funzione da determinare. Quindi, voglio una soluzione reale determinata come segue.} [Supponiamo] Sia $y(x)$ una soluzione qualsiasi di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) della forma
+		\footnote{Come prima è richiesto che la soluzione qualsiasi abbia la forma del tipo $u(x)$, la quale è la funzione da determinare. Quindi, voglio una soluzione reale determinata come segue.} [Supponiamo] Sia $z(x)$ una soluzione qualsiasi di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) della forma
 		\begin{equation*}
-			y(x) = e^{\alpha x} u(x),
+			z(x) = e^{\alpha x} u(x),
 		\end{equation*}
 		allora
 		\begin{equation*}
@@ -1496,9 +1497,9 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 			u(x) = c_1\cos\beta x + c_2 \sin\beta x.
 		\end{equation*}
 		\footnotetext{$\cos\beta x$ e $\sin\beta x$ soluzioni dell'equazione}
-		\noindent (Sostituendo $u(x)$ in $y(x)$:) Pertanto, l'integrale generale è
+		\noindent (Sostituendo $u(x)$ in $z(x)$:) Pertanto, l'integrale generale è
 		\begin{equation*}
-			y(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x).
+			z(x) = e^{\alpha x}(c_1\cos\beta x + c_2\sin\beta x).
 		\end{equation*} 
 	\end{enumerate}
 \end{proof}
@@ -1516,19 +1517,19 @@ Quindi, se
 \begin{enumerate}
 	\item $\boldsymbol{\Delta>0}$ allora
 	\begin{equation*}
-		y(x) = c_1 e^{\lambda_1x} + c_2e^{\lambda_2 x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 \neq \lambda_2;
+		z(x) = c_1 e^{\lambda_1x} + c_2e^{\lambda_2 x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 \neq \lambda_2;
 	\end{equation*}
 	\item $\boldsymbol{\Delta = 0}$ allora
 	\begin{equation*}
-		y(x) = c_1 e^{\lambda x} + c_2e^{\lambda x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 = \lambda_2=\lambda=\frac{-b}{2a};
+		z(x) = c_1 e^{\lambda x} + c_2e^{\lambda x},\quad c_1,c_2\in\mathbb{R},\, \lambda_1 = \lambda_2=\lambda=\frac{-b}{2a};
 	\end{equation*}
 	\item $\boldsymbol{\Delta<0}$ allora
 	\begin{equation*}
-		y(x) = e^{\alpha x}(c_1\cos\beta x + c_2 \sin\beta x)\quad c_1,c_2\in\mathbb{R},\, \lambda_{1,2} = \alpha\pm i\beta.
+		z(x) = e^{\alpha x}(c_1\cos\beta x + c_2 \sin\beta x)\quad c_1,c_2\in\mathbb{R},\, \lambda_{1,2} = \alpha\pm i\beta.
 	\end{equation*}
 \end{enumerate}
 
-\paragraph{Nota:} Il problema è risolto per le EDO omogenee del secondo ordine a coefficienti costanti, in quanto per queste l'integrale generale puo' essere sempre determinato. Inoltre, lo studio dell'integrale generale delle EDO omogenee del secondo ordine a coefficienti costanti è legato allo studio dell'equazione caratteristica, trasformando cosi' il problema in problema algebrico (risolvibile).
+\paragraph{Nota:} Il problema è risolto per le EDO omogenee del secondo ordine a coefficienti costanti, in quanto per queste l'integrale generale può essere sempre determinato. Inoltre, lo studio dell'integrale generale delle EDO omogenee del secondo ordine a coefficienti costanti è legato allo studio dell'equazione caratteristica, trasformando così il problema in problema algebrico (risolvibile).
 
 \subsubsection{Ricerca della soluzione particolare \texorpdfstring{$\boldsymbol{\bar y(x)}$}{y(x)} della EDO non omogenea a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti})}
 \footnote{PDF 6.}
@@ -1562,7 +1563,7 @@ dove $c_1,c_2\in C^2(I)$ sono da determinare.
 	\item La soluzione particolare (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) ha la stessa forma della soluzione particolare di una EDO di ordine 1, ma aumentata di una dimensione per l'aggiunta di $c_2(x) y_2(x)$, dove $g_1$ e $c_2$ sono da determinare. Inoltre, imponendo che la funzione della forma (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti}) sia soluzione particolare, sarà ottenuto un sistema nelle ipotesi $c_1'$ e $c_2'$ che sarà risolto tramite la teoria dei sistemi lineari, ovvero mediante la regola di Cramer. $\qed$
 \end{enumerate}
 
-\noindent Poiché $\bar y(x)$ (ovvero (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti})) è soluzione della EDO lineare di secondo ordine a coefficienti costanti non omogenea (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}), le costanti $g_1$ e $c_2$ devono essere tali che $\bar{y}$ soddisfi
+\noindent Poiché $\bar y(x)$ (ovvero (\ref{eq:soluzione_particolare_edo_secondo_ordine_non_omogenea_variazione_costanti})) è soluzione della EDO lineare di secondo ordine a coefficienti costanti non omogenea (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}), le costanti $c_1$ e $c_2$ devono essere tali che $\bar{y}$ soddisfi
 \begin{equation}\label{eq:equazione_soddisfare_variazioni_costanti}
 	a\bar{y}''(x) + b\bar{y}'(x) + c\bar{y}(x) = f(x).
 \end{equation}
