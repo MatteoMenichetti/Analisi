@@ -1547,6 +1547,62 @@ Guardando le fattezze del termine noto, è possibile intuire com'è fatta la sol
 
 \noindent Un esempio: se il termine noto è un esponenziale allora la soluzione particolare potrebbe essere un'esponenziale (dato che la derivata di un esponenziale è sempre un esponenziale), la quale dovrà essere aggiustata con una costante da determinare affinché la soluzione (della forma costante $\times$ esponenziale) sia effettivamente la soluzione particolare della EDO non omogenea. Nel caso in cui l'esponenziale abbia come esponente un $\lambda$ zero della polinomio caratteristico, la costante $c$ è la stessa della soluzione particolare applicata nel precedente caso. Se il termine noto è un polinomio di grado $n$ allora la soluzione particolare di tale polinomio sarà di grado $n+1$ o $n+2$ (a seconda del valore delle costanti).
 
+\paragraph{Come fare?} Sia una EDO lineare del secondo ordine a coefficienti costanti del tipo
+\begin{equation}\label{eq:edo_metodo_verosomiglianza}
+	ay''(x) + by'(x) + c y(x) = f(x),\quad x\in I,
+\end{equation}
+è necessario distinguere i seguenti casi:
+\begin{enumerate}
+	\item se $f(x)$ è un polinomio di grado $n$ allora la soluzione particolare sarà del tipo
+	\begin{equation*}
+		 \bar y(x)=A_n x^{n_1} + A_{n_1-1} x^{n_1-1} + \hdots + A_0,
+	\end{equation*}
+	dove
+	\begin{itemize}
+		\item $n_1=n$ se $a,b,c\neq0$,
+		\item $n_1 = n+1$ se $c=0$,
+		\item $n_1 = n + 2$ se $b=c=0$.
+	\end{itemize}
+	Per determinare $A_0,\, \hdots,\, A_n$ è necessario derivare due volte $\bar y(x)$, sostituire le derivate in (\ref{eq:edo_metodo_verosomiglianza}) e risolvere il sistema con $n$ equazioni divise in base al grado della $x$ di afferenza. Ad esempio: se sostituendo le derivate nella EDO è ottenuta l'espressione
+	\begin{equation*}
+		8A + 16(Ax + B) = 3x-2,
+	\end{equation*}
+	allora il sistema da risolvere sarà
+	\begin{equation*}
+		\begin{cases}
+			16 A = 3\\
+			8 A + 16 B = -2
+		\end{cases}
+	\end{equation*}
+	
+	\item se $f(x) = Ae^{\lambda x}$ allora la soluzione particolare sarà del tipo
+	\begin{equation*}
+		\bar y(x) = c\, e^{\lambda x},
+	\end{equation*}
+	con $c$ da determinare, dove
+	\begin{itemize}
+		\item se $\lambda$ è una radice del polinomio caratteristico $p(\lambda)$ allora $\bar y(x)=cx^me^{\lambda x}$, dove $m$ è la molteplicità della radice del polinomio $\lambda$. 
+	\end{itemize}
+	
+	\item se $f(x) = A \cos(\omega x) + B\sin(\omega x)$ allora la soluzione è del tipo
+	\begin{equation*}
+		\bar y = c_1 \cos(\omega x) + c_2 \sin(\omega x),
+	\end{equation*}
+	dove $c_1$ e $c_2$ sono da determinare. In generale i due addendi di $\bar y(x)$ sono sempre presenti anche se in $f(x)$ non lo sono.
+	
+	\item se $f(x) = A \cos(\omega x) + B\sin(\omega x)$ allora la soluzione è del tipo
+	\begin{equation*}
+		\bar y = e^{\lambda x}(c_1 \cos(\omega x) + c_2 \sin(\omega x)),
+	\end{equation*}
+	dove $c_1$ e $c_2$ sono da determinare.
+	
+	\item se $f(x)=e^{\lambda x} p(x)$, con $p(x)$ polinomio di grado $n$ allora la soluzione sarà della forma
+	\begin{equation*}
+		\bar y(x) = e^{\lambda x} q(x),
+	\end{equation*}
+	con $q(x) = a_nx^n+\hdots + a_0$, dove $a_0,\hdots, a_n$ sono da determinare e se $\lambda$ è radice del polinomio caratteristico allora $q(x)$ sarà di grado $n+1$.
+\end{enumerate}
+
 \subsubsubsection{Variazione delle costanti}\label{ssec:variazione_costanti}
 \footnote{Slide 12 PDF 6.}
 Il metodo per variazioni delle costanti ha la soluzione particolare e nota della EDO lineare di ordine 2 a coefficienti costanti (\ref{eq:edo_lineare_secondo_ordine_coefficienti_costanti}) della forma
