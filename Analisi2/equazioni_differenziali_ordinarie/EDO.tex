@@ -778,7 +778,7 @@ Scelta $A(x)$, primitiva di $a(x)$, in modo tale che (con $x=x_0$) $A(x_0)=0$, d
     \end{enumerate}
 \end{example}
 
-\subsubsubsection{Esercizi}
+\subsubsection{Esercizi}
 
 \paragraph{Nota sul prossimo Esempio:} È aggiunta a (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) la condizione iniziale, ovvero: assunta una condizione iniziale, è posto il problema di Cauchy e definito qual è il più ampio intervallo sul quale è definita la soluzione. Determinare il più ampio è utile in quanto l'equazione (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) è non lineare. Pertanto, l'intervallo in questione conterrà il punto iniziale del problema ed è ricercato in modo tale che l'espressione (\ref{eq:integrale_generale_esercizio_edo_primo_ordine}) abbia senso e sia la soluzione della EDO (\ref{eq:esercizio_1_edo_variabili_separabili}).
 
@@ -1153,25 +1153,24 @@ Per trovare la soluzione generale della EDO lineare di secondo grado omogenea a 
 	\end{equation*}
 \end{enumerate}
 
-\begin{remark}[Non ufficiale]
-	La EDO lineare omogenea di secondo grado (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) può essere scritta in forma compatta tramite l'operatore
-	\begin{equation*}
-		L(\varphi(x)):=a\varphi''(x) + b\varphi(x)'(x) + c\varphi(x),\quad \varphi\in C^2(I),
-	\end{equation*}
-	come
-	\begin{equation*}
-		Ly(x)=0.
-	\end{equation*}
-	Quindi, risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare la $y$ tale che
-	\begin{equation}\label{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}
-		(\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})\equiv L(y(x)) = 0.
-	\end{equation}
-	Inoltre, per risolvere il problema non omogoneo è posto $f(x)$ al posto di 0 in (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}).
-\end{remark}
+\paragraph{Osservazione sulla forma di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}):}
+La EDO lineare omogenea di secondo grado (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) può essere scritta in forma compatta tramite l'operatore
+\begin{equation*}
+	L(\varphi(x)):=a\varphi''(x) + b\varphi(x)'(x) + c\varphi(x),\quad \varphi\in C^2(I),
+\end{equation*}
+come
+\begin{equation*}
+	Ly(x)=0.
+\end{equation*}
+Quindi, risolvere (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti}) significa trovare la $y$ tale che
+\begin{equation}\label{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}
+	(\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})\equiv L(y(x)) = 0.
+\end{equation}
+Inoltre, per risolvere il problema non omogoneo è posto $f(x)$ al posto di 0 in (\ref{eq:equivalenza_edo_lineare_secondo_grado_omogenea_operatore}).
 
 \begin{proposition}\footnote{Slide 3 PDF 5.}\label{prop:e^lambdax_soluzione_omogenea_secondo_grado_lineare}
 	\begin{equation*}
-		z(x)=e^{\lambda x}\text{ è soluzione (reale o complessa\footnotemark) di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})} \iff \lambda \text{ è radice (zero) dell'equazione } p(\lambda)=0.
+		z(x)=e^{\lambda x}\text{ è soluzione (reale o complessa\footnotemark) di (\ref{eq:edo_lineare_secondo_ordine_omogenea_coefficienti_costanti})} \iff \lambda \text{ è radice (zero) di } p(\lambda).
 	\end{equation*}
 	($p(\lambda)=0$ è (\ref{eq:equazione_caratteristica_associata_omogenea}))
 \end{proposition}.
@@ -1346,9 +1345,8 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\begin{equation*}
 			v(x) = c \cdot e^{kx}.
 		\end{equation*}
-		\hrule\vspace{-7px}
+		
 		\paragraph{Intermezzo:}(\ref{eq:edo_variabili_separabili_dimostrazione_integrale_generale_edo_seecondo_grado}) è a variabili separabili. Dato che $v(x)=u'(x)$, allora $u'(x)=ce^{(\lambda_2-\lambda_1)x}$ e $v(x)=ce^{(\lambda_2-\lambda_1)x}$. Quindi è possibile integrare, tenendo di conto che $e^{(\lambda_2-\lambda_1)x}$ è un esponenziale è necessaria una correzione del coefficiente $c$ affinché $\lambda_1-\lambda_2\neq 0$. Ciò non è scritto esplicitamente, è denotata una costante $c_1=\frac{c}{\lambda_2-\lambda_1}$ tale che $u(x) = c_1 e^{\lambda_1-\lambda_2}$. Quanto descritto è formalizzato in seguito.$\qed$
-		\hrule\vspace{2px}
 		
 		\noindent Integrando
 		\begin{equation*}
@@ -1590,7 +1588,7 @@ Guardando le fattezze del termine noto, è possibile intuire com'è fatta la sol
 	\end{equation*}
 	dove $c_1$ e $c_2$ sono da determinare. In generale i due addendi di $\bar y(x)$ sono sempre presenti anche se in $f(x)$ non lo sono.
 	
-	\item se $f(x) = A \cos(\omega x) + B\sin(\omega x)$ allora la soluzione è del tipo
+	\item se $f(x) = e^{\lambda x}\;[A \cos(\omega x) + B\sin(\omega x)]$ allora la soluzione è del tipo
 	\begin{equation*}
 		\bar y = e^{\lambda x}(c_1 \cos(\omega x) + c_2 \sin(\omega x)),
 	\end{equation*}
@@ -1734,6 +1732,7 @@ Quindi, l'integrale generale della EDO lineare di secondo ordine completa a coef
 	\item Imporre le condizioni iniziali sull'integrale generale significa trovare l'unica soluzione passante per il punto $y(x_0) = y_0$.
 \end{itemize}
 
+\subsubsection{Esercizi EDO secondo ordine}
 \begin{example}\footnote{Slide 17 PDF 6.}
 	\paragraph{Testo:} Trovare le soluzioni del problema di Cauchy
 	\begin{equation*}
