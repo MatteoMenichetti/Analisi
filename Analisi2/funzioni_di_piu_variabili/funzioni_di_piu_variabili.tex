@@ -1928,13 +1928,13 @@ I vettori della base canonica $e_1,e_2,e_3\in\mathbb R^3$ sono le direzioni asso
 Le direzioni sono combinate linearmente con un vettore per dare a questo una direzione nello spazio $\mathbb R^n$.
 
 Per indicare una direzione ed un verso può essere utilizzato un versore:
-\begin{definition}[Versore]
+\begin{definition}[Versore]\label{def:versore}
     Un versore è un vettore $\overset{\rightarrow}{v}\in\mathbb R^n$ tale che $||\overset{\rightarrow}{v}||=1$.
 \end{definition}
 
 \paragraph{N.B.:} Un versore è utilizzato per indicare una particolare direzione e verso. Inoltre, è possibile ottenere un versore da un qualsiasi vettore $v$ moltiplicandolo per il suo reciproco, ovvero: $\hat {\mathbf{v}}=\frac{\mathbf{v}}{||\mathbf {v}||}.$
 
-Il caso delle derivate parziali di funzioni di due variabili è un caso particolare del caso generale (ovvero delle derivate direzionali, vedere Definizione \ref{def:derivate_direzionali_Rn}), dao che nel piano ci sono 2 direzioni (quelle dell'asse $x$ e dell'asse $y$). Quindi, quando si deriva in due variabili è necessario chiarire la direzione dello spostamento nel piano, ovvero: la derivata rispetto ad $x$ è quella che si muove sull'asse orizzontale. Per avere una rappresentazione grafica del concetto di derivata direzionale nelle direzioni $x$ e $y$ vedere Figura \ref{fig:rappresentazione_direzione_R2}.
+Il caso delle derivate parziali di funzioni di due variabili è un caso particolare del caso generale (ovvero delle derivate direzionali, vedere Definizione \ref{def:derivata_direzionale_Rn}), dato che nel piano ci sono 2 direzioni (quelle dell'asse $x$ e dell'asse $y$). Quindi, quando si deriva in due variabili è necessario chiarire la direzione dello spostamento nel piano, ovvero: la derivata rispetto ad $x$ è quella che si muove sull'asse orizzontale. Per avere una rappresentazione grafica del concetto di derivata direzionale nelle direzioni $x$ e $y$ vedere Figura \ref{fig:rappresentazione_direzione_R2}.
 
 \begin{figure}
     \centering
@@ -2415,7 +2415,7 @@ Dato che sono considerate funzioni di $n$ variabili, è conveniente utilizzare l
 
 La proposizione è un caso particolare della seguente definizione, in quanto il concetto più generale è quello di derivata direzionale per ogni direzione $\uline v$.
 
-\begin{definition}[Derivata direzionale, versione da ricordare]\footnote{Slide 12 PDF 15.}
+\begin{definition}[Derivata direzionale, versione da ricordare]\footnote{Slide 12 PDF 15.}\label{def:derivata_direzionale_Rn_da_ricordare}
 	Data $\uline v\in\mathbb{R}^n$, direzione (versore) in $\mathbb{R}^n$, $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline v$ ed alla variabile $x_i$ (dove $i=1,\hdots, n$) nel punto $\uline x$ è data da
 	\begin{equation*}
 		D_{\vec{v}} =\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim_{h\rightarrow 0}\frac{f(\uline x + h \uline v) - f(\uline x)}{h},
