@@ -11,7 +11,7 @@ In $\mathbb R^n$ sono considerati vettori $\uline x=(x_1,x_2,\hdots,x_n)\in \mat
 \end{property}
 
 Un'operazione tra vettori che sarà utilizzata è il prodotto scalare.
-\begin{definition}[Prodotto scalare]\footnote{Slide 1 PDF 7.}
+\begin{definition}[Prodotto scalare]\footnote{Slide 2 PDF 7.}
     Il prodotto scalare è definito come
     \begin{equation*}
         <\uline x,\uline y> = \uline x \bullet \uline y := x_1y_1+\hdots+x_ny_n\in\mathbb R,\quad \forall\mathbb\uline x, \uline y\in\mathbb R^n.
@@ -26,9 +26,9 @@ Un'operazione tra vettori che sarà utilizzata è il prodotto scalare.
 \end{remark}
 
 Le seguenti sono proprietà utili del prodotto scalare.
-\begin{property}[Proprietà del prodotto scalare]
+\begin{property}[Proprietà del prodotto scalare]\footnote{Slide 2 PDF 7.}
     \begin{enumerate}
-        \item (Linearità)
+        \item Linearità:
         \begin{itemize}
             \item $\forall \uline x_1,\uline x_2, \uline y\in\mathbb R^n,\; \forall \alpha,\beta\in\mathbb R$
                 \begin{equation*}
@@ -40,8 +40,8 @@ Le seguenti sono proprietà utili del prodotto scalare.
                     <\uline x,\alpha\uline y_1+\beta\uline y_2> = \alpha<\uline x,\uline y_1>+\beta <\uline x,\uline y_2>.
                 \end{equation*}
         \end{itemize}
-        \item (Simmetria) $\forall \uline x, \uline y\in\mathbb R^n,\quad <\uline x,\uline y>=<\uline y, \uline x>$.
-        \item (Positività) $\forall\uline x\in\mathbb R^n,\quad <\uline x,\uline x>\geq 0,\; (<\uline x,\uline x>=0\iff \uline x=\uline 0)$.
+        \item Simmetria: $\forall \uline x, \uline y\in\mathbb R^n,\quad <\uline x,\uline y>=<\uline y, \uline x>$.
+        \item Positività: $\forall\uline x\in\mathbb R^n,\quad <\uline x,\uline x>\geq 0,\; (<\uline x,\uline x>=0\iff \uline x=\uline 0)$.
     \end{enumerate}
 \end{property}
 
@@ -70,13 +70,13 @@ Segue la definizione formale di norma come applicazione.
 	Dato $\uline x\in\mathbb R^n$, la norma di $\uline x$ (ovvero la lunghezza del vettore $\uline x$) è definita come
 	\begin{equation}
 		\begin{aligned}[t]
-			||\cdot||:\mathbb R^n &\rightarrow\mathbb R^+_0.\\
+			||\cdot||:\mathbb R^n &\rightarrow\text{\gls{R0+}}.\\
 			\uline x &\mapsto ||\uline x||
 		\end{aligned}
 	\end{equation}
 	e verifica le seguenti proprietà:
 	\begin{enumerate}
-		\item \textbf{Positività:} $||\uline x||\in\mathbb R^+_0\quad \forall\uline x\in\mathbb R^n$,
+		\item \textbf{Positività:} $||\uline x||\in\text{\gls{R0+}}\quad \forall\uline x\in\mathbb R^n$,
 		\item \textbf{Positività:} $||\uline x||=0\iff\uline x=\uline 0$,
 		\item \textbf{Omogeneità:} $||\lambda \uline x||=|\lambda|\cdot||\uline x||\quad\forall\uline x\in\mathbb R^n,\,\forall\lambda\in\mathbb R$,
 		\item \textbf{Disuguaglianza triangolare:} $||\uline x+\uline y||\leq ||\uline x||+||\uline y||\quad \forall\uline x,\uline y\in\mathbb R^n$,
@@ -109,7 +109,7 @@ Segue la definizione formale di norma come applicazione.
 
 \begin{definition}[Norma euclidea]
     \begin{equation}
-        \boldsymbol{||\uline x||_2}=|\uline x|:=\sqrt{<\uline x,\uline x>}=\boldsymbol{\sqrt{\sum_{i=1}^n x_i^2}}\in\mathbb R_0^+,\quad \forall x\in\mathbb R^n.
+        \boldsymbol{||\uline x||_2}=|\uline x|:=\sqrt{<\uline x,\uline x>}=\boldsymbol{\sqrt{\sum_{i=1}^n x_i^2}}\in\text{\gls{R0+}},\quad \forall x\in\mathbb R^n.
     \end{equation}
 \end{definition}
 
@@ -134,7 +134,7 @@ Segue la definizione formale di norma come applicazione.
 \stepcounter{footnote}
 \footnotetext{Per la simmetria del prodotto scalare.}
 
-\paragraph{N.B.:} La formula di Cantor è valida per qualsiasi norma.
+\paragraph{N.B.:} La formula di Carnot è valida per qualsiasi norma.
 
 \begin{remark}
     In particolare
@@ -226,7 +226,7 @@ Tramite il concetto di lunghezza (ovvero di norma) di un vettore è possibile de
 Inoltre, la distanza euclidea sarà quella sottintesa quando si parla di distanza in Analisi 2. Le altre definizioni di distanza sono equivalenti. 
 
 \begin{definition}[Distanza indotta dalla norma]\footnote{Slide 8 PDF 7.}
-    Sia $||\cdot||\colon\mathbb R^n\rightarrow\mathbb R$. La distanza indotta dalla norma $||\cdot||$ è definita come
+    Sia $||\cdot||\colon\mathbb R^n\rightarrow\mathbb R$ una norma. La distanza indotta dalla norma $||\cdot||$ è definita come
     \begin{equation*}
         \begin{aligned}
             d\colon\mathbb R^n\times\mathbb R^n&\rightarrow\text{\gls{R0+}}\\
@@ -266,14 +266,14 @@ Inoltre, la distanza euclidea sarà quella sottintesa quando si parla di distanz
 \end{example}
 
 \begin{definition}[Spazio normato]\label{def:spazio_normato}\footnote{Definizione non fatta.}
-    Uno \gls{spazio lineare} $X\subseteq \mathbb R^n$ si dice normato se è definita una norma (un'applicazione) $||\cdot||\colon X\rightarrow\mathbb R$.
+    Uno \gls{spazio lineare} $X\subseteq \mathbb R^n$ si dice normato se è definita una norma (un'applicazione) $||\cdot||\colon X\rightarrow$\gls{R0+}.
 \end{definition}
 
 \begin{definition}[Spazio Metrico]
-    Uno spazio metrico è un insieme $X$ dotato di un'applicazione $d$ (distanza indotta dalla norma), $(X,d)$, definita come
+    Uno spazio metrico $(X,d)$ è un insieme $X$ dotato di un'applicazione $d$ (distanza indotta dalla norma), definita come
     \begin{equation*}
         \begin{aligned}
-            d\colon X\times X&\rightarrow\mathbb R\\
+            d\colon X\times X&\rightarrow\text{\gls{R0+}}\\
             (\uline x,\uline y)&\mapsto d(\uline x,\uline y)
         \end{aligned}
     \end{equation*}
@@ -326,7 +326,7 @@ La successione $\{x_n\}$ è un sottoinsieme di $\mathbb R^n$ ($\{x_n\}\subset \m
 \end{definition}
 \footnotetext{$\uline x^1$ non significa che al vettore sarà applicata una potenza, 1 è un indice degli elementi di $\uline x_n$.}
 
-\paragraph{Cosa significa che la successione in $\mathbb R^n$ ha limite convergente (ovvero (\ref{eq:limite_successione_convergente_spazio_metrico}), \ref{eq:limite_successione_convergente_spazio_metrico1}))?} Una successione in $\mathbb R^n$ ha limite convergente a $\uline x$ se comunque scelto un indice $n_\varepsilon$ tale che da $n_\varepsilon$ in poi gli elementi della successione si avvicinano ad $\uline x$. Ovvero la distanza $d$ fra $\uline x_n$ e $\uline x$ con $n>n_\varepsilon$ è minore di $\varepsilon$, cioe':
+\paragraph{Cosa significa che la successione in $\boldsymbol{\mathbb R^n}$ ha limite convergente (ovvero (\ref{eq:limite_successione_convergente_spazio_metrico}), \ref{eq:limite_successione_convergente_spazio_metrico1}))?} Una successione in $\mathbb R^n$ ha limite convergente a $\uline x$ se comunque scelto un indice $n_\varepsilon$ tale che da $n_\varepsilon$ in poi gli elementi della successione si avvicinano ad $\uline x$. Ovvero la distanza $d$ fra $\uline x_n$ e $\uline x$ con $n>n_\varepsilon$ è minore di $\varepsilon$, cioe':
 \begin{equation*}
     \boldsymbol{(\ref{eq:limite_successione_convergente_spazio_metrico}),(\ref{eq:limite_successione_convergente_spazio_metrico1})\equiv\lim_{n\rightarrow+\infty}d(\uline x_n\uline x)=0.}
 \end{equation*}
@@ -371,14 +371,16 @@ Dare un senso ad un intorno sferico nello spazio significa definire quali siano 
     si chiama palla aperta (o intorno sferico o intorno di centro $\uline x_0$ e raggio $r$).
 \end{definition}
 
-\paragraph{N.B.:} è possibile far riferimento allo stesso concetto di insieme aperto di Analisi 1, inoltre vedere la Definizione \ref{def:insieme_aperto}.
+\paragraph{N.B.:} È possibile far riferimento allo stesso concetto di insieme aperto di Analisi 1, inoltre vedere la Definizione \ref{def:insieme_aperto}.
+
+\paragraph{Notazioni equivalenti per l'intorno sferico:} $B(\uline x_0, r)\equiv I(\uline x_0, r)\equiv I_r(\uline x_0)$.
 
 Utilizzando la Definizione \ref{def:intorno_sferico} di intorno sferico è possibile fornire una definizione alternativa alla Definizione \ref{def:successione_convergente_AN2} di successione convergente. Ovvero: (\ref{eq:limite_successione_convergente_spazio_metrico1}) è equivalente a (\ref{eq:limite_successione_convergente_intorno_sferico}).
 
 \begin{definition}[Successione convergente (alternativa)]\footnote{Slide 2 PDF 9.}
     La successione (in $\mathbb R^n$) $\{\uline x_n\}\subset\mathbb R^n$ con $\uline x=(\uline x_n^1,\hdots,\uline x_n^n)$ converge a $\uline x=(x_1,\hdots,x_n)\in\mathbb R^n$ se
     \begin{equation}\label{eq:limite_successione_convergente_intorno_sferico}
-        \forall\varepsilon >0\, \exists n_\varepsilon\in\mathbb N\, ;\, \uline x_n\in \underset{\footnotemark}{B(\uline x_0,\varepsilon)}.
+        \forall\varepsilon >0\, \exists n_\varepsilon\in\mathbb N\, ;\, \uline x_n\in \underbrace{B(\uline x_0,\varepsilon)}_{\footnotemark}.
     \end{equation}
 \end{definition}
 \footnotetext{Disco aperto in $\mathbb R^n$ di centro $x_0$ e raggio $r=\varepsilon$.}
@@ -391,12 +393,10 @@ Utilizzando la Definizione \ref{def:intorno_sferico} di intorno sferico è possi
     si chiama palla chiusa.
 \end{definition}
 
-\paragraph{Notazioni equivalenti per l'intorno sferico:} $B(\uline x_0, r)\equiv I(\uline x_0, r)\equiv I_r(\uline x_0)$.
-
 \paragraph{N.B.:} La definizione di intorno è già stata data ad Analisi I su $\mathbb R$ (vedere Definizione \ref{def:intorno} e Definizione \ref{def:intorno_simmetrico}). In questo caso $\mathbb R$ è uno spazio simmetrico con distanza indotta dal valore assoluto $d=|\cdot|$, ovvero $(\mathbb R,|\cdot|)$. Inoltre, un qualsiasi spazio metrico, fissato $x_0\in X$, l'intorno sferico è formato dagli elementi appartenenti ad $X$ entro il raggio $r$.
 
 \begin{example}
-    Dato $X=\mathbb R.\, d(x,y)=|x-y|\,\forall x,y,\in\mathbb R, x_0\in\mathbb B, r>0$, allora l'intorno sferico di centro $x_0$ e raggio $r$ e'
+    Dato $X=\mathbb R.\, d(x,y)=|x-y|\,\forall x,y,\in\mathbb R, x_0\in\mathbb B, r>0$, allora l'intorno sferico di centro $x_0$ e raggio $r$ è
     \begin{equation*}
         B(x_0,r)=\{x\in\mathbb R\colon\,d(x,x_0)<r\}=\{x\in\mathbb R\colon\,|x-x_0|<r\}=(x_0 - r, x_0 + r)\subset\mathbb R.
     \end{equation*}
@@ -440,8 +440,8 @@ Vogliamo definire il concetto di limitatezza di un sottospazio metrico. Definend
 
 Dati $(X,d)$ e $A\subset X$ (sottospazio di $X$), $x_0\in X,\, r>0$ e $B(\uline x_0, r)=\{x\in X|\, d(x_0,x)<r\}\subset X$, sono date le seguenti definizioni.
 
-\begin{definition} [Sottospazio limitato]\footnote{Slide 7 PDF 8.}
-    $A$ è detto limitato se esiste una palla aperta (in $X$) che lo contiene, cioe':
+\begin{definition} [Sottospazio limitato]\footnote{Slide 8 PDF 8.}
+    $A$ è detto limitato se esiste una palla aperta (in $X$) che lo contiene, cioè:
     \begin{equation*}
         \exists r>0,\exists x_0\in X\colon A\subset B(x_0,r).
     \end{equation*}
@@ -449,11 +449,11 @@ Dati $(X,d)$ e $A\subset X$ (sottospazio di $X$), $x_0\in X,\, r>0$ e $B(\uline 
 
 Questa definizione riconduce alla limitatezza delle successioni.
 
-\begin{definition}[Punto interno]\footnote{Slide 7 PDF 8.}
+\begin{definition}[Punto interno]\footnote{Slide 8 PDF 8.}
     $x_0\in X$ si dice interno ad $A\subset X$ se
     \begin{enumerate}
         \item $x_0\in A$, e
-        \item $\exists r>0$ tc $B(x_0, r)\subset A$ \footnote{Ovvero esiste almeno un sottoinsieme sferico di $x_0$ contenuto in $A$.}.
+        \item $\exists r>0\colon B(x_0, r)\subset A$ \footnote{Ovvero esiste almeno un sottoinsieme sferico di $x_0$ contenuto in $A$.}.
     \end{enumerate}
 \end{definition}
 
@@ -461,11 +461,11 @@ Questa definizione riconduce alla limitatezza delle successioni.
     I punti interni allo spazio vettoriale $A$ è indicato con $\mathring A$.
 \end{definition}
 
-\begin{definition}[Punto esterno]
+\begin{definition}[Punto esterno]\footnote{Slide 9 PDF 8.}
     $\uline x_0\in X$ si dice punto esterno $A$ se
     \begin{enumerate}
         \item $\uline x_0\notin A$, e
-        \item $\exists r>0: B(\uline x_0, r)\cap A\neq 0$ \footnote{Ovvero: esiste intorno sferico di centro $x_0$ del tutto disgiunto ad $A$.}.
+        \item $\exists r>0: B(\uline x_0, r)\cap A= \emptyset$ (ovvero $x_0\in A^C$ e $B(\uline x_0, r)\subset A^C$) \footnote{Ovvero: esiste intorno sferico di centro $x_0$ del tutto disgiunto ad $A$.}.
     \end{enumerate}
 \end{definition}
 
@@ -494,9 +494,9 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
 \paragraph{N.B.:} Esistono insiemi in $\mathbb R^n$ che non sono né aperti né chiusi.
 
 \begin{definition}[Insieme complementare]\footnote{Definizione non data.}
-    Dato $A\subset\mathbb R^n$ insieme aperto, l'insieme complementare di $A$ e'
+    Dato $A\subset\mathbb R^n$ insieme aperto, l'insieme complementare di $A$ è
     \begin{equation*}
-        A^C=\{\uline x\in\mathbb R^n\;|\; x\notin A\}.
+        A^C=\{\uline x\in\mathbb R^n\;|\; \uline x\notin A\}.
     \end{equation*}
 \end{definition}
 
@@ -532,7 +532,7 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
 \begin{definition}[Punto di accumulazione]\footnote{Slide 2 PDF 9.}
     Sia $A\subseteq\mathbb R^n$. $\uline x_0\in\mathbb R^n$ si dice punto di accumulazione per $A$ se \footnote{Comunque mi muovo vicino ad $\uline x_0$ trovo un punto in $A$.}
     \begin{equation*}
-        \forall r>0,\quad B(\uline x_0, r)\cap (A\backslash\{x_0\})\neq\emptyset.
+        \forall r>0,\quad B(\uline x_0, r)\cap (A\backslash\{\uline x_0\})\neq\emptyset.
     \end{equation*}
 \end{definition}
 
@@ -564,14 +564,13 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
 \end{example}
 
 \begin{definition}[Chiusura di un insieme]\footnote{Slide 4 PDF 9.}
-    La chiusura di $A\subseteq\mathbb R^2$ è denotata da $\bar A\, (\subset\mathbb R^n)$ ed è l'unione di $A$ con i suoi punti di accumulazione.
+    La chiusura di $A\subseteq\mathbb R^2$ è denotata da $\bar A=A\cup\partial A\, (\subset\mathbb R^n)$ ed è l'unione di $A$ con i suoi punti di accumulazione.
 \end{definition}
 
 \paragraph{N.B.:} $\bar A$ ha le seguenti caratteristiche:
 \begin{enumerate}
     \item è un insieme chiuso.
     \item è il più piccolo chiuso che contiene $A$. È possibile dimostrare che $A\in\bar A$ e se $\Bar A=A$ allora $A$ è chiuso.
-    \item $\bar A=A\cup\partial A$.
 \end{enumerate}
 
 In Analisi 1 una funzione è definita su un dominio (sottoinsieme di $\mathbb R$), ovvero è definita su un intervallo sottoinsiemi di $\mathbb R$. Un intervallo è fatto da un pezzo solo. Anche in Analisi 2 le funzioni sono definite su domini e sono del tipo
@@ -788,11 +787,11 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
     Se $P_0$ è un punto isolato per $A$ per convenzione si pone $f$ continua in tale punto.
 \end{definition}
 
+Per mostrare la continuità di una funzione in un punto è necessario quindi mostrare del limite appena scritto.
+
 \begin{definition}[Funzione continua in $A$]\footnote{Slide 2 PDF 10.}
     Sia $f\colon A\subset\mathbb R^n\rightarrow\mathbb R$. $f$ si dice continua in $A$ se è continua in ogni punto di $A$.
 \end{definition}
-
-Per mostrare la continuità di una funzione in un punto è necessario quini mostrare quanto appena scritto.
 
 \begin{example}\footnote{Slide 2 PDF 10.}
     Siano $f(x,y)=x$ e $g(x,y)=y$, quindi $f,g\colon A=\mathbb R^2\rightarrow\mathbb R$ (ovvero $f$ e $g$ sono funzioni continue in $A=\mathbb R^2$).\\
@@ -1179,6 +1178,245 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
     Quindi non esiste perché il segno dipende da $\theta$.
 \end{example}
 \footnotetext{Prima relazione fondamentale della trigonometria: $\rho^2\cos^2\theta+\rho^2\sin^2\theta=\rho^2(\cos^2\theta+\sin^2\theta)=\rho^2\cdot 1$.}
+
+\subsection{Esempi sulla continuità e limiti}
+
+\begin{example}\footnote{Slide 2 PDF 13.}
+	\paragraph{Testo:} Stabilire se la
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\frac{x}{\log(x^2+y^2)}&\text{ per } (x,y)\neq(0,0)\\
+			0 &\text{ altrimenti}
+		\end{cases}
+	\end{equation*}
+	funzione è continua sul suo campo di esistenza.
+	\paragraph{Svolgimento:} $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e affinché risulti continua deve esistere il limite della funzione, per $(x,y)\rightarrow(0,0)$ e tale limite deve valere 0, ovvero
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}f(x,y)=0.
+	\end{equation*}
+	Valutiamo dunque
+	\begin{equation*}
+		\left|\frac{x}{\log(x^2+y^2)}\right|\overset{\footnotemark}{=} \left|\frac{\rho \cos\theta}{\log(\rho^2)}\right| = \frac{\rho\,|\cos\theta|}{\underbrace{2\,|\log\rho|}_{\footnotemark}}\overset{\footnotemark}{\leq} \frac{\rho}{2|\log\rho|}\underset{\rho\rightarrow0^+}{\longrightarrow}0 .
+	\end{equation*}
+	\addtocounter{footnote}{-2}
+	\footnotetext{Passaggio in cordinate polari. Inoltre, per la relazione fondamentale dell'aritmetica $\rho^2(\cos^2\theta+\sin^2\theta) = \rho^2\cdot 1$.}
+	
+	\stepcounter{footnote}
+	\footnotetext{Proprietà dei logaritmi.}
+	
+	\stepcounter{footnote}
+	\footnotetext{Le funzioni trigonometriche sono comprese fra $-1$ e $1$, quindi è possibile maggiorare.}
+	
+	\paragraph{Nota:} È stato utilizzato il Teorema \ref{th:dei_carabinieri_2} del confronto (detto dei carabinieri) sul valore assoluto di $f(x,y)$ trasformato in coordinate polari e maggiorato da una funzione rafiale maggiore uguale a 0. Pertanto, vale quanto segue. (Non è stato considerato il caso $\rho=0$, solo quello in cui $\rho\rightarrow 0^+$.) $\qed$
+	
+	\noindent Dunque,
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} f(x,y) = 0 = f(0,0),
+	\end{equation*}
+	quindi $f$ è continua in tutto $\mathbb{R}^2$.
+	
+\end{example}
+
+\paragraph{Nota:} Come in Analisi 1, prolungare la continuità signidica che nel punto incriminato $f$ è posto uguale al valore al quale tende la funzione quando $(x, y)$ tendono al punto incriminato.
+
+\begin{example}\footnote{Slide 3 PDF 13}
+	\paragraph{Testo:} Stabilire se la funzione
+	\begin{equation*}
+		f(x,y) \overset{\footnotemark}{=} \frac{\sin(\sqrt{x^2+y^2})}{\sqrt{x^2+y^2}}\quad \forall(x,y)\in\mathbb{R}^2\backslash\{(0,0)\}
+	\end{equation*}
+	\footnotetext{Il quoziente sono funzioni continue in $\mathbb{R}^2$, quindi è continuo in $\mathbb{R}^2\backslash\{(0,0)\}$.}
+	
+	\noindent è prolungabile con continuità in $(0,0)$ e stabilire quale valore deve assumere il prolungamento di $f$ in $(0,0)$.
+	\paragraph{Cosa è necessario far vedere?} È necessario definire cosa accade in $(0,0)$ e per dimostrare che il prolungamento sia continuio, che il limite di $f(x,y)$, per $(x,y)\rightarrow(0,0)$, sia il valore della funzione in tale punto.\\
+	È necessario ricordare che prolungare la continuità significa che l'immagine di $f$ in $(x_0,y_0)$ deve essere uguale al limite di $f$ per $(x,y)\rightarrow(x_0,y_0)$.
+	\paragraph{Svolgimento:} È possibile osservare che $\forall (x,y)\in\mathbb R^2\backslash\{(0,0)\}$, $f$ è una funzione radiale (ovvero dipende solo da $\rho$) ed è
+	\begin{equation*}
+		f(x,y)=f(\rho)=\frac{\sin\rho}{\rho},
+	\end{equation*}
+	dove $\rho = d(\rho , \underline{0})$, con $\rho=(x,y)$.\\
+	Quindi,
+	\begin{equation*}
+		\lim_{\rho\rightarrow0^+} f(\rho)=\lim_{\rho\rightarrow 0^+} \frac{\sin\rho}{\rho}=1.
+	\end{equation*}
+	\paragraph{Nota:} Quindi, se la funzione prolungata in $(0,0)$ vale 1, come il limite, allora la funzione è continua nel suo dominio e nel prolungamento (che non fa parte del dominio e vale 1).$\qed$\\
+	Dunque 
+	\begin{equation*}
+		\tilde f(x,y)=
+		\begin{cases}
+			\frac{\sin(\sqrt{x^2+y^2})}{\sqrt{x^2+y^2}} &\text{ se } (x,y)\neq(0,0)\\
+			1 & \text{ se } (x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	ovvero $\tilde f$ è continua su tutto il piano.
+\end{example}
+
+\begin{example}\footnote{Slide 5 PDF 13.}
+	\paragraph{Testo:} Valutare il limite
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}.
+	\end{equation*}
+	\paragraph{Svolgimento:} È calcolato lungo la retta $y=mx$ (dove se $y=0$ è necessario escludere $(0,0)$):
+	\begin{equation*}
+		\underset{y=mx}{\lim_{(x,y)\rightarrow (0,0)}} f(x,y)=\lim_{x\rightarrow 0}f(x,mx)=\lim_{x\rightarrow 0} \frac{x\,m\,x\,(2m^2x^2+x^3)}{x^4+m^2x^2}=\lim_{x\rightarrow 0}\frac{\cancel{x^2}\,m\, [x^2(2m^2-x)]}{\cancel{x^2}(x^2+m^2)} = \lim_{x\rightarrow 0}\frac{mx^2(2m^2-x)}{x^2+m^2}=0.
+	\end{equation*}
+	Quindi, il limite, se esiste, è 0. È necessario mostrare che è 0. Passando in coordinate polari
+	\begin{equation*}
+		\begin{cases}
+			x=\rho\cos\theta\\
+			y=\rho\sin\theta
+		\end{cases}
+	\end{equation*}
+	è ottenuto
+	\begin{equation*}
+		\begin{matrix}
+			\left|\frac{\rho^2\cos\theta \sin\theta (2\rho^2\sin^2(\theta)+\rho^3\cos^3(\theta))}{\rho^4\cos^4\theta + \rho^2 \sin^2\theta}\right| &=& \left|\frac{\cancel{\rho^2}cos\theta \sin\theta (2\rho^2\sin^2(\theta)+\rho^3\cos^3(\theta))}{\cancel{\rho^2}(\rho^2\cos^4\theta + \sin^2\theta)}\right|&=& \left|\frac{2\rho^2\cos\theta\sin^3\theta + \rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right|\\\\
+			&=& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right| &\overset{|x+y|\leq|x|+|y|}{\underset{\text{disug. triang.}}{\leq}}& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right| + \left| \frac{\rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right|\\\\
+			&&(\text{portate fuori cose $\geq0$})&=& \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}.
+		\end{matrix}
+	\end{equation*}
+	Dunque
+	\begin{equation*}
+		\begin{matrix}
+			|f(\rho, \theta)| &\leq& \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} &\overset{\footnotemark}{\leq}& \frac{2\rho^2 |\cos\theta + \sin^2\theta|}{\sin^2\theta} + \frac{\rho^3\cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta}\\\\
+			&\leq& 2\rho^2 |\cos\theta\sin\theta|+\rho|\sin\theta| &=& g(\rho, \theta),
+		\end{matrix}
+	\end{equation*}
+	
+	\footnotetext{$\rho^2 \cos^4\theta + \sin^2\theta>0$ (può essere uguale a 0 ma è al denominatore). È necessario cercare di semplificare tale espressione, quindi è possibile maggiorarla con una funzione radiale (funzione dipendente solo dal raggio $\rho$) $g(\rho)$ infinitesima quando $\rho\rightarrow 0$ (cosicché anche $f$ tenda a 0).\\
+		Quindi sono ricercate maggiorazioni convenienti per ogni addendo (ovvero $\frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e $\frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$). Nel precedente esempio è stata utilizzata la disuguaglianza triangolare ($|x+y|<|x|+|y|$), in questo è possibile maggiorare il denominatore considerando quanto segue:
+		\begin{equation*}
+			\text{Se } a,b,c \geq 0 \quad\Rightarrow\quad \frac{a}{b+c}\leq \frac{a}{b} \text{ o } \frac{a}{c}.
+		\end{equation*}
+		Ricercare maggiorazioni convenienti significa eliminare ciò che da fastidio per maggiorare $|f(\rho, \theta)|$ con una funzione che dopende da $\rho$. Per questo è necessario trovare una funzione radiale da moltiplicare ai due addendi $\frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e $\frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e che possa essere maggiorata da una costante (perché le funzioni trigonometriche sono limitate).}
+	
+	\noindent quindi
+	\begin{equation*}
+		|f(\rho, \theta)|\leq 2\rho^2\underbrace{|\cos\theta\sin\theta|}_{<\frac{1}{2}} + \rho \underbrace{|\sin\theta|}_{\leq 1}\overset{\footnotemark}{\leq} \rho^2+\rho = \rho(\rho+1) = g(\rho)\underset{\rho\rightarrow0^+}{\longrightarrow}0
+	\end{equation*}
+	
+	\footnotetext{È necessario far vedere che esiste una funzione radiale. Per ipotesi $|\cos\theta\sin\theta|=\left|\frac{1}{2}\sin\theta\right|\leq\frac{1}{2}$ e $|\sin\theta|\leq 1$, quindi è trovata la funzione radiale infinitesima $g(\rho)=\rho^2+\rho$ che permette di applicare il teorema del confronto e che il limite sia uniforme rispetto a $\theta$.}
+	\paragraph{Osservazioni:} Arrivati a $2\rho^2|\cos\theta\sin\theta|$, il processo di maggiorazione non è ancora terminato perché tale funzione è del tipo $g(\rho,\theta)$, quindi dipende anche da $\theta$. Quindi è necessario un ulteriore passo per eliminare (tramite una maggiorazione) la dipendenza da $\theta$. Inoltre, è possibile non utilizzare le coordinate polari per applicare il teorema del confronto maggiorando con una funzionen $f(x,y)$ che tende a 0 in modo uniforme rispetto alle variabili, ovvero quanto segue. $\qed$
+	
+	\paragraph{Svolgimento 2:} È possibile rifare l'esercizio con un metodo alternativo.
+	\begin{equation*}
+		\begin{matrix}
+			|f(x,y)| &=& \left| \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}\right| &=& \left| \frac{2xy^3 + x^4y}{x^4+y^2}\right| &=& \left|\frac{2xy^3}{x^4+y^2} + \frac{x^4y}{x^4+y^2}\right|\\\\ &\overset{|a+b|\leq|a|+|b|}{\leq}& \left|\frac{2xy^3}{x^4+y^2}\right| + \left| \frac{x^4y}{x^4+y^2}\right| &=& \frac{2|xy^3|}{x^4+y^2} + \frac{x^4|y|}{x^4+y^2} &\leq& \frac{2\cancel{y^2}|xy|}{\cancel{y^2}} +  \frac{\cancel{x^4}|y|}{\cancel{x^4}} &=&\\\\
+			&&&&&=& 2|xy|+|y| &=& g(x,y) \geq 0
+		\end{matrix}
+	\end{equation*}
+	Quindi
+	\begin{equation*}
+		|f(x,y)| \leq  2|xy|+|y| = g(x,y)\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
+	\end{equation*}
+	$g$ non è una funzione radiale, è positiva e continua $\forall(x,y)\in\mathbb{R}^2$. Essere continua significa che
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} g(x,y)=g(0,0)=0
+	\end{equation*}
+	ed è possibile applicare il teorema del confronto.
+\end{example}
+
+\begin{example}\footnote{Slide 8 PDF 13}
+	\paragraph{Testo:}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} \frac{x\sin^2y+3xy^4}{x^2+2y^4}=\left[\frac{0}{0}\right]
+	\end{equation*}
+	\paragraph{Svolgimento:} È possibile considerare la funzione come somma di funzioni:
+	\begin{equation*}
+		f(x,y)=f_1(x,y)+f_2(x,y) = \frac{x\sin^2y}{x^2+2y^4} + \frac{3xy^4}{x^2+2y^4} = 
+		\begin{matrix}
+			x\sin^2y\rightarrow 0 \text{ come } \rho^3\\
+			3xy^4\rightarrow 0 \text{ come } 3\rho^5
+		\end{matrix}
+	\end{equation*}
+	
+	\paragraph{Intermezzo:} $f_1$ ed $f_2$ hanno limite? Una delle due non ha limite. Se avessero entrambe limite allora il risultato è la somma dei due. È possibile osservare che $f_2$ sembra andare a 0 perché sopra ha una potenza superiore rispetto a sotto. $\qed$
+	
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)} f_2(x,y) = 0,
+	\end{equation*}
+	infatti
+	\begin{equation*}
+		|f_2(x,y)|=\left|\frac{3xy^4}{x^2+2y^4}\right| = \frac{3|x|y^4}{x^2+2y^4} \leq \frac{3|x|y^4}{2y^4}=\frac{3}{2}|x|\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
+	\end{equation*}
+	
+	\paragraph{Osservazioni su $\boldsymbol{f_1}$:} L'idea è che $	\lim_{(x,y)\rightarrow(0,0)} f_1(x,y)$ non esiste perché il grado di $y^4$ è maggiore del grado di $\sin^2y$. Quindi conviene calcolare il limite lungo percorsi in cui le $x$ e $y$ pesano in modo diverso.\\
+	Il numeratore e denominatore tendono a 0 rispettivamente come $\rho^3$ e come $\rho^4$. Quindi, conviene calcolare il limite lungo dei percorsi in cui $x$ e $y$ pesano in modo diverso così da mostrare comportamenti distinti, come segue. $\qed$
+	
+	\noindent \textbf{Lungo} $\boldsymbol{y=x}$ ($x$ ed $y$ pesano uguale)
+	\begin{equation}\label{eq:esempio_limite_notevole}
+		\underset{y=x}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{x\rightarrow 0} f_1(x,x) = \lim_{x\rightarrow 0}\frac{x\sin^2x}{x^2+2x^4} = \lim_{x\rightarrow 0}\boxed{\frac{\sin^2x}{x^2}}_{=1}\cdot\frac{x}{1+2x^2}=0
+	\end{equation}
+	
+	\noindent \textbf{Lungo} $\boldsymbol{y=x^2}$ (così $x^2$ è paragonabile a $y^4$)
+	\begin{equation*}
+		\underset{y=x^2}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{y\rightarrow 0}\frac{y^2\sin^2y}{y^4+2y^4} = \lim_{y\rightarrow 0} \frac{\sin^2y}{3y^2} =\frac{1}{3} \neq 0,
+	\end{equation*}
+	quindi il limite di $f_1$ non esiste.\\
+	Dunque
+	\begin{equation*}
+		\nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y) = f_1 + f_2.
+	\end{equation*}
+	(Il limite non esiste dal momento che $f$ è la somma di $f_1$ e $f_2$ ed il limite di $f_1$ non esiste.)
+\end{example}
+
+\paragraph{Nota sui limiti:} I limiti non si fanno a pezzi, è necessario utilizzare l'algebra dei limiti: il limite di prodotti è il pordotto dei limiti quando esistono i limiti dei fattori (come in (\ref{eq:esempio_limite_notevole})). Inoltre, se è presente l'infinito, è possibile trattarlo come se fosse un numero, tranne nelle forme di indecisione ($0\cdot\infty,\, \hdots$).
+
+\begin{example}\footnote{Slide 11 PDF 13.}
+	\paragraph{Testo:}
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\left(\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right)e^{\left(\frac{x^2-y^2}{x^2+y^2}\right)}.
+	\end{equation*}
+	(Partiamo dalla prima funzione,)
+	\begin{equation*}
+		f_1(x,y) = \frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2},\quad \footnotemark
+	\end{equation*}
+	per la quale l'idea è che tenda a 0. \footnotetext{Pensando in coordinate polari, il denominatore va a 0 come $\rho^3$, ma il grado del nominatore è maggiore del grado del denominatore.}
+	
+	\noindent Passando in coordinate polari
+	\begin{equation*}
+		\begin{cases}
+			x = \rho \cos\theta\\
+			y = \rho \sin\theta
+		\end{cases}
+	\end{equation*}
+	è verificato se è possibile maggiorare $f_1$ ed utilizzare il Teorema del confronto come segue:
+	\begin{equation*}
+		\begin{matrix}
+			\left|\frac{\rho\cos\theta\rho^2\sin^2\theta + 2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2(\cos^2\theta+\sin^2\theta)}\right| &=& \left|\frac{\rho^{\cancel 3}\cos\theta\sin^2\theta}{\cancel{\rho^2}} + \frac{ 2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2}\right|\\\\
+			&\overset{\text{disug. triang.}}{\leq}& |\rho \cos\theta\sin^2\theta| + 2 \left| \frac{ \rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2}\right|\\\\
+			[\rho\cos\theta\leq|\rho\cos\theta|\leq\rho\rightarrow 0] &\leq& \rho |\cos\theta\sin^2\theta| + 2  \frac{ \rho^{\frac{1}{3}} |\sin\theta|^{\frac{1}{3}}|\rho\cos\theta|^2}{\rho^2}\\\\
+			&=&  \rho |\cos\theta\sin^2\theta| + 2 \rho^{\frac{1}{3}} |\sin\theta|^{\frac{1}{3}}|\rho\cos\theta|^2\\\\
+			&\overset{\footnotemark}{\leq}& \rho + 2\rho^{\frac{1}{3}} &=& g(\rho) \underset{\rho\rightarrow 0^+}{\longrightarrow} 0.
+		\end{matrix}
+	\end{equation*}
+	\footnotetext{Le funzioni trigonometriche sono maggiorabili perché limitate e tramite la maggiorazione è ottenuta la funzione radiale $g$.}
+	
+	\noindent Data
+	\begin{equation*}
+		f_2(x,y) = e^{\frac{x^2-y^2}{x^2+y^2}},
+	\end{equation*}
+	l'esponente $\frac{x^2-y^2}{x^2+y^2}$ non ha limite per $(x,y)\rightarrow(0,0)$. Passando in coordinate polar è ottenuto
+	\begin{equation*}
+		\lim_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \cancel{\rho^2}\sin^2\theta}{\cancel{\rho^2}} = \lim_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
+	\end{equation*}
+	È possibile dimostrare che $e^{\frac{x^2-y^2}{x^2+y^2}}$ è limitato uniformemente da una costante.
+	\begin{equation*}
+		\begin{matrix}
+			\frac{x^2-y^2}{x^2+y^2} &\leq& \left|\frac{x^2-y^2}{x^2+y^2}\right| &=&  \frac{|x^2-y^2|}{x^2+y^2} &\leq& [|a-b| = |a+(-b)| \leq |a| + |-b|]\\
+			&&&\leq& \frac{|x^2|+|-y^2|}{x^2+y^2} &=& \frac{x^2+y^2}{x^2+y^2} &=& 1
+		\end{matrix}
+	\end{equation*}
+	Utilizzando le proprietà dell'esponenziale (in particolare che è una funzione crescente), è ottenuto che
+	\begin{equation*}
+		0 < e^{\frac{x^2-y^2}{x^2+y^2}} \leq e^1,
+	\end{equation*}
+	e dunque
+	\begin{equation*}
+		\left|\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}e^{\frac{x^2-y^2}{x^2+y^2}}\right| \leq e \left|\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right|\underset{(x,y)\rightarrow (0,0)}{\longrightarrow} 0.
+	\end{equation*}
+	Quindi, per il teorema del confronto, il limite di $f$ esiste ed è uguale a 0.
+\end{example}
 
 \subsection{Grafico di una funzione di più variabili}\label{ssec:grafico_funzione_n_variabili}
 Per comodità (legata al grafico delle funzioni) sono considerate funzioni di due variabili, quindi del tipo
@@ -1607,245 +1845,6 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
     \end{figure}
 \end{example}
 
-\subsection{Esempi sulla continuità e limiti}
-
-\begin{example}\footnote{Slide 2 PDF 13.}
-	\paragraph{Testo:} Stabilire se la
-	\begin{equation*}
-		f(x,y)=
-		\begin{cases}
-			\frac{x}{\log(x^2+y^2)}&\text{ per } (x,y)\neq(0,0)\\
-			0 &\text{ altrimenti}
-		\end{cases}
-	\end{equation*}
-	funzione è continua sul suo campo di esistenza.
-	\paragraph{Svolgimento:} $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e affinché risulti continua deve esistere il limite della funzione, per $(x,y)\rightarrow(0,0)$ e tale limite deve valere 0, ovvero
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}f(x,y)=0.
-	\end{equation*}
-	Valutiamo dunque
-	\begin{equation*}
-		\left|\frac{x}{\log(x^2+y^2)}\right|\overset{\footnotemark}{=} \left|\frac{\rho \cos\theta}{\log(\rho^2)}\right| = \frac{\rho\,|\cos\theta|}{\underbrace{2\,|\log\rho|}_{\footnotemark}}\overset{\footnotemark}{\leq} \frac{\rho}{2|\log\rho|}\underset{\rho\rightarrow0^+}{\longrightarrow}0 .
-	\end{equation*}
-	\addtocounter{footnote}{-2}
-	\footnotetext{Passaggio in cordinate polari. Inoltre, per la relazione fondamentale dell'aritmetica $\rho^2(\cos^2\theta+\sin^2\theta) = \rho^2\cdot 1$.}
-	
-	\stepcounter{footnote}
-	\footnotetext{Proprietà dei logaritmi.}
-	
-	\stepcounter{footnote}
-	\footnotetext{Le funzioni trigonometriche sono comprese fra $-1$ e $1$, quindi è possibile maggiorare.}
-	
-	\paragraph{Nota:} È stato utilizzato il Teorema \ref{th:dei_carabinieri_2} del confronto (detto dei carabinieri) sul valore assoluto di $f(x,y)$ trasformato in coordinate polari e maggiorato da una funzione rafiale maggiore uguale a 0. Pertanto, vale quanto segue. (Non è stato considerato il caso $\rho=0$, solo quello in cui $\rho\rightarrow 0^+$.) $\qed$
-	
-	\noindent Dunque,
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} f(x,y) = 0 = f(0,0),
-	\end{equation*}
-	quindi $f$ è continua in tutto $\mathbb{R}^2$.
-	
-\end{example}
-
-\paragraph{Nota:} Come in Analisi 1, prolungare la continuità signidica che nel punto incriminato $f$ è posto uguale al valore al quale tende la funzione quando $(x, y)$ tendono al punto incriminato.
-
-\begin{example}\footnote{Slide 3 PDF 13}
-	\paragraph{Testo:} Stabilire se la funzione
-	\begin{equation*}
-		f(x,y) \overset{\footnotemark}{=} \frac{\sin(\sqrt{x^2+y^2})}{\sqrt{x^2+y^2}}\quad \forall(x,y)\in\mathbb{R}^2\backslash\{(0,0)\}
-	\end{equation*}
-	\footnotetext{Il quoziente sono funzioni continue in $\mathbb{R}^2$, quindi è continuo in $\mathbb{R}^2\backslash\{(0,0)\}$.}
-	
-	\noindent è prolungabile con continuità in $(0,0)$ e stabilire quale valore deve assumere il prolungamento di $f$ in $(0,0)$.
-	\paragraph{Cosa è necessario far vedere?} È necessario definire cosa accade in $(0,0)$ e per dimostrare che il prolungamento sia continuio, che il limite di $f(x,y)$, per $(x,y)\rightarrow(0,0)$, sia il valore della funzione in tale punto.\\
-	È necessario ricordare che prolungare la continuità significa che l'immagine di $f$ in $(x_0,y_0)$ deve essere uguale al limite di $f$ per $(x,y)\rightarrow(x_0,y_0)$.
-	\paragraph{Svolgimento:} È possibile osservare che $\forall (x,y)\in\mathbb R^2\backslash\{(0,0)\}$, $f$ è una funzione radiale (ovvero dipende solo da $\rho$) ed è
-	\begin{equation*}
-		f(x,y)=f(\rho)=\frac{\sin\rho}{\rho},
-	\end{equation*}
-	dove $\rho = d(\rho , \underline{0})$, con $\rho=(x,y)$.\\
-	Quindi,
-	\begin{equation*}
-		\lim_{\rho\rightarrow0^+} f(\rho)=\lim_{\rho\rightarrow 0^+} \frac{\sin\rho}{\rho}=1.
-	\end{equation*}
-	\paragraph{Nota:} Quindi, se la funzione prolungata in $(0,0)$ vale 1, come il limite, allora la funzione è continua nel suo dominio e nel prolungamento (che non fa parte del dominio e vale 1).$\qed$\\
-	Dunque 
-	\begin{equation*}
-		\tilde f(x,y)=
-		\begin{cases}
-			\frac{\sin(\sqrt{x^2+y^2})}{\sqrt{x^2+y^2}} &\text{ se } (x,y)\neq(0,0)\\
-			1 & \text{ se } (x,y)=(0,0)
-		\end{cases}
-	\end{equation*}
-	ovvero $\tilde f$ è continua su tutto il piano.
-\end{example}
-
-\begin{example}\footnote{Slide 5 PDF 13.}
-	\paragraph{Testo:} Valutare il limite
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}.
-	\end{equation*}
-	\paragraph{Svolgimento:} È calcolato lungo la retta $y=mx$ (dove se $y=0$ è necessario escludere $(0,0)$):
-	\begin{equation*}
-		\underset{y=mx}{\lim_{(x,y)\rightarrow (0,0)}} f(x,y)=\lim_{x\rightarrow 0}f(x,mx)=\lim_{x\rightarrow 0} \frac{x\,m\,x\,(2m^2x^2+x^3)}{x^4+m^2x^2}=\lim_{x\rightarrow 0}\frac{\cancel{x^2}\,m\, [x^2(2m^2-x)]}{\cancel{x^2}(x^2+m^2)} = \lim_{x\rightarrow 0}\frac{mx^2(2m^2-x)}{x^2+m^2}=0.
-	\end{equation*}
-	Quindi, il limite, se esiste, è 0. È necessario mostrare che è 0. Passando in coordinate polari
-	\begin{equation*}
-		\begin{cases}
-			x=\rho\cos\theta\\
-			y=\rho\sin\theta
-		\end{cases}
-	\end{equation*}
-	è ottenuto
-	\begin{equation*}
-		\begin{matrix}
-			\left|\frac{\rho^2\cos\theta \sin\theta (2\rho^2\sin^2(\theta)+\rho^3\cos^3(\theta))}{\rho^4\cos^4\theta + \rho^2 \sin^2\theta}\right| &=& \left|\frac{\cancel{\rho^2}cos\theta \sin\theta (2\rho^2\sin^2(\theta)+\rho^3\cos^3(\theta))}{\cancel{\rho^2}(\rho^2\cos^4\theta + \sin^2\theta)}\right|&=& \left|\frac{2\rho^2\cos\theta\sin^3\theta + \rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right|\\\\
-			&=& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right| &\overset{|x+y|\leq|x|+|y|}{\underset{\text{disug. triang.}}{\leq}}& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right| + \left| \frac{\rho^3 \cos^4\theta\sin\theta}{\rho^2 \cos^4\theta + \sin^2\theta}\right|\\\\
-			&&(\text{portate fuori cose $\geq0$})&=& \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}.
-		\end{matrix}
-	\end{equation*}
-	Dunque
-	\begin{equation*}
-		\begin{matrix}
-			|f(\rho, \theta)| &\leq& \frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} + \frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta} &\overset{\footnotemark}{\leq}& \frac{2\rho^2 |\cos\theta + \sin^2\theta|}{\sin^2\theta} + \frac{\rho^3\cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta}\\\\
-			&\leq& 2\rho^2 |\cos\theta\sin\theta|+\rho|\sin\theta| &=& g(\rho, \theta),
-		\end{matrix}
-	\end{equation*}
-	
-	\footnotetext{$\rho^2 \cos^4\theta + \sin^2\theta>0$ (può essere uguale a 0 ma è al denominatore). È necessario cercare di semplificare tale espressione, quindi è possibile maggiorarla con una funzione radiale (funzione dipendente solo dal raggio $\rho$) $g(\rho)$ infinitesima quando $\rho\rightarrow 0$ (cosicché anche $f$ tenda a 0).\\
-	Quindi sono ricercate maggiorazioni convenienti per ogni addendo (ovvero $\frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e $\frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$). Nel precedente esempio è stata utilizzata la disuguaglianza triangolare ($|x+y|<|x|+|y|$), in questo è possibile maggiorare il denominatore considerando quanto segue:
-	\begin{equation*}
-		\text{Se } a,b,c \geq 0 \quad\Rightarrow\quad \frac{a}{b+c}\leq \frac{a}{b} \text{ o } \frac{a}{c}.
-	\end{equation*}
-	Ricercare maggiorazioni convenienti significa eliminare ciò che da fastidio per maggiorare $|f(\rho, \theta)|$ con una funzione che dopende da $\rho$. Per questo è necessario trovare una funzione radiale da moltiplicare ai due addendi $\frac{2\rho^2|\cos\theta\sin^3\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e $\frac{\rho^3 \cos^4\theta|\sin\theta|}{\rho^2 \cos^4\theta + \sin^2\theta}$ e che possa essere maggiorata da una costante (perché le funzioni trigonometriche sono limitate).}
-	
-	\noindent quindi
-	\begin{equation*}
-		|f(\rho, \theta)|\leq 2\rho^2\underbrace{|\cos\theta\sin\theta|}_{<\frac{1}{2}} + \rho \underbrace{|\sin\theta|}_{\leq 1}\overset{\footnotemark}{\leq} \rho^2+\rho = \rho(\rho+1) = g(\rho)\underset{\rho\rightarrow0^+}{\longrightarrow}0
-	\end{equation*}
-	
-	\footnotetext{È necessario far vedere che esiste una funzione radiale. Per ipotesi $|\cos\theta\sin\theta|=\left|\frac{1}{2}\sin\theta\right|\leq\frac{1}{2}$ e $|\sin\theta|\leq 1$, quindi è trovata la funzione radiale infinitesima $g(\rho)=\rho^2+\rho$ che permette di applicare il teorema del confronto e che il limite sia uniforme rispetto a $\theta$.}
-	\paragraph{Osservazioni:} Arrivati a $2\rho^2|\cos\theta\sin\theta|$, il processo di maggiorazione non è ancora terminato perché tale funzione è del tipo $g(\rho,\theta)$, quindi dipende anche da $\theta$. Quindi è necessario un ulteriore passo per eliminare (tramite una maggiorazione) la dipendenza da $\theta$. Inoltre, è possibile non utilizzare le coordinate polari per applicare il teorema del confronto maggiorando con una funzionen $f(x,y)$ che tende a 0 in modo uniforme rispetto alle variabili, ovvero quanto segue. $\qed$
-	
-	\paragraph{Svolgimento 2:} È possibile rifare l'esercizio con un metodo alternativo.
-	\begin{equation*}
-		\begin{matrix}
-			|f(x,y)| &=& \left| \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}\right| &=& \left| \frac{2xy^3 + x^4y}{x^4+y^2}\right| &=& \left|\frac{2xy^3}{x^4+y^2} + \frac{x^4y}{x^4+y^2}\right|\\\\ &\overset{|a+b|\leq|a|+|b|}{\leq}& \left|\frac{2xy^3}{x^4+y^2}\right| + \left| \frac{x^4y}{x^4+y^2}\right| &=& \frac{2|xy^3|}{x^4+y^2} + \frac{x^4|y|}{x^4+y^2} &\leq& \frac{2\cancel{y^2}|xy|}{\cancel{y^2}} +  \frac{\cancel{x^4}|y|}{\cancel{x^4}} &=&\\\\
-			&&&&&=& 2|xy|+|y| &=& g(x,y) \geq 0
-		\end{matrix}
-	\end{equation*}
-	Quindi
-	\begin{equation*}
-		|f(x,y)| \leq  2|xy|+|y| = g(x,y)\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
-	\end{equation*}
-	$g$ non è una funzione radiale, è positiva e continua $\forall(x,y)\in\mathbb{R}^2$. Essere continua significa che
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} g(x,y)=g(0,0)=0
-	\end{equation*}
-	ed è possibile applicare il teorema del confronto.
-\end{example}
-
-\begin{example}\footnote{Slide 8 PDF 13}
-	\paragraph{Testo:}
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} \frac{x\sin^2y+3xy^4}{x^2+2y^4}=\left[\frac{0}{0}\right]
-	\end{equation*}
-	\paragraph{Svolgimento:} È possibile considerare la funzione come somma di funzioni:
-	\begin{equation*}
-		f(x,y)=f_1(x,y)+f_2(x,y) = \frac{x\sin^2y}{x^2+2y^4} + \frac{3xy^4}{x^2+2y^4} = 
-		\begin{matrix}
-			x\sin^2y\rightarrow 0 \text{ come } \rho^3\\
-			3xy^4\rightarrow 0 \text{ come } 3\rho^5
-		\end{matrix}
-	\end{equation*}
-	
-	\paragraph{Intermezzo:} $f_1$ ed $f_2$ hanno limite? Una delle due non ha limite. Se avessero entrambe limite allora il risultato è la somma dei due. È possibile osservare che $f_2$ sembra andare a 0 perché sopra ha una potenza superiore rispetto a sotto. $\qed$
-	
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} f_2(x,y) = 0,
-	\end{equation*}
-	infatti
-	\begin{equation*}
-		|f_2(x,y)|=\left|\frac{3xy^4}{x^2+2y^4}\right| = \frac{3|x|y^4}{x^2+2y^4} \leq \frac{3|x|y^4}{2y^4}=\frac{3}{2}|x|\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
-	\end{equation*}
-	
-	\paragraph{Osservazioni su $\boldsymbol{f_1}$:} L'idea è che $	\lim_{(x,y)\rightarrow(0,0)} f_1(x,y)$ non esiste perché il grado di $y^4$ è maggiore del grado di $\sin^2y$. Quindi conviene calcolare il limite lungo percorsi in cui le $x$ e $y$ pesano in modo diverso.\\
-	Il numeratore e denominatore tendono a 0 rispettivamente come $\rho^3$ e come $\rho^4$. Quindi, conviene calcolare il limite lungo dei percorsi in cui $x$ e $y$ pesano in modo diverso così da mostrare comportamenti distinti, come segue. $\qed$
-
-	\noindent \textbf{Lungo} $\boldsymbol{y=x}$ ($x$ ed $y$ pesano uguale)
-	\begin{equation}\label{eq:esempio_limite_notevole}
-			\underset{y=x}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{x\rightarrow 0} f_1(x,x) = \lim_{x\rightarrow 0}\frac{x\sin^2x}{x^2+2x^4} = \lim_{x\rightarrow 0}\boxed{\frac{\sin^2x}{x^2}}_{=1}\cdot\frac{x}{1+2x^2}=0
-	\end{equation}
-	
-	\noindent \textbf{Lungo} $\boldsymbol{y=x^2}$ (così $x^2$ è paragonabile a $y^4$)
-	\begin{equation*}
-		\underset{y=x^2}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{y\rightarrow 0}\frac{y^2\sin^2y}{y^4+2y^4} = \lim_{y\rightarrow 0} \frac{\sin^2y}{3y^2} =\frac{1}{3} \neq 0,
-	\end{equation*}
-	quindi il limite di $f_1$ non esiste.\\
-	Dunque
-	\begin{equation*}
-		\nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y) = f_1 + f_2.
-	\end{equation*}
-	(Il limite non esiste dal momento che $f$ è la somma di $f_1$ e $f_2$ ed il limite di $f_1$ non esiste.)
-\end{example}
-
-\paragraph{Nota sui limiti:} I limiti non si fanno a pezzi, è necessario utilizzare l'algebra dei limiti: il limite di prodotti è il pordotto dei limiti quando esistono i limiti dei fattori (come in (\ref{eq:esempio_limite_notevole})). Inoltre, se è presente l'infinito, è possibile trattarlo come se fosse un numero, tranne nelle forme di indecisione ($0\cdot\infty,\, \hdots$).
-
-\begin{example}\footnote{Slide 11 PDF 13.}
-	\paragraph{Testo:}
-	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}\left(\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right)e^{\left(\frac{x^2-y^2}{x^2+y^2}\right)}.
-	\end{equation*}
-	(Partiamo dalla prima funzione,)
-	\begin{equation*}
-		f_1(x,y) = \frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2},\quad \footnotemark
-	\end{equation*}
-	per la quale l'idea è che tenda a 0. \footnotetext{Pensando in coordinate polari, il denominatore va a 0 come $\rho^3$, ma il grado del nominatore è maggiore del grado del denominatore.}
-	
-	\noindent Passando in coordinate polari
-	\begin{equation*}
-		\begin{cases}
-			x = \rho \cos\theta\\
-			y = \rho \sin\theta
-		\end{cases}
-	\end{equation*}
-	è verificato se è possibile maggiorare $f_1$ ed utilizzare il Teorema del confronto come segue:
-	\begin{equation*}
-		\begin{matrix}
-				\left|\frac{\rho\cos\theta\rho^2\sin^2\theta + 2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2(\cos^2\theta+\sin^2\theta)}\right| &=& \left|\frac{\rho^{\cancel 3}\cos\theta\sin^2\theta}{\cancel{\rho^2}} + \frac{ 2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2}\right|\\\\
-				&\overset{\text{disug. triang.}}{\leq}& |\rho \cos\theta\sin^2\theta| + 2 \left| \frac{ \rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}\sin^2(\rho\cos\theta)}{\rho^2}\right|\\\\
-				[\rho\cos\theta\leq|\rho\cos\theta|\leq\rho\rightarrow 0] &\leq& \rho |\cos\theta\sin^2\theta| + 2  \frac{ \rho^{\frac{1}{3}} |\sin\theta|^{\frac{1}{3}}|\rho\cos\theta|^2}{\rho^2}\\\\
-				&=&  \rho |\cos\theta\sin^2\theta| + 2 \rho^{\frac{1}{3}} |\sin\theta|^{\frac{1}{3}}|\rho\cos\theta|^2\\\\
-				&\overset{\footnotemark}{\leq}& \rho + 2\rho^{\frac{1}{3}} &=& g(\rho) \underset{\rho\rightarrow 0^+}{\longrightarrow} 0.
-		\end{matrix}
-	\end{equation*}
-	\footnotetext{Le funzioni trigonometriche sono maggiorabili perché limitate e tramite la maggiorazione è ottenuta la funzione radiale $g$.}
-	
-	\noindent Data
-	\begin{equation*}
-		f_2(x,y) = e^{\frac{x^2-y^2}{x^2+y^2}},
-	\end{equation*}
-	l'esponente $\frac{x^2-y^2}{x^2+y^2}$ non ha limite per $(x,y)\rightarrow(0,0)$. Passando in coordinate polar è ottenuto
-	\begin{equation*}
-		\lim_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \cancel{\rho^2}\sin^2\theta}{\cancel{\rho^2}} = \lim_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
-	\end{equation*}
-	È possibile dimostrare che $e^{\frac{x^2-y^2}{x^2+y^2}}$ è limitato uniformemente da una costante.
-	\begin{equation*}
-		\begin{matrix}
-			\frac{x^2-y^2}{x^2+y^2} &\leq& \left|\frac{x^2-y^2}{x^2+y^2}\right| &=&  \frac{|x^2-y^2|}{x^2+y^2} &\leq& [|a-b| = |a+(-b)| \leq |a| + |-b|]\\
-			&&&\leq& \frac{|x^2|+|-y^2|}{x^2+y^2} &=& \frac{x^2+y^2}{x^2+y^2} &=& 1
-		\end{matrix}
-	\end{equation*}
-	Utilizzando le proprietà dell'esponenziale (in particolare che è una funzione crescente), è ottenuto che
-	\begin{equation*}
-		0 < e^{\frac{x^2-y^2}{x^2+y^2}} \leq e^1,
-	\end{equation*}
-	e dunque
-	\begin{equation*}
-		\left|\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}e^{\frac{x^2-y^2}{x^2+y^2}}\right| \leq e \left|\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right|\underset{(x,y)\rightarrow (0,0)}{\longrightarrow} 0.
-	\end{equation*}
-	Quindi, per il teorema del confronto, il limite di $f$ esiste ed è uguale a 0.
-\end{example}
-
 \subsection{Calcolo differenziale}\footnote{PDF 14.}
 Per una funzione di una variabile $f:I\subseteq\mathbb R\rightarrow\mathbb R$ la derivata in un punto $x_0\in I$ è rappresentata da $f'(x_0)$ e definisce il tasso di variazione di $f$ nell'istante (punto) $x_0$, ovvero dal limite del rapporto incrementale (\ref{eq:limite_rapporto_incrementale}). Da $x_0$ ad $x_0+h$ c'è un solo cammino. Per le funzioni in più variabili è possibile seguire infiniti cammini, quindi è necessario chiarire cos'è una derivata in più variabili.
 \subsubsection{Derivate parziali}
@@ -1973,13 +1972,9 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 			\uline x & \mapsto f(\uline x).
 		\end{aligned}
 	\end{equation*}
-	Se $f$ è derivabile in $A$ allora
+	$f$ è derivabile in $\uline x\in A$ se (esistono finite)
 	\begin{equation*}
-		\exists\frac{\partial f}{\partial x_i}(\uline x)\qquad \forall\uline x\in A,\, i=1,\hdots, n,
-	\end{equation*}
-	dove $\frac{\partial f}{\partial x_i}(\uline x)$ è (se esiste finito)
-	\begin{equation*}
-		\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h}.
+		\exists\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h},\qquad i=1,\hdots, n.
 	\end{equation*}
 \end{definition}
 
