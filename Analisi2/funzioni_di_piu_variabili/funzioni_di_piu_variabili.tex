@@ -3226,7 +3226,9 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	INSIEME MASSIMALE FUNZIONE SLIDE 13-14 PDF 20.
 \end{example}
 
-\paragraph{Cosa serve per al Teorema di Schwarz per valere?} Le ipotesi del Teorema richiedono l'esistenza e la continuità delle funzioni in $A$ (ovvero che $f\in C^2(A)$). La sola esistenza delle derivate seconde non assicura che si possa invertire l'ordine dei derivazione. Ciò è fatto vedere nel seguente esempio.
+\paragraph{Cosa serve al Teorema di Schwarz per essere valido?} Le ipotesi del Teorema richiedono l'esistenza delle derivate parziali seconde di $f$ e la continuità delle derivate parziali miste di $f$ nel punto $x_0$. La sola esistenza delle derivate seconde non assicura che si possa invertire l'ordine dei derivazione. Ciò è fatto vedere nel seguente esempio.
+
+\paragraph{Nota sul $f$:} Se $f\in C^2(A)$ allora è differenziabile, continua (così anche le sue derivate parziali) e le derivate parziali seconde miste sono uguali.
 
 \begin{example}
 	Esistenza delle derivate non implica continuità e quindi no TH di Schwarz, SLIDE 16-19 PDF 21.
@@ -3279,7 +3281,7 @@ In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ 
 \begin{property}[Proprietà indotte da $f$ a $F$, non ufficiali]\label{eq:proprieta_indotte_f_F}
 	 Se $f\in C^1(A)$ allora $F\in C^1([0,1])$ (quindi, se $f$ è differenziabile allora lo è anche $F$) ed è possibile calcolare, tramite la regola della catena
 	\begin{equation}\label{eq:regola_catena_funzione_composta_curva}
-		F'(t) = <\underbrace{\triangledown f(\uline x+t\uline h)}_{\underset{\uline x(t)=\uline x+t\uline h}{\text{calc. lungo curva}}},\underbrace{\uline h}_{\gamma'(t)}>=\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i
+		F'(t) = <\underbrace{\triangledown f(\uline x+t\uline h)}_{\underset{\uline x(t)=\uline x+t\uline h}{\text{calc. lungo curva}}},\underbrace{\uline h}_{\gamma'(t)}>=\sum_{i=1}^{n}\frac{\partial f}{\partial x_i} (\uline x + t \uline h)\, h_i.
 	\end{equation}
 	
 	Supposto $f\in C^2(A)$ allora $F\in C^2([0,1])$, $F'(t)$ è ulteriormente derivabile (utilizzando nuovamente la regola della catena) come
@@ -3464,7 +3466,7 @@ Tale relazione permette di scrivere
 La definizione di massimo e minimo relatico per una funzione sono uguali alle definizioni di Analisi 1, quindi sono definizioni di tipo analitico: è osservato se valgono le definizioni di massimo e minimo nell'intorno del punto in questione.
 
 \begin{definition}[Minimo e massimo locale]\label{def:minimo_massimo_locale_an2}\footnote{Slide 3 PDF 22.}
-	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$ (nel caso generale, al posto di $A$ c'è $D=A\cup\partial A$, dove $A=\mathring D$). Si dice che $\uline x_0\in A$ ($\slash\in D$) è un minimo relativo (locale) per $f$ se, per $r>0$
+	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$ (nel caso generale, al posto di $A$ c'è $D=A\cup\partial A$, dove $A=\mathring D$). Si dice che $\uline x_0\in A$ ($\backslash\in D$) è un minimo relativo (locale) per $f$ se, per $r>0$
 	\begin{equation*}
 		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,
 	\end{equation*}
@@ -3478,7 +3480,7 @@ La definizione di massimo e minimo relatico per una funzione sono uguali alle de
 
 \paragraph{Nomenclatura:} Un punto si dice di minimo o massimo forte se le disuguaglianze valgono in modo stretto, se al posto di $\leq$ c'è $<$.
 
-\begin{definition}[Minimo e massimo assoluto (globale)]\footnote{Slide 3 PDF 22.}
+\begin{definition}[Minimo e massimo assoluto ($\backslash$ globale)]\footnote{Slide 3 PDF 22.}
 	Sia $f:A\subset\mathbb{R}^n\rightarrow\mathbb{R}$. Si dice che $\uline x_0\in A$ ($\backslash\in D$) è un minimo assoluto (globale)
 	\begin{equation*}
 		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in A,
@@ -3517,7 +3519,7 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 \end{example}
 
 \begin{theorem}[di Fermat]\label{th:fermat_an2}\footnote{Slide 5 PDF 22.}
-	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ ($D$ nel caso generale), $A$ aperto e sia $\uline x_0\in A$ ($\slash \uline x_0\in \mathring D$) punto di minimo (massimo) relativo (locale).\\
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ ($D$ nel caso generale), $A$ aperto e sia $\uline x_0\in A$ ($\backslash \uline x_0\in \mathring D$) punto di minimo ($\backslash$ massimo) relativo ($\backslash$ locale).\\
 	\textbf{(Ipotesi)} Se $f$ è differenziabile in $x_0$ \textbf{\ul{allora}} \textbf{(tesi)} $\triangledown f(\uline x_0)=0$.
 \end{theorem}
 
@@ -3570,17 +3572,16 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 \paragraph{Note sulla dimostrazione:} La dimostrazione è quella di Analisi 1, ovvero è considerata la funzione su un opportuna curva passante per il punto incriminato lungo una direzione con l'obiettivo di ridurre il problema alla ricerca del massimo (o minimo) di una funzione di una variabile. \\
 È possibile determinare la retta (curva) passante per il punto seguendo una direzione (in $\mathbb{R}^n$) per poter restringere la funzione alla retta passante per il punto. Inoltre, se $f$ è ristretta alla curva ed $x$ è preso localmente vicino al punto incriminato (nella dimostrazione $\uline x_0$) allora è possibile la costruzione di $F$ lungo la curva cosicché $\uline x_0$ diventi il punto di minimo o massimo. $\qed$
 
-\begin{remark}[Non ufficiale]\footnote{Slide 6 PDF 22.}
-	\textbf{Il Teorema \ref{th:fermat_an2} di Fermat è la condizione necessaria affinché un punto interno al dominio} $\boldsymbol{\uline x_0\in\mathring D}$ ($\uline x_0\in A$) \textbf{sia un estremo relativo della funzione} $\boldsymbol{f\in C^1(\mathring D)}$ ($f\in C^1(A)$). Quindi
-	\begin{equation*}
-		\begin{matrix}
-			\uline x_0 \text{ estremo locale } &\Rightarrow& \triangledown f(\uline x_0)=0\\
-			&\cancel{\Leftarrow}&		
-		\end{matrix}
-	\end{equation*}
-\end{remark}
+\paragraph{Osservazione sul Teorema di Fermat:}\footnote{Slide 6 PDF 22.}
+\textbf{Il Teorema \ref{th:fermat_an2} di Fermat è la condizione necessaria affinché un punto interno al dominio} $\boldsymbol{\uline x_0\in\mathring D}$ ($\uline x_0\in A$) \textbf{sia un estremo relativo della funzione} $\boldsymbol{f\in C^1(\mathring D)}$ ($f\in C^1(A)$). Quindi
+\begin{equation*}
+	\begin{matrix}
+		\uline x_0 \text{ estremo locale } &\Rightarrow& \triangledown f(\uline x_0)=0\\
+		&\cancel{\Leftarrow}&		
+	\end{matrix}\qed
+\end{equation*}
 
-\paragraph{A cosa serve la differenziabilità nel Teorema di Fermat?}  Per la regola della catena e le proprietà che ne derivano. Se per una funzione di una variabile è richiesto che $f$ sia derivabile affinché sia continua, in più variabili è richiesta la differenziabilità.
+\paragraph{A cosa serve la differenziabilità nel Teorema di Fermat?}  Per la regola della catena e le proprietà che ne derivano. Se per una funzione di una variabile è richiesto che $f$ sia derivabile affinché sia continua, in più variabili è richiesta la differenziabilità. $\quad\qed$
 
 \begin{definition}[Punto stazionario (o critico)]\footnote{Slide 8 PDF 22.}
 	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $f$ differenziabile in $A$ ($f\in C^1(A)$). I punti $\uline x\in A$ per cui $\triangledown f(\uline x)=0$ si dicono punti critici (o stazionari) di $f$ in $A$.
@@ -3588,13 +3589,13 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 
 \paragraph{Cosa significa?} Se $\uline x_0$ è un punto di minimo o massimo in un dominio di una funzione differenziabile allora $\uline x_0$ è un punto critico. Non è vero il viceversa. Pertanto, essere punto stazionario è una condizione necessaria ma non sufficiente affinché il punto sia di minimo o di massimo relativo per $f$. $\qed$
 
-I punti che annullano il gradiente ma che non sono di minimo o di massimo si chiamano di sella (o di colle). Ciò significa che nell'intorno del punto il comportamento (il segno) della funzione $f(\uline x) - f(\uline x_0)$ cambia a seconda di come varia $\uline x$. 
-
 \begin{definition}[Punto di sella (o di colle)]\footnote{Slide 8 PDF 22.}
 	Un punto critico $x_0$ di $f$ su $A$ che non è di minimo o di massimo si dice di colle o di sella.
 \end{definition}
 
-\paragraph{Nota:} Il segno di $f(\uline x) - f(\uline x_0)$ determina se $\uline x_0$ è di minimo o di massimo relativo, ovvero data Definizione \ref{def:minimo_massimo_locale_an2} di minimo e massimo relativo vale la seguente Osservazione.
+\paragraph{Nota sui punti di sella:} I punti che annullano il gradiente ma che non sono di minimo o di massimo si chiamano di sella (o di colle). Ciò significa che nell'intorno del punto il comportamento (il segno) della funzione $f(\uline x) - f(\uline x_0)$ cambia a seconda di come varia $\uline x$. 
+
+\paragraph{Nota:} Il segno di $f(\uline x) - f(\uline x_0)$ determina se $\uline x_0$ è di minimo o di massimo relativo, ovvero: data Definizione \ref{def:minimo_massimo_locale_an2} di minimo e di massimo relativo, vale la seguente Osservazione.
 
 \begin{remark}[Non ufficiale]
 	Supposto $\uline x_0$ punto di minimo relativo per $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, allora
@@ -3624,7 +3625,7 @@ I punti che annullano il gradiente ma che non sono di minimo o di massimo si chi
 Per studiare i punti critici di una funzione sono studiati gli autovalori dell'Hessiana.
 
 \begin{definition}[Test dell'Hessiana]\label{def:test_hessiana}\footnote{Slide 12 PDF 22.}
-	\textbf{(Ipotesi)} Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto con $f\in C^2(A)$ (quindi $Hf(x,y)$ è simmetrica) e sia $(x_0,y_0)\in A$ punto critico (stazionario) per $f$ e tc $\boldsymbol{\uline{\det(Hf(x_0,y_0))\neq 0}}$, dove
+	\textbf{(Ipotesi)} Sia $f:A\subset \mathbb{R}^2\rightarrow\mathbb{R}$, $A$ aperto. Se $f\in C^2(A)$ (quindi $Hf(x,y)$ è simmetrica) e $(x_0,y_0)\in A$ punto critico (stazionario) per $f$ tale che $\boldsymbol{\uline{\det(Hf(x_0,y_0))\neq 0}}$, dove
 	\begin{equation*}
 		\begin{matrix}
 			\det(Hf(x_0,y_0)) &=&
