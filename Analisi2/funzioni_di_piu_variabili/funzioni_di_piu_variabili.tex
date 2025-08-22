@@ -2512,7 +2512,15 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\begin{equation*}
 		\lim_{(x,y)\rightarrow(x_0,y_0)} \frac{f(x,y)-f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}=0.
 	\end{equation*}
-	\item (Non ufficiale) È l'approssimazione del piano tangente
+	\item (Non ufficiale) È l'approssimazione del piano tangente.
+	\item (Non ufficiale) In altre parole: $f$ è differenziabile in $\uline x_0$ se e solo se vale la relazione
+	\begin{equation*}
+		f(\uline x_0 + \uline h) = f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)h - \frac{\partial f}{\partial y}(x_0,y_0)k + o(\sqrt{h^2 + k^2}),
+		\end{equation*}
+		la quale, con $h = x-x_0$ e $k=y-y_0$, può essere riscritta come
+		\begin{equation*}
+			f(x,y)= f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0) + o(\sqrt{(x-x_0)^2 + (y - y_0)^2}).
+		\end{equation*}
 \end{enumerate}
 
 \begin{definition}[Differenziale/funzionale, non ufficiale]\footnote{Slide 2 PDF 16.}
@@ -2554,7 +2562,7 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 \paragraph{Nota sulla Definizione \ref{def:differenziale_funzionale}:} Nel nostro caso $\uline l=\triangledown f(\uline x)$.
 
 \subsubsubsection{Differenziabilità e piano tangente}
-Tornando alla Definizione di differenziabilità, se consideriamo $\uline h\rightarrow \uline0$, dunque $||\uline h||\rightarrow 0$ e quindi
+Tornando alla Definizione di differenziabilità, se consideriamo $\uline h\rightarrow \uline0$, dunque $||\uline h||\rightarrow 0$, quindi
 \begin{equation*}
 	f(\uline x+\uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h>\underset{\uline h\rightarrow\uline 0}{\longrightarrow} 0,
 \end{equation*}
@@ -2562,17 +2570,20 @@ ovvero
 \begin{equation}\label{eq:o_piccolo_differenziabilita}
 	f(\uline x+\uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h> = o(||\uline h||),\quad \text{per}\quad \uline h\rightarrow\uline 0
 \end{equation}
-e dunque (a partire (\ref{eq:limite_differenziabilita}) è ottenuto)
+è ottenuto (a partire (\ref{eq:limite_differenziabilita}))
 \begin{equation}\label{eq:approssimazione_differenziabilita}
 	f(\uline x+\uline h) \overset{\footnotemark}{=} f(\uline x) + <\triangledown f(\uline x), \uline h> + o(||\uline h||)\quad\text{per}\quad\uline h\rightarrow\uline 0.
 \end{equation}
 \footnotetext{Data (\ref{eq:o_piccolo_differenziabilita}), è spostato a destra dell'uguale $- f(\uline x) - <\triangledown f(\uline x), \uline h>$.}
 
-\paragraph{Significato geometrico differenziabilità:} Se $\uline x+\uline h$ è pensato come incremento di $\uline x$, è possibile affermare che la differenziabilità di una funzione in un punto ha un significato geometrico, ovvero: la differenziabilità in un punto è legata all'esistenza del piano tangente al grafico della funzione in tale punto. Questo è dovuto al fatto che il piano tangente è un'approssimazione lineare della funzione. Inoltre, $<\triangledown f(\uline x), \uline h>$ in (\ref{eq:limite_differenziabilita}) è una \uline{funzione \textbf{lineare}} del tipo $df(\uline x)(\uline h) = L(\uline h) = <\triangledown f(\uline x), \uline h>$. Pertanto, (\ref{eq:approssimazione_differenziabilita}) risulta essere un'approssimazione lineare opportuna dell'incremento della funzione $f$ ed è per questo che per trattare il piano tangente di $f$ in un punto è necessario richiedere che nel punto valga la differenziabilità di $f$ in tale punto.\\
-Quindi, dato quanto scritto per le rette $T1$ e $T2$ (vedere Figura \ref{fig:grafico_f_R3_osservazione}) nel piano ottenute considerando le sezioni trasversali. $\qed$
-
 \paragraph{Derivabilità $\neq$ continuità:} Come sarà visto in Sezione \ref{sssec:differenziabilita_continuita}, la derivabilità non implica (come per le funzioni di una variabile) la continuità e l'esistenza del piano tangente. Per una funzione di una variabile, la derivabilità implica l'esistenza della retta tangente.$\qed$
-\vspace{2px}
+
+\paragraph{Significato geometrico differenziabilità: Piano tangente} Se $\uline x+\uline h$ è pensato come incremento di $\uline x$, è possibile affermare che la differenziabilità di una funzione in un punto ha un significato geometrico, perché legata all'esistenza del piano tangente al grafico della funzione in tale punto: \textbf{geometricamente, una funzione è differenziabile in un punto se esiste il piano tangente (\ref{eq:piano_tangente_grafico_due_variabili}) passante per il punto in un intorno del quale è possibile approssimarla linearmente}. Questo è dovuto al fatto che il piano tangente è un'approssimazione lineare della funzione. Inoltre, $<\triangledown f(\uline x), \uline h>$ in (\ref{eq:limite_differenziabilita}) è una \uline{funzione \textbf{lineare}} del tipo
+\begin{equation*}
+	df(\uline x)(\uline h) = L(\uline h) = <\triangledown f(\uline x), \uline h>.
+\end{equation*}
+Pertanto, (\ref{eq:approssimazione_differenziabilita}) risulta essere un'approssimazione lineare opportuna dell'incremento della funzione $f$ ed è per questo che per trattare il piano tangente di $f$ in un punto è necessario richiedere che nel punto valga la differenziabilità di $f$ in tale punto.\\
+Quindi, dato quanto scritto per le rette $T1$ e $T2$ (vedere Figura \ref{fig:grafico_f_R3_osservazione}) nel piano ottenute considerando le sezioni trasversali. $\qed$
 
 Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ differenziabile in $\uline x_0\in A$, posto $\uline x=\uline x_0$ e $\uline h=\uline x -\uline x_0$ allora
 \begin{equation}\label{eq:approssimazione_f}
@@ -2760,14 +2771,18 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto. \textbf{(Ipotesi)} Sia $f$ derivabile in $A$ (ovvero $\exists\triangledown f(\uline x),\, \forall\uline x\in A$), se le derivate parziali $f_{x_1}(\uline x),\hdots, f_{x_n}(\uline x)$, sono continue in $\uline x\in A$ allora \textbf{(tesi)} $f$ è differenziabile in $\uline x$.
 \end{theorem}
 \begin{proof}[Dimostrazione (caso $n=2$)]
-	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto. Dati $\uline h = (h,k)\in\mathbb{R}^2,\, \uline x=(x,y)\in A$, \footnote{È necessario verificare che il limite per $\uline h\rightarrow\uline 0$ del rapporto incrementale di $f$ esiste ed è 0 e per farlo è scritto in modo opportuno parte del rapporto.}
+	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto. Dati $\uline h = (h,k)\in\mathbb{R}^2,\, \uline x=(x,y)\in A$, è necessario (stabilire se $f$ è differenziabile nel punto $(x,y)$, ovvero è necessario) verificare il seguente limite %\footnote{È necessario verificare che il limite per $\uline h\rightarrow\uline 0$ del rapporto incrementale di $f$ esiste ed è 0 e per farlo è scritto in modo opportuno parte del rapporto.}
+	\begin{equation}\label{eq:rapporto_differenziabilita_dim_differenziale}
+		\lim_{(h,k)\rightarrow(0,0)} \frac{f(x+h,y+k)-f(x,y)\overbrace{-f_x(x,y)h-f(x,y)k}^{-<\triangledown f(\uline x),\uline h>}}{\sqrt{h^2+y^2}} = 0.
+	\end{equation}
+	È possibile riscrivere
 	\begin{equation}\label{eq:differenza_dim_th_differenziale}
 		\begin{matrix}
-			f(x+h,y+k) - f(x,y) &\underset{+f(x,y+k)-f(x,y+k)}{\overset{\text{aggiungo}}{=}}& f(\uline x + \uline h) + f(x,y+k) - f(x,y+k) - f(x,y) &=&\\
-			&=& \underbrace{\underbrace{[f(\uline x + \uline h) - f(x,y+k)]}_{\footnotemark} + \underbrace{[f(x,y+k) - f(x,y)]}_{\footnotemark}}_{\text{differenza di $f$ calcolata negli estremi degli intervalli}} &=&
+			f(x+h,y+k) - f(x,y) &\underset{+f(x,y+k)-f(x,y+k)}{\overset{\text{aggiungo}}{=}}& f(\uline x + \uline h) + f(x,y+k) - f(x,y+k) - f(x,y) &=&\\\\
+			&=& \underbrace{\underbrace{[f(\uline x + \uline h) - f(x,y+k)]}_{\footnotemark} + \underbrace{[f(x,y+k) - f(x,y)]}_{\footnotemark}}_{\text{differenza di $f$ calcolata negli estremi degli intervalli}}
 		\end{matrix}
 	\end{equation}
-	applicando il Teorema \ref{th:lagrange_analisi1} di Lagrange ad $f(x,y)$ (supponendo $h,k>0$) negli intervalli $(x,x+h)$\footnotemark e $(y,y+k)$\footnotemark, allora $\exists x_1\in(x,x+h)$ e $\exists y_1\in(y,y+k)$ tale che
+	e applicando il Teorema \ref{th:lagrange_analisi1} di Lagrange ad $f$ (supponendo $h,k>0$) negli intervalli $(x,x+h)$\footnotemark e $(y,y+k)$\footnotemark, $\exists x_1\in(x,x+h)$ e $\exists y_1\in(y,y+k)$ tali che
 	\begin{equation}\label{eq:applicazione_lagrange_dim_differenziale}
 		\begin{matrix}
 			[(\ref{eq:differenza_dim_th_differenziale})] &=& \left[\frac{\partial f}{\partial x}(x_1, y + k) (\cancel{x} + h - \cancel{x})\right] + \left[\frac{\partial f}{\partial y}(x,y_1)(\cancel{y} + k -\cancel{y})\right]&=&\\\\
@@ -2775,11 +2790,8 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 			&=& f(x+h,y+k)-f(x,y) && \text{con }x_1\underset{h\rightarrow 0}{\longrightarrow}x,\; y_1\underset{k\rightarrow 0}{\longrightarrow}y.
 		\end{matrix}
 	\end{equation}
-	È necessario valutare il rapporto tra due funzioni quando $(h,k)\rightarrow(0,0)$ per concludere la differenziabilità. Dunque, al posto dei due addendi della funzione al numeratore del limite della differenziabilità è sostituito (a) in (\ref{eq:applicazione_lagrange_dim_differenziale}). Pertanto, per stabilire la differenziabilità è necessario valutare il limite del seguente rapporto per $(h,k)\rightarrow(0,0)$ sia 0
-	\begin{equation}\label{eq:rapporto_differenziabilita_dim_differenziale}
-		\frac{f(x+h,y+k)-f(x,y)\overbrace{-f_x(x,y)h-f(x,y)k}^{-<\triangledown f(\uline x),\uline h>}}{\sqrt{h^2+y^2}}.
-	\end{equation}
-	Consideriamo dunque quanto segue per applicare il Teorema del Confronto
+	Per verificare la differenziabilità è sostituito (a) in (\ref{eq:applicazione_lagrange_dim_differenziale}) al posto dei due addendi della funzione al numeratore del limite della differenziabilità.
+	Consideriamo dunque quanto segue (al fine di applicare il Teorema del Confronto)
 	\begin{equation*}%\label{eq:maggiorazioni_th_confronto_dim_differenziale}
 		\begin{matrix}
 			\left|\frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y)k}{\sqrt{h^2+k^2}}\right| &=& [\text{sostituzione di (a) in } (\ref{eq:applicazione_lagrange_dim_differenziale})] &=&\\\\
@@ -2790,7 +2802,7 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 		\end{matrix}
 	\end{equation*}
 	(Per ipotesi $f_x(x,y)$ e $f_y(x,y)$ sono continue in $\uline x=(x,y)\in A$. È necessario far vedere che (a)$\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}0$.)\\
-	Se $(h,k)\rightarrow(0,0)$ allora $x_1\rightarrow x,\, y_1\rightarrow y$, con $x_1\in(x,x+h)$ e $y_1\in(y, y+k)$, pertanto
+	Se $(h,k)\rightarrow(0,0)$ allora $x_1\rightarrow x,\, y_1\rightarrow y$, dato che $x_1\in(x,x+h)$ e $y_1\in(y, y+k)$ e pertanto
 	\begin{equation*}
 		\begin{matrix}
 			\lim_{(h,k)\rightarrow(0,0)}f_x(x_1, y+k) &=& f_x(x,y)\\\\
@@ -2800,11 +2812,11 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	quindi
 	\begin{equation*}
 		\begin{matrix}
-			|f_x(x_1,y+k)-f_x(x,y)| &\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}& 0,\\
+			|f_x(x_1,y+k)-f_x(x,y)| &\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}& 0,\\\\
 			|f_y(x,y_1) - f_y(x,y)| &\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}& 0.
 		\end{matrix}
 	\end{equation*}
-	Pertanto, utilizzando il teorema del confronto, è stato dimostrato che (\ref{eq:rapporto_differenziabilita_dim_differenziale})$\underset{(h,k)\rightarrow(0,0)}{\longrightarrow}0$, quindi la differenziabilità di $f$.
+	Pertanto, utilizzando il teorema del confronto, è stato dimostrato (\ref{eq:rapporto_differenziabilita_dim_differenziale}), quindi la differenziabilità di $f$.
 \end{proof}
 
 \addtocounter{footnote}{-3}
