@@ -3643,11 +3643,9 @@ Per studiare i punti critici di una funzione sono studiati gli autovalori dell'H
 	\end{enumerate}
 \end{definition}
 
-\paragraph{IMPORTANTE:} \textbf{Il Test dell'Hessiana può essere utilizzato SE E SOLO SE} $\boldsymbol{\det(Hf(x_0,y_0))\neq 0}$. Se $\det (Hf(x_0,y_0)) = 0$ è necessario utilizzare un altro metodo per stabilire la natura del punto critico e ciò è fatto tramite il calcolo della variazione della funzione nei punti vicino al punto critico.
+\paragraph{IMPORTANTE:} \textbf{Il Test dell'Hessiana può essere utilizzato SE E SOLO SE} $\boldsymbol{\det(Hf(x_0,y_0))\neq 0}$. Se $\det (Hf(x_0,y_0)) = 0$ non è possibile utilizzare il Test dell'Hessiana, quindi è necessario utilizzare un altro metodo per stabilire la natura del punto critico. Per questo è studiata la variazione della funzione nei punti vicino al punto critico, ovvero: è valutato il segno di $f(\uline x) - f(\uline x_0)$ in un intorno qualsiasi di $(x_0,y_0)$ (come negli Esercizi \ref{ex:riferimento_test_hessiana}).
 
 \paragraph{Note su 1. e 2.:} Quando è stata introdotta la formula di Taylor è stato mostrato che il polinomio è omogeneo in $h$ e $k$ i cui coefficienti sono la derivata seconda. Pertanto, quando si ha una matrice simmetrica (come $Hf(\uline x)$ quando $f\in C^2(A)$) è possibile associare a questa una forma quadratica. Tale forma quadratica ha un segno e quindi fornisce informazioni riguardo massimo e minimo relativo.
-
-\paragraph{Se $\boldsymbol{\det(Hf(x_0,y_0))=0}$?} Non è possibile applicare il Test dell'Hessiana ma è necessario valutare il segno di $f(\uline x) - f(\uline x_0)$ in un intorno qualsiasi di $(x_0,y_0)$ (come negli Esercizi \ref{ex:riferimento_test_hessiana}).
 
 \paragraph{Note su $\boldsymbol{Hf(x_0,y_0)}$:} Dato che $Hf(x_0,y_0)$ è simmetrica allora i suoi autovalori sono soluzione dell'equazione (di secondo grado) agli autovalori \footnote{L'equazione agli autovalori è $\lambda^2 + \lambda s + p = 0$.}
 \begin{equation*}
@@ -3788,13 +3786,13 @@ Il precedente Teorema può essere espresso come segue.
 
 \subsubsection{Ottimizzazione vincolata}
 
+Fino ad adesso sono stati considerati punti di massimo e di minimo liberi, ovvero sono stati ricercati punti all'interno di un dominio. I punti di massimo e minimo vincolati sono dei punti che verificano ulteriori condizioni espresse tramite equazioni e disequazioni, oltre a quelle di appartenere ad un dominio. Dato che i vincoli devono essere minori del numero di variabili, se sono considerate funzioni di due variabili allora sarà espresso un solo vincolo.
+
 \begin{example}
-	SLIDE 22-23 PDF 23 ESEMPIO MASSIMO MINIMO VINCOLATO.
+	SLIDE 22-23 PDF 23 ESEMPI MASSIMO MINIMO VINCOLATO.
 \end{example}
 
-Piace appplicare il Metodo dei moltiplicatori di Lagrange (Teorema \ref{th:moltiplicatori_lagrange}) perché permette di studiare il comportamento della funzione fornendo i candidati che verificano un certa equazione. Potrebbe capitare che i punti della funzione da studiare debbano verificare un vincolo e che tale vincolo sia esprimibile attraverso coordinate parametriche, potendo così rincondurre il problema della ricerca del massimo/minimo a quello di una funzione di una variabile: se è possibile parametrizzare il vincolo, calcolando la funzione sul vincolo, la funzione diventa ad una variabile e risulta possibile utilizzare i metodi appresi ad Analisi 1 per stabilire la natura dei punti critici, invece di applicare il metodo dei moltiplicatori di Lagrange.
-
-Fino ad adesso sono stati considerati punti di massimo e di minimo liberi, ovvero sono stati ricercati punti all'interno di un dominio. I punti di massimo e minimo vincolati sono dei punti che verificano ulteriori condizioni, oltre a quelle di appartenere ad un dominio, espresse tramite equazioni e disequazioni. Dato che i vincoli devono essere minori del numero di variabili, se sono considerate funzioni di due variabili allora sarà espresso un solo vincolo.
+Potrebbe capitare che i punti della funzione da studiare debbano verificare un vincolo e che tale vincolo sia esprimibile attraverso coordinate parametriche, potendo così rincondurre il problema della ricerca del massimo/minimo a quello di una funzione di una variabile: se è possibile parametrizzare il vincolo, calcolando la funzione sul vincolo, la funzione diventa ad una variabile e risulta possibile utilizzare i metodi appresi ad Analisi 1 per stabilire la natura dei punti critici, invece di applicare il metodo dei moltiplicatori di Lagrange.
 
 \begin{definition}[Vincolo]\footnote{Slide 24 PDF 23.}
 	Sia $g:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $g\in C^1(A)$, un vincolo è definito come
@@ -3803,20 +3801,15 @@ Fino ad adesso sono stati considerati punti di massimo e di minimo liberi, ovver
 	\end{equation}
 \end{definition}
 
+\paragraph{Osservazione su (\ref{eq:vincolo_funzione}):} $g(x,y)=k$ è un insime di livello $k$ della funzione $g$. Tale insieme è un sottoinsime di $\mathbb{R}^2$ (nel nostro caso di $A$ perché $f$ è considerata in un dominio). Pertanto, (\ref{eq:vincolo_funzione}) è un insieme di livello.
+
 \paragraph{Cosa significa deteminare gli estremi vincolati?} Determinare gli estremi (massimo/minimo) vincolati di $f$ significa ricercare i punto $(x,y)\in A$ tali che questi verifichino la condizione aggiuntiva (espressa dal vincolo) della forma $g(x,y)=k$ (assimilabile all'insieme di livello), dove $g\in C^1(A)$.
 
 \paragraph{Quanti vincoli può avere una funzione?} In Analisi 2 possono essere considerate funzioni in $n$ variabili con $m$ a condizione che $m<n$. Quindi, nel nostro caso, con $n=2$, i punti del piano per i quali $f$ è ben definita, verificano un solo vincolo.
 
-$g(x,y)=k$ in (\ref{eq:vincolo_funzione}) è un insime di livello $k$ della funzione $g$. Tale insieme è un sottoinsime di $\mathbb{R}^2$ (nel nostro caso di $A$ perché $f$ è considerata in un dominio). Peranto, (\ref{eq:vincolo_funzione}) è un insieme di livello.
-
 \paragraph{Cosa voglio fare?} Voglio stabilire cosa accade alla funzione ristretta a $V$.
 
 \paragraph{Notazione:} Quando è imposto un vincolo $V$ sulla funzione $f$ allora la funzione è denotata come $f_{|_V}$.
-
-\begin{example}
-	SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$.\\
-	SLIDE 25-27 PDF 23 DETERMINARE ESTREMI VINCOLATI $f$.
-\end{example}
 
 È possibile cercare di ridurre i problemi vincolati se il vincolo è espresso come sostegno di una curva
 \begin{equation*}
@@ -3834,11 +3827,23 @@ ovvero se il vincolo genera una traiettoria che risulta essere il sostegno di un
 \begin{equation*}
 	f_{|_{V}} (x,y)= f(\gamma(t)),
 \end{equation*}
-riducendo così il problema ad una variabile. (Un esempio di parametrizzazione è l'esempio a SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$)
+riducendo così il problema ad una variabile (un esempio di parametrizzazione è l'Esempio \ref{ex:parametrizzazione_funzione_vincolo}).
+
+\begin{example}[Parametrizzazione di una funzione]\label{ex:parametrizzazione_funzione_vincolo}
+	SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$.\\
+\end{example}
 
 Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio: $y=y(x),\, f_{|_V}(x,y) = f(x, y(x))$, la quale è una funzione di una variabile.
 
+\begin{example}[Esplicitazione di una variabile in funzione di un'altra]\label{ex:esplicitazione_variabile_funzione_altra}
+	SLIDE 25-27 PDF 23 DETERMINARE ESTREMI VINCOLATI $f$.
+\end{example}
+
+\subsubsubsection{Metodo dei moltiplicatori di Lagrange}
+
 Quando i precedenti metodi non funzionano è applicato il Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange per determinare minimo e massimo assoluto su $A$.
+
+Piace applicare il Metodo dei moltiplicatori di Lagrange (Teorema \ref{th:moltiplicatori_lagrange}) perché permette di studiare il comportamento della funzione fornendo i candidati che verificano un certa equazione.
 
 Se è possibile semplificare il problema della ricerca del massimo e minimo allora si semplifica, altrimenti è necessario utilizzare gli altri teoremi, come Il Teorema \ref{th:weierstrass_2} di Weierstrass in quanto il vincolo può rappresentare nel piano un insieme limitato e chiuso (un compatto).
 
