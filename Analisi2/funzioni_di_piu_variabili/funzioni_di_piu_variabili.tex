@@ -3119,9 +3119,9 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 		\end{matrix}
 	\end{equation*}
 	
-	\footnote{$F$ e $G$ sono funzioni di una variabile. Applicando il Teorema di Lagrange saranno considerate le derivate parziali di $f$.} Considerato $F(x)$ è applicato il Teorema \ref{th:lagrange_analisi1} di Lagrange nell'intervallo di estremi $x_0$ e $x$ \footnote{In Figura \ref{fig:dimostrazione_schwarz}, è considerato $[x_0,x]$ per $f$ e $(x_0, x)$ per $f'$.} allora $\exists x_1\in(x_0,x)$ tale che
+	\footnote{$F$ e $G$ sono funzioni di una variabile. Applicando il Teorema di Lagrange saranno considerate le derivate parziali di $f$.} Considerata $F(x)$ è applicato il Teorema \ref{th:lagrange_analisi1} di Lagrange nell'intervallo $(x_0,x)^{\footnotemark}$, \footnotetext{In Figura \ref{fig:dimostrazione_schwarz}, è considerato $[x_0,x]$ per $f$ e $(x_0, x)$ per $f'$.} allora $\exists x_1\in(x_0,x)$ tale che
 	\begin{equation*}
-		F(x) - F(x_0) = F'(x_1) (x - x_1) \overset{\footnotemark}{=} \underbrace{\left[\frac{\partial f}{\partial x}(x_1, y)- \frac{\partial f}{\partial x}(x_1, y_0)\right]}_{\footnotemark}(x-x_0) \overset{\footnotemark}{=} (\star)
+		F(x) - F(x_0) = F'(x_1) (x - x_0) \overset{\footnotemark}{=} \underbrace{\left[\frac{\partial f}{\partial x}(x_1, y)- \frac{\partial f}{\partial x}(x_1, y_0)\right]}_{\footnotemark}(x-x_0) \overset{\footnotemark}{=} (\star)
 	\end{equation*}
 	\addtocounter{footnote}{-2}
 	\footnotetext{È scritta $F'(x)$ in modo esplicito. Dato che $F$ è una funzione della sola variabile $x$ allora $F'$ è la derivata parziale di $f$ rispetto ad $x$ perché $y$ e $y_0$ sono fissati.}
@@ -3132,12 +3132,12 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\stepcounter{footnote}
 	\footnotetext{Dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial x}$ è derivabile ulteriormente rispetto $y$ e quindi è applicabile nuovamente il Teorema di Lagrange.}
 	
-	applicando il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ nell'intervallo $(y_0,y)$, quindi $\exists y_1\in(y_0,y)$ tale che
+	e applicando nuovamente il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ nell'intervallo $(y_0,y)$ allora $\exists y_1\in(y_0,y)$ tale che
 	\begin{equation*}
 		(\star) = \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)\underbrace{(y-y_0)(x-x_0)}_{\neq 0}.
 	\end{equation*}
 	
-	Ripetiamo analogo ragionamento per $G(y)$, cioè è applicato il Teorema di Lagrange nell'intervallo di estremi $y$ e $y_0$, quindi $\exists y_2\in\uline{(y_0,y)}_{\footnotemark}$ : \footnotetext{$(y_0,y)$ perché riportato il caso di Figura \ref{fig:dimostrazione_schwarz}, altrimenti $(y,y_0)$.}
+	Ripetiamo analogo ragionamento per $G(y)$: è applicato il Teorema di Lagrange nell'intervallo $(y, y_0)$, quindi $\exists y_2\in\uline{(y_0,y)}_{\footnotemark}$ tale che \footnotetext{$(y_0,y)$ perché riportato il caso di Figura \ref{fig:dimostrazione_schwarz}, altrimenti $(y,y_0)$.}
 	\begin{equation*}
 		G(y) - G(y_0) = G'(y_2) (y-y_0) = \underbrace{\left[\frac{\partial f}{\partial y}(x, y_2)- \frac{\partial f}{\partial y}(x_0, y_2)\right]}_{\footnotemark}(y-y_0) \overset{\footnotemark}{=} (\star)
 	\end{equation*}
