@@ -3132,7 +3132,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\stepcounter{footnote}
 	\footnotetext{Dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial x}$ è derivabile ulteriormente rispetto $y$ e quindi è applicabile nuovamente il Teorema di Lagrange.}
 	
-	e applicando nuovamente il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ nell'intervallo $(y_0,y)$ allora $\exists y_1\in(y_0,y)$ tale che
+	e applicando nuovamente il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ \footnote{$F'(x_1)$ e' considerata allo stesso modo di $F(x)-F(x_0)$ dato che $F'(x_1)=\frac{\partial f}{\partial x}(x_1,y) - \frac{\partial f}{\partial x}(x_1,y_0)$.} nell'intervallo $(y_0,y)$ allora $\exists y_1\in(y_0,y)$ tale che
 	\begin{equation*}
 		(\star) = \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)\underbrace{(y-y_0)(x-x_0)}_{\neq 0}.
 	\end{equation*}
@@ -3153,7 +3153,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\begin{equation}\label{eq:derivate_dim_schwartz}
 		\begin{matrix}
 			F(x) - F(x_0) &=& \overline{\frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0)}^{(a)}\\
-			&&&&y_0<y_1,\, y_2 < y \text{ e } x_0<x_1,\, x_2 < x\\
+			&&&&y_0<y_1,\, y_2 < y \text{ e } x_0<x_1,\, x_2 < x.\\
 			G(y) - G(y_0) &=&\underline{ \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)}_{(b)}
 		\end{matrix}
 	\end{equation}
@@ -3168,10 +3168,9 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\end{equation*}
 	e
 	\begin{equation*}
-		G(y) - G(y_0) = \overbrace{f(x,y) - f(x, y_0)}^{G(x)} + \overbrace{f(x_0,y) - f(x_0,y_0)}^{G(x_0)} = f(x,y) - f(x_0, y) - f(x, y_0) + f(x_0,y_0).
+		G(y) - G(y_0) = \overbrace{f(x,y) - f(x_0, y)}^{G(y)} + \overbrace{f(x_0,y) - f(x_0,y_0)}^{G(y_0)} = f(x,y) - f(x_0, y) - f(x, y_0) + f(x_0,y_0).
 	\end{equation*}
-	(Quindi $F(x) - F(x_0) = G(y) - G(y_0)$)
-	Si ha dunque
+	Si ha dunque (dato che $F(x) - F(x_0) = G(y) - G(y_0)$)
 	\begin{equation*}
 		 \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0) = \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)
 	\end{equation*}
