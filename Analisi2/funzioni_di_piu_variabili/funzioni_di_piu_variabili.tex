@@ -3087,14 +3087,14 @@ ciò si indica con
 ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 
 \begin{theorem}[di Schwarz]\label{th:schwarz}\footnote{Slide 2 PDF 20.}
-	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ e $A$ aperto. Supposto che $f$ sia derivabile due volte in $A$, allora
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$ e $A$ aperto. (Ipotesi 1) Supposto che $f$ sia derivabile due volte in $A$, allora
 	\begin{equation*}
 		\exists f_{x_ix_j}(\uline x)\quad i,j=1,\hdots, n,\, \forall \uline x\in A\quad (\exists Hf(\uline x),\,\forall \uline x \in A).
 	\end{equation*}
-	Se le derivate miste $f_{x_ix_j}(\uline x)$ e $f_{x_jx_i}(\uline x)$ sono continue in $\uline x_0\in A$ con $i\neq j$, allora $f_{x_ix_j}(\uline x_0)=f_{x_jx_i}(\uline x_0)$
+	(Ipotesi 2) Se le derivate miste $f_{x_ix_j}(\uline x)$ e $f_{x_jx_i}(\uline x)$ sono continue in $\uline x_0\in A$ con $i\neq j$, allora (Tesi) $f_{x_ix_j}(\uline x_0)=f_{x_jx_i}(\uline x_0)$
 \end{theorem}
 \begin{proof}[Dimostrazione (caso $n=2$)]
-	Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R},\, P_0=(x_0,y_0)\in A$. Supposto $f$ sia derivabile due volte in $A$, allora
+	Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R},\, A$ aperto e $P_0=(x_0,y_0)\in A$. Supposto $f$ sia derivabile due volte in $A$, allora
 	\begin{equation*}
 			\exists Hf(x,y) =
 			\begin{bmatrix}
@@ -3132,7 +3132,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\stepcounter{footnote}
 	\footnotetext{Dato che $f\in C^2(A)$ allora $\frac{\partial f}{\partial x}$ è derivabile ulteriormente rispetto $y$ e quindi è applicabile nuovamente il Teorema di Lagrange.}
 	
-	e applicando nuovamente il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ \footnote{$F'(x_1)$ e' considerata allo stesso modo di $F(x)-F(x_0)$ dato che $F'(x_1)=\frac{\partial f}{\partial x}(x_1,y) - \frac{\partial f}{\partial x}(x_1,y_0)$.} nell'intervallo $(y_0,y)$ allora $\exists y_1\in(y_0,y)$ tale che
+	e applicando nuovamente il Teorema di Lagrange a $\frac{\partial f}{\partial x}$ (ovvero a $F'$) \footnote{$F'(x_1)$ è considerata allo stesso modo di $F(x)-F(x_0)$ dato che $F'(x_1)=\frac{\partial f}{\partial x}(x_1,y) - \frac{\partial f}{\partial x}(x_1,y_0)$.} nell'intervallo $(y_0,y)$ allora $\exists y_1\in(y_0,y)$ tale che
 	\begin{equation*}
 		(\star) = \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)\underbrace{(y-y_0)(x-x_0)}_{\neq 0}.
 	\end{equation*}
@@ -3157,7 +3157,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 			G(y) - G(y_0) &=&\underline{ \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)}_{(b)}
 		\end{matrix}
 	\end{equation}
-	Verifichiamo che (le due derivate siano uguali)
+	Verifichiamo che (le due derivate seconde siano uguali)
 	\begin{equation*}
 		F(x) - F(x_0) \overset{\footnotemark}{=} G(y) - G(y_0).
 	\end{equation*}
@@ -3170,7 +3170,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\begin{equation*}
 		G(y) - G(y_0) = \overbrace{f(x,y) - f(x_0, y)}^{G(y)} + \overbrace{f(x_0,y) - f(x_0,y_0)}^{G(y_0)} = f(x,y) - f(x_0, y) - f(x, y_0) + f(x_0,y_0).
 	\end{equation*}
-	Si ha dunque (dato che $F(x) - F(x_0) = G(y) - G(y_0)$)
+	Dunque (dato che $F(x) - F(x_0) = G(y) - G(y_0)$)
 	\begin{equation*}
 		 \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1)(y-y_0)(x-x_0) = \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2)(x-x_0)(y-y_0)
 	\end{equation*}
@@ -3180,9 +3180,9 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\end{equation}
 	\footnotetext{Per questo $(x-x_0)(y-y_0)\neq 0$}
 	
-	Per le ipotesi iniziali $\frac{\partial^2 f}{\partial x\partial y}(x,y)$ e $\frac{\partial^2 f}{\partial y\partial x}(x,y)$ sono continue nel punto $P_0$ e ciò significa che
+	\noindent Per le ipotesi iniziali $\frac{\partial^2 f}{\partial x\partial y}(x,y)$ e $\frac{\partial^2 f}{\partial y\partial x}(x,y)$ sono continue nel punto $P_0$ e ciò significa che
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}  \frac{\partial^2 f}{\partial x\partial y}(x,y) = \ \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) = \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =\lim_{(x,y)\rightarrow(0,0)}  \frac{\partial^2 f}{\partial y\partial x}(x,y).
+		\lim_{(x,y)\rightarrow(x_0,y_0)}  \frac{\partial^2 f}{\partial x\partial y}(x,y) = \ \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) = \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =\lim_{(x,y)\rightarrow(x_0,y_0)}  \frac{\partial^2 f}{\partial y\partial x}(x,y).
 	\end{equation*}
 	($f_{xy}$ è una funzione in $x_1,y_1$, $f_{yx}$ è una funzione in $x_2,y_2$ e voglio passare al limite per $(x,y)\rightarrow(x_0,y_0)$)\\
 	Dati $y_0<y_1,\, y_2 < y$ e $x_0<x_1,\, x_2 < x$,
@@ -3193,11 +3193,11 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 			&\Rightarrow& (x_2,y_2)\rightarrow (x_0,y_0)
 		\end{matrix}
 	\end{equation*}
-	Pertanto, facendo il limite delle derivate miste (\ref{eq:derivate_miste_dim_schwarz}) per $(x_1,y_1) \rightarrow (x_0,y_0)$ e $(x_2,y_2)\rightarrow (x_0,y_0)$ è ottenuto che queste sono uguali
+	Pertanto, calcolando il limite delle derivate miste (\ref{eq:derivate_miste_dim_schwarz}) per $(x_1,y_1) \rightarrow (x_0,y_0)$ e $(x_2,y_2)\rightarrow (x_0,y_0)$ è ottenuto che
 	\begin{equation*}
-		\lim_{(x_1,y_1) \rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1) = \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) =  \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =  \lim_{(x_2,y_2)\rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2).
+		\lim_{(x_1,y_1) \rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1) = \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) =  \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =  \lim_{(x_2,y_2)\rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2),
 	\end{equation*}
-	(con questa uguaglianza ho ciò che serve, le derivate seconde miste sono uguali, cioè (\ref{eq:derivate_miste_dim_schwarz}))
+	verificando l'uguaglianza (\ref{eq:derivate_miste_dim_schwarz})	(ovvero: con quest'ultima uguaglianza ho ciò che serve, le derivate seconde miste sono uguali).
 \end{proof}
 
 \paragraph{Nota sulla dimostrazione:} È sfruttata la continuità delle derivate parziali nel punto $(x_0,y_0)$, ovvero l'uguaglianza $\frac{\partial^2 f}{\partial x\partial y}(x,y) = \frac{\partial^2 f}{\partial x\partial y}(x,y)$ quando $(x,y)\rightarrow(x_0,y_0)$. 
