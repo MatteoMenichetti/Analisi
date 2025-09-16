@@ -1949,7 +1949,7 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
     \begin{equation}\label{eq:derivata_parziale_Rn}
         \lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_{i-1},x_i+h,x_{i+1},\hdots,  x_n)-f(x_1,\hdots, x_n)}{h}:=\frac{\partial f}{\partial x_i}(P_0)
     \end{equation}
-    purché questo limite esista e sia finito.
+    purché il limite esista e sia finito.
 \end{definition}
 \footnotetext{Non è utilizzata la notazione $P_0=(x^0_1,x^0_2,\hdots, x^0_n)$ per appesantire la notazione della definizione.}
 
@@ -1959,10 +1959,6 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 \begin{equation*}
     \frac{\partial f}{\partial x_i}(P_0)=f_{x_i}(P_0)=\frac{\partial f}{\partial x_i}(x_1,\hdots,x_n)=f_{x_i}(x_1,\hdots,x_n)=  D_{x_i}(P_0)=D_{x_i}(x_1,\hdots,x_n).
 \end{equation*}
-
-\begin{definition}[Derivabilità in $A$]\footnote{Slide 10 PDF 14.}
-   Considerata $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$. Se $f$ è derivabile in ogni punto $\uline x=(x_1,\hdots,x_n)\in A$, $f$ si dice derivabile in $A$ (ovvero esistono finite tutte le $n$ derivate parziali per ogni punto di $A$).
-\end{definition}
 
 \begin{definition}[Funzione derivabile]\footnote{Slide 10 PDF 15.}
 	Sia
@@ -1978,7 +1974,11 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 	\end{equation*}
 \end{definition}
 
-\paragraph{Nota sul calcolo delle derivate quando $A\subseteq\mathbb{R}^n$:} In modo analogo al caso in due variabili, quando è calcolata la derivata parziale rispetto alla variabile $i$-esima, dove $i=1,\hdots,n$, sono tenute fisse tutte le variabili tranne la $i$-esima, la quale subisce un incremento. Considerando la $f$ in (\ref{eq:derivata_parziale_Rn}), sono tenute fisse tutte le variabili escluse la $i$-esima, sulla quale è applicato l'incremento. Quindi, il calcolo delle derivate parziali diventa un problema di Analisi 1 perché $f$ è come se fosse a una variabile, per il congelamento delle variabili.
+\begin{definition}[Derivabilità in $A$]\footnote{Slide 10 PDF 14.}
+   Considerata $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$. Se $f$ è derivabile in ogni punto $\uline x=(x_1,\hdots,x_n)\in A$, $f$ si dice derivabile in $A$ (ovvero esistono finite tutte le $n$ derivate parziali per ogni punto di $A$).
+\end{definition}
+
+\paragraph{Nota sul calcolo delle derivate quando $\boldsymbol{A\subseteq\mathbb{R}^n}$:} In modo analogo al caso in due variabili, quando è calcolata la derivata parziale rispetto alla variabile $i$-esima, dove $i=1,\hdots,n$, sono tenute fisse tutte le variabili tranne la $i$-esima, la quale subisce un incremento. Considerando la $f$ in (\ref{eq:derivata_parziale_Rn}), sono tenute fisse tutte le variabili escluse la $i$-esima, sulla quale è applicato l'incremento. Quindi, il calcolo delle derivate parziali diventa un problema di Analisi 1 perché $f$ è come se fosse a una variabile, per il congelamento delle variabili.
 
 \paragraph{Come sono calcolate le derivate?} Fissate tutte le variabili tranne l'$i$-esima è calcolato il limite del rapporto incrementale, oppure sono considerate le tracce (i due procedimenti sono simili).
 
@@ -1987,14 +1987,14 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
     \begin{equation}\label{eq:derivate_parziali_metodo_normale}
         \begin{matrix}
             \frac{\partial f}{\partial x}(x,y)&=& \cos(x^2y^3)-x\sin(x^2y^3)(2xy^3)+6x^5y^2+e^x&=&\cos(x^2y^3)-2x^2y^3\sin(x^2y^3)+6x^5y^2+e^x,\\\\
-            \frac{\partial f}{\partial y}(P_0)&=& -x\sin(x^2y^3)(3x^2y^2)+2x^6y&=&-3x^3y^2\sin(x^2y^3)+2x^6y.
+            \frac{\partial f}{\partial y}(x,y)&=& -x\sin(x^2y^3)(3x^2y^2)+2x^6y&=&-3x^3y^2\sin(x^2y^3)+2x^6y.
         \end{matrix}
     \end{equation}
     Calcoliamo tali derivate in $P_0=(1,2)$:
     \begin{equation*}
         \begin{matrix}
             \frac{\partial f}{\partial x}(P_0)&=& \cos(1\cdot 2^3)-2\cdot 1\cdot 2^3\sin(1\cdot 2^3)+6\cdot 1\cdot 2^2+e^1&=&\cos8 -16\sin8+24+ e,\\\\
-            \frac{\partial f}{\partial y}(x,y)&=&-3\cdot 1^3\cdot 2^2\sin(1^2\,2^3)+2\cdot1^6\cdot2 &=&-12\sin8+4.
+            \frac{\partial f}{\partial y}(1,2)&=&-3\cdot 1^3\cdot 2^2\sin(1^2\,2^3)+2\cdot1^6\cdot2 &=&-12\sin8+4.
         \end{matrix}
     \end{equation*}
     \footnote{Tramite le tracce è possibile calcolare le derivate parziali nel punto $P_0$ ottenendo lo stesso risultato.}
@@ -2205,14 +2205,14 @@ Per le funzioni in più variabili, la derivabilità non implica continuità. Qui
 \subsubsection{Curve in \texorpdfstring{$\boldsymbol{\mathbb R^n}$}{Rn}}\label{ssec:curve_Rn}\footnote{Slide 5 PDF 15.}
 In matematica le curve sono delle applicazioni continue definite da un intervallo ad $\mathbb R^n$. In particolare, le curve piane sono delle applicazioni da un intervallo ad $\mathbb R^2$. Inoltre, il sostegno di una curva è l'immagine di una curva.
 \begin{definition}[Curva in $\mathbb{R}^n$]\footnote{Slide 5 PDF 15.}
-	Una curva è un'appliazione continua ($\varphi\in C^0(I)$) definita come
+	Una curva è un'applicazione continua ($\varphi\in C^0(I)$) definita come
 	\begin{equation}\label{eq:curva}
 		\begin{aligned}
 			\varphi\colon I=[a,b]\subset\mathbb R & \rightarrow \mathbb R^n\\
 			t &\mapsto \varphi(t) = (\varphi_1(t), \varphi_2(t),\hdots, \varphi_n(t))\in\mathbb{R}^n
 		\end{aligned}
 	\end{equation}
-	dove le $\varphi_i:I\rightarrow\mathbb{R}$ sono continue (per HP) $\forall i=1,\hdots,n$.
+	dove le $\varphi_i:I\rightarrow\mathbb{R}$ sono continue ($\varphi_i\in C^0(I)$ per ipotesi iniziale) $\forall i=1,\hdots,n$.
 \end{definition}
 
 \paragraph{Cosa sono le equazioni parametriche di una curva?} Data $\varphi$, al variare di $t\in I$ è descritto un oggetto in $\mathbb{R}^n$, il quale è il sostegno della curva $\varphi$ e non la curva $\varphi$.
@@ -2230,7 +2230,7 @@ In matematica le curve sono delle applicazioni continue definite da un intervall
 	si dicono equazioni parametriche della curva $\varphi$, dove il parametro $t\in I$.
 \end{definition}
 
-\paragraph{Utilità equazioni parametriche:} Le equazioni parametriche descrivono in che modo con il quale è determinata l'immmagine di $t$ attraverso $\varphi$ in $\mathbb{R}^n$, ovvero descrivono come cambia la funzione al variare del parametro $t$. Vedere le equazioni parametriche fisica.
+\paragraph{Utilità equazioni parametriche:} Le equazioni parametriche descrivono il modo con il quale è determinata l'immmagine di $t$ attraverso $\varphi$ in $\mathbb{R}^n$, ovvero descrivono come cambia la funzione al variare del parametro $t$. Vedere le equazioni parametriche fisica.
 
 \begin{definition}[Sostegno (traiettoria) di una curva]\footnote{Slide 6 PDF 15.}
 	L'immagine di $\varphi$ (funzione continua) è
@@ -2904,7 +2904,7 @@ Altre conseguenze della differenziabilità sono le seguenti proprietà, presa in
 	\begin{equation*}
 		\gamma(0) = \uline x_0\in A
 	\end{equation*}
-	e supposto che $f:A\rightarrow\mathbb{R}$ sia derivabile e differenziabile in $\uline x_0$, allora è possibile definire la funzione composta
+	e supposto che $f:A\rightarrow\mathbb{R}$ sia una funzione derivabile e differenziabile in $\uline x_0$, allora è possibile definire la funzione composta
 	\begin{equation*}
 		\begin{aligned}
 			F=(f \circ \gamma): [-1,1]&\rightarrow\mathbb{R}\\
@@ -3258,7 +3258,7 @@ In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ 
 \paragraph{Considerazioni su $\boldsymbol{[\uline x, \uline x+\uline h]}$:} Se $[\uline x, \uline x+\uline h]\subset A$ allora è possibile applicargli $f$, quindi $f$ è ristretta al segmento $[\uline x, \uline x+\uline h]\subset A$ in $\mathbb{R}^n$. Pertanto, assegnati $\uline x$ e $\uline x+\uline h$, è possibile considerare la seguente definizione di funzione composta. 
 
 \begin{definition}[Funzione composta ad una curva, non ufficiale]\label{eq:funzione_composta_curva}\footnote{Slide 221 PDF 21.}
-	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R},\, f\in C^k(A)$ e $\uline x, \uline x+\uline h\in A$ con $\uline h\neq\uline 0$, tale che
+	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R},\, f\in C^k(A)$ e $\uline x, \uline x+\uline h\in A$ con $\uline h\neq\uline 0$, tali che
 	\begin{equation*}
 		[\uline x, \uline x+\uline h] = \{x(t)\in\mathbb{R}^n; \uline x(t) = \uline x + t\uline h,\, t\in[0,1]\}\subset A,
 	\end{equation*}
@@ -3538,16 +3538,16 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 	\begin{equation*}
 		F'(0) = 0,
 	\end{equation*}
-	dato che in $t=0$ $F$ è derivabile ha massimo relativo.\\
+	dato che in $t=0$ $F$ è derivabile ed ha massimo relativo.\\
 	Per la regola della catena
 	\begin{equation*}
 		F'(t) = <\triangledown f(\uline x_0 + t\uline v), \uline v>,
 	\end{equation*}
-	dunque, per $t=0$,
+	quindi, per $t=0$,
 	\begin{equation}\label{eq:derivata_direzionale_0_fermat}
-		F'(0) = \underbrace{<\triangledown f(\uline x_0),\uline v> = 0}_{\footnotemark},\quad\forall\uline v\in\mathbb{R}^n,
+		F'(0) = \underbrace{<\triangledown f(\uline x_0),\uline v> = 0}_{\footnotemark},\quad\forall\uline v\in\mathbb{R}^n,\; ||\uline v|| = 1,
 	\end{equation}
-	dato che
+	e ciò accade se e solo se
 	\begin{equation}\label{eq:gradiente_0_fermat}
 		\triangledown f(\uline x_0) = 0.
 	\end{equation}
@@ -3876,7 +3876,7 @@ e quindi trovare i punti critici di $f$ significa risolvere il sistema
  
 \paragraph{Interpretazione geometrica del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange:} Nei punti di minimo/massimo vincolati, i vettori gradienti $\triangledown f(x,y)$ e $\triangledown g(x,y)$ sono fra loro paralleli, cioè hanno la stessa retta tangente.
 
-\paragraph{Generalizzazione del Teorema \ref{th:fermat_an2} di Fermat al caso degli estremi vincolati:} (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}) esprime il fatto che se $(x_0, y_0)$ soddisfa le ipotesi del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange allora la derivata di $f$ lungo la retta tangente al vincolo si deve annullare ed in tal caso $(x_0, y_0)$ è punto critico vincolato.
+\paragraph{Generalizzazione del Teorema \ref{th:fermat_an2} di Fermat nel caso degli estremi vincolati:} (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}) esprime il fatto che se $(x_0, y_0)$ soddisfa le ipotesi del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange allora la derivata di $f$ lungo la retta tangente al vincolo si deve annullare ed in tal caso $(x_0, y_0)$ è punto critico vincolato.
 
 \begin{definition}[Lagrangiana]\footnote{Slide 3 PDF 24.}
 	Sia $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R},\, g:A\rightarrow\mathbb{R}$, $A$ aperto, $f,g\in C^1(A)$. Supposto che $f$ abbia vincolo $V$, la Lagrangiana è definita come
