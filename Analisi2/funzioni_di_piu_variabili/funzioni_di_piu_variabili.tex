@@ -3826,7 +3826,7 @@ ovvero se il vincolo genera una traiettoria che risulta essere il sostegno di un
 \begin{equation*}
 	f_{|_{V}} (x,y)= f(\gamma(t)),
 \end{equation*}
-riducendo così il problema ad una variabile (un esempio di parametrizzazione è l'Esempio \ref{ex:parametrizzazione_funzione_vincolo}).
+riducendo così il problema ad una variabile (un esempio di parametrizzazione è l'Esempio \ref{ex:parametrizzazione_funzione_vincolo}). Il problema ad una variabile è studiato come in Analisi 1.
 
 \begin{example}[Parametrizzazione di una funzione]\label{ex:parametrizzazione_funzione_vincolo}
 	SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$.\\
@@ -3836,6 +3836,30 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 
 \begin{example}[Esplicitazione di una variabile in funzione di un'altra]\label{ex:esplicitazione_variabile_funzione_altra}
 	SLIDE 25-27 PDF 23 DETERMINARE ESTREMI VINCOLATI $f$.
+\end{example}
+
+\begin{example}[Ricerca massimi e minimi vincolati]
+	\paragraph{Testo:} Determinare, se esistono i punti di minimo e massimo vincolato associati alla funzione
+	\begin{equation*}
+		f(x,y) = 8-3x^4-6y^2-3xy,
+	\end{equation*}
+	nel dominio $D=\{(x,y)\in\mathbb{R}^2\;|\; -1\leq x\leq 0,\; -1\leq y\leq x\}$.
+	\paragraph{Svolgimento:} $f(x,y)$ è una funzione continua in $D$, quindi, per il Teorema \ref{th:weierstrass_2} di Weierstrass, ha minimo e massimo in $D$.
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo.jpg}\label{fig:vincolo}
+		\caption{Grafico di $D=\{(x,y)\in\mathbb{R}^2\;|\; -1\leq x\leq 0,\; -1\leq y\leq x\}$.}
+	\end{figure}
+\end{example}
+
+\begin{example}[Ricerca massimi e minimi vincolati]
+	\paragraph{Testo:} Determinare, se esistono i punti di minimo e massimo vincolato associati alla funzione
+	\begin{equation*}
+		f(x,y) = 1+x^2-y^2,
+	\end{equation*}
+	condizionati al vincolo $2x^2+y^2=2$.
+	\paragraph{Svolgimento:}
 \end{example}
 
 \subsubsubsection{Metodo dei moltiplicatori di Lagrange}
@@ -3937,5 +3961,3 @@ ovvero,
 \begin{example}
 	Esempi applicazione metodo Lagrange SLIDE 5-11 PDF 23.
 \end{example}
-
-\pagebreak
