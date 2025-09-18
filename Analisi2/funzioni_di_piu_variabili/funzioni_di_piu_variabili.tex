@@ -4002,15 +4002,32 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 		f(x,y) = 1+x^2-y^2,
 	\end{equation*}
 	condizionati al vincolo $2x^2+y^2=2$ (vedere Figura \ref{fig:vincolo_2}).
-		\begin{figure}[ht]
+	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.5\textwidth]{Analisi2/figures/condizione_scritto_15_settembre}\label{fig:vincolo_2}
 		\caption{Grafico di $2x^2+y^2=2$.}
 	\end{figure}
 	\paragraph{Svolgimento:} Sia $D=D_1\cup D_2$, dove $D_1 = D \cap \{y = \sqrt{2-2x^2}\}$ e $D_2 = D \cap \{x = \sqrt{\frac{2-y^2}{2}}\}$, allora
 	\begin{itemize}
-		\item [$D_1$] $f_{|_{D_1}} = f(x, \sqrt{2-2x^2}) = 1+ x^2 - (\sqrt{2-2x^2})^2 = 1+x^2-2+2x^2=3x^2-1$, quindi dallo studio del segno di $f'_{|_{D_1}}$ ($f'_{|_{D_1}} = 6x\geq0$? Vedere Figura \ref{fig:f'_vincolata>0}) è ottenuto che $(0,\sqrt{2})$ minimo assoluto e $(\pm 1, 1)$ massimi assoluti di $f_{|_{D_1}}$ in $[-1,1]$.
-		\item [$D_2$] $f_{|_{D_2}}=f(\sqrt{\frac{2-y^2}{2}}, y) = 1+ \left(\sqrt{\frac{2-y^2}{2}}\right)^2 - y^2 = 1 + \sqrt{\frac{2-y^2}{2}} -y^2 = 2-\frac{3}{2} y^2$, quindi dallo studio del segno di $f'_{|_{D_2}}$ ($f'_{|_{D_2}} = -3y^2\geq0$? Vedere Figura \ref{fig:f'_vincolata_1>0}) è ottenuto che $(1,0)$ è il massimo assoluto e $(1, \pm\sqrt{2})$ i minimi assoluti di $f_{|_{D_2}}$ in $[-\sqrt{2}, \sqrt{2}]$.
+		\item [$\boldsymbol{D_1}$:] 
+		\begin{equation*}
+			f_{|_{D_1}} = f(x, \sqrt{2-2x^2}) = 1+ x^2 - (\sqrt{2-2x^2})^2 = 1+x^2-2+2x^2=3x^2-1,
+		\end{equation*}
+		quindi dallo studio del segno di $f'_{|_{D_1}}$ ($f'_{|_{D_1}} = 6x\geq0$? Vedere Figura \ref{fig:f'_vincolata>0}) è ottenuto che $(0,\sqrt{2})$ minimo assoluto e $(\pm 1, 1)$ massimi assoluti di $f_{|_{D_1}}$ in $[-1,1]$.
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata.jpg}\label{fig:f'_vincolata>0}
+		\end{figure}
+		
+		\item [$\boldsymbol{D_2}$:] 
+		\begin{equation*}
+			f_{|_{D_2}}=f\left(\sqrt{\frac{2-y^2}{2}}, y\right) = 1+ \left(\sqrt{\frac{2-y^2}{2}}\right)^2 - y^2 = 1 + \sqrt{\frac{2-y^2}{2}} -y^2 = 2-\frac{3}{2} y^2,
+		\end{equation*}
+		quindi dallo studio del segno di $f'_{|_{D_2}}$ ($f'_{|_{D_2}} = -3y^2\geq0$? Vedere Figura \ref{fig:f'_vincolata_1>0}) è ottenuto che $(1,0)$ è il massimo assoluto e $(1, \pm\sqrt{2})$ i minimi assoluti di $f_{|_{D_2}}$ in $[-\sqrt{2}, \sqrt{2}]$.
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata_1.jpg}\label{fig:f'_vincolata_1>0}
+		\end{figure}
 	\end{itemize}
 	Pertanto, da un confronto è ottenuto che
 	\begin{equation*}
@@ -4020,7 +4037,7 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 			&&f(1,0) &=& 2
 		\end{matrix}
 	\end{equation*}
-	quindi che $(0,\sqrt{2})$ è il minimo assoluto e $(1,0)$ il massimo assoluto di $f$ sul vincolo. 
+	quindi che $(0,\sqrt{2})$ è il minimo assoluto e $(1,0)$ il massimo assoluto di $f$ sul vincolo.
 \end{example}
 
 \subsubsubsection{Metodo dei moltiplicatori di Lagrange}
