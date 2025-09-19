@@ -4007,13 +4007,28 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 		\includegraphics[width=0.5\textwidth]{Analisi2/figures/condizione_scritto_15_settembre}\label{fig:vincolo_2}
 		\caption{Grafico di $2x^2+y^2=2$.}
 	\end{figure}
-	\paragraph{Svolgimento:} Sia $D=D_1\cup D_2$, dove $D_1 = D \cap \{y = \sqrt{2-2x^2}\}$ e $D_2 = D \cap \{x = \sqrt{\frac{2-y^2}{2}}\}$, allora
+	\paragraph{Svolgimento:} Sia $D=D_1\cup D_2$, dove 
+	\begin{equation*}
+		D_1:
+		\begin{cases}
+			x=t,\\
+			y= \sqrt{2-2t^2},\quad t\in[-1,1]
+		\end{cases}
+	\end{equation*}
+	e 
+	\begin{equation*}
+		\begin{cases}
+			x=sqrt{\frac{2-t^2}{2}},\\
+			x=t,\quad t\in[-\sqrt{2},\sqrt{2}]
+		\end{cases}
+	\end{equation*}
+	allora
 	\begin{itemize}
 		\item [$\boldsymbol{D_1}$:] 
 		\begin{equation*}
 			f_{|_{D_1}} = f(x, \sqrt{2-2x^2}) = 1+ x^2 - (\sqrt{2-2x^2})^2 = 1+x^2-2+2x^2=3x^2-1,
 		\end{equation*}
-		quindi dallo studio del segno di $f'_{|_{D_1}}$ ($f'_{|_{D_1}} = 6x\geq0$? Vedere Figura \ref{fig:f'_vincolata>0}) è ottenuto che $(0,\sqrt{2})$ minimo assoluto e $(\pm 1, 1)$ massimi assoluti di $f_{|_{D_1}}$ in $[-1,1]$.
+		quindi dallo studio del segno di $f'_{|_{D_1}}$ ($f'_{|_{D_1}} = 6x\geq0$? Vedere Figura \ref{fig:f'_vincolata>0}) è ottenuto che $(0,\sqrt{2})$ minimo assoluto $f_{|_{D_1}}$ in $[-1,1]$ e $(\pm 1, 1)\notin D$.
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata.jpg}\label{fig:f'_vincolata>0}
@@ -4023,7 +4038,7 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 		\begin{equation*}
 			f_{|_{D_2}}=f\left(\sqrt{\frac{2-y^2}{2}}, y\right) = 1+ \left(\sqrt{\frac{2-y^2}{2}}\right)^2 - y^2 = 1 + \sqrt{\frac{2-y^2}{2}} -y^2 = 2-\frac{3}{2} y^2,
 		\end{equation*}
-		quindi dallo studio del segno di $f'_{|_{D_2}}$ ($f'_{|_{D_2}} = -3y^2\geq0$? Vedere Figura \ref{fig:f'_vincolata_1>0}) è ottenuto che $(1,0)$ è il massimo assoluto e $(1, \pm\sqrt{2})$ i minimi assoluti di $f_{|_{D_2}}$ in $[-\sqrt{2}, \sqrt{2}]$.
+		quindi dallo studio del segno di $f'_{|_{D_2}}$ ($f'_{|_{D_2}} = -3y^2\geq0$? Vedere Figura \ref{fig:f'_vincolata_1>0}) è ottenuto che $(1,0)$ è il massimo assoluto di $f_{|_{D_2}}$ in $[-\sqrt{2}, \sqrt{2}]$ e $(1, \pm\sqrt{2})\notin D$ .
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata_1.jpg}\label{fig:f'_vincolata_1>0}
@@ -4033,11 +4048,68 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 	\begin{equation*}
 		\begin{matrix}
 			&& f(0,\sqrt{2}) &=&-1\\
-			f(\pm 1, 1) &=& 1+1-1 &=& 1\\
 			&&f(1,0) &=& 2
 		\end{matrix}
 	\end{equation*}
 	quindi che $(0,\sqrt{2})$ è il minimo assoluto e $(1,0)$ il massimo assoluto di $f$ sul vincolo.
+	\paragraph{Svolgimento con Lagrange:} Per trovare i punti di massimo e minimo utilizzo il metodo dei moltiplicatori di Lagrange.\\
+	Essendo la funzione definita e continua su un compatto , essa possiede massimo e minimo assoluti per il Teorema di Weierstrass.\\
+	Controllo la condizione di regolarità sul vincolo $g(x, y) = 2x^2 + y^2 = 2$,
+	\begin{equation*}
+		\triangledown g(x,y) = (4x,4y) \Rightarrow \triangledown g(x,y) = (0,0) \iff x - y = 0 \notin V. \; (\text{condizione soddisfatta})
+	\end{equation*}
+	Per trovare i punti di massimo e minimo cerco i punti critici della funzione Lagrangiana:
+	\begin{equation*}
+		L(x,y,\lambda) = f(x,y) - \lambda[g(x,y)-k]\quad\text{tale che}\quad\triangledown L(x,y,\lambda) = (0,0,0),
+	\end{equation*}
+	dove $L(x,y,\lambda) = 1 + x^2 - y^2 - \lambda[2x^2+y^2-2]$. Quindi, è necessario risolvere
+	\begin{equation*}
+		\begin{cases}
+			2x - 4\lambda x = 0\\
+			-2y - 2\lambda y =0\\
+			2x^2 + y^2 - 2 =0
+		\end{cases}\Rightarrow
+		\begin{cases}
+			x-2\lambda x = 0\\
+			y + \lambda y = 0\\
+			2x^2 + y^2 = 2
+		\end{cases}\Rightarrow
+		\begin{cases}
+			x(1-2\lambda) = 0 \\
+			y(1+\lambda) = 0\\
+			2x^2 + y^2 = 2
+		\end{cases}
+%		\Rightarrow
+%		\begin{cases}
+%			\lambda = \frac{1}{2}\\
+%			y(1+\frac{1}{2}) = 0\\
+%			2x^2 + y^2 = 2
+%		\end{cases}
+%		\Rightarrow
+%		\begin{cases}
+%			\lambda = \frac{1}{2}\\
+%			y= 0\\
+%			2x^2 = 2
+%		\end{cases}\Rightarrow
+%		\begin{cases}
+%			\lambda = \frac{1}{2}\\
+%			y= 0\\
+%			x = \pm 1
+%		\end{cases}
+	\end{equation*}
+	Dall'ultimo sistema
+	\begin{enumerate}
+		\item se $\lambda = \frac{1}{2}$ allora sostituendola nella seconda e terza equazione è ottenuto $y=0$ e $x = \pm 1$,
+		\item se $x=0$ allora sostituendola nella terza equazione è ottenuto $y=\pm\sqrt{2}$.
+	\end{enumerate}
+	Quindi i punti da studiare sono $(1, 0), (-1,0),(0,\sqrt{2}),(0,-\sqrt{2})$. Per confronto diretto è ottenuto che
+	\begin{equation*}
+		\begin{matrix}
+			f(\pm 1, 0) = 1+1 = 2,\\
+			f(0,\pm \sqrt{2}) = 1 -2 = -1,
+		\end{matrix}
+	\end{equation*}
+	dunque $(\pm 1, 0)$ sono i punti di massimo assoluto e $(0,\pm\sqrt{2})$ sono i punti di minimo assoluto di $f$ condizionati al vincolo.
 \end{example}
 
 \subsubsubsection{Metodo dei moltiplicatori di Lagrange}
