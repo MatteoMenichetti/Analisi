@@ -4094,7 +4094,7 @@ e quindi trovare i punti critici di $f$ significa risolvere il sistema
 	\item Le soluzioni $(x_0,y_0,\lambda_0)$ di \ref{eq:identita_vettoriale_moltiplicatore_lagrange_0} sono punti critici liberi di $L$, ovvero $\triangledown L(x_0,y_0,\lambda_0) = 0$.
 \end{itemize} 
 
-\paragraph{Osservazioni sulla relazione tra (\ref{eq:lagrangiana}) e sul Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange:} Il Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange afferma che se $(x_0,y_0)$ è un punto di estremo vincolato per $f$ allora $\exists\lambda_0\in\mathbb{R}$ tale che $(x_0,y_0,\lambda_0)$ è un punto critico libero per la Lagrangiana $L$. Infatti, i punti critici (o stazionari) di $L$ sono le soluzioni di
+\paragraph{Qual è la relazione tra (\ref{eq:lagrangiana}) e sul Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange? (Possibile domanda all'orale):} Il Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange afferma che se $(x_0,y_0)$ è un punto di estremo vincolato per $f$ allora $\exists\lambda_0\in\mathbb{R}$ tale che $(x_0,y_0,\lambda_0)$ è un punto critico libero per la Lagrangiana $L$. Infatti, i punti critici (o stazionari) di $L$ sono le soluzioni di
 \begin{equation*}
 	\triangledown L(x,y,\lambda) = \left(\frac{\partial L}{\partial x} (x,y,\lambda), \frac{\partial L}{\partial y} (x,y,\lambda), \frac{\partial L}{\partial \lambda} (x,y,\lambda)\right) = (0,0,0),
 \end{equation*}
@@ -4125,7 +4125,7 @@ ovvero,
 	\end{cases}
 \end{equation*}
 
-\paragraph{Qual è la relazione tra la Lagrangiana (\ref{eq:lagrangiana}) e Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange? (Possibile domanda all'orale)} Tale relazione è dovuta all'equivalenza delle soluzioni di \ref{eq:sistema_lagrangiana_0} e (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}), ovvero: se $(x_0,y_0,\lambda_0)$ è punto stazionario di $L$ allora è soluzione di \ref{eq:sistema_lagrangiana_0} ($L(x_0,y_0,\lambda_0) =\uline 0$) e di (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}).
+\paragraph{Relazione tra la Lagrangiana (\ref{eq:lagrangiana}) e Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange?} Tale relazione è dovuta all'equivalenza delle soluzioni di \ref{eq:sistema_lagrangiana_0} e (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}), ovvero: se $(x_0,y_0,\lambda_0)$ è punto stazionario di $L$ allora è soluzione di \ref{eq:sistema_lagrangiana_0} ($L(x_0,y_0,\lambda_0) =\uline 0$) e di (\ref{eq:identita_vettoriale_moltiplicatore_lagrange}).
 
 \paragraph{Come trovare gli estremi vincolati?} Per trovare i punti di minimo/massimo per $f$ vincolati su $V=\{(x,y)\in A,\, g(x,y)=k\}$ si procede selezionando tra i punti regolari di $g$, ovvero i punti $(x_0, y_0)$ tali che $\triangledown g(x_0, y_0)\neq(0,0)$ e che sono punti critici liberi della funzione Lagrangiana (i punti tali che $\triangledown L(x,y,\lambda) = \uline 0$) e poi si studia la natura di tali punti \footnote{In questo caso, se $(x_0, y_0)$ è un estremo vincolato di $f$ su $V$ allora $\lambda_0$ è il moltiplicatore di Lagrange fornito dalla tesi del Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange.} . Ciò è chiamato metodo dei moltiplicatori di Lagrange:
 \begin{enumerate}
