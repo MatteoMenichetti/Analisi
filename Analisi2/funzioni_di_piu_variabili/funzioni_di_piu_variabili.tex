@@ -3996,7 +3996,7 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 	Da tali insiemi sono ottenuti massimi e minimi assoluti precedenti.
 \end{example}
 
-\begin{example}[Ricerca massimi e minimi vincolati]\footnote{Scritto 15 Settembre 2025.}
+\begin{example}[Ricerca massimi e minimi vincolati]\label{ex:applicazione_metodo_lagrange}\footnote{Scritto 15 Settembre 2025.}
 	\paragraph{Testo:} Determinare, se esistono i punti di minimo e massimo vincolato associati alla funzione
 	\begin{equation*}
 		f(x,y) = 1+x^2-y^2,
@@ -4206,8 +4206,224 @@ ovvero,
 	\item si determina la natura dei punti critici e per questo risulta utile il Teorema \ref{th:weierstrass_2} di Weierstrass.
 \end{enumerate}
 
-\paragraph{Perché si chiama Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange? Perché definisce il metodo dei moltiplicatori di Lagrange:} per funzioni ad $n$ variabili ci possono essere fino ad $m <n$ vincoli, quindi $m$ moltiplicatori (i quali formeranno un vettore di $m$ compomenti reali), quindi il sistema $\triangledown L(\uline x, \uline \lambda)=\uline{0}$ avrà $n+m$ equazioni in quanto $L$ è una funzione di $n+m$ variabili. 
+\paragraph{Perché si chiama Teorema \ref{th:moltiplicatori_lagrange} dei moltiplicatori di Lagrange? Perché definisce il metodo dei moltiplicatori di Lagrange:} per funzioni ad $n$ variabili ci possono essere fino ad $m <n$ vincoli, quindi $m$ moltiplicatori (i quali formeranno un vettore di $m$ componenti reali), quindi il sistema $\triangledown L(\uline x, \uline \lambda)=\uline{0}$ avrà $n+m$ equazioni in quanto $L$ è una funzione di $n+m$ variabili. 
 
-\begin{example}
-	Esempi applicazione metodo Lagrange SLIDE 5-11 PDF 23.
+\paragraph{Da ricordare:} Il metodo dei moltiplicatori di Lagrange fornisce i candidati, poi è necessario utilizzare il confronto diretto per stabilire se i punti sono di minimo o di massimo. Questo perché i punti sono estremi vincolati e vale l'equazione del vincolo.
+
+\paragraph{Esempio di applicazione del Metodo di Lagrange:} Vedere Esempio \ref{ex:applicazione_metodo_lagrange}.
+
+\begin{example}[Esempio di applicazione del Meteodo di Lagrange]
+	\footnote{Slide 5-8 PDF 24.}
+	\paragraph{Testo:} Determinare il minimo e massimo assoluti della funzione
+	\begin{equation*}
+		f(x,y) = (x-1)^2 - y^2,
+	\end{equation*}
+	soggetta al vincolo $V=\{(x,y)\in\mathbb{R}^2;\, x^2+y^2 = 1\}\subset\mathbb{R}^2$.
+	\paragraph{Svolgimento:} $V$ è limitato e chiuso in $\mathbb{R}^2$ (vedere Figura \ref{fig:vincolo_metodo_lagrange}), quindi $V$ è un compatto. Essendo $f$ continua su $V$ allora esistono massimo e minimo vincolati su $V$, per il Teorema \ref{th:weierstrass_2} di Weierstrass.\\
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo_metodo_lagrange.jpg}\label{fig:vincolo_metodo_lagrange}
+	\end{figure}
+	\paragraph{Come trovare massimo e minimo vincolati?} Dato il vincolo, è noto che $y^2 = 1 - x^2$ e quindi, sostituendola in $f$, la funzione diventa ad una sola variabile. Il problema è ridotto allo studio di una funzione di una variabile. $\qed$\\
+	Dall'equazione che definisce il vincolo è ottenuto che
+	\begin{equation*}
+		y^2 = 1 - x^2,\quad x\in[-1,1],
+	\end{equation*}
+	che sostituito in $f$ permette di ottenere
+	\begin{equation*}
+		f_{|_V} = (x-1)^2 - (1-x^2) = 2x^2 - 2x,\quad x\in[-1,1].
+	\end{equation*}
+	È necessario studiare il segno della derivata di $f_{|_V}$ essendo una funzione ad una variabile, quindi
+	\begin{equation*}
+		f'_{|_V} = (2x^2 - 2x)' = 4x - 2 = 2(2x - 1).
+	\end{equation*}
+	Pertanto,
+	\begin{equation*}
+		f'(x) = 0\quad\iff\quad x = \frac{1}{2},
+	\end{equation*}
+	quindi $x=\frac{1}{2}$ è minimo assoluto per $f_{|_V}$. Inoltre, è possibile osservare che sostituendo $x$ in $V$ è ottenuto che
+	\begin{equation*}
+		y^2 = 1 - \frac{1}{4} = \frac{3}{4}\quad\equiv\quad y = \pm\frac{\sqrt{3}}{2},
+	\end{equation*}
+	e quindi $\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)$ e $\left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right)$ sono i punti di minimo assoluto in quanto $f\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right) = -\frac{1}{2}$ è il valore più piccolo che la funzione può assumere.\\
+	\paragraph{Cosa accade per gli altri punti?} Per $x=\pm 1$ allora $y^2 = 1 - 1 = 0$, quindi $(-1,0),\, (1, 0)$. Per stabilire il massimo assoluto è necessario svolgere un confronto diretto sui punti trovati tramite $f$:
+	\begin{equation*}
+		\begin{matrix}
+			f(-1, 0) &=& 4 && \\
+			&&&\Rightarrow& (-1,0)\text{ punto di massimo assoluto vincolato.}\\
+			f(1,0) &=& 0 &&
+		\end{matrix}
+	\end{equation*}
+	\paragraph{Svolgimento con Lagrange:} È necessario verificare la regolarità rispetto al vincolo, quindi sono ricercati i punti dove il gradiente di $g$ si annulla e stabilito se questi appartengono al vincolo per verificare la regolarità di $g$ nei punti. Quindi, vale quanto segue:
+	\begin{equation*}
+		\triangledown g(x,y) = (2x, 2y) = \uline 0\quad \iff \quad (x,y) = (0,0),
+	\end{equation*}
+	ma $(0,0)\notin V$. Quindi non ci sono punti non regolari.\\
+	Considerata la Lagrangiana
+	\begin{equation*}
+		L(x,y,\lambda) = (x-1)^2 - y - \lambda\,[\underbrace{x^2+y^2}_{g(x,y)}\underbrace{-1}_k],
+	\end{equation*}
+	allora
+	\begin{equation}\label{eq:esempio_sistema_lagrange}
+		\triangledown L(x,y,\lambda) = (0,0,0) \iff
+		\begin{cases}
+			2(x-1) - 2\lambda x &= 0\\
+			-2y - 2\lambda y &= 0\\
+			-[x^2+y^2-1]&=0
+		\end{cases}\quad\rightarrow\quad
+		\begin{cases}
+			2(x-1) - 2 \lambda x &=0\\
+			-2 y(1 + \lambda) &= 0\\
+			x^2 + y^2 - 1 &= 0
+		\end{cases}
+	\end{equation}
+	\paragraph{Nota:} È necessario risolvere il sistema (\ref{eq:esempio_sistema_lagrange}), dove le soluzioni sono terne. $\qed$\\
+	Dalla seconda equazione del sistema (\ref{eq:esempio_sistema_lagrange}) sono ottenute $\lambda = -1$ e $y=0$ e quindi i seguenti due sistemi
+	\begin{equation*}
+		\underbrace{\begin{cases}
+			\footnotemark\; y &= 0 \\
+			\footnotemark\; x^2 &= 1\\
+			\footnotemark\; \lambda &= \frac{x-1}{x}
+		\end{cases}}_{I} \quad\cup\quad
+		\underbrace{\begin{cases}
+			\lambda &= -1\\
+			2(x-1) + 2x &= 0\\
+			x^2 + y^2 &= 1
+		\end{cases}}_{II}
+	\end{equation*} 
+\end{example}
+\addtocounter{footnote}{-2}
+\footnotetext{Seconda equazione del sistema (\ref{eq:esempio_sistema_lagrange}).}
+
+\stepcounter{footnote}
+\footnotetext{Terza equazione del sistema (\ref{eq:esempio_sistema_lagrange}).}
+
+\stepcounter{footnote}
+\footnotetext{Prima equazione del sistema (\ref{eq:esempio_sistema_lagrange}).}
+
+\paragraph{Perché due sistemi ($I$ e $II$)?} Perche dalla seconda equazione del sistema (\ref{eq:sistema_moltiplicatore_lagrange}) è ottenuto che è 0 in due casi, quindi sono ottenuri due sistemi.
+
+Il sistema $I$ ha due soluzioni:
+\begin{equation*}
+	\begin{cases}
+		x &= -1\\
+		y &= 0\\
+		\lambda &= 2
+	\end{cases}\qquad
+	\begin{cases}
+		x &= 1\\
+		y &=0\\
+		\lambda &=0
+	\end{cases}
+\end{equation*}
+ovvero $\boldsymbol{\underline{(-1, 0}, 2)}$ e $\boldsymbol{\underline{(1,0},0)}$.\\
+Il sistema $II$ ha due soluzioni:
+\begin{equation*}
+	\begin{cases}
+		\lambda &= -1\\
+		4 x - 2 &= 0\\
+		x^2 + y^2 &= 1
+	\end{cases}\quad\rightarrow\quad
+	\begin{cases}
+		x &= \frac{1}{2}\\
+		y^2 &= \frac{3}{4}\\
+		\lambda &=-1
+	\end{cases}
+\end{equation*}
+ovvero $\boldsymbol{\left(\underline{\frac{1}{2}, -\frac{\sqrt{3}}{2}}, -1\right)}$ e $\boldsymbol{\left(\underline{\frac{1}{2}, \frac{\sqrt{3}}{2}}, -1\right)}$.
+
+\paragraph{Nota:} I punti sottolineati sono i candidati ad essere punti di minimo / massimo, pertanto è necessario un controllo diretto per stabilire quale sia il massimo e minimo assoluto. $\qed$
+
+Siano
+\begin{equation*}
+	f(1,0) = 0, \quad f(-1,0) = 4,\quad f\left(\frac{1}{2},\pm\frac{\sqrt{3}}{2}\right) = \frac{1}{2},
+\end{equation*}
+per confronto diretto $(-1, 0)$ è il massimo assoluto vincolato e $\left(\frac{1}{2},\pm\frac{\sqrt{3}}{2}\right)$ i due minimi assoluti vincolati.
+
+\begin{example}[Esempio applicazione del metodo dei Moltiplicatori di Lagrange]\footnote{Slide 9-11 PDF 24.}
+	\paragraph{Testo:} Determinare i punti di massimo e minimo assoluti per la funzione
+	\begin{equation*}
+		f(x,y) = x\, e^{-(x^2+y^2)},
+	\end{equation*}
+	soggetta al vincolo $V=\{(x,y)\in\mathbb{R}^2;\, g(x,y) = 0\}\subseteq\mathbb{R}^2$, dove $g(x,y) = x^2 + (y-1)^2 - 1$.
+	
+	\paragraph{Nota:} $g(x,y)$ è una forma quadratica. $\qed$
+	
+	$V$ è una circonferenza di centro $C(0,1)$ e raggio $r=1$.
+	
+	\paragraph{Svolgimento:} È possibile parametrizzare il vincolo attraverso la seguente relazione:
+	\begin{equation*}
+		\begin{cases}
+			x &= \cos\theta\\
+			y-1 &= \sin\theta 
+		\end{cases}\qquad \theta\in[0,2\pi]
+	\end{equation*}
+	
+	Quindi $f_{|_V} = f(\theta)$ e $V=\gamma ([0,2\pi])$ (il vincolo è il sostegno della curva $\gamma$), ovvero
+	\begin{equation*}
+		f_{|_V} = f(\gamma([0,2\pi])) = f(\theta) = \cos\theta e^{-(\cos^2\theta + 1 + 2\sin\theta + \sin^2\theta)} \overset{\sin^2\theta+\cos^2\theta = 1}{=} \cos\theta e^{-2(1+\sin\theta)}.
+	\end{equation*}
+	Per trovare i punti critici è studiata la derivata prima di $f_{|_V}$ con i mezzi di Analisi 1:
+	\begin{equation*}
+		f'(\theta) = \underbrace{e^{-2(1+\sin\theta)}}_{>0} (-\sin\theta - 2\cos^2\theta).
+	\end{equation*}
+	\begin{equation*}
+		f'(\theta) = 0 \iff -\sin\theta - 2\cos^2\theta = 0 \rightarrow -\sin\theta - 2(1-\sin^2\theta) = 0 \rightarrow 2\sin^2\theta - \sin\theta - 2 \overset{\sin\theta = t}{\longrightarrow} 2 t^2 - t - 2 = 0, 
+	\end{equation*}
+	quindi le soluzioni sono $t_{1,2} = \frac{1 \pm \sqrt{1+ 16}}{4}$.
+	
+	\paragraph{Nota:}  $t_{1,2}$ le due soluzioni corrispondono a quelle di $\sin\theta$, ovvero $y-1$. Quindi, trovando le soluzioni è trovata $y$ e di conseguenza la $x$, dove la $x$ è ricavata dall'equazione $1-\sin\^2\theta = \cos^2\theta\rightarrow\sqrt{1-\sin^2\theta} = \cos\theta$. $\qed$
+	
+	\paragraph{Nota:} Studiando il segno di $f'(\theta)$, trovando i candidati e le coordinate dei punti, ricordandosi che $t_1 = \sin\theta_1 \equiv y-1$, dove $y_1 = 1 + t_1 \equiv y$ e $x\equiv\cos\theta_1$ dove $x \equiv x_1 = \pm\sqrt{1-\sin^2\theta}$.
+	
+	\paragraph{Svolgimento tramite metodo dei moltiplicatori di Lagrange:} Sia
+	\begin{equation*}
+		\triangledown g(x,y) = (2x,2(y-1)),
+	\end{equation*}
+	\begin{equation*}
+		\triangledown g(x,y) = 0 \iff (x,y) = (0,1)\notin V.
+	\end{equation*}
+	Considerata la Lagrangiana
+	\begin{equation*}
+		L(x,y,\lambda) = x\, e^{-(x^2+y^2)} - \lambda[x^2 + (y-1)^2 - 1],
+ 	\end{equation*}
+ 	sono ricercati i punti critici di questa, ovvero
+ 	\begin{equation}\label{eq:sistema_moltiplicatori_lagrange_1}
+ 		\triangledown L(x,y,\lambda) = (0,0,0) \iff
+ 		\begin{cases}
+ 			L_x (x,y,\lambda) = e^{-(x^2+y^2)} - 2x^2\, e^{-(x^2+y^2)} - 2\lambda x=0\\
+ 			L_y (x,y,\lambda) = -2xy\, e^{-(x^2+y^2)} - 2\lambda (y-1) = 0\\
+ 			L_\lambda (x,y,\lambda) = x^2 + (y-1)^2 -1 = 0
+ 		\end{cases}
+ 	\end{equation}
+ 	
+ 	\paragraph{Nota:} Il sistema (\ref{eq:sistema_moltiplicatori_lagrange_1}) è complesso, allora è possibile semplificare il calcolo della soluzione cercando di combinare le equazioni del sistema. In questo modo è possibile trovare una soluzione combinando le prime due equazioni del sistema e raccogliendo l'esponenziale come nel sistema (\ref{eq:sistema_moltiplicatori_lagrange_2}). $\qed$
+ 	
+ 	\begin{equation}\label{eq:sistema_moltiplicatori_lagrange_2}
+ 		\begin{cases}
+ 			e^{-(x^2+y^2)} [1-2x^2] = 2\lambda x\\
+ 		e^{-(x^2+y^2)}(-2xy) = 2 \lambda (y-1)\\
+ 		x^2 + (y-1)^2 - 1 =0
+ 		\end{cases}
+ 	\end{equation}
+ 	quindi
+ 	\begin{equation*}
+ 		\frac{2x^2 - 1}{2xy} = \frac{x}{y-1} \iff (2x^2 - 1)(y-1) = 2x^2y \quad\rightarrow\quad 2x^2y - y + 1 - 2x^2 = 2x^2y \quad\rightarrow\quad\underbrace{y = 1-2x^2}_{(b)}
+ 	\end{equation*}
+ 	e sostituendo $(b)$ nell'ultima equazione del sistema (\ref{eq:sistema_moltiplicatori_lagrange_2}) è ottenuto
+ 	\begin{equation*}
+ 		x^2 + 4x^4 - 1 = 0 \quad\rightarrow\quad x^2 = \frac{-1 \pm \sqrt{17}}{8} \quad\overset{\boldsymbol{\footnotemark}}{\rightarrow}\quad \frac{-1 + \sqrt{17}}{8}.
+ 	\end{equation*}
+ 	\footnotetext{Scartata opzione con il $-$ perché $x^2>0$.}
+ 	Quindi
+ 	\begin{equation*}
+ 		x = \sqrt{\frac{-1 + \sqrt{17}}{8}}\quad\text{e}\quad y = 1 - 2\left(\frac{-1 + \sqrt{17}}{2}\right) = \frac{5 - \sqrt{17}}{4}.
+ 	\end{equation*}
+ 	Quindi, trovati i punti
+ 	\begin{equation*}
+ 		P_1 = \left(-\sqrt{\frac{-1 + \sqrt{17}}{8}}, \frac{5 - \sqrt{17}}{4}\right)\quad\text{e}\quad P_2 = \left(\sqrt{\frac{-1 + \sqrt{17}}{8}}, \frac{-5 - \sqrt{17}}{4}\right),
+ 	\end{equation*}
+ 	tramite confronto diretto è stabilito che $P_1$ è il massimo assoluto vincolato e $P_2$ è il minimo assoluto vincolato.
+ 	
+ 	\paragraph{Nota:} $P_1$ e $P_2$ sono determinati dal fatto che $e^{-(x^2+y^2)}>0$ e quindi il segno di $f$ è determinata da $x$.
 \end{example}
