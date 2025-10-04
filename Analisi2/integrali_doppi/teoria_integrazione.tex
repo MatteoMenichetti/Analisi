@@ -154,8 +154,9 @@ Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per quest
 \begin{example}[Funzione non integrabile secondo Riemann]\footnote{Slide 17 PDF 24}
 	Sia $Q=[0,1]\times [0,1]$ ed $f$ funzione di Dirichlet definita come
 	\begin{equation*}
+		f(x,y) =
 		\begin{cases}
-			1, &\text{se } (x,y)\in Q\cap \mathbb{Q}\\
+			1, &\text{se } (x,y)\in Q \text{ e } (x,y)\in\mathbb{Q}\\
 			0 &\text{altrimenti}
 		\end{cases}
 	\end{equation*}
@@ -210,9 +211,122 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 	\end{equation}
 \end{theorem}
 
-\paragraph{Cosa significa la formula b) in (\ref{eq:formula_riduzione})?} Quando è integrato rispetto a $y$ significa che la $x$ è fissata, quindi $f$ diventa una funzione di una variabile e dato che $f$ è continua su $[c,d]$ (dato che diventa ad un variabile) allora è integrabile su $[c,d]$. Una volta integrata su $y$ allora $f$ dipende solo da $x$ e dato che $f$ è continua su $[a,b]$ allora è integrabile su questo.
+\paragraph{Cosa significa la formula a) in (\ref{eq:formula_riduzione})?} Quando è integrato rispetto a $y$ significa che la $x$ è fissata, quindi $f$ diventa una funzione di una variabile e dato che $f$ è continua su $[c,d]$ (dato che diventa ad un variabile) allora è integrabile su $[c,d]$. Una volta integrata su $y$ allora $f$ dipende solo da $x$ e dato che $f$ è continua su $[a,b]$ allora è integrabile su questo.
+
+\paragraph{Nota sulla formula di riduzione:} Applicare prima la \textbf{formula a)} e poi la \textbf{formula b)} dipende da com'è fatta $f$.
 
 \begin{example}\footnote{Slide 20 PDF 24.}
 	Sia $f(x,y)=x^{-3e^{\frac{y}{x}}}$ su $R=[1, 3]\times[0,1]$. $f$ è continua su $R$, quindi integrabile.
-	\paragraph{Formula a):} 
+	\paragraph{Formula b):} Tramite la formula b) è più facile trovare una primitiva elementare di $f$.
+	\begin{equation*}
+		\int_0^1 f(x,y) dy = x\text{ fissata in } [1,3] = \int_0^1 x^{-3} e^{\frac{y}{x}}  dy = x^{-3}\left[x\, e^{\frac{y}{x}}\right]^1_0 =  x^{-3} (x) \left(x\, e^{\frac{1}{x} - x\, e^0}\right) = x^{-2} \left(e^{\frac{1}{x}} - 1\right).
+	\end{equation*}
+	Quindi,
+	\begin{equation*}
+		\int\int_R f(x,y) dx\, dy = \int_1^3\left(\int_0^1 f(x,y) dy\right)\, dy = \int_1^3 x^{-2}\left(e^{\frac{1}{x}}-1\right) dx =(\star) 
+	\end{equation*}
+	ed utilizzando l'integrazione per sostituzione,
+	\begin{equation*}
+		 \frac{1}{x} = y \;\rightarrow\; dy=\frac{1}{x^2}dx \quad\Longrightarrow\quad \int_1^3e^y -1 dy = \left[e^y-y\right]_1^3 ,
+	\end{equation*}
+	è ottenuto che
+	\begin{equation*}
+		(\star) = \left[\frac{1}{x} - e^{\frac{1}{x}}\right]^3_1 = \frac{1}{3} - \sqrt[3]{e}.
+	\end{equation*}
 \end{example}
+
+\subsection{Domini semplici}
+\footnote{Slide 21 PDF 24.} Il caso in cui una funzione integranda $f$ sia definita su un rettangolo è un caso particolare. Se $f$ è definita su un dominio limitato $D\subset\mathbb{R}^2$ (quindi $f$ è limitata), è possibile definire un rettangolo $R=[a,b]\times [c,d]$ opportuno (qualsiasi) tale che $D\subset R$ e ridefinire $f$ in modo tale che sia 0 fuori da $D$. Così facendo è possibile integrare $f$ sul rettangolo e non sul dominio.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.35\textwidth]{Analisi2/figures/f_estesa.png}
+	\caption{Funzione $f$ estesa.}
+	\label{fig:f_estesa}
+\end{figure}
+
+\begin{definition}[Funzione integranda estesa da un dominio ad un rettangolo]\footnote{Slide 21 PDF 24.}\label{def:f_estesa_rettangolo}
+	Data $f:D\subset R\rightarrow\mathbb{R}$, dove $R=[a,b]\times [c,d]$, è definita $\tilde{f}:R\rightarrow\mathbb{R}$ come segue:
+	\begin{equation}\label{eq:f_estesa_rettangolo}
+		\tilde{f}(x,y) = 
+		\begin{cases}
+			f(x,y) & \text{se } (x,y)\in D\\
+			0 &\text{altrimenti}
+		\end{cases}
+	\end{equation}
+\end{definition}
+
+\paragraph{Nota su (\ref{eq:f_estesa_rettangolo}):} L'interpretazione geometrica dell'integrale nel caso dell'estensione della funzione non cambia: se considerata al di fuori da $D$ il contributo di $\tilde{f}$ è nullo. $\qed$
+
+\begin{definition}[Integrale secondo Riemann della funzione limitata su un dominio limitato]\label{def:integrale_f_estesa_rettangolo}
+	\footnote{Slide 21 PDF 24.} Sia $f:D\subset \mathbb{R}^\rightarrow\mathbb{R}$ limitata su $D$ dominio limitato. Diremo che $f$ è integrabile (secondo Riemann) su $D$ (non rettangolo) se $\tilde f$ (definita come (\ref{eq:f_estesa_rettangolo})) è integrabile (secondo Riemann) su $R$ (rettangolo tale che $D\subset R$) e si pone
+	\begin{equation*}
+		I(f, D) = \int\int_D f(x,y) dx\, dy = \int \int_R \tilde{f}(x,y) dx\, dy.
+	\end{equation*}
+\end{definition}
+
+\paragraph{Nota sulla Definizione (\ref{def:integrale_f_estesa_rettangolo}):} La definizione è ben posta e aderisce perfettamente all'interpretazione geometrica dell'integrale doppio di una funzione non negatica come volume di un cilindroide, in quanto l'integrabilità di $f$ nel dominio limitato ed il valore dell'integrale \textbf{\ul{non}} dipendono da $R$ (perché per ogni rettangolo scelto, $f$ vale 0 nei punti fuori da $D$). Inoltre, \textbf{il fatto che $\boldsymbol{f}$ sia limitata è un ipotesi necessaria per la definizione}.$\qed$
+
+\begin{definition}[Area (misura) di Peano-Jordan di una regione del piano]\footnote{Slide 22 PDF 24.}
+	Un sottoinsieme (nel piano) limitato $D\subset\mathbb{R}^2$ si dice misurabile secondo Peano-Jordan se la funzione $f(x,y)\equiv 1$ è integrabile (secondo Riemann) su $D$. In tal caso, l'Area ($\slash$ misura) di $D$ è definita come
+	\begin{equation}\label{eq:area_p-j_regione_piano}
+		Area(D) = |D| =\int\int_D 1 dx\, dy,
+	\end{equation}
+	se ha senso (ovvero è un numero finito).
+\end{definition}
+
+\paragraph{$\boldsymbol{D}$ misurabile:} $D$ si dice misurabile se ha misura finita, quindi se (\ref{eq:area_p-j_regione_piano}) è un numero finito.
+
+\begin{example}
+	$R= [a,b]\times [c,d]$ è (limitato e) misurabile secondo P-J e 
+	\begin{equation*}
+		|R| =\int \int_R 1 dx\, dy = \int_a^b\int_c^d 1 dx\, dy = (b-a) (d-c).
+	\end{equation*}
+\end{example}
+
+\paragraph{Deduduzioni sulla misura di Peano-Jordan:} Tutti gli insiemi che conosciuti della geometria elementare (cerchi, poligoni, quadrati, rettangoli, ecc.) sono misurabili e la loro misura è l'area elementare (quindi, in questo caso, misura ed area coincidono).
+
+\begin{example}[Dominio limitato non misurabile secondo Peano-Jordan]
+	\footnote{Slide 23 PDF 24.} Sia $Q = [0,1]\times[0,1]$ insieme limitato con entrambe le coordinate razionali, è definita la funzione di Dirichlet come
+	\begin{equation*}
+		f(x,y) =
+		\begin{cases}
+			1, &\text{se } (x,y)\in Q \text{ e } (x,y)\in\mathbb{Q}\\
+			0 &\text{altrimenti}
+		\end{cases}
+	\end{equation*}
+	La funzione caratteristica $f(x,y) \equiv 1$ (relativa al dominio) non è Riemann integrabile su $Q$ e non è misurabile secondo P-J.
+\end{example}
+
+\paragraph{Nota:} I domini semplici sono Reamann integrabili (?) in quanto sono limitati compresi fra il grafico di due funzioni continue e due rette verticali opportunamente prese.
+
+\subsection{Proprietà degli integrali doppi}
+\footnote{Slide 25 PDF 25.}
+\begin{property}
+	 Sia $D\subset\mathbb{R}^2$ insieme limitato e misurabile:
+	\begin{enumerate}
+		\item \textbf{Linearità:} Se $f,g\in\mathscrsfs{R}(D)$ e se $\alpha,\beta\in \mathbb{R}$ \textbf{\ul{allora}} $\alpha f + \beta g\in \mathscrsfs{R}(D)$ e
+		\begin{equation*}
+			\int\int_D [\alpha f(x,y) + \beta g(x,y)]dx\, dy = \alpha\int\int_D \alpha f(x,y) dx\, dy + \beta\int\int_D \beta g(x,y)dx\, dy.
+		\end{equation*}
+		\item \textbf{Monotonia (dell'integrale rispetto all'integranda):} Se $f,g\in\mathscrsfs{R}(D)$ e se $f\leq g$ su $D$ \textbf{\ul{allora}}
+		\begin{equation*}
+			\int\int_D f(x,y) dx\, dy \leq \int\int_D g(x,y) dx\, dy.
+		\end{equation*}
+		\item \textbf{Monotonia (dell'integrale rispetto all'integranda) - 2:} Se $f\in \mathscrsfs{R}(D)$ allora $|f|\in\mathscrsfs{R}(D)$\footnote{Ovvero $|f|$ è Riemann integrabile, quindi vale $\int\int_D |f(x,y)| dx\, dy$.} ed in particolare vale
+		\begin{equation*}
+			\left| \int\int_D f(x,y) dx\, dy\right| \leq \int\int_D |f(x,y)| dx\, dy.
+		\end{equation*}
+	\end{enumerate}
+\end{property}
+
+\subsection{Integrazione su domini (regioni) semplici misurabili secondo Peano-Jordan}
+\footnote{Slide 25 PDF 24.} È necessario specificare su quale dominio è operata l'integrazione (ad esempio per applicare al meglio la formula di riduzione).
+
+Date la Definizione \ref{def:f_estesa_rettangolo} di funzione estesa su un rettangolo e la Definizione \ref{def:integrale_f_estesa_rettangolo} di Integrale secondo Riemann della funzione limitata su un dominio limitato, non ci aiutano con il calcolo integrale perché anche se è considerata una funzione $f$ continua su $D$ non è detto che una la sua estensione $\tilde{f}$ sia continua \footnote{Quando è considerata l'estensione di $f$ continua su $D$, in genere, non è ottenuta un'estensione continua e quindi non è possibile applicare la formula di riduzione (per problemi, anche sulla frontiera del dominio).}.
+Pertanto, è necessario estendere la classe delle funzioni sulle quali è possibile operare l'integrazione e utilizzare una formula di riduzione, la quale varrà per insiemi diversi dai rettangoli. Questi nuovi insiemi sono chiamati domini semplici, in particolare saranno considerate la loro unione quando avranno parte delle rispettive frontiere in comune. In questo modo è possibile applicare la formula di additività  rispetto al dominio di integrazione (il dominio grande è spezzettato in domini semplici con parte della frontiera in comune) e di conseguenza l'integrale doppio sul dominio "generale" sarà una somma di integrali doppi su domini semplici.\\
+È necessario definire cosa siano i domini semplici, i quali sono definibili come regioni misurabili secondo Peano-Jordan.
+
+\begin{definition}[Regione y-semplice]\footnote{Slide 26 PDF 25.}
+	
+\end{definition}
