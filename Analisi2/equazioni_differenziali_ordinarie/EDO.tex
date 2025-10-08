@@ -1092,7 +1092,7 @@ In matematica un'equazione del tipo $x^2+1=0$ non ha soluzioni in campo reale ma
 \paragraph{Soluzioni della omogenea associata (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}): }\footnote{Per ottenere tutte le soluzioni sono necessarie 2 soluzioni linearmente indipendenti, dato che lo spazio vettoriale di una EDO lineare omogenea ha dimensione 2. Dalle due soluzioni è costruita un sistema fondamentale di soluzioni.\\
 Analogamente, per $\mathbb R^n$ la base canonica, la quale è una \gls{base ortonormale}, permette di scrivere vettori in $\mathbb R^n$ come combinazione lineare di $e_1,e_2,\hdots, e_n$. Quindi $e_1,e_2,\hdots, e_n$ formano un sistema fondamentale per lo spazio $\mathbb R^n$ perché gli elementi dello spazio sono espressi come combinazione lineare della base canonica.} Quindi, se $y_1(x)$ e $y_2(x)$ sono soluzioni linearmente indipendenti su $I$ della EDO omogenea associata (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) (ovvero, sono la base utilizzata per scrivere una soluzione qualsiasi) allora ogni soluzione di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) (elemento dell'integrale generale di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) è una loro combinazione lineare (cioè $y_1(x)$ e $y_2(x)$ formano un sistema fondamentale di funzioni).
 
-\noindent \footnote{Se presa una loro combinazione lineare di $y_1(x)$ e $y_2(x)$ e è posta uguale a 0, l'unica soluzione al problema è che $g_1$ e $c_2$ siano 0 $\forall x\in I$. Segue quanto scritto.} Inoltre, se $y_1(x)$ e $y_2(x)$ sono soluzioni della EDO omogenea (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) e sono linearmente indipendenti su $I$ ($\forall x\in I$), significa che
+\noindent \footnote{Se presa una loro combinazione lineare di $y_1(x)$ e $y_2(x)$ e è posta uguale a 0, l'unica soluzione al problema è che $c_1$ e $c_2$ siano 0 $\forall x\in I$. Segue quanto scritto.} Inoltre, se $y_1(x)$ e $y_2(x)$ sono soluzioni della EDO omogenea (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine})) e sono linearmente indipendenti su $I$ ($\forall x\in I$), significa che
 \begin{equation*}
     c_1 y_1(x) + c_2 y_2(x) = 0 \iff c_1=c_2=0.
 \end{equation*}
@@ -1102,7 +1102,7 @@ Ciò significa che
 \end{equation}
 formano un sistema fondamentale di soluzioni per (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) e quindi ogni soluzione su $I$ di (\ref{eq:edo_omogenea_associata_lineare_secondo_ordine}) si scrive come loro combinazione lineare.
 
-\paragraph{Nota su (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Quanto scritto significa che l'integrale generale di una EDO del secondo ordine dipende dalle 2 costanti $g_1$ e $c_2$, oltre che dalla variabile $x$ (una EDO del primo ordine dipende da 1 costante).
+\paragraph{Nota su (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Quanto scritto significa che l'integrale generale di una EDO del secondo ordine dipende dalle 2 costanti $c_1$ e $c_2$, oltre che dalla variabile $x$ (una EDO del primo ordine dipende da 1 costante).
 
 \paragraph{Spiegazione di (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}):} Gli elementi di $\mathbb R^n$ sono rappresentabili tramite la base canonica (la quale è una \gls{base ortonormale}).\\
 Un vettore può essere rappresentato come combinazione lineare con la base canonica, ad esempio: $(1,2)\in\mathbb R^2$ può essere espresso come $1\uline e_1 + 2\uline e_2=\uline u=(1,2)$. Lo stesso vale con (\ref{eq:sistema_fondamentale_soluzioni_EDO_omogena_associata}): $y_1(x)$ e $y_2(x)$ sono due soluzioni del problema omogeneo ed è possibile dimostrare, tramite la linearità del problema, che la loro combinazione lineare è anche la soluzione. Dato che l'obiettivo è trovare tutte le soluzioni (generare lo spazio delle soluzioni), è sufficiente avere due soluzioni indipendenti (due perché la EDO è di ordine due e lo spazio delle soluzioni è di dimensione due). La lineare indipendenza delle soluzioni sull'intervallo $I$ segue da AL:  la combinazione di $y_1(x)$ e $y_2(x)$ è linearmente indipendente (tale combinazione deve essere $=0$) se e solo se i coefficienti della combinazione sono tutti 0.\\
@@ -1362,7 +1362,7 @@ sono distinti i tre seguenti casi dove le soluzioni della EDO lineare omogenea d
 		\end{equation*}
 		
 		\addtocounter{footnote}{-1}
-		\footnotetext{È necessario modificare la costante $c$: $g_1$ è collegata al fattore connettivo da utilizzare quando è calcolata una primitiva di un esponenziale del tipo $e^{(\lambda_2-\lambda_1)x}$. In particolare $c$ deve essere diviso per $\lambda_1-\lambda_2$. $g_1$ è collegato a $k$ in (\ref{eq:edo_variabili_separabili_dimostrazione_integrale_generale_edo_seecondo_grado}).}
+		\footnotetext{È necessario modificare la costante $c$: $c_1$ è collegata al fattore connettivo da utilizzare quando è calcolata una primitiva di un esponenziale del tipo $e^{(\lambda_2-\lambda_1)x}$. In particolare $c$ deve essere diviso per $\lambda_1-\lambda_2$. $c_1$ è collegato a $k$ in (\ref{eq:edo_variabili_separabili_dimostrazione_integrale_generale_edo_seecondo_grado}).}
 		
 		\stepcounter{footnote}
 		\footnotetext{Necessaria per comprendere tutte le soluzioni.}
@@ -1676,7 +1676,7 @@ quindi
 \end{equation}
 
 \paragraph{Intermezzo:} La (\ref{eq:simil_wronskiana_metodo_variazione_costanti}) assomiglia alla Wronskiana ed ha determinante diverso da 0 perché $y_1(x)$ e $y_2(x)$ sono linearmente indipendenti. Pertanto, il sistema (\ref{eq:sistema_incognite_variazione_costanti}) ha un unica soluzione (\ref{eq:soluzione_sistema_condizioni}) perché il determinante (\ref{eq:simil_wronskiana_metodo_variazione_costanti}) è diverso da 0.\\
-Ora è necessario integrare $c_1'(x)$ e $c_2'(x)$ per trovare $g_1$ e $c_2(x)$. $c_1'(x)$ e $c_2'(x)$ sono determinati tramite il metodo di Cramer.\\
+Ora è necessario integrare $c_1'(x)$ e $c_2'(x)$ per trovare $c_1$ e $c_2(x)$. $c_1'(x)$ e $c_2'(x)$ sono determinati tramite il metodo di Cramer.\\
 È necessario ricordare che il problema (trovare le soluzioni della EDO completa) è non omogeneo. La differenza con l'omogenea è il numero delle soluzioni sul determinante. $\qed$
 
 \paragraph{Com'è definita la regola di Cramer?} Le ipotesi sono $c_1'(x)$ e $c_2'(x)$, la regola è il rapporto fra il determinante della matrice con prima colonna dei termini noti ed il determinante della matrice dei coefficienti. $\qed$
@@ -1728,7 +1728,7 @@ Quindi, l'integrale generale della EDO lineare di secondo ordine completa a coef
 \paragraph{Osservazioni finali:} 
 \begin{itemize}
 	\item Per risolvere problemi di Cauchy con EDO del secondo ordine è necessario fornire due condizioni iniziali: $y(x_0)=y_0$ e $y'(x_0)=y_1$;
-	\item Per trovare le soluzioni al problema di Cauchy del secondo ordine è necessario trovare l'integrale generale, derivare ed imporre le 2 condizioni iniziali. Imponendo le due condizioni iniziali sono determinate univocamente $g_1$ e $c_2$ a partire dalla famiglia delle soluzioni (l'integrale generale);
+	\item Per trovare le soluzioni al problema di Cauchy del secondo ordine è necessario trovare l'integrale generale, derivare ed imporre le 2 condizioni iniziali. Imponendo le due condizioni iniziali sono determinate univocamente $c_1$ e $c_2$ a partire dalla famiglia delle soluzioni (l'integrale generale);
 	\item Imporre le condizioni iniziali sull'integrale generale significa trovare l'unica soluzione passante per il punto $y(x_0) = y_0$.
 \end{itemize}
 
