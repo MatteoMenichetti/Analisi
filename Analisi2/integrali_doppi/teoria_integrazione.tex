@@ -382,7 +382,7 @@ Quindi, è possibile pensare a $D_1$ come unione dei segmenti verticali. Analoga
 	\label{fig:regione_x_semplice}
 \end{figure}
 
-\paragraph{I domini della forma $\texorpdfstring{\boldsymbol{D_1}}{D1}$ o $\texorpdfstring{D_2}{D2}$ sono misurabili secondo P-J:} I domini della forma $D_1$ e $D_2$, ovvero $x$-semplici o $y$-semplici, sono misurabili secondo Peano-Jordan, ovvero:
+\paragraph{I domini della forma $\texorpdfstring{\boldsymbol{D_1}}{D1}$ o $\texorpdfstring{\boldsymbol{D_2}}{D2}$ sono misurabili secondo P-J:} I domini della forma $D_1$ e $D_2$, ovvero $x$-semplici o $y$-semplici, sono misurabili secondo Peano-Jordan, ovvero:
 \begin{equation*}
 	|Area(D_1)| = |D_1| = \int\int_{D_1} 1 dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} 1dy\right)dx = \int_a^b[g_2(x)-g_1(x)] dx,
 \end{equation*}
@@ -391,29 +391,6 @@ e
 	|Area(D_2)| =|D_2| = \int\int_{D_2} 1 dx\,dy = \int_c^d \left(\int_{h_1(y)}^{h_2(y)}1 dy\right)dx = \int _c^d[h_2(y) - h_1(y)] dy.
 \end{equation*}
 È possibile notare che l'area delle due forme di regioni sono calcolabili tramite l'utilizzo di integrali iterativi (quindi come Analisi 1 perché ad una variabile), in quanto vale il Teorema \ref{th:formula_riduzione_domini_semplici} e quindi sono applicabili le formule di riduzione per i domini semplici.
-
-\begin{theorem}[Formula di riduzione su domini (piani) semplici]\label{th:formula_riduzione_domini_semplici}\footnote{Slide 28 PDF 25.}
-	Ogni funzione $f$ continua su $D\subset\mathbb{R}^2$, dominio semplice, è integrabile su tale dominio e valgono le seguenti formule di riduzione:
-	\begin{itemize}
-		\item Se $D$ è $x$-semplice
-		\begin{equation}\label{eq:formula_riduzione_dominio_x_semplice}
-			\int\int f(x,y) dx \, dy = \int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,y) dx\right)dy,\qquad (x\in[h_1(y), h_2(y)],\, y\in [c,d]]
-		\end{equation}
-		\item Se $D$ è $y$-semplice
-		\begin{equation}\label{eq:formula_riduzione_dominio_y_semplice}
-			\int\int_D f(x,y)dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)dy\right)dx. \qquad (x\in[a,b],\, y\in [g_1(y), g_2(y)]]
-		\end{equation}
-	\end{itemize}
-\end{theorem}
-
-\paragraph{Nota sulle formule di riduzione (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice})}: Per domini $x$-semplici l'ordine di iterazione è prima rispetto ad $x$ e poi rispetto a $y$ per ottenere una funzione dipendente da $y$ ($x$ è in funzione di $y$); in modo analogo con per un dominio $y$-semplice. $\qed$
-
-Anche per gli integrali multipli su domini semplici vale l'additività rispetto questi ultimi, in quanto è possibile dividere l'integrale in somma di integrali con domini più semplici. Quindi, l'integrale sarà la somma degli integrali sui singoli intervalli la cui unione dà l'intervallo generale.\\
-In altre parole: dato che sono considerati domini sul piano, se questi sono l'unione di domini semplici (ovvero $x$ o $y$-semplici), i quali dovranno avere in comune solo una parte di frontiera, è possibile definire il Teorema \ref{th:additivita_integrale_domini_semplici} di additività degli integrali doppi sui domini semplici, cioè: dato un integrale doppio definito su un dominio diviso in un insieme finito di domini semplici, dove quest'ultimi hanno in comune solo una parte di frontiera, allora l'integrale doppio è la somma degli integrali doppi definiti sui singoli domini semplici.
-
-\begin{theorem}[Additività dell'integrale doppio sui domini semplici]\label{th:additivita_integrale_domini_semplici}\footnote{Slide 32 PDF 25.}
-	
-\end{theorem}
 
 \begin{example}\footnote{Slide 29 PDF 25.}
 	Il triangolo $T$ di vertici $(0,0),(1,0),(1,1)$ può essere rappresentato come segue:
@@ -434,6 +411,43 @@ In altre parole: dato che sono considerati domini sul piano, se questi sono l'un
 		\label{fig:esempio_triangolo_dominio_semplice}
 	\end{figure}
 \end{example}
+
+\begin{theorem}[Formula di riduzione su domini (piani) semplici]\label{th:formula_riduzione_domini_semplici}\footnote{Slide 28 PDF 25.}
+	Ogni funzione $f$ continua su $D\subset\mathbb{R}^2$, dominio semplice, è integrabile su tale dominio e valgono le seguenti formule di riduzione:
+	\begin{itemize}
+		\item Se $D$ è $x$-semplice
+		\begin{equation}\label{eq:formula_riduzione_dominio_x_semplice}
+			\int\int f(x,y) dx \, dy = \int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,y) dx\right)dy,\qquad (x\in[h_1(y), h_2(y)],\, y\in [c,d]]
+		\end{equation}
+		\item Se $D$ è $y$-semplice
+		\begin{equation}\label{eq:formula_riduzione_dominio_y_semplice}
+			\int\int_D f(x,y)dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)dy\right)dx. \qquad (x\in[a,b],\, y\in [g_1(y), g_2(y)]]
+		\end{equation}
+	\end{itemize}
+\end{theorem}
+
+\paragraph{Nota sulle formule di riduzione (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice})}: Per domini $x$-semplici l'ordine di iterazione è prima rispetto ad $x$ e poi rispetto a $y$ per ottenere una funzione dipendente da $y$ ($x$ è in funzione di $y$); in modo analogo con per un dominio $y$-semplice. $\qed$
+
+Anche per gli integrali multipli su domini semplici vale l'additività rispetto questi ultimi, in quanto è possibile dividere l'integrale in somma di integrali con domini più semplici. Quindi, l'integrale sarà la somma degli integrali sui singoli intervalli la cui unione dà l'intervallo generale.\\
+In altre parole: dato che sono considerati domini sul piano, se questi sono l'unione di domini semplici (ovvero $x$ o $y$-semplici), i quali dovranno avere in comune solo una parte di frontiera, è possibile definire il Teorema \ref{th:additivita_integrale_domini_semplici} di additività degli integrali doppi sui domini semplici, cioè: dato un integrale doppio definito su un dominio diviso in un insieme finito di domini semplici, dove quest'ultimi hanno in comune solo una parte di frontiera, allora l'integrale doppio è la somma degli integrali doppi definiti sui singoli domini semplici.
+
+\begin{theorem}[Additività dell'integrale doppio su domini semplici]\label{th:additivita_integrale_domini_semplici}\footnote{Slide 32 PDF 25.}
+	Supposto che $D_1,D_2,\hdots, D_k\subset\mathbb{R}^2$, con $k\in\mathbb{R}$ finito, siano domini semplici e che non abbiano, a due a due, punti in comune oltre ad una parte di frontiera, allora ogni funzione (continua) su $D=D_1\cup D_2\cup \hdots\cup D_k$ è integrabile su $D$ e
+	\begin{equation*}
+		\int\int f(x,y) dx\, dy = \int\int D_1 f(x,y) dx\, dy +\hdots + \int\int D_k f(x,y) dx\, dy = \sum_{i=1}^{k} \int\int D_i f(x,y) dx\, dy.
+	\end{equation*}
+\end{theorem}
+
+\paragraph{Nota sul Teorema.} Utilizzando il Teorema è possibile ampliare la nostra capacità di calcolo su domini generali: grazie al fatto che scomponendo un dominio generale in domini semplici è possibile applicare la formula di riduzione per domini semplici (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice}) ai singoli domini semplici, è sufficiente sommare il risultato delle formule di riduzione per integrali su domini semplici per ottenere il risultato voluto.
+
+\paragraph{Esempio applicazione del Teorema.} Sia Figura \ref{fig:esempio_additivita_integrali_domini_semplici}, $D$ non è un dominio semplice. $D_1$ e $D_2$ sono domini semplici, la cui unione è $D=D_1\cup D_2$. $D_1$ e $D_2$ hanno solo una parte di frontiera e quindi è possibile applicare il Teorema \ref{th:additivita_integrale_domini_semplici} di additività dell'integrale doppio su domini semplici e possono essere $x$-semplici e/o $y$-semplici in modo indipendente l'uno dall'altro.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.35\textwidth]{Analisi2/figures/esempio_additivita_integrali_domini_semplici.png}
+	\caption{Esempio di dominio generale scomposto in domini semplici.}
+	\label{fig:esempio_additivita_integrali_domini_semplici}
+\end{figure}
 
 \begin{example}
 	L'insieme del piano $y$-semplice (vedere Figura \ref{fig:esempio_dominio_y_semplice})
@@ -500,4 +514,4 @@ Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplic
 	\end{equation*}
 \end{example}
 
-\subsection{Cambiamento di variabile}
+\subsection{Cambiamento di variabile}\footnote{Slide 33 PDF 25.}
