@@ -34,9 +34,11 @@
 \usepackage{titlesec}
 \usepackage[mathscr]{euscript}
 
-% Copied from mathrsfs.sty
 \DeclareSymbolFont{rsfs}{U}{rsfs}{m}{n}
 \DeclareSymbolFontAlphabet{\mathscrsfs}{rsfs}
+
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\eval[3]{\left.#1\right\rvert_{#2}^{#3}}
 
 \DeclareUnicodeCharacter{2212}{-}
 

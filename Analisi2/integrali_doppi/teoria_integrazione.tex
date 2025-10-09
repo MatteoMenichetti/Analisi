@@ -1,4 +1,3 @@
-\pagebreak
 \section{Calcolo integrale per funzioni di più variabili (secondo Riemann)}
 \subsection{Introduzione}
 \footnote{Slide 12 PDF 24.} Sarà trattato il calcolo integrale per funzioni di 2 variabili, quindi integrali doppi (in quanto il dominio considerato sarà un sottoinsieme del piano). Sarà trattato come gli integrali doppi diventino semplici, cosicché un integrale doppio possa essere trasformato in un integrale iterato, potendo così integrare prima rispetto ad una o poi rispetto all'altra variabile.\\
@@ -327,6 +326,178 @@ Date la Definizione \ref{def:f_estesa_rettangolo} di funzione estesa su un retta
 Pertanto, è necessario estendere la classe delle funzioni sulle quali è possibile operare l'integrazione e utilizzare una formula di riduzione, la quale varrà per insiemi diversi dai rettangoli. Questi nuovi insiemi sono chiamati domini semplici, in particolare saranno considerate la loro unione quando avranno parte delle rispettive frontiere in comune. In questo modo è possibile applicare la formula di additività  rispetto al dominio di integrazione (il dominio grande è spezzettato in domini semplici con parte della frontiera in comune) e di conseguenza l'integrale doppio sul dominio "generale" sarà una somma di integrali doppi su domini semplici.\\
 È necessario definire cosa siano i domini semplici, i quali sono definibili come regioni misurabili secondo Peano-Jordan.
 
-\begin{definition}[Regione y-semplice]\footnote{Slide 26 PDF 25.}
-	
+\begin{definition}[Regione $y$-semplice]\footnote{Slide 26 PDF 25.}
+	Si dice che $D_1\subset\mathbb{R}^2$ è una regione $y$-semplice (o normale rispetto l'asse $x$) se
+	\begin{equation*}
+		D_1 = \{(x,y)\in\mathbb{R}^2\,;\, a\leq x\leq b\, ,\, g_1(x)\leq y\leq g_2(x)\}\subset\mathbb{R}^2,
+	\end{equation*}
+	dove $g_1,g_2\in C^0(x)$.
 \end{definition}
+
+\paragraph{Note:} $D_1$ è un sottoinsieme del piano cartesiano ed è $y$-semplice (o nomrale rispetto all'asse $x$) perché $y$ dipende da $x$ e normale rispetto all'asse $x$. È possibile dividere le regioni in sezioni (vedere Figura \ref{fig:regione_y_semplice}) utilizzando la retta verticale (la quale varia in $[a,b]$). Quindi, la regione $D_1$ può essere vista come l'unione di segmenti verticali, dove questi segmenti hanno come estremo sinistro $g_1(x)$ ed estremo destro $g_2(x)$. Per questo $D_1$ può essere rappresentato come
+\begin{equation*}
+	D_1 = \underset{x}{\bigcup} (D_1)_x,\quad x\in[a,b],
+\end{equation*} 
+ovvero ($D_1$ sezionato con $x=\bar x$ (di Figura \ref{fig:regione_y_semplice}))
+\begin{equation*}
+	(D_1)_x = \{y\in\mathbb{R}\, ;\, g_1(x) \leq y \leq g_2(x)\} \overset{\footnotemark}{=} 
+	\begin{cases}
+		[g_1(x), g_2(x)]	&\text{se } x\in[a,b]\\
+		\emptyset				&\text{altrimenti}
+	\end{cases}
+\end{equation*}
+
+\footnotetext{Se tagliata la regione con una qualsiasi retta verticale $x=\bar{x}$ è come fare l'intersezione fra il dominio e la retta.}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.35\textwidth]{Analisi2/figures/regione_y_semplice.png}
+	\caption{Regione $y$-semplice.}
+	\label{fig:regione_y_semplice}
+\end{figure}
+
+Quindi, è possibile pensare a $D_1$ come unione dei segmenti verticali. Analogamente è possibile definire un dominio $x$-semplice, il sarà l'unione dei segmenti orizzontali, dove $x$ dipende da $y$ ed noto dove si muova $y$ (ovvero $y\in[c,d]$ ed $x$ è compresa fra due funzioni della variabile $y$). $\qed$
+
+\begin{definition}[Regione $x$-semplice]\footnote{Slide 27 PDF 25.}
+	$D_2\subseteq\mathbb{R}^2$ si dice regione del piano $x$-semplice (o normale rispetto all'asse $y$) se
+	\begin{equation*}
+		D_2 = \{(x,y)\in\mathbb{R}^2\, ;\, c\leq y\leq d \, ,\, h_1(y)\leq x \leq h_2(y)\}\subset\mathbb{R}^2,
+	\end{equation*}
+	con $h_1,h_2\in C^0([c,d])$.
+\end{definition}
+
+\paragraph{Nota:} $D_2$ può essere rapprentata come
+\begin{equation*}
+	D_2 = \underset{y}{\bigcup} (D_2)_y = (D_2)_ = \{x\in\mathbb{R}\,;\, h_1(y)\leq x \leq h_2(y)\} =
+	\begin{cases}
+		[h_1(y), h_2(y)] & \text{se } y\in[c,d]\\
+		\emptyset 			& \text{altrimenti}
+	\end{cases}
+\end{equation*}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.35\textwidth]{Analisi2/figures/regione_x_semplice.png}
+	\caption{Regione $x$-semplice.}
+	\label{fig:regione_x_semplice}
+\end{figure}
+
+\paragraph{I domini della forma $\texorpdfstring{\boldsymbol{D_1}}{D1}$ o $\texorpdfstring{D_2}{D2}$ sono misurabili secondo P-J:} I domini della forma $D_1$ e $D_2$, ovvero $x$-semplici o $y$-semplici, sono misurabili secondo Peano-Jordan, ovvero:
+\begin{equation*}
+	|Area(D_1)| = |D_1| = \int\int_{D_1} 1 dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} 1dy\right)dx = \int_a^b[g_2(x)-g_1(x)] dx,
+\end{equation*}
+e
+\begin{equation*}
+	|Area(D_2)| =|D_2| = \int\int_{D_2} 1 dx\,dy = \int_c^d \left(\int_{h_1(y)}^{h_2(y)}1 dy\right)dx = \int _c^d[h_2(y) - h_1(y)] dy.
+\end{equation*}
+È possibile notare che l'area delle due forme di regioni sono calcolabili tramite l'utilizzo di integrali iterativi (quindi come Analisi 1 perché ad una variabile), in quanto vale il Teorema \ref{th:formula_riduzione_domini_semplici} e quindi sono applicabili le formule di riduzione per i domini semplici.
+
+\begin{theorem}[Formula di riduzione su domini (piani) semplici]\label{th:formula_riduzione_domini_semplici}\footnote{Slide 28 PDF 25.}
+	Ogni funzione $f$ continua su $D\subset\mathbb{R}^2$, dominio semplice, è integrabile su tale dominio e valgono le seguenti formule di riduzione:
+	\begin{itemize}
+		\item Se $D$ è $x$-semplice
+		\begin{equation}\label{eq:formula_riduzione_dominio_x_semplice}
+			\int\int f(x,y) dx \, dy = \int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,y) dx\right)dy,\qquad (x\in[h_1(y), h_2(y)],\, y\in [c,d]]
+		\end{equation}
+		\item Se $D$ è $y$-semplice
+		\begin{equation}\label{eq:formula_riduzione_dominio_y_semplice}
+			\int\int_D f(x,y)dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)dy\right)dx. \qquad (x\in[a,b],\, y\in [g_1(y), g_2(y)]]
+		\end{equation}
+	\end{itemize}
+\end{theorem}
+
+\paragraph{Nota sulle formule di riduzione (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice})}: Per domini $x$-semplici l'ordine di iterazione è prima rispetto ad $x$ e poi rispetto a $y$ per ottenere una funzione dipendente da $y$ ($x$ è in funzione di $y$); in modo analogo con per un dominio $y$-semplice. $\qed$
+
+Anche per gli integrali multipli su domini semplici vale l'additività rispetto questi ultimi, in quanto è possibile dividere l'integrale in somma di integrali con domini più semplici. Quindi, l'integrale sarà la somma degli integrali sui singoli intervalli la cui unione dà l'intervallo generale.\\
+In altre parole: dato che sono considerati domini sul piano, se questi sono l'unione di domini semplici (ovvero $x$ o $y$-semplici), i quali dovranno avere in comune solo una parte di frontiera, è possibile definire il Teorema \ref{th:additivita_integrale_domini_semplici} di additività degli integrali doppi sui domini semplici, cioè: dato un integrale doppio definito su un dominio diviso in un insieme finito di domini semplici, dove quest'ultimi hanno in comune solo una parte di frontiera, allora l'integrale doppio è la somma degli integrali doppi definiti sui singoli domini semplici.
+
+\begin{theorem}[Additività dell'integrale doppio sui domini semplici]\label{th:additivita_integrale_domini_semplici}\footnote{Slide 32 PDF 25.}
+	
+\end{theorem}
+
+\begin{example}\footnote{Slide 29 PDF 25.}
+	Il triangolo $T$ di vertici $(0,0),(1,0),(1,1)$ può essere rappresentato come segue:
+	\begin{itemize}
+		\item Caso $y$-semplice (unione di segmenti verticali)
+		\begin{equation*}
+			T = \{(x,y)\in\mathbb{R}^2\, ;\, 0\leq x\leq 1,\, 0\leq y\leq x\}.
+		\end{equation*}
+		\item Caso $x$-semplice (unione di segmenti orizzontali)
+		\begin{equation*}
+			T = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq y\leq 1,\, y\leq x\leq 1\}.
+		\end{equation*}
+	\end{itemize}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.35\textwidth]{Analisi2/figures/esempio_triangolo_dominio_semplice.png}
+		\caption{Triangolo $T$ come regione $x$-semplice o $y$-semplice. Le linee colorate sono intese come direzione di percorrenza.}
+		\label{fig:esempio_triangolo_dominio_semplice}
+	\end{figure}
+\end{example}
+
+\begin{example}
+	L'insieme del piano $y$-semplice (vedere Figura \ref{fig:esempio_dominio_y_semplice})
+	\begin{equation*}
+		E = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 2,\, -x\leq y\leq x^2\}
+	\end{equation*}
+	può essere espresso come unione di due domini $x$-semplici come segue
+	\begin{equation*}
+		E = E_1 \cup E_2 = \underbrace{\{(x,y)\in\mathbb{R}^2\, ;\, -2\leq y\leq 0,\, -y\leq x\leq 2\}}_{E_1}\cup\underbrace{\{(x,y)\in\mathbb{R}^2\,;\, 0\leq y\leq 4,\, \sqrt{y}\leq x\leq 2\}}_{E_2}.
+	\end{equation*}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice.jpeg}
+		\caption{$E = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 2,\, -x\leq y\leq x^2\}$.}
+		\label{fig:esempio_dominio_y_semplice}
+	\end{figure}
+\end{example}
+
+\paragraph{Nota:} Se è necessario trasformare un dominio $y$-semplice in $x$-semplice è necessario scriverlo come unione di segmenti orizzontali e conviene dividerlo se cambia di segno e/o varia in base a questo.
+
+Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplice a $x$-semplice permette di semplificare il calcolo di un integrale, altrimenti non sarebbe possibile esprimere la primitiva della funzione integranda con una funzione elementare.
+\begin{example}[Integrale iterato su dominio $y$-semplice]\footnote{Slide 30 PDF 25.}
+	Considerato
+	\begin{equation*}
+		\int_0^1\left(\int_x^1 e^{y^2}dy\right)dx,
+	\end{equation*}
+	il dominio di integrazione è $y$-semplice, ovvero
+	\begin{equation*}
+		D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 1,\, x\leq y\leq 1\}.
+	\end{equation*}
+	
+		\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice_1.jpeg}
+		\caption{$D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 1,\, x\leq y\leq 1\}$.}
+		\label{fig:esempio_dominio_y_semplice_1}
+		\end{figure}
+	
+	\noindent $f$ è continua in $D$, quindi è integrabile secondo Riemann.
+
+	\noindent Pertanto, per risolvere l'integrale
+	\begin{equation}\label{eq:esempio_integrale_dominio_y_semplice}
+		\int\int_D e^{y^2} dxdy
+	\end{equation}
+	è necessario scambiare l'ordine di iterazione, altrimenti è troppo complesso, quindi è trasformato $D$ in $x$-semplice e calcolato l'integrale come segue:\\
+	Dato
+	\begin{equation*}
+		D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq y\leq 1,\, 0\leq x\leq y\},
+	\end{equation*}
+	allora
+	\begin{equation*}
+		\int\int_D e^{y^2} dxdy \overset{\text{formula riduzione } x \text{-semplice}}{=} \int_0^1\left(\int_0^y e^{y^2} dx\right)dy = \int_0^1 e^{y^2}[x]_0^y dy = \int_0^1 y e^{y^2}dy = \eval{\frac{e^{y^2}}{2}}{0}{1} = \frac{1}{2}(e-1)
+	\end{equation*}
+	\paragraph{Soluzione alternativa:} In alternativa, dato che la funzione è continua in $D$ che sia in forma $x$-semplice o $y$-semplice, è possibile risolvere l'integrale come segue:
+	\begin{equation*}
+		\int\int_D e^{y^2} dxdy \overset{\text{formula riduzione } y \text{-semplice}}{=} \int_0^1\left(\int_x^1 e^{y^2} dy\right)dc = (\star)
+	\end{equation*}
+	dato che $e^{y^2}$ è continua allora ammette primitiva $F(x)$ tale che $F'(x)$ e quindi
+	\begin{equation*}
+		\begin{matrix}
+			(\star) &=& \int_0^1[F(x)]_0^1dx &=& \int_0^1(F(1) - F(x)) dx &=& F(1) \int_0^1 1 dx -\underbrace{ \int_0^11\cdot F(x)dx}_{\text{risolto per parti}} &=& \\\\
+			&&&=& F(1) - [x\,F(x)]_0^1 + \int_0^1x\, \underbrace{F'(x)}_{e^{x^2}}\;dx &=& F(1)-F(1) +\int_0^1x\, e^{x^2}\; dx &=& \frac{1}{2}(e-1).
+		\end{matrix}
+	\end{equation*}
+\end{example}
+
+\subsection{Cambiamento di variabile}
