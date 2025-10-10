@@ -479,12 +479,12 @@ Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplic
 		D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 1,\, x\leq y\leq 1\}.
 	\end{equation*}
 	
-		\begin{figure}[ht]
+	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice_1.jpeg}
 		\caption{$D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 1,\, x\leq y\leq 1\}$.}
 		\label{fig:esempio_dominio_y_semplice_1}
-		\end{figure}
+	\end{figure}
 	
 	\noindent $f$ è continua in $D$, quindi è integrabile secondo Riemann.
 
@@ -515,3 +515,164 @@ Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplic
 \end{example}
 
 \subsection{Cambiamento di variabile}\footnote{Slide 33 PDF 25.}
+Come in Analisi 1 è definita l'integrazione per sostituzione. Tale integrazione è scelta quando è facile cambiare variabile al fine di risolvere l'integrale. È necessario che la funzione utilizzata per il cambiamento di variabile sia di classe $C^1$ ed invertibile (quindi biettiva).
+
+È utile ricordare che quando è stata trattata l'integrazione per sostituzione in Analisi 1, il problema è stato trovare $x=\varphi(t)\in C^1(I)$ biettiva (quindi tale che $\exists t=\varphi^{-1}(x)$) tale che
+\begin{equation}\label{eq:cambiamento_variabile_integrali_an1}
+	\int_a^b f(x) dx \overset{x = \varphi(t)}{=} \int_{\varphi(a)}^{\varphi(b)} f(\varphi(t))\, \varphi'(t) dt,
+\end{equation}
+dove $ \varphi'(t) dt$ è il fattore correttivo (o pagamento).
+
+\subsubsection{Matrice Jacobiana}\footnote{Slide 34 PDF 25}
+È necessario passare agli integrali doppi, quindi, quando è effettuato il cambiamento di variabile, il pagamento in (\ref{eq:cambiamento_variabile_integrali_an1}) si trasforma nel determinante della matrice Jacobiana. Una matrice Jacobiana (vedere (\ref{eq:matrice_jacobiana})) è una matrice che ha come righe i gradienti di una funzione vettoriale. Inoltre, è necessario specificare che il cambiamento è svolto su domini nel piano (perché considerati gli integrali doppi), ovvero su domini semplici ed è legato alle coordinate polari (quelle viste per i limiti).
+
+Prima di definire la matrice Jacobiana è introdotta la funzione utile al cambiamento di variabile: il cambio di variabile è operato tramite il cambio di coordinate, utilizzando $F$, una applicazione vettoriale, di classe $C^1$ e biettiva, del tipo
+\begin{equation*}
+	\begin{aligned}
+		F:\mathbb{R}^2 &\rightarrow\mathbb{R}^2\\
+			(\rho, \theta) &\mapsto (\underbrace{F_1(\rho, \theta)}_{x(\rho, \theta)}, \underbrace{F_2(\rho, \theta)}_{y(\rho, \theta)})
+	\end{aligned}
+\end{equation*}
+definita come
+\begin{equation*}
+	\vec{F}(\rho, \theta)=(F_1(\rho, \theta), F_2(\rho, \theta)) = (\rho\cos\theta, \rho\sin\theta).
+\end{equation*}
+Tale funzione può essere rappresentata come
+\begin{equation}\label{eq:trasformazione_F}
+	F\colon
+	\begin{cases}
+		x(\rho, \theta) = \rho \cos\theta = F_1(\rho, \theta)\\
+		y(\rho, \theta) = \rho \sin\theta = F_2(\rho, \theta)
+	\end{cases}
+\end{equation}
+
+\paragraph{Nota su \texorpdfstring{$\boldsymbol{\vec{F}}$}{F}.} Se sono considerate $F_1$ e $F_2$ come assi $x$ e $y$ allora è possibile visualizzare $F$ come Figura \ref{fig:applicazione_vettoriale_matrice_jacobiana}, con $x=\rho\sin\theta$ e $y=\rho\cos\theta$ (ricordando che $\theta$ è misurato in senso antiorario), dove
+\begin{equation*}
+	x^2(\rho, \theta) + y^2(\rho, \theta) = \rho^2 \geq 0.
+\end{equation*}
+Inoltre, per essere sicuri che $F$ sia una trasformazione regolare di coordinate sono necessarie delle ipotesi du $\theta$.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.25\textwidth]{Analisi2/figures/applicazione_vettoriale_matrice_jacobiana.png}
+	\caption{Rappresentazione di $\vec{F}(\rho, \theta)=(F_1(\rho, \theta), F_2(\rho, \theta)) = (\rho\cos\theta, \rho\sin\theta)$.}
+	\label{fig:applicazione_vettoriale_matrice_jacobiana}
+\end{figure}
+
+\paragraph{Nota su (\ref{eq:trasformazione_F}).} $F_1$ e $F_2$ sono differenziabili perché $\cos$ e $\sin$ sono funzioni super-regolari e quindi è possibile costruire il vettore gradiente delle componenti, cioè: il gradiente di $F$ è composto dalle derivate di $x$ e $y$, definendo così la matrice Jacobiana assocoiata ad $F$.
+
+\begin{definition}[Matrice Jacobiana]\footnote{Slide 35 PDF 25.}
+	Data l'applicazione vettoriale
+	\begin{equation*}
+		\begin{aligned}
+			F:\mathbb{R}^2 &\rightarrow\mathbb{R}^2\\
+			(\rho, \theta) &\mapsto (\underbrace{F_1(\rho, \theta)}_{x(\rho, \theta)}, \underbrace{F_2(\rho, \theta)}_{y(\rho, \theta)})
+		\end{aligned}
+	\end{equation*}
+	la matrice Jacobiana associata a $F$ è definita come
+	\begin{equation*}
+		DF(\rho, \theta) = JF(\rho, \theta) =
+		\begin{bmatrix}
+			\triangledown F_1(\rho, \theta)\\
+			\triangledown F_2(\rho, \theta)
+		\end{bmatrix} =
+		\begin{bmatrix}
+			\frac{\partial F_1}{\partial \rho}(\rho, \theta) & \frac{\partial F_1}{\partial \theta}(\rho, \theta) \\\\
+			\frac{\partial F_2}{\partial \rho}(\rho, \theta) & \frac{\partial F_2}{\partial \theta}(\rho, \theta)
+		\end{bmatrix} =
+		\begin{bmatrix}
+			\cos\theta & -\rho\sin\theta\\
+			\sin\theta & \rho\cos\theta
+		\end{bmatrix}.
+	\end{equation*}
+\end{definition}
+
+\paragraph{Come si calcola $\boldsymbol{F'(\rho, \theta)}$?} Dato che $F$ è un'applicazione vettoriale allora
+\begin{equation*}
+	F'(\rho, \theta) = \det JF(\rho, \theta) = \rho \cos^2\theta + \rho \sin^2\theta = \theta.
+\end{equation*}
+
+\paragraph{Nota su $\boldsymbol{\vec{F}}(\rho, \theta)$.} Se $\rho=0$ allora $\vec{F}(0, \theta) = (0,0),\, \forall\theta\mathbb{R}$. Ciò è dovuto al fatto che le funzioni trigonometriche sono periodiche, dove per periodica si intende quanto segue: Dati $(\rho, \theta_1)\neq (\rho, \theta_1 + k\,2\phi)$,
+\begin{equation*}
+	\begin{matrix}
+		F(\rho, \theta_1) &=& (\rho \cos\theta_1, \rho \sin\theta_1),\\
+	F(\rho, \theta_1 + 2\pi) &=& (\rho \cos(\theta_1 + 2\pi), \rho \sin(\theta_1 + 2\pi)) &=& (\rho \cos\theta_1, \rho \sin\theta_1).
+	\end{matrix}
+\end{equation*}
+
+Prima di definire la formula di cambiamento di variabili per gli integrali doppi (\ref{eq:formula_cambiamento_variabili_integrale_doppio}) (vedere Teorema \ref{th:formula_cambiamento_variabili_integrale_doppio}), è necessario considerare il caso in cui la trasformazione $F$ sia biiettiva. Dato che le funzioni trigonometriche sono periodiche, è possibile limitare lo studio ad un intervallo aperto per la variabile $\theta$ di \ul{lunghezza il periodo $2\pi$}$_{\footnotemark}$ (ottenendo la biiettività di $F$). Quanto ricercato è ottenuto considerando
+\begin{equation*}
+	F:A\subset\mathbb{R}^2 \rightarrow\mathbb{R},
+\end{equation*}
+dove $A=\underbrace{(0,+\infty)}_\rho \times \underbrace{(0,2\pi)}_\theta$ è un aperto ed è il piano polare. Inoltre,
+\begin{equation*}
+	\rho = \det DF(\rho, \theta) \neq 0,
+\end{equation*}
+la quale è la condizione ricercata affinché $F$ sia di classe $C^1$ ed invertibile. Inoltre, dato che $\rho\neq 0$, la matrice Jacobiana $JF(\rho, \theta)$ ha rango massimo (dovuto all'analisi vettoriale, cose che non ci interessano perché tratta di funzioni da $\mathbb{R}^n$ a $\mathbb{R}^n$).
+
+\footnotetext{Significa che l'intervallo considerato per $\theta$ può essere $(0,2\phi)$ come $(-\pi,\pi)$.}
+
+\paragraph{Nota su $\boldsymbol{F(A)}$.} Sia $F(A)$ l'immagine di $F$ su $A$, $F(A)$ è un sottoinsieme aperto del piano cartesiano, ovvero
+\begin{equation*}
+	F(A)\subset\mathbb{R}^2\backslash\{(x,y)\in\mathbb{R}^2\,;\, y>0,\, x\leq 0\}.
+\end{equation*}
+
+\paragraph{Nota su inveribilità.} L'invertibilità di $F$ è richiesta affinché possa essere definita la formula di cambio di variabili. Se $F$ non fosse invertibile non sarebbe l'equivalenza fra sistemi diversi di coordinate (esempio tra polari e cartesiane). Con l'invertibilità le coordinate polari $\rho$ e $\theta$ possono essere espresse in funzione delle coordinate cartesiane $x$ e $y$ come $\rho = \sqrt{x^2 + y^2}$ e $\theta = \arctan\frac{x}{y}$.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.22\textwidth]{Analisi2/figures/dominio_applicazione_vettoriale_jacobiana.png}
+	\caption{Dominio ($A$) dell'applicazione vettoriale $\vec{F}(\rho, \theta)=(F_1(\rho, \theta), F_2(\rho, \theta)) = (\rho\cos\theta, \rho\sin\theta)$. È esclusa la semiretta $y=0, x>0$ perché è un aperto e non sono considerati 0 e $2\pi$. }
+	\label{fig:dominio_applicazione_vettoriale_jacobiana}
+\end{figure}
+
+\subsubsection{Trasformazione da coordinate cartesiane in polari}\footnote{Slide 37 PDF 25.}
+Per gli integrali doppi è utile cambiare coordinate quando i domini nel piano cartesiano presentano simmetrie (come dischi o settori circolari). Passando alle coordinate polari, i domini in coordinate cartesiane diventano rettangoli polari e gli integrali diventano più facili da risolvere. Per trasformare un integrale con variabili in coordinate cartesiane in polari è necessario utilizzare la formula di cambiamento di variabili per gli integrali doppi definita dal Teorema \ref{th:formula_cambiamento_variabili_integrale_doppio}.
+
+Per trattare la trasformazione da coordinate cartesiane in polari è necessario fare una lista di oggetti necessari:
+\begin{enumerate}
+	\item
+	\begin{equation*}
+		F:A=(0,+\infty) \times \underbrace{(0,2\pi)}_{\footnotemark}\subset\mathbb{R}^2\rightarrow \mathbb{R}^2,
+	\end{equation*}
+	dove $F(\rho, \theta)=(F_1(\rho, \theta), F_2(\rho, \theta)) = (\rho\cos\theta, \rho\sin\theta)$,
+	\item $\det JF(\rho, \theta)=\rho\neq 0$,
+	\item $F\in C^1(A)$ e $F$ invertibile ($\exists F^{-1}(A)$),
+	\item $A\overset{F}{\rightarrow} F(A)$, con $A$ e $F(A)$ aperti.
+\end{enumerate}
+\footnotetext{Oppure $(-\pi, \pi)$.}
+
+\paragraph{Nota sul Teorema \ref{th:formula_cambiamento_variabili_integrale_doppio}.} Il Teorema \ref{th:formula_cambiamento_variabili_integrale_doppio} sancisce che se il dominio di un integrale doppio di una funzione definita nel piano cartesiano $(x,y)$ presenta simmetrie allora conviene cambiare variabili ed utilizzare le coordinate polari. Inoltre, è necessario ricordare che un dominio può essere considerato come unione di un insieme ed della sua frontiera (vedere Definizione \ref{def:dominio} di Dominio), dove se la frontiera è regolare allora la frontiera non è considerata nel computo dell'integrale (perché non contribuisce).
+
+\begin{theorem}[Formula di cambiamento di variabili]\label{th:formula_cambiamento_variabili_integrale_doppio}\footnote{Slide 37 PDF 25.}
+	Considerata $F(\rho, \theta) = (\rho\cos\theta, \rho\sin\theta)$. Sia $S\subset(0, +\infty)\times(0,2\pi)$ aperto e misurabile secondo P-J nel piano $(\rho, \theta)$ e sia $T=F(S)$ \textbf{\ul{allora}} per ogni funzione $f(x,y)$ integrabile secondo Riemann su $T$ si ha la seguente formula di cambiamento delle variabili:
+	\begin{equation}\label{eq:formula_cambiamento_variabili_integrale_doppio}
+		\int\int_{T=F(S)} f(x,y)\, dx\, dy \overset{\footnotemark}{=} \int\int_{S = F^{-1}(T)} f(\rho\cos\theta, \rho\sin\theta) \cdot\underbrace{\det JF(\rho, \theta)}_{\text{pag. cambio var.}} d\rho\, d\theta = \int\int_{S = F^{-1}(T)} f(\rho\cos\theta, \rho\sin\theta) \cdot\rho d\rho\, d\theta.
+	\end{equation}
+\end{theorem}
+\footnotetext{Trasformazione nel piano $(\rho, \theta)$ tramite $F:T\rightarrow S$. $T$ è l'immagine tramite $F^{-1}$ di $S$ e, viceversa, $S$ di $T$.}
+
+\paragraph{Nota.} Sono utilizzate le coordinate polari quando un domini e funzioni presentano simmetrie, facilitando i calcoli. La trasformazione trasforma i domini nel piano cartesiano in retangoli polari, ovvero un rettangoli classici nel piano polare dove $\rho\in[\rho_1,\rho_2]\subset(0, +\infty)$ e $\theta\in[\theta_1, \theta_2]\in[0,2\pi]_{\footnotemark}$.
+\footnotetext{0 e $2\pi$ sono compresi anche le ipotesi di biiunicità delle funzioni hanno problemi in tali valori. Sono compresi perché la misura (secondo P-J) in tali punti è nulla, come ribadito precedentemente.} 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.25\textwidth]{Analisi2/figures/trasformazione_dominio_cartesiano_polare.png}
+	\caption{Trasformazione nel piano $(\rho, \theta)$.}
+	\label{fig:trasformazione_dominio_cartesiano_polare}
+\end{figure}
+\paragraph{Nota su Figura \ref{fig:trasformazione_dominio_cartesiano_polare}.} La frontiera di $S$, il perimetro del rettangolo, misura 0.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.45\textwidth]{Analisi2/figures/trasformazione_dominio_cartesiano_polare_1.png}
+	\caption{Trasformazione nel piano $(\rho, \theta)$.}
+	\label{fig:trasformazione_dominio_cartesiano_polare_1}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.45\textwidth]{Analisi2/figures/rappresentazione_grafica_coordinate.jpeg}
+	\caption{Da inserire.}
+	\label{fig:rappresentazione_grafica_coordinate}
+\end{figure}
