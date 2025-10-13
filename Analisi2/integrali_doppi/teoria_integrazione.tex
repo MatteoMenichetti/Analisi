@@ -608,9 +608,11 @@ dove $A=\underbrace{(0,+\infty)}_\rho \times \underbrace{(0,2\pi)}_\theta$ è un
 \begin{equation*}
 	\rho = \det DF(\rho, \theta) \neq 0,
 \end{equation*}
-la quale è la condizione ricercata affinché $F$ sia di classe $C^1$ ed invertibile. Inoltre, dato che $\rho\neq 0$, la matrice Jacobiana $JF(\rho, \theta)$ ha rango massimo (dovuto all'analisi vettoriale, cose che non ci interessano perché tratta di funzioni da $\mathbb{R}^n$ a $\mathbb{R}^n$).
+la quale è la condizione ricercata affinché $F$ sia di classe $C^1(A)$ ed invertibile. Inoltre, dato che $\rho\neq 0$, la matrice Jacobiana $JF(\rho, \theta)$ ha rango massimo (dovuto all'analisi vettoriale, cose che non ci interessano perché tratta di funzioni da $\mathbb{R}^n$ a $\mathbb{R}^n$).
 
 \footnotetext{Significa che l'intervallo considerato per $\theta$ può essere $(0,2\phi)$ come $(-\pi,\pi)$.}
+
+\paragraph{Nota su $\boldsymbol{A}$.} Negli esempi sarà considerato $A=\underbrace{(0,+\infty)}_\rho \times \underbrace{(0,2\pi)}_\theta$.
 
 \paragraph{Nota su $\boldsymbol{F(A)}$.} Sia $F(A)$ l'immagine di $F$ su $A$, $F(A)$ è un sottoinsieme aperto del piano cartesiano, ovvero
 \begin{equation*}
@@ -657,10 +659,18 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 
 \begin{figure}[ht]
 	\centering
+	\includegraphics[width=0.4\textwidth]{Analisi2/figures/rappresentazione_grafica_coordinate.jpeg}
+	\caption{L'area della regione ombreggiata è circa $\rho d\rho\, d\theta$.}
+	\label{fig:rappresentazione_grafica_coordinate}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
 	\includegraphics[width=0.25\textwidth]{Analisi2/figures/trasformazione_dominio_cartesiano_polare.png}
 	\caption{Trasformazione nel piano $(\rho, \theta)$.}
 	\label{fig:trasformazione_dominio_cartesiano_polare}
 \end{figure}
+
 \paragraph{Nota su Figura \ref{fig:trasformazione_dominio_cartesiano_polare}.} La frontiera di $S$, il perimetro del rettangolo, misura 0.
 
 \begin{figure}[ht]
@@ -672,7 +682,162 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.45\textwidth]{Analisi2/figures/rappresentazione_grafica_coordinate.jpeg}
-	\caption{Da inserire.}
-	\label{fig:rappresentazione_grafica_coordinate}
+	\includegraphics[width=0.45\textwidth]{Analisi2/figures/trasformazione_dominio_cartesiano_polare_2.png}
+	\caption{Trasformazione nel piano $(\rho, \theta)$.}
+	\label{fig:trasformazione_dominio_cartesiano_polare_2}
 \end{figure}
+
+\begin{example}[Settore delimitato da una retta]\footnote{Slide 39 PDF 25.}
+	Sia il dominio in coordinate polari
+	\begin{equation*}
+		D=\{(x,y)\in\mathbb{R}^2\,;\, r^2 \leq x^2 + y^2 \leq R^2,\, x\geq,\, y\leq x\},
+	\end{equation*}
+	in coordinate polari è
+	\begin{equation*}
+		D=\left\{(\rho, \theta)\in(0,+\infty)\times(0,2\pi)\,;\, r\leq \rho\leq R,\, -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{4}\right\}.
+	\end{equation*}
+	Vedere Figura \ref{fig:dominio_esempio_trasformazione_coordinate}.
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.25\textwidth]{Analisi2/figures/dominio_esempio_trasformazione_coordinate.png}
+		\caption{$D=\{(\rho, \theta)\in(0,+\infty)\times(0,2\pi)\,;\, r\leq \rho\leq R,\, -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{4}\}$.}
+		\label{fig:dominio_esempio_trasformazione_coordinate}
+	\end{figure}
+\end{example}
+\paragraph{Nota sull'esempio.} In questo caso la trasformazione in coordinate polari permette di non utilizzare radici durante la fase di integrazione. L'utilizzo di radici nelle formule di riduzione porta facilmente ad errori rispetto all'utilizzo ai nuovi valori dopo la trasformazione del dominio (in rettangolo polare).
+
+\begin{example}\footnote{Slide 40 PDF 25.}
+	Sia $D = \{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2\leq 5\}$ (vedere Figura \ref{fig:x_plus_y_equal_5}) e
+	\begin{equation*}
+		\begin{matrix}
+			\int\int_D v^2 du\, dv = (\star)
+		\end{matrix}
+	\end{equation*}
+	utilizzando le coordinate polari, ovvero trasformando $D$ in $\tilde D=\{(\rho, \theta)\,;\, 0\leq \rho\leq \sqrt{5},\, 0\leq \theta\leq 2\pi\}$,
+	\begin{equation*}
+		(\star) =
+		\begin{cases}
+			u  = \rho \cos\theta\\
+			v =  \rho \sin \theta
+		\end{cases} = 
+		\int\int_{\tilde{D}} \rho^2 \sin^2\theta\rho\,  d\rho\, d\theta = \int_0^{\sqrt{5}}\rho^3 \left(\int_0^{2\pi} \sin^2\theta d\theta\right)\, d\rho = (\star)
+	\end{equation*}
+	utilizzando $\sin ^2 = \frac{1-\cos2\theta}{2}$, allora
+	\begin{equation*}
+		(\star) = \int_0^{\sqrt{5}} \rho^3\left[\int_0^{2\pi} \left(\frac{1-\cos 2\theta}{2} d\theta\right)\right]d\rho = \int_0^{\sqrt{5}}\rho\left[\frac{1}{2}\theta -\frac{\sin 2\theta}{4}\right]_0^{2\pi}d\rho = \pi\int_0^{\sqrt{5}}\rho^3 d\rho = \eval{\pi\frac{\rho^4}{4}}{0}{\sqrt{2\pi}} = \frac{25\pi}{4}.
+	\end{equation*}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.45\textwidth]{Analisi2/figures/x_plus_y_equal_5.png}
+		\caption{$D = \{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2\leq 5\}$.}
+		\label{fig:x_plus_y_equal_5}
+	\end{figure}
+\end{example}
+
+\begin{example}\footnote{Slide 40 PDF 25.}
+	Sia $A=\{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2\leq 4\}$, l'integrale doppio
+	\begin{equation*}
+		\int\int_A(x^2+y^2)dx\, dy,
+	\end{equation*}
+	può essere risolto considerando il dominio $A$ come $y$-semplice, considerando i segmenti verticali, con $x\in[-2,2]$ e $y\in[-\sqrt{4-x^2},\sqrt{4-x^2}]$, ovvero come $A=\{(x,y)\in\mathbb{R}^2\,;\, -2\leq x\leq 2,\, -\sqrt{4-x^2}\leq y\leq \sqrt{4-x^2}\}$ (vedere Figura \ref{fig:esempio_dominio_radici}), dove
+	\begin{equation*}
+		(\star) = \int\int_{-2}^2 \, dx\, \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}} (x^2 + y^2) dy = \int_{-2}^2\eval{\left(x^2y + \frac{y^3}{3}\right)}{-\sqrt{4-x^2}}{\sqrt{4-x^2}}dx.
+	\end{equation*}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.25\textwidth]{Analisi2/figures/esempio_dominio_radici.png}
+		\caption{$A=\{(x,y)\in\mathbb{R}^2\,;\, -2\leq x\leq 2,\, -\sqrt{4-x^2}\leq y\leq \sqrt{4-x^2}\}$.}
+		\label{fig:esempio_dominio_radici}
+	\end{figure}
+	
+	Nell'integrale ci sono troppe radici, quindi è meglio trasformare il dominio in coordinate polari: $\tilde{A} = \{(\rho,\theta)\,;\, 0\leq \rho\leq 2,\, 0\leq \theta\leq 2\pi\}$. Pertanto,
+	\begin{equation*}
+		\int\int_A(x^2+y^2)dx\, dy = \int\int_{\tilde{A}} \rho^2\cdot\rho\, d\rho\,d\theta =\int\int_0^2\int_0^{2\pi} \rho d\rho\, d\theta = 2\pi\int_0^2\rho^2 d\rho = 2\pi\eval{\frac{\rho^4}{4}}{0}{2}.
+	\end{equation*}
+\end{example}
+
+\begin{example}\footnote{Slide 41 PDF 25.}
+	Sia $A=\{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2\leq,\, x\geq 0\}$, risolvere
+	\begin{equation*}
+		\int\int_A x dx\,dy,\qquad \int\int_A y dx\, dy.
+	\end{equation*}
+	$A$ è simmetrico rispetto all'asse $x$ (è simmetrico rispetto alla trasformazione $(x,y)\rightarrow(x,-y)$). Pertanto, la funzione $f(x,y)=y$ ha delle simmetrie ed è dispari, ovvero:
+	\begin{equation*}
+		\begin{matrix}
+			f(x,y)&=& y\\
+			&&&\Rightarrow& f(x,y) = - f(x,-y)\\
+			f(x,y) &=& -y
+		\end{matrix}
+	\end{equation*}
+	Ciò significa che con una $y$ positiva c'è anche una $y$ con lo stesso valore cambiata di segno, quindi
+	\begin{equation*}
+		\int\int_A y dx\, dy = 0.
+	\end{equation*}
+	Invece, trasformando $A$ in $\tilde{A}=\{(\rho, \theta)\,;\, 0\leq \rho\leq 1, -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}\}$, è ottenuto
+	\begin{equation*}
+		\int\int_A x dx\, dy = \int\int_{\tilde{A}}  \rho\cos\theta\cdot\rho d\rho d\theta  = \int_0^1\, \rho^2\; \left(\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos\theta d\theta\right)d\rho = \int_0^1\rho\eval{\sin\theta}{-\frac{\pi}{2}}{\frac{\pi}{2}} = \int_0^1\rho^2(1-(-1))d\rho = 2 \eval{\frac{\rho^3}{3}}{0}{1} = \frac{2}{3}.
+	\end{equation*}
+	Se considerato tutta la circoferenza - eliminando il vincolo $x\geq 0$ - allora il volume da considerare è il doppio di quello calcolato per $A$ e quindi è possibile moltiplicare per 2:
+	\begin{equation*}
+		\int\int_{C=\{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2\leq 1\}} |x| dx\, dy = 2\cdot\frac{2}{3}.
+	\end{equation*}
+\end{example}
+\paragraph{Nota sull'esempio.} $f(x,y)=|x|$ è parti tispetto ad $x$, ovvero $f(-x,y) = |-x| = |x| f(x,y)$. Inoltre, se $f(x,y)=|x|$ fosse stata senza valore assoluto allora l'integrale sarebbe stato 0.
+
+\paragraph{Nota sui domini "contenenti" $\boldsymbol{x^2+y^2}$.} Conviene sempre pasasre in coordinate polari perché scompare la somma di quadrati e rimane soltanto un quadrato.
+
+\begin{example}\footnote{Slide 42 PDF 25.}
+	\paragraph{Testo:} Calcolare
+	\begin{equation*}
+		\int\int_E \frac{y\, e^{\frac{x}{\sqrt{x^2 + y^2}}}}{\sqrt{x^2+y^2}} dx\, dy,
+	\end{equation*}
+	dove $E=\{(x,y)\in\mathbb{R}^2\,;\, 1\ < x^2+y^2 < 4, \, y > x,\, x > 0\}\cup\{(x,y)\in\mathbb{R}^2\,;\, 1 < x^2 + y^2 < 4,\, -\sqrt{3} x < y,\, x < 0\}$ (vedere Figura \ref{fig:dominio_complesso_integrale}).
+	
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.25\textwidth]{Analisi2/figures/dominio_complesso_integrale.png}
+		\caption{$E=\{(x,y)\in\mathbb{R}^2\,;\, 1\ < x^2+y^2 < 4, \, y > x,\, x > 0\}\cup\{(x,y)\in\mathbb{R}^2\,;\, 1 < x^2 + y^2 < 4,\, -\sqrt{3} x < y,\, x < 0\}$.}
+		\label{fig:dominio_complesso_integrale}
+	\end{figure}
+	
+	\paragraph{Svolgimento:} Per trasformare $E$ in un dominio in coordinate polari è necessario trovare l'angolo $\theta$ tale che $\tan\theta=-\sqrt{3}$. È noto che $\tan\frac{\pi}{3}=\sqrt{3}$, quindi $\tan\theta = -\sqrt{3}$ se $\theta=\pi - \frac{\pi}{3} = \frac{2}{3}\pi$. Quindi, $E$ equivale a
+	\begin{equation*}
+		\tilde{E} = \left\{(\rho, \theta)\,;\, 1 < \rho < 2,\, \frac{\pi}{4} < \theta < \frac{2\pi}{3}\right\}
+	\end{equation*}
+	
+	Pertanto,
+	\begin{equation*}
+		\begin{matrix}
+				\int\int_E \frac{y\, e^{\frac{x}{\sqrt{x^2 + y^2}}}}{\sqrt{x^2+y^2}} dx\, dy &=& \int\int_{\tilde{E}} \frac{\cancel{\rho} \sin\theta\, e^{\frac{\cancel{\rho}\cos\theta}{\cancel{\rho}}}}{\cancel{\rho}}\cdot\rho d\rho\, d\theta &=& \int_1^2\int_{\frac{\pi}{4}}^{\frac{2\pi}{3}} \pi \underbrace{\sin\theta\, e^{\cos\theta}}_{(-e^{\cos\theta})'} \, d\rho\, d\theta  &=&\\\\
+				&=& \int_1^2 \rho\left(\int_{\frac{\pi}{4}}^{\frac{2\pi}{3}} \pi \sin\theta\, e^{\cos\theta}d\theta\right)d\rho &=& \int_1^2\rho\left[-e^{\cos\theta}\right]_{\frac{\pi}{4}}^{\frac{2\pi}{3}} d\rho &=&\\
+				&=& \int_1^2 \rho \left(-\rho ^{-\frac{1}{2}} + e^{\frac{\sqrt{2}}{2}}\right) d\rho &=& \left(-\rho ^{-\frac{1}{2}} + e^{\frac{\sqrt{2}}{2}}\right)\eval{\frac{\rho^2}{2}}{1}{2} &=& \left(-\rho ^{-\frac{1}{2}} + e^{\frac{\sqrt{2}}{2}}\right)\left(\frac{2^2}{2}-\frac{1}{2}\right).
+		\end{matrix}
+	\end{equation*}
+\end{example}
+
+\begin{example}\footnote{Slide 44 PDF 25.}
+	\paragraph{Testo:} Calcolare
+	\begin{equation}\label{eq:integrale_doppio_esempio_rettangolo}
+		\int\int_D \frac{1}{x(1-\log^2x)} dx\,dy,
+	\end{equation}
+	dove $D=\{(x,y)\in\mathbb{R}^2\,;\, 1\leq x\leq\sqrt{e},\, 0\leq y\leq \pi\}$ (rettangolo, vedere Figura \ref{fig:dominio_rettangolo_integrale}).
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.3\linewidth]{Analisi2/figures/dominio_rettangolo_integrale}
+		\caption{$D=\{(x,y)\in\mathbb{R}^2\,;\, 1\leq x\leq\sqrt{e},\, 0\leq y\leq \pi\}$.}
+		\label{fig:dominio_rettangolo_integrale}
+	\end{figure}
+	
+	\paragraph{È necessario decidere l'ordine d'integrazione.} $D$ è un dominio semplice, è possibile vederlo come unione di segmenti verticali o orizzontali, quindi è necessario scegliere quale formula di riduzione utilizzare per prima. In questo caso conviene integrare prima rispetto ad $y$ e poi $x$, dato che la funzione integranda non ha alcuna $y$. $\qed$
+	
+	\paragraph{Soluzione:}
+	\begin{equation*}
+		(\ref{eq:integrale_doppio_esempio_rettangolo}) = \int_1^{\sqrt{e}}\int_0^{\pi}\frac{1}{x(1-\log^2x)} dx\, dy = \int_1^{\sqrt{e}} \frac{1}{x(1-\log^2x)} \left(\int_0^{\pi}dy\right)dx = \pi \int_1^{\sqrt{e}} \frac{1}{x(1-\log^2x)}  dx = (\star)
+	\end{equation*}
+	sostituendo $\log x = t$ (quindi $x=e^t$), è ottenuto
+	\begin{equation*}
+		(\star) = \int_{\log 1}^{\log\sqrt{e}} \frac{1}{e^t(1-t^2)} \cdot e^t\, dt = \int_0^{\frac{1}{2}} \frac{1}{e^t(1-t^2)} \cdot e^t\, dt = \left[\underbrace{\frac{1}{1-t^2} = \frac{A}{1-t} + \frac{B}{1-t^2}}_{\text{tramite fratti semplici}}\right] = \frac{\pi}{3}\log 3
+	\end{equation*}
+\end{example}
