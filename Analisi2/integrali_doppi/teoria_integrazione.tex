@@ -852,9 +852,9 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 
 \begin{example}\footnote{Slide 45 PDF 25.}
 	\paragraph{Testo.} Calcolare
-	\begin{equation*}
+	\begin{equation}\label{eq:integrale_doppio_esercizio_1}
 		\int\int_S\left(\frac{x+y}{1+x^2+y^2}\right) dx\, dy,
-	\end{equation*}
+	\end{equation}
 	dove $S=\{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2 < 1,\, 0 < y < x\}$.
 	\paragraph{Svolgimento.}
 \end{example}
@@ -865,6 +865,21 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 		\int\int_T xy\sqrt{x^2+y^2} dx\, dy,
 	\end{equation*}
 	con $T$ triangolo di vertici $(0,0)$, $(1,0)$, $(1, \sqrt{3})$.
-	\paragraph{Svolgimento.}
+	\paragraph{Svolgimento.} Trasformando $S$ in dominio polare, ovvero $\tilde{S}=\{(\rho,\theta)\,;\, 0\leq \rho\leq 1,\, 0\leq \theta\leq \frac{\pi}{4}\}$, è calcolato l'integrale doppio come segue:
+\begin{equation*}
+    (\ref{eq:integrale_doppio_esercizio_1}) = \int_0^1\left(\int_0^{\frac{\pi}{4}} \frac{\rho\cos\theta + \rho\sin\theta}{1 + \rho^2}\rho\, d\theta\right)d\rho = \int_0^1 	frac{\rho^2}{1+\rho^2}\,d\rho \int_0^{\frac{\pi}{4}} \cos\theta + \sin\theta\, d\theta = (\star)
+\end{equation*}
+dove
+\begin{equation*}
+    \int_0^1 \frac{\rho^2}{1+\rho^2}\,d\rho \overset{\footnotemark}{=} \int_0^1 \frac{\rho^2+1-1}{1+\rho^2}\,d\rho = \int_0^1 1- \frac{1}{1+\rho^2}\,d\rho = \eval{\rho}{0}{1} - \eval{\arctan\rho}{0}{1} = 1 - 0 -\frac{\pi}{4} + 0 = 1- \frac{\pi}{4}
+\end{equation*}
+e
+\begin{equation*}
+    \int_0^{\frac{\pi}{4}} \cos\theta + \sin\theta\, d\theta = \eval{\sin\theta - \cos\theta}{0}{\frac{\pi}{4}} = \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} - 0 + 1 = 1,
+\end{equation*}
+quindi
+\begin{equation*}
+    (\star) = \left(1-\frac{\pi}{4}\right)\cdot 1.
+\end{equation*}
 \end{example}
-
+\footnotetext{Utilizzata la divisione fra polinomi (vedere Sezione \ref{sssec:riduzione_grado_numeratore} riduzione del grado del numeratore): se al dominatore c'è un polinomio di grado maggiore uguale al denominatore si divide. Qui è fatto con il $+1-1$.}
