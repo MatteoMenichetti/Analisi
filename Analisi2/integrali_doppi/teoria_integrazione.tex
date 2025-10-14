@@ -139,10 +139,10 @@ Da quest'ultima è definito il valore dell'integrale doppio della funzione.
 
 \paragraph{Nota su (\ref{eq:valore_intefrale_riemann}):} Tale valore è detto integrale (di Riemann) di $f$ sul rettangolo e si denota con uno dei seguenti simboli:
 \begin{equation*}
-	\begin{matrix}
+	\begin{aligned}
 		\int\int_R f & &\int\int_R f(x,y)dx\, dy\\
 		& \int^b_a\int^d_c f(x,y) dx\, dy&
-	\end{matrix}
+	\end{aligned}
 \end{equation*}
 
 \paragraph{Nota:} $\int\int_R f(x,y)dx\, dy$ è un numero reale e rappresenta l'estremo superiore di tutte le somme inferiori e l'estremo inferiore di tutte le somme superiori al variare di $D$. 
@@ -161,10 +161,10 @@ Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per quest
 	\end{equation*}
 	Per ogni suddivisione $D$ di $Q$ si ha
 	\begin{equation*}
-		\begin{matrix}
+		\begin{aligned}
 			s(f,D) = \sum_{i=1}^{n}\sum_{j=1}^{m} 0\, (x_i-x_{i-1}) (y_i-y_{i-1}) = 0\\\\
 			S(f,D) = \sum_{i=1}^{n}\sum_{j=1}^{m} 1\, (x_i-x_{i-1})(y_i-y_{i-1}) = 1.
-		\end{matrix}
+		\end{aligned}
 	\end{equation*}
 	Dunque $s(f,D) \neq S(f,D)$ e l'integrale di Riemann non è definito.
 \end{example}
@@ -172,6 +172,7 @@ Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per quest
 \paragraph{Interpretazione geometrica:} Nel caso di una funzione di due variabili positiva, gli integrali rappresentano geometricamente un volume di un cilindroide (dato che le funzioni hanno una dimensione in più rispetto a quella di una variabile). Un cilindroide è un oggetto in $\mathbb{R}^3$ definito dal volume compreso tra il piano ed il grafico della funzione (vedere Figura \ref{fig:cilindroide})). Quindi, le somme inferiori e superiori sono somme di aree di parallelepipedi che hanno come base il rettangolino $R_ij$ e come altezza l'estremo inferiore di $f$ su ogni rettangolino $R_{ij}$.\\
 In altre parole: Sia $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e $graf\, f=\{(x,y,z)\in\mathbb{R}^3\, |\, z=f(x,y)\}\subset\mathbb{R}^3$, l'integrale $\int\int_R f(x,y)\, dx\, dy$, supposto che $f(x,y)\geq 0$ ($\forall(x,y)\in R$), può essere interpretato geometricamente come volume del cilindroide $T$ (regione dello spazio $\mathbb{R}^3$) limitato dal basso da $R$ e dall'alto dal grafico di $f$. Vedere Figura \ref{fig:cilindroide}.\\
 Ogni addendo nelle due somme $s(f, D), S(f,D)$ è il volume di un parallelepipedo di base il rettangolo $R_{ij}$ ed altezza $m_{ij}$ e (per $s(f, D)$) e $M_{ij}$ (per $S(f, D)$).\\
+In altre parole bis: L'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).\\
 Le somme superiori ed inferiori al variare di $D$, $s(f, D)$ e $S(f, D)$, sono approssimazioni del volume di $T$, dove ogni addendo è un approssimazione per eccesso ($S(f, D)$) e difetto ($s(f, D)$) in $\mathbb{R^3}$ di $R_{ij}$.\\
 In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =\int\int_R f(x,y)dx\, dy =  \underset{D}{\inf} S(f,D)$ ed è ragionevole interpretare $\int\int_R f(x,y)dx\, dy$ come volume di $T$. $\qed$
 
@@ -856,8 +857,26 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 		\int\int_S\left(\frac{x+y}{1+x^2+y^2}\right) dx\, dy,
 	\end{equation}
 	dove $S=\{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2 < 1,\, 0 < y < x\}$.
-	\paragraph{Svolgimento.}
+	\paragraph{Svolgimento.}Trasformando $S$ in dominio polare, ovvero $\tilde{S}=\{(\rho,\theta)\,;\, 0\leq \rho\leq 1,\, 0\leq \theta\leq \frac{\pi}{4}\}$, è calcolato l'integrale doppio come segue:
+	\begin{equation*}
+		(\ref{eq:integrale_doppio_esercizio_1}) = \int_0^1\left(\int_0^{\frac{\pi}{4}} \frac{\rho\cos\theta + \rho\sin\theta}{1 + \rho^2}\rho\, d\theta\right)d\rho = \int_0^1 	frac{\rho^2}{1+\rho^2}\,d\rho \int_0^{\frac{\pi}{4}} \cos\theta + \sin\theta\, d\theta = (\star)
+	\end{equation*}
+	dove
+	\begin{equation*}
+		\int_0^1 \frac{\rho^2}{1+\rho^2}\,d\rho \overset{\footnotemark}{=} \int_0^1 \frac{\rho^2+1-1}{1+\rho^2}\,d\rho = \int_0^1 1- \frac{1}{1+\rho^2}\,d\rho = \eval{\rho}{0}{1} - \eval{\arctan\rho}{0}{1} = 1 - 0 -\frac{\pi}{4} + 0 = 1- \frac{\pi}{4}
+	\end{equation*}
+	e
+	\begin{equation*}
+		\int_0^{\frac{\pi}{4}} \cos\theta + \sin\theta\, d\theta = \eval{\sin\theta - \cos\theta}{0}{\frac{\pi}{4}} = \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} - 0 + 1 = 1,
+	\end{equation*}
+	quindi
+	\begin{equation*}
+		(\star) = \left(1-\frac{\pi}{4}\right)\cdot 1.
+	\end{equation*}
 \end{example}
+
+\footnotetext{Utilizzata la divisione fra polinomi (vedere Sezione \ref{sssec:riduzione_grado_numeratore} riduzione del grado del numeratore): se al dominatore c'è un polinomio di grado maggiore uguale al denominatore si divide. Qui è fatto con il $+1-1$.}
+
 
 \begin{example}\footnote{Slide 45 PDF 25.}
 	\paragraph{Testo.} Calcolare
@@ -865,21 +884,26 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 		\int\int_T xy\sqrt{x^2+y^2} dx\, dy,
 	\end{equation*}
 	con $T$ triangolo di vertici $(0,0)$, $(1,0)$, $(1, \sqrt{3})$.
-	\paragraph{Svolgimento.} Trasformando $S$ in dominio polare, ovvero $\tilde{S}=\{(\rho,\theta)\,;\, 0\leq \rho\leq 1,\, 0\leq \theta\leq \frac{\pi}{4}\}$, è calcolato l'integrale doppio come segue:
-\begin{equation*}
-    (\ref{eq:integrale_doppio_esercizio_1}) = \int_0^1\left(\int_0^{\frac{\pi}{4}} \frac{\rho\cos\theta + \rho\sin\theta}{1 + \rho^2}\rho\, d\theta\right)d\rho = \int_0^1 	frac{\rho^2}{1+\rho^2}\,d\rho \int_0^{\frac{\pi}{4}} \cos\theta + \sin\theta\, d\theta = (\star)
-\end{equation*}
-dove
-\begin{equation*}
-    \int_0^1 \frac{\rho^2}{1+\rho^2}\,d\rho \overset{\footnotemark}{=} \int_0^1 \frac{\rho^2+1-1}{1+\rho^2}\,d\rho = \int_0^1 1- \frac{1}{1+\rho^2}\,d\rho = \eval{\rho}{0}{1} - \eval{\arctan\rho}{0}{1} = 1 - 0 -\frac{\pi}{4} + 0 = 1- \frac{\pi}{4}
-\end{equation*}
-e
-\begin{equation*}
-    \int_0^{\frac{\pi}{4}} \cos\theta + \sin\theta\, d\theta = \eval{\sin\theta - \cos\theta}{0}{\frac{\pi}{4}} = \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} - 0 + 1 = 1,
-\end{equation*}
-quindi
-\begin{equation*}
-    (\star) = \left(1-\frac{\pi}{4}\right)\cdot 1.
-\end{equation*}
+	\paragraph{Svolgimento.} La prima cosa da determinare è il dominio di integrazione. Il dominio di integrazione è determinato da
+	\begin{equation*}
+		0\leq x\leq 1,\quad 0\leq y\leq \text{ retta passante per } (1,\sqrt{3}) \text{ e } (0,0).
+	\end{equation*}
+	Per trovare la retta passante per $(1,\sqrt{3})$ e $(0,0)$ è necessario determinare il coefficiente angolare $m$ di questa:
+	\begin{equation*}
+		m = \frac{y_1-y_2}{x_1-x_2} = \frac{\sqrt{3}-0}{1-0} = \sqrt{3},
+	\end{equation*}
+	quindi il dominio di integrazione è
+	\begin{equation*}
+		T = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 1,\, 0\leq y\leq \sqrt{3}\cdot x\}\quad y\text{-semplice}.
+	\end{equation*}
+	Pertanto,
+	\begin{equation*}
+		\begin{aligned}
+			\boldsymbol{\int\int_T xy\sqrt{x^2+y^2} dx\, dy} &=& \int_0^1\left(\int_0^{\sqrt{3}x}xy\sqrt{x^2 + y^2}dy\right) dx &=& \frac{1}{2}\int_0^1 x \left(\int_0^{\sqrt{3}x} 2y\sqrt{x^2 + y^2}dy\right) dx &=&\\ \\
+			&=& \frac{1}{3} \int_0^1 x \left[\frac{2}{3}(x^2+y^2)^{\frac{2}{3}}\right]_0^{\sqrt{3}x} dy &=& \frac{1}{3} \int_0^1 x \left[(4x^2)^{\frac{3}{2}} - (x^2)^{\frac{3}{2}} \right] dx &=&\\\\
+			&=& \frac{1}{3}\int_0^1 x (8x^3 - x^3) dx &=& \frac{7}{3}\int_0^1 x^4  dx &=&\\\\
+			&=& \eval{\frac{7}{15}x^5}{0}{1} &=& \boldsymbol{\frac{7}{15}}.
+		\end{aligned}
+	\end{equation*}
+	\paragraph{Cosa rappresenta $ \boldsymbol{\frac{7}{15}}$?} Rappresenta il volume fra $T$ ed il grafico della funzione, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).
 \end{example}
-\footnotetext{Utilizzata la divisione fra polinomi (vedere Sezione \ref{sssec:riduzione_grado_numeratore} riduzione del grado del numeratore): se al dominatore c'è un polinomio di grado maggiore uguale al denominatore si divide. Qui è fatto con il $+1-1$.}
