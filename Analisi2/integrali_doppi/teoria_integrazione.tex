@@ -4,7 +4,7 @@
 In particolare, saranno trattate le regole per il cambiamento di variabile degli integrali in coordinate polari (concetto legato ai domini che presentano simmetrie). Ad esempio: tramite l'utilizzo delle coordinate polari un dominio che è un cerchio sul piano cartesiano si trasformerà in un rettangolo nel piano polare.\\
 Nell'integrazione multipla secondo Riemann saranno trattati:
 \begin{enumerate}
-	\item Funzioni Riemann integrabili su opportuni domini (semplici e loro unione opportuna) del piano \footnote{Saranno considerati domini limitati e abbastanza regolari per avere una funzione continua e quindi integrabile su tale dominio.},
+	\item Funzioni Riemann integrabili su opportuni domini (semplici e loro unione opportuna) del piano \footnote{Saranno considerati domini limitati e abbastanza regolari per avere una funzione continua e (quindi) integrabile su tale dominio.},
 	\item Integrali doppi
 	\begin{itemize}
 		\item Calcolo integrali doppi come prodotto di integrali semplici
@@ -27,9 +27,9 @@ Considerato $R=[a,b]\times[c,d]\subset \mathbb R^2$ (base $\times$ altezza) rett
 	\label{fig:rettangolo}
 \end{figure}
 
-\paragraph{Nota sulla Figura \ref{fig:rettangolo}:}
+\paragraph{Nota sulla Figura \ref{fig:rettangolo}.} $R$ può essere rappresentato come unione dei rettangoli $R_{ij}\subset\mathbb{R}$. $R$ è sottoinsieme del piano ($R\subseteq\mathbb{R}$).
 
-\paragraph{Nota (non importante):} I rettangolini sono formati creando una partizione di $[a,b]$ e di $[c,d]$ come quella di Calcolo Numerico: ogni intervallo sarà diviso in $n$ sottointervalli di ampiezza $(b-a)/n$ e $(d-c)/n$, mediante l'utilizzo di $n+1$ punti equidistanziati del tipo
+\paragraph{Nota (non importante).} I rettangolini sono formati creando una partizione di $[a,b]$ e di $[c,d]$ come quella di Calcolo Numerico: ogni intervallo sarà diviso in $n$ sottointervalli di ampiezza $(b-a)/n$ e $(d-c)/n$, mediante l'utilizzo di $n+1$ punti equidistanziati del tipo
 \begin{equation*}
 	\begin{matrix}
 		x_h = a + h \frac{b-a}{n},\quad h=1, \hdots, n,\\\\
@@ -44,17 +44,17 @@ oppure
 	\end{matrix}
 \end{equation*}
 
-\paragraph{Nota:} Nel caso generale è possibile utilizzare pluri-intervalli, cioè un prodotto cartesiano di $n$ intervalli. $\qed$
+\paragraph{Nota.} Nel caso generale è possibile utilizzare pluri-intervalli, cioè un prodotto cartesiano di $n$ intervalli. $\qed$
 
 \begin{definition}[Partizione (suddivisione)]
 	\footnote{Slide 13 PDF 24.} Sia $R = [a,b]\times [c,d]\subset\mathbb{R}^2$ un rettangolo. Date $D_1$ e $D_2$ due suddivisioni (partizioni) di $[a,b]$ e $[c,d]$ rispettivamente:
 	\begin{equation*}
-		\begin{matrix}
-			D_1 \overset{\footnotemark}{=} \{a = x_0, x_1,\hdots, x_n = b\;|\; \overbrace{x_0<x_1<\hdots <x_n}^{n+1\text{ punti}}\},\quad\text{con } x_i\in[a,b],\\
-			D_2 \underset{\footnotemark}{=} \{c=y_0, y_1,\hdots, y_m =d\; | \; \underbrace{y_0<y_1<\hdots<y_n}_{m+1\text{ punti}}\},\quad\text{con } y_s\in[c,d],
-		\end{matrix}
+		\begin{aligned}
+			D_1 &\overset{\footnotemark}{=}& \{a = x_0, x_1,\hdots, x_n = b\;|\; \overbrace{x_0<x_1<\hdots <x_n}^{n+1\text{ punti}}\},\quad\text{con } x_i\in[a,b],\\
+			D_2 &\underset{\footnotemark}{=}& \{c=y_0, y_1,\hdots, y_m =d\; | \; \underbrace{y_0<y_1<\hdots<y_m}_{m+1\text{ punti}}\},\quad\text{con } y_s\in[c,d].
+		\end{aligned}
 	\end{equation*}
-	una partizione (suddivisione) del rettangolo $R$ è definita come
+	Una partizione (suddivisione) del rettangolo $R$ è definita come
 	\begin{equation}\label{eq:suddivisione_rettangolo}
 		D=D_1\times D_2.
 	\end{equation}
@@ -65,7 +65,8 @@ oppure
 \stepcounter{footnote}
 \footnotetext{Divisione dell'intervallo $[c,d]$ in $n$ intervalli piccoli.}
 
-\paragraph{Nota:} Nella Definizione di Partizione sono considerate due suddivisioni dei due intervalli, ma il loro numero è arbitrario. Il prodotto cartesiano delle suddivisioni dei due intervalli forma una suddivisione del rettangolo $R$, quindi una suddivisione di un rettangolo è l'unione di rettangolini.\\
+\paragraph{Nota sulla Definizione di Partizione.} Nella Definizione di Partizione sono considerate due suddivisioni dei due intervalli, ma il loro numero è arbitrario (anche infinito). Il prodotto cartesiano delle suddivisioni dei due intervalli forma una suddivisione del rettangolo $R$, quindi una suddivisione di un rettangolo è l'unione di rettangolini.\\
+In Figura \ref{fig:rettangolo} $n=5$ e $m=9$.\\
 In corrispondenza di ogni suddivisione degli intervalli $[a,b]$ e $[c,d]$ è possibile definire una suddivisione del rettangolo $R$. Quindi, $R$ è l'unione degli $n\times m$ rettangoli $R_{ij}$, dove
 \begin{enumerate}
 	\item $D_1$ suddivide $[a,b]$ negli intervalli $[x_{i-1}, x_i]=I_i$, $i=1,\hdots, n$,
@@ -73,25 +74,27 @@ In corrispondenza di ogni suddivisione degli intervalli $[a,b]$ e $[c,d]$ è pos
 	\item $R_{ij} = [x_{i-1}, x_i] \times [y_{i-1}, y_j] = I_i \times J_j, \; i=1,\hdots, n, j=1,\hdots, m$.
 \end{enumerate} $\qed$
 
+Per definire cosa accade ad una funzione limitata su un rettangolo $R$ è necessario estendere la definizione di somma inferiore e superiore perché in questo caso il dominio considerato è bidimensionale.
+
 \begin{definition}[Estremo superiore e inferiore]
 	Considerata $f:R = [a,b]\times[c,d]\rightarrow\mathbb{R}$ limitata,
 	\begin{equation*}
 		m\leq f(x,y)\leq M,\quad \forall(x,y)\in R,
 	\end{equation*}
-	e $D_1,D_2$ e $R_{ij}$ definiti come sopra. Per $i=1,\hdots, n$ e $j=1,\hdots, m$, sono definiti estremo inferiore ed estremo superiore di ogni $R_{ij}$ come
+	e $D_1,D_2$ partizioni di $R$ e $R_{ij}$ definito come sopra. Per $i=1,\hdots, n$ e $j=1,\hdots, m$, sono definiti estremo inferiore ed estremo superiore di ogni $R_{ij}$ come
 	\begin{equation}\label{eq:estremo_inf_sup}
 		\begin{matrix}
 			m_{ij} := \underset{R_{ij}}{\inf} f\quad\left(\equiv\underset{(x,y)\in R_{ij}}{\inf} f(x,y)\right),\\\\
 			M_{ij} := \underset{R_{ij}}{\sup} f\quad\left(\equiv\underset{(x,y)\in R_{ij}}{\sup} f(x,y)\right).
 		\end{matrix}
 	\end{equation}
-	($m_{ij}, M_{ij}$ sono numeri finiti)
+	\textbf{($\boldsymbol{m_{ij}, M_{ij}}$ sono numeri finiti)}
 \end{definition}
 
-\paragraph{Nota su (\ref{eq:estremo_inf_sup}):} Per ogni rettangolo $R_{ij}$ è presente l'estremo inferiore e superiore perché $f$ è limitata al rettangolo $R_{ij}$. $\qed$
+\paragraph{Nota su (\ref{eq:estremo_inf_sup}).} Ogni rettangolo $R_{ij}$ ha estremo inferiore e superiore perché $f$ è limitata al rettangolo $R_{ij}$. $\qed$
 
 \begin{definition}[Somma inf/superiore]\footnote{Slide 15 PDF 24.}
-	Sia $f:R = [a,b]\times[c,d]\rightarrow\mathbb{R}$, $D = D_1\times D_2$ suddivisione di $R$, la somma inferiore è definita come
+	Sia $f:R = [a,b]\times[c,d]\rightarrow\mathbb{R}$, $D = D_1\times D_2$ suddivisione di $R$. La somma inferiore è definita come
 	\begin{equation*}
 		s(f,D) = \sum_{i=1}^{n}\sum_{j=1}^{m} m_{ij} \underbrace{\overbrace{(x_i-x_{i-1})}^{\text{amp.}[x_i-x_{i-1}]} \overbrace{(y_i-y_{i-1})}^{\text{amp.}[y_i,y_{i-1}]}}_{Area(R_{ij})}
 	\end{equation*}
@@ -128,16 +131,17 @@ oppure
 \begin{equation*}
 	\underset{D}{\sup} \, s(f,D) = \underset{D}{\inf} S(f,D).
 \end{equation*}
-Da quest'ultima è definito il valore dell'integrale doppio della funzione.
+Da quest'ultima è definito il valore dell'integrale doppio della funzione $f$.
 
 \begin{definition}[Funzione Riemann integrabile su un rettangolo]\footnote{Slide 16 PDF 24.}
 	Una funzione $f:R=[a,b]\times [c,d]\rightarrow\mathbb{R}$ \textbf{\ul{limitata}} si dice integrabile secondo Riemann (e si scrive $f\in \mathscrsfs{R}(R)$) se
 	\begin{equation}\label{eq:valore_intefrale_riemann}
 		\underset{D}{\sup} \, s(f,D) = \underset{D}{\inf} S(f,D),
 	\end{equation}
+	dove tale valore comune (un numero reale) è detto integrale (secondo Riemann) di $f$ sul rettangolo $R$.
 \end{definition}
 
-\paragraph{Nota su (\ref{eq:valore_intefrale_riemann}):} Tale valore è detto integrale (di Riemann) di $f$ sul rettangolo e si denota con uno dei seguenti simboli:
+\paragraph{Nota su (\ref{eq:valore_intefrale_riemann}).} L'integrale doppio si denota con uno dei seguenti simboli:
 \begin{equation*}
 	\begin{aligned}
 		\int\int_R f & &\int\int_R f(x,y)dx\, dy\\
@@ -145,7 +149,7 @@ Da quest'ultima è definito il valore dell'integrale doppio della funzione.
 	\end{aligned}
 \end{equation*}
 
-\paragraph{Nota:} $\int\int_R f(x,y)dx\, dy$ è un numero reale e rappresenta l'estremo superiore di tutte le somme inferiori e l'estremo inferiore di tutte le somme superiori al variare di $D$. 
+\paragraph{Nota.} $\int\int_R f(x,y)dx\, dy$ è un numero reale e rappresenta l'estremo superiore di tutte le somme inferiori e l'estremo inferiore di tutte le somme superiori al variare di $D$. In altre parole: l'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).\\
 Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per questo saranno introdotti domini più complessi: saranno visti domini semplici e loro unione.
 
 \paragraph{Nota sui Domini semplici:} I domini semplici sono domini per i quali è possibile esplicitare quali sono le limitazione del dominio, dove la $x$ e la $y$ sono comprese tra due estremi finiti. $\qed$
@@ -172,7 +176,7 @@ Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per quest
 \paragraph{Interpretazione geometrica:} Nel caso di una funzione di due variabili positiva, gli integrali rappresentano geometricamente un volume di un cilindroide (dato che le funzioni hanno una dimensione in più rispetto a quella di una variabile). Un cilindroide è un oggetto in $\mathbb{R}^3$ definito dal volume compreso tra il piano ed il grafico della funzione (vedere Figura \ref{fig:cilindroide})). Quindi, le somme inferiori e superiori sono somme di aree di parallelepipedi che hanno come base il rettangolino $R_ij$ e come altezza l'estremo inferiore di $f$ su ogni rettangolino $R_{ij}$.\\
 In altre parole: Sia $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e $graf\, f=\{(x,y,z)\in\mathbb{R}^3\, |\, z=f(x,y)\}\subset\mathbb{R}^3$, l'integrale $\int\int_R f(x,y)\, dx\, dy$, supposto che $f(x,y)\geq 0$ ($\forall(x,y)\in R$), può essere interpretato geometricamente come volume del cilindroide $T$ (regione dello spazio $\mathbb{R}^3$) limitato dal basso da $R$ e dall'alto dal grafico di $f$. Vedere Figura \ref{fig:cilindroide}.\\
 Ogni addendo nelle due somme $s(f, D), S(f,D)$ è il volume di un parallelepipedo di base il rettangolo $R_{ij}$ ed altezza $m_{ij}$ e (per $s(f, D)$) e $M_{ij}$ (per $S(f, D)$).\\
-In altre parole bis: L'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).\\
+In altre parole bis: l'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).\\
 Le somme superiori ed inferiori al variare di $D$, $s(f, D)$ e $S(f, D)$, sono approssimazioni del volume di $T$, dove ogni addendo è un approssimazione per eccesso ($S(f, D)$) e difetto ($s(f, D)$) in $\mathbb{R^3}$ di $R_{ij}$.\\
 In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =\int\int_R f(x,y)dx\, dy =  \underset{D}{\inf} S(f,D)$ ed è ragionevole interpretare $\int\int_R f(x,y)dx\, dy$ come volume di $T$. $\qed$
 
