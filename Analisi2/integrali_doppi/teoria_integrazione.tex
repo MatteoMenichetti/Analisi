@@ -150,9 +150,20 @@ Da quest'ultima è definito il valore dell'integrale doppio della funzione $f$.
 \end{equation*}
 
 \paragraph{Nota.} $\int\int_R f(x,y)dx\, dy$ è un numero reale e rappresenta l'estremo superiore di tutte le somme inferiori e l'estremo inferiore di tutte le somme superiori al variare di $D$. In altre parole: l'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).\\
-Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per questo saranno introdotti domini più complessi: saranno visti domini semplici e loro unione.
+Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per questo saranno introdotti domini più complessi: saranno visti domini semplici e loro unione. $\qed$
 
-\paragraph{Nota sui Domini semplici:} I domini semplici sono domini per i quali è possibile esplicitare quali sono le limitazione del dominio, dove la $x$ e la $y$ sono comprese tra due estremi finiti. $\qed$
+\paragraph{Nota sui Domini semplici.} I domini semplici sono domini per i quali è possibile esplicitare quali sono le limitazione del dominio, dove la $x$ e la $y$ sono comprese tra due estremi finiti. $\qed$
+
+\begin{example}[Funzione facile da integrare]\footnote{Slide 17 PDF 24.}
+	Sia $f(x,y)=c,\, x\in\mathbb{R}$, una funzione costante. $f$ è integrabile su ogni rettangolo secondo Riemann, cioè:
+	\begin{equation*}
+		\int\int_R f(x,y) \,dx\,dy = \int\int_R c\, dx\, dy = c\, (b-a)(d-c) = A(R).
+	\end{equation*}
+	In questo caso $s=S$ perché $f$ è identicamente uguale a $c$ in quanto
+	\begin{equation*}
+		s=S=\sum_{i=1}^{n}\sum_{j=1}^{m} \underbrace{c}_{m_{ij}}(x_i-x_{i-1})(y_j-y_{j-1}) = c(b-a)(d-c).
+	\end{equation*}
+\end{example}
 
 \begin{example}[Funzione non integrabile secondo Riemann]\footnote{Slide 17 PDF 24}
 	Sia $Q=[0,1]\times [0,1]$ ed $f$ funzione di Dirichlet definita come
@@ -173,11 +184,12 @@ Il rettangolo $R$ è un dominio troppo semplice per essere utilizzato, per quest
 	Dunque $s(f,D) \neq S(f,D)$ e l'integrale di Riemann non è definito.
 \end{example}
 
-\paragraph{Interpretazione geometrica:} Nel caso di una funzione di due variabili positiva, gli integrali rappresentano geometricamente un volume di un cilindroide (dato che le funzioni hanno una dimensione in più rispetto a quella di una variabile). Un cilindroide è un oggetto in $\mathbb{R}^3$ definito dal volume compreso tra il piano ed il grafico della funzione (vedere Figura \ref{fig:cilindroide})). Quindi, le somme inferiori e superiori sono somme di aree di parallelepipedi che hanno come base il rettangolino $R_ij$ e come altezza l'estremo inferiore di $f$ su ogni rettangolino $R_{ij}$.\\
-In altre parole: Sia $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e $graf\, f=\{(x,y,z)\in\mathbb{R}^3\, |\, z=f(x,y)\}\subset\mathbb{R}^3$, l'integrale $\int\int_R f(x,y)\, dx\, dy$, supposto che $f(x,y)\geq 0$ ($\forall(x,y)\in R$), può essere interpretato geometricamente come volume del cilindroide $T$ (regione dello spazio $\mathbb{R}^3$) limitato dal basso da $R$ e dall'alto dal grafico di $f$. Vedere Figura \ref{fig:cilindroide}.\\
-Ogni addendo nelle due somme $s(f, D), S(f,D)$ è il volume di un parallelepipedo di base il rettangolo $R_{ij}$ ed altezza $m_{ij}$ e (per $s(f, D)$) e $M_{ij}$ (per $S(f, D)$).\\
-In altre parole bis: l'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).\\
-Le somme superiori ed inferiori al variare di $D$, $s(f, D)$ e $S(f, D)$, sono approssimazioni del volume di $T$, dove ogni addendo è un approssimazione per eccesso ($S(f, D)$) e difetto ($s(f, D)$) in $\mathbb{R^3}$ di $R_{ij}$.\\
+\paragraph{Interpretazione geometrica.} Nel caso di una funzione di due variabili positiva, gli integrali rappresentano geometricamente un volume di un cilindroide (dato che le funzioni hanno una dimensione in più rispetto a quella di una variabile). Un cilindroide è un oggetto in $\mathbb{R}^3$ definito dal volume compreso tra il piano ed il grafico della funzione (vedere Figura \ref{fig:cilindroide})). Quindi, le somme inferiori e superiori sono somme di aree di parallelepipedi che hanno come base il rettangolino $R_{ij}$ e come altezza l'estremo inferiore di $f$ su ogni rettangolino $R_{ij}$.\\
+In altre parole: Sia $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e $graf\, f=\{(x,y,z)\in\mathbb{R}^3\, |\, z=f(x,y)\}\subset\mathbb{R}^3$ e supposto che $f(x,y)\geq 0$ ($\forall(x,y)\in R$), l'integrale $\int\int_R f(x,y)\, dx\, dy$ può essere interpretato geometricamente come volume del cilindroide $T$ (regione dello spazio $\mathbb{R}^3$) limitato dal basso da $R$ e dall'alto dal grafico di $f$. Vedere Figura \ref{fig:cilindroide}.
+
+\paragraph{Interpretazione geometrica bis.} l'integrale doppio rappresenta il volume fra $R$ ed il grafico della funzione $f$, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).
+
+\paragraph{Nota sul legame tra interpretazione geometrica e somme inf/superiori.} Ogni addendo nelle due somme $s(f, D), S(f,D)$ è il volume di un parallelepipedo di base il rettangolo $R_{ij}$ ed altezza $m_{ij}$ (per $s(f, D)$) e $M_{ij}$ (per $S(f, D)$). Le somme superiori ed inferiori $s(f, D)$ e $S(f, D)$, al variare di $D$, sono approssimazioni del volume di $T$ per eccesso ($S(f, D)$) e difetto ($s(f, D)$) in $\mathbb{R}^3$ di $R$. Pertanto, ogni addendo delle due somme è un'approssimazione per eccesso e difetto del rispettivo rettangolino $R_{ij}$ in $\mathbb{R}^3$.\\
 In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =\int\int_R f(x,y)dx\, dy =  \underset{D}{\inf} S(f,D)$ ed è ragionevole interpretare $\int\int_R f(x,y)dx\, dy$ come volume di $T$. $\qed$
 
 \begin{figure}[ht]
@@ -188,16 +200,17 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 \end{figure}
 
 \begin{theorem}\footnote{Slide 19 PDF 24.}\label{th:funzione_continua_integrabile}
-	Se $f$ è continua in $R = [a, b]\times [c, d]$ allora è Riemann integrabile.
+	\textbf{Se $\boldsymbol f$ è continua in $\boldsymbol{R = [a, b]\times [c, d]}$ allora è Riemann integrabile.}
 \end{theorem}
 
-\paragraph{Note sul Teorema:} \begin{itemize}
+\paragraph{Note sul Teorema \ref{th:funzione_continua_integrabile}.}
+\begin{itemize}
 	\item NON SARÀ FATTA DIMOSTRAZIONE,
-	\item È possibile dimostrare il Teorema appena enunciato facendo vedere che la differenza tra somma superiore ed inferiore è minore di $\varepsilon$,
-	\item In realtà è sufficiente anche meno affinché una funzione sia integrabile. La classe di funzioni integrabili è più ampia di quella delle funzioni continue e comprende le funzioni con un numero finito di discontinuità, in quanto queste diventano trascurabili. SARANNO TRATTATE SEMPRE FUNZIONI CONTINUE NEL DOMINIO DI INTEGRAZIONE.
+	\item È possibile dimostrare il Teorema appena enunciato mostrando che la differenza tra somma superiore ed inferiore è minore di $\varepsilon$,
+	\item In realtà è sufficiente anche meno affinché una funzione sia Riemann integrabile. La classe di funzioni integrabili è più ampia di quella delle funzioni continue e comprende le funzioni con un numero finito di discontinuità, in quanto queste diventano trascurabili. \textbf{SARANNO TRATTATE SEMPRE FUNZIONI CONTINUE NEL DOMINIO DI INTEGRAZIONE.}
 \end{itemize} 
 
-\paragraph{Precisazioni:} Se considerate funzioni continue su rettangoli è possibile scrivere automaticamente le formule di riduzione (vedere Teorema \ref{th:riduzione}). Ovvero si calcano due integrali iterativi: prima si integra rispetto ad una variabile e poi rispetto all'altra (applicando il Teorema di riduzione).
+\paragraph{Precisazioni.} Se considerate funzioni continue su rettangoli è possibile scrivere automaticamente le formule di riduzione (vedere Teorema \ref{th:riduzione}). Le formule di riduzione consistono il calcolo dell'integrale doppio come due integrali iterativi: prima si integra rispetto ad una variabile e poi rispetto all'altra (applicando il Teorema di riduzione).
 
 \begin{remark}\footnote{Slide 19 PDF 24.}
 	Se $f:R=[a,b]\times[c,d]\rightarrow\mathbb{R}$ è del tipo (a variabili separabili) $f(x,y)=g(x)\cdot h(y)$ e supposto che $g\in\mathscrsfs{R}([a,b])$ e $h\in\mathscrsfs{R}([c,d])$ allora$_{\footnotemark}$ $f\in\mathscrsfs{R}(R)$ e
@@ -211,25 +224,25 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 \begin{theorem}[Formula di riduzione]\label{th:riduzione}\footnote{Slide 20 PDF 24.}
 	Sia $f:R=[a,b]\times[c,d]\rightarrow\mathbb{R}$ continua in $R$ allora $f$ è integrabile (secondo Riemann) su $R$ (Teorema \ref{th:funzione_continua_integrabile}) e
 	\begin{equation}\label{eq:formula_riduzione}
-		\int\int_R f(x,y) dx\, dy = \underset{\text{formula a)}}{\int^b_a\left(\int^d_c f(\underset{\text{fissa}}{x},y) dy\right) dx} =\underset{\text{formula b)}}{\int^d_c\left(\int^b_a f(x, \underset{\text{fissa}}{y})dx\right)dy}.
+		\int\int_R f(x,y) dx\, dy = \underbrace{\int^b_a\left(\int^d_c f(\underset{\text{fissa}}{x},y) dy\right) dx}_{\text{formula a)}} =\underbrace{\int^d_c\left(\int^b_a f(x, \underset{\text{fissa}}{y})dx\right)dy}_{\text{formula b)}}.
 	\end{equation}
 \end{theorem}
 
 \paragraph{Cosa significa la formula a) in (\ref{eq:formula_riduzione})?} Quando è integrato rispetto a $y$ significa che la $x$ è fissata, quindi $f$ diventa una funzione di una variabile e dato che $f$ è continua su $[c,d]$ (dato che diventa ad un variabile) allora è integrabile su $[c,d]$. Una volta integrata su $y$ allora $f$ dipende solo da $x$ e dato che $f$ è continua su $[a,b]$ allora è integrabile su questo.
 
-\paragraph{Nota sulla formula di riduzione:} Applicare prima la \textbf{formula a)} e poi la \textbf{formula b)} dipende da com'è fatta $f$.
+\paragraph{Nota sulla formula di riduzione.} Applicare prima la \textbf{formula a)} e poi la \textbf{formula b)}, quindi l'iterazione prima secondo $y$ e poi secondo $x$ (o viceresa), dipende da com'è fatta $f$.
 
 \begin{example}\footnote{Slide 20 PDF 24.}
-	Sia $f(x,y)=x^{-3e^{\frac{y}{x}}}$ su $R=[1, 3]\times[0,1]$. $f$ è continua su $R$, quindi integrabile.
-	\paragraph{Formula b):} Tramite la formula b) è più facile trovare una primitiva elementare di $f$.
+	\paragraph{Testo.} Sia $f(x,y)=x^{-3}e^{\frac{y}{x}}$ su $R=[1, 3]\times[0,1]$. $f$ è continua su $R$, quindi integrabile.
+	\paragraph{Svolgimento tramite formula b).} Tramite la formula b) è più facile trovare una primitiva elementare di $f$.
 	\begin{equation*}
-		\int_0^1 f(x,y) dy = x\text{ fissata in } [1,3] = \int_0^1 x^{-3} e^{\frac{y}{x}}  dy = x^{-3}\left[x\, e^{\frac{y}{x}}\right]^1_0 =  x^{-3} (x) \left(x\, e^{\frac{1}{x} - x\, e^0}\right) = x^{-2} \left(e^{\frac{1}{x}} - 1\right).
+		\int_0^1 f(x,y) dy = x\text{ fissata in } [1,3] = \int_0^1 x^{-3} e^{\frac{y}{x}}  dy = x^{-3}\left[x\, e^{\frac{y}{x}}\right]^1_0 =  x^{-3} (x) \left(x\, e^{\frac{1}{x}} - x\, e^0 \right) = x^{-2} \left(e^{\frac{1}{x}} - 1\right).
 	\end{equation*}
 	Quindi,
 	\begin{equation*}
-		\int\int_R f(x,y) dx\, dy = \int_1^3\left(\int_0^1 f(x,y) dy\right)\, dy = \int_1^3 x^{-2}\left(e^{\frac{1}{x}}-1\right) dx =(\star) 
+		\int\int_R f(x,y) dx\, dy = \int_1^3\left(\int_0^1 f(x,y) dy\right)\, dy = \int_1^3 x^{-2}\left(e^{\frac{1}{x}}-1\right) dx = (\star),
 	\end{equation*}
-	ed utilizzando l'integrazione per sostituzione,
+	utilizzando l'integrazione per sostituzione, ovvero
 	\begin{equation*}
 		 \frac{1}{x} = y \;\rightarrow\; dy=\frac{1}{x^2}dx \quad\Longrightarrow\quad \int_1^3e^y -1 dy = \left[e^y-y\right]_1^3 ,
 	\end{equation*}
@@ -254,32 +267,33 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 	\begin{equation}\label{eq:f_estesa_rettangolo}
 		\tilde{f}(x,y) = 
 		\begin{cases}
-			f(x,y) & \text{se } (x,y)\in D\\
-			0 &\text{altrimenti}
+			f(x,y), & \text{se } (x,y)\in D,\\
+			0, &\text{altrimenti}.
 		\end{cases}
 	\end{equation}
+	(Vedere Figura \ref{fig:f_estesa})
 \end{definition}
 
 \paragraph{Nota su (\ref{eq:f_estesa_rettangolo}):} L'interpretazione geometrica dell'integrale nel caso dell'estensione della funzione non cambia: se considerata al di fuori da $D$ il contributo di $\tilde{f}$ è nullo. $\qed$
 
 \begin{definition}[Integrale secondo Riemann della funzione limitata su un dominio limitato]\label{def:integrale_f_estesa_rettangolo}
-	\footnote{Slide 21 PDF 24.} Sia $f:D\subset \mathbb{R}^\rightarrow\mathbb{R}$ limitata su $D$ dominio limitato. Diremo che $f$ è integrabile (secondo Riemann) su $D$ (non rettangolo) se $\tilde f$ (definita come (\ref{eq:f_estesa_rettangolo})) è integrabile (secondo Riemann) su $R$ (rettangolo tale che $D\subset R$) e si pone
+	\footnote{Slide 21 PDF 24.} Sia $f:D\subset \mathbb{R}^2\rightarrow\mathbb{R}$ \ul{\textbf{limitata su $\boldsymbol D$ dominio limitato}}. Diremo che $f$ è integrabile (secondo Riemann) su $D$ (non rettangolo) se $\tilde f$ (definita come (\ref{eq:f_estesa_rettangolo})) è integrabile (secondo Riemann) su $R$ (rettangolo tale che $D\subset R$) e si pone
 	\begin{equation*}
 		I(f, D) = \int\int_D f(x,y) dx\, dy = \int \int_R \tilde{f}(x,y) dx\, dy.
 	\end{equation*}
 \end{definition}
 
-\paragraph{Nota sulla Definizione (\ref{def:integrale_f_estesa_rettangolo}):} La definizione è ben posta e aderisce perfettamente all'interpretazione geometrica dell'integrale doppio di una funzione non negatica come volume di un cilindroide, in quanto l'integrabilità di $f$ nel dominio limitato ed il valore dell'integrale \textbf{\ul{non}} dipendono da $R$ (perché per ogni rettangolo scelto, $f$ vale 0 nei punti fuori da $D$). Inoltre, \textbf{il fatto che $\boldsymbol{f}$ sia limitata è un ipotesi necessaria per la definizione}.$\qed$
+\paragraph{Nota sulla Definizione \ref{def:integrale_f_estesa_rettangolo}.} La definizione è ben posta e aderisce perfettamente all'interpretazione geometrica dell'integrale doppio di una funzione non negativa come volume di un cilindroide, in quanto l'integrabilità di $f$ nel dominio limitato ed il valore dell'integrale \textbf{\ul{non}} dipendono da $R$ (perché per ogni rettangolo scelto, $f$ vale 0 nei punti fuori da $D$). Inoltre, \textbf{il fatto che $\boldsymbol{f}$ sia limitata è un ipotesi necessaria per la definizione}.$\qed$
 
 \begin{definition}[Area (misura) di Peano-Jordan di una regione del piano]\footnote{Slide 22 PDF 24.}
-	Un sottoinsieme (nel piano) limitato $D\subset\mathbb{R}^2$ si dice misurabile secondo Peano-Jordan se la funzione $f(x,y)\equiv 1$ è integrabile (secondo Riemann) su $D$. In tal caso, l'Area ($\slash$ misura) di $D$ è definita come
+	Un sottoinsieme (nel piano) limitato $D\subset\mathbb{R}^2$ si dice misurabile secondo Peano-Jordan se la funzione $f(x,y)\equiv 1$ è integrabile (secondo Riemann) su $D$. In tal caso, l'Area (/misura) di $D$ è definita come
 	\begin{equation}\label{eq:area_p-j_regione_piano}
 		Area(D) = |D| =\int\int_D 1 dx\, dy,
 	\end{equation}
 	se ha senso (ovvero è un numero finito).
 \end{definition}
 
-\paragraph{$\boldsymbol{D}$ misurabile:} $D$ si dice misurabile se ha misura finita, quindi se (\ref{eq:area_p-j_regione_piano}) è un numero finito.
+\paragraph{Quando $\boldsymbol{D}$ misurabile?} $D$ si dice misurabile se ha misura finita, quindi se (\ref{eq:area_p-j_regione_piano}) è un numero finito.
 
 \begin{example}
 	$R= [a,b]\times [c,d]$ è (limitato e) misurabile secondo P-J e 
@@ -288,36 +302,35 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 	\end{equation*}
 \end{example}
 
-\paragraph{Deduduzioni sulla misura di Peano-Jordan:} Tutti gli insiemi che conosciuti della geometria elementare (cerchi, poligoni, quadrati, rettangoli, ecc.) sono misurabili e la loro misura è l'area elementare (quindi, in questo caso, misura ed area coincidono).
+\paragraph{Deduduzioni sulla misura di Peano-Jordan.} Tutti gli insiemi che conosciuti della geometria elementare (cerchi, poligoni, quadrati, rettangoli, ecc.) sono misurabili e la loro misura è l'area elementare (quindi, in questo caso, misura ed area coincidono).
 
 \begin{example}[Dominio limitato non misurabile secondo Peano-Jordan]
 	\footnote{Slide 23 PDF 24.} Sia $Q = [0,1]\times[0,1]$ insieme limitato con entrambe le coordinate razionali, è definita la funzione di Dirichlet come
 	\begin{equation*}
 		f(x,y) =
 		\begin{cases}
-			1, &\text{se } (x,y)\in Q \text{ e } (x,y)\in\mathbb{Q}\\
-			0 &\text{altrimenti}
+			1, &\text{se } (x,y)\in Q \text{ e } (x,y)\in\mathbb{Q},\\
+			0, &\text{altrimenti}.
 		\end{cases}
 	\end{equation*}
 	La funzione caratteristica $f(x,y) \equiv 1$ (relativa al dominio) non è Riemann integrabile su $Q$ e non è misurabile secondo P-J.
 \end{example}
 
-\paragraph{Nota:} I domini semplici sono Reamann integrabili (?) in quanto sono limitati compresi fra il grafico di due funzioni continue e due rette verticali opportunamente prese.
+\paragraph{Nota.} I domini semplici sono Reamann integrabili (?) in quanto sono limitati compresi fra il grafico di due funzioni continue e due rette verticali opportunamente prese.
 
 \subsection{Proprietà degli integrali doppi}
-\footnote{Slide 25 PDF 25.}
-\begin{property}
-	 Sia $D\subset\mathbb{R}^2$ insieme limitato e misurabile:
+\begin{property}\footnote{Slide 25 PDF 25.}
+	 Sia $D\subset\mathbb{R}^2$ insieme limitato e misurabile, valgono le seguenti proprietà degli integrali doppi:
 	\begin{enumerate}
-		\item \textbf{Linearità:} Se $f,g\in\mathscrsfs{R}(D)$ e se $\alpha,\beta\in \mathbb{R}$ \textbf{\ul{allora}} $\alpha f + \beta g\in \mathscrsfs{R}(D)$ e
+		\item \textbf{Linearità.} Se $f,g\in\mathscrsfs{R}(D)$ e se $\alpha,\beta\in \mathbb{R}$ \textbf{\ul{allora}} $\alpha f + \beta g\in \mathscrsfs{R}(D)$ e
 		\begin{equation*}
 			\int\int_D [\alpha f(x,y) + \beta g(x,y)]dx\, dy = \alpha\int\int_D \alpha f(x,y) dx\, dy + \beta\int\int_D \beta g(x,y)dx\, dy.
 		\end{equation*}
-		\item \textbf{Monotonia (dell'integrale rispetto all'integranda):} Se $f,g\in\mathscrsfs{R}(D)$ e se $f\leq g$ su $D$ \textbf{\ul{allora}}
+		\item \textbf{Monotonia (dell'integrale rispetto all'integranda).} Se $f,g\in\mathscrsfs{R}(D)$ e se $f\leq g$ su $D$ \textbf{\ul{allora}}
 		\begin{equation*}
 			\int\int_D f(x,y) dx\, dy \leq \int\int_D g(x,y) dx\, dy.
 		\end{equation*}
-		\item \textbf{Monotonia (dell'integrale rispetto all'integranda) - 2:} Se $f\in \mathscrsfs{R}(D)$ allora $|f|\in\mathscrsfs{R}(D)$\footnote{Ovvero $|f|$ è Riemann integrabile, quindi vale $\int\int_D |f(x,y)| dx\, dy$.} ed in particolare vale
+		\item \textbf{Monotonia (dell'integrale rispetto all'integranda) - 2.} Se $f\in \mathscrsfs{R}(D)$ allora $|f|\in\mathscrsfs{R}(D)$\footnote{Ovvero $|f|$ è Riemann integrabile, quindi vale $\int\int_D |f(x,y)| dx\, dy$.} ed in particolare vale
 		\begin{equation*}
 			\left| \int\int_D f(x,y) dx\, dy\right| \leq \int\int_D |f(x,y)| dx\, dy.
 		\end{equation*}
@@ -327,8 +340,8 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 \subsection{Integrazione su domini (regioni) semplici misurabili secondo Peano-Jordan}
 \footnote{Slide 25 PDF 24.} È necessario specificare su quale dominio è operata l'integrazione (ad esempio per applicare al meglio la formula di riduzione).
 
-Date la Definizione \ref{def:f_estesa_rettangolo} di funzione estesa su un rettangolo e la Definizione \ref{def:integrale_f_estesa_rettangolo} di Integrale secondo Riemann della funzione limitata su un dominio limitato, non ci aiutano con il calcolo integrale perché anche se è considerata una funzione $f$ continua su $D$ non è detto che una la sua estensione $\tilde{f}$ sia continua \footnote{Quando è considerata l'estensione di $f$ continua su $D$, in genere, non è ottenuta un'estensione continua e quindi non è possibile applicare la formula di riduzione (per problemi, anche sulla frontiera del dominio).}.
-Pertanto, è necessario estendere la classe delle funzioni sulle quali è possibile operare l'integrazione e utilizzare una formula di riduzione, la quale varrà per insiemi diversi dai rettangoli. Questi nuovi insiemi sono chiamati domini semplici, in particolare saranno considerate la loro unione quando avranno parte delle rispettive frontiere in comune. In questo modo è possibile applicare la formula di additività  rispetto al dominio di integrazione (il dominio grande è spezzettato in domini semplici con parte della frontiera in comune) e di conseguenza l'integrale doppio sul dominio "generale" sarà una somma di integrali doppi su domini semplici.\\
+La Definizione \ref{def:f_estesa_rettangolo} di Funzione estesa su un rettangolo e la Definizione \ref{def:integrale_f_estesa_rettangolo} di Integrale secondo Riemann della funzione limitata su un dominio limitato non ci aiutano con il calcolo integrale perché anche se è considerata una funzione $f$ continua su $D$ non è detto che una la sua estensione $\tilde{f}$ sia continua \footnote{Quando è considerata l'estensione di $f$ continua su $D$, in genere, non è ottenuta un'estensione continua e quindi non è possibile applicare la formula di riduzione (per problemi, anche sulla frontiera del dominio).}.
+Pertanto, è necessario estendere la classe delle funzioni sulle quali è possibile operare l'integrazione e utilizzare una formula di riduzione, la quale varrà per insiemi diversi dai rettangoli. Questi nuovi insiemi sono chiamati domini semplici, in particolare sarà considerata la loro unione quando avranno parte delle rispettive frontiere in comune. In questo modo è possibile applicare la formula di additività  rispetto al dominio di integrazione (il dominio grande è spezzettato in domini semplici con parte della frontiera in comune) e di conseguenza l'integrale doppio sul dominio "generale" sarà una somma di integrali doppi su domini semplici.\\
 È necessario definire cosa siano i domini semplici, i quali sono definibili come regioni misurabili secondo Peano-Jordan.
 
 \begin{definition}[Regione $y$-semplice]\footnote{Slide 26 PDF 25.}
@@ -339,7 +352,7 @@ Pertanto, è necessario estendere la classe delle funzioni sulle quali è possib
 	dove $g_1,g_2\in C^0(x)$.
 \end{definition}
 
-\paragraph{Note:} $D_1$ è un sottoinsieme del piano cartesiano ed è $y$-semplice (o nomrale rispetto all'asse $x$) perché $y$ dipende da $x$ e normale rispetto all'asse $x$. È possibile dividere le regioni in sezioni (vedere Figura \ref{fig:regione_y_semplice}) utilizzando la retta verticale (la quale varia in $[a,b]$). Quindi, la regione $D_1$ può essere vista come l'unione di segmenti verticali, dove questi segmenti hanno come estremo sinistro $g_1(x)$ ed estremo destro $g_2(x)$. Per questo $D_1$ può essere rappresentato come
+\paragraph{Nota.} $D_1$ è un sottoinsieme del piano cartesiano ed è $y$-semplice (o nomrale rispetto all'asse $x$) perché $y$ dipende da $x$ e normale rispetto all'asse $x$. È possibile dividere le regioni in sezioni (vedere Figura \ref{fig:regione_y_semplice}) utilizzando la retta verticale (la quale varia in $[a,b]$). Quindi, la regione $D_1$ può essere vista come l'unione di segmenti verticali, dove questi segmenti hanno come estremo sinistro $g_1(x)$ ed estremo destro $g_2(x)$. Per questo $D_1$ può essere rappresentato come
 \begin{equation*}
 	D_1 = \underset{x}{\bigcup} (D_1)_x,\quad x\in[a,b],
 \end{equation*} 
@@ -347,8 +360,8 @@ ovvero ($D_1$ sezionato con $x=\bar x$ (di Figura \ref{fig:regione_y_semplice}))
 \begin{equation*}
 	(D_1)_x = \{y\in\mathbb{R}\, ;\, g_1(x) \leq y \leq g_2(x)\} \overset{\footnotemark}{=} 
 	\begin{cases}
-		[g_1(x), g_2(x)]	&\text{se } x\in[a,b]\\
-		\emptyset				&\text{altrimenti}
+		[g_1(x), g_2(x)],	&\text{se } x\in[a,b],\\
+		\emptyset,				&\text{altrimenti}.
 	\end{cases}
 \end{equation*}
 
@@ -371,12 +384,12 @@ Quindi, è possibile pensare a $D_1$ come unione dei segmenti verticali. Analoga
 	con $h_1,h_2\in C^0([c,d])$.
 \end{definition}
 
-\paragraph{Nota:} $D_2$ può essere rapprentata come
+\paragraph{Nota.} $D_2$ può essere rapprentata come
 \begin{equation*}
-	D_2 = \underset{y}{\bigcup} (D_2)_y = (D_2)_ = \{x\in\mathbb{R}\,;\, h_1(y)\leq x \leq h_2(y)\} =
+	D_2 = \underset{y}{\bigcup} (D_2)_y = (D_2)_y = \{x\in\mathbb{R}\,;\, h_1(y)\leq x \leq h_2(y)\} =
 	\begin{cases}
-		[h_1(y), h_2(y)] & \text{se } y\in[c,d]\\
-		\emptyset 			& \text{altrimenti}
+		[h_1(y), h_2(y)], & \text{se } y\in[c,d],\\
+		\emptyset, 			& \text{altrimenti}.
 	\end{cases}
 \end{equation*}
 
@@ -387,18 +400,20 @@ Quindi, è possibile pensare a $D_1$ come unione dei segmenti verticali. Analoga
 	\label{fig:regione_x_semplice}
 \end{figure}
 
-\paragraph{I domini della forma $\texorpdfstring{\boldsymbol{D_1}}{D1}$ o $\texorpdfstring{\boldsymbol{D_2}}{D2}$ sono misurabili secondo P-J:} I domini della forma $D_1$ e $D_2$, ovvero $x$-semplici o $y$-semplici, sono misurabili secondo Peano-Jordan, ovvero:
+\paragraph{I domini della forma $\boldsymbol{D_1}$ o $\texorpdfstring{\boldsymbol{D_2}}{D2}$ sono misurabili secondo P-J.} I domini della forma $D_1$ e $D_2$, ovvero $x$-semplice o $y$-semplice, sono misurabili secondo Peano-Jordan, ovvero:
 \begin{equation*}
 	|Area(D_1)| = |D_1| = \int\int_{D_1} 1 dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} 1dy\right)dx = \int_a^b[g_2(x)-g_1(x)] dx,
 \end{equation*}
 e
 \begin{equation*}
-	|Area(D_2)| =|D_2| = \int\int_{D_2} 1 dx\,dy = \int_c^d \left(\int_{h_1(y)}^{h_2(y)}1 dy\right)dx = \int _c^d[h_2(y) - h_1(y)] dy.
+	|Area(D_2)| =|D_2| = \int\int_{D_2} 1 dx\,dy = \int_c^d \left(\int_{h_1(y)}^{h_2(y)}1 dx\right)dy = \int _c^d[h_2(y) - h_1(y)] dy.
 \end{equation*}
-È possibile notare che l'area delle due forme di regioni sono calcolabili tramite l'utilizzo di integrali iterativi (quindi come Analisi 1 perché ad una variabile), in quanto vale il Teorema \ref{th:formula_riduzione_domini_semplici} e quindi sono applicabili le formule di riduzione per i domini semplici.
+È possibile notare che l'area delle due forme di regioni sono calcolabili tramite l'utilizzo di integrali iterativi (quindi come Analisi 1 perché ad una variabile), in quanto vale il Teorema \ref{th:formula_riduzione_domini_semplici} e quindi sono applicabili le formule di riduzione per i domini semplici. $\qed$
+
+\paragraph{Domanda da fare.} Le due aree sono corrette?
 
 \begin{example}\footnote{Slide 29 PDF 25.}
-	Il triangolo $T$ di vertici $(0,0),(1,0),(1,1)$ può essere rappresentato come segue:
+	Il triangolo $T$ di vertici $(0,0),(1,0),(1,1)$ può essere rappresentato come segue (vedere Figura \ref{fig:esempio_triangolo_dominio_semplice}):
 	\begin{itemize}
 		\item Caso $y$-semplice (unione di segmenti verticali)
 		\begin{equation*}
@@ -422,30 +437,31 @@ e
 	\begin{itemize}
 		\item Se $D$ è $x$-semplice
 		\begin{equation}\label{eq:formula_riduzione_dominio_x_semplice}
-			\int\int f(x,y) dx \, dy = \int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,y) dx\right)dy,\qquad (x\in[h_1(y), h_2(y)],\, y\in [c,d]]
+			\int\int_D f(x,y) dx \, dy = \int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,\underset{\text{fissa}}{y}) dx\right)dy,\qquad (x\in[h_1(y), h_2(y)],\, y\in [c,d])
 		\end{equation}
 		\item Se $D$ è $y$-semplice
 		\begin{equation}\label{eq:formula_riduzione_dominio_y_semplice}
-			\int\int_D f(x,y)dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)dy\right)dx. \qquad (x\in[a,b],\, y\in [g_1(y), g_2(y)]]
+			\int\int_D f(x,y)dx\, dy = \int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(\underset{\text{fissa}}{x},y)dy\right)dx. \qquad (x\in[a,b],\, y\in [g_1(y), g_2(y)])
 		\end{equation}
 	\end{itemize}
 \end{theorem}
 
-\paragraph{Nota sulle formule di riduzione (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice})}: Per domini $x$-semplici l'ordine di iterazione è prima rispetto ad $x$ e poi rispetto a $y$ per ottenere una funzione dipendente da $y$ ($x$ è in funzione di $y$); in modo analogo con per un dominio $y$-semplice. $\qed$
+\paragraph{Nota sulle formule di riduzione (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice}).} Per domini $x$-semplici l'ordine di iterazione è prima rispetto ad $x$ e poi rispetto a $y$ per ottenere una funzione dipendente da $y$ ($x$ è in funzione di $y$); in modo analogo con per un dominio $y$-semplice. $\qed$
 
-Anche per gli integrali multipli su domini semplici vale l'additività rispetto questi ultimi, in quanto è possibile dividere l'integrale in somma di integrali con domini più semplici. Quindi, l'integrale sarà la somma degli integrali sui singoli intervalli la cui unione dà l'intervallo generale.\\
-In altre parole: dato che sono considerati domini sul piano, se questi sono l'unione di domini semplici (ovvero $x$ o $y$-semplici), i quali dovranno avere in comune solo una parte di frontiera, è possibile definire il Teorema \ref{th:additivita_integrale_domini_semplici} di additività degli integrali doppi sui domini semplici, cioè: dato un integrale doppio definito su un dominio diviso in un insieme finito di domini semplici, dove quest'ultimi hanno in comune solo una parte di frontiera, allora l'integrale doppio è la somma degli integrali doppi definiti sui singoli domini semplici.
+Anche per gli integrali multipli su domini semplici vale l'additività rispetto questi ultimi, in quanto è possibile dividere l'integrale in somma di integrali con domini più semplici. In questo modo l'integrale sarà la somma degli integrali sui singoli intervalli la cui unione dà l'intervallo generale. In altre parole: dato che sono considerati domini sul piano, se questi sono l'unione di domini semplici (ovvero $x$ o $y$-semplici), i quali dovranno avere in comune solo una parte di frontiera, è possibile definire il Teorema \ref{th:additivita_integrale_domini_semplici} di additività degli integrali doppi sui domini semplici.
 
 \begin{theorem}[Additività dell'integrale doppio su domini semplici]\label{th:additivita_integrale_domini_semplici}\footnote{Slide 32 PDF 25.}
 	Supposto che $D_1,D_2,\hdots, D_k\subset\mathbb{R}^2$, con $k\in\mathbb{R}$ finito, siano domini semplici e che non abbiano, a due a due, punti in comune oltre ad una parte di frontiera, allora ogni funzione (continua) su $D=D_1\cup D_2\cup \hdots\cup D_k$ è integrabile su $D$ e
-	\begin{equation*}
-		\int\int f(x,y) dx\, dy = \int\int D_1 f(x,y) dx\, dy +\hdots + \int\int D_k f(x,y) dx\, dy = \sum_{i=1}^{k} \int\int D_i f(x,y) dx\, dy.
-	\end{equation*}
+	\begin{equation}\label{eq:additivita_integrale_doppio_domini_semplici}
+		\int\int_D f(x,y) dx\, dy = \int\int_{D_1} f(x,y) dx\, dy +\hdots + \int\int_{D_k} f(x,y) dx\, dy = \sum_{i=1}^{k} \int\int_{D_i} f(x,y) dx\, dy.
+	\end{equation}
 \end{theorem}
 
-\paragraph{Nota sul Teorema.} Utilizzando il Teorema è possibile ampliare la nostra capacità di calcolo su domini generali: grazie al fatto che scomponendo un dominio generale in domini semplici è possibile applicare la formula di riduzione per domini semplici (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice}) ai singoli domini semplici, è sufficiente sommare il risultato delle formule di riduzione per integrali su domini semplici per ottenere il risultato voluto.
+\paragraph{Nota sul Teorema.} Utilizzando il Teorema è possibile ampliare la nostra capacità di calcolo su domini generali: grazie al fatto che scomponendo un dominio generale in domini semplici è possibile applicare la formula di riduzione per domini semplici (\ref{eq:formula_riduzione_dominio_x_semplice})-(\ref{eq:formula_riduzione_dominio_y_semplice}) ai singoli domini semplici, è sufficiente sommare il risultato delle formule di riduzione per integrali su domini semplici per ottenere il risultato voluto (ovvero (\ref{eq:additivita_integrale_doppio_domini_semplici})).
 
-\paragraph{Esempio applicazione del Teorema.} Sia Figura \ref{fig:esempio_additivita_integrali_domini_semplici}, $D$ non è un dominio semplice. $D_1$ e $D_2$ sono domini semplici, la cui unione è $D=D_1\cup D_2$. $D_1$ e $D_2$ hanno solo una parte di frontiera e quindi è possibile applicare il Teorema \ref{th:additivita_integrale_domini_semplici} di additività dell'integrale doppio su domini semplici e possono essere $x$-semplici e/o $y$-semplici in modo indipendente l'uno dall'altro.
+\paragraph{Spiegazione Teorema.} Il Teorema afferma che dato un integrale doppio definito su un dominio diviso in un insieme finito di domini semplici, dove quest'ultimi hanno in comune solo una parte di frontiera, allora l'integrale doppio è la somma degli integrali doppi definiti sui singoli domini semplici.
+
+\paragraph{Esempio applicazione del Teorema.} Sia Figura \ref{fig:esempio_additivita_integrali_domini_semplici}, $D$ non è un dominio semplice. $D_1$ e $D_2$ sono domini semplici, la cui unione è $D=D_1\cup D_2$. $D_1$ e $D_2$ hanno solo una parte di frontiera e quindi è possibile applicare il Teorema \ref{th:additivita_integrale_domini_semplici} di Additività dell'integrale doppio su domini semplici, dove i due domini semplici possono essere $x$-semplici e/o $y$-semplici in modo indipendente l'uno dall'altro.
 
 \begin{figure}[ht]
 	\centering
@@ -491,13 +507,11 @@ Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplic
 		\label{fig:esempio_dominio_y_semplice_1}
 	\end{figure}
 	
-	\noindent $f$ è continua in $D$, quindi è integrabile secondo Riemann.
-
-	\noindent Pertanto, per risolvere l'integrale
+	\paragraph{Soluzione.} $f$ è continua in $D$, quindi è integrabile secondo Riemann. Pertanto, per risolvere l'integrale
 	\begin{equation}\label{eq:esempio_integrale_dominio_y_semplice}
 		\int\int_D e^{y^2} dxdy
 	\end{equation}
-	è necessario scambiare l'ordine di iterazione, altrimenti è troppo complesso, quindi è trasformato $D$ in $x$-semplice e calcolato l'integrale come segue:\\
+	è necessario scambiare l'ordine di iterazione, altrimenti è troppo complesso. Quindi è trasformato $D$ in $x$-semplice e calcolato l'integrale come segue:\\
 	Dato
 	\begin{equation*}
 		D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq y\leq 1,\, 0\leq x\leq y\},
@@ -506,16 +520,16 @@ Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplic
 	\begin{equation*}
 		\int\int_D e^{y^2} dxdy \overset{\text{formula riduzione } x \text{-semplice}}{=} \int_0^1\left(\int_0^y e^{y^2} dx\right)dy = \int_0^1 e^{y^2}[x]_0^y dy = \int_0^1 y e^{y^2}dy = \eval{\frac{e^{y^2}}{2}}{0}{1} = \frac{1}{2}(e-1)
 	\end{equation*}
-	\paragraph{Soluzione alternativa:} In alternativa, dato che la funzione è continua in $D$ che sia in forma $x$-semplice o $y$-semplice, è possibile risolvere l'integrale come segue:
+	\paragraph{Soluzione alternativa.} In alternativa, dato che la funzione è continua in $D$ che sia in forma $x$-semplice o $y$-semplice, è possibile risolvere l'integrale come segue:
 	\begin{equation*}
 		\int\int_D e^{y^2} dxdy \overset{\text{formula riduzione } y \text{-semplice}}{=} \int_0^1\left(\int_x^1 e^{y^2} dy\right)dc = (\star)
 	\end{equation*}
 	dato che $e^{y^2}$ è continua allora ammette primitiva $F(x)$ tale che $F'(x)$ e quindi
 	\begin{equation*}
-		\begin{matrix}
-			(\star) &=& \int_0^1[F(x)]_0^1dx &=& \int_0^1(F(1) - F(x)) dx &=& F(1) \int_0^1 1 dx -\underbrace{ \int_0^11\cdot F(x)dx}_{\text{risolto per parti}} &=& \\\\
-			&&&=& F(1) - [x\,F(x)]_0^1 + \int_0^1x\, \underbrace{F'(x)}_{e^{x^2}}\;dx &=& F(1)-F(1) +\int_0^1x\, e^{x^2}\; dx &=& \frac{1}{2}(e-1).
-		\end{matrix}
+		\begin{aligned}
+			(\star) &=& \int_0^1[F(x)]_x^1dx &=& \int_0^1(F(1) - F(x)) dx &=& F(1) \int_0^1 1 dx -\underbrace{ \int_0^11\cdot F(x)dx}_{\text{risolto per parti}} &=& \\\\
+			&&&=& F(1) - [x\,F(x)]_0^1 + \int_0^1x\, \underbrace{F'(x)}_{e^{x^2}}\;dx &=& \cancel{F(1)-F(1)} +\int_0^1x\, e^{x^2}\; dx &=& \frac{1}{2}(e-1).
+		\end{aligned}
 	\end{equation*}
 \end{example}
 
@@ -526,12 +540,12 @@ Come in Analisi 1 è definita l'integrazione per sostituzione. Tale integrazione
 \begin{equation}\label{eq:cambiamento_variabile_integrali_an1}
 	\int_a^b f(x) dx \overset{x = \varphi(t)}{=} \int_{\varphi(a)}^{\varphi(b)} f(\varphi(t))\, \varphi'(t) dt,
 \end{equation}
-dove $ \varphi'(t) dt$ è il fattore correttivo (o pagamento).
+dove $ \varphi'(t)$ è il fattore correttivo (o pagamento).
 
 \subsubsection{Matrice Jacobiana}\footnote{Slide 34 PDF 25}
 È necessario passare agli integrali doppi, quindi, quando è effettuato il cambiamento di variabile, il pagamento in (\ref{eq:cambiamento_variabile_integrali_an1}) si trasforma nel determinante della matrice Jacobiana. Una matrice Jacobiana (vedere (\ref{eq:matrice_jacobiana})) è una matrice che ha come righe i gradienti di una funzione vettoriale. Inoltre, è necessario specificare che il cambiamento è svolto su domini nel piano (perché considerati gli integrali doppi), ovvero su domini semplici ed è legato alle coordinate polari (quelle viste per i limiti).
 
-Prima di definire la matrice Jacobiana è introdotta la funzione utile al cambiamento di variabile: il cambio di variabile è operato tramite il cambio di coordinate, utilizzando $F$, una applicazione vettoriale, di classe $C^1$ e biettiva, del tipo
+Prima di definire la matrice Jacobiana è introdotta la funzione utile al cambiamento di variabile: il cambio di variabile è operato tramite il cambio di coordinate, utilizzando una applicazione vettoriale $F$ di classe $C^1$ e biettiva del tipo
 \begin{equation*}
 	\begin{aligned}
 		F:\mathbb{R}^2 &\rightarrow\mathbb{R}^2\\
@@ -566,6 +580,8 @@ Inoltre, per essere sicuri che $F$ sia una trasformazione regolare di coordinate
 
 \paragraph{Nota su (\ref{eq:trasformazione_F}).} $F_1$ e $F_2$ sono differenziabili perché $\cos$ e $\sin$ sono funzioni super-regolari e quindi è possibile costruire il vettore gradiente delle componenti, cioè: il gradiente di $F$ è composto dalle derivate di $x$ e $y$, definendo così la matrice Jacobiana assocoiata ad $F$.
 
+\paragraph{Che cos'è lo jacobiano?} Vedere video youtube \url{https://youtu.be/wOjB9IWZMQA?si=82kG7kRIlbAQPL7U}.
+
 \begin{definition}[Matrice Jacobiana]\footnote{Slide 35 PDF 25.}
 	Data l'applicazione vettoriale
 	\begin{equation*}
@@ -575,7 +591,7 @@ Inoltre, per essere sicuri che $F$ sia una trasformazione regolare di coordinate
 		\end{aligned}
 	\end{equation*}
 	la matrice Jacobiana associata a $F$ è definita come
-	\begin{equation*}
+	\begin{equation}\label{eq:matrice_jacobiana}
 		DF(\rho, \theta) = JF(\rho, \theta) =
 		\begin{bmatrix}
 			\triangledown F_1(\rho, \theta)\\
@@ -589,7 +605,7 @@ Inoltre, per essere sicuri che $F$ sia una trasformazione regolare di coordinate
 			\cos\theta & -\rho\sin\theta\\
 			\sin\theta & \rho\cos\theta
 		\end{bmatrix}.
-	\end{equation*}
+	\end{equation}
 \end{definition}
 
 \paragraph{Come si calcola $\boldsymbol{F'(\rho, \theta)}$?} Dato che $F$ è un'applicazione vettoriale allora
@@ -597,7 +613,7 @@ Inoltre, per essere sicuri che $F$ sia una trasformazione regolare di coordinate
 	F'(\rho, \theta) = \det JF(\rho, \theta) = \rho \cos^2\theta + \rho \sin^2\theta = \theta.
 \end{equation*}
 
-\paragraph{Nota su $\boldsymbol{\vec{F}}(\rho, \theta)$.} Se $\rho=0$ allora $\vec{F}(0, \theta) = (0,0),\, \forall\theta\mathbb{R}$. Ciò è dovuto al fatto che le funzioni trigonometriche sono periodiche, dove per periodica si intende quanto segue: Dati $(\rho, \theta_1)\neq (\rho, \theta_1 + k\,2\phi)$,
+\paragraph{Nota su $\boldsymbol{\vec{F}(\rho, \theta)}$.} Se $\rho=0$ allora $\vec{F}(0, \theta) = (0,0),\, \forall\theta\mathbb{R}$. Ciò è dovuto al fatto che le funzioni trigonometriche sono periodiche, dove per periodica si intende quanto segue: Dati $(\rho, \theta_1)\neq (\rho, \theta_1 + k\,2\phi)$,
 \begin{equation*}
 	\begin{matrix}
 		F(\rho, \theta_1) &=& (\rho \cos\theta_1, \rho \sin\theta_1),\\
@@ -617,7 +633,7 @@ la quale è la condizione ricercata affinché $F$ sia di classe $C^1(A)$ ed inve
 
 \footnotetext{Significa che l'intervallo considerato per $\theta$ può essere $(0,2\phi)$ come $(-\pi,\pi)$.}
 
-\paragraph{Nota su $\boldsymbol{A}$.} Negli esempi sarà considerato $A=\underbrace{(0,+\infty)}_\rho \times \underbrace{(0,2\pi)}_\theta$.
+\paragraph{Nota su $\boldsymbol{A}$.} Negli esempi sarà considerato $A=(0,+\infty) \times(0,2\pi)$.
 
 \paragraph{Nota su $\boldsymbol{F(A)}$.} Sia $F(A)$ l'immagine di $F$ su $A$, $F(A)$ è un sottoinsieme aperto del piano cartesiano, ovvero
 \begin{equation*}
