@@ -927,3 +927,40 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 	\end{equation*}
 	\paragraph{Cosa rappresenta $ \boldsymbol{\frac{7}{15}}$?} Rappresenta il volume fra $T$ ed il grafico della funzione, se questa ha sempre segno positivo o negativo. Se la funzione cambia di segno: l'integrale doppio è la somma delle aree con segno (come ad Analisi 1).
 \end{example}
+
+\begin{example}\footnote{Scritto 15 Settembre 2025}
+	\paragraph{Testo.} Calcolare il seguente integrale doppio
+	\begin{equation}\label{eq:esempio_integrale_doppio_valore_assoluto}
+		\int\int_E |x-y| dx\,dy,
+	\end{equation}
+	dove $E=\{(x,y)\in\mathbb R^2\,;\, 1\leq x^2+y^2\leq 4,\, x\geq 0\}$.
+	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{Analisi2/figures/dominio_integrale_semicerchio.png}
+			\caption{$E=\{(x,y)\in\mathbb R^2\,;\, 1\leq x^2+y^2\leq 4,\, x\geq 0\}$.}
+			\label{fig:dominio_integrale_semicerchio}
+		\end{figure}
+	
+	\paragraph{Svolgimento.} È possibile notare che
+	\begin{equation*}
+		|x-y|=
+		\begin{cases}
+			x-y, & \text{se } x>y,\\
+			y-x, & \text{se } x<y,
+		\end{cases}
+	\end{equation*}
+	quindi $E$ può essere trasformato in rettangolo polare come
+	\begin{equation*}
+		\tilde E = \left\{ (\rho,\theta)\,;\, \frac{\pi}{4}\leq \theta\leq \frac{\pi}{2},\, 0\leq \rho\leq 1\right\}  \cup\left\{(\rho,\theta),\, \frac{\pi}{2}\leq \theta\leq \frac{3\pi}{2},\, 0\leq \rho\leq 1\right\}.
+	\end{equation*}
+	Pertanto, per il Teorema \ref{th:additivita_integrale_domini_semplici} di Additività dell'integrale doppio su domini semplici e per il Teorema \ref{th:formula_cambiamento_variabili_integrale_doppio} della Formula di cambiamento di variabili
+	\begin{equation*}
+		\begin{aligned}
+			(\ref{eq:esempio_integrale_doppio_valore_assoluto}) &=& \int_0^1\int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\rho\cos\theta - \rho\sin\theta)\rho\, d\rho\, d\theta + \int_0^1\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} (\rho\sin\theta - \rho\cos\theta)\rho\, d\rho\, d\theta &=&\\
+			&=& \int_0^1\rho^2\, d\rho\,\int_{\frac{\pi}{4}}^{\frac{\pi}{2}} (\cos\theta - \sin\theta)\,d\theta + \int_0^1\rho^2\, d\rho \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} (\sin\theta - \cos\theta)\, d\theta &=&\\
+			&=& \eval{\rho}{0}{1}\cdot [\sin\theta + \cos\theta]_{\frac{\pi}{4}}^{\frac{\pi}{2}} + \eval{\rho}{0}{1}\cdot [\sin\theta - \cos\theta]_{\frac{\pi}{2}}^{\frac{3\pi}{2}} &=&\\
+			&=& \underbrace{0 - \frac{\sqrt{2}}{2} + 1 +  \frac{\sqrt{2}}{2} - 1 - \frac{\sqrt{2}}{2} - 0 + \frac{\sqrt{2}}{2} }_{\text{da controllare}}
+		\end{aligned}
+	\end{equation*}
+\end{example}
