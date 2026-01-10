@@ -22,13 +22,8 @@ jobs:
     # Step 2: Set up TeX Live environment
     - name: Install TeX Live and required packages
       run: |
-<<<<<<< HEAD
         sudo apt-get update
-        sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-lang-italian texlive-pictures texlive-science texlive-extra-utils
-=======
-	  	sudo apt-get update
-		sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-lang-italian texlive-pictures texlive-science texlive-extra-utils
->>>>>>> a1ba9690653ad722e75e00bf8593a1b73641d013
+        sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-lang-italian texlive-pictures texlive-science texlive-extra-utils
 
     # Step 3: Compile LaTeX to PDF (First Pass)
     - name: First LaTeX Compilation
