@@ -27,18 +27,18 @@ jobs:
 
     # Step 3: Compile LaTeX to PDF (First Pass)
     - name: First LaTeX Compilation
-      run: pdflatex -interaction=nonstopmode Analisi.tex || true
+      run: pdflatex -interaction=nonstopmode Analisi.tex 
 
     # Step 4: Run makeglossaries
     - name: Run makeglossaries
-      run: makeglossaries Analisi || true
+      run: makeglossaries Analisi
     # Step 5: Compile LaTeX to PDF (Second Pass)
     - name: Second LaTeX Compilation
-      run: pdflatex -interaction=nonstopmode Analisi.tex || true
+      run: pdflatex -interaction=nonstopmode Analisi.tex
 
     # Step 6: Compile LaTeX to PDF (Final Pass)
     - name: Final LaTeX Compilation
-      run: pdflatex -interaction=nonstopmode Analisi.tex || true
+      run: pdflatex -interaction=nonstopmode Analisi.tex
 
     # Step 7: Upload the artifact
     - name: Upload PDF
