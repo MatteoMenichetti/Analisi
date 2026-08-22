@@ -257,7 +257,56 @@ In definitiva, poiché $f$ è integrabile allora $\underset{D}{\sup} \, s(f,D) =
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.35\textwidth]{Analisi2/figures/f_estesa.png}
+	%\includegraphics[width=0.35\textwidth]{Analisi2/figures/f_estesa.png}
+	\begin{tikzpicture}[
+		x=1.35cm,
+		y=1.35cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[thick,->] (-0.35,0) -- (4.65,0) node[right] {$x$};
+		\draw[thick,->] (0,-0.35) -- (0,4.35) node[above] {$y$};
+		
+		% Contorno del dominio irregolare D, riutilizzato per riempimento e bordo
+		\def\domainpath{
+			(1.16,1.18)
+			.. controls (1.00,1.48) and (1.34,1.78) .. (1.42,2.08)
+			.. controls (1.50,2.42) and (1.38,2.82) .. (1.70,3.02)
+			.. controls (2.03,3.25) and (2.45,3.02) .. (2.80,3.04)
+			.. controls (3.18,3.07) and (3.45,2.93) .. (3.35,2.62)
+			.. controls (3.25,2.30) and (3.45,2.02) .. (3.36,1.70)
+			.. controls (3.27,1.36) and (2.91,1.20) .. (2.61,1.31)
+			.. controls (2.32,1.42) and (2.14,1.08) .. (1.82,1.10)
+			.. controls (1.55,1.12) and (1.32,1.02) .. cycle
+		}
+		
+		% Tratteggio fitto e uniforme della regione R\D
+		\path[
+		pattern={Lines[
+			angle=45,
+			distance=6pt,
+			line width=0.7pt
+			]},
+		pattern color=red
+		] (0.8,0.75) rectangle (3.85,3.45);
+		
+		% Il dominio D copre il tratteggio sottostante
+		\fill[white] \domainpath;
+		
+		% Bordi del rettangolo R e del dominio D
+		\draw[very thick] (0.8,0.75) rectangle (3.85,3.45);
+		\draw[very thick] \domainpath;
+		\node[font=\Large] at (4.22,3.65) {$R$};
+		
+		% Definizione dell'estensione
+		\node[font=\large] at (2.55,2.62) {$D$};
+		\node[font=\large,align=center] at (1.85,1.92)
+		{$\widetilde f=f$};
+		\node[font=\large,align=center,fill=white,inner sep=2pt] at (3.30,1.03)
+		{$\widetilde f=0$};
+	\end{tikzpicture}
 	\caption{Funzione $f$ estesa.}
 	\label{fig:f_estesa}
 \end{figure}
@@ -369,7 +418,51 @@ ovvero ($D_1$ sezionato con $x=\bar x$ (di Figura \ref{fig:regione_y_semplice}))
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.35\textwidth]{Analisi2/figures/regione_y_semplice.png}
+	%\includegraphics[width=0.35\textwidth]{Analisi2/figures/regione_y_semplice.png}
+	\begin{tikzpicture}[
+		x=1.35cm,
+		y=1.35cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[thick,->] (-0.30,0) -- (5.10,0) node[right] {$x$};
+		\draw[thick,->] (0,-0.30) -- (0,3.955) node[above] {$y$};
+		
+		\node[font=\Large] at (3.55,4.25)
+		{Regione che soddisfa la definizione};
+		
+		% Ascisse notevoli a, \bar{x}, b
+		\draw[very thick] (0.90,0) -- (0.90,3.85);
+		\draw[very thick] (2.75,0) -- (2.75,3.65);
+		\draw[very thick] (4.35,0) -- (4.35,3.95);
+		
+		% Frontiera superiore y=g_2(x)
+		\draw[very thick]
+		(0,2.35)
+		.. controls (0.72,2.93) and (1.42,3.38) .. (2.08,3.30)
+		.. controls (2.48,3.25) and (2.46,2.82) .. (2.96,2.72)
+		.. controls (3.50,2.60) and (3.70,2.95) .. (4.48,3.62);
+		
+		% Frontiera inferiore y=g_1(x)
+		\draw[very thick]
+		(0,0.92)
+		.. controls (0.75,1.46) and (1.42,2.15) .. (2.04,2.04)
+		.. controls (2.46,1.96) and (2.72,1.45) .. (3.22,1.36)
+		.. controls (3.70,1.28) and (3.92,1.62) .. (4.48,2.16);
+		
+		% Freccia rivolta all'interno della regione
+		\draw[thick,->] (1.80,3.95) -- (1.80,2.62);
+		
+		% Etichette
+		\node[below=4pt] at (0.90,0) {$a$};
+		\node[below=4pt] at (2.75,0) {$\overline{x}$};
+		\node[below=4pt] at (4.35,0) {$b$};
+		\node[font=\large] at (3.15,2.20) {$D_1$};
+		\node[font=\large,anchor=west] at (4.55,3.55) {$g_2(x)$};
+		\node[font=\large,anchor=west] at (4.55,2.12) {$g_1(x)$};
+	\end{tikzpicture}
 	\caption{Regione $y$-semplice.}
 	\label{fig:regione_y_semplice}
 \end{figure}
@@ -395,7 +488,43 @@ Quindi, è possibile pensare a $D_1$ come unione dei segmenti verticali. Analoga
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.35\textwidth]{Analisi2/figures/regione_x_semplice.png}
+	%\includegraphics[width=0.35\textwidth]{Analisi2/figures/regione_x_semplice.png}
+	\begin{tikzpicture}[
+		x=1.35cm,
+		y=1.35cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[thick,->] (-0.30,0) -- (4.75,0) node[right] {$x$};
+		\draw[thick,->] (0,-0.30) -- (0,3.95) node[above] {$y$};
+		
+		% Livelli y=c, y=\bar y e y=d
+		\draw[very thick] (0,1.00) -- (4.30,1.00);
+		\draw[very thick] (0,2.05) -- (4.30,2.05);
+		\draw[very thick] (0,3.25) -- (4.30,3.25);
+		
+		% Frontiere x=h_1(y) e x=h_2(y)
+		\draw[very thick]
+		(0.48,1.00)
+		.. controls (0.50,1.28) and (0.68,1.48) .. (0.92,1.58)
+		.. controls (1.18,1.70) and (1.38,1.92) .. (1.42,2.05)
+		.. controls (1.66,2.28) and (1.55,2.74) .. (1.60,3.25);
+		\draw[very thick]
+		(3.38,1.00)
+		.. controls (3.44,1.36) and (3.28,1.74) .. (3.36,2.05)
+		.. controls (3.43,2.34) and (3.78,2.49) .. (3.88,3.25);
+		
+		% Etichette della regione
+		\node[font=\large,above=5pt] at (1.60,3.25) {$h_1(y)$};
+		\node[font=\large,above=5pt] at (3.88,3.25) {$h_2(y)$};
+		\node[font=\large] at (2.50,2.58) {$D_2$};
+		\node[font=\large,left=5pt] at (0,1.00) {$c$};
+		\node[font=\large,left=5pt] at (0,3.25) {$d$};
+		\node[font=\large,anchor=west] at (4.35,2.05)
+		{$y=\overline y$};
+	\end{tikzpicture}
 	\caption{Regione $x$-semplice.}
 	\label{fig:regione_x_semplice}
 \end{figure}
@@ -426,7 +555,44 @@ e
 	\end{itemize}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.35\textwidth]{Analisi2/figures/esempio_triangolo_dominio_semplice.png}
+	%	\includegraphics[width=0.35\textwidth]{Analisi2/figures/esempio_triangolo_dominio_semplice.png}
+		\begin{tikzpicture}[
+			x=3.5cm,
+			y=3.5cm,
+			line cap=round,
+			line join=round,
+			>=Stealth
+			]
+			% Assi cartesiani
+			\draw[thick,->] (-0.12,0) -- (1.35,0) node[right] {$x$};
+			\draw[thick,->] (0,-0.12) -- (0,1.18) node[above] {$y$};
+			
+			% Triangolo 0 <= y <= x <= 1
+			\draw[very thick] (0,0) -- (1,0) -- (1,1) -- cycle;
+			\node[font=\large,above left=2pt] at (0.47,0.47) {$y=x$};
+			
+			% Sezioni orizzontali: dominio x-semplice
+			\foreach \h in {0.16,0.34,0.52,0.70,0.86}
+			\draw[green!65!black,thick] (\h,\h) -- (1,\h);
+			
+			% Sezioni verticali: dominio y-semplice
+			\foreach \v in {0.16,0.34,0.52,0.70,0.86}
+			\draw[blue,thick] (\v,0) -- (\v,\v);
+			
+			% Vertici
+			\node[below left=4pt] at (0,0) {$(0,0)$};
+			\node[below=4pt] at (1,0) {$(1,0)$};
+			\node[above right=3pt] at (1,1) {$(1,1)$};
+			
+			% Legenda
+			\foreach \yy in {0.86,0.93,1.00}
+			\draw[green!65!black,thick] (1.48,\yy) -- (1.72,\yy);
+			\node[font=\large,anchor=west] at (1.82,0.93) {$x$-semplice};
+			
+			\foreach \xx in {1.53,1.61,1.69}
+			\draw[blue,thick] (\xx,0.30) -- (\xx,0.58);
+			\node[font=\large,anchor=west] at (1.82,0.44) {$y$-semplice};
+		\end{tikzpicture}
 		\caption{Triangolo $T$ come regione $x$-semplice o $y$-semplice. Le linee colorate sono intese come direzione di percorrenza.}
 		\label{fig:esempio_triangolo_dominio_semplice}
 	\end{figure}
@@ -465,7 +631,38 @@ Anche per gli integrali multipli su domini semplici vale l'additività rispetto 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.35\textwidth]{Analisi2/figures/esempio_additivita_integrali_domini_semplici.png}
+	%\includegraphics[width=0.35\textwidth]{Analisi2/figures/esempio_additivita_integrali_domini_semplici.png}
+	\begin{tikzpicture}[
+		x=1.25cm,
+		y=1.25cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[thick,->] (-0.35,0) -- (4.85,0) node[right] {$x$};
+		\draw[thick,->] (0,-0.35) -- (0,4.05) node[above] {$y$};
+		
+		% Contorno del dominio D = D_1 \cup D_2
+		\draw[very thick]
+		(0.95,0.90) -- (0.95,3.20)
+		.. controls (1.12,3.35) and (1.28,3.30) .. (1.42,3.14)
+		.. controls (1.70,2.82) and (1.90,2.70) .. (2.18,2.96)
+		.. controls (2.48,3.24) and (2.77,3.30) .. (2.94,2.88)
+		-- (3.85,2.88)
+		.. controls (4.08,2.88) and (4.18,2.72) .. (4.18,2.48)
+		.. controls (4.18,2.24) and (4.02,2.08) .. (4.13,1.84)
+		.. controls (4.25,1.58) and (4.09,1.30) .. (3.84,1.04)
+		-- (3.62,0.88) -- cycle;
+		
+		% Frontiera comune tra D_1 e D_2
+		\draw[very thick] (2.94,0.89) -- (2.94,2.88);
+		
+		% Etichette dei domini
+		\node[font=\Large] at (1.75,1.95) {$D_1$};
+		\node[font=\Large] at (3.43,1.90) {$D_2$};
+		\node[font=\Large] at (4.58,2.45) {$D$};
+	\end{tikzpicture}
 	\caption{Esempio di dominio generale scomposto in domini semplici.}
 	\label{fig:esempio_additivita_integrali_domini_semplici}
 \end{figure}
@@ -573,7 +770,32 @@ Inoltre, per essere sicuri che $F$ sia una trasformazione regolare di coordinate
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.25\textwidth]{Analisi2/figures/applicazione_vettoriale_matrice_jacobiana.png}
+%	\includegraphics[width=0.25\textwidth]{Analisi2/figures/applicazione_vettoriale_matrice_jacobiana.png}
+	 \begin{tikzpicture}[
+	 	x=2.2cm,
+	 	y=2.2cm,
+	 	line cap=round,
+	 	line join=round,
+	 	>=Stealth
+	 	]
+	 	% Assi cartesiani
+	 	\draw[thick,->] (-0.15,0) -- (1.75,0) node[right] {};
+	 	\draw[thick,->] (0,-0.15) -- (0,1.75) node[above] {};
+	 	
+	 	% Componenti cartesiane e vettore P
+	 	\draw[thick] (0,1.45) -- (1.45,1.45) -- (1.45,0);
+	 	\draw[very thick,->] (0,0) -- (1.45,1.45);
+	 	
+	 	% Angolo rispetto all'asse x
+	 	\draw[thick,->] (0.72,0)
+	 	arc[start angle=0,end angle=45,radius=0.72];
+	 	
+	 	% Etichette
+	 	\node[font=\large] at (0.56,1.02) {$P$};
+	 	\node[font=\large] at (0.83,0.32) {$\theta$};
+	 	\node[below=4pt] at (1.45,0) {$x$};
+	 	\node[left=5pt] at (0,1.45) {$y$};
+	 \end{tikzpicture}
 	\caption{Rappresentazione di $\vec{F}(\rho, \theta)=(F_1(\rho, \theta), F_2(\rho, \theta)) = (\rho\cos\theta, \rho\sin\theta)$.}
 	\label{fig:applicazione_vettoriale_matrice_jacobiana}
 \end{figure}
@@ -644,7 +866,33 @@ la quale è la condizione ricercata affinché $F$ sia di classe $C^1(A)$ ed inve
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.22\textwidth]{Analisi2/figures/dominio_applicazione_vettoriale_jacobiana.png}
+	%\includegraphics[width=0.22\textwidth]{Analisi2/figures/dominio_applicazione_vettoriale_jacobiana.png}
+	\begin{tikzpicture}[
+		x=1.35cm,
+		y=1.35cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[thick,->] (-0.18,0) -- (3.65,0) node[right] {$x$};
+		\draw[thick,->] (0,-0.18) -- (0,1.25) node[above] {$y$};
+		
+		% Tacche corrispondenti a 0 e 2pi
+		\draw[very thick] (0,-0.18) -- (0,0.18);
+		\draw[very thick] (1.95,-0.22) -- (1.95,0.22);
+		\node[below=5pt] at (1.95,0) {$2\pi$};
+		
+		% Onda regolare centrata sull'asse delle ascisse
+		\draw[red,very thick]
+		plot[domain=0.12:3.45,samples=220]
+		(\x,{0.09*sin(720*\x)});
+		
+		% Condizione sul raggio e indicazione dell'origine esclusa
+		\node[font=\large] (rho) at (0.82,0.72) {$\rho\neq0$};
+		\draw[thick,->] (rho.south west) -- (0.10,0.08);
+		\node[red,font=\Huge] at (0,0) {$\times$};
+	\end{tikzpicture}
 	\caption{Dominio ($A$) dell'applicazione vettoriale $\vec{F}(\rho, \theta)=(F_1(\rho, \theta), F_2(\rho, \theta)) = (\rho\cos\theta, \rho\sin\theta)$. È esclusa la semiretta $y=0, x>0$ perché è un aperto e non sono considerati 0 e $2\pi$. }
 	\label{fig:dominio_applicazione_vettoriale_jacobiana}
 \end{figure}
@@ -721,7 +969,59 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.25\textwidth]{Analisi2/figures/dominio_esempio_trasformazione_coordinate.png}
+		%\includegraphics[width=0.25\textwidth]{Analisi2/figures/dominio_esempio_trasformazione_coordinate.png}
+		\begin{tikzpicture}[
+			x=1.8cm,
+			y=1.8cm,
+			line cap=round,
+			line join=round,
+			>=Stealth
+			]
+			% Assi cartesiani
+			\draw[thick,->] (-0.55,0) -- (2.10,0) node[right] {$x$};
+			\draw[thick,->] (0,-1.85) -- (0,1.75) node[above] {$y$};
+			
+			% Contorno del dominio R, riutilizzato per ritagliare le curve rosse
+			\def\polarpath{
+				(0,0) -- (1.30,1.30)
+				.. controls (1.55,0.55) and (1.60,-0.72) .. (0,-1.72)
+				-- cycle
+			}
+			\draw[very thick] \polarpath;
+			\node[font=\Large] at (1.67,0.75) {$R$};
+			\node[above left=2pt] at (0.58,0.58) {$y=x$};
+			
+			% Curve coordinate fitte, ritagliate all'interno del dominio
+			\begin{scope}
+				\clip \polarpath;
+				\foreach \s in {-0.42,-0.28,-0.14,0.00,0.14,0.28,0.42,0.56,0.70,0.84,0.98,1.12,1.26,1.40}
+				\draw[red,thick] (\s,-1.90) -- ({\s+0.75},1.50);
+			\end{scope}
+			
+			% Angoli usati nella trasformazione polare
+			% Alone bianco limitato alla regione attraversata dalle righe rosse
+			\begin{scope}
+				\clip \polarpath;
+				\draw[blue,thick,->,preaction={draw=white,line width=2.5pt}]
+				(0.42,0) arc[start angle=0,end angle=45,radius=0.42];
+				\draw[green!65!black,thick,->,preaction={draw=white,line width=2.5pt}]
+				(0.30,0) arc[start angle=0,end angle=270,radius=0.30];
+			\end{scope}
+			
+			% Frecce complete, senza alone al di fuori del tratteggio
+			\draw[blue,thick,->]
+			(0.42,0) arc[start angle=0,end angle=45,radius=0.42];
+			\node[blue,fill=white,inner sep=1pt] at (0.58,0.25)
+			{$\displaystyle\frac{\pi}{4}$};
+			
+			\draw[green!65!black,thick,->]
+			(0.30,0) arc[start angle=0,end angle=270,radius=0.30];
+			\node[green!65!black,left=2pt] at (-0.25,0.14)
+			{$\frac{3\pi}{2}$};
+			
+			\node[green!65!black,font=\large,anchor=west] at (0.955,-1.20)
+			{$\displaystyle \frac{3\pi}{2}+\frac{\pi}{4}=\frac{7\pi}{4}$};
+		\end{tikzpicture}
 		\caption{$D=\{(\rho, \theta)\in(0,+\infty)\times(0,2\pi)\,;\, r\leq \rho\leq R,\, -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{4}\}$.}
 		\label{fig:dominio_esempio_trasformazione_coordinate}
 	\end{figure}

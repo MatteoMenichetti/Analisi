@@ -1001,7 +1001,36 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/piano_coordinate_polari.jpeg}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/piano_coordinate_polari.jpeg}
+    \begin{tikzpicture}[
+    	x=1.35cm,
+    	y=1.35cm,
+    	line cap=round,
+    	line join=round,
+    	>=Stealth
+    	]
+    	% Assi cartesiani
+    	\draw[thick,->] (-0.25,0) -- (4.10,0) node[right] {$x$};
+    	\draw[thick,->] (0,-0.35) -- (0,3.15) node[above] {$y$};
+    	
+    	% Punto P e sue coordinate cartesiane
+    	\coordinate (P) at (2.65,2.15);
+    	\draw[very thick,->] (0,0) -- (P);
+    	\draw[thick,dashed] (P) -- (2.65,0);
+    	\draw[thick,dashed] (P) -- (0,2.15);
+    	
+    	% Angolo polare
+    	\draw[thick,->] (0.62,0)
+    	arc[start angle=0,end angle=39.1,radius=0.62];
+    	
+    	% Etichette
+    	\node[font=\large] at (1.18,1.20) {$\rho$};
+    	\node[font=\large] at (0.78,0.34) {$\theta$};
+    	\node[font=\large,anchor=west] at (2.80,2.35)
+    	{$P=(x_P,y_P)$};
+    	\node[below=4pt] at (2.65,0) {$x_P$};
+    	\node[left=5pt] at (0,2.15) {$y_P$};
+    \end{tikzpicture}
     \caption{Grafico determinazione del punto $P=(x_P,y_P)$.}\label{fig:piano_coordinate_polari}
 \end{figure}
 
@@ -1041,7 +1070,42 @@ Quindi la retta $\overline{\rm OP}$ può essere rappresentata come $y=mx$, con $
 \end{remark}
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/piano_coordinate_polari_centrate_x0_y0.jpg}
+   % \includegraphics[width=0.5\textwidth]{Analisi2/figures/piano_coordinate_polari_centrate_x0_y0.jpg}
+    \begin{tikzpicture}[
+    	x=1.35cm,
+    	y=1.35cm,
+    	line cap=round,
+    	line join=round,
+    	>=Stealth
+    	]
+    	% Assi cartesiani
+    	\draw[thick,->] (-0.25,0) -- (4.65,0) node[right] {$x$};
+    	\draw[thick,->] (0,-0.35) -- (0,3.75) node[above] {$y$};
+    	
+    	% Centro (x_0,y_0) e punto P=(x,y)
+    	\coordinate (C) at (0.95,0.90);
+    	\coordinate (P) at (3.35,2.95);
+    	\draw[very thick,->] (C) -- (P);
+    	
+    	% Proiezioni tratteggiate
+    	\draw[thick,dashed] (0,0.90) -- (3.35,0.90);
+    	\draw[thick,dashed] (0,2.95) -- (3.35,2.95);
+    	\draw[thick,dashed] (0.95,0) -- (0.95,2.95);
+    	\draw[thick,dashed] (3.35,0) -- (3.35,2.95);
+    	
+    	% Angolo rispetto al centro traslato
+    	\draw[thick,->] (1.58,0.90)
+    	arc[start angle=0,end angle=40.5,radius=0.63];
+    	
+    	% Etichette
+    	\node[font=\large] at (1.85,1.85) {$\rho$};
+    	\node[font=\large] at (1.72,1.22) {$\theta$};
+    	\node[font=\large,anchor=west] at (3.47,3.03) {$(x,y)=P$};
+    	\node[below=4pt] at (0.95,0) {$x_0$};
+    	\node[below=4pt] at (3.35,0) {$x$};
+    	\node[left=5pt] at (0,0.90) {$y_0$};
+    	\node[left=5pt] at (0,2.95) {$y$};
+    \end{tikzpicture}
     \caption{Grafico determinazione del punto $P=(x,y)$.}\label{fig:piano_coordinate_polari_centrate_x0_y0}
 \end{figure}
 
@@ -2298,7 +2362,56 @@ La retta tangente alla curva nel punto $\varphi(t_0)$ è la retta tangente a $gr
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.65\textwidth]{Analisi2/figures/curva-con-retta-tangente.png}
+	%\includegraphics[width=0.65\textwidth]{Analisi2/figures/curva-con-retta-tangente.png}
+	\begin{tikzpicture}[
+		x=1.45cm,
+		y=1.45cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[thick,->] (-0.75,0) -- (4.65,0) node[right] {$x$};
+		\draw[thick,->] (0,-0.35) -- (0,3.65) node[above] {$y$};
+		
+		% Ascisse e punto di tangenza
+		\def\xa{1.20}
+		\def\xzero{2.30}
+		\def\xb{3.35}
+		\def\yzero{1.75}
+		
+		% Grafico della funzione phi
+		\draw[very thick]
+		(\xa,0.82)
+		.. controls (1.55,1.10) and (2.05,1.61) .. (\xzero,\yzero)
+		.. controls (2.48,1.85) and (2.67,1.45) .. (2.92,1.60)
+		.. controls (3.18,1.76) and (3.13,2.22) .. (\xb,2.62);
+		\fill (\xb,2.62) circle[radius=2.3pt];
+		\node[font=\large,above=4pt] at (\xb,2.62) {$\varphi$};
+		
+		% Retta tangente nel punto x_0
+		\draw[blue,very thick]
+		(0.42,0.72) -- (4.05,2.72);
+		\node[blue,font=\large,anchor=west] at (4.07,2.72)
+		{retta tangente};
+		
+		% Punto di tangenza e proiezioni sugli assi
+		\fill[red] (\xzero,\yzero) circle[radius=2.3pt];
+		\draw[red,thick,densely dotted]
+		(0,\yzero) -- (\xzero,\yzero) -- (\xzero,0);
+		\draw[black,thick,densely dotted] (\xa,0) -- (\xa,0.82);
+		\draw[black,thick,densely dotted] (\xb,0) -- (\xb,2.62);
+		
+		% Etichette
+		\node[red,font=\large,left=5pt] at (0,\yzero) {$y_0$};
+		\node[below=4pt] at (\xa,0) {$a$};
+		\node[red,font=\large,below=4pt] at (\xzero,0) {$x_0$};
+		\node[below=4pt] at (\xb,0) {$b$};
+		\node[red,font=\large,above=6pt,fill=white,inner sep=1.5pt]
+		at (\xzero,\yzero)
+		{$(x_0,\varphi(x_0))$};
+	\end{tikzpicture}
+	
 	\caption{Curva con retta tangente.}\label{fig:curva_con_retta_tangente}
 \end{figure}
 
@@ -2726,7 +2839,28 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.65\textwidth]{Analisi2/figures/insieme-di-funzioni.png}
+	%\includegraphics[width=0.65\textwidth]{Analisi2/figures/insieme-di-funzioni.png}
+	
+	% Figura: relazione tra derivabilità, differenziabilità e continuità
+	% (Diff(A) = D(A) \cap C(A)).
+	% Da includere con \input{Analisi2/figures/insieme-di-funzioni_tikz.tex}
+	% dentro un ambiente figure, oppure compilare a parte per ottenere un PNG.
+	\begin{tikzpicture}[
+		line width=1pt,
+		font=\fontsize{13}{15}\selectfont
+		]
+		
+		% ---- le due ellissi ----
+		\draw (-3.2,0) ellipse (5.0 and 2.3);
+		\draw (3.2,0)  ellipse (5.0 and 2.3);
+		
+		% ---- etichette ----
+		\node at (-5.0,0) {$D(A)$};
+		\node at (5.0,0)  {$C(A)$};
+		\node at (0,0)    {$\operatorname{Diff}(A)$};
+		
+	\end{tikzpicture}
+	
 	\caption{Insiemi di funzioni.}
 \end{figure}
 
@@ -4106,7 +4240,34 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 		quindi dallo studio del segno di $f'_{|_{D_1}}$ ($f'_{|_{D_1}} = 6x\geq0$? Vedere Figura \ref{fig:f'_vincolata>0}) è ottenuto che $(0,\sqrt{2})$ minimo assoluto $f_{|_{D_1}}$ in $[-1,1]$ e $(\pm 1, 1)\notin D$.
 		\begin{figure}[ht]
 			\centering
-			\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata.jpg}\label{fig:f'_vincolata>0}
+			%\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata.jpg}
+			\begin{tikzpicture}[
+				x=2.2cm,
+				y=1.035cm,
+				line cap=round,
+				line join=round,
+				>=Stealth
+				]
+				% Asse e separatori dei punti notevoli
+				\draw[very thick,->] (-1.75,0) -- (1.75,0) node[right] {$x$};
+				\draw[very thick] (-1.4,-0.75) -- (-1.4,2.25);
+				\draw[very thick] ( 1.4,-0.75) -- ( 1.4,2.25);
+				
+				% Livello della tabella del segno
+				\draw[very thick] (-1.4,0.75) -- (0,0.75);
+				\draw[very thick,dashed] (0,0.75) -- (1.4,0.75);
+				\draw[very thick] (0,0.75) -- (0,0);
+				
+				% Valori notevoli
+				\node[below=2pt, xshift=12pt] at (-1.4,0) {$-\sqrt{2}$};
+				\node[below=4pt] at (0,0) {$0$};
+				\node[below=2pt, xshift=-12pt] at (1.4,0) {$\sqrt{2}$};
+				
+				% Segno della derivata
+				\draw[very thick,->] (-0.95,1.2) -- (-0.35,1.85);
+				\draw[very thick,->] (0.35,1.85) -- (0.95,1.2);
+			\end{tikzpicture}
+			\caption{Segno $f_{|D1}'$.}\label{fig:f'_vincolata>0}
 		\end{figure}
 		
 		\item [$\boldsymbol{D_2}$:] 
@@ -4114,9 +4275,37 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 			f_{|_{D_2}}=f\left(\sqrt{\frac{2-y^2}{2}}, y\right) = 1+ \left(\sqrt{\frac{2-y^2}{2}}\right)^2 - y^2 = 1 + \sqrt{\frac{2-y^2}{2}} -y^2 = 2-\frac{3}{2} y^2,
 		\end{equation*}
 		quindi dallo studio del segno di $f'_{|_{D_2}}$ ($f'_{|_{D_2}} = -3y^2\geq0$? Vedere Figura \ref{fig:f'_vincolata_1>0}) è ottenuto che $(1,0)$ è il massimo assoluto di $f_{|_{D_2}}$ in $[-\sqrt{2}, \sqrt{2}]$ e $(1, \pm\sqrt{2})\notin D$ .
-		\begin{figure}[ht]
+		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata_1.jpg}\label{fig:f'_vincolata_1>0}
+			%\includegraphics[width=0.35\textwidth]{Analisi2/figures/segno_derivata_1.jpg}
+			\begin{tikzpicture}[
+				x=2.2cm,
+				y=1.035cm,
+				line cap=round,
+				line join=round,
+				>=Stealth
+				]
+				% Asse e separatori dei punti notevoli
+				\draw[very thick,->] (-1.75,0) -- (1.75,0) node[right] {$x$};
+				\draw[very thick] (-1.4,-0.75) -- (-1.4,2.25);
+				\draw[very thick] ( 1.4,-0.75) -- ( 1.4,2.25);
+				
+				% Livello della tabella del segno
+				\draw[very thick,dashed] (-1.4,0.75) -- (0,0.75);
+				\draw[very thick] (0,0.75) -- (1.75,0.75);
+				\draw[very thick] (0,0.75) -- (0,0);
+				
+				% Valori notevoli, spostati per non sovrapporsi ai separatori
+				\node[below=6pt, xshift=12pt] at (-1.4,0) {$-1$};
+				\node[below=4pt] at (0,0) {$0$};
+				\node[below=6pt, xshift=-12pt] at (1.4,0) {$1$};
+				
+				% Segno della derivata
+				\draw[very thick,->] (-0.95,1.85) -- (-0.35,1.2);
+				\draw[very thick,->] (0.35,1.2) -- (0.95,1.85);
+			\end{tikzpicture}
+			\caption{Segno $f_{|D2}'$.}
+			\label{fig:f'_vincolata_1>0}
 		\end{figure}
 	\end{itemize}
 	Pertanto, da un confronto è ottenuto che
@@ -4297,8 +4486,44 @@ ovvero,
 	\paragraph{Svolgimento:} $V$ è limitato e chiuso in $\mathbb{R}^2$ (vedere Figura \ref{fig:vincolo_metodo_lagrange}), quindi $V$ è un compatto. Essendo $f$ continua su $V$ allora esistono massimo e minimo vincolati su $V$, per il Teorema \ref{th:weierstrass_2} di Weierstrass.\\
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo_metodo_lagrange.jpg}
-		\caption{Grafico di $x^2+y^2=1$ con massimo assoluto $(-1,0)$ e minimi assoluti $(\frac{1}{2}, \pm\frac{\sqrt{3}}{2})$.}
+		%\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo_metodo_lagrange.jpg}
+		\begin{tikzpicture}[
+			x=2cm,
+			y=2cm,
+			line cap=round,
+			line join=round,
+			>=Stealth
+			]
+			% Assi cartesiani
+			\draw[thick,->] (-1.65,0) -- (1.75,0) node[right] {$x$};
+			\draw[thick,->] (0,-1.35) -- (0,1.55) node[above] {$y$};
+			
+			% Vincolo circolare V
+			\draw[very thick] (0,0) circle[radius=1.15];
+			\node[font=\large] at (-0.78,1.12) {$V$};
+			
+			% Retta x=1/2 e punti di intersezione con il vincolo
+			\pgfmathsetmacro{\xhalf}{0.575}
+			\pgfmathsetmacro{\yhalf}{sqrt(1.15^2-\xhalf^2)}
+			\draw[very thick] (\xhalf,-\yhalf) -- (\xhalf,\yhalf);
+			\node[above right=2pt] at (\xhalf,0) {$\frac{1}{2}$};
+			
+			% Estremi evidenziati
+			\fill[red] (-1.15,0) circle[radius=2.2pt];
+			\fill[red] (\xhalf, \yhalf) circle[radius=2.2pt];
+			\fill[red] (\xhalf,-\yhalf) circle[radius=2.2pt];
+			
+			\node[red,align=center,left=2pt] at (-1.15,0)
+			{\textbf{Max}\\[2pt]$(-1,0)$};
+			
+			% Indicazione dei punti di minimo
+			\draw[red,very thick,->]
+			(\xhalf,\yhalf) -- (1.75,0.35);
+			\draw[red,very thick,->]
+			(\xhalf,-\yhalf) -- (1.75,-0.32);
+			\node[red,font=\large\bfseries,right=9pt] at (1.75,0) {Min};
+		\end{tikzpicture}
+		\caption{Grafico di $x^2+y^2=1$ con massimo assoluto $(-1,0)$ e minimi assoluti $\left(\frac{1}{2}, \pm\frac{\sqrt{3}}{2}\right)$.}
 		\label{fig:vincolo_metodo_lagrange}
 	\end{figure}
 	\paragraph{Come trovare massimo e minimo vincolati?} Dato il vincolo, è noto che $y^2 = 1 - x^2$ e quindi, sostituendola in $f$, la funzione diventa ad una sola variabile. Il problema è ridotto allo studio di una funzione di una variabile. $\qed$\\
