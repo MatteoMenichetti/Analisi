@@ -1067,7 +1067,33 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 	\end{equation*}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.25\textwidth]{Analisi2/figures/esempio_dominio_radici.png}
+%		\includegraphics[width=0.25\textwidth]{Analisi2/figures/esempio_dominio_radici.png}
+		\begin{tikzpicture}[
+			x=1.1cm,
+			y=1.1cm,
+			line cap=round,
+			line join=round,
+			>=Stealth
+			]
+			% Assi cartesiani
+			\draw[thick,->] (-2.35,0) -- (2.45,0) node[right] {$x$};
+			\draw[thick,->] (0,-2.30) -- (0,2.45) node[above] {$y$};
+			
+			% Dominio circolare x^2+y^2 <= 4
+			\draw[very thick] (0,0) circle[radius=2];
+			
+			% Sezione verticale per un valore fissato di x
+			\pgfmathsetmacro{\xsection}{1.50}
+			\pgfmathsetmacro{\ysection}{sqrt(4-\xsection^2)}
+			\draw[very thick]
+			(\xsection,-\ysection) -- (\xsection,\ysection);
+			
+			% Estremi della sezione
+			\node[font=\large,anchor=west] at (1.58,1.55)
+			{$y=\sqrt{4-x^2}$};
+			\node[font=\large,anchor=west] at (1.58,-1.55)
+			{$y=-\sqrt{4-x^2}$};
+		\end{tikzpicture}
 		\caption{$A=\{(x,y)\in\mathbb{R}^2\,;\, -2\leq x\leq 2,\, -\sqrt{4-x^2}\leq y\leq \sqrt{4-x^2}\}$.}
 		\label{fig:esempio_dominio_radici}
 	\end{figure}
@@ -1117,7 +1143,59 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.25\textwidth]{Analisi2/figures/dominio_complesso_integrale.png}
+		%\includegraphics[width=0.25\textwidth]{Analisi2/figures/dominio_complesso_integrale.png}
+		\begin{tikzpicture}[
+			x=1.6cm,
+			y=1.6cm,
+			line cap=round,
+			line join=round,
+			>=Stealth
+			]
+			% Regione anulare compresa tra gli angoli pi/4 e 2pi/3
+			\path[
+			pattern={Lines[
+				angle=60,
+				distance=7pt,
+				line width=0.7pt
+				]},
+			pattern color=blue
+			]
+			(45:1) -- (45:2)
+			arc[start angle=45,end angle=120,radius=2]
+			-- (120:1)
+			arc[start angle=120,end angle=45,radius=1]
+			-- cycle;
+			
+			% Assi cartesiani
+			\draw[thick,->] (-2.35,0) -- (2.45,0) node[right] {$x$};
+			\draw[thick,->] (0,-0.25) -- (0,2.45) node[above] {$y$};
+			
+			% Semicirconferenze di raggio 1 e 2
+			\draw[very thick] (2,0)
+			arc[start angle=0,end angle=180,radius=2];
+			\draw[very thick] (1,0)
+			arc[start angle=0,end angle=180,radius=1];
+			
+			% Rette che delimitano il settore
+			\draw[very thick] (0,0) -- (45:2.5);
+			\draw[very thick] (0,0) -- (120:2.5);
+			\node[font=\large,anchor=west] at (1.48,1.42) {$y=x$};
+			\node[font=\large,anchor=east] at (-1.08,1.82)
+			{$y=-\sqrt{3}\,x$};
+			
+			% Angolo polare
+			\draw[blue,thick,->] (0.66,0)
+			arc[start angle=0,end angle=120,radius=0.66];
+			\node[blue,font=\large] at (66:0.82) {$\theta$};
+			\node[blue,font=\Large,fill=white,inner sep=1.5pt]
+			at (0.18,1.72) {$A$};
+			
+			% Valori notevoli sull'asse x
+			\foreach \xx/\lab in {-2/-2,-1/-1,1/1,2/2} {
+				\draw[thick] (\xx,-0.07) -- (\xx,0.07);
+				\node[below=4pt] at (\xx,0) {$\lab$};
+			}
+		\end{tikzpicture}
 		\caption{$E=\{(x,y)\in\mathbb{R}^2\,;\, 1\ < x^2+y^2 < 4, \, y > x,\, x > 0\}\cup\{(x,y)\in\mathbb{R}^2\,;\, 1 < x^2 + y^2 < 4,\, -\sqrt{3} x < y,\, x < 0\}$.}
 		\label{fig:dominio_complesso_integrale}
 	\end{figure}
