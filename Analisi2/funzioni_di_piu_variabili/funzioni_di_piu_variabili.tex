@@ -1549,7 +1549,107 @@ Ricercare il dominio significa che è necessario trovare i punti del piano per c
 %slide 8 PDF 11
 \begin{figure}
 \centering
-    \includegraphics[width=0.75\textwidth]{Analisi2/figures/grafico_f_generica_R3.jpg}
+    %\includegraphics[width=0.75\textwidth]{Analisi2/figures/grafico_f_generica_R3.jpg}
+    \begin{tikzpicture}[
+    	x=1.05cm,
+    	y=1.05cm,
+    	line cap=round,
+    	line join=round,
+    	>=Stealth
+    	]
+    	% Assi cartesiani tridimensionali in proiezione obliqua
+    	\coordinate (O) at (0,0);
+    	\draw[very thick,->] (O) -- (-3.55,-3.55) node[below left] {$X$};
+    	\draw[very thick,->] (O) -- (5.55,0) node[right] {$Y$};
+    	
+    	% Dominio di definizione nel piano (x,y)
+    	\def\baseR{
+    		(-0.78,-1.73)
+    		.. controls (-0.16,-1.28) and (0.42,-1.22) .. (1.08,-1.52)
+    		.. controls (1.74,-1.82) and (2.22,-1.65) .. (2.75,-1.28)
+    		.. controls (3.35,-0.88) and (4.12,-0.63) .. (4.55,-0.97)
+    		.. controls (4.86,-1.25) and (4.73,-2.02) .. (4.54,-2.57)
+    		.. controls (4.30,-3.23) and (3.78,-3.47) .. (3.25,-3.18)
+    		.. controls (2.72,-2.88) and (2.48,-3.02) .. (2.02,-3.25)
+    		.. controls (1.51,-3.50) and (1.03,-3.20) .. (0.62,-2.77)
+    		.. controls (0.18,-2.33) and (-0.48,-2.43) .. (-0.78,-1.73)
+    		-- cycle
+    	}
+    	\draw[very thick] \baseR;
+    	
+    	% Superficie grafico z=f(x,y)
+    	\def\surface{
+    		(-1.62,2.86)
+    		.. controls (-1.23,3.56) and (-0.38,3.76) .. (0.32,3.54)
+    		.. controls (1.10,3.30) and (1.62,3.42) .. (2.20,3.78)
+    		.. controls (2.84,4.19) and (3.68,4.17) .. (4.20,3.77)
+    		.. controls (4.76,3.33) and (4.56,2.58) .. (4.20,2.10)
+    		.. controls (3.83,1.62) and (3.12,1.49) .. (2.49,1.68)
+    		.. controls (1.80,1.88) and (1.25,1.64) .. (0.63,1.84)
+    		.. controls (-0.05,2.05) and (-0.63,1.70) .. (-1.15,1.88)
+    		.. controls (-1.73,2.08) and (-1.98,2.43) .. (-1.62,2.86)
+    		-- cycle
+    	}
+    	\fill[white] \surface;
+    	\begin{scope}
+    		\clip \surface;
+    		\foreach \s in {-2.5,-1.8,...,5.2}
+    		\draw[black,thick] (\s,1.40) -- ({\s+1.75},4.45);
+    	\end{scope}
+    	\draw[black,very thick] \surface;
+    	
+    	% Porzione nascosta della superficie con tratteggio obliquo
+    	\def\hiddenband{
+    		(-0.78,1.82)
+    		.. controls (-0.10,1.42) and (0.76,1.42) .. (1.48,1.65)
+    		.. controls (1.05,1.74) and (0.61,1.88) .. (0.16,2.01)
+    		.. controls (-0.25,2.10) and (-0.57,1.98) .. (-0.78,1.82)
+    		-- cycle
+    	}
+    	\begin{scope}
+    		\clip \hiddenband;
+    		\foreach \s in {-1.40,-0.85,...,1.35}
+    		\draw[black,thick] (\s,1.55) -- ({\s+0.18},1.87);
+    	\end{scope}
+    	\draw[black,very thick,densely dotted]
+    	(-0.78,1.82)
+    	.. controls (-0.10,1.42) and (0.76,1.42) .. (1.48,1.65);
+    	
+    	% Asse z: grigio soltanto nel tratto coperto dalla superficie
+    	\draw[black,very thick] (O) -- (0,1.95);
+    	\draw[gray!65,very thick] (0,1.95) -- (0,3.6);
+    	\draw[black,very thick,->] (0,3.6) -- (0,4.55)
+    	node[above] {$Z$};
+    	% Punto del dominio, punto sul grafico e proiezioni
+    	\coordinate (Q) at (2.72,-1.78);
+    	\coordinate (P) at (2.72,2.74);
+    	\fill (Q) circle[radius=2.4pt];
+    	\fill (P) circle[radius=2.7pt];
+    	\draw[thick,densely dashed] (Q) -- (P);
+    	\draw[thick,densely dashed] (-1.78,-1.78) -- (Q);
+    	\draw[thick,densely dashed] (Q) -- (4.35,-0.05);
+    	\draw[thick,densely dashed] (0,2.74) -- (P);
+    	% Piano (y,z) individuato da x=k
+    	\draw[red,very thick]
+    	(-1.78,4.05) -- (-1.78,2.06) -- (4.80,2.06) -- (4.80,3.72);
+    	\node[red,font=\large,anchor=west,fill=white,inner sep=1pt]
+    	at (-4.08,4.20) {piano $(y,z)$ con $x=k$};
+    	
+    	% Piano (x,y) individuato da z=k
+    	\draw[red,very thick]
+    	(3.62,4.48) -- (3.62,-2.70) -- (4.55,-2.70);
+    	\draw[red,very thick] (3.62,4.48) -- (4.48,4.48);
+    	\node[red,font=\large,anchor=west,fill=white,inner sep=1pt]
+    	at (2.52,4.870) {piano $(x,y)$ con $z=k$};
+    	
+    	% Etichetta del punto in primo piano anche rispetto alle linee rosse
+    	\node[font=\large,anchor=west,fill=white,inner sep=1pt]
+    	at (2.84,2.78) {$P=(x,y,z)$};
+    	\node[font=\large,anchor=west,fill=white,inner sep=1pt]
+    	at (2.84,-1.82) {$(x,y)$};
+    	\node[font=\Large,anchor=east,fill=white,inner sep=1pt]
+    	at (-0.08,2.74) {$f(x,y)=z$};
+    \end{tikzpicture}
     \caption{Grafico di $f$ funzione in due variabili.}\label{fig:grafico_f_generica_R3}
 \end{figure}
 
@@ -1785,7 +1885,44 @@ Sia $f\colon I=[a,b]\subseteq\mathbb R\rightarrow\mathbb R$ continua, dove grafi
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/grafico_f_R2}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/grafico_f_R2}
+    \begin{tikzpicture}[
+    	x=1.45cm,
+    	y=1.45cm,
+    	line cap=round,
+    	line join=round,
+    	>=Stealth
+    	]
+    	% Assi cartesiani
+    	\draw[very thick,->] (-0.25,0) -- (4.35,0)
+    	node[below left=2pt] {$x$};
+    	\draw[very thick,->] (0,-0.58) -- (0,4.05)
+    	node[below right=2pt] {$y$};
+    	
+    	% Estremi dell'intervallo e altezze della funzione
+    	\def\xa{1.12}
+    	\def\xb{3.42}
+    	\def\ya{1.08}
+    	\def\yb{2.88}
+    	
+    	% Proiezioni verticali tratteggiate
+    	\draw[very thick,densely dotted]
+    	(\xa,0) -- (\xa,\ya);
+    	\draw[very thick,densely dotted]
+    	(\xb,0) -- (\xb,\yb);
+    	
+    	% Grafico y=f(x)
+    	\draw[very thick]
+    	(\xa,\ya)
+    	.. controls (1.72,0.92) and (2.22,1.10) .. (2.62,1.58)
+    	.. controls (3.02,2.06) and (3.28,2.66) .. (\xb,\yb);
+    	
+    	% Etichette
+    	\node[below=5pt] at (\xa,0) {$a$};
+    	\node[below=5pt] at (\xb,0) {$b$};
+    	\node[font=\large,anchor=west,fill=white,inner sep=1pt]
+    	at (1.4,1.68) {$y=f(x)$};
+    \end{tikzpicture}
         \caption{Grafico di $y=f(x)$.}\label{fig:grafico_f_R2}
 \end{figure}
 
@@ -1796,6 +1933,59 @@ Sia $f\colon I=[a,b]\subseteq\mathbb R\rightarrow\mathbb R$ continua, dove grafi
     \end{equation*}
     Vedere Figura \ref{fig:sottografico_f_R2}.
 \end{definition}
+
+\begin{figure}
+	\centering
+	%\includegraphics[width=0.5\textwidth]{Analisi2/figures/sottografico_f_R2.jpg}
+	\begin{tikzpicture}[
+		x=1.25cm,
+		y=1.25cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[very thick,->] (-0.25,0) -- (4.35,0)
+		node[below left=2pt] {$x$};
+		\draw[very thick,->] (0,-0.25) -- (0,4.05)
+		node[below right=2pt] {$y$};
+		
+		\def\xa{1.12}
+		\def\xb{3.42}
+		\def\ya{1.08}
+		\def\yb{2.88}
+		\def\graphpath{
+			(\xa,\ya)
+			.. controls (1.72,0.92) and (2.22,1.10) .. (2.62,1.58)
+			.. controls (3.02,2.06) and (3.28,2.66) .. (\xb,\yb)
+		}
+		
+		% Regione compresa tra il grafico e l'asse x
+		\begin{scope}
+			\clip
+			(\xa,0) -- (\xa,\ya)
+			.. controls (1.72,0.92) and (2.22,1.10) .. (2.62,1.58)
+			.. controls (3.02,2.06) and (3.28,2.66) .. (\xb,\yb)
+			-- (\xb,0) -- cycle;
+			\foreach \s in {0.30,0.82,...,4.20}
+			\draw[red!75,very thick]
+			(\s,-0.55) -- ({\s+1.25},2.95);
+		\end{scope}
+		
+		% Grafico e proiezioni degli estremi
+		\draw[very thick,densely dotted] (\xa,0) -- (\xa,\ya);
+		\draw[very thick,densely dotted] (\xb,0) -- (\xb,\yb);
+		\draw[red!75,very thick] \graphpath;
+		
+		% Etichette in primo piano
+		\node[below=5pt] at (\xa,0) {$a$};
+		\node[below=5pt] at (\xb,0) {$b$};
+		\node[font=\large,anchor=west,fill=white,inner sep=1pt]
+		at (1.42,1.72) {$y=f(x)$};
+	\end{tikzpicture}
+	\caption{Sottografico di $y=f(x)$.}\label{fig:sottografico_f_R2}
+\end{figure}
+
 \begin{definition}[Sopragrafico]\footnote{Slide 3 PDF 12.}
     Il sopragrafico di $f$ è definito come
     \begin{equation*}
@@ -1804,21 +1994,59 @@ Sia $f\colon I=[a,b]\subseteq\mathbb R\rightarrow\mathbb R$ continua, dove grafi
     Vedere Figura \ref{fig:sopragrafico_f_R2}.
 \end{definition}
 
+\begin{figure}
+	\centering
+	%\includegraphics[width=0.5\textwidth]{Analisi2/figures/sopragrafico_f_R2.jpg}
+	\begin{tikzpicture}[
+		x=1.25cm,
+		y=1.25cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[very thick,->] (-0.25,0) -- (4.35,0)
+		node[below left=2pt] {$x$};
+		\draw[very thick,->] (0,-0.25) -- (0,4.05)
+		node[below right=2pt] {$y$};
+		
+		\def\xa{1.12}
+		\def\xb{3.42}
+		\def\ya{1.08}
+		\def\yb{2.88}
+		\def\graphpath{
+			(\xa,\ya)
+			.. controls (1.72,0.92) and (2.22,1.10) .. (2.62,1.58)
+			.. controls (3.02,2.06) and (3.28,2.66) .. (\xb,\yb)
+		}
+		
+		% Regione al di sopra del grafico
+		\begin{scope}
+			\clip
+			\graphpath
+			-- (\xb,3.92) -- (\xa,3.92) -- cycle;
+			\foreach \s in {0.45,0.97,...,4.35}
+			\draw[red!75,very thick]
+			(\s,0.82) -- ({\s+1.15},4.05);
+		\end{scope}
+		
+		% Grafico e proiezioni degli estremi
+		\draw[very thick,densely dotted] (\xa,0) -- (\xa,\ya);
+		\draw[very thick,densely dotted] (\xb,0) -- (\xb,\yb);
+		\draw[red!75,very thick] \graphpath;
+		
+		% Etichette in primo piano
+		\node[below=5pt] at (\xa,0) {$a$};
+		\node[below=5pt] at (\xb,0) {$b$};
+		\node[font=\large,anchor=west,fill=white,inner sep=1pt]
+		at (1.37,1.65) {$y=f(x)$};
+	\end{tikzpicture}
+	\caption{Sopragrafico di $y=f(x)$.}\label{fig:sopragrafico_f_R2}
+\end{figure}
+
 \begin{definition}[Semipiano]\footnote{Slide 3 PDF 12.}
     Un semipiano è determinato da una equazione di grado 1.
 \end{definition}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/sopragrafico_f_R2.jpg}
-        \caption{Sopragrafico di $y=f(x)$.}\label{fig:sopragrafico_f_R2}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/sottografico_f_R2.jpg}
-        \caption{Sottografico di $y=f(x)$.}\label{fig:sottografico_f_R2}
-\end{figure}
 
 \begin{example}\footnote{Slide 4 PDF 12.}
     Sia $2x-3y+1\geq 0$. $2x-3y+1=0$ è una retta ed un semipiano, in quanto $3y=2x+1$, ovvero $y=\frac{2x+1}{3}$. Quindi, la disequazione è il sottografico della retta (per $-3y$). Vedere Figura \ref{fig:esempio_sottografico}.
