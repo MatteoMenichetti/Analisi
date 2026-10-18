@@ -686,18 +686,64 @@ Gli archi associati ad un angolo $\alpha$ è indicato un insieme di formule che 
     \item Il punto $P'''$ è il simmetrico di $P$ rispetto all'origine.
 \end{itemize}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/archi_associati1.jpeg}
-    \caption{Archi associati}
-    \label{fig:archi_associati1}
-\end{figure}
+%\begin{figure}
+    %\centering
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/archi_associati1.jpeg}
+    %\caption{Archi associati}
+    %\label{fig:archi_associati1}
+%\end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{Analisi1/figures/archi_associati.png}
     \caption{Archi associati}
     \label{fig:archi_associati}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[
+		x=1.15cm,
+		y=1.15cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Circonferenza goniometrica e assi
+		\draw[very thick] (0,0) circle (2);
+		\draw[thick,->] (-2.35,0) -- (2.45,0) node[right] {$x$};
+		\draw[thick,->] (0,-2.35) -- (0,2.45) node[above] {$y$};
+		
+		% Raggi degli angoli associati, con alpha rappresentato da 24 gradi
+		\foreach \ang in {24,156,204,336}
+		\draw[black,thick] (0,0) -- (\ang:2);
+		\foreach \ang in {66,114,246,294}
+		\draw[green!55!black,thick] (0,0) -- (\ang:2);
+		
+		% Proiezioni dei punti corrispondenti ad alpha e pi/2-alpha
+		\draw[black,thick] (24:2) -- ({2*cos(24)},0);
+		\draw[green!55!black,thick] (66:2) -- ({2*cos(66)},0);
+		\node[below=3pt,fill=white,inner sep=1.5pt] at ({2*cos(65)},0.01) {$A'$};
+		\node[below=3pt,fill=white,inner sep=1.5pt] at ({2*cos(30)},0) {$A$};
+		\fill (0,0) circle (1.5pt);
+		\node[fill=white,inner sep=1pt] at (0.23,-0.23) {$O$};
+		
+		% Etichette angolari
+		\node[font=\small,anchor=west] at (24:2) {$\alpha$};
+		\node[font=\small,text=green!55!black,anchor=south] at (58:2.2)
+		{$\frac{\pi}{2}-\alpha$};
+		\node[font=\small,text=green!55!black,anchor=south] at (114:2)
+		{$\frac{\pi}{2}+\alpha$};
+		\node[font=\small,anchor=east] at (155:2) {$\pi-\alpha$};
+		\node[font=\small,anchor=east] at (204:2) {$\pi+\alpha$};
+		\node[font=\small,text=green!55!black,anchor=north] at (246:2)
+		{$\frac{3\pi}{2}-\alpha$};
+		\node[font=\small,text=green!55!black,anchor=north] at (300:2.1)
+		{$\frac{3\pi}{2}+\alpha$};
+		\node[font=\small,anchor=west] at (333:2) {$2\pi-\alpha$};
+	\end{tikzpicture}
+	\caption{Archi associati}
+	\label{fig:archi_associati1}
 \end{figure}
 
 \paragraph{Angoli opposti e supplementari}
