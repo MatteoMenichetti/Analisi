@@ -328,7 +328,7 @@ La successione $\{x_n\}$ è un sottoinsieme di $\mathbb R^n$ ($\{x_n\}\subset \m
 
 \paragraph{Cosa significa che la successione in $\boldsymbol{\mathbb R^n}$ ha limite convergente (ovvero (\ref{eq:limite_successione_convergente_spazio_metrico}), \ref{eq:limite_successione_convergente_spazio_metrico1}))?} Una successione in $\mathbb R^n$ ha limite convergente a $\uline x$ se comunque scelto un indice $n_\varepsilon$ tale che da $n_\varepsilon$ in poi gli elementi della successione si avvicinano ad $\uline x$. Ovvero la distanza $d$ fra $\uline x_n$ e $\uline x$ con $n>n_\varepsilon$ è minore di $\varepsilon$, cioe':
 \begin{equation*}
-    \boldsymbol{(\ref{eq:limite_successione_convergente_spazio_metrico}),(\ref{eq:limite_successione_convergente_spazio_metrico1})\equiv\lim_{n\rightarrow+\infty}d(\uline x_n\uline x)=0.}
+    \boldsymbol{(\ref{eq:limite_successione_convergente_spazio_metrico}),(\ref{eq:limite_successione_convergente_spazio_metrico1})\equiv\lim\limits_{n\rightarrow+\infty}d(\uline x_n\uline x)=0.}
 \end{equation*}
 
 \paragraph{Cosa significa $\boldsymbol{d(\uline x_n,\uline x)=||\uline x-\uline x||\underset{n\rightarrow+\infty}{\longrightarrow}0}$?} Per come è definita la successione convergente significa che
@@ -350,7 +350,7 @@ Questo ragionamento è estendibile a qualsiasi spazio metrico.
         \item\textbf{Unicità:} $\{\uline x_n\}$ ha al più un limite (ovvero: se il limite esiste allora è unico),
         \item\textbf{Limitatezza:} $\{\uline x_n\}$ è limitata, ovvero:
         \begin{equation*}
-            \text{Se } \lim_{n\rightarrow+\infty}d(\uline x_n\uline x)=0\Longrightarrow \exists\uline x_0\in\mathbb R^n \;\colon\; d(\uline x_n, \uline x_0)<M\quad \forall M\in\mathbb R,
+            \text{Se } \lim\limits_{n\rightarrow+\infty}d(\uline x_n\uline x)=0\Longrightarrow \exists\uline x_0\in\mathbb R^n \;\colon\; d(\uline x_n, \uline x_0)<M\quad \forall M\in\mathbb R,
         \end{equation*}
         \item\textbf{Sottosuccessioni:} Ogni \gls{sottosuccessione} $\{\uline x_{n_k}\}_{k\in\mathbb N}$ estratta da $\{\uline x_n\}$ converge allo stesso limite (a $\underline x$).
     \end{enumerate}
@@ -608,7 +608,7 @@ In Analisi 1 una funzione è definita su un dominio (sottoinsieme di $\mathbb R$
     \end{equation*}
     e sia $\uline x_0=(x_0^1,\hdots,x_0^n)\in\mathbb R^n$ un punto di accumulazione per $A$. Si dice che $f$ tende a $\ell\in$\gls{Rext}$=\mathbb R\cup\{\pm\infty\}$ per $\uline x$ che tende a $\uline x_0$, ovvero
     \begin{equation}\label{eq:limite_funzione_piu_variabili}
-        \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell \quad\text{ovvero}\quad f(\uline x)\overset{\footnotemark}{\underset{\uline x\rightarrow\uline x_0}{\longrightarrow}}\ell,
+        \lim\limits_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell \quad\text{ovvero}\quad f(\uline x)\overset{\footnotemark}{\underset{\uline x\rightarrow\uline x_0}{\longrightarrow}}\ell,
     \end{equation}
     \footnotemark se per ogni intorno $U\subset\overline{\mathbb R}$ di $\ell$ esiste un intorno sferico di $\uline x_0$, ovvero:
     \begin{equation*}
@@ -629,7 +629,7 @@ La Definizione \ref{def:limite_funzione_piu_variabili} di limite di funzione è 
 
 \begin{definition}[Limite finito $\varepsilon$-$\delta$]\label{def:limite_epsilon_delta_convergente_piu_variabili}\footnote{Slide 5 PDF 9.}
     \begin{equation*}
-        \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell\in\mathbb R
+        \lim\limits_{\uline x\rightarrow\uline x_0}f(\uline x)=\ell\in\mathbb R
     \end{equation*}
     è finito se
     \begin{equation}
@@ -646,7 +646,7 @@ La Definizione \ref{def:limite_funzione_piu_variabili} di limite di funzione è 
 In modo analogo sono definiti i limiti divergenti.
 \begin{definition}[Limite divergente $\varepsilon$-$\delta$]\label{def:limite_epsilon_delta_divergente_piu_variabili}\footnote{Libro PG 42.}
     \begin{equation*}
-        \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=\pm\infty
+        \lim\limits_{\uline x\rightarrow\uline x_0}f(\uline x)=\pm\infty
     \end{equation*}
     è divergente a $\pm\infty$ se
     \begin{equation}\label{eq:limite_epsilon_delta_divergente_piu_variabili}
@@ -661,7 +661,7 @@ Il limite di una funzione segue la stessa algebra e le stesse regole che in Anal
         \item se esiste è unico,
         \item il limite di somma e prodotto di funzioni (reali in più variabili) sono uguali alla somma e prodotto di limiti (se esistono),
         \item il limite del rapporto (di quoziente) è uguale al rapporto (quoziente) fra i limiti (se ben definiti, ovvero denominatore diverso da 0 e definita l'operazione di quoziente).
-        \item $\lim_{\uline x\rightarrow\uline x_0}c\cdot f(\uline x)=c\cdot\lim_{\uline x\rightarrow \uline x_0}f(\uline x)$
+        \item $\lim\limits_{\uline x\rightarrow\uline x_0}c\cdot f(\uline x)=c\cdot\lim\limits_{\uline x\rightarrow \uline x_0}f(\uline x)$
     \end{enumerate}
 \end{property}
 
@@ -677,12 +677,12 @@ Il limite di una funzione segue la stessa algebra e le stesse regole che in Anal
     $\uline 0\notin A$ è un punto di accumulazione per $A$.
     \footnote{Vogliamo mostrare, tramite la definizione di limite, cosa accade vicino l'origine della funzione.} Mostriamo che
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}f(x,y)=0.\footnotemark
+        \lim\limits_{(x,y)\rightarrow(0,0)}f(x,y)=0.\footnotemark
     \end{equation*}
     \footnotetext{Quindi è necessario dimostrare che comunque preso un intorno in $\mathbb R^2$ di $\uline 0$ esiste un intorno di raggio $\delta$ nell'origine di punti di $A$ diversi da $(0,0)$ per cui $f$ è nell'intorno di $\uline 0$ non appena le coppie $(x,y)\in I_\delta((0,0))$.}
     È necessario dimostrare quindi che
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{x^2}{\sqrt{x^2+y^2}}=0
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{x^2}{\sqrt{x^2+y^2}}=0
     \end{equation*}
     ovvero (tramite (\ref{eq:limite_epsilon_delta_divergente_piu_variabili}))
     \begin{equation*}
@@ -710,7 +710,7 @@ Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più
 \begin{example}\footnote{Slide 8 PDF 9.}
     \paragraph{Testo:} Data $f=\frac{x}{\sqrt{x^2+y^2}}\colon A=\mathbb R^2\backslash\{\uline 0\}\rightarrow\mathbb R$ , mostrare che 
     \begin{equation*}
-       \nexists \lim_{(x,y)\rightarrow(0,0)}\frac{x}{\sqrt{x^2+y^2}}.
+       \nexists \lim\limits_{(x,y)\rightarrow(0,0)}\frac{x}{\sqrt{x^2+y^2}}.
     \end{equation*}
     \paragraph{Svolgimento:} \footnotemark È necessario mostrare cosa accade in un intorno di centro $(0,0)$ e raggio $r=\delta$. È possibile muoversi vicino a $(0,0)$ sull'asse $y$ (quindi con $x=0$). Dunque è considerata $f(0,y)=0$ al variare di $y$ (quindi il candidato dovrebbe essere 0).\\
     Muovendosi sull'asse $x$, con $y=0$, la funzione assume i seguenti valori:
@@ -721,7 +721,7 @@ Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più
             -1,& x<0.
         \end{cases}
     \end{equation}
-    Quindi il limite non è unico: il valore del limite dipende dalla direzione con la quale $\uline x$ si avvicina a $(0,0)$. Ovvero $\nexists\lim_{(x,y)\rightarrow(0,0)}f(x,y)$.
+    Quindi il limite non è unico: il valore del limite dipende dalla direzione con la quale $\uline x$ si avvicina a $(0,0)$. Ovvero $\nexists\lim\limits_{(x,y)\rightarrow(0,0)}f(x,y)$.
 
     \begin{figure}
     \centering
@@ -738,7 +738,7 @@ Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più
 
 \paragraph{N.B.:} Il punto "generico" di un limite di funzione in più variabili $\uline x=(x_0,x_1,\hdots, x_n)\in\mathbb R^n$ può essere denotato con $P$ ed il punto di accumulazione $\uline x_0=(x_0^1,x_0^2,\hdots, x_0^n)\in\mathbb R^n$ come $P_0$. Inoltre, data $f:A\subset\mathbb R^2\rightarrow\mathbb R$ con $(x_0,y_0)$ punto di accumulazione per $A$, per descrivere l'operazione di limite di funzione può essere utilizzata la notazione $P,\, P_0$ così risaltare il carattere geometrico della funzione (ad ogni coppia è associata un punto sul piano e viceversa per la corrispondenza biunivoca del piano cartesiano tra coppie ordinata e punti sul piano). Ovvero, dati $P=(x,y), P_0=(x_0,y_0)$,
 \begin{equation*}
-    \lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in\mathbb R \quad\text{equivale a}\quad \lim_{P\rightarrow P_0}f(P)=P_0.
+    \lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=l\in\mathbb R \quad\text{equivale a}\quad \lim\limits_{P\rightarrow P_0}f(P)=P_0.
 \end{equation*}
 
 La seguente proposizione permette di affermare quando un limite esiste (formalizzando quanto scritto sopra).
@@ -746,11 +746,11 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
 \begin{proposition}[Condizione necessaria per l'esistenza del limite]\footnote{Slide 9 PDF 9.}
     Sia $f\colon A\subset\mathbb R^2\rightarrow\mathbb R$ e $(x_0, y_0)$ punto di accumulazione per $A$. Se
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(x_0,y_0)} f(x,y)=\ell
+        \lim\limits_{(x,y)\rightarrow(x_0,y_0)} f(x,y)=\ell
     \end{equation*}
     allora $\forall C\subset A$ deve valere
     \begin{equation*}
-        \lim_{C\ni(x,y)\rightarrow (x_0,y_0)}f(x, y)=\ell.
+        \lim\limits_{C\ni(x,y)\rightarrow (x_0,y_0)}f(x, y)=\ell.
     \end{equation*}
 \end{proposition}
 
@@ -759,22 +759,22 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
 \begin{remark}[Non ufficiale]
     È  possibile osservare che come condizione necessaria per l'esistenza del limite è spesso utilizzato il fatto che esistono, e che siano uguali fra loro, i limiti lungo le rette parallele agli assi coordinati di equazione $y=y_0\in\mathbb R$ e $x=x_0\in\mathbb R$ (costanti), ottenendo come condizione necessaria per l'esistenza
     \begin{equation*}
-        \lim_{x\rightarrow x_0}f(x,y_0)=\ell=\lim_{y\rightarrow y_0}f(x_0, y).
+        \lim\limits_{x\rightarrow x_0}f(x,y_0)=\ell=\lim\limits_{y\rightarrow y_0}f(x_0, y).
     \end{equation*}
 \end{remark}
 
 \begin{exercise}\label{exercise:limite_non_esiste_casa}\footnote{Slide 10 PDF 9.}
     \paragraph{Testo:} Mostrare che il seguente limite non esiste
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
     \end{equation*}
     \paragraph{Consigli su come farlo:} Prima provare cosa accade sugli assi coordinati. Seconda cosa provare qualche curva.
     \paragraph{Svolgimento:}
     \begin{equation*}
-        \lim_{\underset{x=y}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{y\rightarrow 0}f(y,y)=\lim_{y\rightarrow 0}\frac{y\cdot y}{y^2+y^2}=\lim_{y\rightarrow 0}\frac{\cancel{y^2}}{2\cancel{y^2}}=\frac{1}{2}=\lim_{x\rightarrow 0}\frac{x\cdot x}{x^2+x^2}=\lim_{x\rightarrow 0}f(x,x)=\lim_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y).
+        \lim\limits_{\underset{x=y}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim\limits_{y\rightarrow 0}f(y,y)=\lim\limits_{y\rightarrow 0}\frac{y\cdot y}{y^2+y^2}=\lim\limits_{y\rightarrow 0}\frac{\cancel{y^2}}{2\cancel{y^2}}=\frac{1}{2}=\lim\limits_{x\rightarrow 0}\frac{x\cdot x}{x^2+x^2}=\lim\limits_{x\rightarrow 0}f(x,x)=\lim\limits_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y).
     \end{equation*}
     \begin{equation*}
-       \lim_{\underset{y=x^2}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{x\rightarrow 0}\frac{x\cdot x^2}{x^2+(x^2)^2}=\lim_{x\rightarrow 0}\frac{x^{\cancel{3}}}{\cancel{x^2}(1+x^2)}=0.
+       \lim\limits_{\underset{y=x^2}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim\limits_{x\rightarrow 0}\frac{x\cdot x^2}{x^2+(x^2)^2}=\lim\limits_{x\rightarrow 0}\frac{x^{\cancel{3}}}{\cancel{x^2}(1+x^2)}=0.
     \end{equation*}
     Dato che $0\neq \frac{1}{2}$, il limite non esiste.
 \end{exercise}
@@ -782,7 +782,7 @@ La seguente proposizione permette di affermare quando un limite esiste (formaliz
 \begin{definition}[Continuità di funzione]\footnote{Slide 2 PDF 10.}\label{def:continuita_funzione_n_variabili}
     Sia $f\colon A\subseteq\mathbb R^n\rightarrow\mathbb R$ e (supposto $n=2$) sia $P_0=(x_0,y_0)\in A$. Se $P_0$ è punto di accumulazione per $A$, $f$ si dice continua in $P_0$ se
     \begin{equation}\label{eq:limite_continuita}
-        \lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=f(x_0,y_0)\quad \left(\text{per } n>2\; \lim_{\uline x\rightarrow\uline x_0}f(\uline x)=f(\uline x_0)\right).
+        \lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=f(x_0,y_0)\quad \left(\text{per } n>2\; \lim\limits_{\uline x\rightarrow\uline x_0}f(\uline x)=f(\uline x_0)\right).
     \end{equation}
     Se $P_0$ è un punto isolato per $A$ per convenzione si pone $f$ continua in tale punto.
 \end{definition}
@@ -797,7 +797,7 @@ Per mostrare la continuità di una funzione in un punto è necessario quindi mos
     Siano $f(x,y)=x$ e $g(x,y)=y$, quindi $f,g\colon A=\mathbb R^2\rightarrow\mathbb R$ (ovvero $f$ e $g$ sono funzioni continue in $A=\mathbb R^2$).\\
     Mostriamo che $f(x,y)$ è continua in $\forall P_0=(x_0,y_0)\in\mathbb R^2$. È necessario mostrare che
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=f(x_0,y_0)\in\mathbb R\; \text{(reale finito)}.
+        \lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=f(x_0,y_0)\in\mathbb R\; \text{(reale finito)}.
     \end{equation*}
     \footnote{È necessario che il limite di $f$ esiste ed è finito utilizzando la Definizione \ref{def:limite_epsilon_delta_convergente_piu_variabili} di limite finito.} Quindi è necessario mostrare che
     \begin{equation*}
@@ -882,21 +882,21 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     \paragraph{Svolgimento:} $f$ è definito su $\mathbb R^2$, ovvero: $f\colon\mathbb R^2\rightarrow\mathbb R$.\\
     \footnote{Studiare il problema significa studiare la continuità. Per le conseguenze del Teorema \ref{th:algebra_funzioni_piu_variabili}, $f$ è continua in ogni punto di $\mathbb R^2$ diverso da $(1,1)$ perché funzione quoziente. Per verificare la continuità è necessario che il limite di $f(x,y)$ per $(x,y)\rightarrow (1,1)$ converga a 0, ovvero quanto segue alla nota.} Affinché $f$ risulti continua in tutto $\mathbb R^2$ allora (deve esistere il limite e valere 0, ovvero)
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(1,1)} f(x,y)=\lim_{(x,y)\rightarrow(1,1)}\frac{e^{(x-1)+(y-1)}-1}{\sqrt{(x-1)^2+(y-1)^2}}=f(1,1)=0.
+        \lim\limits_{(x,y)\rightarrow(1,1)} f(x,y)=\lim\limits_{(x,y)\rightarrow(1,1)}\frac{e^{(x-1)+(y-1)}-1}{\sqrt{(x-1)^2+(y-1)^2}}=f(1,1)=0.
     \end{equation*}
-    Studiamo dunque $\lim_{(x,y)\rightarrow(1,1)}f(x,y)$. \footnote{Ciò che è richiesto è di provare prima che il limite esista, che sia finito e che coincida con valore della funzione nel punto. In questo caso non può essere $\pm\infty$. Se il limite esiste ed ha un valore diverso da 0 nel punto $(1,1)$ ed è necessario rendere la funzione continua nel punto, allora è possibile ridefinire la funzione in quel punto con il valore del limite, come per Analisi 1.}\footnote{Il limite fa capire cosa accade vicino al punto $(1,1)$. È possibile decidere di muoversi lungo qualsiasi cammino per avvicinarsi al punto. Quindi è possibile muovesi lungo la retta verticale seguendo i punti $(x,y)\in\{1\}\times\mathbb R\backslash\{1\}$ (come in Figura \ref{fig:esempio_f_1_y}, ovvero ciò che segue alla nota.)} Muovendosi lungo i $x=1$ con $y\neq 1$ è considerata
+    Studiamo dunque $\lim\limits_{(x,y)\rightarrow(1,1)}f(x,y)$. \footnote{Ciò che è richiesto è di provare prima che il limite esista, che sia finito e che coincida con valore della funzione nel punto. In questo caso non può essere $\pm\infty$. Se il limite esiste ed ha un valore diverso da 0 nel punto $(1,1)$ ed è necessario rendere la funzione continua nel punto, allora è possibile ridefinire la funzione in quel punto con il valore del limite, come per Analisi 1.}\footnote{Il limite fa capire cosa accade vicino al punto $(1,1)$. È possibile decidere di muoversi lungo qualsiasi cammino per avvicinarsi al punto. Quindi è possibile muovesi lungo la retta verticale seguendo i punti $(x,y)\in\{1\}\times\mathbb R\backslash\{1\}$ (come in Figura \ref{fig:esempio_f_1_y}, ovvero ciò che segue alla nota.)} Muovendosi lungo i $x=1$ con $y\neq 1$ è considerata
     \begin{equation*}
         f(1, y)=\frac{e^{y-1}-1}{\sqrt{(y-1)^2}}.
     \end{equation*}
     Quindi (con $y$ che tende ad 1 lungo la retta in Figura \ref{fig:esempio_f_1_y} dall'alto o dal basso)
     \begin{equation*}
-        \lim_{\underset{x=1}{(x,y)\rightarrow(1,1)}}f(x,y)=\lim_{y\rightarrow 1}f(1,y)=\lim_{y\rightarrow 1}\frac{e^{y-1}-1}{\sqrt{(y-1)^2}}=\lim_{y\rightarrow 1}\frac{e^{y-1}-1}{(y-1)}\overset{\footnotemark}{=}
+        \lim\limits_{\underset{x=1}{(x,y)\rightarrow(1,1)}}f(x,y)=\lim\limits_{y\rightarrow 1}f(1,y)=\lim\limits_{y\rightarrow 1}\frac{e^{y-1}-1}{\sqrt{(y-1)^2}}=\lim\limits_{y\rightarrow 1}\frac{e^{y-1}-1}{(y-1)}\overset{\footnotemark}{=}
         \begin{cases}
             1 &\text{se } y>1\\
             -1 &\text{se } y<1
         \end{cases}
     \end{equation*}
-    \footnotetext{Utilizzato il limite notevole $\lim_{t\rightarrow 0}\frac{e^t-1}{t}=1$. Tale limite è dovuto allo sviluppo di Taylor: $\lim_{t\rightarrow 0} e^t=1+t+o(t)$.}
+    \footnotetext{Utilizzato il limite notevole $\lim\limits_{t\rightarrow 0}\frac{e^t-1}{t}=1$. Tale limite è dovuto allo sviluppo di Taylor: $\lim\limits_{t\rightarrow 0} e^t=1+t+o(t)$.}
     Quindi il limite non esiste e la funzione non è continua nel punto $(1,1)$. Ovvero: non vale la definizione di continuità.
     \begin{figure}
     \centering
@@ -905,22 +905,22 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     \end{figure}
 \end{example}
 
-\paragraph{N.B.:} La definizione di continuità di una funzione stabilisce che la funzione $f(x,y)$, definita come $f\colon A\subset\mathbb R^2\rightarrow\mathbb R$, è continua in $(x_0, y_0)\in A$ se $\lim_{(x, y)\rightarrow (x_0,y_0)}f(x,y)=f(x_0, y_0)$. Questo non vale se il limite non esiste. La continuità vale se il limite esiste, è finito e coincide con il valore della funzione nel punto $(x_0, y_0)$. Può capitare che il limite non esista, sia infinito, oppure che esista finite ma con valore diverso da quello della funzione nel punto $(x_0, y_0)$. Quindi, per studiare la continuità è necessario studiare cosa accade nell'intorno del punto $(x_0, y_0)$.
+\paragraph{N.B.:} La definizione di continuità di una funzione stabilisce che la funzione $f(x,y)$, definita come $f\colon A\subset\mathbb R^2\rightarrow\mathbb R$, è continua in $(x_0, y_0)\in A$ se $\lim\limits_{(x, y)\rightarrow (x_0,y_0)}f(x,y)=f(x_0, y_0)$. Questo non vale se il limite non esiste. La continuità vale se il limite esiste, è finito e coincide con il valore della funzione nel punto $(x_0, y_0)$. Può capitare che il limite non esista, sia infinito, oppure che esista finite ma con valore diverso da quello della funzione nel punto $(x_0, y_0)$. Quindi, per studiare la continuità è necessario studiare cosa accade nell'intorno del punto $(x_0, y_0)$.
 
 \paragraph{N.B.:} Ogni esercizio che ha a che fare con i limiti può essere svolto nuovamente utilizzando le coordinate polari.
 
 \begin{example}\footnote{Slide 7 PDF 10.}
     Calcolare l'esistenza del seguente limite:
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{\sin^2(x)-\cos(y^2)}{x^2+y^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{\sin^2(x)-\cos(y^2)}{x^2+y^2}.
     \end{equation*}
     Lungo l'asse $x$: ($y=0$ con $x\neq 0$)
     \begin{equation*}
-        \lim_{\underset{y=0}{(x,y)\rightarrow(0,0)}}\frac{\sin^2(x)-\cos(y^2)}{x^2+y^2}=\lim_{x\rightarrow 0}\frac{\sin x^2}{x^2}=1.
+        \lim\limits_{\underset{y=0}{(x,y)\rightarrow(0,0)}}\frac{\sin^2(x)-\cos(y^2)}{x^2+y^2}=\lim\limits_{x\rightarrow 0}\frac{\sin x^2}{x^2}=1.
     \end{equation*}
     Lungo l'asse $y$: ($y=0$ con $x\neq 0$)
     \begin{equation*}
-        \lim_{y\rightarrow 0}\frac{-\sin y^2}{y^2}=-1
+        \lim\limits_{y\rightarrow 0}\frac{-\sin y^2}{y^2}=-1
     \end{equation*}
     $-1\neq 1$, quindi non esiste limite unico.
 \end{example}
@@ -930,48 +930,48 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
 \begin{example}\footnote{Slide 8 PDF 10.}
     Verificare l'esistenza del seguente limite.
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{\arctan(x+y)^2}{x^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{\arctan(x+y)^2}{x^2}.
     \end{equation*}
     Lungo l'asse $x$: ($y=0$ con $x\neq 0$)
     \begin{equation*}
-        \lim_{\underset{y=0}{(x,y)\rightarrow(0,0)}}f(x, y)= \lim_{x\rightarrow 0}\frac{\arctan(x^2)}{x^2}\overset{\footnotemark}{=}1.
+        \lim\limits_{\underset{y=0}{(x,y)\rightarrow(0,0)}}f(x, y)= \lim\limits_{x\rightarrow 0}\frac{\arctan(x^2)}{x^2}\overset{\footnotemark}{=}1.
     \end{equation*}
     \footnotetext{Utilizzato il limite notevole. Tramite la formula di Taylor: $\arctan t=0+\left.\frac{1}{1+t^2}\right|_{t=0}\cdot t +o(t)=t+o(t)$.}
     Lungo l'asse $y$: ($y=x$)
     \begin{equation*}
-        \lim_{\underset{y=x}{(x,y)\rightarrow (0,0)}}f(x,y)=\lim_{x\rightarrow 0}f(x,x)=\lim_{x\rightarrow 0}\frac{\arctan(4x^2)}{x^2}=\lim_{x\rightarrow 0}\frac{\arctan(4x^2)}{4x^2}\cdot 4=4.
+        \lim\limits_{\underset{y=x}{(x,y)\rightarrow (0,0)}}f(x,y)=\lim\limits_{x\rightarrow 0}f(x,x)=\lim\limits_{x\rightarrow 0}\frac{\arctan(4x^2)}{x^2}=\lim\limits_{x\rightarrow 0}\frac{\arctan(4x^2)}{4x^2}\cdot 4=4.
     \end{equation*}
     $4\neq 1$, quindi il limite non esiste.
 \end{example}
 
 \begin{example}\footnote{Slide 9 PDF 10.}
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{y^3+x^5}{x^2+y^4}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{y^3+x^5}{x^2+y^4}.
     \end{equation*}
     \footnote{Nominatore e denominatore sono polinomi con pesi diversi, quindi è necessario mettersi in una situazione di maggiore equilibrio.} Scegliendo come direzione di avvicinamento la parabola $x=y^2$, escludendo il punto $(0,0)$ perché $f$ non è definita, allora
     \begin{equation*}
-        \lim_{\underset{x=y^2}{(x,y)\rightarrow(0,0)}}=\lim_{y\rightarrow 0}f(y^2, y)=\lim_{y\rightarrow 0}\frac{y^3+y^{10}}{y^4+y^4}=\lim_{y\rightarrow 0}\frac{\cancel{y^3}(1+y^7)}{2y^4\cancel{4}}=\pm\infty \text{ a seconda che }y\rightarrow 0^{\pm}.
+        \lim\limits_{\underset{x=y^2}{(x,y)\rightarrow(0,0)}}=\lim\limits_{y\rightarrow 0}f(y^2, y)=\lim\limits_{y\rightarrow 0}\frac{y^3+y^{10}}{y^4+y^4}=\lim\limits_{y\rightarrow 0}\frac{\cancel{y^3}(1+y^7)}{2y^4\cancel{4}}=\pm\infty \text{ a seconda che }y\rightarrow 0^{\pm}.
     \end{equation*}
     Quindi il limite non esiste.
 \end{example}
 
 \begin{example}\footnote{Slide 10 PDF 10.}
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{\sqrt[3]{x}y^{\frac{5}{3}}}{x^2+y^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{\sqrt[3]{x}y^{\frac{5}{3}}}{x^2+y^2}.
     \end{equation*}
     Globalmente il denominatore si comporta come una funzione di secondo grado perché gli esponenti sono razionali ed essendo un prodotto, il grado complessivo è determinato dalla somma dei due esponenti (5/3+1/3=2).\\
     Lungo l'asse $x$: ($y=0$ con $x\neq 0$) $f(x,0)=0$.\\
     Lungo l'asse $y$: ($x=0$ con $y\neq 0$) $f(0, y)=0$.
     Quindi il candidato al limite è 0 ed necessario verificare che lo sia.
     \begin{equation*}
-        \lim_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{x\rightarrow 0}\frac{\sqrt[3]{x}x^{\frac{5}{3}}}{x^2+x^2}=\lim_{x\rightarrow 0}\frac{x^2}{2x^2}=\frac{1}{2}\neq 0,
+        \lim\limits_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim\limits_{x\rightarrow 0}\frac{\sqrt[3]{x}x^{\frac{5}{3}}}{x^2+x^2}=\lim\limits_{x\rightarrow 0}\frac{x^2}{2x^2}=\frac{1}{2}\neq 0,
     \end{equation*}
     quindi il limite non esiste.
 \end{example}
 
 \begin{example}\footnote{Slide 12 PDF 10.}
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{e^{\sqrt{x^2+y^2}}-2}{x^2+y^2}=\left[\frac{-1}{0^+}\right]=-\infty.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{e^{\sqrt{x^2+y^2}}-2}{x^2+y^2}=\left[\frac{-1}{0^+}\right]=-\infty.
     \end{equation*}
 \end{example}
 
@@ -979,21 +979,21 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
 
 \begin{example}\footnote{Slide 12 PDF 10.}
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{x^2-y^2}{x^2+y^2+77}=0.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{x^2-y^2}{x^2+y^2+77}=0.
     \end{equation*}
 \end{example}
 
 \begin{example}\footnote{Slide 12 PDF 10.}
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{(x+y)^2}{x^2+y^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{(x+y)^2}{x^2+y^2}.
     \end{equation*}
     Lungo l'asse $x$: ($y=0$ con $x\neq 0$)
     \begin{equation*}
-        \lim_{\underset{y=0}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{x\rightarrow 0}\frac{x^2}{x^2}=1, \text{ (candidato limite)}
+        \lim\limits_{\underset{y=0}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim\limits_{x\rightarrow 0}\frac{x^2}{x^2}=1, \text{ (candidato limite)}
     \end{equation*}
     Lungo la curva $y=x$:
     \begin{equation*}
-        \lim_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{x\rightarrow 0}\frac{(x+y)^2}{x^2+x^2} = \frac{4x^2}{2x^2}=2\neq 1\quad\longrightarrow\quad\nexists\lim
+        \lim\limits_{\underset{y=x}{(x,y)\rightarrow(0,0)}}f(x,y)=\lim\limits_{x\rightarrow 0}\frac{(x+y)^2}{x^2+x^2} = \frac{4x^2}{2x^2}=2\neq 1\quad\longrightarrow\quad\nexists\lim
     \end{equation*}
 \end{example}
 
@@ -1113,7 +1113,7 @@ Il calcolo del limite di $f(P)$ quando $P\rightarrow P_0$ è possibile utilizzan
 \begin{theorem}\label{th:limite_funzione_due_variabili_coordinate_polari}\footnote{Slide 15 PDF 10.}
     Sia $f\colon D\subset\mathbb R^2\rightarrow\mathbb R$ e $P_0=(x_0,y_0)\in D$, allora
     \begin{equation}\label{eq:limite_tende_l_uniformemente_theta}
-        \lim_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=\ell\quad\iff\quad\lim_{\rho\rightarrow 0^+}\underbrace{f(x_0+\rho\cos\theta,y_0+\rho\sin\theta)}_{\footnotemark}=\ell\quad\text{$\underset{\footnotemark}{\text{uniformemente}}$ rispetto a $\theta$}.
+        \lim\limits_{(x,y)\rightarrow(x_0,y_0)}f(x,y)=\ell\quad\iff\quad\lim\limits_{\rho\rightarrow 0^+}\underbrace{f(x_0+\rho\cos\theta,y_0+\rho\sin\theta)}_{\footnotemark}=\ell\quad\text{$\underset{\footnotemark}{\text{uniformemente}}$ rispetto a $\theta$}.
     \end{equation}
 \end{theorem}
 \addtocounter{footnote}{-1}
@@ -1134,7 +1134,7 @@ Il calcolo del limite di $f(P)$ quando $P\rightarrow P_0$ è possibile utilizzan
 se $(x,y)\rightarrow(x_0,y_0)$ allora $\rho\cos\theta\rightarrow 0$ e $\rho\sin\theta\rightarrow 0$. Ciò vale per $\rho\rightarrow 0$ indipendentemente dal valore di $\theta\in(0,2\pi)$ ed è per questo che il limite (\ref{eq:limite_tende_l_uniformemente_theta}) vale uniformemente rispetto a $\theta$.\\
 È utile passare in coordinate polari quando questo semplifica il calcolo dei limiti di funzioni radiali.
 
-\paragraph{Cosa significa che $\boldsymbol{\lim_{\rho\rightarrow0^+}f(x_0+\rho\cos\theta, y_0+\rho\cos\theta)=\ell}$ (ovvero che vale (\ref{eq:limite_tende_l_uniformemente_theta}))?}
+\paragraph{Cosa significa che $\boldsymbol{\lim\limits_{\rho\rightarrow0^+}f(x_0+\rho\cos\theta, y_0+\rho\cos\theta)=\ell}$ (ovvero che vale (\ref{eq:limite_tende_l_uniformemente_theta}))?}
 
 \begin{remark}[Non ufficiale]\footnote{Slide 1 PDF 11.}
     Affermare che vale il limite (\ref{eq:limite_tende_l_uniformemente_theta}) significa, tramite la Definizione \ref{def:limite_epsilon_delta} di limite $\varepsilon$-$\delta$, che
@@ -1146,7 +1146,7 @@ se $(x,y)\rightarrow(x_0,y_0)$ allora $\rho\cos\theta\rightarrow 0$ e $\rho\sin\
 \paragraph{N.B.:} Data l'Osservazione precedente, per mostrare che vale il limite della funzione $f$ per $(x,y)\rightarrow (x_0,y_0)$ è applicato il Teorema \ref{th:dei_carabinieri_2} dei Carabinieri: si cerca di maggiorare la quantità $|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|<\varepsilon$ in (\ref{eq:limite_coordinate_polari}) con una funzione radiale. \footnote{Una funzione radiale è una funzione che dipende solo dal raggio $\rho$, è una maggiore uguale a 0 ed infinitesima (ovvero tende a 0 quando $\rho\rightarrow 0$)}.\\
 Quindi, per mostrare che vale (\ref{eq:limite_tende_l_uniformemente_theta}) è sufficiente mostrare che (esiste) una funzione (radiale) $g=g(\rho)$ che dipende soltanto da $\rho$ con $g(\rho)\geq 0$ \footnote{Tale che $g$ sia maggiore di $|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|$ ed infinitesima quando $\rho\rightarrow 0^+$. Quindi è sufficiente far vedere che $g$ esiste, che sia maggiore uguale a 0 ed infinitesima quando $\rho\rightarrow 0^+$.} tale che
 \begin{equation}\label{eq:maggiorazione_f_coordinate_polari}
-    d(f,l)=|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|\leq g(\rho)\quad\text{e}\quad\lim_{\rho\rightarrow 0^+}g(\rho)=0.
+    d(f,l)=|f(x_0+\rho\cos\theta,y_0+\sin\theta)-\ell|\leq g(\rho)\quad\text{e}\quad\lim\limits_{\rho\rightarrow 0^+}g(\rho)=0.
 \end{equation}
 Quindi, (\ref{eq:maggiorazione_f_coordinate_polari}) significa che $d(f,\ell)$ è infinitesima non appena $0<\rho<\delta$, comunque scelta $\delta$.\\
 Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema \ref{th:dei_carabinieri_2} dei Carabinieri (anche detto del confronto).
@@ -1156,7 +1156,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 3 PDF 11.}
     \paragraph{Testo:} già stato visto per l'Esercizio \ref{exercise:limite_non_esiste_casa} che il seguente limite non esiste:
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{xy}{x^2+y^2}.
     \end{equation*}
     
     \paragraph{Svolgimento}: Passando in coordinate polari (quando $(x,y)\rightarrow(0,0)$ e $\rho\rightarrow 0^+$)
@@ -1168,7 +1168,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
     \end{equation*}
     allora 
     \begin{equation*}
-        \lim_{\rho\rightarrow 0^+}\frac{\rho\cos\theta\;\rho\sin\theta}{\underbrace{\rho^2\cos^2\theta+\rho^2\sin^2\theta}_{\rho^2\underbrace{(\cos^2\theta+\sin^2\theta)}_{1}}}\overset{\footnotemark}{=}\lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\sin\theta}{\rho^2}=\cos\theta\sin\theta=\frac{1}{2}\sin(2\theta).
+        \lim\limits_{\rho\rightarrow 0^+}\frac{\rho\cos\theta\;\rho\sin\theta}{\underbrace{\rho^2\cos^2\theta+\rho^2\sin^2\theta}_{\rho^2\underbrace{(\cos^2\theta+\sin^2\theta)}_{1}}}\overset{\footnotemark}{=}\lim\limits_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\sin\theta}{\rho^2}=\cos\theta\sin\theta=\frac{1}{2}\sin(2\theta).
     \end{equation*}
     Quindi, il limite non esiste perché non uniforme al variare di $\theta$ (ovvero il limite dipende da $\theta$).
 \end{example}
@@ -1177,11 +1177,11 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 3 PDF 11.}
     \paragraph{Testo:} Risolvere
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{xy}{\sqrt{x^2+y^2}}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{xy}{\sqrt{x^2+y^2}}.
     \end{equation*}
-    \paragraph{Procedimento:}Passando in coordinate polari, allora
+    \paragraph{Svolgimento:}Passando in coordinate polari, allora
     \begin{equation*}
-        \lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\;\rho\sin\theta}{\sqrt{\rho^2\cos^2\theta+\rho^2\sin^2\theta}}\overset{\footnotemark}{=}\lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\sin\theta}{\sqrt{\rho^2}}=\lim_{\rho\rightarrow 0^+}\frac{\rho^{\cancel{2}}\cos\theta\sin\theta}{\cancel{\rho}}=\lim_{\rho\rightarrow 0^+}\rho\cos\theta\sin\theta=0(=l).
+        \lim\limits_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\;\rho\sin\theta}{\sqrt{\rho^2\cos^2\theta+\rho^2\sin^2\theta}}\overset{\footnotemark}{=}\lim\limits_{\rho\rightarrow 0^+}\frac{\rho^2\cos\theta\sin\theta}{\sqrt{\rho^2}}=\lim\limits_{\rho\rightarrow 0^+}\frac{\rho^{\cancel{2}}\cos\theta\sin\theta}{\cancel{\rho}}=\lim\limits_{\rho\rightarrow 0^+}\rho\cos\theta\sin\theta=0(=l).
     \end{equation*}
     $\rho\cos\theta\sin\theta\overset{\rho\rightarrow0^+}{=}0$ perché, utilizzando il teorema del confronto, $\rho\cos\theta\sin\theta$ è maggiorata da una \gls{funzione infinitesima}, ovvero:
     \begin{equation*}
@@ -1196,13 +1196,13 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 5 PDF 11.}
     \paragraph{Testo:} Calcolare, se esiste
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{(x+y)^2}{x^2+y^2}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{(x+y)^2}{x^2+y^2}.
     \end{equation*}
     \paragraph{Svolgimento:} Passando in coordinate polari,
     \begin{equation*}
         \begin{matrix}
-            \lim_{\rho\rightarrow 0^+}\frac{(\rho\cos\theta+\rho\sin\theta)^2}{\rho^2}&=&\lim_{\rho\rightarrow 0^+}\frac{\rho^2\cos^2\rho+\rho^2\sin^2\theta+2\rho^2\cos\theta\sin\theta}{\rho^2}&=& 1^a\text{ relazione fond. aritmetica}\\
-            &=&\lim_{\rho\rightarrow0^+}\frac{\rho^2+2\rho^2\cos\theta\sin\theta}{\rho^2}&=&\lim_{\rho\rightarrow0^+}\frac{\cancel{\rho}^2(1+2\cos\theta\sin\theta)}{\cancel{\rho^2}},
+            \lim\limits_{\rho\rightarrow 0^+}\frac{(\rho\cos\theta+\rho\sin\theta)^2}{\rho^2}&=&\lim\limits_{\rho\rightarrow 0^+}\frac{\rho^2\cos^2\rho+\rho^2\sin^2\theta+2\rho^2\cos\theta\sin\theta}{\rho^2}&=& 1^a\text{ relazione fond. aritmetica}\\
+            &=&\lim\limits_{\rho\rightarrow0^+}\frac{\rho^2+2\rho^2\cos\theta\sin\theta}{\rho^2}&=&\lim\limits_{\rho\rightarrow0^+}\frac{\cancel{\rho}^2(1+2\cos\theta\sin\theta)}{\cancel{\rho^2}},
         \end{matrix}
     \end{equation*}
     dipende da $\theta$, quindi il limite non esiste.
@@ -1211,7 +1211,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 5 PDF 11.}
     \paragraph{Testo:} Studiare al variare del parametro $\alpha>0$ l'esistenza del seguente limite (il quale è una forma indeterminata)
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(1,0)}\frac{(x^2-2x+1)y}{(x^2-2x+1+y^2)^\alpha}=\lim_{(x,y)\rightarrow(1,0)}\frac{(x-1)^2y}{[(x-1)^2+y^2]^\alpha}.
+        \lim\limits_{(x,y)\rightarrow(1,0)}\frac{(x^2-2x+1)y}{(x^2-2x+1+y^2)^\alpha}=\lim\limits_{(x,y)\rightarrow(1,0)}\frac{(x-1)^2y}{[(x-1)^2+y^2]^\alpha}.
     \end{equation*}
     \paragraph{Svolgimento:} Passando in coordinate polari
     \begin{equation*}
@@ -1226,7 +1226,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
     \end{equation*}
     allora
     \begin{equation*}
-        \lim_{\rho\rightarrow0^+}\frac{\rho^2\cos^2\theta\rho\sin\theta}{[\rho^2\cos^2\theta+\rho^2\sin^2\theta]^\alpha}\overset{\footnotemark}{=}\lim_{\rho\rightarrow 0^+}\frac{\rho^3\cos^2\theta\sin\theta}{\rho^{2\alpha}}\overset{\text{prop. potenze}}{=}\lim_{\rho\rightarrow 0^+}\rho^{3-2\alpha}\cos^2\theta\sin\theta=0
+        \lim\limits_{\rho\rightarrow0^+}\frac{\rho^2\cos^2\theta\rho\sin\theta}{[\rho^2\cos^2\theta+\rho^2\sin^2\theta]^\alpha}\overset{\footnotemark}{=}\lim\limits_{\rho\rightarrow 0^+}\frac{\rho^3\cos^2\theta\sin\theta}{\rho^{2\alpha}}\overset{\text{prop. potenze}}{=}\lim\limits_{\rho\rightarrow 0^+}\rho^{3-2\alpha}\cos^2\theta\sin\theta=0
     \end{equation*}
     in quanto $\rho^b\underset{\rho\rightarrow0^+}{\longrightarrow}0\;\forall b>0$.\\
     Poiché ($\cos^2\theta\sin\theta$ uniformemente limitata e minore di 0, è considerato l'estremo superiore di $\theta$)
@@ -1237,7 +1237,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
     Se $\alpha=\frac{3}{2}$ il limite dipende da $\theta$ (perché è il limite di $\cos^3\theta\sin\theta$), quindi non esiste.\\
     Se $3-2\alpha<0$, allora
     \begin{equation*}
-        \lim_{\rho\rightarrow0^+}\rho^{3-2\alpha}\cos^2\theta\sin\theta=\lim_{\rho\rightarrow0^+}\frac{\cos^2\theta\sin\theta}{\rho^{2\alpha-3}}=\lim_{\rho\rightarrow0^+}\underbrace{\frac{1}{\rho^{2\alpha-3}}}_{+\infty}\cos^2\theta\sin\theta.
+        \lim\limits_{\rho\rightarrow0^+}\rho^{3-2\alpha}\cos^2\theta\sin\theta=\lim\limits_{\rho\rightarrow0^+}\frac{\cos^2\theta\sin\theta}{\rho^{2\alpha-3}}=\lim\limits_{\rho\rightarrow0^+}\underbrace{\frac{1}{\rho^{2\alpha-3}}}_{+\infty}\cos^2\theta\sin\theta.
     \end{equation*}
     Quindi non esiste perché il segno dipende da $\theta$.
 \end{example}
@@ -1257,7 +1257,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 	funzione è continua sul suo campo di esistenza.
 	\paragraph{Svolgimento:} $f:\mathbb{R}^2\rightarrow\mathbb{R}$ e affinché risulti continua deve esistere il limite della funzione, per $(x,y)\rightarrow(0,0)$ e tale limite deve valere 0, ovvero
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}f(x,y)=0.
+		\lim\limits_{(x,y)\rightarrow(0,0)}f(x,y)=0.
 	\end{equation*}
 	Valutiamo dunque
 	\begin{equation*}
@@ -1276,7 +1276,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 	
 	\noindent Dunque,
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} f(x,y) = 0 = f(0,0),
+		\lim\limits_{(x,y)\rightarrow(0,0)} f(x,y) = 0 = f(0,0),
 	\end{equation*}
 	quindi $f$ è continua in tutto $\mathbb{R}^2$.
 	
@@ -1301,7 +1301,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 	dove $\rho = d(\rho , \underline{0})$, con $\rho=(x,y)$.\\
 	Quindi,
 	\begin{equation*}
-		\lim_{\rho\rightarrow0^+} f(\rho)=\lim_{\rho\rightarrow 0^+} \frac{\sin\rho}{\rho}=1.
+		\lim\limits_{\rho\rightarrow0^+} f(\rho)=\lim\limits_{\rho\rightarrow 0^+} \frac{\sin\rho}{\rho}=1.
 	\end{equation*}
 	\paragraph{Nota:} Quindi, se la funzione prolungata in $(0,0)$ vale 1, come il limite, allora la funzione è continua nel suo dominio e nel prolungamento (che non fa parte del dominio e vale 1).$\qed$\\
 	Dunque 
@@ -1318,11 +1318,11 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 5 PDF 13.}
 	\paragraph{Testo:} Valutare il limite
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}.
+		\lim\limits_{(x,y)\rightarrow(0,0)} \frac{xy(2y^2 + 2 x^3)}{x^4+y^2}.
 	\end{equation*}
 	\paragraph{Svolgimento:} È calcolato lungo la retta $y=mx$ (dove se $y=0$ è necessario escludere $(0,0)$):
 	\begin{equation*}
-		\underset{y=mx}{\lim_{(x,y)\rightarrow (0,0)}} f(x,y)=\lim_{x\rightarrow 0}f(x,mx)=\lim_{x\rightarrow 0} \frac{x\,m\,x\,(2m^2x^2+x^3)}{x^4+m^2x^2}=\lim_{x\rightarrow 0}\frac{\cancel{x^2}\,m\, [x^2(2m^2-x)]}{\cancel{x^2}(x^2+m^2)} = \lim_{x\rightarrow 0}\frac{mx^2(2m^2-x)}{x^2+m^2}=0.
+		\underset{y=mx}{\lim\limits_{(x,y)\rightarrow (0,0)}} f(x,y)=\lim\limits_{x\rightarrow 0}f(x,mx)=\lim\limits_{x\rightarrow 0} \frac{x\,m\,x\,(2m^2x^2+x^3)}{x^4+m^2x^2}=\lim\limits_{x\rightarrow 0}\frac{\cancel{x^2}\,m\, [x^2(2m^2-x)]}{\cancel{x^2}(x^2+m^2)} = \lim\limits_{x\rightarrow 0}\frac{mx^2(2m^2-x)}{x^2+m^2}=0.
 	\end{equation*}
 	Quindi, il limite, se esiste, è 0. È necessario mostrare che è 0. Passando in coordinate polari
 	\begin{equation*}
@@ -1375,7 +1375,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 	\end{equation*}
 	$g$ non è una funzione radiale, è positiva e continua $\forall(x,y)\in\mathbb{R}^2$. Essere continua significa che
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} g(x,y)=g(0,0)=0
+		\lim\limits_{(x,y)\rightarrow(0,0)} g(x,y)=g(0,0)=0
 	\end{equation*}
 	ed è possibile applicare il teorema del confronto.
 \end{example}
@@ -1383,7 +1383,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 8 PDF 13}
 	\paragraph{Testo:}
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} \frac{x\sin^2y+3xy^4}{x^2+2y^4}=\left[\frac{0}{0}\right]
+		\lim\limits_{(x,y)\rightarrow(0,0)} \frac{x\sin^2y+3xy^4}{x^2+2y^4}=\left[\frac{0}{0}\right]
 	\end{equation*}
 	\paragraph{Svolgimento:} È possibile considerare la funzione come somma di funzioni:
 	\begin{equation*}
@@ -1397,29 +1397,29 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 	\paragraph{Intermezzo:} $f_1$ ed $f_2$ hanno limite? Una delle due non ha limite. Se avessero entrambe limite allora il risultato è la somma dei due. È possibile osservare che $f_2$ sembra andare a 0 perché sopra ha una potenza superiore rispetto a sotto. $\qed$
 	
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)} f_2(x,y) = 0,
+		\lim\limits_{(x,y)\rightarrow(0,0)} f_2(x,y) = 0,
 	\end{equation*}
 	infatti
 	\begin{equation*}
 		|f_2(x,y)|=\left|\frac{3xy^4}{x^2+2y^4}\right| = \frac{3|x|y^4}{x^2+2y^4} \leq \frac{3|x|y^4}{2y^4}=\frac{3}{2}|x|\underset{(x,y)\rightarrow(0,0)}{\longrightarrow} 0.
 	\end{equation*}
 	
-	\paragraph{Osservazioni su $\boldsymbol{f_1}$:} L'idea è che $	\lim_{(x,y)\rightarrow(0,0)} f_1(x,y)$ non esiste perché il grado di $y^4$ è maggiore del grado di $\sin^2y$. Quindi conviene calcolare il limite lungo percorsi in cui le $x$ e $y$ pesano in modo diverso.\\
+	\paragraph{Osservazioni su $\boldsymbol{f_1}$:} L'idea è che $	\lim\limits_{(x,y)\rightarrow(0,0)} f_1(x,y)$ non esiste perché il grado di $y^4$ è maggiore del grado di $\sin^2y$. Quindi conviene calcolare il limite lungo percorsi in cui le $x$ e $y$ pesano in modo diverso.\\
 	Il numeratore e denominatore tendono a 0 rispettivamente come $\rho^3$ e come $\rho^4$. Quindi, conviene calcolare il limite lungo dei percorsi in cui $x$ e $y$ pesano in modo diverso così da mostrare comportamenti distinti, come segue. $\qed$
 	
 	\noindent \textbf{Lungo} $\boldsymbol{y=x}$ ($x$ ed $y$ pesano uguale)
 	\begin{equation}\label{eq:esempio_limite_notevole}
-		\underset{y=x}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{x\rightarrow 0} f_1(x,x) = \lim_{x\rightarrow 0}\frac{x\sin^2x}{x^2+2x^4} = \lim_{x\rightarrow 0}\boxed{\frac{\sin^2x}{x^2}}_{=1}\cdot\frac{x}{1+2x^2}=0
+		\underset{y=x}{\lim\limits_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim\limits_{x\rightarrow 0} f_1(x,x) = \lim\limits_{x\rightarrow 0}\frac{x\sin^2x}{x^2+2x^4} = \lim\limits_{x\rightarrow 0}\boxed{\frac{\sin^2x}{x^2}}_{=1}\cdot\frac{x}{1+2x^2}=0
 	\end{equation}
 	
 	\noindent \textbf{Lungo} $\boldsymbol{y=x^2}$ (così $x^2$ è paragonabile a $y^4$)
 	\begin{equation*}
-		\underset{y=x^2}{\lim_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim_{y\rightarrow 0}\frac{y^2\sin^2y}{y^4+2y^4} = \lim_{y\rightarrow 0} \frac{\sin^2y}{3y^2} =\frac{1}{3} \neq 0,
+		\underset{y=x^2}{\lim\limits_{(x,y)\rightarrow(0,0)}} f_1(x,y) = \lim\limits_{y\rightarrow 0}\frac{y^2\sin^2y}{y^4+2y^4} = \lim\limits_{y\rightarrow 0} \frac{\sin^2y}{3y^2} =\frac{1}{3} \neq 0,
 	\end{equation*}
 	quindi il limite di $f_1$ non esiste.\\
 	Dunque
 	\begin{equation*}
-		\nexists \lim_{(x,y)\rightarrow(0,0)} f(x,y) = f_1 + f_2.
+		\nexists \lim\limits_{(x,y)\rightarrow(0,0)} f(x,y) = f_1 + f_2.
 	\end{equation*}
 	(Il limite non esiste dal momento che $f$ è la somma di $f_1$ e $f_2$ ed il limite di $f_1$ non esiste.)
 \end{example}
@@ -1429,7 +1429,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 \begin{example}\footnote{Slide 11 PDF 13.}
 	\paragraph{Testo:}
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(0,0)}\left(\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right)e^{\left(\frac{x^2-y^2}{x^2+y^2}\right)}.
+		\lim\limits_{(x,y)\rightarrow(0,0)}\left(\frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2}\right)e^{\left(\frac{x^2-y^2}{x^2+y^2}\right)}.
 	\end{equation*}
 	(Partiamo dalla prima funzione,)
 	\begin{equation*}
@@ -1462,7 +1462,7 @@ Quindi, la tesi (\ref{eq:limite_tende_l_uniformemente_theta}) segue dal Teorema 
 	\end{equation*}
 	l'esponente $\frac{x^2-y^2}{x^2+y^2}$ non ha limite per $(x,y)\rightarrow(0,0)$. Passando in coordinate polar è ottenuto
 	\begin{equation*}
-		\lim_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \cancel{\rho^2}\sin^2\theta}{\cancel{\rho^2}} = \lim_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
+		\lim\limits_{\rho\rightarrow 0^+} \frac{\cancel{\rho^2} \cos^2\theta - \cancel{\rho^2}\sin^2\theta}{\cancel{\rho^2}} = \lim\limits_{\rho \rightarrow 0^+}\cos\theta-\sin\theta =\nexists.
 	\end{equation*}
 	È possibile dimostrare che $e^{\frac{x^2-y^2}{x^2+y^2}}$ è limitato uniformemente da una costante.
 	\begin{equation*}
@@ -2145,10 +2145,10 @@ Il concetto di derivata di una funzione di una variabile si estende per una funz
 \begin{definition}[Derivate parziali (caso $n=2$)]\footnote{Slide 2 PDF 14.}
     Sia $f:A\subseteq\mathbb R^2\rightarrow\mathbb R$, dove $A$ aperto e $P_0=(x_0,y_0)\in A$. Le derivate parziali di $f$ rispetto alle variabili $x$ e $y$ nel punto $P_0$ sono date dai seguenti limiti purché esistano e siano finiti
     \begin{equation}\label{eq:derivata_parziale_x}
-        \lim_{h\rightarrow 0}\frac{\overbrace{f(x_0+h, y_0)}^{\footnotemark}-f(x_0, y_0)}{h}:=\frac{\partial f}{\partial x}(x_0,y_0),
+        \lim\limits_{h\rightarrow 0}\frac{\overbrace{f(x_0+h, y_0)}^{\footnotemark}-f(x_0, y_0)}{h}:=\frac{\partial f}{\partial x}(x_0,y_0),
     \end{equation}
     \begin{equation}\label{eq:derivata_parziale_y}
-        \lim_{h\rightarrow 0}\frac{f(x_0, y_0+h)-f(x_0, y_0)}{h}:=\frac{\partial f}{\partial y}(x_0,y_0).
+        \lim\limits_{h\rightarrow 0}\frac{f(x_0, y_0+h)-f(x_0, y_0)}{h}:=\frac{\partial f}{\partial y}(x_0,y_0).
     \end{equation}
     \footnotetext{Funzione di una variabile, $y$ è congelata.}
 \end{definition}
@@ -2184,12 +2184,12 @@ Infatti, se è considerata la traccia di $f(x,y)$ lungo il piano $y=y_0$ (è ott
 
 Se $g_1$ è derivabile in $x_0$ significa che esiste ed è finito (il limite del rapporto incrementale di $g_1$ nel punto $x_0$, ovvero)
 \begin{equation*}
-	\lim_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}:=g'_1(x_0)=\frac{\partial f}{\partial x}(x_0,y_0).
+	\lim\limits_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}:=g'_1(x_0)=\frac{\partial f}{\partial x}(x_0,y_0).
 \end{equation*}
 
 Infatti
 \begin{equation*}
-	\lim_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}=\lim_{h\rightarrow 0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}.
+	\lim\limits_{h\rightarrow 0}\frac{g_1(x_0+h)+g_1(x_0)}{h}=\lim\limits_{h\rightarrow 0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}.
 \end{equation*}
 
 Analogo risultato considerata la traccia di $f$ lungo il piano $x=x_0$, con
@@ -2199,7 +2199,7 @@ Analogo risultato considerata la traccia di $f$ lungo il piano $x=x_0$, con
 
 Se $g_2$ è derivabile in $y_0$ significa che esiste ed è finito (il limite del rapporto incrementale di $g_2$ nel punto $y_0$, ovvero)
 \begin{equation*}
-	\lim_{h\rightarrow 0}\frac{g_2(y_0+h)+g_2(y_0)}{h}:=g'_2(y_0)=\frac{\partial f}{\partial y}(x_0,y_0).
+	\lim\limits_{h\rightarrow 0}\frac{g_2(y_0+h)+g_2(y_0)}{h}:=g'_2(y_0)=\frac{\partial f}{\partial y}(x_0,y_0).
 \end{equation*}
 
 \paragraph{Perché per la derivabilità, per il gradiente e per i Teoremi è utilizzato un aperto $\boldsymbol{A}$?} Un insieme aperto ha la caratteristica topologicache ogni suo punto è interno. Nel corso sono considerati i domini, i quali sono della forma $D= A\cup\partial A$. Queste proprietà sono utili perché se una data proprietà è dimostrata per un punto dell'aperto, allora è valida nell'intorno centrato nel punto.
@@ -2228,18 +2228,62 @@ Per indicare una direzione ed un verso può essere utilizzato un versore:
 
 Il caso delle derivate parziali di funzioni di due variabili è un caso particolare del caso generale (ovvero delle derivate direzionali, vedere Definizione \ref{def:derivata_direzionale_Rn}), dato che nel piano ci sono 2 direzioni (quelle dell'asse $x$ e dell'asse $y$). Quindi, quando si deriva in due variabili è necessario chiarire la direzione dello spostamento nel piano, ovvero: la derivata rispetto ad $x$ è quella che si muove sull'asse orizzontale. Per avere una rappresentazione grafica del concetto di derivata direzionale nelle direzioni $x$ e $y$ vedere Figura \ref{fig:rappresentazione_direzione_R2}.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/rappresentazione_direzione_R2.jpeg}
-    \caption{Rappresentazione delle direzioni con incremento $h>0$.}\label{fig:rappresentazione_direzione_R2}
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[
+		x=1.2cm,
+		y=1.2cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[very thick,->] (-0.15,0) -- (5.25,0) node[right] {$x$};
+		\draw[very thick,->] (0,-0.15) -- (0,4.05) node[above] {$y$};
+		
+		% Coordinate dei due livelli e delle due ascisse
+		\def\xzero{1.35}
+		\def\xone{4.05}
+		\def\yzero{1.55}
+		\def\yone{3.05}
+		
+		% Tratteggi di proiezione sui due assi
+		\draw[thick,dashed] (0,\yone) -- (\xzero,\yone);
+		\draw[thick,dashed] (0,\yzero) -- (\xone,\yzero);
+		\draw[thick,dashed] (\xzero,-0.05) -- (\xzero,\yone);
+		\draw[thick,dashed] (\xone,-0.05) -- (\xone,\yzero);
+		
+		% Direzione con incremento positivo
+		\draw[very thick,<->] (\xzero,\yone) -- (\xone,\yzero);
+		\node[font=\footnotesize,fill=white,inner sep=2pt] at (3.50,2.24)
+		{direzione con incremento $h>0$};
+		
+		% Riferimenti sulle coordinate
+		\node[anchor=east] at (-0.10,\yone) {$y_0+h$};
+		\node[anchor=east] at (-0.10,\yzero) {$y_0$};
+		\node[below=5pt] at (\xzero,0) {$x_0$};
+		\node[below=5pt] at (\xone,0) {$x_0+h$};
+		\draw[thick] (\xzero,-0.07) -- (\xzero,0.07);
+		\draw[thick] (\xone,-0.07) -- (\xone,0.07);
+		\draw[thick] (-0.07,\yzero) -- (0.07,\yzero);
+		\draw[thick] (-0.07,\yone) -- (0.07,\yone);
+	\end{tikzpicture}
+	\caption{Rappresentazione delle direzioni con incremento $h>0$.}\label{fig:rappresentazione_direzione_R2}
 \end{figure}
+
+%\begin{figure}
+    %\centering
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/rappresentazione_direzione_R2.jpeg}
+    %\caption{Rappresentazione delle direzioni con incremento $h>0$.}\label{fig:rappresentazione_direzione_R2}
+%\end{figure}
 
 \paragraph{N.B.:} \textbf{La Definizione \ref{def:derivata_parziale_Rn} di derivata parziale e la Definizione \ref{def:derivata_direzionale_Rn} di derivata direzionale sono equivalenti.}
 
 \begin{definition}[Derivata parziale in $\mathbb R^n$]\label{def:derivata_parziale_Rn}\footnote{Slide 2 PDF 14.}
     Sia $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $P_0\overset{\footnotemark}{=}(x_1,x_2,\hdots, x_n)\in A$. La derivata parziale di $f$ rispetto alla variabile $x_i$ (dove $i=1,\hdots, n$) nel punto $P_0$ è data da
     \begin{equation}\label{eq:derivata_parziale_Rn}
-        \lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_{i-1},x_i+h,x_{i+1},\hdots,  x_n)-f(x_1,\hdots, x_n)}{h}:=\frac{\partial f}{\partial x_i}(P_0)
+        \lim\limits_{h\rightarrow 0}\frac{f(x_1,\hdots,x_{i-1},x_i+h,x_{i+1},\hdots,  x_n)-f(x_1,\hdots, x_n)}{h}:=\frac{\partial f}{\partial x_i}(P_0)
     \end{equation}
     purché il limite esista e sia finito.
 \end{definition}
@@ -2262,7 +2306,7 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
 	\end{equation*}
 	$f$ è derivabile in $\uline x\in A$ se (esistono finite)
 	\begin{equation*}
-		\exists\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h},\qquad i=1,\hdots, n.
+		\exists\frac{\partial f}{\partial x_i}(\uline x)=\lim\limits_{h\rightarrow 0}\frac{f(x_1,\hdots,x_i+h,\hdots,x_n)-f(\uline x)}{h},\qquad i=1,\hdots, n.
 	\end{equation*}
 \end{definition}
 
@@ -2332,14 +2376,14 @@ Il caso delle derivate parziali di funzioni di due variabili è un caso particol
     \begin{equation*}
         \frac{\partial f}{\partial x}(0,0)=\frac{\partial f}{\partial y}(0,0)=0.
     \end{equation*}
-    Quindi $f$ è derivabile in $(0,0)$. \footnote{Dimostriamo che la funzione non è continua tramite la definizione di continuità nel punto, in particolare è mostrato (dopo la nota) che il limite di $f$ quando $(x,y)\rightarrow (0,0)$ non esiste. Per dimostrare la continuità è verificato il limite (\ref{eq:limite_continuita}) della Definizione \ref{def:continuita_funzione_n_variabili} di continuità.} Mostriamo che il limite $\lim_{(x,y)\rightarrow(0,0)}f(x,y)$ non esiste:
+    Quindi $f$ è derivabile in $(0,0)$. \footnote{Dimostriamo che la funzione non è continua tramite la definizione di continuità nel punto, in particolare è mostrato (dopo la nota) che il limite di $f$ quando $(x,y)\rightarrow (0,0)$ non esiste. Per dimostrare la continuità è verificato il limite (\ref{eq:limite_continuita}) della Definizione \ref{def:continuita_funzione_n_variabili} di continuità.} Mostriamo che il limite $\lim\limits_{(x,y)\rightarrow(0,0)}f(x,y)$ non esiste:
     \begin{equation*}
-        \lim_{(x,y)\rightarrow(0,0)}\frac{xy^2}{x^2+y^4}.
+        \lim\limits_{(x,y)\rightarrow(0,0)}\frac{xy^2}{x^2+y^4}.
     \end{equation*}
     Il candidato limite è 0 perché lungo gli assi $x=0$ e $y=0$ vale 0.\\
     Lungo l'asse $x=y^2$
     \begin{equation*}
-        \underset{x=y^2}{\lim_{(x,y)\rightarrow(0,0)}}f(x,y)=\lim_{y\rightarrow 0}\frac{y^4}{y^4+y^4}=\frac{1}{2}\neq 0.
+        \underset{x=y^2}{\lim\limits_{(x,y)\rightarrow(0,0)}}f(x,y)=\lim\limits_{y\rightarrow 0}\frac{y^4}{y^4+y^4}=\frac{1}{2}\neq 0.
     \end{equation*}
     Dunque $f$ non è continua ma è derivabile in $(0,0)$.
 \end{example}
@@ -2733,7 +2777,7 @@ Dato che sono considerate funzioni di $n$ variabili, è conveniente utilizzare l
 \begin{definition}[Derivata direzionale]\label{def:derivata_direzionale_Rn}\footnote{Slide 11 PDF 15.}
 	Sia $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline e_i$ nel punto $\uline x$ è data da
 	\begin{equation}\label{eq:derivata_direzionale_Rn}
-		\frac{\partial f}{\partial x_i}(\uline x)=\lim_{h\rightarrow 0}\frac{f(\uline x + h \uline e_i)-f(\uline x)}{h}.
+		\frac{\partial f}{\partial x_i}(\uline x)=\lim\limits_{h\rightarrow 0}\frac{f(\uline x + h \uline e_i)-f(\uline x)}{h}.
 	\end{equation}
 	se il limite esiste ed è finito.
 \end{definition}
@@ -2754,7 +2798,7 @@ Dato che sono considerate funzioni di $n$ variabili, è conveniente utilizzare l
 	\end{equation*}
 	dove se $g$ è derivabile in $h=0$ allora esiste finito il limite
 	\begin{equation*}
-		\frac{\partial f}{\partial x_i}(\uline x) = \lim_{h\rightarrow 0}\frac{g(h) - g(0)}{h-0} \overset{\footnotemark}{=} \lim_{h\rightarrow 0}\frac{f(\uline x + h\uline e_i)-f(\uline x)}{h},
+		\frac{\partial f}{\partial x_i}(\uline x) = \lim\limits_{h\rightarrow 0}\frac{g(h) - g(0)}{h-0} \overset{\footnotemark}{=} \lim\limits_{h\rightarrow 0}\frac{f(\uline x + h\uline e_i)-f(\uline x)}{h},
 	\end{equation*}
 	quindi $\frac{\partial f}{\partial x_i}(\uline x)$ è la derivata direzionale di $f$ nella direzione $\uline e_i$.
 \end{proposition}
@@ -2765,7 +2809,7 @@ La proposizione è un caso particolare della seguente definizione, in quanto il 
 \begin{definition}[Derivata direzionale, versione da ricordare]\footnote{Slide 12 PDF 15.}\label{def:derivata_direzionale_Rn_da_ricordare}
 	Data $\uline v\in\mathbb{R}^n$, direzione (versore) in $\mathbb{R}^n$, $f:A\subseteq\mathbb R^n\rightarrow\mathbb R$, con $A$ aperto e sia $\uline x=(x_1,x_2,\hdots, x_n)\in A$. La derivata direzionale di $f$ rispetto alla direzione $\uline v$ nel punto $\uline x$ è data da
 	\begin{equation*}
-		D_{\vec{v}}f(\uline x) =\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim_{h\rightarrow 0}\frac{f(\uline x + h \uline v) - f(\uline x)}{h},
+		D_{\vec{v}}f(\uline x) =\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim\limits_{h\rightarrow 0}\frac{f(\uline x + h \uline v) - f(\uline x)}{h},
 	\end{equation*}
 	\textbf{se il limite esiste ed è finito}.
 \end{definition}
@@ -2776,7 +2820,7 @@ La proposizione è un caso particolare della seguente definizione, in quanto il 
 	\paragraph{Testo:} Sia $\uline v=(a,b,c)\in\mathbb{R}^3$, dove $a^2+b^2+c^2=1$ (ovvero $||\uline v||=\sqrt{a^2+b^2+c^2}=1$). Data $f(x,y,z)$, calcolare la sua derivata direzionale in $P_0=(x_0,y_0,z_0)$.
 	\paragraph{Svolgimento:} La derivata direzionale è il seguente limite (se esiste finito)
 	\begin{equation*}
-		\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim_{h\rightarrow 0}\frac{f(x_0+ha, y_0 + hb, z_0 + hc) - f(x_0,y_0,z_0)}{h} = \lim_{h\rightarrow 0}\frac{f(P_0 + h \uline v) - f(\uline x)}{h}
+		\frac{\partial f}{\partial \vec{v}}(\uline x) = \lim\limits_{h\rightarrow 0}\frac{f(x_0+ha, y_0 + hb, z_0 + hc) - f(x_0,y_0,z_0)}{h} = \lim\limits_{h\rightarrow 0}\frac{f(P_0 + h \uline v) - f(\uline x)}{h}
 	\end{equation*}
 \end{example}
 
@@ -2793,8 +2837,8 @@ La proposizione è un caso particolare della seguente definizione, in quanto il 
 	\paragraph{Svolgimento:} Sia $\vec{v}=(v_1,v_2)\in\mathbb{R}^2$ una direzione, ovvero $||\vec{v}||=\sqrt{v_1^2+v_2^2}=1$. Per definizione la derivata direzionale è il limite, se esiste ed è finito,
 	\begin{equation*}
 		\begin{matrix}
-			\frac{\partial f}{\partial \vec{v}}(0,0) &=& \lim_{t\rightarrow 0}\frac{f(0+tv_1, 0+tv_2) - f(0,0)}{t} &=&\lim_{t\rightarrow 0}\frac{e^{t^3v_1^3}-1}{t^2v_1^2 + t^2v^2_2}\cdot\frac{1}{t} &=& \lim_{t\rightarrow0}\frac{e^{t^3v^3_1}-1}{t^2(v_1^2+v_2^2)}\cdot \frac{1}{t} &=&\\\\
-			&=& v_1^2+v_2^2 = 1 &=& \lim_{t\rightarrow 0} \frac{e^{t^3v^3_1}-1}{t^3} &=& \lim_{t\rightarrow 0}\frac{t^3v_1^3}{t^3} &=& v_1^3\in\mathbb{R}.
+			\frac{\partial f}{\partial \vec{v}}(0,0) &=& \lim\limits_{t\rightarrow 0}\frac{f(0+tv_1, 0+tv_2) - f(0,0)}{t} &=&\lim\limits_{t\rightarrow 0}\frac{e^{t^3v_1^3}-1}{t^2v_1^2 + t^2v^2_2}\cdot\frac{1}{t} &=& \lim\limits_{t\rightarrow0}\frac{e^{t^3v^3_1}-1}{t^2(v_1^2+v_2^2)}\cdot \frac{1}{t} &=&\\\\
+			&=& v_1^2+v_2^2 = 1 &=& \lim\limits_{t\rightarrow 0} \frac{e^{t^3v^3_1}-1}{t^3} &=& \lim\limits_{t\rightarrow 0}\frac{t^3v_1^3}{t^3} &=& v_1^3\in\mathbb{R}.
 		\end{matrix}
 	\end{equation*}
 	Dunque $\frac{\partial f}{\partial\vec{v}}(0,0)=v_1^3$ nella direzione $\vec{v}=(v_1,v_2)$.
@@ -2829,7 +2873,7 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 		\item $f$ è derivabile in $\uline x\in A$ (ovvero $\exists \triangledown f(\uline x)=\left(\frac{\partial f}{\partial x_1}(\uline x), \hdots, \frac{\partial f}{\partial x_n}(\uline x) \right)$)
 		\item
 		\begin{equation}\label{eq:limite_differenziabilita}
-			\lim_{\uline h\rightarrow \uline 0}\frac{f(\uline x + \uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h>}{||\uline h||} = 0,\quad \forall \uline h\in\mathbb{R}^n.
+			\lim\limits_{\uline h\rightarrow \uline 0}\frac{f(\uline x + \uline h) - f(\uline x) - <\triangledown f(\uline x), \uline h>}{||\uline h||} = 0,\quad \forall \uline h\in\mathbb{R}^n.
 		\end{equation}
 	\end{enumerate}
 \end{definition}
@@ -2851,7 +2895,7 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	 \end{equation*}
 	 Inoltre, $\uline h=(x-x_1,\hdots, x-x_n)$, ovvero le variabili sono in funzione degli incrementi, perché la forma del limite (\ref{eq:limite_differenziabilita}) è utilizzata per non cambiare la forma del limite in base al punto in cui vogliamo verificare la differenziabilità, al posto di
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(x_0,y_0)} \frac{f(x,y)-f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}=0.
+		\lim\limits_{(x,y)\rightarrow(x_0,y_0)} \frac{f(x,y)-f(x_0,y_0)- \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}=0.
 	\end{equation*}
 	\item (Non ufficiale) È l'approssimazione del piano tangente.
 	\item (Non ufficiale) In altre parole: $f$ è differenziabile in $\uline x_0$ se e solo se vale la relazione
@@ -2890,7 +2934,7 @@ Vedere il Teorema (\ref{th:del_differenziale}) del differenziale per capire che 
 	\end{equation*}
 	detta differenziale (o applicazione lineare tangente) di $f$ in $x_0$ tale che
 	\begin{equation*}
-		\lim_{\uline h\rightarrow\uline 0}\frac{f(\uline x+\uline h) - f(\uline x) - L(\uline h)}{||\uline h||} = 0, \quad \forall \uline h\in\mathbb{R}^n.
+		\lim\limits_{\uline h\rightarrow\uline 0}\frac{f(\uline x+\uline h) - f(\uline x) - L(\uline h)}{||\uline h||} = 0, \quad \forall \uline h\in\mathbb{R}^n.
 	\end{equation*}
 \end{definition}
 
@@ -2984,7 +3028,7 @@ fornisce un'approssimazione di $f(\uline x)$ nel punto $\uline x_0$ a meno di un
 \end{equation*}
 è possibile scrivere il limite che definisce la differenziabilità (\ref{eq:limite_differenziabilita}), ovvero
 \begin{equation*}
-	\lim_{(h,k)\rightarrow (0,0)}\frac{f(x_0 + h, y_0 + k) - f(x_0, y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)h - \frac{\partial f}{\partial y}(x_0, y_0)k}{\sqrt{h^2+k^2}} = 0,
+	\lim\limits_{(h,k)\rightarrow (0,0)}\frac{f(x_0 + h, y_0 + k) - f(x_0, y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)h - \frac{\partial f}{\partial y}(x_0, y_0)k}{\sqrt{h^2+k^2}} = 0,
 \end{equation*}
 come segue per introdurre l'$o$-piccolo:
 \begin{equation}\label{eq:intro_o_piccolo}
@@ -3002,7 +3046,7 @@ E dunque, per le funzioni differenziabili \footnote{La differenziabilità è imp
 \end{equation}
 ovvero (sempre sotto l'ipotesi che $f$ sia differenziabile in $(x_0, y_0)$, l'uguaglianza (\ref{eq:uguaglianza_piano}) rappresenta il seguente limite)
 \begin{equation*}
-	\lim_{(x,y)\rightarrow(x_0,y_0)}\frac{f(x,y) - f(x_0,y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0, y_0)(y-y_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}} \overset{\footnotemark}{=} 0
+	\lim\limits_{(x,y)\rightarrow(x_0,y_0)}\frac{f(x,y) - f(x_0,y_0) -  \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0) - \frac{\partial f}{\partial y}(x_0, y_0)(y-y_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}} \overset{\footnotemark}{=} 0
 \end{equation*}
 e dunque la funzione $L:\mathbb{R}^2\rightarrow\mathbb{R}$ definita da
 \begin{equation*}
@@ -3043,7 +3087,7 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	\end{equation*}
 	con
 	\begin{equation*}
-		\lim_{x\rightarrow x_0} \frac{R(x)}{x-x_0} = 0,
+		\lim\limits_{x\rightarrow x_0} \frac{R(x)}{x-x_0} = 0,
 	\end{equation*}
 	e quindi
 	\begin{equation*}
@@ -3062,7 +3106,7 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 È considerato come differenziabilità, derivabilità e continuità si integrano assieme.
 
 \begin{property}[Non ufficiale]\footnote{Slide 8, PDF 16.}
-	Se $\underbrace{f\text{ è differenziabile in }\uline x_0}_{\text{Definizione \ref{def:differenziabilita_funzione_piu_variabili}}}\rightarrow\quad\underbrace{f \text{ derivabile in }\uline x_0}_{\text{in } \uline x_0 \text{ se } \exists\triangledown f(\uline x_0)}\rightarrow\quad \underbrace{f \text{ continua in }\uline x_0}_{\text{se } \lim_{\uline x_0\rightarrow\uline x_0}f(\uline x)=f(\uline x_0)}$. 
+	Se $\underbrace{f\text{ è differenziabile in }\uline x_0}_{\text{Definizione \ref{def:differenziabilita_funzione_piu_variabili}}}\rightarrow\quad\underbrace{f \text{ derivabile in }\uline x_0}_{\text{in } \uline x_0 \text{ se } \exists\triangledown f(\uline x_0)}\rightarrow\quad \underbrace{f \text{ continua in }\uline x_0}_{\text{se } \lim\limits_{\uline x_0\rightarrow\uline x_0}f(\uline x)=f(\uline x_0)}$. 
 \end{property}
 
 \begin{figure}[ht]
@@ -3088,12 +3132,111 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 		\node at (0,0)    {$\operatorname{Diff}(A)$};
 		
 	\end{tikzpicture}
-	
+	\label{fig:diff_deriv_C}
 	\caption{Insiemi di funzioni.}
 \end{figure}
 
 \begin{example}
-	FUNZIONI DIFFERENZIABILI E DERIVABILI VEDERE SLIDE 8-10 PDF 16, SLIDE  2-6 PDF 17
+	\footnote{SLIDE 8-10 PDF 16.}
+	\paragraph{Testo:}
+	Considerata la funzione
+	\begin{equation*}
+		f(x,y) =
+		\begin{cases}
+			\frac{x^3 + 2y^4}{x^2+y^2} & \text{se } (x,y)\neq(0,0)\\
+			0 & \text{altrimenti}
+		\end{cases}
+		\quad f\colon\mathbb{R}^2 \rightarrow \mathbb{R}
+	\end{equation*}
+	\begin{enumerate}
+		\item Stabilire su quali punti del piano $f$ è derivabile e calcolare esplicitamente le derivate (il vettore gradiente) nel caso esistano,
+		\item Stabilire in quali punti del piano $f$ è differenziabile,
+		\item Determinare il più grande \footnote{Il più grande rispetto all'inclusione, ovvero il massimale.} aperto $A$ di $\mathbb{R}^2$ dove $f\in C^1(A)$. (Trovare $A$ affinché $f\in C^1(A)$ significa trovare l'insieme massimale rispetto l'inclusione di $\mathbb{R}^2$ dove le derivate sono continue.)
+	\end{enumerate}
+	\paragraph{Svolgimento:}
+	\begin{enumerate}
+		\item È possibile osservare che $\forall (x,y)\neq (0,0)$ $f$ è derivabile e lo è su tutto $\mathbb{R}^2\backslash\{(0,0)\}$. $\forall (x,y)\in\mathbb{R}^2\backslash\{(0,0)\}$ la derivate sono
+		\begin{equation*}
+			\frac{\partial f}{\partial x} (x,y) = \frac{3x^2(x^2+y^2)-2x(x^2+2y^4)}{(x^2+y^2)^2} = \frac{x^4 + 3x^2 y^2-4xy^4}{(x^2+y^2)^2}
+		\end{equation*} 
+		\begin{equation*}
+			\frac{\partial f}{\partial y} (x,y) = \frac{8y^3(x^2+y^2)-2y(x^3+2y^4)}{(x^2+y^2)^2} = \frac{8x^2y^3 + 4y^5-2x^3y}{(x^2+y^2)^2}
+		\end{equation*} 
+		Tali funzioni sono continue $\forall (x,y) \in\mathbb{R}^2\backslash\{(0,0)\}$, quindi $f\in C^1(\mathbb{R}^2\backslash\{(0,0)\})$.\\
+		È ncessario controllare la derivabilità di $f(x,y)$ in $(0,0)$ (tramite la definizione di derivabilità). Per farlo sono utilizzate le tracce di $f$ (ottenendo una funzione in una variabile):
+		\begin{description}
+			\item[Traccia di $\boldsymbol{f}$ in $\boldsymbol{y=0}$:]
+			\begin{equation*}
+				f(x,0) = \frac{x^3}{x^2}=g_1(x) \; \Rightarrow \; \frac{\partial f}{\partial x}(0,0) = 1 
+			\end{equation*}
+			\item[Traccia di $\boldsymbol{f}$ in $\boldsymbol{x=0}$:]
+			\begin{equation*}
+				f(0,y) = \frac{2y^4}{y^2} = 2 y = g_2(y) \; \Rightarrow \; g_2'(y)=4y \;\Rightarrow\; \frac{\partial f}{\partial y}(0,0) = 0.
+			\end{equation*}
+		\end{description}
+		Pertanto
+		\begin{equation*}
+			\triangledown f(0,0)=(1,0).
+		\end{equation*}
+		
+		\item $f\in C^1(\mathbb{R}^2\backslash\{(0,0)\})$ e dunque $f$ è differenziabile $\forall(x,y)\in\mathbb{R}^2\backslash\{(0,0)\})$.\\
+		È necessario controllare la differenziabilità in $(0,0)$. Affinché $f$ sia differenziabile in $(0,0)$  deve valere il seguente limite (vedere (\ref{eq:limite_differenziabilita})):
+		\begin{equation*}
+			\lim\limits_{(h,k)\rightarrow(0,0)} \frac{f(0+h, k)-f(0,0)-\overset{\text{prod. scalare}}{\frac{\partial f}{\partial x}(0,0)h} -\overset{\text{prod. scalare}}{\frac{\partial f}{\partial y}(0,0) k}}{\underbrace{\sqrt{h^2+k^2}}_{||\uline h||}} = 0, \quad \uline{h} =(h, k)\in\mathbb{R}^2.
+		\end{equation*}
+		Considerando $\triangledown f(0,0)$ come sopra e $f(0,0)=0$,
+		\begin{equation*}
+			\begin{matrix}
+				\lim\limits_{(h,k)\rightarrow(0,0)}\frac{\frac{h^3 + 2k^4}{h^2+k^2} - 0 - 1\cdot h - 0\cdot k}{\sqrt{h^2+k^2}} &=& \lim\limits_{(h,k)\rightarrow(0,0)}\frac{\cancel{h^3} + 2k^4 \cancel{-h^3} - h k^3}{(h^2 + k^2)^\frac{3}{2}} &=& \lim\limits_{(h,k)\rightarrow(0,0)}\frac{2k^4-hk^3}{(h^2 + k^2)^\frac{3}{2}} &=&\\\\
+				&\overset{k=h}{=}& \lim\limits_{h\rightarrow 0}\frac{2h^4-h^3}{(2h^2)^{\frac{3}{2}}} &=& \lim\limits_{h\rightarrow 0} \frac{h^3(2h-1)}{2\sqrt{2}h^3} &=& -\frac{1}{2\sqrt{2}}.
+			\end{matrix}
+		\end{equation*}
+		$f$ non è differenziabile perché $-\frac{1}{2\sqrt{2}} \neq 0$.
+		\paragraph{Intermezzo:} $f$ è derivabile, non continua e non differenziabile in $(0,0)$. Utilizzando il cammino $k = x^2$ allora il limite (\ref{eq:limite_differenziabilita}) sarebbe stato 0, ma non avremmo finito. Figura \ref{fig:diff_deriv_C}. $\qed$
+		$f$ è continua in $(0,0)$?
+		\begin{equation*}
+			\lim\limits_{(x,y)\rightarrow(0,0)}f(x,y)=(0,0).
+		\end{equation*}
+		\begin{equation*}
+			\begin{matrix}
+				\lim\limits_{(x,y)\rightarrow(0,0)} \frac{x^3 + 2y^4}{x^2 + y^2} &\overset{\text{rel. fond. trigon.}}{\underset{\text{coord polari}}{=}}&\lim\limits_{\rho \rightarrow 0^+}\frac{\rho^3 \cos^3 \theta + 2\rho^4\sin^4\theta}{\rho^2} &=&\\
+				&=& \lim\limits_{\rho\rightarrow0}\frac{\rho^{\cancel{3}} (\cos^3\theta+2\rho\sin^4\theta)}{\cancel{\rho^2}} &=&0
+			\end{matrix}
+		\end{equation*}
+		\begin{equation*}
+			|\rho(\cos^3\theta + 2\rho\sin^4\theta)| = \rho |\cos^3\theta + 2 \rho \sin^4\theta| \leq \rho\left(|\cos^3\theta| + 2\rho|\sin^4\theta|\right) = g(\rho) \underset{\rho \rightarrow 0} {\rightarrow}0
+		\end{equation*}
+	\end{enumerate}
+\end{example}
+
+\begin{example}
+	\footnote{Slide 5 PDF 17}
+	Sia
+	\begin{equation*}
+		f(x,y) = \sqrt{|xy|},\quad f\colon\mathbb{R}^2\rightarrow\mathbb{R}.
+	\end{equation*}
+	$f$ è continua e derivabile su tutto $\mathbb{R}^2$, ma non differenziabile in $(0,0)$.
+	$f$ è derivabile in $(0,0)$ in quanto
+	\begin{equation*}
+		\lim\limits_{h\rightarrow 0}\frac{f(0+h,0)-f(0,0)}{h} = \lim\limits_{h\rightarrow 0}\frac{f(h,0)-f(0,0)}{h} = \lim\limits_{h\rightarrow 0}\frac{\sqrt{|h\cdot 0|}- 0}{h} = 0,
+	\end{equation*}	
+	\begin{equation*}
+		\lim\limits_{h\rightarrow 0}\frac{f(0,0 + h)-f(0,0)}{h} = \lim\limits_{h\rightarrow 0}\frac{f(0, h)-f(0,0)}{h} = \lim\limits_{h\rightarrow 0}\frac{\sqrt{|h\cdot 0|}- 0}{h} = 0.
+	\end{equation*}
+	Quindi $\triangledown f(0,0)= (0,0)$. Per studiare la differenziabilià è necessario studiare il seguente limite per $\uline{h} = (h,k)\in\mathbb{R}^2$:
+	\begin{equation*}
+		\begin{matrix}
+			\lim\limits_{\underset{\uline h\rightarrow \uline 0}{(h,k)\rightarrow (0,0)}}\frac{f(0+ h, 0 + k) - f(0,0) - \frac{\partial f}{\partial x}(0,0)\, h - \frac{\partial f}{\partial y}(0,0)\, k}{\sqrt{h^2 + k^2}} &=& \lim\limits_{(h,k)\rightarrow (0,0)} \frac{\sqrt{|hk|} - 0 - 0\, h - 0\,k}{\sqrt{h^2 + k^2}}&=&\lim\limits_{(h, k)\rightarrow(0,0)}\frac{\sqrt{|hk|}}{\sqrt{h^2 + k^2}}&=&\\
+			&=&
+			\begin{cases}
+				h =\rho\cos\theta\\
+				k = \rho\sin\theta
+			\end{cases}
+			&=& \lim\limits_{\rho\rightarrow 0^+} \frac{\sqrt{|\rho^2 \cos\theta\sin\theta|}}{\rho} &=&\\
+			&&&=& \sqrt{(\cos\theta \sin\theta)}.
+		\end{matrix}
+	\end{equation*}
+	Il limite non è uniforme rispetto a $\theta$, quindi $f$ non è differenziabile in $(0,0)$. 
 \end{example}
 
 \begin{property}[Differenziabilità $\rightarrow$ continuità]\footnote{Slide 7 PDF 17.}
@@ -3102,10 +3245,10 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 \begin{proof}
 	Affinché $f$ risulti continua in $\uline x_0\in A$ è necessario che
 	\begin{equation*}
-		\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = f(\uline x_0).
+		\lim\limits_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = f(\uline x_0).
 	\end{equation*} 
 	\begin{equation*}
-		\left[\text{(oppure, con } \uline h = \uline x - \uline x_0)\quad\lim_{\uline x\rightarrow \uline x_0} f(\uline x) = f(\uline x_0)\right]
+		\left[\text{(oppure, con } \uline h = \uline x - \uline x_0)\quad\lim\limits_{\uline x\rightarrow \uline x_0} f(\uline x) = f(\uline x_0)\right]
 	\end{equation*}
 	Dato che $f$ è differenziabile in $\uline x_0$ allora è possibile scrivere
 	\begin{equation*}
@@ -3113,19 +3256,19 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	\end{equation*}
 	e dunque è valutato (il limite per un incremento nella direzione $\uline h$)
 	\begin{equation*}
-		\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = \lim_{\uline h\rightarrow\uline 0} \left[f(x_0) + <\triangledown f(\uline x_0),\, \uline  h> + o(||\uline h||)\right].
+		\lim\limits_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = \lim\limits_{\uline h\rightarrow\uline 0} \left[f(x_0) + <\triangledown f(\uline x_0),\, \uline  h> + o(||\uline h||)\right].
 	\end{equation*}
 	Sia (per la disuguaglianza di Cauchy-Schwarz (\ref{eq:disuguaglianza_cauchy_schwarz}))
 	\begin{equation*}
 		<\triangledown f(\uline x_0),\, \uline h>\leq |<\triangledown f(\uline x_0),\, \uline h>|\leq ||\triangledown f(x_0)||\,||\uline h||,
 	\end{equation*}
-	per il Teorema del Confronto \footnote{È noto che $\lim_{\uline h\rightarrow 0}o(||\uline h||)=0$, allora tramite l'algebra dei limiti è possibile dimostrare (\ref{eq:limite_f(x0)_uguale_f(x0)}).}
+	per il Teorema del Confronto \footnote{È noto che $\lim\limits_{\uline h\rightarrow 0}o(||\uline h||)=0$, allora tramite l'algebra dei limiti è possibile dimostrare (\ref{eq:limite_f(x0)_uguale_f(x0)}).}
 	\begin{equation*}
-		\lim_{\uline h\rightarrow\uline 0} <\triangledown f(\uline x_0),\, \uline h>=0,
+		\lim\limits_{\uline h\rightarrow\uline 0} <\triangledown f(\uline x_0),\, \uline h>=0,
 	\end{equation*}
 	quindi
 	\begin{equation}\label{eq:limite_f(x0)_uguale_f(x0)}
-			\lim_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = 	\lim_{\uline h\rightarrow \uline 0} f(\uline x_0) = f(\uline x_0).
+			\lim\limits_{\uline h\rightarrow \uline 0} f(\uline x_0 + \uline h) = 	\lim\limits_{\uline h\rightarrow \uline 0} f(\uline x_0) = f(\uline x_0).
 	\end{equation}
 \end{proof}
 
@@ -3135,7 +3278,7 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 \begin{proof}[Dimostrazione (caso $n=2$)]
 	Sia $f:A\subseteq \mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto. Dati $\uline h = (h,k)\in\mathbb{R}^2,\, \uline x=(x,y)\in A$, è necessario (stabilire se $f$ è differenziabile nel punto $(x,y)$, ovvero è necessario) verificare il seguente limite %\footnote{È necessario verificare che il limite per $\uline h\rightarrow\uline 0$ del rapporto incrementale di $f$ esiste ed è 0 e per farlo è scritto in modo opportuno parte del rapporto.}
 	\begin{equation}\label{eq:rapporto_differenziabilita_dim_differenziale}
-		\lim_{(h,k)\rightarrow(0,0)} \frac{f(x+h,y+k)-f(x,y)\overbrace{-f_x(x,y)h-f(x,y)k}^{-<\triangledown f(\uline x),\uline h>}}{\sqrt{h^2+y^2}} = 0.
+		\lim\limits_{(h,k)\rightarrow(0,0)} \frac{f(x+h,y+k)-f(x,y)\overbrace{-f_x(x,y)h-f(x,y)k}^{-<\triangledown f(\uline x),\uline h>}}{\sqrt{h^2+y^2}} = 0.
 	\end{equation}
 	È possibile riscrivere
 	\begin{equation}\label{eq:differenza_dim_th_differenziale}
@@ -3167,8 +3310,8 @@ Per le funzioni in una variabile, la differenziabilità e derivabilità sono la 
 	Se $(h,k)\rightarrow(0,0)$ allora $x_1\rightarrow x,\, y_1\rightarrow y$, dato che $x_1\in(x,x+h)$ e $y_1\in(y, y+k)$ e pertanto
 	\begin{equation*}
 		\begin{matrix}
-			\lim_{(h,k)\rightarrow(0,0)}f_x(x_1, y+k) &=& f_x(x,y)\\\\
-			\lim_{(h,k)\rightarrow(0,0)}f_y(x, y_1) &=& f_y(x,y)
+			\lim\limits_{(h,k)\rightarrow(0,0)}f_x(x_1, y+k) &=& f_x(x,y)\\\\
+			\lim\limits_{(h,k)\rightarrow(0,0)}f_y(x, y_1) &=& f_y(x,y)
 		\end{matrix}
 	\end{equation*}
 	quindi
@@ -3211,14 +3354,106 @@ Inoltre, è possibile applicare più e più volte il teorema del differenziale p
 	f\in C^k(A)\rightarrow f'\in C^{k-1}(A).
 \end{equation*}
 
+\begin{example}[Calcolo gradiente]
+	\footnote{Slide 13 PDF 17.}
+	\paragraph{Testo:} Data
+	\begin{equation*}
+		f(x,y) = \frac{\arctan(y)-\frac{\pi}{4}}{e^{\frac{1}{x}} - 1},
+	\end{equation*}
+	calcolare il gradiente $\triangledown f(x,y)$ in $(1,1)$.
+	\paragraph{Svolgimento:}
+	\begin{equation*}
+		\frac{\partial f}{\partial x}(x,y) = \left(\arctan y - \frac{\pi}{4}\right)\frac{-e^{\frac{1}{x}} \cdot (-\frac{1}{x^2})}{(e^{\frac{1}{x^2}} - 1)^2} =  \frac{\left(\arctan y - \frac{\pi}{4}\right)\, e^{\frac{1}{x}}}{x^2(e^{\frac{1}{x}}-1)^2},
+	\end{equation*}
+	\begin{equation*}
+		\frac{\partial f}{\partial y}(x,y) = \frac{1}{1 + y^2} \cdot \frac{1}{e^{\frac{1}{x}} - 1}.
+	\end{equation*}
+	Quindi,
+	\begin{equation*}
+		\begin{matrix}
+			\frac{\partial f}{\partial x}(1, 1) &=& \frac{\overset{\frac{\pi}{4}}{\arctan 1} \, e^{\frac{1}{1}}}{1\;(e-1)^2} &=& 0\\\\
+			\frac{\partial f}{\partial y}(1, 1) &=& \frac{1}{1+1} \frac{1}{e-1} &=& \frac{1}{2(e-1)} 
+		\end{matrix}
+	\end{equation*}
+	e
+	\begin{equation*}
+		\triangledown f(1,1) = \left(0, \frac{1}{2(e-1)} \right).
+	\end{equation*}
+\end{example}
 \begin{example}
-	SLIDE 13-14 PDF 17 ESEMPIO CALCOLO GRADIENTE IN UN PUNTO\\
-	SLIDE 14-19 PDF 17 ESEMPIO IMPORTANTE derivabilità, differenziabilità ed equazione piano tantegente di una funzione.
+	\footnote{Slide 15 PDF 17.}
+	\paragraph{Testo:} Sia
+	\begin{equation*}
+		f(x,y) = x^y = e^{\log{x^y}} = e^{y\log x},\quad f\colon A\subset\mathbb{R}^2\rightarrow\mathbb{R}, A=\{(x,y)\in\mathbb{R}^2,\, x>0\}
+	\end{equation*}
+	\begin{enumerate}
+		\item Calcolare le derivate parziali di $f$ in tutti i punti del semipiano (positivo) $x>0$, \footnote{Il semipiano positivo $x>0$ è l'insieme massimale nel quale $f$ ha senso.}
+		\item Provare che $f$ è differenziabile in tutto il semipiano $x>0$,
+		\item Scrivere l'equazione del piano tangente al grafico di $(x,y)$ in $(0,2)$,
+		\item Scrivere derivata direzionale $\frac{\partial f}{\partial \vec{v}}(2,2) = D_{\vec{v}} f(2,2)$, dove $\vec v = \left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right)$. \footnote{$\vec v$ è un versore, una direzione, quindi deve avere modulo uguale ad 1.}
+	\end{enumerate}
+	\paragraph{Svolgimento:}
+	\begin{enumerate}
+		\item
+		\begin{equation*}
+			\frac{\partial f}{\partial x} (x,y) = \underline{e^{y\log x}}_{a}\cdot y\,\frac{1}{x} = \underline{x^y}_{a} \cdot x^{y-1} 
+		\end{equation*}
+		\begin{equation*}
+			\frac{\partial f}{\partial y}(x,y) = e^{y\log x} \log x = x^y \log x.
+		\end{equation*}
+		$f_x(x,y)$ e $f_y(x,y)$ sono continue $\forall x>0$, dunque $f\in C^{-1}(A)$ e $f$ è differenziabile in $A$. 
+		\item svolto dal punto precedente: dato che le derivate $f_x(x,y)$ e $f_y(x,y)$ sono continue in $A$, ovvero $f\in C^1(A)$, e per il Teorema \ref{th:del_differenziale} del differenziale $f$ è differenziabile su tutto il semipiano.
+		\item
+		\begin{equation*}
+			f(e,2) = e^2,\quad \triangledown f(e,2) = (2e, e^2),
+		\end{equation*}
+		quindi
+		\begin{equation*}
+				\boldsymbol z = f(e,2) + \frac{\partial f}{\partial x} (e, 2)(x-e) + \frac{\partial f}{\partial y}(e,2)(y-2) = e^2 +2e(x-e) + e^2 (y-2) = \boldsymbol{2ex + e^2 y - 3e^2}
+		\end{equation*}
+		\paragraph{Intermezzo:} Vedere Proposizione \ref{prop:f_diff_continua}. Se una funzione è differenziabile allora esiste una formula esplicita che permette di calcolare la derivata direzionale. $\qed$.
+		\item
+		\begin{equation*}
+			D_{\vec v} f(\uline x) = \lim_{h\rightarrow 0}\frac{f(\uline x + h \uline v) - f(\uline x)}{h},\quad \uline x=(x,y),\, \uline{\vec v} = \left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right)
+		\end{equation*}
+		\begin{equation}\label{eq:esempio_derivata_direzionale_2,2}
+			\begin{matrix}
+				D_{\vec v} f(2,2) &=& \lim\limits_{h\rightarrow 0}\frac{f(2+hv_1 + 2+hv_2) - f(2,2)}{h} &=& \\
+				&=&\lim\limits_{h\rightarrow 0}\frac{f(2+h\frac{1}{2} + 2+h\frac{\sqrt3}{2}) - f(2,2)}{h} &=& \\
+				&=&\lim\limits_{h\rightarrow 0}\frac{\left(2+\frac{1}{2}h\right)^{2+\frac{\sqrt{3}}{2}h}-2^2}{h}
+			\end{matrix}
+		\end{equation}
+		\paragraph{Intermezzo:} Il limite può essere svolto provando se vale de l'Hôpital. Se il limite del rapporto delle derivate esiste allora il limite coincide con il limite precedente. $\qed$\\
+		Poiché $f$ è differenziabile in $\{x>0\}$ (\footnote{Esiste la derivata direzionale in ogni direzione e questa è data \ref{eq:esempio_derivata_direzionale}.})
+		\begin{equation}\label{eq:esempio_derivata_direzionale}
+			D_{\vec v}f(2,2) = <\triangledown f(2,2), \uline v>.
+		\end{equation}
+		Proviamo con il Teorema \ref{th:de_hopital} di De l'Hôpital il calcolo di (\ref{eq:esempio_derivata_direzionale_2,2}):
+		\begin{equation*}
+			\left(2+\frac{1}{2}h\right)^{2+\frac{\sqrt{3}}{2}h} = e^{\left(2+\frac{\sqrt{3}}{2}h\right)\log\left(2+\frac{1}{2}h\right)}
+		\end{equation*}
+		Valutiamo dunque se esiste il limite della derivata e del numeratore e del denominatore
+		\begin{equation}\label{eq:esempio_risultato_limite_hopital}
+			\begin{matrix}
+				\lim\limits_{h\rightarrow 0} \frac{\left(e^{\left(2+\frac{\sqrt{3}}{2}h\log\left(2+\frac{1}{2}h\right)\right)}\right)'}{h'} &=& \lim\limits_{h\rightarrow0}\frac{\overbrace{\left(2+\frac{1}{2}h\right)^{2+\frac{\sqrt{3}}{2}h}}^{2^2} \left[\frac{\sqrt{3}}{2}\log\left(2+\frac{1}{2}h\right) + \frac{1}{2}\left(2+\frac{\sqrt{3}}{2}h\right)\cdot\frac{1}{2+\frac{1}{2}h}\right]}{1}&=&\\
+				&=& 2^2\left(\frac{3}{2}\log(2)+\frac{1}{2}\right)&=&
+				 2\sqrt{3}\log2 + 2.
+			\end{matrix}
+		\end{equation}
+		Il limite esiste ed è finito, quindi è verificato il valore di (\ref{eq:esempio_derivata_direzionale}):
+		\begin{equation*}
+			\begin{matrix}
+				\triangledown f(2,2) &=& (4,4\log2) && && &&\\
+				D_{\vec{v}} f(2,2) &=& \frac{\partial f}{\partial x} (2,2) v_1 + \frac{\partial f}{\partial y}(2,2)v_2 &=& 4\cdot\frac{1}{2} + 4 \log 2 \cdot \frac{\sqrt{3}}{2} &=& 2 + 2\sqrt{3} \log 2 &\equiv& (\ref{eq:esempio_risultato_limite_hopital}).
+			\end{matrix}
+		\end{equation*}
+		\paragraph{Nota:} Se $f$ è differenziabile è possibile applicare il Teorema \ref{th:de_hopital}) di De l'Hôpital come sopra, altrimenti è necessario appplicare la definizione di derivata direzionale (strada più complessa).
+	\end{enumerate}
 \end{example}
 
 Altre conseguenze della differenziabilità sono le seguenti proprietà, presa in considerazione la Definizione \ref{def:funzione_differenziabile_alternativa}.
 
-\begin{proposition}\footnote{Slide 20 PDF 17.}
+\begin{proposition}\label{prop:f_diff_continua}\footnote{Slide 20 PDF 17.}
 	Sia $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, $A$ aperto e $\uline x_0\in A$. Se $f$ è differenziabile in $\uline x_0$ con differenziale $L$, \textbf{allora}
 	\begin{enumerate}
 		\item $f$ è continua in $\uline x_0$,
@@ -3249,8 +3484,30 @@ Altre conseguenze della differenziabilità sono le seguenti proprietà, presa in
 	\end{equation*}
 \end{enumerate}
 
-\begin{example}
-	ESEMPIO SLIDE 21 PDF 17 su continuità, derivabilità e differenziabilità in un punto.
+\begin{example}[Continuità, derivabilità e differenziabilità]
+	\footnote{Slide 21 PDF 17.} 
+	\paragraph{Testo:} Stabilire se
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\frac{x}{\log(x^2+y^2)}&\text{se } (x,y)\neq(0,0)\\
+			0 &\text{altrimenti}
+		\end{cases}
+	\end{equation*}
+	è continua, derivabile e/o differenziabile in $(0,0)$.
+	\paragraph{Suggerimento:} Se è differenziabile allora siamo a posto. Se non è continua non può essere differenziabile. $\qed$
+	\paragraph{Svolgimento:}
+	\begin{equation*}
+		\lim_{(x,y) \rightarrow(0,0)} \frac{x}{\log(x^2+y^2)} = \lim_{\rho\rightarrow0^+}\frac{\rho\cos\theta}{\log(\rho^2(\cos^2\theta+\sin^2\theta))}= \lim_{\rho\rightarrow 0^+} \frac{\rho\cos\theta}{\log(\rho^2)} = \left[\frac{0}{-\infty}\right] = 0
+	\end{equation*}
+	quindi $f$ è continua $\forall (x,y)\in\mathbb{R}^2$.
+	\begin{equation*}
+		\begin{matrix}
+			f_x(x,y) = \frac{\log(x^2+y^2)-\frac{x}{x^2+y^2}\cdot 2x}{\log^2(x^2+y^2)} &\rightarrow& \lim\limits_{(x,y)\rightarrow(0,0)}  \frac{1}{\log(x^2+y^2) - \frac{2x^2}{(x^2+y^2)}\cdot\log^2(x^2+y^2)} = 0\\
+			f_y(x,y)= -x\frac{\frac{1}{x^2+y^2}\cdot2y}{\log^2(x^2+y^2)} = -\frac{2xy}{\log^2(x^2+y^2)(x^2+y^2)} &\rightarrow& \lim\limits_{(x,y)\rightarrow(0,0)}-\frac{2xy}{(x^2+y^2)\log^2(x^2+y^2)} = \lim\limits_{\rho\rightarrow0}\frac{-2\cancel{\rho^2}\cos\theta\sin\theta}{\cancel{\rho^2}\log^2(\rho^2)} \overset{\footnotemark}{=} 0
+		\end{matrix}
+	\end{equation*}
+	\footnotetext{$\lim\limits_{\rho\rightarrow0}\frac{\cos\theta\sin\theta}{\log^2(\rho^2)}=0$.}
 \end{example}
 
 \begin{theorem}[Regola della catena]\footnote{Slide 3 PDF 18.}
@@ -3377,15 +3634,15 @@ Il prossimo teorema è chiesto.
 	\end{equation*}
 	Pertanto
 	\begin{equation*}
-			\lim_{h\rightarrow 0} \left|\frac{o(||\gamma(t+h)- \gamma(t)||)}{h}\right| = \lim_{h\rightarrow 0}\frac{|o(||\gamma(t+h)- \gamma(t)||)|}{|h|} = \lim_{h\rightarrow 0}\frac{|o(||\gamma(t+h)- \gamma(t)||)|}{||\gamma(t+h)- \gamma(t)||}\frac{||\gamma(t+h)- \gamma(t)||}{|h|} = 0.
+			\lim\limits_{h\rightarrow 0} \left|\frac{o(||\gamma(t+h)- \gamma(t)||)}{h}\right| = \lim\limits_{h\rightarrow 0}\frac{|o(||\gamma(t+h)- \gamma(t)||)|}{|h|} = \lim\limits_{h\rightarrow 0}\frac{|o(||\gamma(t+h)- \gamma(t)||)|}{||\gamma(t+h)- \gamma(t)||}\frac{||\gamma(t+h)- \gamma(t)||}{|h|} = 0.
 	\end{equation*}
 	Considerando
 	\begin{equation*}
-		\frac{||\gamma(t+h)-\gamma(t)||}{|h|} = \lim_{h\rightarrow 0}\sqrt{\sum_{i=1}^{n}\left(\frac{y_i(t+h)-y_i(t)}{h}\right)^2} =||y'(t)||
+		\frac{||\gamma(t+h)-\gamma(t)||}{|h|} = \lim\limits_{h\rightarrow 0}\sqrt{\sum_{i=1}^{n}\left(\frac{y_i(t+h)-y_i(t)}{h}\right)^2} =||y'(t)||
 	\end{equation*}
 	è una quantità finita, quindi
 	\begin{equation*}
-		\lim_{h\rightarrow 0}\frac{F(t+h)-F(t)}{h} = <\triangledown f(\gamma(t)), \gamma'(t)>.
+		\lim\limits_{h\rightarrow 0}\frac{F(t+h)-F(t)}{h} = <\triangledown f(\gamma(t)), \gamma'(t)>.
 	\end{equation*}
 \end{proof}
 
@@ -3617,7 +3874,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	
 	\noindent Per le ipotesi iniziali $\frac{\partial^2 f}{\partial x\partial y}(x,y)$ e $\frac{\partial^2 f}{\partial y\partial x}(x,y)$ sono continue nel punto $P_0$ e ciò significa che
 	\begin{equation*}
-		\lim_{(x,y)\rightarrow(x_0,y_0)}  \frac{\partial^2 f}{\partial x\partial y}(x,y) = \ \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) = \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =\lim_{(x,y)\rightarrow(x_0,y_0)}  \frac{\partial^2 f}{\partial y\partial x}(x,y).
+		\lim\limits_{(x,y)\rightarrow(x_0,y_0)}  \frac{\partial^2 f}{\partial x\partial y}(x,y) = \ \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) = \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =\lim\limits_{(x,y)\rightarrow(x_0,y_0)}  \frac{\partial^2 f}{\partial y\partial x}(x,y).
 	\end{equation*}
 	($f_{xy}$ è una funzione in $x_1,y_1$, $f_{yx}$ è una funzione in $x_2,y_2$ e voglio passare al limite per $(x,y)\rightarrow(x_0,y_0)$)\\
 	Dati $y_0<y_1,\, y_2 < y$ e $x_0<x_1,\, x_2 < x$,
@@ -3630,7 +3887,7 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\end{equation*}
 	Pertanto, calcolando il limite delle derivate miste (\ref{eq:derivate_miste_dim_schwarz}) per $(x_1,y_1) \rightarrow (x_0,y_0)$ e $(x_2,y_2)\rightarrow (x_0,y_0)$ è ottenuto che
 	\begin{equation*}
-		\lim_{(x_1,y_1) \rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1) = \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) =  \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =  \lim_{(x_2,y_2)\rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2),
+		\lim\limits_{(x_1,y_1) \rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial x\partial y}(x_1,y_1) = \frac{\partial^2 f}{\partial x\partial y}(x_0,y_0) =  \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) =  \lim\limits_{(x_2,y_2)\rightarrow (x_0,y_0)} \frac{\partial^2 f}{\partial y\partial x}(x_2,y_2),
 	\end{equation*}
 	verificando l'uguaglianza (\ref{eq:derivate_miste_dim_schwarz})	(ovvero: con quest'ultima uguaglianza ho ciò che serve, le derivate seconde miste sono uguali).
 \end{proof}
@@ -3673,9 +3930,52 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.65\textwidth]{Analisi2/figures/segmento.jpeg}
+	\begin{tikzpicture}[
+		x=1.15cm,
+		y=1.15cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Assi cartesiani
+		\draw[very thick,->] (-0.15,0) -- (7.00,0) node[right] {$X$};
+		\draw[very thick,->] (0,-0.15) -- (0,5.00) node[above] {$Y$};
+		
+		% Punti P_1=x e P_2=x+h
+		\coordinate (Pone) at (2.00,2.00);
+		\coordinate (Ptwo) at (4.00,4.00);
+		
+		% Proiezioni tratteggiate dei punti sugli assi
+		\draw[thick,dashed] (0,2.00) -- (Pone);
+		\draw[thick,dashed] (0,4.00) -- (Ptwo);
+		\draw[thick,dashed] (2.00,0) -- (Pone);
+		\draw[thick,dashed] (4.00,0) -- (Ptwo);
+		
+		% Segmento orientato da P_1 a P_2
+		\draw[very thick] (Pone) -- (Ptwo);
+		\fill (Pone) circle[radius=2.5pt];
+		\fill (Ptwo) circle[radius=2.5pt];
+		
+		% Etichette dei punti e del segmento
+		\node[anchor=north west] at (2.08,1.92) {$P_1=\mathbf{x}$};
+		\node[anchor=south west] at (4.08,4.02) {$P_2=\mathbf{x}+\mathbf{h}$};
+		\node[anchor=west] at (4.85,3.20) {segmento};
+		\draw[->,thick] (4.78,3.18) -- (3.25,3.18);
+		
+		% Vincolo sulla direzione
+		\node[align=left,anchor=west] at (5.20,2.05)
+		{$\mathbf{h}\in\mathbb{R}^2\setminus\{\mathbf{0}\}$\\
+			è una direzione};
+	\end{tikzpicture}
 	\caption{Rappresentazione nel piano cartesiano di un segmento (ovvero in $\mathbb{R}^2$).}\label{fig:segmento}
 \end{figure}
+
+
+%\begin{figure}[ht]
+	%\centering
+	%\includegraphics[width=0.65\textwidth]{Analisi2/figures/segmento.jpeg}
+	%\caption{Rappresentazione nel piano cartesiano di un segmento (ovvero in $\mathbb{R}^2$).}\label{fig:segmento}
+%\end{figure}
 
 In questa Capitolo saranno viste proprietà delle funzioni quando $f\in C^k(A)$ per qualche $k \in \mathbb{N}$ (noi vederemo per $k=1,2$).
 
@@ -4012,9 +4312,9 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 	\begin{matrix}
 		\uline x_0 \text{ estremo locale } &\Rightarrow& \triangledown f(\uline x_0)=0\\
 		&\cancel{\Leftarrow}&		
-	\end{matrix}\qed
+	\end{matrix}
 \end{equation*}
-
+$\qed$
 \paragraph{A cosa serve la differenziabilità nel Teorema di Fermat?}  Per la regola della catena e le proprietà che ne derivano. Se per una funzione di una variabile è richiesto che $f$ sia derivabile affinché sia continua, in più variabili è richiesta la differenziabilità. $\quad\qed$
 
 \begin{definition}[Punto stazionario (o critico)]\footnote{Slide 8 PDF 22.}
@@ -4031,15 +4331,15 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 
 \paragraph{Nota:} Il segno di $f(\uline x) - f(\uline x_0)$ determina se $\uline x_0$ è di minimo o di massimo relativo, ovvero: data Definizione \ref{def:minimo_massimo_locale_an2} di minimo e di massimo relativo, vale la seguente Osservazione.
 
-\begin{remark}[Non ufficiale]
+\begin{remark}[Non ufficiale]\label{rem:min_max_non_ufficiale}
 	Supposto $\uline x_0$ punto di minimo relativo per $f:A\subseteq\mathbb{R}^n\rightarrow\mathbb{R}$, allora
 	\begin{equation*}
 		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,\; r>0,
 	\end{equation*}
 	ovvero (il segno è sempre non negativo e l'immagine di $f$ è sempre maggiore uguale di $f(\uline x_0)$)
-	\begin{equation*}
+	\begin{equation}\label{eq:differenza_punto_sella}
 		f(\uline x) - f(\uline x_0) \geq 0\quad x\in B(\uline x_0,r)\cap A.
-	\end{equation*}
+	\end{equation}
 	Se $x_0$ è un punto di massimo relativo allora
 	\begin{equation*}
 		f(\uline x_0)\leq f(\uline x)\quad \forall\uline x\in B(\uline x_0,r)\cap A,\; r>0,
@@ -4051,9 +4351,113 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 	Se $x_0$ è un punto di colle allora il segno di $f(\uline x) - f(\uline x_0)$ cambia al variare di $\uline x$.
 \end{remark}
 
-\begin{example}\label{ex:riferimento_test_hessiana}
-	Esempi ricerca punti critici SLIDE 9-11 PDF 22.
+\begin{example}[Ricerca punti critici]\label{ex:riferimento_test_hessiana}
+	\footnote{SLIDE 9-11 PDF 22.} Ricercare i punti critici di
+	\begin{equation*}
+		f(x,y) = 2x^2 - 2xy + y^2, \quad f:\mathbb{R}^2\rightarrow\mathbb{R}.
+	\end{equation*}
+	L'unico punto critico di $f$ è l'origine.
+	\begin{equation*}
+		\frac{\partial f}{\partial x}(x, y) = 4x - 2y, \frac{\partial f}{\partial y}(x, y) = -2x + 2y. 
+	\end{equation*}
+	\begin{equation*}
+		\triangledown f(x,y) = (0,0) \rightarrow 
+		\begin{cases}
+			4x - 2y &= 0\\
+			-2x + 2y &= 0
+		\end{cases}\Rightarrow
+		\begin{cases}
+			x &= 0\\
+			y &= 0
+		\end{cases}
+	\end{equation*}
+	\paragraph{Osservazione:} $(0,0)$ è un punto critico. È utilizzata l'Osservazione \ref{rem:min_max_non_ufficiale}.$\qed$
+	\begin{equation*}
+		f(x,y) = x^2 + x^2 - 2xy + y^2 = x^2 + (x-y)^2,
+	\end{equation*}
+	quindi $f$ è una somma di due quadrati, quindi $f \, \geq 0$, dove è 0 sse $y = 0 = x$.
+	È possibile affermare che $f$ ha segno, ovvero
+	\begin{equation*}
+		f(x,y) > f(0,0) = 0 \quad \forall(x,y) \neq (0,0).
+	\end{equation*}
+	Quindi, l'origine è il punto di minimo (stretto o forte) globale per $f$.
 \end{example}
+
+\paragraph{Note sul seguente Esempio:} Il successivo è un esempio dove la funzione ha come punto critico l'origine, ma non è un punto di massimo o di minimo perché il segno della differenza (\ref{eq:differenza_punto_sella}) non è concorde nell'intorno sferico.
+
+\begin{example}
+	\footnote{Slide 10 PDF 22.}
+	Determinare i punti critici di
+	\begin{equation*}
+		f(x,y) = x^2 - y^2,\quad f:\mathbb{R}^2\rightarrow\mathbb{R}.
+	\end{equation*}
+	\begin{equation*}
+		\triangledown f(x,y) = (2x, 2y), \quad \triangledown f(x,y) = \uline{0} \iff (x,y)=(0,0).
+	\end{equation*}
+	$(0,0)$ è l'unico punto critico di $f$. Tuttavia tale punto non è ne di massimo ne di minimo locale.\\
+	Valutiamo
+	\begin{equation*}
+		f(x,y) - f(0,0)\quad \forall(x,y)\in B(\uline 0, r),\; r>0 \quad \text{(dove }B(\uline 0, r)\subset\mathbb{R}^2).
+	\end{equation*}
+	\paragraph{Itermezzo:} Ci sono punti nell'intorno di $(0,0)$ per cui il comportamento della funzione cambia, cambia il segno di $f(x,y) - f(x_0, y_0)$.\\
+	Nell'esempio sono considerati punti vicino a $(0,0)$ entro un intorno lungo gli assi seguendo direzioni comode per far si che $x\rightarrow 0$ da desta e sinistra. Per far si sono definiti i punti $P$ e $Q$ come segue. Vedere Figura \ref{fig:regione-circolare-sezioni}. $\qed$
+	
+	Valutiamo i punti $P(x,0)$: \footnote{Ciò significa sia \textcolor{green!65!black}{Qui} in a sinistra o a destra in Figura \ref{fig:regione-circolare-sezioni}, è necessario verificare se cambia qualcosa quando $y\rightarrow 0$.}
+	\begin{equation*}
+		f(x,0)=x^2 > 0\quad \forall x\neq 0.
+	\end{equation*}
+	\paragraph{Intermezzo:} Dato che $f(x,0)$ è sempre maggiore di 0 allora è considerata $f(x,y) - f(0,0)$ per i punti sull'asse $x$ appartenenti all'intorno $B(\uline 0, r)$.\\
+	Se ci muoviamo lungo l'asse $y$ allora è considerata $f$ nei punti $(0,y)$, ovvero quanto segue. $\qed$.
+	Considerando i punti $Q=(0,y)$:
+	\begin{equation*}
+		f(0,y) = -y^2 < 0\quad\forall y^2\neq 0.
+	\end{equation*}
+	Ciò signidica che il segno di $f(x,y) - f(0,0)$ cambia al variare di $(x,y)$ in $B(\uline 0, r)$ e quindi $(0,0)$ è il punto di sella.
+		\begin{figure}[ht]
+		\centering
+		\begin{tikzpicture}[
+			x=1.2cm,
+			y=1.2cm,
+			line cap=round,
+			line join=round,
+			>=Stealth
+			]
+			% Righe oblique interne alla circonferenza
+			\begin{scope}
+				\clip (0,0) circle (2);
+				\foreach \s in {-3.6,-3.1,-2.6,-2.1,-1.6,-1.1,-0.6,-0.1,0.4}
+				\draw[very thick] (\s,-2.7) -- ({\s+3.3},2.7);
+			\end{scope}
+			
+			% Circonferenza e frecce rosse rivolte verso il centro
+			\draw[very thick] (0,0) circle (2);
+			\draw[red,very thick,->] (-2.5,0.32) -- (-0.22,0.32);
+			\draw[red,very thick,->] ( 2.5,0.32) -- ( 0.22,0.32);
+			\node[red,font=\small, fill=white, inner sep=2pt] at (-1.35,0.62) {da sx};
+			\node[red,font=\small, fill=white, inner sep=2pt] at ( 1.35,0.62) {da dx};
+			
+			% Direzione radiale indicata in verde
+			\draw[green!65!black,very thick] (0,0) -- (-1.55,-1.25);
+			\node[green!65!black,font=\large] at (-1.95,-1.35) {Qui};
+			
+			% Assi cartesiani e origine
+			\draw[very thick,->] (-2.75,0) -- (2.85,0) node[right] {$x$};
+			\draw[very thick,->] (0,-2.65) -- (0,2.75) node[above] {$y$};
+			\node[anchor=east] at (-2.2,0.55) {$P$};
+			\node[anchor=west] at ( 2.2,0.55) {$P$};
+			\node[anchor=west] at (0.2,2.15) {$Q$};
+			\node[anchor=west] at (0.2,-2.15) {$Q$};
+			\node[below left=3pt] at (-2,0) {$-r$};
+			\node[below right=3pt] at (2,0) {$r$};
+			\fill (0,0) circle[radius=2.5pt];
+		\end{tikzpicture}
+		\caption{}
+		\label{fig:regione-circolare-sezioni}
+	\end{figure}
+\end{example}
+
+\paragraph{Come determinare se un punto stazionario è di minimo o di massimo?} Essere punto di stazionario è condizione necessaria affinché un punto sia di massimo o di minimo. Una volta accertato che un punto è stazionario è possibile utilizzare il test dell'Hessiana per stabirne la natura. Il test dell'Hessiana permette di studiare la natura dei punti critici tramite l'Hessiana (in particolare tramite il sui determinante).\\
+Quando è stato affrontato lo studio di funzione in Analisi 1 al fine di trovare massimi e minimi è stato fatto qualcosa di simile: è stato applicato il Teorema \ref{th:fermat_an1} di Fermat, ricercando i punti che annullano la derivata prima e studiata la derivata seconda (per le funzioni di classe $C^2$) in tali punti; se la derivata seconda nel punto è positiva il punto è di minimo, di massimo altrimenti. In Analisi 2 non c'è la derivata seconda, ma la matrice Hessiana (il differenziale secondo) della funzione. 
 
 \subsubsubsection{Test dell'Hessiana (in due variabili)}
 Per studiare i punti critici di una funzione sono studiati gli autovalori dell'Hessiana.
@@ -4213,18 +4617,226 @@ Il precedente Teorema può essere espresso come segue.
 
 \paragraph{Osservazione:} Il problema della ricerca dei massimi e dei minimi relativi di una funzione definita su un aperto (se considerata una funzione definita su un dominio è considerato $\mathring{D}=A$) è riconducibile al calcolo del segno degli autovalori della matrice Hessiana, dove $Hf(\uline x)$ è simmetrica perché è considerata $f\in C^1(A)$.
 
-\begin{example}
-	SLIDE 18-20 PDF 23 ESEMPI RICERCA DEI PUNTI CRITICI.\\
-	SLIDE 21-22 PDF 23 ESEMPI MINIMO/MASSIMO GLOBALE.
+\begin{example}[Ricerca dei punti critici con criterio dell'Hessiana]
+	 \footnote{SLIDE 18-20 PDF 23.}
+	\leavevmode\paragraph{Testo:} Classificare i punti della funzione \footnote{Classificare i punti di una funzione significa trovare i punti critici e stabire se sono di massimo, minimo o di della.}
+	\begin{equation*}
+		f(x,y) = 2x^3-6xy + 3y^2 \quad f:\mathbb{R}^2 \rightarrow\mathbb{R}.
+	\end{equation*}
+	\paragraph{Svolgimento:} Cercare i punti critici significa cercare la soluzione di $\triangledown f(x,y)=(0,0)$. Pertanto,
+	\begin{equation*}
+		\begin{matrix}
+			\frac{\partial f}{\partial x}(x,y)=0\\
+			\frac{\partial f}{\partial y}(x,y)=0
+		\end{matrix}\quad
+		\begin{cases}
+		6x^2 - 6y = 0\\
+		-6x + 6y = 0
+		\end{cases}\Rightarrow
+		\begin{cases}
+			x = y\\
+			6y^2 - 6 y \overset{y(y-1)}{=}  0 
+		\end{cases}\Rightarrow
+		\begin{cases}
+			x = y = 0\\
+			x = y = 1
+		\end{cases}
+	\end{equation*}
+	quindi i punti critici sono $(0,0)$ e $(1,1)$.
+	\footnote{È necessario classificare i punti critici trovati, quindi è necessario costruire la matrice Hessiana e calcolarne il determinante.}\\
+	Dato che
+	
+	\begin{equation*}
+		Hf(x,y) =
+		\begin{bmatrix}
+			12x & -6\\
+			-6 & 6
+		\end{bmatrix},
+	\end{equation*}
+	allora
+	\begin{equation*}
+		\begin{matrix}
+			Hf(0,0) &=& 
+			\begin{bmatrix}
+				0 & -6\\
+				-6 & 6
+			\end{bmatrix}&\Rightarrow&\det(Hf(0,0)) &=& -36 < 0 &\rightarrow& (0,0)\quad \text{punto di sella}\\
+			Hf(1,1) &=& 
+			\begin{bmatrix}
+				12 & -6\\
+				-6 & 6
+			\end{bmatrix}&\Rightarrow&\det(Hf(1,1)) &=& 72 - 36 < 0 &\underset{\footnotemark}{\rightarrow}& (1,1)\quad \text{punto di minimo locale}
+		\end{matrix}
+	\end{equation*}
+	\footnotetext{$(1,1)$ è un punto di minimo locale per il Test dell'Hessiana perché $a_{11}>0$. Con $a_{11}<0$ allora $(1,1)$ sarebbe stato massimo locale.}
 \end{example}
 
+\begin{example}[Ricerca punti critici con $\det(Hf(x_0, y_0))=0$]
+	\leavevmode\paragraph{Testo:} Cercare i punti critici (ovvero, quando $\triangledown f(x,y)=\uline 0$) di
+	\begin{equation*}
+		f(x,y)=x^3+(x-y)^2.
+	\end{equation*}
+	\paragraph{Svolgimento:}
+	\begin{equation*}
+		\begin{matrix}
+			\frac{\partial f}{\partial x}(x,y)=0\\
+			\frac{\partial f}{\partial y}(x,y)=0
+		\end{matrix}\quad
+		\begin{cases}
+			3x^2 - 2(x-y) = 0\\
+			-2(x-y) = 0
+		\end{cases}\rightarrow
+		\begin{cases}
+			x = y\\
+			3x^2 = 0
+		\end{cases}\rightarrow\quad (0,0)\text{ solo punto critico}
+	\end{equation*}
+	\begin{equation*}
+		\begin{matrix}
+			\begin{matrix}
+				f_{xy}(x,y)&=&6x+y\\
+				f_{yx}(x,y) &=& -2\\
+				f_{yy}(x,y) &=& 2
+			\end{matrix}&\Rightarrow&
+			Hf(x,y)=
+			\begin{bmatrix}
+				6x+2 & -2\\
+				-2 & 2
+			\end{bmatrix}&\Rightarrow&\\
+			&\Rightarrow&
+			\det(Hf(x,y)) = 2(6x+2)-4 &\rightarrow& \det(Hf(0,0))=0.
+		\end{matrix}
+	\end{equation*}
+	Considerando il segno di 
+	\begin{equation*}
+		\triangle f(x,y) = f(x,y) - \underbrace{f(0,0)}_{0}
+	\end{equation*}
+	in un intorno qualsiasi dell'origine, quindi, dato che $f(0,0)=0$,
+	\begin{equation}\label{eq:funzione_es_cambio_segno}
+		\triangle f(x,y) = f(x,y) = x^3 + (x-y)^3.
+	\end{equation}
+	Con $y=x$, allora
+	\begin{equation}\label{eq:es_cambio_segno}
+		\triangle f(x,y)=\triangle f(x,x) = x^3 \Rightarrow
+		\begin{cases}
+			> 0, & \text{se } x>0\\
+			< 0, & \text{se } x<0
+		\end{cases}\Rightarrow(0,0) \text{ punto di sella}
+	\end{equation}
+\end{example}
+\paragraph{Nota su (\ref{eq:funzione_es_cambio_segno}):} È possibile affermare che il segno di (\ref{eq:funzione_es_cambio_segno}) cambia nell'intorno dell'origine e che la funzione ha punto di minimo / massimo nell'origine. Questo perché data la \gls{traccia} $y=x$ nell'intorno di $(0,0)$, la funzione (\ref{eq:funzione_es_cambio_segno}) è ristretta su tale curva (ovvero (\ref{eq:es_cambio_segno})) ed il segno varia al variare di $x$. La variazione del segno (\ref{eq:funzione_es_cambio_segno}) in $(0,0)$ significa che $(0,0)$ è un punto di sella. Se il punto critico $(0,0)$ fosse stato di minimo o di massimo per la funzione allora lo sarebbe stato lungo una curva opportuna passante per il punto critico. Restringendo lungo una curva opportuna una funzione diventa ad un variabile ed è possibile facilitare lo studio del punto individuato (nel caso dell'ultimo esempio $x=0$).
+ 
+\begin{example}[Minimo globale]
+	\footnote{Slide 21-22 PDF 23}
+	\leavevmode\paragraph{Testo:} Data
+	\begin{equation*}
+		f(x,y) = (3y-2\arctan x)^{\frac{3}{4}},
+	\end{equation*}
+	calcolare $\frac{\partial f}{\partial y}(x,y)$ e determinare il valore del minimo globale di $f(x,y)$ dove $f$ è definita (ovvero nell'insieme massimale).
+	\paragraph{Svolgimento:}
+	\begin{equation*}
+		\frac{\partial f}{\partial y}(x,y)=\frac{3}{4}(3y-2(\arctan x))^{-\frac{1}{4}} \cdot 3= \frac{9}{4\sqrt[4]{3y-2(\arctan x)}}.
+	\end{equation*}
+	$f(x,y)\geq 0$ dove è definita, allora il minimo di $f$ è 0 e quindi è ricercato $\uline x$ dove $f(\uline x)=0$. 
+	Dunque i punti in cui la funzione si annulla sono i punti di minimo globale. Pertanto, i punti interessanto sono i punti $\{(x,y)\in D;\; 3y-2\arctan x = 0\}$, ovvero $y=\frac{2}{3}\arctan x$.
+\end{example}
 \subsubsection{Ottimizzazione vincolata}
 
 Fino ad adesso sono stati considerati punti di massimo e di minimo liberi, ovvero sono stati ricercati punti all'interno di un dominio. I punti di massimo e minimo vincolati sono dei punti che verificano ulteriori condizioni espresse tramite equazioni e disequazioni, oltre a quelle di appartenere ad un dominio. Dato che i vincoli devono essere minori del numero di variabili, se sono considerate funzioni di due variabili allora sarà espresso un solo vincolo.
 
 \begin{example}
-	SLIDE 22-23 PDF 23 ESEMPI MASSIMO MINIMO VINCOLATO.
+	\footnote{Slide 22-23 PDF 23}
+	\leavevmode\paragraph{Testo:} Sia $f(x,y)=(4-y^2)^{\frac{1}{\sqrt{2}}} + (y+x^2)^{\sqrt{2}}$. Calcolare le derivate parziali di $f$ e dire se è dotata di massimo e/o minimo globale. In caso affermativo determinare il valore minimo ed i punti in cui è assuto.
+	\paragraph{Svolgimento:}
+	La prima cosa da fare è capire qual è il sottoinsieme di $\mathbb{R}^2$ nel quale $f$ è definita, ovvero dove $4-y^2,\, y-x^2 \geq 0$.\\
+	\begin{equation*}
+		f:D\subset \mathbb{R}^2\rightarrow \mathbb{R},\quad D=\{(x,y)\in\mathbb{R}^2;\; \underbrace{4-y^2\geq 0}_{2\leq y\leq 2}, \underbrace{y-x^2\geq 0}_{y\geq x^2}\}.
+	\end{equation*}
+	$D$ è chiuso e limitato (compatto) e dunque, per il Teorema \ref{th:weierstrass_2} di Weierstrass, essendo $f$ continua, si ha che $f$ è ha minimo e massimo globali su $D$.
+	\paragraph{Intermezzo di osservazioni:} $f$ su $D$ è una somma di termini non negativi, ovvero
+	\begin{equation*}
+		f(x,y)\geq 0,\; \forall (x,y)\in D
+	\end{equation*}
+	quindi ha massimo e minimo globali. $\qed$\\
+	
+	I punti di $D$ in cui i due addendi di $f$ si annullano contemporaneamente definiscono i punti di minimo globale. Pertanto è necessario impostare il seguente sistema:
+	\begin{equation*}
+		\begin{cases}
+			4-y^2 &= 0\\
+			y - x^2 &= 0
+		\end{cases}\rightarrow
+		\begin{cases}
+			y &= 2\\
+			x &= \pm \sqrt{2}
+		\end{cases}
+	\end{equation*}
+	$A=(-\sqrt{2}, 2),\, B = (\sqrt{2}, 2)$ punti di massimo.
+	\begin{equation*}
+		\begin{matrix}
+			\frac{\partial f}{\partial x} (x,y) &=& \sqrt{2} (y-x^2)^{(\sqrt{2} -1)}(-2x)\\
+			&&\\
+			\frac{\partial f}{\partial x} (x,y) &=& \frac{1}{\sqrt{2}} (4-y^2)^{\left(\frac{1}{\sqrt{2}} - 1\right)} (-2y) +\sqrt{2} (y-x^2)^{(\sqrt{2}-1)}.
+		\end{matrix}
+	\end{equation*}
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[
+		x=1.2cm,
+		y=1.2cm,
+		line cap=round,
+		line join=round,
+		>=Stealth
+		]
+		% Regione compresa tra la parabola y=x^2 e la retta y=2
+		\path[
+		pattern={Lines[
+			angle=45,
+			distance=7pt,
+			line width=0.55pt
+			]},
+		pattern color=black
+		] (-1.4142,2)
+		plot[domain=-1.4142:1.4142,samples=100] (\x,{\x*\x})
+		-- cycle;
+		
+		% Proiezioni degli estremi sull'asse x
+		\draw[black,thick,dotted] (-1.4142,0) -- (-1.4142,2);
+		\draw[black,thick,dotted] ( 1.4142,0) -- ( 1.4142,2);
+		
+		% Frontiera del dominio
+		\draw[red,very thick] (-1.4142,2) -- (1.4142,2);
+		\draw[red,very thick,domain=-1.4142:1.4142,samples=100]
+		plot (\x,{\x*\x});
+		
+		% Assi cartesiani e tacche
+		\draw[very thick,->] (-1.9,0) -- (2.15,0) node[right] {$x$};
+		\draw[very thick,->] (0,-0.35) -- (0,2.55) node[above] {$y$};
+		\draw[thick] (-1.4142,-0.07) -- (-1.4142,0.07);
+		\draw[thick] ( 1.4142,-0.07) -- ( 1.4142,0.07);
+		\node[below=4pt] at (-1.4142,0) {$-\sqrt{2}$};
+		\node[below=4pt] at ( 1.4142,0) {$\sqrt{2}$};
+		\draw[thick] (-0.07,2) -- (0.07,2);
+		\node[fill=white,inner sep=1pt] at (0.15,2.13) {$2$};
+		
+		% Etichette
+		\node[above left=3pt] at (-1.4142,2) {$A$};
+		\node[above=3pt] at (1.4142,2) {$B$};
+		\node[anchor=west,fill=white,inner sep=1pt] at (1.5,1.72) {$y=x^2$};
+		\node[font=\Large\bfseries,fill=white,inner sep=2pt] at (0,1.25) {$D$};
+	\end{tikzpicture}
+	\caption{$D=\{(x,y):x^2\le y\le 2\}$. $-2\leq y\leq 0$ non è compreso perché è richiesto $y\geq x^2$}
+	\label{fig:dominio-parabola-retta}
+\end{figure}
+	$\qed$
 \end{example}
+\paragraph{Nota sul precedente esercizio:} La funzione dell'esempio ha gli estremi sul bordo. Quando è studiata una funzione continua su un compatto è necessario verificare cosa accade all'interno del coompatto e poi cosa accade sulla frontiera. Nell'esempio è evitato perché è osservato che $f(x,y)\geq 0$.
+
+\paragraph{Lista di cose da fare per determinare i punti di minimo/massimo assoluto per una funzione $\boldsymbol f$ continua su un compatto $\boldsymbol{K\subset\mathbb{R}^2}$:}
+\begin{enumerate}
+	\item \footnote{È necessario intuire la conformazione della funzione per capire se ci sono minimi / massimi visibili, oppure per determinare dei candidati punti critici  nel compatto. Se un massimo è assoluto allora è anche relativo.} Determinare i punti critici della funzione all'interno del compatto, ovvero: ricercare le soluzioni $\triangledown f(x,y) = 0$ in $\overset{\circ}{K}$;
+	\item \footnote{Ci sono candidati sulla frontiera del compatto? Se tali punti sono in un numero finito allora è calcolata la funzione in tali candidati ed in base al valore assunto da $f$, i punti saranno di minimo / massimo assoluto.} Determinare i punti critici in $\partial K$.
+	\item Se i tali punti sono in un numero dinito si calcola il valore che $f$ assume in ognuno di essi e poi, mediante confronto diretto, si determina il valore di massimo e minimo e quindi i punti che li determinano. Se ci sono dei punti in cui $f$ è differenziabile oppure in cui la forntira è regolare a tratti \footnote{Ci sono dei punti di singolarità nella regolarità, come negli spigoli.} è necessario controllare tutti questi punti e calcolare il valore di $f$ in tali punti.
+\end{enumerate}
 
 Potrebbe capitare che i punti della funzione da studiare debbano verificare un vincolo e che tale vincolo sia esprimibile attraverso coordinate parametriche, potendo così rincondurre il problema della ricerca del massimo/minimo a quello di una funzione di una variabile: se è possibile parametrizzare il vincolo, calcolando la funzione sul vincolo, la funzione diventa ad una variabile e risulta possibile utilizzare i metodi appresi ad Analisi 1 per stabilire la natura dei punti critici, invece di applicare il metodo dei moltiplicatori di Lagrange.
 
@@ -4263,8 +4875,62 @@ ovvero se il vincolo genera una traiettoria che risulta essere il sostegno di un
 \end{equation*}
 riducendo così il problema ad una variabile (un esempio di parametrizzazione è l'Esempio \ref{ex:parametrizzazione_funzione_vincolo}). Il problema ad una variabile è studiato come in Analisi 1.
 
-\begin{example}[Parametrizzazione di una funzione]\label{ex:parametrizzazione_funzione_vincolo}
-	SLIDE 25 PDF 23 PARAMETRIZZAZIONE $f$ SU VINCOLO $V$.\\
+\begin{example}[Parametrizzazione di una funzione su un vincolo]\label{ex:parametrizzazione_funzione_vincolo}
+	\footnote{SLIDE 25 PDF 23.}  Dato
+	\begin{equation*}
+		V = \{(x,y)\;;\; \overbrace{\underbrace{x^2+y^2}_{g(x,y)} = 1}^{circ(\uline 0, 1)}\} \subset \mathbb{R}^2
+	\end{equation*}
+	stabilire i punti che rispettano il vincolo (ovvero appartangono all'insieme di livello di $g$).\\
+	Parametrizzazione:
+	\begin{equation}\label{eq:esempio_parametrizzazione}
+		\begin{cases}
+			x = \cos(t)\\
+			y= \sin(t)
+		\end{cases}
+		\Rightarrow g_{|_V} = f(t)
+	\end{equation}
+	\paragraph{Osservazioni su $\boldsymbol{V}$}
+	 \begin{itemize}
+	 	\item $g$ è parametrizzavile utilizzando $\sin$ e $\cos$ così da esprime il vincolo tramite le equaioni parametriche in modo esplicito e quindi la funzione ristretta al vincolo diventa una funzoine della sola variabile con cui è parametrizzato il vincolo (semplificando il problema, ovvero come fatto con $g_{|_V} = f(t)$);
+	 	\item se l'equazione che definisce il vincolo ($g(x,y)=k$) permette di esplicitare una variabile in funzione dell'altra ($y=y(x)$, come in \ref{eq:esempio_parametrizzazione}) tale che $g(x, y(x))=k$ allora il problema si riduce (da due variabili ad una) ed è possibile applicare i metodi studiati ad Analisi 1 per le funzioni ad una variabile.
+	 \end{itemize}
+	 
+	 \begin{figure}[ht]
+	 	\centering
+	 	\begin{tikzpicture}[
+	 		x=2.4cm,
+	 		y=2.4cm,
+	 		line cap=round,
+	 		line join=round,
+	 		>=Stealth
+	 		]
+	 		% Circonferenza unitaria
+	 		\draw[black,very thick] (0,0) circle (1);
+	 		
+	 		% Assi cartesiani
+	 		\draw[black,very thick,->] (-1.45,0) -- (1.45,0) node[right] {$x$};
+	 		\draw[black,very thick,->] (0,-1.45) -- (0,1.50) node[above] {$y$};
+	 		\draw[thick] (-1,-0.035) -- (-1,0.035);
+	 		\draw[thick] (1,-0.035) -- (1,0.035);
+	 		\node[below left=3pt] at (-1,0) {$-1$};
+	 		\node[below right=3pt] at (1,0) {$1$};
+	 		\draw[thick] (-0.035,-1) -- (0.035,-1);
+	 		\draw[thick] (-0.035,1) -- (0.035,1);
+	 		\node[above left=3pt] at (0,1) {$1$};
+	 		\node[below left=3pt] at (0,-1) {$-1$};
+	 		\node[below left=2pt] at (0,0) {$0$};
+	 		
+	 		% Vincolo
+	 		\node[font=\large,anchor=west] at (0.18,1.25) {$x^2+y^2=1$};
+	 	\end{tikzpicture}
+	 	\caption{Vincolo circolare unitario.}
+	 \end{figure}
+\end{example}
+\begin{example}[Esplicitazione di una variabile in funzione di un'altra]
+	\footnote{SLIDE 25 PDF 23.}  
+	\begin{equation*}
+		V=\{(x,y)\in\mathbb{R}^2,\, 2x+3y=4\} = \left\{(x,y)\in\mathbb{R}^2,\, y=\frac{4-2x}{3}\right\}
+	\end{equation*}
 \end{example}
 
 Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio: se $y=y(x)$ allora è possibile scrivere $f_{|_V}(x,y) = f(x, y(x))$, la quale è una funzione di una variabile.
@@ -4282,9 +4948,72 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 
 \paragraph{Esempio del punto 3.:} Vedere Esempio \ref{ex:ottimizzazione_vincolata} ed Esempio \ref{ex:ottimizzazione_vincolata_1}.
 
-\begin{example}[Esplicitazione di una variabile in funzione di un'altra]\label{ex:esplicitazione_variabile_funzione_altra}
-	SLIDE 25-27 PDF 23 DETERMINARE ESTREMI VINCOLATI $f$.
-\end{example}
+\begin{example}[Determinazione estremi vincolati]
+	\footnote{SLIDE 25-27 PDF 23}
+	Determinare gli estremi di $f(x,y)=3x+4y+1$ vincolati all'ellisse di equazione $g(x,y)=\left(\frac{x}{2}\right)^2 + \left(\frac{y}{3}\right)^2 -1 = 0$.
+	È possibile esprimere il vincolo come
+	\begin{equation*}
+		V=\left\{(x,y)\in\mathbb{R}^2\;;\; \left(\frac{x}{2}\right)^2 + \left(\frac{y}{3}\right)^2 -1 = 0\right\}
+	\end{equation*}
+	Dato che $V$ è un compatto (chiuso e limitato), è applicabile il Teorema \ref{th:weierstrass_2} di Weierstrass (quindi esistono minimo e massimo assoluti per $f$ su $V$).
+	\paragraph{Intermezzo:} È conveniente parametrizzare il vincolo con le coordinate ellittiche, cioè utilizzare la relazione fondamentale della trigonometria $\sin^2\theta + \cos^2\theta = 1$ trasformando il vincolo in $4\cos^2 t + 9\sin^2 t = 1$, ovvero in (\ref{eq:esempio_parametrizzazione_vincolo}). $\qed$
+	\begin{equation}\label{eq:esempio_parametrizzazione_vincolo}
+		\gamma:\begin{cases}
+			x = 2\cos t\\
+			y = 3\sin t
+		\end{cases}\quad t\in[0,2\pi]\subset\mathbb{R},
+	\end{equation}
+	dove il sostegno di $\gamma$ è
+	\begin{equation}\label{eq:esempio_sostegno_vincolo}
+		\underbrace{\gamma([0,2\pi])}_{V}\subset\mathbb{R}^2
+	\end{equation}
+	\paragraph{Osservazione su (\ref{eq:esempio_parametrizzazione_vincolo}):} $\gamma$ è l'equazione parametrica di una curva il cui sostegno da la traiettoria indicata. Il sostegno di $\gamma$ è (\ref{eq:esempio_sostegno_vincolo}), una traiettoria nel piano, $V$, ovvero un sottoiensieme di punti di $\mathbb{R}^2$.$\qed$
+	È considerata $f$ sul vincolo, ovvero $f$ lungo la curva $\gamma(t)$,
+	\begin{equation*}
+		f_{|_V} = f(\gamma(t)) = 3\cdot 2\cos t + 4\cdot 3\sin t +1 = 6\cos t + 12 \sin t +1 = f(t).
+	\end{equation*}
+	\footnote{Dato che $f$ è ad una variabile, per cercare minimo e massimo è calcolata la derivata e ricercato dove questa si annulla.}
+	\begin{equation*}
+		f'(t) = -6\sin t + 12 \cos t\quad f'(t)=0 \iff 6(2\cos t- \sin t) = 0,
+	\end{equation*}
+	ovvero 
+	\begin{equation*}
+		f'(t)=0 \iff \underbrace{2\cos t}_{x} - \underbrace{\sin t}_{\frac{y}{3}} = 0.
+	\end{equation*}
+	Nei punti critici è ottenuto
+	\begin{equation*}
+		x - \frac{y}{3} = 0,
+	\end{equation*}
+	ovvero
+	\begin{equation}\label{eq:esempio_parametrizzazione_vincolo1}
+		x = \frac{1}{3} y.
+	\end{equation}
+	\paragraph{Intermezzo:} È necessario trovare i punti dell'ellisse per cui vale $x=\frac{1}{3} y$, ovvero quanto segue. $\qed$
+	Poiché il vincolo è espresso tramite l'ellisse $\left(\frac{x}{2}\right)^2 + \left(\frac{y}{3}\right)^2 = 1$, si ha (unendo $g(x,y)$ e \ref{eq:esempio_parametrizzazione_vincolo1})
+	\begin{equation*}
+		\begin{matrix}
+			\frac{1}{4}\left(\frac{1}{3}y\right)^2 + \frac{y^2}{9} = 1 \rightarrow \frac{y^2}{36} + \frac{y^2}{9} = 1 \rightarrow y^2 = \frac{36}{5} \rightarrow y = \frac{\pm 6}{\sqrt{5}}
+		\end{matrix}
+	\end{equation*}
+	ed essendo $x=\frac{1}{3}y$ troviamo i punti (candidati)
+	\begin{equation*}
+		P_1 = \begin{cases}
+			x=\frac{2\sqrt{5}}{5}\\
+			y=\frac{6\sqrt{5}}{5}
+		\end{cases}
+	\end{equation*}
+	e
+	\begin{equation*}
+		P_2 = \begin{cases}
+			x=\frac{2\sqrt{5}}{5}\\
+			y=\frac{6\sqrt{5}}{5}
+		\end{cases}
+	\end{equation*}
+	$f(P_1) = -6 \sqrt{5} +1$ valore minimo, quindi $P_1$ è il punto di minimo vincolato.\\
+	$f(P_2) = 6 \sqrt{5} +1$ valore massimo, quindi $P_2$ è il punto di massimo vincolato.
+	\end{example}
+	
+\paragraph{Note sull'Esempio} $P_1$ e $P_2$ sono punti candidati vincolati trovati parametrizzando il vincolo. È noto che esitono perché vale il Teorema \ref{th:weierstrass_2} di Weierstrass. Dopo che sono stati trovati i candidati allora è calcolata $f$ in tali punti e tramite il confronto diretto è trovato il massimo ed il minimo dove l'immagine con il valore più grande sarà il punto di massimo, il contrario il minimo.
 
 \begin{example}[Ricerca massimi e minimi vincolati]\label{ex:ottimizzazione_vincolata}\footnote{Adobe Scan 13 lug 2024.}
 	\paragraph{Testo:} Determinare, se esistono i punti di minimo e massimo vincolato associati alla funzione
