@@ -801,7 +801,64 @@ Anche per gli integrali multipli su domini semplici vale l'additività rispetto 
 	\end{equation*}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice.jpeg}
+		%\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice.jpeg}
+		\begin{tikzpicture}[
+			x=0.7206cm,
+			y=0.7206cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-1.002} \def\xmax{9.988}
+			\def\ymin{-2.489} \def\ymax{6.193}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-3,...,20}
+			\draw[black!8,line width=0.3pt] (0.5*\k,\ymin) -- (0.5*\k,\ymax);
+			\foreach \k in {-5,...,13}
+			\draw[black!8,line width=0.3pt] (\xmin,0.5*\k) -- (\xmax,0.5*\k);
+			\foreach \k in {-1,...,4}
+			\draw[black!22,line width=0.4pt] (2.5*\k,\ymin) -- (2.5*\k,\ymax);
+			\foreach \k in {-1,...,3}
+			\draw[black!22,line width=0.4pt] (\xmin,2.5*\k) -- (\xmax,2.5*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-3,...,20}
+			\draw[line width=0.4pt] (0.5*\k,-0.9pt) -- (0.5*\k,0.9pt);
+			\foreach \k in {-5,...,13}
+			\draw[line width=0.4pt] (-0.9pt,0.5*\k) -- (0.9pt,0.5*\k);
+			\foreach \k in {-1,...,4}
+			\draw[line width=0.5pt] (2.5*\k,-1.6pt) -- (2.5*\k,1.6pt);
+			\foreach \k in {-1,...,3}
+			\draw[line width=0.5pt] (-1.6pt,2.5*\k) -- (1.6pt,2.5*\k);
+
+			% Dominio y-semplice: x^2 <= ... tra y=-x (sotto) e y=x^2 (sopra), 0<=x<=2
+			\definecolor{ggbordo}{RGB}{170,40,50}
+			\fill[fill=ggblu,fill opacity=0.85] (0,0) -- plot[domain=0:2,samples=40,smooth] (\x,{\x*\x}) -- (2,-2) -- cycle;
+			\draw[ggbordo,line width=0.6pt] plot[domain=-1.2:2.6,samples=80,smooth] (\x,{\x*\x});
+			\draw[ggbordo,line width=0.6pt] (-1.2,1.2) -- (3,-3);
+			\draw[ggbordo!85!black,line width=0.9pt] (\xmin,0) -- (\xmax,0);
+			% Etichette
+			\node[inner sep=0pt,font=\sffamily\large] at (1.01,1.89) {$y=x^2$};
+			\node[inner sep=0pt,font=\sffamily\large] at (0.95,-0.81) {$y=-x$};
+			\node[inner sep=0pt,font=\sffamily\large] at (2.95,1.51) {$E_1$};
+			\node[inner sep=0pt,font=\sffamily\large] at (2.88,-1.02) {$E_2$};
+
+			% Etichette degli assi
+			\foreach \xx in {2.5,5,7.5,10}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {-2.5,2.5,5}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.4,-0.3) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (3.55,-0.67) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.85,2.77) {$y$};
+		\end{tikzpicture}
 		\caption{$E = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 2,\, -x\leq y\leq x^2\}$.}
 		\label{fig:esempio_dominio_y_semplice}
 	\end{figure}
@@ -822,7 +879,55 @@ Il prossimo è un esempio di come la trasformazione di un dominio da $y$-semplic
 	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice_1.jpeg}
+		%\includegraphics[width=0.45\textwidth]{Analisi2/figures/esempio_dominio_y_semplice_1.jpeg}
+		\begin{tikzpicture}[
+			x=3.1642cm,
+			y=3.1642cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-0.752} \def\xmax{1.752}
+			\def\ymin{-0.22} \def\ymax{1.34}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-16,...,36}
+			\draw[black!8,line width=0.3pt] (0.05*\k,\ymin) -- (0.05*\k,\ymax);
+			\foreach \k in {-5,...,27}
+			\draw[black!8,line width=0.3pt] (\xmin,0.05*\k) -- (\xmax,0.05*\k);
+			\foreach \k in {-4,...,8}
+			\draw[black!22,line width=0.4pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+			\foreach \k in {-1,...,6}
+			\draw[black!22,line width=0.4pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-16,...,36}
+			\draw[line width=0.4pt] (0.05*\k,-0.9pt) -- (0.05*\k,0.9pt);
+			\foreach \k in {-5,...,27}
+			\draw[line width=0.4pt] (-0.9pt,0.05*\k) -- (0.9pt,0.05*\k);
+			\foreach \k in {-4,...,8}
+			\draw[line width=0.5pt] (0.25*\k,-1.6pt) -- (0.25*\k,1.6pt);
+			\foreach \k in {-1,...,6}
+			\draw[line width=0.5pt] (-1.6pt,0.25*\k) -- (1.6pt,0.25*\k);
+
+			% Dominio triangolare 0<=x<=y<=1
+			\filldraw[fill=ggblu,fill opacity=0.85,draw=ggblu!50!black,line width=0.4pt] (0,0) -- (0,1) -- (1,1) -- cycle;
+
+			% Etichette degli assi
+			\foreach \xx in {-0.5,-0.25,0.25,0.5,0.75,1,1.25,1.5}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {0.25,0.5,0.75,1,1.25}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.05,-0.04) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (0.94,0.077) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.09,0.9) {$y$};
+		\end{tikzpicture}
 		\caption{$D = \{(x,y)\in\mathbb{R}^2\,;\, 0\leq x\leq 1,\, x\leq y\leq 1\}$.}
 		\label{fig:esempio_dominio_y_semplice_1}
 	\end{figure}
@@ -1051,7 +1156,57 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.4\textwidth]{Analisi2/figures/rappresentazione_grafica_coordinate.jpeg}
+	%\includegraphics[width=0.4\textwidth]{Analisi2/figures/rappresentazione_grafica_coordinate.jpeg}
+	\begin{tikzpicture}[
+		x=1.872cm,
+		y=1.872cm,
+		line cap=round,
+		line join=round,
+		>={Stealth[length=4pt,width=3.5pt]},
+		font=\small
+		]
+		% Raggi e angoli del settore: rho, rho+d(rho), theta, theta+d(theta)
+		\def\ra{1.61}
+		\def\rb{2.46}
+		\def\ta{27.7}
+		\def\tb{56.5}
+
+		% Settore circolare in grigio
+		\fill[black!18] (\ta:\ra) arc[start angle=\ta,end angle=\tb,radius=\ra]
+		-- (\tb:\rb) arc[start angle=\tb,end angle=\ta,radius=\rb] -- cycle;
+
+		% Semirette e archi sottili che prolungano il bordo
+		\draw[line width=0.5pt] (0,0) -- (\ta:2.70);
+		\draw[line width=0.5pt] (0,0) -- (\tb:2.66);
+		\draw[line width=0.5pt] (70.8:\ra) arc[start angle=70.8,end angle=\tb,radius=\ra];
+		\draw[line width=0.5pt] (72.4:\rb) arc[start angle=72.4,end angle=\tb,radius=\rb];
+
+		% Archi tratteggiati verso l'asse x
+		\draw[dashed,line width=0.5pt] (\ta:\ra) arc[start angle=\ta,end angle=0,radius=\ra];
+		\draw[dashed,line width=0.5pt] (\ta:\rb) arc[start angle=\ta,end angle=0,radius=\rb];
+
+		% Bordo spesso del settore
+		\draw[line width=1pt] (\ta:\ra) arc[start angle=\ta,end angle=\tb,radius=\ra];
+		\draw[line width=1pt] (\ta:\rb) arc[start angle=\ta,end angle=\tb,radius=\rb];
+		\draw[line width=1pt] (\ta:\ra) -- (\ta:\rb);
+		\draw[line width=1pt] (\tb:\ra) -- (\tb:\rb);
+
+		% Assi
+		\draw[->,black!65,line width=0.9pt] (0,0) -- (3.476,0);
+		\draw[->,black!65,line width=0.9pt] (0,0) -- (0,2.715);
+
+		% Archi degli angoli theta e theta+d(theta)
+		\draw[->,line width=0.5pt] (0.56,0) arc[start angle=0,end angle=\ta,radius=0.56];
+		\draw[->,line width=0.5pt] (0.965,0) arc[start angle=0,end angle=\tb,radius=0.965];
+
+		% Etichette
+		\node at (-0.125,2.46) {$y$};
+		\node at (3.35,-0.13) {$x$};
+		\node at (1.64,-0.13) {$\boldsymbol{\rho}$};
+		\node at (2.56,-0.13) {$\boldsymbol{\rho}+\mathrm{d}\boldsymbol{\rho}$};
+		\node at (0.67,0.117) {$\theta$};
+		\node at (0.95,0.74) {$\theta+\mathrm{d}\theta$};
+	\end{tikzpicture}
 	\caption{L'area della regione ombreggiata è circa $\rho d\rho\, d\theta$.}
 	\label{fig:rappresentazione_grafica_coordinate}
 \end{figure}
@@ -1319,7 +1474,55 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 	\end{equation*}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.45\textwidth]{Analisi2/figures/x_plus_y_equal_5.png}
+		%\includegraphics[width=0.45\textwidth]{Analisi2/figures/x_plus_y_equal_5.png}
+		\begin{tikzpicture}[
+			x=0.7910cm,
+			y=0.7910cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-5} \def\xmax{5.012}
+			\def\ymin{-3.126} \def\ymax{3.114}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-21,...,21}
+			\draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+			\foreach \k in {-13,...,13}
+			\draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+			\foreach \k in {-6,...,6}
+			\draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+			\foreach \k in {-4,...,4}
+			\draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-21,...,21}
+			\draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+			\foreach \k in {-13,...,13}
+			\draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+			\foreach \k in {-6,...,6}
+			\draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+			\foreach \k in {-4,...,4}
+			\draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+			% Disco x^2+y^2 <= 5
+			\filldraw[fill=ggblu,fill opacity=0.85,draw=black,line width=0.4pt] (0,0) circle ({sqrt(5)});
+
+			% Etichette degli assi
+			\foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {-3,-2,-1,1,2,3}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.2,-0.16) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.309) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.349) {$y$};
+		\end{tikzpicture}
 		\caption{$D = \{(x,y)\in\mathbb{R}^2\,;\, x^2+y^2\leq 5\}$.}
 		\label{fig:x_plus_y_equal_5}
 	\end{figure}
@@ -1618,7 +1821,57 @@ Per trattare la trasformazione da coordinate cartesiane in polari è necessario 
 	
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.5\linewidth]{Analisi2/figures/dominio_integrale_semicerchio.png}
+			%\includegraphics[width=0.5\linewidth]{Analisi2/figures/dominio_integrale_semicerchio.png}
+			\begin{tikzpicture}[
+				x=0.8779cm,
+				y=0.8779cm,
+				line cap=round,
+				line join=round,
+				>={Stealth[length=4pt,width=3.5pt]},
+				font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+				]
+				\definecolor{ggrosso}{RGB}{255,52,16}
+				\definecolor{ggblu}{RGB}{19,64,255}
+				\def\xmin{-5} \def\xmax{5.012}
+				\def\ymin{-3.126} \def\ymax{3.114}
+				\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+				% Griglia secondaria e principale
+				\foreach \k in {-21,...,21}
+				\draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+				\foreach \k in {-13,...,13}
+				\draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+				\foreach \k in {-6,...,6}
+				\draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+				\foreach \k in {-4,...,4}
+				\draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+				% Assi cartesiani con tacche
+				\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+				\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+				\foreach \k in {-21,...,21}
+				\draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+				\foreach \k in {-13,...,13}
+				\draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+				\foreach \k in {-6,...,6}
+				\draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+				\foreach \k in {-4,...,4}
+				\draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+				% Semicorona x>=0, 1<=x^2+y^2<=4 e retta y=x
+				\path[fill=ggblu,fill opacity=0.85]
+				(0,2) arc[start angle=90,end angle=-90,radius=2] -- (0,-1) arc[start angle=-90,end angle=90,radius=1] -- cycle;
+				\draw[black,line width=0.4pt] (-4,-4) -- (4,4);
+
+				% Etichette degli assi
+				\foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+				\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+				\foreach \yy in {-3,-2,-1,1,2,3}
+				\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+				\node[inner sep=0pt] at (-0.2,-0.16) {0};
+				\node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.309) {$x$};
+				\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.349) {$y$};
+			\end{tikzpicture}
 			\caption{$E=\{(x,y)\in\mathbb R^2\,;\, 1\leq x^2+y^2\leq 4,\, x\geq 0\}$.}
 			\label{fig:dominio_integrale_semicerchio}
 		\end{figure}

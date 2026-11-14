@@ -471,7 +471,51 @@ Sulla circonferenza goniometrica sono definite le funzioni seno, coseno e tangen
 \subsubsection{Funzioni goniometriche}
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/sincosx.png}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/sincosx.png}
+    \begin{tikzpicture}[
+        x=0.4258cm,
+        y=2.6919cm,
+        line cap=round,
+        line join=round,
+        >=Stealth,
+        font=\sffamily\scriptsize
+        ]
+        \definecolor{matblu}{RGB}{0,114,189}
+        \definecolor{matarn}{RGB}{217,83,25}
+
+        % Griglia chiara (verticale ogni 2, orizzontale ogni 0.2)
+        \foreach \xx in {-8,-6,...,8}
+        \draw[black!15,line width=0.35pt] (\xx,-1) -- (\xx,1);
+        \foreach \k in {-5,...,5}
+        \draw[black!15,line width=0.35pt] (-8,{0.2*\k}) -- (8,{0.2*\k});
+
+        % Grafici di sin(x) e cos(x) su [-2pi,2pi]
+        \draw[matblu,line width=0.6pt,domain=-6.2832:6.2832,samples=200,smooth]
+        plot (\x,{sin(\x r)});
+        \draw[matarn,line width=0.6pt,domain=-6.2832:6.2832,samples=200,smooth]
+        plot (\x,{cos(\x r)});
+
+        % Assi con tacche
+        \draw[black,line width=0.45pt] (-8,0) -- (8,0);
+        \draw[black,line width=0.45pt] (0,-1) -- (0,1);
+        \foreach \xx in {-8,-6,...,8}
+        \draw[black,line width=0.45pt] (\xx,0) -- ([yshift=2.5pt]\xx,0);
+        \foreach \k in {-5,...,5}
+        \draw[black,line width=0.45pt] (0,{0.2*\k}) -- ([xshift=2.5pt]0,{0.2*\k});
+
+        % Etichette degli assi
+        \foreach \xx in {-6,-4,-2,2,4,6}
+        \node[below=1.5pt,inner sep=1pt,black!80] at (\xx,0) {\xx};
+        \foreach \yy in {-0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8}
+        \node[left=0.5pt,inner sep=1pt,black!80] at (0,\yy) {\yy};
+
+        % Legenda
+        \draw[fill=white,line width=0.4pt] (4.84,0.7347) rectangle (7.69,0.9376);
+        \draw[matblu,line width=0.6pt] (4.91,0.880) -- (6.40,0.880);
+        \draw[matarn,line width=0.6pt] (4.91,0.782) -- (6.40,0.782);
+        \node[anchor=west,inner sep=0pt,font=\sffamily\tiny] at (6.58,0.880) {sinx};
+        \node[anchor=west,inner sep=0pt,font=\sffamily\tiny] at (6.58,0.782) {cosx};
+    \end{tikzpicture}
     \caption{Grafico delle funzioni $\sin x$ e $\cos x$.}
     \label{fig:sincosx}
 \end{figure}
@@ -555,7 +599,63 @@ La funzione tangente è definita come
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/TrigFunctionDiagram.jpeg}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/TrigFunctionDiagram.jpeg}
+    \begin{tikzpicture}[
+        x=2.382cm,
+        y=2.382cm,
+        line cap=round,
+        line join=round,
+        >=Stealth,
+        font=\small
+        ]
+        % Angolo x in gradi e punti notevoli
+        \def\ang{60}
+        \pgfmathsetmacro{\vcos}{cos(\ang)}
+        \pgfmathsetmacro{\vsin}{sin(\ang)}
+        \pgfmathsetmacro{\vtan}{tan(\ang)}
+        \pgfmathsetmacro{\vcot}{1/tan(\ang)}
+
+        % Assi u e v
+        \draw[->,line width=0.45pt] (-1.157,0) -- (2.492,0);
+        \draw[->,line width=0.45pt] (0,-1.163) -- (0,1.730);
+
+        % Circonferenza goniometrica e retta OT
+        \draw[line width=0.45pt] (0,0) circle (1);
+        \draw[line width=0.45pt] (0,0) -- (1,\vtan);
+
+        % Segmenti tratteggiati di proiezione di P
+        \draw[dashed,line width=0.45pt] (0,\vsin) -- (\vcos,\vsin);
+        \draw[dashed,line width=0.45pt] (\vcos,0) -- (\vcos,\vsin);
+
+        % Segmenti in evidenza: sin x, cos x, cotg x, tg x
+        \draw[line width=1pt] (0,0) -- (0,\vsin);
+        \draw[line width=1pt] (0,0) -- (\vcos,0);
+        \draw[line width=1pt] (0,1) -- (\vcot,1);
+        \draw[line width=1pt] (1,0) -- (1,\vtan);
+
+        % Arco dell'angolo x
+        \draw[->,line width=0.45pt] (0.307,0) arc[start angle=0,end angle=\ang,radius=0.307];
+
+        % Punti
+        \foreach \p in {(0,1),(0,\vsin),(\vcos,\vsin),(\vcot,1),(\vcos,0),(1,0)}
+        \fill \p circle (1.5pt);
+
+        % Etichette
+        \node at (-0.166,1.702) {$v$};
+        \node at (2.43,-0.125) {$u$};
+        \node at (1.154,1.743) {$T$};
+        \node[anchor=east] at (-0.07,1.129) {$B=(0,1)$};
+        \node at (0.313,1.129) {$\mathrm{cotg}\ x$};
+        \node at (0.69,0.997) {$S$};
+        \node at (1.207,1.116) {$\mathrm{tg}\ x$};
+        \node at (0.58,0.708) {$P$};
+        \node at (-0.22,0.464) {$\sin x$};
+        \node at (0.382,0.182) {$x$};
+        \node at (-0.135,-0.147) {$O$};
+        \node at (0.229,-0.116) {$\cos x$};
+        \node at (0.486,-0.147) {$Q$};
+        \node at (1.379,-0.147) {$A=(1,\,0)$};
+    \end{tikzpicture}
     \caption{Grafico delle funzioni goniometriche.}
     \label{fig:TrigFunctionDiagram}
 \end{figure}
@@ -609,14 +709,139 @@ Con lo stesso criterio di reciprocità sono definite le seguenti funzioni.
 
 \begin{figure}[!hbt]
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/circonferenza_goniometrica_secante.jpeg}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/circonferenza_goniometrica_secante.jpeg}
+    \begin{tikzpicture}[
+        x=2.8137cm,
+        y=2.8137cm,
+        line cap=round,
+        line join=round,
+        >={Straight Barb[length=5pt,width=7pt]},
+        font=\sffamily\fontsize{21pt}{25pt}\selectfont
+        ]
+        \definecolor{rettablu}{RGB}{81,82,252}
+        \definecolor{raggio}{RGB}{246,159,82}
+        \definecolor{verde}{RGB}{2,129,0}
+
+        % Angolo alpha e punti (come nel disegno originale: S e' posto in x=1.447)
+        \def\ang{56.2}
+        \pgfmathsetmacro{\vcos}{cos(\ang)}
+        \pgfmathsetmacro{\vsin}{sin(\ang)}
+
+        % Assi
+        \draw[->,black!75,line width=0.9pt] (-1.169,0) -- (1.833,0);
+        \draw[->,black!75,line width=0.9pt] (0,-1.351) -- (0,1.671);
+
+        % Circonferenza goniometrica
+        \draw[line width=1.5pt] (0,0) circle (1);
+
+        % Raggio OP prolungato e retta passante per P ed S (tratteggiata agli estremi)
+        \draw[raggio,line width=1pt] (0,0) -- (\ang:1.819);
+        \draw[rettablu,line width=1.2pt] (-0.302,1.635) -- (-0.199,1.539);
+        \draw[rettablu,line width=1.2pt] (-0.128,1.473) -- (1.743,-0.268);
+        \draw[rettablu,line width=1.2pt] (1.797,-0.319) -- (1.896,-0.411);
+
+        % Proiezioni tratteggiate di P
+        \draw[dashed,black!70,line width=0.8pt] (0,\vsin) -- (\vcos,\vsin);
+        \draw[dashed,black!70,line width=0.8pt] (\vcos,0) -- (\vcos,\vsin);
+
+        % Segmenti in evidenza: sin(alpha) in rosso, cos(alpha) in blu
+        \draw[red,line width=1.6pt] (0,0) -- (0,\vsin);
+        \draw[blue,line width=1.6pt] (0,0) -- (\vcos,0);
+
+        % Arco dell'angolo alpha
+        \draw[orange,-{Stealth[length=4pt]},line width=1.2pt] (0.233,0) arc[start angle=0,end angle=\ang,radius=0.233];
+
+        % Punti
+        \fill (0,0) circle (2.5pt);
+        \fill (0,1) circle (2.5pt);
+        \fill (\vcos,\vsin) circle (2.5pt);
+        \fill[red] (0,\vsin) circle (2.5pt);
+        \fill[blue] (\vcos,0) circle (2.5pt);
+        \fill[orange] (1.447,0) circle (2.8pt);
+
+        % Etichette
+        \node[inner sep=0pt] at (0.168,1.541) {y};
+        \node[inner sep=0pt] at (-0.127,1.124) {A};
+        \node[inner sep=0pt] at (0.577,1.055) {P};
+        \node[inner sep=0pt,red] at (-0.155,0.767) {Q};
+        \node[inner sep=0pt,red] at (-0.353,0.361) {sin($\alpha$)};
+        \node[inner sep=0pt,orange] at (0.348,0.170) {$\alpha$};
+        \node[inner sep=0pt,blue] at (0.699,0.128) {R};
+        \node[inner sep=0pt] at (1.741,0.187) {x};
+        \node[inner sep=0pt,orange] at (1.470,0.198) {S};
+        \node[inner sep=0pt] at (-0.145,-0.178) {O};
+        \node[inner sep=0pt,blue] at (0.368,-0.170) {cos($\alpha$)};
+        \node[inner sep=0pt,verde] at (0.941,-1.09) {sec($\alpha$)=OS};
+    \end{tikzpicture}
     \caption{Grafico della funzione $\sec x$.}
     \label{fig:circonferenza_goniometrica_secante}
 \end{figure}
 
 \begin{figure}[!hbt]
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/circonferenza_goniometrica_cosecante.jpeg}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/circonferenza_goniometrica_cosecante.jpeg}
+    \begin{tikzpicture}[
+        x=2.4085cm,
+        y=2.4085cm,
+        line cap=round,
+        line join=round,
+        >={Straight Barb[length=5pt,width=7pt]},
+        font=\sffamily\fontsize{20pt}{24pt}\selectfont
+        ]
+        \definecolor{rettablu}{RGB}{81,82,252}
+        \definecolor{raggio}{RGB}{246,159,82}
+        \definecolor{verde}{RGB}{2,129,0}
+
+        % Angolo alpha e punti (come nel disegno originale: C e' posto in y=1.36)
+        \def\ang{56.2}
+        \pgfmathsetmacro{\vcos}{cos(\ang)}
+        \pgfmathsetmacro{\vsin}{sin(\ang)}
+
+        % Assi
+        \draw[->,black!75,line width=0.9pt] (-1.161,0) -- (1.828,0);
+        \draw[->,black!75,line width=0.9pt] (0,-1.313) -- (0,1.676);
+
+        % Circonferenza goniometrica
+        \draw[line width=1.5pt] (0,0) circle (1);
+
+        % Raggio OP prolungato e retta t passante per P e C (tratteggiata agli estremi)
+        \draw[raggio,line width=1pt] (0,0) -- (\ang:1.816);
+        \draw[rettablu,line width=1.2pt] (-0.301,1.636) -- (-0.198,1.540);
+        \draw[rettablu,line width=1.2pt] (-0.127,1.474) -- (1.743,-0.268);
+        \draw[rettablu,line width=1.2pt] (1.797,-0.319) -- (1.899,-0.405);
+
+        % Proiezioni tratteggiate di P
+        \draw[dashed,black!70,line width=0.8pt] (0,\vsin) -- (\vcos,\vsin);
+        \draw[dashed,black!70,line width=0.8pt] (\vcos,0) -- (\vcos,\vsin);
+
+        % Segmenti in evidenza: sin(alpha) in rosso, cos(alpha) in blu
+        \draw[red,line width=1.6pt] (0,0) -- (0,\vsin);
+        \draw[blue,line width=1.6pt] (0,0) -- (\vcos,0);
+
+        % Arco dell'angolo alpha
+        \draw[orange,-{Stealth[length=4pt]},line width=1.2pt] (0.24,0) arc[start angle=0,end angle=\ang,radius=0.24];
+
+        % Punti
+        \fill (0,0) circle (2.3pt);
+        \fill (\vcos,\vsin) circle (2.3pt);
+        \fill[red] (0,\vsin) circle (2.3pt);
+        \fill[blue] (\vcos,0) circle (2.3pt);
+        \fill[orange] (0,1.36) circle (2.3pt);
+
+        % Etichette
+        \node[inner sep=0pt] at (0.157,1.554) {y};
+        \node[inner sep=0pt,orange] at (-0.131,1.173) {C};
+        \node[inner sep=0pt,verde] at (-0.969,1.059) {csc($\alpha$)=OC};
+        \node[inner sep=0pt] at (0.579,1.019) {P};
+        \node[inner sep=0pt,red] at (-0.138,0.767) {Q};
+        \node[inner sep=0pt,red] at (-0.341,0.362) {sin($\alpha$)};
+        \node[inner sep=0pt,orange] at (0.360,0.175) {$\alpha$};
+        \node[inner sep=0pt,blue] at (0.701,0.118) {R};
+        \node[inner sep=0pt] at (1.739,0.208) {x};
+        \node[inner sep=0pt] at (-0.135,-0.158) {O};
+        \node[inner sep=0pt,blue] at (0.380,-0.186) {cos($\alpha$)};
+        \node[inner sep=0pt,rettablu] at (1.524,-0.239) {t};
+    \end{tikzpicture}
     \caption{Grafico della funzione $\csc x$.}
     \label{fig:circonferenza_goniometrica_cosecante}
 \end{figure}
@@ -655,14 +880,98 @@ Le funzioni gonometriche non sono invertibili, ma selezionando un tratto monoton
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/arctanx.png}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/arctanx.png}
+    \begin{tikzpicture}[
+        x=0.3406cm,
+        y=1.7957cm,
+        line cap=round,
+        line join=round,
+        >=Stealth,
+        font=\sffamily\scriptsize
+        ]
+        \definecolor{matblu}{RGB}{0,114,189}
+
+        % Griglia chiara (verticale ogni 2, orizzontale ogni 0.5)
+        \foreach \xx in {-8,-6,...,8}
+        \draw[black!15,line width=0.35pt] (\xx,-1.5) -- (\xx,1.5);
+        \foreach \yy in {-1,-0.5,0.5,1}
+        \draw[black!15,line width=0.35pt] (-10,\yy) -- (10,\yy);
+
+        % Grafico di y=arctan(x) su [-10,10]
+        \draw[matblu,line width=0.6pt,domain=-10:10,samples=200,smooth]
+        plot (\x,{atan(\x)*pi/180});
+
+        % Riquadro e assi
+        \draw[black,line width=0.45pt] (-10,-1.5) rectangle (10,1.5);
+        \draw[black,line width=0.45pt] (-10,0) -- (10,0);
+        \draw[black,line width=0.45pt] (0,-1.5) -- (0,1.5);
+        \foreach \xx in {-8,-6,...,8}
+        \draw[black,line width=0.45pt] (\xx,0) -- ([yshift=2.5pt]\xx,0);
+        \foreach \yy in {-1,-0.5,0.5,1}
+        \draw[black,line width=0.45pt] (0,\yy) -- ([xshift=2.5pt]0,\yy);
+
+        % Etichette degli assi
+        \foreach \xx in {-8,-6,-4,-2,2,4,6,8}
+        \node[below=1.5pt,inner sep=1pt,black!80] at (\xx,0) {\xx};
+        \foreach \yy in {-1,-0.5,0.5,1}
+        \node[left=0.5pt,inner sep=1pt,black!80] at (0,\yy) {\yy};
+
+        % Legenda
+        \draw[fill=white,line width=0.4pt] (5.30,1.233) rectangle (9.49,1.399);
+        \draw[matblu,line width=0.6pt] (5.53,1.316) -- (7.33,1.316);
+        \node[anchor=west,inner sep=0pt,font=\sffamily\fontsize{6pt}{7pt}\selectfont] at (7.51,1.316) {arctanx};
+    \end{tikzpicture}
     \caption{Grafico della funzione $\arctan x$.}
     \label{fig:arctanx}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/arcsincosx.png}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/arcsincosx.png}
+    \begin{tikzpicture}[
+        x=3.4061cm,
+        y=0.8978cm,
+        line cap=round,
+        line join=round,
+        >=Stealth,
+        font=\sffamily\scriptsize
+        ]
+        \definecolor{matblu}{RGB}{0,114,189}
+        \definecolor{matarn}{RGB}{217,83,25}
+
+        % Griglia chiara (verticale ogni 0.2, orizzontale ogni 1)
+        \foreach \k in {-5,...,5}
+        \draw[black!15,line width=0.35pt] ({0.2*\k},-2) -- ({0.2*\k},4);
+        \foreach \yy in {-2,-1,...,4}
+        \draw[black!15,line width=0.35pt] (-1,\yy) -- (1,\yy);
+
+        % Grafici di y=arcsin(x) e y=arccos(x) su [-1,1]
+        \draw[matblu,line width=0.6pt,domain=-1:1,samples=200,smooth]
+        plot (\x,{asin(\x)*pi/180});
+        \draw[matarn,line width=0.6pt,domain=-1:1,samples=200,smooth]
+        plot (\x,{acos(\x)*pi/180});
+
+        % Assi con tacche
+        \draw[black,line width=0.45pt] (-1,0) -- (1,0);
+        \draw[black,line width=0.45pt] (0,-2) -- (0,4);
+        \foreach \k in {-5,...,5}
+        \draw[black,line width=0.45pt] ({0.2*\k},0) -- ([yshift=2.5pt]{0.2*\k},0);
+        \foreach \yy in {-2,-1,...,4}
+        \draw[black,line width=0.45pt] (0,\yy) -- ([xshift=2.5pt]0,\yy);
+
+        % Etichette degli assi
+        \foreach \xx in {-0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8}
+        \node[below=1.5pt,inner sep=1pt,black!80] at (\xx,0) {\xx};
+        \foreach \yy in {-1,1,2,3}
+        \node[left=0.5pt,inner sep=1pt,black!80] at (0,\yy) {\yy};
+
+        % Legenda (come nell'originale, entrambe le voci riportano "arcsinx")
+        \draw[fill=white,line width=0.4pt] (0.535,3.200) rectangle (0.949,3.794);
+        \draw[matblu,line width=0.6pt] (0.553,3.636) -- (0.733,3.636);
+        \draw[matarn,line width=0.6pt] (0.553,3.374) -- (0.733,3.374);
+        \node[anchor=west,inner sep=0pt,font=\sffamily\fontsize{6pt}{7pt}\selectfont] at (0.751,3.636) {arcsinx};
+        \node[anchor=west,inner sep=0pt,font=\sffamily\fontsize{6pt}{7pt}\selectfont] at (0.751,3.374) {arcsinx};
+    \end{tikzpicture}
     \caption{Grafico delle funzioni $\arcsin x$ e $\arccos x$.}
     \label{fig:arcsincosx}
 \end{figure}
@@ -695,7 +1004,67 @@ Gli archi associati ad un angolo $\alpha$ è indicato un insieme di formule che 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi1/figures/archi_associati.png}
+    %\includegraphics[width=0.5\textwidth]{Analisi1/figures/archi_associati.png}
+    \begin{tikzpicture}[
+        x=2.6527cm,
+        y=2.6527cm,
+        line cap=round,
+        line join=round,
+        >=Stealth
+        ]
+        % Assi x e y
+        \draw[->,line width=0.5pt] (-1.64,0) -- (1.58,0);
+        \draw[->,line width=0.5pt] (0,-1.64) -- (0,1.64);
+
+        % Raggi grigi verso gli angoli notevoli
+        \foreach \a in {30,45,60,120,135,150,210,225,240,300,315,330}
+        \draw[black!20,line width=0.3pt] (0,0) -- (\a:1);
+
+        % Circonferenza goniometrica
+        \draw[line width=1.1pt] (0,0) circle (1);
+
+        % Punti sulla circonferenza
+        \foreach \a in {0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330}
+        \fill (\a:1) circle (1.9pt);
+
+        % Gradi, radianti e coordinate: testo parallelo al raggio (mai capovolto)
+        \foreach \a/\g/\r/\c in {
+            30/30/{\frac{\pi}{6}}/{\frac{\sqrt{3}}{2},\frac{1}{2}},
+            45/45/{\frac{\pi}{4}}/{\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}},
+            60/60/{\frac{\pi}{3}}/{\frac{1}{2},\frac{\sqrt{3}}{2}},
+            120/120/{\frac{2\pi}{3}}/{-\frac{1}{2},\frac{\sqrt{3}}{2}},
+            135/135/{\frac{3\pi}{4}}/{-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}},
+            150/150/{\frac{5\pi}{6}}/{-\frac{\sqrt{3}}{2},\frac{1}{2}},
+            210/210/{\frac{7\pi}{6}}/{-\frac{\sqrt{3}}{2},-\frac{1}{2}},
+            225/225/{\frac{5\pi}{4}}/{-\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}},
+            240/240/{\frac{4\pi}{3}}/{-\frac{1}{2},-\frac{\sqrt{3}}{2}},
+            300/300/{\frac{5\pi}{3}}/{\frac{1}{2},-\frac{\sqrt{3}}{2}},
+            315/315/{\frac{7\pi}{4}}/{\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}},
+            330/330/{\frac{11\pi}{6}}/{\frac{\sqrt{3}}{2},-\frac{1}{2}}}
+        {
+            \pgfmathsetmacro{\rot}{(\a>90 && \a<270) ? \a-180 : \a}
+            \ifnum\a>90\ifnum\a<270 \def\anc{east}\else\def\anc{west}\fi\else\def\anc{west}\fi
+            \node[rotate=\rot,inner sep=0pt,font=\footnotesize] at (\a:0.56) {$\g^\circ$};
+            \node[rotate=\rot,inner sep=0pt,font=\normalsize] at (\a:0.87) {$\r$};
+            \node[rotate=\rot,anchor=\anc,inner sep=0pt,font=\normalsize] at (\a:1.06) {$\left(\c\right)$};
+        }
+
+        % Etichette sugli assi
+        \node[anchor=west,inner sep=0pt,font=\large] at (0.03,1.184) {$(0,1)$};
+        \node[anchor=west,inner sep=0pt,font=\large] at (1.08,0.10) {$(1,0)$};
+        \node[anchor=east,inner sep=0pt,font=\large] at (-1.08,0.10) {$(-1,0)$};
+        \node[anchor=west,inner sep=0pt,font=\large] at (0.03,-1.184) {$(0,-1)$};
+        \node[inner sep=0pt,font=\footnotesize] at (0.593,0.07) {$0^\circ$};
+        \node[inner sep=0pt,font=\large] at (0.865,0.07) {$0$};
+        \node[inner sep=0pt,font=\footnotesize] at (-0.64,0.06) {$180^\circ$};
+        \node[inner sep=0pt,font=\large] at (-0.88,0.06) {$\pi$};
+        \node[inner sep=0pt,font=\footnotesize] at (0.10,0.60) {$90^\circ$};
+        \node[inner sep=0pt,font=\normalsize] at (0.09,0.82) {$\frac{\pi}{2}$};
+        \node[inner sep=0pt,font=\footnotesize] at (0.13,-0.63) {$270^\circ$};
+        \node[inner sep=0pt,font=\normalsize] at (0.08,-0.85) {$\frac{3\pi}{2}$};
+        \node[inner sep=0pt,font=\itshape\large] at (1.5,-0.17) {$x$};
+        \node[inner sep=0pt,font=\itshape\large] at (0.176,1.46) {$y$};
+    \end{tikzpicture}
     \caption{Archi associati}
     \label{fig:archi_associati}
 \end{figure}

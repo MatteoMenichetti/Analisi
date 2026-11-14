@@ -420,14 +420,110 @@ Se $\uline x_0=\uline 0$ e $r=1$, allora
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Analisi2/figures/norma_euclidea.jpg}
+    %\includegraphics[width=0.7\textwidth]{Analisi2/figures/norma_euclidea.jpg}
+    \begin{tikzpicture}[
+        x=1.2295cm,
+        y=1.2295cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.435} \def\ymax{3.422}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-14,...,14}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-14,...,14}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Disco unitario x^2+y^2 <= 1
+        \filldraw[fill=ggrosso,fill opacity=0.85,draw=black,line width=0.4pt] (0,0) circle (1);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.344) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.501) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di $B(\uline 0, 1)=\{\uline x\in\mathbb R^2\; |\;\sqrt{(x_1-0)^2+(x_2-0)^2}<1\}$.}
     \label{fig:distanza_euclidea_r_1}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Analisi2/figures/distanza_tassista.jpg}
+    %\includegraphics[width=0.7\textwidth]{Analisi2/figures/distanza_tassista.jpg}
+    \begin{tikzpicture}[
+        x=1.2295cm,
+        y=1.2295cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.265} \def\ymax{3.253}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-14,...,14}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-14,...,14}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Rombo |x|+|y| <= 1
+        \filldraw[fill=ggrosso,fill opacity=0.85,draw=black,line width=0.4pt] (1,0) -- (0,1) -- (-1,0) -- (0,-1) -- cycle;
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di $B(\uline 0, 1)=\{\uline x\in\mathbb R^2\; |\; |x_1-0|+|x_2-0|<1\}$.}
     \label{fig:distanza_tassista_r_1}
 \end{figure}
@@ -511,14 +607,111 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Analisi2/figures/A1.jpg}
+    %\includegraphics[width=0.7\textwidth]{Analisi2/figures/A1.jpg}
+    \begin{tikzpicture}[
+        x=1.2295cm,
+        y=1.2295cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.265} \def\ymax{3.253}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-14,...,14}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-14,...,14}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Disco x^2+y^2 <= 9
+        \fill[fill=ggrosso,fill opacity=0.85] (0,0) circle (3);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di $A_1=\{(x,y)\in\mathbb R^2|x^2+y^2<9\}$.}
     \label{fig:A_1_esempio}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Analisi2/figures/A2.jpg}
+    %\includegraphics[width=0.7\textwidth]{Analisi2/figures/A2.jpg}
+    \begin{tikzpicture}[
+        x=1.2295cm,
+        y=1.2295cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-0.994} \def\xmax{9.018}
+        \def\ymin{-6.264} \def\ymax{0.254}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-4,...,37}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-26,...,2}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-1,...,10}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-7,...,1}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-4,...,37}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-26,...,2}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-1,...,10}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-7,...,1}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Tutto il piano e' colorato; si evidenzia la parabola x=y^2
+        \fill[fill=ggrosso,fill opacity=0.85] (\xmin,\ymin) rectangle (\xmax,\ymax);
+        \draw[black,line width=0.4pt] plot[domain=-3.6:3.6,samples=80,smooth] ({\x*\x},\x);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di $A_2=\{(x, y)\in\mathbb R^2\colon x\neq y^2\}$.}
     \label{fig:A_2_esempio}
 \end{figure}
@@ -558,7 +751,57 @@ Quindi $x_0$ è un punto di frontiera di $A$ (ovvero $x_0\in\partial A$) se ogni
     Vedere Figura \ref{fig:esempio_punti_accumulazione}.
     \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/x2plusy2.jpg}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/x2plusy2.jpg}
+    \begin{tikzpicture}[
+        x=0.8779cm,
+        y=0.8779cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.265} \def\ymax{3.253}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-14,...,14}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-14,...,14}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Corona circolare 1 <= x^2+y^2 <= 2
+        \path[fill=ggrosso,fill opacity=0.85,even odd rule] (0,0) circle ({sqrt(2)}) (0,0) circle (1);
+        \draw[black,line width=0.4pt] (0,0) circle ({sqrt(2)});
+        \draw[black,line width=0.4pt] (0,0) circle (1);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di $A=\{\uline x\in\mathbb R\;|\; 1<||\uline x||<2\}$.}\label{fig:esempio_punti_accumulazione}
     \end{figure}
 \end{example}
@@ -725,7 +968,59 @@ Il problema principale dei limiti è dimostrare l'esistenza. Le funzioni in più
 
     \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/cammini_0,0.jpg}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/cammini_0,0.jpg}
+    \begin{tikzpicture}[
+        x=0.8779cm,
+        y=0.8779cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.089} \def\ymax{3.078}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Cammini: circonferenza unitaria, rette y=x, y=-x e parabole x=y^2, x=-y^2
+        \draw[black,line width=0.4pt] (0,0) circle (1);
+        \draw[black,line width=0.4pt] (-4,-4) -- (4,4);
+        \draw[black,line width=0.4pt] (-4,4) -- (4,-4);
+        \draw[black,line width=0.4pt] plot[domain=-3.6:3.6,samples=80,smooth] ({\x*\x},\x);
+        \draw[black,line width=0.4pt] plot[domain=-3.6:3.6,samples=80,smooth] ({-\x*\x},\x);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.309) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.35) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di alcuni possibili cammini che "portano" all'origine $(0,0)$.}\label{fig:cammini_0,0}
     \end{figure}
 \end{example}
@@ -864,7 +1159,57 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     \end{itemize}
     \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/A_dom.jpg}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/A_dom.jpg}
+    \begin{tikzpicture}[
+        x=0.8779cm,
+        y=0.8779cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.096} \def\ymax{3.083}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Dominio: tutto il piano; rette y=x+pi/2+k*pi (dove cos(y-x)=0)
+        \fill[fill=ggblu,fill opacity=0.85] (\xmin,\ymin) rectangle (\xmax,\ymax);
+        \foreach \k in {-3,...,2}
+        \draw[ggblu!60!black,line width=0.4pt] (-8,{-8+pi/2+\k*pi}) -- (8,{8+pi/2+\k*pi});
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
     \caption{Grafico di $A=\{(x,y)\in\mathbb R^2;(x,y)\neq(0,0),\, y\neq x + \frac{\pi}{2}+k\pi,\, \forall k\in\mathbb Z\}$.}\label{fig:esempio_dominio_analisi2}
     \end{figure}
 \end{example}
@@ -900,7 +1245,55 @@ Inoltre è possibile affermare che tutte le funzioni elementari combinate con so
     Quindi il limite non esiste e la funzione non è continua nel punto $(1,1)$. Ovvero: non vale la definizione di continuità.
     \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_f_1_y.jpg}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_f_1_y.jpg}
+    \begin{tikzpicture}[
+        x=0.8779cm,
+        y=0.8779cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.096} \def\ymax{3.083}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Retta verticale x=1
+        \draw[black,line width=0.4pt] (1,\ymin) -- (1,\ymax);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
     \caption{Grafico del cammino utilizzato per avvicinarsi al punto $(1,1)$.}\label{fig:esempio_f_1_y}
     \end{figure}
 \end{example}
@@ -1524,7 +1917,57 @@ Ricercare il dominio significa che è necessario trovare i punti del piano per c
     Vedere Figura \ref{fig:dominio_log(x+y)_x-4}.
     \begin{figure}
     \centering
-        \includegraphics[width=0.5\textwidth]{Analisi2/figures/dominio_log(x+y)_x-4.jpg}
+        %\includegraphics[width=0.5\textwidth]{Analisi2/figures/dominio_log(x+y)_x-4.jpg}
+        \begin{tikzpicture}[
+            x=0.8779cm,
+            y=0.8779cm,
+            line cap=round,
+            line join=round,
+            >={Stealth[length=4pt,width=3.5pt]},
+            font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+            ]
+            \definecolor{ggrosso}{RGB}{255,52,16}
+            \definecolor{ggblu}{RGB}{19,64,255}
+            \def\xmin{-5} \def\xmax{5.012}
+            \def\ymin{-3.089} \def\ymax{3.078}
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+            % Griglia secondaria e principale
+            \foreach \k in {-21,...,21}
+            \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+            \foreach \k in {-13,...,13}
+            \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+            \foreach \k in {-6,...,6}
+            \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+            \foreach \k in {-4,...,4}
+            \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+            % Assi cartesiani con tacche
+            \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+            \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+            \foreach \k in {-21,...,21}
+            \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+            \foreach \k in {-13,...,13}
+            \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+            \foreach \k in {-6,...,6}
+            \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+            \foreach \k in {-4,...,4}
+            \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+            % Dominio: x+y>0 (semipiano sopra la retta y=-x) e retta verticale x=4
+            \fill[fill=ggrosso,fill opacity=0.85] (-10,10) -- (10,-10) -- (10,10) -- cycle;
+            \draw[black,line width=0.4pt] (-10,10) -- (10,-10);
+            \draw[black,line width=0.4pt] (4,\ymin) -- (4,\ymax);
+
+            % Etichette degli assi
+            \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+            \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+            \foreach \yy in {-3,-2,-1,1,2,3}
+            \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+            \node[inner sep=0pt] at (-0.2,-0.17) {0};
+            \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.309) {$x$};
+            \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.35) {$y$};
+        \end{tikzpicture}
         \caption{Grafico di $D=\{(x,y)\in\mathbb R^2\;;\; x+y>0,\, x\neq 4\}$.}\label{fig:dominio_log(x+y)_x-4}
     \end{figure}
 \end{example}
@@ -1727,19 +2170,137 @@ Considerato il grafico di $f$ definita in $\mathbb R^2$, questo è l'insieme di 
 %slide 10 PDF 11
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_z=-y+k2.png}
+%\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_z=-y+k2.png}
+\begin{tikzpicture}[
+    x=0.8717cm,
+    y=0.19606cm,
+    line cap=round,
+    line join=round,
+    >=Stealth,
+    font=\sffamily\footnotesize
+    ]
+    \definecolor{matblu}{RGB}{0,114,189}
+    \definecolor{matarn}{RGB}{217,83,25}
+    \definecolor{matgia}{RGB}{237,177,32}
+    \definecolor{matvio}{RGB}{126,47,142}
+    \definecolor{matver}{RGB}{119,172,48}
+    \definecolor{matcel}{RGB}{77,190,238}
+    \definecolor{matros}{RGB}{162,20,47}
+
+    % Griglia orizzontale chiara (ogni 5 unita' sull'asse verticale)
+    \foreach \zz in {-5,0,...,30}
+    \draw[black!12,line width=0.4pt] (-5,\zz) -- (5,\zz);
+
+    % Rette z=k^2-y, per k=0,1,...,5
+    \draw[matver,line width=0.55pt] (-5,30) -- (5,20);   % k=5
+    \draw[matvio,line width=0.55pt] (-5,21) -- (5,11);   % k=4
+    \draw[matgia,line width=0.55pt] (-5,14) -- (5,4);    % k=3
+    \draw[matarn,line width=0.55pt] (-5,9) -- (5,-1);    % k=2
+    \draw[matblu,line width=0.55pt] (-5,6) -- (5,-4);    % k=1
+    \draw[matros,line width=0.55pt] (-5,5) -- (5,-5);    % k=0
+
+    % Assi con tacche
+    \draw[black!85,line width=0.5pt] (-5,0) -- (5,0);
+    \draw[black!85,line width=0.5pt] (0,-5) -- (0,30);
+    \foreach \zz in {5,10,...,30}
+    \draw[black!85,line width=0.5pt] (0,\zz) -- ([xshift=2pt]0,\zz);
+    \foreach \xx in {-5,5}
+    \draw[black!85,line width=0.5pt] (\xx,0) -- ([yshift=2pt]\xx,0);
+
+    % Etichette
+    \foreach \zz in {5,10,...,25}
+    \node[left=2pt,inner sep=1pt,black!85] at (0,\zz) {\zz};
+    \node[inner sep=0pt,font=\sffamily\large,black!85] at (0.33,28.4) {z};
+    \node[inner sep=0pt,font=\sffamily\large,black!85] at (4.78,1.93) {x};
+\end{tikzpicture}
     \caption{Grafico di $z=-y+k^2$, con $k\in[-5,5]\subset\mathbb N$ (nella realtà è $\forall k\in\mathbb R$).}\label{fig:esempio_z=-y+k2}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_z=x^2-k.png}
+%\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_z=x^2-k.png}
+\begin{tikzpicture}[
+    x=0.8717cm,
+    y=0.19606cm,
+    line cap=round,
+    line join=round,
+    >=Stealth,
+    font=\sffamily\footnotesize
+    ]
+    \definecolor{matblu}{RGB}{0,114,189}
+    \definecolor{matarn}{RGB}{217,83,25}
+    \definecolor{matgia}{RGB}{237,177,32}
+    \definecolor{matvio}{RGB}{126,47,142}
+    \definecolor{matver}{RGB}{119,172,48}
+    \definecolor{matcel}{RGB}{77,190,238}
+    \definecolor{matros}{RGB}{162,20,47}
+
+    % Griglia orizzontale chiara (ogni 5 unita' sull'asse verticale)
+    \foreach \zz in {-5,0,...,30}
+    \draw[black!12,line width=0.4pt] (-5,\zz) -- (5,\zz);
+
+    % Parabole z=y^2-k, per k=-5,-4,...,5 (dall'alto in basso)
+    \foreach \k/\c in {-5/matver,-4/matvio,-3/matgia,-2/matarn,-1/matblu,0/matros,1/matcel,2/matver,3/matvio,4/matgia,5/matarn}
+    \draw[\c,line width=0.55pt,domain=-5:5,samples=60,smooth] plot (\x,{\x*\x-(\k)});
+
+    % Assi con tacche
+    \draw[black!85,line width=0.5pt] (-5,0) -- (5,0);
+    \draw[black!85,line width=0.5pt] (0,-5) -- (0,30);
+    \foreach \zz in {5,10,...,30}
+    \draw[black!85,line width=0.5pt] (0,\zz) -- ([xshift=2pt]0,\zz);
+    \foreach \xx in {-5,5}
+    \draw[black!85,line width=0.5pt] (\xx,0) -- ([yshift=2pt]\xx,0);
+
+    % Etichette
+    \foreach \zz in {5,10,...,25}
+    \node[left=2pt,inner sep=1pt,black!85] at (0,\zz) {\zz};
+    \node[inner sep=0pt,font=\sffamily\large,black!85] at (0.33,28.4) {z};
+    \node[inner sep=0pt,font=\sffamily\large,black!85] at (4.78,1.93) {y};
+\end{tikzpicture}
     \caption{Grafico di $z=x^2-k$, con $k\in[-5,5]\subset\mathbb N$ (nella realtà è $\forall k\in\mathbb R$).}\label{fig:esempio_z=x^2-k}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_z=x^2-y.png}
+%\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_z=x^2-y.png}
+\begin{tikzpicture}[
+    x=0.8717cm,
+    y=0.19606cm,
+    line cap=round,
+    line join=round,
+    >=Stealth,
+    font=\sffamily\footnotesize
+    ]
+    \definecolor{matblu}{RGB}{0,114,189}
+    \definecolor{matarn}{RGB}{217,83,25}
+    \definecolor{matgia}{RGB}{237,177,32}
+    \definecolor{matvio}{RGB}{126,47,142}
+    \definecolor{matver}{RGB}{119,172,48}
+    \definecolor{matcel}{RGB}{77,190,238}
+    \definecolor{matros}{RGB}{162,20,47}
+
+    % Griglia orizzontale chiara (ogni 5 unita' sull'asse verticale)
+    \foreach \zz in {-5,0,...,30}
+    \draw[black!12,line width=0.4pt] (-5,\zz) -- (5,\zz);
+
+    % Parabole z=x^2-y, al variare di y=k=-5,-4,...,5 (dall'alto in basso)
+    \foreach \k/\c in {-5/matarn,-4/matgia,-3/matvio,-2/matver,-1/matcel,0/matros,1/matblu,2/matarn,3/matgia,4/matvio,5/matver}
+    \draw[\c,line width=0.55pt,domain=-5:5,samples=60,smooth] plot (\x,{\x*\x-(\k)});
+
+    % Assi con tacche
+    \draw[black!85,line width=0.5pt] (-5,0) -- (5,0);
+    \draw[black!85,line width=0.5pt] (0,-5) -- (0,30);
+    \foreach \zz in {5,10,...,30}
+    \draw[black!85,line width=0.5pt] (0,\zz) -- ([xshift=2pt]0,\zz);
+    \foreach \xx in {-5,5}
+    \draw[black!85,line width=0.5pt] (\xx,0) -- ([yshift=2pt]\xx,0);
+
+    % Etichette
+    \foreach \zz in {5,10,...,25}
+    \node[left=2pt,inner sep=1pt,black!85] at (0,\zz) {\zz};
+    \node[inner sep=0pt,font=\sffamily\large,black!85] at (0.33,28.4) {y};
+    \node[inner sep=0pt,font=\sffamily\large,black!85] at (4.78,1.93) {x};
+\end{tikzpicture}
     \caption{Grafico di $z=k=x^2-y$, con $k\in[-5,5]\subset\mathbb N$ (nella realtà è $\forall k\in\mathbb R$).}\label{fig:esempio_z=k=x^2-y}
 \end{figure}
 
@@ -1783,7 +2344,61 @@ Considerato il grafico di $f$ definita in $\mathbb R^2$, questo è l'insieme di 
     Vedere Figura \ref{fig:esempio_dominio_analisi2_1}.
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/esempio_dominio_analisi2_1.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/esempio_dominio_analisi2_1.jpg}
+    \begin{tikzpicture}[
+        x=1.1416cm,
+        y=1.1416cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.096} \def\ymax{3.083}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Regione tra le curve y=x^3 e y=1/x (riempimento blu, curve rosse)
+        \fill[fill=ggblu,fill opacity=0.85]
+        (-0.2941,-3.4) -- plot[domain=-0.2941:-1,samples=40,smooth] (\x,{1/\x})
+        -- plot[domain=-1:1,samples=40,smooth] (\x,{\x*\x*\x})
+        -- plot[domain=1:5.1,samples=60,smooth] (\x,{1/\x}) -- (5.1,-3.4) -- cycle;
+        \draw[red,line width=0.6pt] plot[domain=0.28:5.1,samples=80,smooth] (\x,{1/\x});
+        \draw[red,line width=0.6pt] plot[domain=-5.1:-0.28,samples=80,smooth] (\x,{1/\x});
+        \draw[red,line width=0.6pt] plot[domain=-1.5:1.5,samples=60,smooth] (\x,{\x*\x*\x});
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+    \end{tikzpicture}
         \caption{Grafico di $E=\{(x,y)\in\mathbb R^2\,|\, x^3-y>0,\,\sqrt{1-xy}\neq 0,\, 1-xy\geq 0\}=\{(x,y)\in\mathbb R^2\,|\, y<x^3,\, 1-xy>0\}$.}\label{fig:esempio_dominio_analisi2_1}
     \end{figure}
 \end{exercise}
@@ -1806,19 +2421,155 @@ Considerato il grafico di $f$ definita in $\mathbb R^2$, questo è l'insieme di 
     
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/E_1.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/E_1.jpg}
+    \begin{tikzpicture}[
+        x=1.0448cm,
+        y=1.0448cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5}
+        \def\ymin{-2.914} \def\ymax{2.914}
+
+        % Griglia secondaria e principale
+        \foreach \k in {-20,...,20}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-11,...,11}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-5,...,5}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-2,...,2}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-20,...,20}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-11,...,11}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-5,...,5}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-2,...,2}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Circonferenza unitaria x^2+y^2=1
+        \draw[black,line width=0.4pt] (0,0) circle (1);
+
+        % Etichette degli assi
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.795,-0.13) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.06,0.97) {$y$};
+        % Riquadro
+        \draw[black,line width=0.5pt] (\xmin,\ymin) rectangle (\xmax,\ymax);
+    \end{tikzpicture}
         \caption{Grafico di $E_1=\{(x,y)\in\mathbb R^2\,|\, f(x,y)=1\}=B(\uline 0, 1)$.}\label{fig:E_1}
     \end{figure}
     
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/E_k_2D.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/E_k_2D.jpg}
+    \begin{tikzpicture}[
+        x=1.1416cm,
+        y=1.1416cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.084} \def\ymax{3.072}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Circonferenze di livello x^2+y^2=k, k=1,...,5
+        \foreach \k in {1,...,5}
+        \draw[black,line width=0.4pt] (0,0) circle ({sqrt(\k)});
+        \fill[red] (0,0) circle (0.8pt);
+        \foreach \dx in {-2.65,-2.60,-2.55,-2.50}
+        \fill (\dx,0.13) circle (0.35pt);
+        \foreach \dx in {2.43,2.48,2.53,2.58}
+        \fill (\dx,0.13) circle (0.35pt);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.169) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.325) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.422) {$y$};
+        \foreach \k/\px in {0/0.22,1/1.13,2/1.54,3/1.87,4/2.12,5/2.49}
+        \node[inner sep=0pt,font=\sffamily\fontsize{4.5pt}{5pt}\selectfont] at (\px,0.15) {$E_{\k}$};
+    \end{tikzpicture}
         \caption{Grafico di $E_k=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2=k\}=B(\uline 0, \sqrt{k})$.}\label{fig:E_k_2D}
     \end{figure}
     
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/E_k_3D.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/E_k_3D.jpg}
+    \begin{tikzpicture}[
+        x=1.3855cm,
+        y=1.3855cm,
+        line cap=round,
+        line join=round
+        ]
+        \definecolor{sfondo3d}{RGB}{255,249,251}
+        \definecolor{linea3d}{RGB}{206,178,0}
+        \clip (0,0) rectangle (8.25,5.10);
+        \fill[sfondo3d] (0,0) rectangle (8.25,5.10);
+
+        % Scatola prospettica (spigoli)
+        \draw[linea3d,line width=0.5pt] (1.85,4.17) -- (3.70,3.66) -- (6.61,4.10) -- (4.25,4.37) -- cycle;
+        \draw[linea3d,line width=0.5pt] (1.85,4.17) -- (2.20,1.37) -- (4.30,2.10) -- (6.19,1.11) -- (6.61,4.10);
+        \draw[linea3d,line width=0.5pt] (4.25,4.37) -- (4.30,2.10);
+        \draw[linea3d,line width=0.5pt] (3.70,3.66) -- (3.79,0.00);
+        \draw[linea3d,line width=0.5pt] (2.20,1.37) -- (3.47,0.00);
+        \draw[linea3d,line width=0.5pt] (6.19,1.11) -- (4.41,0.00);
+
+        % Assi coordinati con tacche
+        \draw[linea3d,line width=0.5pt] (2.72,2.14) -- (5.19,2.86);
+        \draw[linea3d,line width=0.5pt] (3.25,2.93) -- (5.30,2.02);
+        \draw[linea3d,line width=0.5pt] (4.12,2.54) -- (4.12,1.25);
+        \foreach \px/\py in {3.04/2.24,3.33/2.32,3.61/2.41,3.89/2.49,4.58/2.69,4.79/2.75,5.00/2.81,5.19/2.86}
+        \draw[linea3d,line width=0.5pt] ([yshift=-4pt]\px,\py) -- ([yshift=4pt]\px,\py);
+        \foreach \px/\py in {3.41/2.93,3.61/2.80,3.77/2.73,3.92/2.65,4.32/2.46,4.54/2.37,4.77/2.26,5.03/2.14}
+        \draw[linea3d,line width=0.5pt] ([yshift=-4pt]\px,\py) -- ([yshift=4pt]\px,\py);
+        \foreach \yy in {2.27,2.01,1.74,1.49}
+        \draw[linea3d,line width=0.5pt] (4.07,\yy) -- (4.17,\yy);
+
+        % Paraboloide ombreggiato (sfumatura orizzontale: nero - giallo - scuro)
+        \shade[shading=axis,left color={rgb,255:red,34;green,29;blue,0},
+        right color={rgb,255:red,85;green,71;blue,0},
+        middle color={rgb,255:red,235;green,193;blue,0},shading angle=90]
+        (3.14,5.10) -- (3.18,4.90) -- (3.22,4.70) -- (3.27,4.50) -- (3.32,4.30) -- (3.37,4.10) -- (3.43,3.90) -- (3.49,3.70) -- (3.55,3.50) -- (3.62,3.30) -- (3.69,3.10) -- (3.78,2.90) -- (3.87,2.75) -- (3.94,2.65) -- (4.00,2.60) -- (4.05,2.57) -- (4.12,2.55) -- (4.20,2.57) -- (4.26,2.60) -- (4.31,2.65) -- (4.38,2.75) -- (4.47,2.90) -- (4.56,3.10) -- (4.63,3.30) -- (4.70,3.50) -- (4.76,3.70) -- (4.82,3.90) -- (4.88,4.10) -- (4.93,4.30) -- (4.98,4.50) -- (5.03,4.70) -- (5.07,4.90) -- (5.11,5.10) -- cycle;
+    \end{tikzpicture}
         \caption{Grafico di $z=f(x,y)=x^2+y^2$.}\label{fig:E_k_3D}
     \end{figure}
     
@@ -1850,7 +2601,55 @@ Considerato il grafico di $f$ definita in $\mathbb R^2$, questo è l'insieme di 
             \end{equation}
             \begin{figure}
             \centering
-            \includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_ellisse.jpg}
+            %\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_ellisse.jpg}
+            \begin{tikzpicture}[
+                x=0.8779cm,
+                y=0.8779cm,
+                line cap=round,
+                line join=round,
+                >={Stealth[length=4pt,width=3.5pt]},
+                font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+                ]
+                \definecolor{ggrosso}{RGB}{255,52,16}
+                \definecolor{ggblu}{RGB}{19,64,255}
+                \def\xmin{-5} \def\xmax{5.012}
+                \def\ymin{-3.089} \def\ymax{3.078}
+                \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+                % Griglia secondaria e principale
+                \foreach \k in {-21,...,21}
+                \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+                \foreach \k in {-13,...,13}
+                \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+                \foreach \k in {-6,...,6}
+                \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+                \foreach \k in {-4,...,4}
+                \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+                % Assi cartesiani con tacche
+                \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+                \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+                \foreach \k in {-21,...,21}
+                \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+                \foreach \k in {-13,...,13}
+                \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+                \foreach \k in {-6,...,6}
+                \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+                \foreach \k in {-4,...,4}
+                \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+                % Ellisse x^2+9y^2=1 (semiassi 1 e 1/3)
+                \draw[black,line width=0.4pt] (0,0) ellipse (1 and {1/3});
+
+                % Etichette degli assi
+                \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+                \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+                \foreach \yy in {-3,-2,-1,1,2,3}
+                \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+                \node[inner sep=0pt] at (-0.2,-0.17) {0};
+                \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.309) {$x$};
+                \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.35) {$y$};
+            \end{tikzpicture}
                 \caption{Grafico di $f(x,y)=x^2+9y^2$.}\label{fig:esempio_ellisse}
             \end{figure}
         \end{itemize}
@@ -1873,7 +2672,63 @@ Considerato il grafico di $f$ definita in $\mathbb R^2$, questo è l'insieme di 
         \end{itemize}
         \begin{figure}
         \centering
-        \includegraphics[width=0.65\textwidth]{Analisi2/figures/esempio_E_k.jpg}
+        %\includegraphics[width=0.65\textwidth]{Analisi2/figures/esempio_E_k.jpg}
+        \begin{tikzpicture}[
+            x=1.1416cm,
+            y=1.1416cm,
+            line cap=round,
+            line join=round,
+            >={Stealth[length=4pt,width=3.5pt]},
+            font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+            ]
+            \definecolor{ggrosso}{RGB}{255,52,16}
+            \definecolor{ggblu}{RGB}{19,64,255}
+            \definecolor{ggcurva}{RGB}{60,80,200}
+            \def\xmin{-5} \def\xmax{5.012}
+            \def\ymin{-3.096} \def\ymax{3.083}
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+            % Griglia secondaria e principale
+            \foreach \k in {-21,...,21}
+            \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+            \foreach \k in {-13,...,13}
+            \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+            \foreach \k in {-6,...,6}
+            \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+            \foreach \k in {-4,...,4}
+            \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+            % Assi cartesiani con tacche
+            \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+            \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+            \foreach \k in {-21,...,21}
+            \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+            \foreach \k in {-13,...,13}
+            \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+            \foreach \k in {-6,...,6}
+            \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+            \foreach \k in {-4,...,4}
+            \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+            % Parabole E_k: y=k x^2, per k=-3,-2,-1,-0.5,0.5,1,2,3
+            \foreach \k in {-3,-2,-1,-0.5,0.5,1,2,3}
+            \draw[ggcurva,line width=0.5pt,domain=-3.6:3.6,samples=60,smooth] plot (\x,{\k*\x*\x});
+            % E_0: asse x (y=0) in blu e retta x=0 rossa tratteggiata
+            \draw[ggcurva,line width=1pt] (\xmin,0) -- (\xmax,0);
+            \draw[red!80!black,dashed,line width=0.5pt] (0,\ymin) -- (0,\ymax);
+            % Etichette degli insiemi E_k
+            \foreach \tv/\px/\py in {3/0.46/1.03,2/0.87/1.03,1/1.23/1.03,0.5/1.64/1.03,-3/0.46/-0.96,-2/0.87/-0.96,-1/1.23/-0.96,-0.5/1.64/-0.96,0/4.42/0.14}
+            \node[inner sep=0pt,ggcurva,font=\sffamily\fontsize{4.5pt}{5pt}\selectfont] at (\px,\py) {$E_{\tv}$};
+
+            % Etichette degli assi
+            \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+            \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+            \foreach \yy in {-3,-2,-1,1,2,3}
+            \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+            \node[inner sep=0pt] at (-0.2,-0.17) {0};
+            \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+            \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.427) {$y$};
+        \end{tikzpicture}
             \caption{Grafico di $E_k=\left\{(x,y)\in E\,|\, \frac{y}{x^2}=k\right\}$ (asse $y$ escluso).}\label{fig:esempio_E_k}
         \end{figure}
     \end{enumerate}
@@ -2052,7 +2907,56 @@ Sia $f\colon I=[a,b]\subseteq\mathbb R\rightarrow\mathbb R$ continua, dove grafi
     Sia $2x-3y+1\geq 0$. $2x-3y+1=0$ è una retta ed un semipiano, in quanto $3y=2x+1$, ovvero $y=\frac{2x+1}{3}$. Quindi, la disequazione è il sottografico della retta (per $-3y$). Vedere Figura \ref{fig:esempio_sottografico}.
     \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_sottografico.jpg}
+    %\includegraphics[width=0.5\textwidth]{Analisi2/figures/esempio_sottografico.jpg}
+    \begin{tikzpicture}[
+        x=0.8779cm,
+        y=0.8779cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.094} \def\ymax{3.082}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Sottografico: y <= (2x+1)/3
+        \filldraw[fill=ggblu,fill opacity=0.85,draw=ggblu!50!black,line width=0.4pt]
+        (-6,{(2*(-6)+1)/3}) -- (6,{(2*6+1)/3}) -- (6,-6) -- (-6,-6) -- cycle;
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.426) {$y$};
+    \end{tikzpicture}
         \caption{Sottografico di $2x-3y+1=0$.}\label{fig:esempio_sottografico}
     \end{figure}
 \end{example}
@@ -2078,7 +2982,62 @@ Sia $f\colon I=[a,b]\subseteq\mathbb R\rightarrow\mathbb R$ continua, dove grafi
     
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/grafico_x^2-y^2-1.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/grafico_x^2-y^2-1.jpg}
+    \begin{tikzpicture}[
+        x=1.1416cm,
+        y=1.1416cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.103} \def\ymax{3.091}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Regioni x^2-y^2 >= 1 (A_1 e A_3); il ramo di iperbole e' il bordo
+        \filldraw[fill=ggblu,fill opacity=0.85,draw=black,line width=0.4pt]
+        plot[domain=3.6:-3.6,samples=80,smooth] ({sqrt(1+\x*\x)},\x) -- (6,-3.6) -- (6,3.6) -- cycle;
+        \filldraw[fill=ggblu,fill opacity=0.85,draw=black,line width=0.4pt]
+        plot[domain=-3.6:3.6,samples=80,smooth] ({-sqrt(1+\x*\x)},\x) -- (-6,3.6) -- (-6,-3.6) -- cycle;
+        \definecolor{ggtesto}{RGB}{235,85,95}
+        \node[ggtesto,inner sep=0pt,font=\sffamily\large] at (-3.55,0.57) {A1};
+        \node[ggtesto,inner sep=0pt,font=\sffamily\large] at (0.29,1.63) {A2};
+        \node[ggtesto,inner sep=0pt,font=\sffamily\large] at (2.48,0.57) {A3};
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.327) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.43) {$y$};
+    \end{tikzpicture}
         \caption{Sottografico di $2x-3y+1=0$.}\label{fig:grafico_x^2-y^2-1}
     \end{figure}
 \end{example}
@@ -2120,19 +3079,170 @@ Lo stesso ragionamento si ripete su ogni regione (piano) $A_i$ (quindi in ogni r
     \end{enumerate}
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/dominio_rad_1-x^2-y^2.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/dominio_rad_1-x^2-y^2.jpg}
+    \begin{tikzpicture}[
+        x=1.1416cm,
+        y=1.1416cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.094} \def\ymax{3.082}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Disco x^2+y^2 <= 1
+        \filldraw[fill=ggblu,fill opacity=0.85,draw=black,line width=0.4pt] (0,0) circle (1);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.326) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.426) {$y$};
+    \end{tikzpicture}
         \caption{Dominio $E=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2\leq 1\}$ di $z=\sqrt{1-x^2-y^2}$.}\label{fig:dominio_rad_1-x^2-y^2}
     \end{figure}
     
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/dominio_rad_1-x^2+rad_1-y^2.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/dominio_rad_1-x^2+rad_1-y^2.jpg}
+    \begin{tikzpicture}[
+        x=1.1416cm,
+        y=1.1416cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.084} \def\ymax{3.072}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Quadrato [-1,1]x[-1,1] e rette x=+-1, y=+-1
+        \fill[fill=ggblu,fill opacity=0.85] (-1,-1) rectangle (1,1);
+        \draw[black,line width=0.4pt] (-1,\ymin) -- (-1,\ymax);
+        \draw[black,line width=0.4pt] (1,\ymin) -- (1,\ymax);
+        \draw[black,line width=0.4pt] (\xmin,-1) -- (\xmax,-1);
+        \draw[black,line width=0.4pt] (\xmin,1) -- (\xmax,1);
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.325) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.422) {$y$};
+    \end{tikzpicture}
         \caption{Dominio $E=\{(x,y)\in\mathbb R^2\,|\, 1-x^2\geq 0,\, 1-y^2\geq 0\}$ di $z=\sqrt{1-x^2}+\sqrt{1-y^2}$.}\label{fig:dominio_rad_1-x^2+rad_1-y^2}
     \end{figure}
 
     \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/domino_frac_1_rad_y-radx.jpg}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/domino_frac_1_rad_y-radx.jpg}
+    \begin{tikzpicture}[
+        x=1.1416cm,
+        y=1.1416cm,
+        line cap=round,
+        line join=round,
+        >={Stealth[length=4pt,width=3.5pt]},
+        font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+        ]
+        \definecolor{ggrosso}{RGB}{255,52,16}
+        \definecolor{ggblu}{RGB}{19,64,255}
+        \def\xmin{-5} \def\xmax{5.012}
+        \def\ymin{-3.084} \def\ymax{3.072}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+        % Griglia secondaria e principale
+        \foreach \k in {-21,...,21}
+        \draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+        \foreach \k in {-13,...,13}
+        \draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+        \foreach \k in {-4,...,4}
+        \draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+        % Assi cartesiani con tacche
+        \draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+        \draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+        \foreach \k in {-21,...,21}
+        \draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+        \foreach \k in {-13,...,13}
+        \draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+        \foreach \k in {-6,...,6}
+        \draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+        \foreach \k in {-4,...,4}
+        \draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+        % Regione x<0 (rossa) e regione x>=0, y>=sqrt(x) (blu), bordo x=y^2
+        \fill[fill=ggrosso,fill opacity=0.85] (\xmin,\ymin) rectangle (0,\ymax);
+        \filldraw[fill=ggblu,fill opacity=0.85,draw=ggblu!85!black,line width=0.4pt]
+        (0,0) -- plot[domain=0:3.6,samples=60,smooth] ({\x*\x},\x) -- (0,3.6) -- cycle;
+        \node[ggblu!80!black,inner sep=0pt,font=\sffamily\scriptsize] at (2.27,1.34) {$x=y^2$};
+
+        % Etichette degli assi
+        \foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+        \node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+        \foreach \yy in {-3,-2,-1,1,2,3}
+        \node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+        \node[inner sep=0pt] at (-0.2,-0.17) {0};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.325) {$x$};
+        \node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.422) {$y$};
+    \end{tikzpicture}
         \caption{Dominio (in blu) $E=\{(x,y)\in\mathbb R^2\,|\, y>\sqrt{x},\, x\geq 0\}$ di $z=\frac{1}{\sqrt{y-\sqrt{x}}}$.}\label{fig:domino_frac_1_rad_y-radx}
     \end{figure}
 \end{example}
@@ -2474,7 +3584,62 @@ In Figura \ref{fig:grafico_f_R3_osservazione} $(x_0,y_0,0)$ è il punto sul pian
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.65\textwidth]{Analisi2/figures/grafico_f_R3_osservazione.png}
+    %\includegraphics[width=0.65\textwidth]{Analisi2/figures/grafico_f_R3_osservazione.png}
+    \begin{tikzpicture}[
+        x=1.1250cm,
+        y=1.1250cm,
+        line cap=round,
+        line join=round,
+        >=Stealth
+        ]
+        \definecolor{tcrosso}{RGB}{220,0,0}
+        \definecolor{tcverde}{RGB}{126,200,50}
+        \definecolor{tcblu}{RGB}{0,120,255}
+        \definecolor{tcarancio}{RGB}{255,150,0}
+
+        % Assi Z, Y, X con punta aperta
+        \draw[line width=1.8pt,-{Triangle[open,length=9pt,width=9pt]}] (0,0) -- (0.00,4.30);
+        \draw[line width=1.8pt,-{Triangle[open,length=9pt,width=9pt]}] (0,0) -- (6.28,0.00);
+        \draw[line width=1.8pt,-{Triangle[open,length=9pt,width=9pt]}] (0,0) -- (-3.22,-3.35);
+
+        % Tratto del grafico e suo dominio (curve chiuse a mano libera)
+        \draw[line width=1.8pt] plot[smooth cycle,tension=0.6] coordinates {(-0.27,0.85) (-0.32,1.15) (0.13,1.65) (0.78,2.15) (1.48,2.50) (2.18,2.75) (2.78,3.00) (3.28,3.05) (3.43,2.75) (3.38,2.25) (2.98,1.75) (2.48,1.25) (2.18,0.75) (1.73,0.50) (1.08,0.43) (0.48,0.60) (0.08,0.83)};
+        \draw[line width=1.8pt] plot[smooth cycle,tension=0.6] coordinates {(-0.64,-2.50) (-0.57,-2.20) (-0.22,-1.80) (0.28,-1.45) (0.78,-1.20) (1.38,-1.10) (1.93,-0.90) (2.38,-0.60) (2.78,-0.53) (3.08,-0.65) (3.06,-1.05) (2.93,-1.55) (2.68,-1.90) (2.18,-2.10) (1.88,-2.35) (1.58,-2.80) (1.18,-3.10) (0.78,-3.15) (0.38,-3.00) (-0.02,-2.85) (-0.37,-2.70)};
+
+        % Punto P_0 e tratteggi di proiezione
+        \coordinate (P0) at (2.00,1.97);
+        \draw[line width=1.6pt,dash pattern=on 6pt off 5pt] (0.00,1.95) -- (P0);
+        \draw[line width=1.6pt,dash pattern=on 6pt off 5pt] (P0) -- (2.00,-2.03);
+        \draw[line width=1.6pt,dash pattern=on 6pt off 5pt] (-2.02,-2.02) -- (2.00,-2.02);
+        \draw[line width=1.6pt,dotted] (2.90,-0.23) -- (2.03,-1.85);
+        \draw[line width=1.6pt,dotted] plot[smooth] coordinates {(-0.22,0.83) (0.18,0.45) (0.68,0.27) (1.28,0.25) (1.78,0.37) (2.03,0.55)};
+        \draw[line width=1.6pt,dotted] (2.38,1.23) -- (2.38,0.85);
+
+        % Rette tangenti T_1, T_2 e curve y_1, y_2 passanti per P_0
+        \draw[tcrosso,line width=1.6pt] (0.96,3.05) -- (3.00,1.00);
+        \draw[tcrosso,line width=1.6pt] (0.98,0.95) -- (2.78,2.77);
+        \draw[tcverde,line width=1.8pt] plot[smooth] coordinates {(1.68,0.95) (1.83,1.55) (2.00,1.97) (2.38,2.25) (2.83,2.37)};
+        \draw[tcblu,line width=1.8pt] plot[smooth] coordinates {(1.41,2.27) (1.78,2.10) (2.00,1.93) (2.23,1.60) (2.38,1.30)};
+        \fill[tcarancio] (P0) circle (2pt);
+
+        % Etichette (scritte a mano nell'originale)
+        \node at (0.40,3.83) {\Large $Z$};
+        \node at (-0.22,1.97) {\Large $z_0$};
+        \node at (5.75,-0.33) {\Large $Y$};
+        \node at (-2.67,-3.13) {\Large $X$};
+        \node at (-2.35,-1.88) {\Large $x_0$};
+        \node at (3.18,0.20) {\Large $y_0$};
+        \node at (3.73,-0.98) {\Large Dom};
+        \node at (2.58,-2.10) {\normalsize $(x_0,y_0,0)$};
+        \node at (2.98,-3.03) {\normalsize $E_{z_0}=E_0$};
+        \draw[line width=1.4pt,->] (1.98,-2.82) -- (2.26,-3.02);
+        \node[tcrosso] at (1.08,3.07) {\Large $T_2$};
+        \node[tcrosso] at (2.86,2.75) {\Large $T_1$};
+        \node[tcverde] at (1.58,1.88) {\Large $y_1$};
+        \node[tcblu] at (2.48,0.87) {\Large $y_2$};
+        \node[tcarancio] at (4.10,1.90) {\small $P_0=(x_0,y_0,z_0)$};
+        \node[tcarancio] at (5.16,2.87) {\small $z_0=f(x_0,y_0)$};
+    \end{tikzpicture}
     \caption{Grafico con rette tangenti.}\label{fig:grafico_f_R3_osservazione}
 \end{figure}
 
@@ -2505,7 +3670,61 @@ Per le funzioni in più variabili, la derivabilità non implica continuità. Qui
 	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.65\textwidth]{Analisi2/figures/esercizio_piano_tangente.png}
+		%\includegraphics[width=0.65\textwidth]{Analisi2/figures/esercizio_piano_tangente.png}
+		\begin{tikzpicture}[
+			x={(-0.3367cm,-0.1188cm)},
+			y={(0.4297cm,-0.0936cm)},
+			z={(0.0000cm,0.5321cm)},
+			line cap=round,
+			line join=round,
+			>=Stealth,
+			font=\sffamily\fontsize{5pt}{6pt}\selectfont
+			]
+			% Sistema di riferimento (x,y,z) proiettato come nel disegno originale
+			\definecolor{asserosso}{RGB}{235,20,20}
+			\definecolor{asseverde}{RGB}{0,120,20}
+			\definecolor{assublu}{RGB}{50,50,200}
+			\definecolor{paraboloide}{RGB}{110,100,200}
+
+			% Piano z=0 (grigio con bordo sfumato): rettangoli concentrici sempre piu' scuri
+			\foreach \f/\g in {1.03/243,1.0/232,0.95/220,0.9/208,0.85/196,0.8/186,0.73/178,0.65/172}
+			\fill[color={rgb,255:red,\g;green,\g;blue,\g}] ({-7*\f},{-7.5*\f},0) -- ({7*\f},{-7.5*\f},0) -- ({7*\f},{7.5*\f},0) -- ({-7*\f},{7.5*\f},0) -- cycle;
+
+			% Assi
+			\draw[asserosso,line width=0.8pt,-{Stealth[length=4pt,width=4pt]}] (-7.6,0,0) -- (7.3,0,0);
+			\draw[asseverde,line width=0.8pt,-{Stealth[length=4pt,width=4pt]}] (0,-7.6,0) -- (0,7.3,0);
+			\draw[assublu,line width=0.8pt,dashed,-{Stealth[length=4pt,width=4pt]}] (0,0,-3) -- (0,0,6.3);
+
+			% Paraboloide z=x^2+y^2 (0<=z<=6): sagoma, base superiore e tracce sui piani x=cost, y=cost
+			\fill[paraboloide,opacity=0.75] (canvas cs:x=-1.300cm,y=3.007cm) -- (canvas cs:x=-1.334cm,y=3.220cm) -- (canvas cs:x=-1.297cm,y=3.284cm) -- (canvas cs:x=-1.221cm,y=3.345cm) -- (canvas cs:x=-1.108cm,y=3.401cm) -- (canvas cs:x=-0.961cm,y=3.451cm) -- (canvas cs:x=-0.785cm,y=3.493cm) -- (canvas cs:x=-0.585cm,y=3.526cm) -- (canvas cs:x=-0.367cm,y=3.549cm) -- (canvas cs:x=-0.138cm,y=3.561cm) -- (canvas cs:x=0.095cm,y=3.562cm) -- (canvas cs:x=0.325cm,y=3.552cm) -- (canvas cs:x=0.546cm,y=3.530cm) -- (canvas cs:x=0.749cm,y=3.499cm) -- (canvas cs:x=0.930cm,y=3.458cm) -- (canvas cs:x=1.083cm,y=3.409cm) -- (canvas cs:x=1.203cm,y=3.354cm) -- (canvas cs:x=1.286cm,y=3.293cm) -- (canvas cs:x=1.330cm,y=3.230cm) -- (canvas cs:x=1.334cm,y=3.165cm) -- (canvas cs:x=1.163cm,y=2.403cm) -- (canvas cs:x=0.992cm,y=1.745cm) -- (canvas cs:x=0.852cm,y=1.286cm) -- (canvas cs:x=0.682cm,y=0.819cm) -- (canvas cs:x=0.543cm,y=0.516cm) -- (canvas cs:x=0.405cm,y=0.282cm) -- (canvas cs:x=0.299cm,y=0.149cm) -- (canvas cs:x=0.225cm,y=0.080cm) -- (canvas cs:x=0.154cm,y=0.031cm) -- (canvas cs:x=0.114cm,y=0.012cm) -- (canvas cs:x=0.076cm,y=-0.000cm) -- (canvas cs:x=0.063cm,y=-0.004cm) -- (canvas cs:x=0.048cm,y=-0.006cm) -- (canvas cs:x=0.023cm,y=-0.009cm) -- (canvas cs:x=0.012cm,y=-0.010cm) -- (canvas cs:x=-0.000cm,y=-0.011cm) -- (canvas cs:x=-0.012cm,y=-0.010cm) -- (canvas cs:x=-0.024cm,y=-0.009cm) -- (canvas cs:x=-0.048cm,y=-0.006cm) -- (canvas cs:x=-0.063cm,y=-0.003cm) -- (canvas cs:x=-0.077cm,y=-0.000cm) -- (canvas cs:x=-0.114cm,y=0.012cm) -- (canvas cs:x=-0.154cm,y=0.032cm) -- (canvas cs:x=-0.226cm,y=0.080cm) -- (canvas cs:x=-0.300cm,y=0.150cm) -- (canvas cs:x=-0.405cm,y=0.283cm) -- (canvas cs:x=-0.543cm,y=0.517cm) -- (canvas cs:x=-0.682cm,y=0.821cm) -- (canvas cs:x=-0.853cm,y=1.288cm) -- (canvas cs:x=-0.992cm,y=1.747cm) -- (canvas cs:x=-1.163cm,y=2.405cm) -- cycle;
+			\fill[white,opacity=0.18,draw=black!60,line width=0.3pt] plot[domain=0:360,samples=60] ({sqrt(6)*cos(\x)},{sqrt(6)*sin(\x)},6);
+			\foreach \c in {-2,-1,...,2}
+			{
+				\pgfmathsetmacro{\t}{sqrt(6-\c*\c)}
+				\draw[black!80,line width=0.3pt,domain=-\t:\t,samples=30,smooth] plot (\x,\c,{\x*\x+\c*\c});
+				\draw[black!80,line width=0.3pt,domain=-\t:\t,samples=30,smooth] plot (\c,\x,{\x*\x+\c*\c});
+			}
+
+			% Tacche e numeri sugli assi
+			\foreach \n in {-7,...,7}
+			{
+				\fill[asserosso!85!black] (\n,0,0) circle (1.4pt);
+				\fill[asseverde!85!black] (0,\n,0) circle (1.4pt);
+			}
+			\foreach \n in {-7,...,-1,1,2,...,7}
+			{
+				\node[asserosso,above left=-1pt] at (\n,0,0) {\n};
+				\node[asseverde,above right=-1pt] at (0,\n,0) {\n};
+			}
+			\foreach \n in {-3,-2,-1,1,2,...,6}
+			{
+				\fill[assublu!85!black] (0,0,\n) circle (1.1pt);
+				\node[assublu,left=1pt] at (0,0,\n) {\n};
+			}
+			\node[asserosso,font=\sffamily\bfseries\fontsize{7pt}{8pt}\selectfont] at (7.9,0,0) {x};
+			\node[asseverde,font=\sffamily\bfseries\fontsize{7pt}{8pt}\selectfont] at (0,7.9,0) {y};
+			\node[assublu,font=\sffamily\bfseries\fontsize{7pt}{8pt}\selectfont] at (0.45,0,5.6) {z};
+		\end{tikzpicture}
 		\caption{Grafico $f(x,y)=x^2+y^2$.}\label{fig:esercizio_piano_tangente}
 	\end{figure}
 	
@@ -3658,7 +4877,30 @@ ciò si indica con
 \end{equation*}
 
 \begin{example}
-	ESEMPIO CALCOLO DERIVATA COMPOSTA slide 2 pdf 19.
+	\footnote{Slide 2 PDF 19.}
+	Sia
+	\begin{equation*}
+		f(x,y) = x e^y
+	\end{equation*}
+	e
+	\begin{equation*}
+		\gamma:
+		\begin{cases}
+			x(t)=\sin x\\
+			y(t)=\cos x
+		\end{cases}
+	\end{equation*}
+	\begin{equation*}
+		F(t)=f(\gamma(t)) = f(x(t), y(t)) = \sin t e^{\cos t},
+	\end{equation*}
+	quindi
+	\begin{equation*}
+		F'(t) = (f\circ\gamma)(t) = f(\gamma(t))' = <\triangledown f(\gamma(t)), \gamma'(t)>=\cos te^{\cos t}-\sin^2te^{\cos t},
+	\end{equation*}
+	dove
+	\begin{equation*}
+		\triangledown f(x,y) = (e^y, xe^y), \quad \gamma'(t)=(\cos t-\sin t),\quad \triangledown f(\gamma(t)) = \left(e^{\cos t}, \sin t e^{\cos t}\right).
+	\end{equation*}
 \end{example}
 
 \begin{definition}[Matrice Hessiana]\footnote{Slide 3 PDF 18}
@@ -3911,18 +5153,290 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\item (Non ufficiale) Il fatto che $Hf$ sia una matrice reale simmetrica aiuta nell'algebra delle matrici, ad esempio nella ricerca degli autovalori.
 \end{itemize}
 
-\begin{example}
-	CALCOLO DERIVATE PARZIALI DI $f$ SLIDE 7-10 PDF 20.\\
-	STABILIRE CONTINUITà, DIFFERENZIABILITA, DERIVABILITA SLIDE 9-13 PDF 20.\\
-	INSIEME MASSIMALE FUNZIONE SLIDE 13-14 PDF 20.
-\end{example}
-
-\paragraph{Cosa serve al Teorema di Schwarz per essere valido?} Le ipotesi del Teorema richiedono l'esistenza delle derivate parziali seconde di $f$ e la continuità delle derivate parziali miste di $f$ nel punto $x_0$. La sola esistenza delle derivate seconde non assicura che si possa invertire l'ordine dei derivazione. Ciò è fatto vedere nel seguente esempio.
+\paragraph{Cosa serve al Teorema \ref{th:schwarz} di Schwarz per essere valido?} Le ipotesi del Teorema \ref{th:schwarz} di Schwartz richiedono l'esistenza delle derivate parziali seconde di $f$ e la continuità delle derivate parziali miste di $f$ nel punto $x_0$. La sola esistenza delle derivate seconde non assicura che si possa invertire l'ordine dei derivazione. Ciò è fatto vedere nel seguente esempio.
 
 \paragraph{Nota sul $f$:} Se $f\in C^2(A)$ allora è differenziabile, continua (così anche le sue derivate parziali) e le derivate parziali seconde miste sono uguali.
 
-\begin{example}
-	Esistenza delle derivate non implica continuità e quindi no TH di Schwarz, SLIDE 16-19 PDF 21.
+\begin{example}[Derivabilità $\cancel{\rightarrow}$ continuità]
+	Considerata
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			0&\text{se } (x,y)=(0,0)\\
+			\frac{x^3y-xy^3}{x^2+y^2}&\text{se }(x,y)\neq(0,0)
+		\end{cases}
+	\end{equation*}
+	$f$ è continua in $\mathbb{R}^2$.\\
+	Verifichiamo la continuità in $(0,0)$:
+	\begin{equation*}
+		\exists\lim_{(x,y)\rightarrow(0,0)}f(x,y)=f(x_0,y_0)=f(0,0)=0.
+	\end{equation*}
+	Valutiamo dunque
+	\begin{equation*}
+		\begin{matrix}
+			\lim\limits_{(x,y) \rightarrow(0,0)}f(x,y) &=& \lim\limits_{(x,y) \rightarrow(0,0)}\frac{x^3y-xy^2
+			3}{x^2+y^2} &=& \lim\limits_{\rho\rightarrow0^+}\frac{\rho^3 \cos\theta\rho\sin\theta-\rho\cos\theta\rho^3\sin^3\rho}{\rho^2}
+			&=&\\
+			&=& \lim\limits_{(x,y) \rightarrow(0,0)}\frac{\rho^{\cancel{4}^2}\cos\theta\sin\theta(\cos^2\theta-\sin^2\theta)}{\cancel{\rho^2}}
+			&\overset{\cos^2\theta-\sin^2\theta = \cos2\theta}{=}& \lim\limits_{\rho \rightarrow 0^+}\rho^2\cos\theta\sin\theta\cos2\theta &=&\\
+			&=& \lim\limits_{\rho \rightarrow 0^+}\rho^2\frac{\sin2\theta}{2}\cos2\theta &=& 0 &=&\\
+			&&&=&f(0,0)
+		\end{matrix}
+	\end{equation*}
+	Inoltre
+	\begin{equation*}
+		\left|\rho^2\frac{\sin2\theta}{2}\cos2\theta\right|\leq \rho^2\underset{\rho\rightarrow 0^+}{\longrightarrow} 0,\quad \sin(2\theta)\cos(2\theta)=\frac{\sin(4\theta)}{2}
+	\end{equation*}
+	Quindi $f(x,y)$ è continua in $(0,0)$. Inoltre, è possibile notare che $f(x,y)=-(f(y,x))$.
+	\paragraph{Intermezzo:} $f_x$ e $f_y$ sono continue in $(0,0)$ per quanto segue. Per i punti diversi da $(0,0)$ le derivate parziali sono continue. Per decidere della derivabilità sull'opportuno dominio conviene guardare cosa accade nell'origine. $\qed$\\
+	Inoltre, $f_x(x,y)$ e $f_y(x,y)$ sono continue in $(0,0)$. Mentre $\forall (x,y)\neq(0,0)$:
+	\begin{equation*}
+		\begin{matrix}
+			\frac{\partial f}{\partial x}(x,y) &=& \frac{(3x^2y - y^3)(x^2+y^2) - (x^3y-xy^3)\; 2x}{(x^2+y^2)^2} &=& \frac{3x^4y+3x^2y^3-x^2y^3-y^5-2x^4y+2x^2y^3}{(x^2+y^2)}&=&\frac{x^4y+4x^2y^3-y^5}{(x^2+y^2)^2}\\\\
+			\frac{\partial f}{\partial y}(x,y) &=& \frac{(x^3-3xy^2)(x^2+y^2)-2y(x^3y-xy^3)}{(x^2+y^2)^2}&=&\frac{x^5-3x^3y^2+x^3y^2-3xy^4-2x^3y^2+2xy^4}{(x^2+y^2)^2}&=&\frac{x^5-xy^4}{(x^2+y^2)^2}
+		\end{matrix}
+	\end{equation*}
+	\paragraph{Cosa accade in $(0,0)$ per $f_x(x,y)$ e $f_y(x,y)$?} È necessario stabilire se $f_x$ e $f_y$ sono continue in $(0,0)$. $\qed$\\
+	In $(0,0)$ (utilizzando la definizione di derivata parziale)
+	\begin{equation*}
+		\boldsymbol{f_x(0,0)}=\lim_{h\rightarrow 0}\frac{f(0+h, 0)-f(0,0)}{h} = \lim_{h\rightarrow 0} \frac{\frac{h^3\cdot 0 - h\cdot 0^3}{h^2-0^2} - 0}{h} = \boldsymbol{0}
+	\end{equation*}
+	\begin{equation*}
+		\boldsymbol{f_y(0,0)} = \lim_{h\rightarrow 0} \frac{f(0,0+h)-f(0,0)}{h}= \lim_{h\rightarrow 0}\frac{\frac{0\cdot h- 0\cdot h^3}{0^2+h^2} - 0 }{h} = \boldsymbol{0}
+	\end{equation*}
+	\paragraph{Intermezzo:} Quanto fatto fino ad adesso significa che $f\in C^1(\mathbb{R})$ e che $f$ è differenziabile. Adesso sono calcolate le derivate seconde applicando la definizione di dericata parziale. $\qed$
+	\begin{equation*}
+		\begin{matrix}
+			f_{xy}(0,0) &=& \frac{\partial f}{\partial x}\left(\frac{\partial f}{\partial y}(0,0)\right) &=& \lim\limits_{k\rightarrow0}\frac{f_x(0,0+k)-f_x(0,0)}{k} &=& \lim\limits_{k\rightarrow 0}\frac{\frac{0\cdot k+4\cdot0\cdot k^4-k^5}{(k^2)^2} - 0}{k} &=&\lim\limits_{k\rightarrow0}-\frac{k^5}{k^5} &=& -1\\
+			f_{yx} &=& \frac{\partial f}{\partial y}\left(\frac{\partial f}{\partial x}(0,0)\right) &=& \lim\limits_{h\rightarrow 0} \frac{f_y(0+h, 0)-f_y(0,0)}{h} &=& \lim\limits_{h\rightarrow 0}\frac{\frac{h^4 -10\cdot h^2\cdot 0 - 3\cdot 0}{(h^2)^2} - 0}{h} &=&\limi\limits{h\rightarrow 0}\frac{h}{h} = 1.
+		\end{matrix}
+	\end{equation*}
+	Poiché $f(x,y)=-f(y,x)$ si ha che $f_{yx}(0,0) = 1$ e $f_{xy}(0,0)\neq f_{yx}(0,0)$, ovvero le derivate seconde miste non sono continue in $(0,0)$.
+	\paragraph{Intermezzo:} Se $f\in C^2(A)$ allora la matrice Hessiana è simmetrica, ovvero quanto segue. $\qed$.
+\end{example}
+
+\begin{example}[Calcolo derivate parziali]
+	\footnote{Slide 7-10 PDF 20.}
+	 \paragraph{Testo:} 
+	 Sia
+	 \begin{equation*}
+	 	f(x,y) = 
+	 	\begin{cases}
+	 		\frac{x^2y-3y^3}{x^2+y^2} &\text{per } (x,y)\neq(0,0)\\
+	 		0&\text{altrimenti}
+	 	\end{cases}
+	 \end{equation*}
+	 quindi $f\colon\mathbb{R}^2\rightarrow\mathbb{R}$.
+	 \begin{enumerate}
+	 	\item calcolare le derivate parziali di $f$ per $(x,y)\neq(0,0)$,
+	 	\item calcolare le derivate parziali di $f$ per $(x,y)=(0,0)$ e stabilire se $f$ è differenziabile in $(0,0)$.
+	 \end{enumerate}
+	 \paragraph{Svolgimento:}
+	 \begin{enumerate}
+	 	\item Se $(x,y)\neq (0,0)$ (è possibile calcolare il vettore gradiente perché le derivate parziali sono continue)
+	 	\begin{equation*}
+	 		\begin{matrix}
+	 			\frac{\partial f}{\partial x} (x,y) &=& \frac{2xy(x^2+y^2) - 2x(x^2y-3y^3)}{(x^2+y^2)^2} &=& \frac{2x^3y+2xy^3-2x^3y+6xy^3}{(x^2+y^2)^2} &=& \frac{8xy^3}{(x^2+y^2)^2}\\
+	 			\frac{\partial f}{\partial y} (x,y) &=& \frac{(x^2-9y^2)(x^2+y^2)-2y(x^2y-3x^3)}{(x^2+y^2)^2} &=& \frac{x^4+x^2y^2-9x^2y^2-9y^4 - 2x^2y^2 + 6y^4}{(x^2+y^2)^2} &=& \frac{x^4-10x^2y^2-3y^4}{(x^2+y^2)^2}.
+	 		\end{matrix}
+	 	\end{equation*}
+	 	quindi
+	 	\begin{equation*}
+	 		\triangledown f(x,y) = \left(\frac{8xy^3}{(x^2+y^2)^2}, \frac{x^4-10x^2y^2-3y^4}{(x^2 + y^2)^2}\right)\quad (x,y)\neq(0,0).
+	 	\end{equation*}
+	 	\item\footnote{Per questo punto è utile utilizzare le tracce perché sono ottenute funzioni di una sola variabile per poi calcolare la derivata nel punto.} Traccia in $f$ in $y=0$:
+	 	\begin{equation*}
+	 		f(x,0)=0\Rightarrow \frac{\partial f}{\partial x}f(\uline 0) = 0.
+	 	\end{equation*}
+	 	Traccia in $x=0$:
+	 	\begin{equation*}
+	 		f(0,y)=\frac{-3y^3}{y^2} = -3y \Rightarrow \frac{\partial f}{\partial y}(0,0) = g_2'(0)=g_2'(y) = -3.
+	 	\end{equation*}
+	 	Quindi,
+	 	\begin{equation*}
+	 		\triangledown f(0,0)=(0,-3).
+	 	\end{equation*}
+	 	Per essere differenziabile in $(0,0)$ è necessario verificare che (oltre alla derivabilità in $(0,0)$ appena dimostrata)
+	 	\begin{equation*}
+	 		\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-f(0,0)-\frac{\partial f}{\partial x}(0,0)-\frac{\partial f}{\partial y}(0,0)(y-0)}{\sqrt{x^2+y^2}} = 0,
+	 	\end{equation*}
+	 	ovvero
+	 	\begin{equation*}
+	 		\lim_{(x,y)\rightarrow(0,0)}\frac{\frac{x^2y-3y^3}{x^2y^2}-0-0\cdot x + 3x}{\sqrt{x^2+y^2}} = 0.
+	 	\end{equation*}
+	 	\begin{equation*}
+	 		\begin{matrix}
+	 			\lim\limits_{(x,y) \rightarrow(0,0)}\frac{\frac{x^2y-3y^3}{x^2y^2}+ 3x}{\sqrt{x^2+y^2}} &=& \lim\limits_{(x,y) \rightarrow(0,0)} \frac{x^2y-\cancel{3y^3}+3x^2y+\cancel{3y^3}}{(x^2+y^2)^{\frac{3}{2}}} &=& \lim\limits_{(x,y) \rightarrow(0,0)}\frac{4x^2y}{(x^2+y^2)^{\frac{3}{2}}} &=&\\\\
+	 			\begin{matrix}
+	 				x&=&\rho\cos\theta\\
+	 				y&=&\rho\sin\theta 
+	 			\end{matrix}&=& \lim\limits_{\rho \rightarrow 0^+}\frac{4\rho^2\cos^2\theta\rho\sin\theta}{(\rho^2)^{\frac{3}{2}}} &=& \lim\limits_{\rho \rightarrow 0^+}\frac{4\cancel{\rho^3}\cos^2\theta\sin\theta}{\cancel{\rho}^3},
+	 		\end{matrix}
+	 	\end{equation*}
+	 	dipende $\theta$, quindi $f$ non è differenziabile in $(0,0)$.
+	 \end{enumerate}
+\end{example}
+
+\paragraph{Nota sull'Esempio precedente:} Se il limite avesse avuto $\rho^5$ al nominatore sarebbe stato necessario (nello scritto è necessario farlo) dimostare che, tramite il Teorema \ref{th:dei_carabinieri_2} del confronto, il limite è 0 come segue:
+\begin{equation*}
+	|\rho^5\cos^2\theta\sin\theta| \leq \rho^5 |\cos^2\theta\sin\theta|\leq \rho^5 \underset{\rho\rightarrow 0^+}{\rightarrow} 0.
+\end{equation*}
+La maggiorazione è fatta con una funzione continua (una funzione radiale infinitesima) che tende uniformemente a 0. 
+
+\begin{example}[Continuità, funziona]
+	 \footnote{Slide 10 PDF 20.}
+	\paragraph{Testo:}
+	Stabilire se
+	\begin{equation*}
+		f(x,y)=
+		\begin{cases}
+			\frac{x}{\log(x^2+y^2)}&\text{per }(x,y)\neq(0,0)\\
+			0 &\text{per } (x,y)=(0,0)
+		\end{cases}
+	\end{equation*}
+	è continua, derivabile, e/o differenziabile.
+	\paragraph{Svolglimento:} 
+	\footnote{Se $f$ è differenziabile in $(0,0)$ (l'esercizio è concluso) allora è derivabile e continua. Se $f$ non è continua è possibile concludere subito perché non è differenziabile.}
+	Valutiamo la continuità in $(0,0)$. Per essere continua in $(0,0)$ deve esistere finito il limite di $f$ per $(x,y)\rightarrow(0,0)$.
+	\begin{equation*}
+		\lim_{(x,y) \rightarrow(0,0)} f(x,y)=f(0,0)=0,
+	\end{equation*}
+	quindi il candidato limite è 0.\\
+	\footnote{Proviamo ad applicare il Teorema \ref{th:dei_carabinieri_2} del Confronto al valore assoluto della funzione.} Valutiamo
+	\begin{equation*}
+		|f(x,y)| = \left|\frac{x}{\log(x^2+y^2)}\right| =\left|\frac{\rho\cos\theta}{\log(\rho^2)}\right| = \frac{\rho|\cos\theta|}{2|\log(\rho)|} \overset{\cos\theta\leq1}{\leq}\frac{\rho}{2|\log(\rho)|}\rightarrow 0
+	\end{equation*}
+	quindi $f$ è continua.
+	\footnote{Per il calcolo delle tracce utilizziamo le tracce.} Traccia $y=0$:
+	\begin{equation*}
+		g_1(x) = f(x,0) =
+		\begin{cases}
+			\frac{x}{\log(x^2)} &\text{per } x\neq 0\\
+			0 &\text{per } x=0
+		\end{cases}
+	\end{equation*}
+	Quindi,
+	\begin{equation*}
+		\frac{\partial f}{\partial x}(0,0) = \lim_{x\rightarrow 0}\frac{\frac{x}{\log(x^2)} - 0}{x - 0} = \lim_{x\rightarrow 0}\frac{\frac{x}{\log(x^2)}}{x} = \lim_{x\rightarrow 0} \frac{1}{\log(x^2)} = 0.
+	\end{equation*}
+	Traccia $x=0$
+	\begin{equation*}
+		g_2(y) = f(0,y) = 0 \quad\rightarrow\quad \frac{\partial f}{\partial y}(0,0) = 0.
+	\end{equation*}
+	Quindi,
+	\begin{equation*}
+		\triangledown f(0,0) = (0,0),
+	\end{equation*}
+	ovvero $f$ è derivabile in $(0,0)$.\\
+	Per dimostare la differenziabilità di $f$ in $(0,0)$ è necessario valutare
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\frac{f(x,y)-f(0,0)-\frac{\partial f}{\partial x}(0,0)(x-0)-\frac{\partial f}{\partial y}(0,0)(y-0)}{\sqrt{x^2+y^2}}=0,
+	\end{equation*}
+	ovvero
+	\begin{equation*}
+		\lim_{(x,y)\rightarrow(0,0)}\frac{\frac{x}{\log(x^2+y^2)}-0}{\sqrt{x^2+y^2}}=0,
+	\end{equation*}
+	dove se è $0$ allora $f(x,y)=o\left(\sqrt{x^2+y^2}\right),\, (x,y)\rightarrow (0,0)$.\\
+	Valutiamo
+	\begin{equation*}
+		\left|\frac{\frac{x}{\log(x^2+y^2)}}{\sqrt{x^2+y^2}}\right|=\left|\frac{\frac{\rho\cos\theta}{\log\rho^2}}{\sqrt{\rho^2}}\right| = \left|\frac{\cancel{\rho}\cos\theta}{\cancel{\rho}\log\rho^2}\right| = \left|\frac{\cos\theta}{2\log\rho}\right|\overset{\cos\theta \leq 1}{\leq} \frac{1}{2|\log\rho|}\underset{\rho\rightarrow 0^+}{\rightarrow}0,
+	\end{equation*}
+	quindi $f$ è differenziabile in $(0,0)$
+\end{example}
+\begin{example}[Insieme massimale]
+	\footnote{Slide 13 PDF 20.}
+	\paragraph{Testo:} Sia
+	\begin{equation*}
+		f(x,y) = \log[(x^2-1-y)(x^2-1+y)] + \log(4-x^2),\; f\colon E\subseteq \mathbb{R}^2\rightarrow\mathbb{R},
+	\end{equation*}
+	trovare l'insieme massimale $E$.
+	\paragraph{Svolglimento:}
+	\begin{equation*}
+		\begin{matrix}
+			E&=&\{(x,y)\in\mathbb{R}^2\;|\; (x^2-1-y)(x^2-1+y)>0\land (4-x^2)>0\}\\
+			&=&\{(x,y)\in\mathbb{R}^2\;|\; (x^2-1-y)(x^2-1+y)>0\land -2<x<2\}.
+		\end{matrix}
+	\end{equation*}
+	Le soluzioni della prima disequazione sono:
+	\begin{equation*}
+		\begin{matrix}
+			(x^2-1-y)(x^2-1+y) > 0 &\iff& (x^2-1-y)>0,\; (x^2-1+y) > 0 \\
+			&&\text{oppure}\\
+			&& (x^2-1-y)<0,\; (x^2-1+y) < 0
+		\end{matrix}
+	\end{equation*}
+	ovvero
+	\begin{equation*}
+		\begin{matrix}
+			f_1(x,y)\\
+			f_2(x,y)
+		\end{matrix}
+		\begin{cases}
+			x^2-1-y>0\\
+			x^2 -1 + y>0
+		\end{cases}
+		\cup
+		\begin{cases}
+			x^2-1-y<0\\
+			x^2-1+y<0
+		\end{cases}
+	\end{equation*}
+	\paragraph{Intermezzo:} $f_1$ e $f_2$ sono continue, quindi dove sono diverse da 0 danno degli aperti in $\mathbb{R}^2$. Ciò significa che è necessario stabilire l'equazione associata che determina la zona nella quale $f_1(x,y)=0$, così anche per $f_2$. $\qed$
+	\begin{equation*}
+	\begin{matrix}
+			f_1(x,y) = 0 &\iff& x^2-1-y = 0 &\rightarrow& y\neq x^2-1\\
+			f_2(x,y) = 0 &\iff& x^2-1+y = 0 &\rightarrow& y\neq -x^2+1
+	\end{matrix}
+	\end{equation*}
+	\begin{figure}[ht]
+		\centering
+		\begin{tikzpicture}[
+			x=0.85cm, y=0.85cm,
+			line cap=round, line join=round,
+			>=Stealth
+			]
+			% Regione tra le parabole, per -2 <= x <= 2
+			\path[
+			pattern={Lines[angle=45,distance=6pt,line width=0.55pt]},
+			pattern color=blue!70
+			]
+			plot[domain=-2:2,samples=120] (\x,{\x*\x-1})
+			-- plot[domain=2:-2,samples=120] (\x,{-\x*\x+1})
+			-- cycle;
+			
+			% Estremi dell'intervallo
+			\draw[thick,dashed] (-2,-4.1) -- (-2,4.1);
+			\draw[thick,dashed] ( 2,-4.1) -- ( 2,4.1);
+			
+			% Parabole
+			\draw[very thick,domain=-2.2:2.2,samples=120]
+			plot (\x,{\x*\x-1});
+			\draw[very thick,domain=-2.2:2.2,samples=120]
+			plot (\x,{-\x*\x+1});
+			
+			% Assi cartesiani
+			\draw[very thick,->] (-2.75,0) -- (2.85,0) node[right] {$x$};
+			\draw[very thick,->] (0,-4.3) -- (0,4.35) node[above] {$y$};
+			
+			% Tacche e valori notevoli
+			\draw[thick] (-2,-0.09) -- (-2,0.09);
+			\draw[thick] ( 2,-0.09) -- ( 2,0.09);
+			\node[below=4pt] at (-2.4,0) {$-2$};
+			\node[below=4pt] at ( 2.3,0) {$2$};
+			\draw[thick] (-0.09,-1) -- (0.09,-1);
+			\draw[thick] (-0.09, 1) -- (0.09, 1);
+			\node[anchor=west,fill=white,inner sep=1pt] at (0.12,1.2) {$1$};
+			\node[anchor=west,fill=white,inner sep=1pt] at (0.12,-1.2) {$-1$};
+			
+			% Etichette delle curve
+			\node[anchor=west,fill=white,inner sep=1pt] at (1.55,3.0)
+			{$y=x^2-1$};
+			\node[anchor=west,fill=white,inner sep=1pt] at (1.45,-2.35)
+			{$y=-x^2+1$};
+		\end{tikzpicture}
+		\caption{Regione tra $y=x^2-1$ e $y=-x^2+1$ per $-2\le x\le2$.}
+		\label{fig:regione-tra-parabole}
+	\end{figure}
 \end{example}
 
 \subsubsection{Formula di Taylor}
@@ -4247,7 +5761,56 @@ In Analisi 1 il Teorema \ref{th:fermat_an1} di Fermat fornisce una condizione ne
 	$f(x)=x^3$ ha $x=0$ come punto stazionario anche se questo non è un estremo locale. Il Teorema di Fermat è "solo" la condizione necessaria affinché un punto sia un estremo. Vedere Figura \ref{fig:x-pow-3}.
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Analisi2/figures/x-pow-3.jpg}
+		%\includegraphics[width=0.5\textwidth]{Analisi2/figures/x-pow-3.jpg}
+		\begin{tikzpicture}[
+			x=0.8779cm,
+			y=0.8779cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-5} \def\xmax{5.012}
+			\def\ymin{-3.086} \def\ymax{3.074}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-21,...,21}
+			\draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+			\foreach \k in {-13,...,13}
+			\draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+			\foreach \k in {-6,...,6}
+			\draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+			\foreach \k in {-4,...,4}
+			\draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-21,...,21}
+			\draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+			\foreach \k in {-13,...,13}
+			\draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+			\foreach \k in {-6,...,6}
+			\draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+			\foreach \k in {-4,...,4}
+			\draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+			% Grafico di y=x^3
+			\definecolor{ggcubica}{RGB}{4,51,255}
+			\draw[ggcubica,line width=0.5pt,domain=-1.5:1.5,samples=80,smooth] plot (\x,{\x*\x*\x});
+
+			% Etichette degli assi
+			\foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {-3,-2,-1,1,2,3}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.2,-0.16) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (1.782,-0.309) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.424,1.349) {$y$};
+		\end{tikzpicture}
 		\caption{Grafico di $f(x)=x^3$.}\label{fig:x-pow-3}
 	\end{figure}
 \end{example}
@@ -5023,7 +6586,61 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 	nel dominio $D=\{(x,y)\in\mathbb{R}^2\;|\; -1\leq x\leq 0,\; -1\leq y\leq x\}$ (vedere Figura \ref{fig:vincolo}).
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo.jpg}
+		%\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo.jpg}
+		\begin{tikzpicture}[
+			x=0.8833cm,
+			y=0.8833cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-4.97} \def\xmax{4.982}
+			\def\ymin{-3.086} \def\ymax{3.074}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-20,...,20}
+			\draw[black!8,line width=0.3pt] (0.25*\k,\ymin) -- (0.25*\k,\ymax);
+			\foreach \k in {-13,...,13}
+			\draw[black!8,line width=0.3pt] (\xmin,0.25*\k) -- (\xmax,0.25*\k);
+			\foreach \k in {-5,...,5}
+			\draw[black!22,line width=0.4pt] (1*\k,\ymin) -- (1*\k,\ymax);
+			\foreach \k in {-4,...,4}
+			\draw[black!22,line width=0.4pt] (\xmin,1*\k) -- (\xmax,1*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-20,...,20}
+			\draw[line width=0.4pt] (0.25*\k,-0.9pt) -- (0.25*\k,0.9pt);
+			\foreach \k in {-13,...,13}
+			\draw[line width=0.4pt] (-0.9pt,0.25*\k) -- (0.9pt,0.25*\k);
+			\foreach \k in {-5,...,5}
+			\draw[line width=0.5pt] (1*\k,-1.6pt) -- (1*\k,1.6pt);
+			\foreach \k in {-4,...,4}
+			\draw[line width=0.5pt] (-1.6pt,1*\k) -- (1.6pt,1*\k);
+
+			% Vincolo: rette y=x e y=-1; triangolo D di vertici (-1,-1), (0,-1), (0,0)
+			\definecolor{ggretta}{RGB}{210,50,30}
+			\filldraw[fill=ggblu,fill opacity=0.85,draw=ggblu!50!black,line width=0.4pt] (-1,-1) -- (0,-1) -- (0,0) -- cycle;
+			\draw[ggretta,line width=0.5pt] (-4,-4) -- (4,4);
+			\draw[ggretta,line width=0.5pt] (\xmin,-1) -- (\xmax,-1);
+			\node[inner sep=0pt,font=\sffamily\footnotesize\bfseries] at (-0.72,-0.31) {D2};
+			\node[inner sep=0pt,font=\sffamily\footnotesize\bfseries] at (0.30,-0.50) {D3};
+			\node[inner sep=0pt,font=\sffamily\footnotesize\bfseries] at (-0.55,-1.17) {D1};
+
+			% Etichette degli assi
+			\foreach \xx in {-4,-3,-2,-1,1,2,3,4,5}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {-3,-2,-1,1,2,3}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.199,-0.16) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (1.771,-0.309) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.422,1.349) {$y$};
+		\end{tikzpicture}
 		\caption{Grafico di $D=\{(x,y)\in\mathbb{R}^2\;|\; -1\leq x\leq 0,\; -1\leq y\leq x\}$.}\label{fig:vincolo}
 	\end{figure}
 	
@@ -5129,7 +6746,59 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 	sul dominio $D=\{(x,y)\in\mathbb{R}^2\,|\, 0\leq x, 1\leq y\leq2,|xy|\leq 1\}$ (vedere Figura \ref{fig:vincolo_3}).
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo_3}
+		%\includegraphics[width=0.5\textwidth]{Analisi2/figures/vincolo_3}
+		\begin{tikzpicture}[
+			x=1.7559cm,
+			y=1.7559cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-1.826} \def\xmax{3.18}
+			\def\ymin{-0.56} \def\ymax{2.52}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-19,...,32}
+			\draw[black!8,line width=0.3pt] (0.1*\k,\ymin) -- (0.1*\k,\ymax);
+			\foreach \k in {-6,...,26}
+			\draw[black!8,line width=0.3pt] (\xmin,0.1*\k) -- (\xmax,0.1*\k);
+			\foreach \k in {-5,...,8}
+			\draw[black!22,line width=0.4pt] (0.4*\k,\ymin) -- (0.4*\k,\ymax);
+			\foreach \k in {-2,...,7}
+			\draw[black!22,line width=0.4pt] (\xmin,0.4*\k) -- (\xmax,0.4*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-19,...,32}
+			\draw[line width=0.4pt] (0.1*\k,-0.9pt) -- (0.1*\k,0.9pt);
+			\foreach \k in {-6,...,26}
+			\draw[line width=0.4pt] (-0.9pt,0.1*\k) -- (0.9pt,0.1*\k);
+			\foreach \k in {-5,...,8}
+			\draw[line width=0.5pt] (0.4*\k,-1.6pt) -- (0.4*\k,1.6pt);
+			\foreach \k in {-2,...,7}
+			\draw[line width=0.5pt] (-1.6pt,0.4*\k) -- (1.6pt,0.4*\k);
+
+			% Dominio: 0<=x<=1/y, 1<=y<=2; curva y=1/x
+			\definecolor{ggretta}{RGB}{210,50,30}
+			\filldraw[fill=ggblu,fill opacity=0.85,draw=ggblu!50!black,line width=0.4pt]
+			(0,1) -- (0,2) -- (0.5,2) -- plot[domain=0.5:1,samples=30,smooth] (\x,{1/\x}) -- cycle;
+			\draw[ggretta,line width=0.5pt,domain=0.3:3.6,samples=80,smooth] plot (\x,{1/\x});
+			\node[ggretta,inner sep=0pt,font=\sffamily\scriptsize\bfseries] at (0.91,1.59) {$y=1/x$};
+
+			% Etichette degli assi
+			\foreach \xx in {-1.6,-1.2,-0.8,-0.4,0.4,0.8,1.2,1.6,2,2.4,2.8}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {-0.4,0.4,0.8,1.2,1.6,2,2.4}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.1,-0.08) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (0.891,-0.154) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.212,0.674) {$y$};
+		\end{tikzpicture}
 		\caption{Grafico di $D=\{(x,y)\in\mathbb{R}^2\,|\, 0\leq x, 1\leq y\leq2,|xy|\leq 1\}$.}
 		\label{fig:vincolo_3}
 	\end{figure}
@@ -5169,7 +6838,58 @@ Inoltre, è possibile esplicitare variabili in funzione delle altre. Un esempio:
 	condizionati al vincolo $2x^2+y^2=2$ (vedere Figura \ref{fig:vincolo_2}).
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.5\textwidth]{Analisi2/figures/condizione_scritto_15_settembre}
+		%\includegraphics[width=0.5\textwidth]{Analisi2/figures/condizione_scritto_15_settembre}
+		\begin{tikzpicture}[
+			x=1.7559cm,
+			y=1.7559cm,
+			line cap=round,
+			line join=round,
+			>={Stealth[length=4pt,width=3.5pt]},
+			font=\sffamily\fontsize{5.5pt}{6.5pt}\selectfont
+			]
+			\definecolor{ggrosso}{RGB}{255,52,16}
+			\definecolor{ggblu}{RGB}{19,64,255}
+			\def\xmin{-2.5} \def\xmax{2.506}
+			\def\ymin{-1.636} \def\ymax{1.63}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+
+			% Griglia secondaria e principale
+			\foreach \k in {-26,...,26}
+			\draw[black!8,line width=0.3pt] (0.1*\k,\ymin) -- (0.1*\k,\ymax);
+			\foreach \k in {-17,...,17}
+			\draw[black!8,line width=0.3pt] (\xmin,0.1*\k) -- (\xmax,0.1*\k);
+			\foreach \k in {-7,...,7}
+			\draw[black!22,line width=0.4pt] (0.4*\k,\ymin) -- (0.4*\k,\ymax);
+			\foreach \k in {-5,...,5}
+			\draw[black!22,line width=0.4pt] (\xmin,0.4*\k) -- (\xmax,0.4*\k);
+
+			% Assi cartesiani con tacche
+			\draw[black,line width=0.6pt,->] (\xmin,0) -- (\xmax,0);
+			\draw[black,line width=0.6pt,->] (0,\ymin) -- (0,\ymax);
+			\foreach \k in {-26,...,26}
+			\draw[line width=0.4pt] (0.1*\k,-0.9pt) -- (0.1*\k,0.9pt);
+			\foreach \k in {-17,...,17}
+			\draw[line width=0.4pt] (-0.9pt,0.1*\k) -- (0.9pt,0.1*\k);
+			\foreach \k in {-7,...,7}
+			\draw[line width=0.5pt] (0.4*\k,-1.6pt) -- (0.4*\k,1.6pt);
+			\foreach \k in {-5,...,5}
+			\draw[line width=0.5pt] (-1.6pt,0.4*\k) -- (1.6pt,0.4*\k);
+
+			% Ellisse x^2+y^2/2=1 (semiassi 1 e sqrt(2))
+			\definecolor{ggretta}{RGB}{225,70,45}
+			\draw[ggretta,line width=0.5pt] (0,0) ellipse (1 and {sqrt(2)});
+			\node[ggretta,inner sep=0pt,font=\sffamily\small\bfseries] at (0.29,1.49) {$\sqrt{2}$};
+			\node[ggretta,inner sep=0pt,font=\sffamily\small\bfseries] at (0.29,-1.50) {$-\sqrt{2}$};
+
+			% Etichette degli assi
+			\foreach \xx in {-2.4,-2,-1.6,-1.2,-0.8,-0.4,0.4,0.8,1.2,1.6,2,2.4}
+			\node[below=1.5pt,inner sep=1pt] at (\xx,0) {\xx};
+			\foreach \yy in {-1.6,-1.2,-0.8,-0.4,0.4,0.8,1.2,1.6}
+			\node[left=1.5pt,inner sep=1pt] at (0,\yy) {\yy};
+			\node[inner sep=0pt] at (-0.1,-0.085) {0};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (0.891,-0.164) {$x$};
+			\node[inner sep=0pt,font=\itshape\scriptsize] at (-0.212,0.715) {$y$};
+		\end{tikzpicture}
 		\caption{Grafico di $2x^2+y^2=2$.}
 		\label{fig:vincolo_2}
 	\end{figure}
