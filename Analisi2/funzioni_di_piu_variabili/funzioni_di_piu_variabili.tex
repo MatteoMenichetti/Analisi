@@ -5204,11 +5204,11 @@ ovvero la matrice Hessiana è simmetrica. Questo fatto ha validità generale.
 	\begin{equation*}
 		\boldsymbol{f_y(0,0)} = \lim_{h\rightarrow 0} \frac{f(0,0+h)-f(0,0)}{h}= \lim_{h\rightarrow 0}\frac{\frac{0\cdot h- 0\cdot h^3}{0^2+h^2} - 0 }{h} = \boldsymbol{0}
 	\end{equation*}
-	\paragraph{Intermezzo:} Quanto fatto fino ad adesso significa che $f\in C^1(\mathbb{R})$ e che $f$ è differenziabile. Adesso sono calcolate le derivate seconde applicando la definizione di dericata parziale. $\qed$
+	\paragraph{Intermezzo:} Quanto fatto fino ad adesso significa che $f\in C^1(\mathbb{R})$ e che $f$ è differenziabile. Adesso sono calcolate le derivate seconde applicando la definizione di derivata parziale. $\qed$
 	\begin{equation*}
 		\begin{matrix}
 			f_{xy}(0,0) &=& \frac{\partial f}{\partial x}\left(\frac{\partial f}{\partial y}(0,0)\right) &=& \lim\limits_{k\rightarrow0}\frac{f_x(0,0+k)-f_x(0,0)}{k} &=& \lim\limits_{k\rightarrow 0}\frac{\frac{0\cdot k+4\cdot0\cdot k^4-k^5}{(k^2)^2} - 0}{k} &=&\lim\limits_{k\rightarrow0}-\frac{k^5}{k^5} &=& -1\\
-			f_{yx} &=& \frac{\partial f}{\partial y}\left(\frac{\partial f}{\partial x}(0,0)\right) &=& \lim\limits_{h\rightarrow 0} \frac{f_y(0+h, 0)-f_y(0,0)}{h} &=& \lim\limits_{h\rightarrow 0}\frac{\frac{h^4 -10\cdot h^2\cdot 0 - 3\cdot 0}{(h^2)^2} - 0}{h} &=&\limi\limits{h\rightarrow 0}\frac{h}{h} = 1.
+			f_{yx} &=& \frac{\partial f}{\partial y}\left(\frac{\partial f}{\partial x}(0,0)\right) &=& \lim\limits_{h\rightarrow 0} \frac{f_y(0+h, 0)-f_y(0,0)}{h} &=& \lim\limits_{h\rightarrow 0}\frac{\frac{h^4 -10\cdot h^2\cdot 0 - 3\cdot 0}{(h^2)^2} - 0}{h} &=&\lim\limits{h\rightarrow 0}\frac{h}{h} = 1.
 		\end{matrix}
 	\end{equation*}
 	Poiché $f(x,y)=-f(y,x)$ si ha che $f_{yx}(0,0) = 1$ e $f_{xy}(0,0)\neq f_{yx}(0,0)$, ovvero le derivate seconde miste non sono continue in $(0,0)$.
@@ -5705,8 +5705,232 @@ Tale relazione permette di scrivere
 
 \paragraph{Perché è utilizzata l'approssimazione $\boldsymbol{P_2(x_0,y_0)}$?} $P_2$ permette di scrivere la differenza $f(x,y)-f(x_0,y_0)$ come $o-$piccolo della distanza tra $P$ e $P_0$ quando è considerato in punto critico. È utile applicare l'approssimazione appena tratta ad un punto critico in quanto permette dedurre il segno della differenza $f(x,y)-f(x_0,y_0)$ vicino al punto $P_0 = (x_0,y_0)$.
 
-\begin{example}
+\begin{example}[Prova di autovalutazione]
+	\footnote{Slide 28-39 PDF 21.}
+	\paragraph{Testo:}
+	\begin{enumerate}
+		\item Considerata l'equazione lineare
+		\begin{equation}\label{eq:edo_varib_sep_esempio}
+			y'=(1+y^2)x^2
+		\end{equation}
+		\begin{enumerate}
+			\item determinare tutte le soluzioni dell'equazione,
+			\item risolvere il problema di Cauchy per l'equazione data la condizione iniziale $y(0)=1$,
+			\item determinare qual è il più ampio intervallo in cui la soluzione del problema di Cauchy è definito (sarà nominato insieme massimale $I$).
+		\end{enumerate}
+		\item Calcolare, se esiste, il seguente limite (o dimostrare che non esiste)
+		\begin{equation*}
+			\lim_{(x,y)\rightarrow(0,0)}\frac{xy(2y^2+x^3)}{x^4+y^2}
+		\end{equation*}
+		\item Determinare (analiticamente) l'insieme di definizione $E\subseteq\mathbb{R}^2$ della funzione
+		\begin{equation*}
+			f(x,y)=\sqrt{4-\log(x^2+y^2-2)}
+		\end{equation*}
+		e dire se $E$ è un aperto, chiuso, limitato e il segno di $f$.
+		\item Sia
+		\begin{equation*}
+			f(x,y) = 
+			\begin{cases}
+				\frac{x^{\frac{7}{3}}y^{\frac{5}{3}}}{x^2+y^2} &\text{per } (x,y)\neq(0,0)\\
+				0 &\text{altrimenti}
+			\end{cases}
+		\end{equation*}
+		\begin{enumerate}
+			\item Calcolare le derivate parziali di $f$ in ogni punto del piano,
+			\item Stabilire se le derivate parziali di $f$ siano continue in tutto il piano,
+			\item Stabilire se $f$ è differenziabile nell'origine,
+			\item  Calcolare (la derivata direzionale) $\frac{\partial f}{\partial\vec v}(1,1)$ per il generico versore $\vec v=\left(-\frac{1}{\sqrt 2}, \frac{1}{\sqrt 2}\right)$ 
+		\end{enumerate}
+		
+	\end{enumerate}
+	\paragraph{Svolgimento:}
+	\begin{enumerate}
+		\item
+		\begin{enumerate}
+			\item \begin{equation*}
+				(1+y^2)=g(y),\quad x^2=f(x),
+			\end{equation*}
+			sono funzioni continue. (\ref{eq:edo_varib_sep_esempio}) una EDO a variabili separabili.\\
+			Non esistono soluzioni singolari perché $1+y^2>0$.\\
+			Con $y(x)=y$
+			\begin{equation*}
+				\frac{y'}{1+y^2} = x^2,
+			\end{equation*}
+			integrando rispetto ad $x$
+			\begin{equation*}
+				\int\frac{y'(x)}{1+(y(x))^2} dx= \int x^2 dx.
+			\end{equation*}
+			Dato $y(x)=y$ allora $y'(x)dx=dy$ e
+			\begin{equation*}
+				\int\frac{1}{1+y^2}dy=\frac{x^3}{3} + c,
+			\end{equation*}
+			quindi
+			\begin{equation*}
+				\arctan(y)=\frac{x^3}{3}+c,
+			\end{equation*}
+			ovvero
+			\begin{equation*}
+				y(x)=\tan\left(\frac{x^3}{3}+c\right),\quad x\in\left\{\frac{x^3}{3}+c\neq\frac{\pi}{2}+k\pi\right\}.
+			\end{equation*}
+			\item Imponiamo $y(0)=1$
+			\begin{equation*}
+				\begin{matrix}
+					\arctan y(0)=0+c&&\\
+					&\Rightarrow& c=\frac{\pi}{4}+k\pi\\
+					\arctan 1=c
+				\end{matrix}
+			\end{equation*}
+			\begin{equation}\label{eq:sistema_cond_iniziale}
+				\begin{cases}
+					y'=(1+y^2)x^2\\
+					y(0)=1
+				\end{cases}
+			\end{equation}
+			quindi la soluzione è
+			\begin{equation}\label{eq:soluzione_prob_cauchy_autoval}
+				y(x)=\tan\left(\frac{x^3}{3}+\frac{\pi}{4}\cancel{k\pi}\right) \overset{\footnotemark}{=}\tan\left(\frac{x^3}{3}+\frac{\pi}{4}\right)
+			\end{equation}
+			\footnotetext{$k\pi$ è eliminato perché la condizione iniziale è in 0.}
+			\paragraph{Intermezzo: Dove considero la soluzione?} (\ref{eq:soluzione_prob_cauchy_autoval}) è l'espressione determinata attraverso la relazione (\ref{eq:sistema_cond_iniziale}). $\tan$ deve essere diversa da $\frac{\pi}{2}+k\pi$. Noi ricerchiamo il più ampio intervallo dove (\ref{eq:soluzione_prob_cauchy_autoval}) è definita e dove $y(x)$ ha come immagine il dato iniziale. Quindi $\frac{x^3}{3}+\frac{\pi}{4}$ deve essere diverso da $\frac{\pi}{2}+k\pi$ affinché la tangente esista ed è necessario considerare l'intervallo contente 0, ovvero è necessario considerare \ref{eq:intervallo_massimale_soluzione_prob_cauchy_autoval}.$\qed$
+			\item L'intervallo $I$ preso in considerazione è
+			\begin{equation}\label{eq:intervallo_massimale_soluzione_prob_cauchy_autoval}
+				-\frac{\pi}{2}<\frac{x^3}{3}+\frac{\pi}{4}<\frac{\pi}{2},\quad \frac{x^3}{3}+\frac{\pi}{4}\neq \frac{\pi}{2}+k\pi.
+			\end{equation}
+			È necessario scrivere opportunamente $I$ in modo che valga (\ref{eq:intervallo_massimale_soluzione_prob_cauchy_autoval}):
+			\begin{equation*}
+				\begin{matrix}
+					-\frac{\pi}{2} - \frac{\pi}{4} < \frac{x^3}{3} < \frac{\pi}{2} - \frac{\pi}{4}\\\\
+					-\frac{3\pi}{4}<\frac{x^3}{3} < \frac{\pi}{4}\\\\
+					-\frac{9\pi}{4} < x^3 < \frac{3\pi}{4}\\\\
+					-\sqrt[3]{\frac{9\pi}{4}} < x < \sqrt[3]{\frac{3\pi}{4}}
+				\end{matrix}
+			\end{equation*}
+			Quindi l'insieme massimale è $I=\left(-\sqrt[3]{\frac{9\pi}{4}} ,\sqrt[3]{\frac{3\pi}{4}}\right)$, dove $0\in I$.
+		\end{enumerate}
+		
+		\item
+		\begin{equation*}
+			\lim_{(x,y)\rightarrow(0,0)}\frac{xy(2y^2+x^3)}{x^4+y^2}
+		\end{equation*}
+		Considerando la traccia $y=0$, $f(x,0)=0,\, \forall x\neq 0$.\\
+		(Proviamo con il Teorema \ref{th:dei_carabinieri_2} del confronto in coordinate polari)
+		\begin{equation*}
+			\begin{matrix}
+				\left|f(\rho, \theta)\right| &=& \left|\frac{\rho^2\cos\theta\sin\theta(2\rho^2\sin^2\theta+\rho^3\cos^3\rho)}{\rho^4\cos^4\theta+\rho^2\sin\theta}\right| &=&\left|\frac{\rho^{\cancel{4}^2}}{\cancel{\rho^2}(\rho^2\cos^4\theta+\sin^2\theta)}\right| &=& \\\\
+				&=&\left|\frac{2\rho^2\cos\theta\sin^3\theta+\rho^3\cos^4\theta\sin\theta}{\rho^2\cos^4\theta+\sin^2\theta}\right|				&=&\left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2\cos^4\theta+\sin^2\theta}+\frac{\rho^3\cos^4\theta\sin\theta}{\rho^2\cos^4\theta+\sin^2\theta}\right| &\leq&\\\\
+				&\leq& \left|\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2\cos^4\theta+\sin^2\theta}\right|+\left|\frac{\rho^3\cos^4\theta\sin\theta}{\rho^2\cos^4\theta+\sin^2\theta}\right| &\leq& \underbrace{\frac{2\rho^2\cos\theta\sin^3\theta}{\rho^2\cos^4\theta+\sin^2\theta}\frac{\rho^3\cos^4\theta\sin\theta}{\rho^2\cos^4\theta+\sin^2\theta}}_{\footnotemark} &\leq&\\\\
+				&\leq & \frac{2\rho^2|\cos\theta\sin^{\cancel{3}}\theta|}{\cancel{\sin^2\theta}} + \frac{\rho^{\cancel{3}}\cancel{\cos^4\theta}|\sin\theta|}{\cancel{\rho^2\cos^4\theta}} &\leq& 2\rho^2|\cos\theta\sin\theta|+\rho|\sin\theta| &\overset{\footnotemark}{\leq}&\\\\
+				&\leq & \underbrace{2\rho^2+\rho}_{g(\rho)}\overset{\rho\rightarrow0^+}{\longrightarrow}0
+			\end{matrix}
+		\end{equation*}
+		\addtocounter{footnote}{-1}
+		\footnotetext{Il denominatore $\rho^2\cos^4\theta+\sin^2\theta$ è maggiore di 0, quindi la moltiplicazione tra i due fattori è minore della somma dei numeratori diviso uno dei nominatori (cosa fatta in una recente lezione). Il "trucco" è dividere in due la moltiplicazione in modo da semplificare il denomimnatore}
+		
+		\stepcounter{footnote}
+		\footnotetext{Per le ipotesi di uniformità $|\cos\theta\sin\theta|$ e $|\sin\theta$.}
+		
+		\item
+		\begin{equation}\label{eq:E_prova_autovalutazione}
+			\begin{matrix}
+				E&=&\{(x,y)\in\mathbb{R}^2\;|\;4-\log(x^+y^2-2)\geq 0,\; x^2+y^2\geq 2\} &=&\\
+				&&4-\log(x^2+y^2-2)\geq 0&&\\
+				&&\log(x^2+y^2-2)\leq 4&&\\
+				&& x^2+y^2-2\leq e^4&&\\
+				&&x^2+y^2\leq 2+e^4&&\\
+				&=&\{(x,y)\in\mathbb{R}^2\;|\; x^2+y^2\leq 2+e^4\;,\; x^2+y^2>2\}.
+			\end{matrix}
+		\end{equation}
+		$E$ è limitato, non è chiuso né aperto.\\
+		Segno di $f$: $f(x,y)>0\;\forall(x,y)\in E$, in particolare $f(x,y)=0\iff 4-\log(x^2+y^2-2)=0$ (segno positivo o 0, quindi $f$ è sempre positiva / non negativa).
+		\begin{figure}[ht]
+			\centering
+		\begin{tikzpicture}[>=Stealth, line cap=round]
+			
+			% Raggi (disegno schematico: non in scala, come nello schizzo originale).
+			% Per la scala reale: \def\ri{1.414} e \def\re{7.523} (con eventuale scale=0.4)
+			\def\ri{1.8}   % raggio interno  = sqrt(2)
+			\def\re{3.9}   % raggio esterno  = sqrt(2+e^4)
+			
+			% Corona circolare: riempimento (regola pari-dispari = cerchio grande meno cerchio piccolo)
+			\fill[blue!35, even odd rule] (0,0) circle (\re) (0,0) circle (\ri);
+			
+			% Assi
+			\draw[->] (-\re-1.2,0) -- (\re+1.2,0) node[right] {$x$};
+			\draw[->] (0,-\re-0.6) -- (0,\re+0.8) node[above] {$y$};
+			
+			% Circonferenza esterna: punti compresi (linea continua)
+			\draw[thick] (0,0) circle (\re);
+			
+			% Circonferenza interna: punti NON compresi (linea tratteggiata)
+			\draw[thick, dotted] (0,0) circle (\ri);
+			
+			% Etichette sull'asse x
+			\node[below left]  at (-\ri,0) {$-\sqrt{2}$};
+			\node[below right] at ( \ri,0) {$\sqrt{2}$};
+			\node[below left]  at (-\re,0) {$-\sqrt{2+e^{4}}$};
+			\node[below right] at ( \re,0) {$\sqrt{2+e^{4}}$};
+		\end{tikzpicture}
+		\caption{Grafico di (\ref{eq:E_prova_autovalutazione}). Il cerchio di punti tratteggiati non sono compresi, quelli continui si.}
+	\end{figure}
+	\item
+	\begin{equation*}
+		f(x,y) = 
+		\begin{cases}
+			\frac{x^{\frac{7}{3}}y^{\frac{5}{3}}}{x^2+y^2} &\text{per } (x,y)\neq(0,0)\\
+			0 &\text{altrimenti}
+		\end{cases}
+	\end{equation*}
+	$f$ è differenziabile su tutto il piano. Inoltre, $f\colon\mathbb{R}^2\rightarrow\mathbb{R}$.
+	\begin{enumerate}
+		\item $\forall(x,y)\neq(0,0)$
+		\begin{equation*}
+			\begin{matrix}
+				\frac{\partial f}{\partial x}(x,y) &=& \frac{\frac{7}{3}x^{\frac{4}{3}} y^{\frac{5}{3}}(x^2+y^2)-2x(x^{\frac{7}{3}}y^{\frac{5}{3}})}{(x^2+y^2)^2} &=& \frac{\frac{4}{3}x^{\frac{10}{3}}y^{\frac{5}{3}}+\frac{7}{3}x^{\frac{4}{3}}y^\frac{11}{3}-2x^{\frac{10}{3}}y^{\frac{5}{3}}}{(x^2+y^2)^2}&=&\\\\
+				&=&\text{Semplificiando} &=& \frac{x^{\frac{10}{3}}y^{\frac{5}{3}}+7x^{\frac{4}{3}}y^{\frac{11}{3}}}{3(x^2+y^2)^2}\\\\
+				\frac{\partial f}{\partial y} &=& \frac{5 x^{\frac{11}{3}}y^{\frac{2}{3}}-7x^{\frac{4}{3}}y^{\frac{8}{3}}}{3(x^2+y^2)^2}
+			\end{matrix}
+		\end{equation*}
+		\item Valutiamo $f$ in $(0,0)$
+		\begin{equation*}
+			\begin{matrix}
+				x = 0 &&&&\\
+				f(0,y)=0&\Rightarrow& \frac{\partial f}{\partial x}(0,0)=0&&\\
+				&&&\Rightarrow& \triangledown f(0,0)=(0,0)\\
+				y = 0 &&&&\\
+				f(x,0)=0 &\Rightarrow&\frac{\partial f}{\partial y}(0,0)=0&&
+			\end{matrix}
+		\end{equation*}
+		Quindi $\forall (x,y)\in\mathbb{R}^2\backslash\{(0,0)\}$ le derivate parziali sono continue e le sono anche in $(0,0)$. Infatti $\left(f\in C^1(\mathbb{R}^2)\right)$
+		\begin{equation*}
+			\lim_{(x,y)\rightarrow(0,0)}\frac{\partial f}{\partial x}(x,y)=0=\frac{\partial f}{\partial x}(0,0)\quad\text{e}\quad\lim_{(x,y)\rightarrow(0,0)}\frac{\partial f}{\partial y}(x,y)=0=\frac{\partial f}{\partial y}(0,0)
+		\end{equation*}
+		(Proviamo che i limiti sono 0)
+		\begin{equation*}
+			\begin{matrix}
+				\lim\limits_{(x,y)\rightarrow(0,0)}\frac{\partial f}{\partial x} (x,y) &=& \lim\limits_{(x,y) \rightarrow(0,0)}\frac{x^{\frac{10}{3}}y^{\frac{5}{3}}+7x^{\frac{4}{3}}y^{\frac{11}{3}}}{3(x^2+y^2)^2} &=&
+				\begin{cases}
+					x = \rho\cos\theta\\
+					y = \rho\sin\theta
+				\end{cases}\\\\
+				&=&\lim\limits_{\rho\rightarrow0^+}\rho^{\frac{10}{3}+\frac{5}{3}}(\cos\theta)^{\frac{10}{3}}(\sin\theta)^{\frac{5}{3}}+7\rho^{\frac{4}{3}+\frac{11}{3}}(\cos\theta)^{\frac{4}{3}}(\sin\theta)^{\frac{11}{3}} &=&
+				\\
+				&=&\lim\limits_{\rho\rightarrow 0^+}\frac{\rho^{\frac{15}{3}}\left[(\cos\theta)^{\frac{10}{3}}(\sin\theta)^{\frac{5}{3}}+7(\cos\theta)^{\frac{4}{3}}(\sin\theta)^{\frac{11}{3}} \right]}{3\rho^4}&=&\\
+				&=&\lim\limits_{\rho\rightarrow 0^+}\rho^{\frac{15}{3}-4}\left[(\cos\theta)^{\frac{10}{3}}(\sin\theta)^{\frac{5}{3}}+7(\cos\theta)^{\frac{4}{3}}(\sin\theta)^{\frac{11}{3}} \right] &=&0
+			\end{matrix}
+		\end{equation*}
+		\paragraph{Intermezzo:} $\rho^{\frac{15}{3}-4}$  tende a 0 e $\cos\theta)^{\frac{10}{3}}(\sin\theta)^{\frac{5}{3}}+7(\cos\theta)^{\frac{4}{3}}(\sin\theta)^{\frac{11}{3}} $ è uniformemente limitata perché somme di $\sin$ e $\cos$. Lo stesso si può concludere per $f_y$, qundi vale quanto segue. $\qed$\\
+		Quindi $f\in C^1(\mathbb{R}^2)$ e $f$ è differenziabile in $\mathbb{R}^2$ (quindi anche in $(0,0)$).
+		\item Già verificato.
+		\item (La derivata direzionale si può definire con l'opportuno limite ma essendo $f$ differenziabile è più comodo scrivere quanto segue.)\\
+		$D_{\vec{v}}f(1,1)$ con la formula del gradiente essendo $f$ differenziabile in $\mathbb{R}^2$ e in $(1,1)$.
+		\begin{equation*}
+			D_{\vec{v}}f(1,1) = <\triangledown f(1,1), \vec{v}> = \triangledown f(1,1) = \left(\frac{8}{12}, \frac{4}{12}\right) = \left(\frac{2}{3}, \frac{1}{3}\right) = \frac{2}{3}\cdot\frac{1}{\sqrt{2}} + \frac{1}{3}\cdot\frac{1}{\sqrt{3}} = \frac{2}{3\sqrt{2}} + \frac{1}{3\sqrt 2} = \frac{1}{2}
+		\end{equation*}
+		\textcolor{red}{\textbf{Se $f$ è differenziabile nel punto dove è richiesto il calcolo di $D_{\vec{v}}$ allora si DEVE calcolare $D_{\vec{v}}$ come appena fatto.}}
+	\end{enumerate}
+	\end{enumerate}
 	PROVA DI AUTOVALUTAZIONE CON ESERCIZI SU PROBLEMA DI CAUCHY, CALCOLO LIMITE, DETERMINAZIONE INSIEME DI DEFINIZIONE E SEGNO DI $f$ SLIDE 28-39 PDF 21.
+	
 \end{example}
 
 \subsection{Ottimizzazione}
